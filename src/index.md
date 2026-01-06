@@ -5,9 +5,9 @@ layout: layouts/base.njk
 
 ## OmahaForUs
 
-Hub of queer community in Omaha. Food pantry, clothes closet, support groups, arts and crafts, and game nights. Free gender-transition clothing and supplies. Name-change clinic. Teen support group and dedicated spaces. A place to chill and be safe. Queer reading room and lending library. Internships and work-study. Amazing volunteers and staff.
+A safe place to exist. Food pantry, clothes closet, support groups, arts and crafts, and game nights. Free gender-transition clothing and supplies. Name-change clinic. Teen support group and dedicated spaces. Queer reading room and lending library. Internships and work-study.
 
-- [18+ Support group](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1) Wed 6-7:30
+- 18+ Support group ([Signup](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1)) Wed 6-7:30
 - Free STI testing on Thurs 4-6
 - Game night Thurs 5-7 (Jackbox, card games, Nintendo games)
 - Arts and Crafts every other Wed
@@ -22,7 +22,7 @@ Hub of queer community in Omaha. Food pantry, clothes closet, support groups, ar
 
 ## Out Wild Adventures Group
 
-Coffee meets, movie nights, hikes, seasonal parties. Uses GroupMe app for coordination. Well-moderated, often hosts sober events. Primarily 18+ (no, not in that way)
+Adult-centric coffee meets, movie nights, hikes, seasonal parties. Uses GroupMe app for coordination. Well-moderated, often hosts sober events.
 
 [Signup (vetted)](https://flow.page/outwildadventures)
 
@@ -52,6 +52,15 @@ Small social (not support) group specifically for Trans* / GNC / Enby people. Mo
 
 ---
 
+## Sober Socials Omaha
+
+Not specifically queer but it's important to have such spaces.
+
+[Instagram](https://www.instagram.com/sobersocialsomaha/)
+
+---
+
+
 ## Ananda Yoga Omaha
 
 Yoga classes including ones specifically for femmes and queers to process and work through strong emotions.
@@ -62,6 +71,6 @@ Yoga classes including ones specifically for femmes and queers to process and wo
 
 ## Floors Floors Floors (Benson)
 
-Authentically queer events space. Up-and-coming, has cool art and queer markets every few months.
+Up-and-coming, has cool art, some local shows and queer markets every few months.
 
 [Instagram](https://www.instagram.com/floorsfloorsfloors_7052maple)

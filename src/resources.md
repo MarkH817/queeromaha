@@ -3,16 +3,16 @@ title: Resources
 layout: layouts/base.njk
 ---
 
-## Pride Health Center
+## Pride Health Clinic
 
-LGBTQ+ affirming health center offering medical care, support services, a food pantry, and a clothes closet for those in need.
+STI tests (free if you ask for the "county" one), food pantry, clothes closet, free rubbers, plan B, Narcan and fent test strips. Gender-transition care. Owners/operators are trans / queer. 
+[Website](https://www.pridehealthclinic.com/)
 
-[Website](https://pridehealthcenter.org/)
+Also operates PHC Aesthetics for laser hair removal etc
+[Website](https://phcaesthetics.com/)
 
 ---
 
 ## UNMC Trans Care Center
 
-UNMC (University of Nebraska Medical Center) has a Trans Care Center that provides gender-affirming healthcare. Credible based on inside sources, but your mileage may vary (YMMV).
-
-[Website](https://www.unmc.edu/transgender-care/)
+New genders! Get 'em while they're covered by insurance! Their surgical center is apparently pretty good. [Website](https://www.nebraskamed.com/transgender-care)
