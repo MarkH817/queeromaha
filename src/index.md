@@ -37,6 +37,7 @@ Specifically for Trans* / GNC / Enby people. Moderated by Babs Ramsey.
 ---
 
 ### OATS Trans Social Group
+
 3rd Saturday of every month from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  
 [Website](https://2uomaha.org/justice/lgbtq)
 
@@ -50,17 +51,6 @@ Place for queers, furries, therians alike to hang out and chill. Active in-perso
 
 ---
 
-## Sober Socials Omaha
-
-Hikes, ecstatic dance, singing bowls and spiritual singing.
-[IG](https://www.instagram.com/sobersocialsomaha/)
-
----
-
-
-
----
-
 ## No Coast Punk Market
 
 Punk / DIY market held every few months at a local venue.
@@ -68,7 +58,7 @@ Punk / DIY market held every few months at a local venue.
 [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
 
 ---
-
+<!-- 
 ## Furbraska
 
 Regional furry group
@@ -89,4 +79,4 @@ Omaha furry group
 
 Pet play and pup group that operates out of Flixx. Vetted membership.
 
-[FB (events)](https://www.facebook.com/NEBPAH/) [Discord (announcements)](https://discord.gg/nqfkUnr8) [Website](https://www.nebpah.org/) [Telegram (invite-only, active)](https://t.me/+e-BRHkaIC1g5OTMx)
+[FB (events)](https://www.facebook.com/NEBPAH/) [Discord (announcements)](https://discord.gg/nqfkUnr8) [Website](https://www.nebpah.org/) [Telegram (invite-only, active)](https://t.me/+e-BRHkaIC1g5OTMx) -->

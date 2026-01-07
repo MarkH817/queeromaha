@@ -3,7 +3,10 @@ title: Venues
 layout: layouts/base.njk
 ---
 
+
 [Downtown](#downtown) | [Benson](#benson) | [Midtown](#midtown)
+
+- 🚻 = Single-stall BR
 
 ---
 
@@ -21,26 +24,18 @@ Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
 
 [IG](https://www.instagram.com/verdictbaromaha/)
 [FB](https://www.facebook.com/verdictbaromaha)
-[Website](https://www.theverdictomaha.com/events.html)
+[Site](https://www.theverdictomaha.com/events.html)
 
----
-
-
-### Low End at Bemis
-
-Experimental music from (inter)national artists. Highly recommend. [Website](https://www.bemiscenter.org/programs/low-end)
-
----
-
+<!-- if/when it opens
 ### Upcoming Goth Club (Old Down Under Location)
 
 New goth/alt club opening soon at the former Down Under Bar location. Details TBD—watch this space for updates!
-
+ -->
 ---
 
 ### Flixx Lounge
 
-Queer bar with drag shows. [Website](https://www.flixxlounge.com/)
+Gay bar with drag shows. Gendered bathrooms with plenty of stalls [Site](https://www.flixxlounge.com/upcoming-events)
 
 ---
 
@@ -48,9 +43,9 @@ Queer bar with drag shows. [Website](https://www.flixxlounge.com/)
 
 ## Benson
 
-### Shakedown Street
+### Shakedown Street 🚻
 
-Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). Bathrooms are single-stall. [Website](https://www.facebook.com/shakedownstreettavern/)
+Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). [Site](https://www.facebook.com/shakedownstreettavern/)
 
 ---
 
@@ -58,7 +53,7 @@ Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesi
 
 Large venue for touring acts, local shows, and dance parties. Hosts a wide range of genres and events. All-ages shows are common. Bathrooms are multi-stall, gendered.
 
-[Website](https://www.waitingroomlounge.com/)
+[Site](https://www.waitingroomlounge.com/)
 
 ---
 
@@ -66,12 +61,11 @@ Large venue for touring acts, local shows, and dance parties. Hosts a wide range
 
 Medium-sized venue near The Waiting Room. Hosts indie, punk, electronic, and local acts. Intimate space with a bar and patio. Bathrooms are multi-stall, gendered.
 
-[Website](https://www.reverblounge.com/)
+[Site](https://www.reverblounge.com/)
 
 ---
 
-
-## Floors Floors Floors (Benson)
+## Floors Floors Floors 🚻
 
 Up-and-coming gallery and events space. Has local music and queer markets, including the annual Holi-Gays Market (queer holiday market with art, crafts, and gifts from local makers). [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
 
@@ -86,12 +80,20 @@ Venue for small/medium-sized acts owned by members of Cursive. Gendered bathroom
 
 ### B Bar
 
-Blues regulars and local acts. Seems to have some punk stuff. [Website](https://www.thebbaromaha.com/) [FB](https://www.facebook.com/TheB.BarOmaha//)
+Weekly blues shows and local acts. [Site](https://www.thebbaromaha.com/) [FB](https://www.facebook.com/TheB.BarOmaha//)
 
-### Joslyn Castle Carriage House
+### Joslyn Castle Carriage House 🚻
 
-Decent-sized space with a screen for visuals and a PA. Single-stall bathrooms. [Calendar](https://www.joslyncastle.com/events/)
+Decent-sized space with a screen for visuals and a PA. [Calendar](https://www.joslyncastle.com/events/)
 
+### Second Unitarian Church
+
+Screen for visuals, PA and mixer / setup, tables. Can pay a sound / AV guy if you don't have one.
+
+[Site](https://2uomaha.org/about-us/facility-rental)
+
+---
+<!-- go there first
 ### Pageturners Lounge
 
-Bookish bar with some local indie acts [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en)
+Bookish bar with some local indie acts [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en) -->
