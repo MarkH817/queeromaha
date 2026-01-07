@@ -3,36 +3,27 @@ title: Art
 layout: layouts/base.njk
 ---
 
-Jump to:  [Benson](#benson) | [South Omaha](#south-omaha)
+[Downtown](#downtown) | [Benson](#benson) | [Midtown](#midtown) | [South Omaha](#south-omaha)
 
-## Drum Circle
+## No-Coast Noise Collective
 
-3rd Friday at The Whole Rejuvenation House (4312 Camden Ave). BYOD or just clap and sing. Ask people there about other circles at Church Arthouse and Elmwood Park in the summer.
-[Instagram](https://www.instagram.com/omahadrumfamily/)
+Experimental music and sound art collective. Centered out of Project Project with members in the local noise, electronic, experimental and punk scene. [IG](https://www.instagram.com/nocoastnoise/) [Website](https://www.nocoastnoise.net/)
 
----
+See also: SoundArte, by artist and electronic musician Sener who runs Ex Nihilo festival [Website](https://soundarte.net) [IG](https://www.instagram.com/soundarte.mx/?hl=en) [Music Label](https://eacrecords.bandcamp.com/)
 
-## Omaha Artists Cooperative Gallery
+## Soundry
 
-Artist-run gallery in the Old Market featuring rotating exhibitions of local and regional artists. Offers workshops, events, and opportunities for emerging creators. Inclusive and community-oriented.
-[Website](https://www.omahaartistscoop.com/)
+Ran by Stacey Barelos, experimental music education and demonstration. Accessible, intuitive, expressive. [IG](https://www.instagram.com/omahasoundry/) [Website / Mailing List](https://staceybarelos.com/soundry/)
 
----
+## Modular Synth Meetup
 
-## Millwork Commons
+Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Plug in, hook up, drop out. Has started meeting at Joslyn Carriage House and 2nd Unitarian [IG](https://www.instagram.com/aarongum/)
 
-Apartment complex with art showings/ events.
-[Website](https://millworkcommons.com/events/)
-[Instagram](https://www.instagram.com/millworkcommons/)
+Dylan in the group makes [custom synths](https://loess-labs.net/)
 
----
+## Drum Circles and Sound Baths
 
-## Culxr House
-
-Had art battles and local shows, might be not having many events as of 2026?
-[Art battle](https://www.instagram.com/artbattleomaha/)
-[Website](https://www.culxrhouse.com/)
-[Instagram](https://www.instagram.com/culxrhouse/)
+3rd Friday at Whole Rejuvenation House (4312 Camden Ave) owned by Tere Lea. Havelynn Russell does sound baths and Jason Horacek has an array of African drums. [FB](https://www.facebook.com/drumomaha/)
 
 ---
 
@@ -40,6 +31,7 @@ Had art battles and local shows, might be not having many events as of 2026?
 # Benson
 
 [Benson First Fridays (BFF)](https://www.bffomaha.org/)
+
 
 ## Petshop
 
@@ -50,31 +42,24 @@ Punk/queer space for provocative art and experimental music. Only open to the pu
 
 ## Radial Arts Center
 
-Shows by established local artists. Worth a spin-through. Baylee Bennett (expressive realism) and Nolan Bennett (printmaking) are resident in the space
+Rotating shows by established local artists. Baylee Bennett (expressive realism) and Nolan Bennett (printmaking) are resident artists in the space
 [Website](https://www.radialartscenter.org/)
-
----
 
 ## BFF Gallery
 
 Next to RAC, only open during BFF. Shows smaller local artists. My art piece was in it!
 
----
 
 ## Ming Toy Gallery
 
-Small well-curated gallery next to Edge of the Universe.
-Only open on BFF and specific times
-[Instagram](https://www.instagram.com/mingtoygallery/)
-[Website](https://www.mingtoygallery.com/)
+Small gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) [Website](https://www.mingtoygallery.com/)
 
----
+## Culxr House
 
-## Benson Theatre
+Black-owned community space that hosts monthly-ish art battles and local shows. Single-stall bathrooms.
 
-Has art markets on BFF nights. They don't seem to have much else going on.
-[Website](https://bensontheatre.org/)
-[Instagram](https://www.instagram.com/bensontheatre/)
+[FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
+
 
 ---
 
@@ -85,42 +70,44 @@ Has art markets on BFF nights. They don't seem to have much else going on.
 ## Church Art House
 
 Friendly music and art venue in a de-consecrated church ran by Rachel Ziegler. Shared by punks, electronic synthesists, shoegaze aficionados and spiritual folx. Has a clay wheel and kiln in the basement.
-[Instagram](https://www.instagram.com/thechurcharthouse/)
+[IG](https://www.instagram.com/thechurcharthouse/)
 [Website](https://www.thechurcharthouse.love/)
 
 ## Project Project
 
-The definition of punk and DIY. Hang out with artists and their work that you'll see at BFF later.
-[Instagram](https://www.instagram.com/weareprojectproject)
-[Website](https://projectprojectomaha.com/)
-
----
-
-## No-Coast Noise Collective
-
-Experimental music and sound art collective. Centered out of Project Project, plays gigs around town. Senar runs the Ex Nihilo festival in town. See also: [SoundArte](https://soundarte.net)
-[Instagram](https://www.instagram.com/nocoastnoise/)
-[Website](https://www.nocoastnoise.net/)
-
----
-
-## Soundry (ran by Stacey Barelos)
-
-Experimental music education and demonstration. Accessible, intuitive, expressive.
-[Instagram](https://www.instagram.com/omahasoundry/)
-[Website / Mailing List](https://staceybarelos.com/soundry/)
-
----
+See cool art before the normies find out. Hang out with artists and eat hotdogs. Listen to experimental / noise music. [IG](https://www.instagram.com/weareprojectproject) [Website](https://projectprojectomaha.com/)
 
 ## Razor Wire Productions Open Mic
 
-Open mics every Wednesday @7pm and 2nd Fridays @ 6pm
-[Instagram](https://www.instagram.com/razorwireproductions/)
-
----
+Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm 
+[FB](https://www.facebook.com/poetiklee77/) [IG](https://www.instagram.com/razor_wire_productions/)
 
 ## Clover24
 
-New-ish studio and gallery space
-[Instagram](https://www.instagram.com/clover24omaha/)
-[Website](https://clover24.org/events)
+New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) [Events](https://clover24.org/events)
+
+---
+
+<a id="midtown"></a>
+
+## Samuel Bak Museum 
+
+Aksarben museum of Holocaust survivor's art. Has art workshops and education programs. [Website](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/index.php/)
+
+---
+# Downtown
+
+<a id="downtown"></a>
+## Millwork Commons
+Apartment complex with art showings/ events. [Events](https://millworkcommons.com/events/) [IG](https://www.instagram.com/millworkcommons/)
+
+## Omaha Artists Cooperative Gallery
+Artist-run gallery [Website](https://www.omahaartistscoop.com/)
+
+## Old Market Passageway
+
+Lots of art galleries in an old walled-in alley. Cooler than it sounds. There's a couple shops for spiritual / Buddhist stuff there. [Website](https://omahaexploration.com/2025/12/13/the-old-market-passageway/)
+
+## Garden of the Zodiac
+
+Enigmatic outdoor sculpture garden [IG](https://www.instagram.com/gardenofthezodiac/?hl=en)

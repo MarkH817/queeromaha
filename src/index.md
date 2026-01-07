@@ -3,26 +3,26 @@ title: Queer Community
 layout: layouts/base.njk
 ---
 
-## OmahaForUs
+## OmahaForUs LGBT Center
 
-A safe place to exist. Food pantry, clothes closet, support groups, arts and crafts, and game nights. Free gender-transition clothing and supplies. Name-change clinic. Teen support group and dedicated spaces. Queer reading room and lending library. Internships and work-study.
+A safe place to exist with awesome volunteers. Food pantry, clothes closet, hygiene products, support groups, arts and crafts, sewing classes, drag resources, and game nights. Free gender-transition clothing and supplies. Name-change / legal clinic. Teen events and groups. Queer reading room and lending library. Internships and work-study.
 
-- 18+ Support group ([Signup](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1)) Wed 6-7:30
+- 19+ Peer Support group every Wed 6-7:30 (alternates in-person and virtual) - ([Register here](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1))
+- Food pantry open during operating hours
 - Free STI testing on Thurs 4-6
-- Game night Thurs 5-7 (Jackbox, card games, Nintendo games)
-- Arts and Crafts every other Wed
+- Game night Thurs 5-7 (Jackbox, card games, Mario Kart)
+- 19+ Arts and Crafts every other Wed 6-7:30
 - D&D every other Tues @ 4:30 PM
-- Seasonal events
+- [Teen/youth programs](https://www.omahaforus.org/proud-horizons)
 
-[Calendar](https://www.omahaforus.org/events)
-
-[Community Resources](https://www.omahaforus.org/programs)
+[Calendar](https://www.omahaforus.org/events) 
+[Resources](https://www.omahaforus.org/programs)
 
 ---
 
 ## Out Wild Adventures Social Group
 
-Coffee meets, movie nights, hikes, seasonal parties. Uses GroupMe app for coordination. Well-moderated, often hosts sober events.
+Coffee meets, movie nights, hikes, seasonal parties. Uses GroupMe for coordination. Well-moderated, often hosts sober events.
 
 [Signup (vetted)](https://flow.page/outwildadventures)
 
@@ -30,45 +30,63 @@ Coffee meets, movie nights, hikes, seasonal parties. Uses GroupMe app for coordi
 
 ## TransNebraska Social Group
 
-Small social (not a support) group specifically for Trans* / GNC / Enby people. Moderated by Babs Ramsey.
+Specifically for Trans* / GNC / Enby people. Moderated by Babs Ramsey.
 
 [Signup (vetted)](https://www.transnebraska.online/get-involved)
 
 ---
 
-## Floors Floors Floors (Benson)
-
-Up-and-coming, has cool art, some local shows and queer markets every few months.
-
-[Instagram](https://www.instagram.com/floorsfloorsfloors_7052maple)
+### OATS Trans Social Group
+3rd Saturday of every month from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  
+[Website](https://2uomaha.org/justice/lgbtq)
 
 ---
 
-## OwOmaha Furry Group
+## OwOmaha
 
-"Big tent" place for queers, furries, therians alike to hang out and chill. Active in-person and on Discord. Well-moderated, takes safety of minors seriously. Accomodating to accessibility/neurodivergent needs. Most events are low-cost.
+Place for queers, furries, therians alike to hang out and chill. Active in-person and on Discord / online game events. Well-moderated, takes safety of minors seriously. Accomodating to accessibility/neurodivergent needs. Most events are low-cost.
 
-[Calendar](https://www.owomaha.com/meet-up-calendar)
-
-[Instagram](https://www.instagram.com/owo.omaha/)
-
-[Discord](https://discord.gg/owomaha)
-
-[Telegram Group (broadcast-only)](https://t.me/owo_omaha)
+[Calendar](https://www.owomaha.com/meet-up-calendar) [Discord](https://discord.gg/owomaha) [IG](https://www.instagram.com/owo.omaha/) [Telegram (broadcast-only)](https://t.me/owo_omaha)
 
 ---
 
 ## Sober Socials Omaha
 
-Not specifically queer but it's important to have such spaces.
-
-[Instagram](https://www.instagram.com/sobersocialsomaha/)
+Hikes, ecstatic dance, singing bowls and spiritual singing.
+[IG](https://www.instagram.com/sobersocialsomaha/)
 
 ---
 
 
-## Ananda Yoga Omaha
 
-Yoga classes including ones specifically for femmes and queers to process and work through strong emotions.
+---
 
-[Website](https://www.anandaomaha.com/classes/)
+## No Coast Punk Market
+
+Punk / DIY market held every few months at a local venue.
+
+[IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
+
+---
+
+## Furbraska
+
+Regional furry group
+
+[Telegram](https://t.me/s/furbraska) [FB](https://www.facebook.com/groups/furrbraska/)
+
+---
+
+## AnthroNebraska
+
+Omaha furry group
+
+[Telegram](https://t.me/AnthroNE) [IG](https://www.instagram.com/anthronebraska/?hl=en)
+
+---
+
+## Nebraska Pets and Handlers (NEB-PAH)
+
+Pet play and pup group that operates out of Flixx. Vetted membership.
+
+[FB (events)](https://www.facebook.com/NEBPAH/) [Discord (announcements)](https://discord.gg/nqfkUnr8) [Website](https://www.nebpah.org/) [Telegram (invite-only, active)](https://t.me/+e-BRHkaIC1g5OTMx)
