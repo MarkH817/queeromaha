@@ -80,12 +80,6 @@ Up-and-coming gallery and events space. Has local music and queer markets, inclu
 <a id="midtown"></a>
 ## Midtown
 
-### Aksarben Village
-
-Has art markets and outdoor music in the summer. Inner Rail has a good Momo's place. [Events Calendar](https://www.aksarbenvillage.com/events)
-
----
-
 ### O'Leaver's
 
 Venue for small/medium-sized acts owned by members of Cursive. Gendered bathrooms. [FB](https://www.facebook.com/oleavers/)  [IG](https://www.instagram.com/oleavers/?hl=en)

@@ -38,8 +38,6 @@ Dylan in the group makes [custom synths](https://loess-labs.net/)
 Punk/queer space for provocative art and experimental music. Only open to the public for BFF nights and shows/events. Bathrooms are single-stall.
 [Website](https://www.bffomaha.org/petshop)
 
----
-
 ## Radial Arts Center
 
 Rotating shows by established local artists. Baylee Bennett (expressive realism) and Nolan Bennett (printmaking) are resident artists in the space
@@ -53,13 +51,6 @@ Next to RAC, only open during BFF. Shows smaller local artists. My art piece was
 ## Ming Toy Gallery
 
 Small gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) [Website](https://www.mingtoygallery.com/)
-
-## Culxr House
-
-Black-owned community space that hosts monthly-ish art battles and local shows. Single-stall bathrooms.
-
-[FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
-
 
 ---
 
@@ -88,7 +79,12 @@ New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) 
 
 ---
 
+# Midtown
 <a id="midtown"></a>
+
+## Aksarben Village
+
+Has art markets and outdoor music in the summer. Inner Rail has a good Momo's place. [Events Calendar](https://www.aksarbenvillage.com/events)
 
 ## Samuel Bak Museum 
 
@@ -103,6 +99,14 @@ Apartment complex with art showings/ events. [Events](https://millworkcommons.co
 
 ## Omaha Artists Cooperative Gallery
 Artist-run gallery [Website](https://www.omahaartistscoop.com/)
+
+## Culxr House
+
+Black-owned community space that hosts monthly-ish art battles and local shows. Single-stall bathrooms. Yes, it's north of downtown.
+
+[FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
+
+
 
 ## Old Market Passageway
 
