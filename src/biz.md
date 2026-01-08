@@ -28,7 +28,7 @@ Board game cafe and community space in Midtown Omaha. Huge library of games, foo
 
 ### Ananda Yoga Omaha
 
-Yoga classes and guided meditation. Brooke runs classes on emotional release for femmes and queer/NB/trans people [Website](https://www.anandaomaha.com/classes/)
+Yoga classes and guided meditation. Brooke runs classes on emotional release for femmes and queer/NB/trans people [Classes](https://www.anandaomaha.com/classes/) [Booking](https://www.anandaomaha.com/brooke-monaco-wellness)
 
 ### Honey Locust Sangha
 

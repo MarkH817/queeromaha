@@ -14,13 +14,31 @@ layout: layouts/base.njk
 
 ### OmahaForUs
 
-- Food pantry
-- Hygiene and transition products
-- Clothes closet with private try-on room
-- Free STI testing on Thurs 4-6
 - 19+ Peer Support group every Wed 6-7:30 (alternates in-person and virtual) - ([Register here](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1))
 - 19+ s----- loss survivors group on third Thurs 6-7:30 - [email to signup](bestlife@omahaforus.org)
 - Parents group on third Wed 7-8:30 - [email to signup](bestlife@omahaforus.org)
+
+### Parents of Gender Expansive Youth Support Group
+
+2nd Tues 6:30-8 (virtual)
+[signup via email](megsmiththerapy@outlook.com) megsmiththerapy@outlook.com / 402 871 5920
+
+### Teen / Young Adults Support Group
+
+16-26 y/o Contact jhazuka@regionsix.com / 402-490-2700
+
+### PFLAG Omaha
+
+Parents Support group 2nd Thursday of the month 7PM at Countryside Community Church  
+[Website](http://www.pflag-omaha.org/)
+
+## Food Pantries / Housing
+
+### OmahaForUs
+
+- Food pantry
+- Hygiene and transition products
+- Clothes closet with private try-on room
 
 ### Food Bank for the Heartland
 
@@ -31,27 +49,18 @@ Food Pantry
 
 [Website](https://2uomaha.org/2025/news/little-free-pantry)
 
-### PFLAG Omaha
 
-Parents Support group 2nd Thursday of the month 7PM at Countryside Community Church  
-[Website](http://www.pflag-omaha.org/)
-
-### UNO Queer and Trans Student Alliance (QTS)
-
-Student org. Runs [Queer Prom](https://mavsync.unomaha.edu/organization/qts/events)
-
-[Breakout groups for Black, Bi, Trans folks](https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php)
-
-### Parents of Gender Expansive Youth Support Group
-
-2nd Tues 6:30-8 (virtual)
-[signup via email](megsmiththerapy@outlook.com) megsmiththerapy@outlook.com / 402 871 5920
 
 ---
 
 <a id="medical"></a>
 
 ## Medical
+
+### OmahaForUs
+
+Free STI testing on Thurs 4-6 through Nebraska AIDS Project
+
 
 ### Pride Health Clinic
 
@@ -89,7 +98,7 @@ Abortion resources for the state/region [Website](https://neabortionresources.or
 
 ### Heartland Family Services
 Nonprofit offering mental health counseling, substance use treatment, housing assistance, and family support services. Welcoming to LGBTQ+ individuals and families. Offices in Omaha, Council Bluffs, and surrounding areas.
-[Website](https://heartlandfamilyservice.org/)
+[Website](https://heartlandfamilyservice.org/) [Housing](https://www.heartlandfamilyservice.org/services/heartland-housing-sanctuary/)
 
 ### Community Alliance / Safe Harbor (Omaha)
 Local nonprofit providing mental health services, peer support, housing, and recovery programs. Safe Harbor is their crisis stabilization center, open 24/7 for adults needing immediate support. Welcoming to LGBTQ+ and marginalized communities.

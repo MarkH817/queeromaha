@@ -36,5 +36,5 @@ A guide to creative spaces, resources, and opportunities for making art, music, 
 -->
 ## Grants & Funding
 
-- [Amplify Arts Grants](https://www.amplifyarts.org/) — Omaha-based nonprofit supporting artists and creatives through grants, fellowships, and project funding. Open calls for local and regional artists, with a focus on equity and community impact. Check their website for current opportunities and deadlines.
+- [Amplify Arts Grants](https://www.amplifyarts.org/) — Omaha-based nonprofit supporting artists and creatives through grants, fellowships, and project funding. Open calls for local and regional artists, with a focus on equity and community impact. Check their site for current opportunities and deadlines.
 	- [Alternate Currents](https://www.amplifyarts.org/alternate-currents) — Artist-driven regranting program supporting experimental, collaborative, and community-based projects in Omaha and the region.

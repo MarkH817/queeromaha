@@ -3,16 +3,91 @@ title: Venues
 layout: layouts/base.njk
 ---
 
+[Benson](#benson) | [Midtown](#midtown) | [Downtown](#downtown)
 
-[Downtown](#downtown) | [Benson](#benson) | [Midtown](#midtown)
+- 🚻 = Single-stall available
+- 🛋️ = Decent Seating available
+---
 
-- 🚻 = Single-stall BR
+<a id="benson"></a>
 
+## Benson
+
+### Shakedown Street 🚻
+
+Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). [Website](https://www.facebook.com/shakedownstreettavern/)
+
+### The Waiting Room
+
+Medium venue, gets local and larger acts. [Website](https://www.waitingroomlounge.com/)
+
+### Reverb Lounge 🛋️
+
+Small venue, gets smaller acts than Waiting Room. [Website](https://www.reverblounge.com/)
+
+### The Sydney
+
+Dive bar for local / small acts. Has burlesque shows and drag. [Website](https://thesydneybenson.com/)
+
+### Floors Floors Floors 🚻
+
+Up-and-coming gallery and events space. Has local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple) [FB]()
+
+---
+
+<a id="midtown"></a>
+## Midtown
+
+### O'Leaver's
+
+Bar that gets small/medium acts. [FB](https://www.facebook.com/oleavers/)  [IG](https://www.instagram.com/oleavers/?hl=en)
+
+### B Bar
+
+Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) [FB](https://www.facebook.com/TheB.BarOmaha//)
+
+### Joslyn Castle Carriage House 🚻
+
+Medium-sized space with projector and sound system. Gets local art / music groups. [Calendar](https://www.joslyncastle.com/events/)
+
+### Pageturners Lounge
+
+Bookish bar with local acts. [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en) -->
+
+### Red Lion
+
+Jazz club. [Website](https://www.redlionlounge.com/)
+
+<!-- check it out first
+
+### Second Unitarian Church
+
+Has a stage, seating, PA and projector. Fairly new to hosting music/local events. [Website](https://2uomaha.org/about-us/facility-rental) -->
+
+
+<!-- not open yet
+---
+## North Omaha
+
+### Dreamland Lounge
+TBD, jazz club?
+
+[FB](https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/) -->
+
+
+<!-- no recent events jan '26
+### Culxr House
+
+Black-owned community space that hosts monthly-ish art battles and local shows. Single-stall bathrooms.
+
+[FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
+-->
 ---
 
 <a id="downtown"></a>
 ## Downtown
 
+<!--  dead
 ### The Verdict
 
 Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
@@ -24,76 +99,26 @@ Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
 
 [IG](https://www.instagram.com/verdictbaromaha/)
 [FB](https://www.facebook.com/verdictbaromaha)
-[Site](https://www.theverdictomaha.com/events.html)
+[Website](https://www.theverdictomaha.com/events.html) -->
 
 <!-- if/when it opens
-### Upcoming Goth Club (Old Down Under Location)
+### Goth Club (Old Down Under Location)
 
 New goth/alt club opening soon at the former Down Under Bar location. Details TBD—watch this space for updates!
  -->
----
 
-### Flixx Lounge
+### Sokol (Admiral) 🛋️
 
-Gay bar with drag shows. Gendered bathrooms with plenty of stalls [Site](https://www.flixxlounge.com/upcoming-events)
+Medium-ish venue, gets larger acts. ADA seating upstairs. [Calendar](https://admiralomaha.com/events/)
 
----
+### Steelhouse
 
-<a id="benson"></a>
+New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha.com/events/)
 
-## Benson
+### Slowdown
 
-### Shakedown Street 🚻
+Small-ish venue, local and larger acts. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown)
 
-Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). [Site](https://www.facebook.com/shakedownstreettavern/)
+### Flixx Lounge 🛋️
 
----
-
-### The Waiting Room
-
-Large venue for touring acts, local shows, and dance parties. Hosts a wide range of genres and events. All-ages shows are common. Bathrooms are multi-stall, gendered.
-
-[Site](https://www.waitingroomlounge.com/)
-
----
-
-### Reverb Lounge
-
-Medium-sized venue near The Waiting Room. Hosts indie, punk, electronic, and local acts. Intimate space with a bar and patio. Bathrooms are multi-stall, gendered.
-
-[Site](https://www.reverblounge.com/)
-
----
-
-## Floors Floors Floors 🚻
-
-Up-and-coming gallery and events space. Has local music and queer markets, including the annual Holi-Gays Market (queer holiday market with art, crafts, and gifts from local makers). [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
-
----
-
-<a id="midtown"></a>
-## Midtown
-
-### O'Leaver's
-
-Venue for small/medium-sized acts owned by members of Cursive. Gendered bathrooms. [FB](https://www.facebook.com/oleavers/)  [IG](https://www.instagram.com/oleavers/?hl=en)
-
-### B Bar
-
-Weekly blues shows and local acts. [Site](https://www.thebbaromaha.com/) [FB](https://www.facebook.com/TheB.BarOmaha//)
-
-### Joslyn Castle Carriage House 🚻
-
-Decent-sized space with a screen for visuals and a PA. [Calendar](https://www.joslyncastle.com/events/)
-
-### Second Unitarian Church
-
-Screen for visuals, PA and mixer / setup, tables. Can pay a sound / AV guy if you don't have one.
-
-[Site](https://2uomaha.org/about-us/facility-rental)
-
----
-<!-- go there first
-### Pageturners Lounge
-
-Bookish bar with some local indie acts [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en) -->
+Gay bar with weekly drag shows. Gendered bathrooms with plenty of stalls. [Website](https://www.flixxlounge.com/upcoming-events)
