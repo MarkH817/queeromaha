@@ -24,26 +24,22 @@ layout: layouts/base.njk
 
 ## Music/Art Groups
 
-### Sober Socials Omaha
-
-Hikes, ecstatic dance, singing bowls and spiritual singing. Also on Discord. [IG](https://www.instagram.com/sobersocialsomaha/)
-
 ### Omaha Drum Family
 
-Drum Circle 3rd Friday at Tere Lea's Whole Rejuvenation House (4312 Camden Ave). Jason Horacek has an array of African drums. [FB](https://www.facebook.com/drumomaha/)
+Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave) owned by [Tere Lea](https://www.facebook.com/tere.lea.2025/). Her and [Havalynn Russell](https://www.instagram.com/havalynn1/?hl=en) do singing bowls, [Jason Horacek](https://www.facebook.com/jason.horacek.5/) has an array of African drums. [FB](https://www.facebook.com/drumomaha/)
 
-### No-Coast Noise Collective
+### Sober Socials Omaha
 
-Experimental music and sound art collective. Centered out of Project Project. [IG](https://www.instagram.com/nocoastnoise/) [Website](https://www.nocoastnoise.net/)
+Hikes, ecstatic dance, singing bowls and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
 
 
 ### Soundry Experimental Music Group
 
-Ran by Stacey Barelos, experimental music education and demonstration. [IG](https://www.instagram.com/omahasoundry/) [Site / Mailing List](https://staceybarelos.com/soundry/)
+Ran by Stacey Barelos, experimental music education and demonstration. [IG](https://www.instagram.com/omahasoundry/) [Website](https://staceybarelos.com/soundry/)
 
 ### Modular Synth Group
 
-Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Plug in, hook up, drop out. Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site, has a mailing list managed by Tob. Flyers / info posted around town.
+Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Plug in, hook up, drop out. Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
 
 Members with social presence:
 
@@ -52,9 +48,21 @@ Members with social presence:
 - Mike Machian [photographer](https://www.facebook.com/ShootToFill/)
 - Tob [Mastodon](https://mastodon.sdf.org/@tob)
 
+### No-Coast Noise Collective
+
+Experimental music and sound art collective. Centered out of Project Project. [IG](https://www.instagram.com/nocoastnoise/) [Website](https://www.nocoastnoise.net/)
+
 ### SoundArte
 
 Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) [IG](https://www.instagram.com/soundarte.mx/?hl=en) [Music Label](https://eacrecords.bandcamp.com/)
+
+### No Coast Punk Market
+
+Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
+
+### Collective of Queers
+
+Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
 
 ---
 

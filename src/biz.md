@@ -14,7 +14,7 @@ Queer-friendly tabletop gaming shop and event space in Benson. Offers D&D, board
 
 [Website](https://www.dungeoncrate.com/)
 [Events](https://www.dungeoncrate.com/events-2-1)
-[IG](https://www.instagram.com/dungeon_crate/) [FB](https://www.facebook.com/dungeoncrate)
+[IG](https://www.instagram.com/dungeon_crate/) | [FB](https://www.facebook.com/dungeoncrate)
 
 ### Spielbound Board Game Cafe (Midtown)
 
@@ -48,7 +48,7 @@ High quality piercing shop. Does esoteric stuff.
 
 ### Black Squirrel Tattoo (Midtown, Council Bluffs, West O)
 
-The only place I go. A bit pricier, high-quality. Cash-only. Location on Saddle Creek mostly does bookings and has walk-ins most days (call in advance to confirm) [Website](https://blacksquirreltattoo.com/) [IG](https://www.instagram.com/blacksquirrelomaha/)
+The only place I go. A bit pricier, high-quality. Cash-only. Location on Saddle Creek mostly does bookings and has walk-ins most days (call in advance to confirm) [Website](https://blacksquirreltattoo.com/) | [IG](https://www.instagram.com/blacksquirrelomaha/)
 
 Satellite in West O [Folklore Tattoo](https://folkloretattoo.com/) does both walk-ins and bookings
 

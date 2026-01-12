@@ -31,7 +31,7 @@ Dive bar for local / small acts. Has burlesque shows and drag. [Website](https:/
 
 ### Floors Floors Floors 🚻
 
-Up-and-coming gallery and events space. Has local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple) [FB]()
+Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
 
 ---
 
@@ -54,11 +54,21 @@ Medium-sized space with projector and sound system. Gets local art / music group
 
 Bookish bar with local acts. [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en) -->
 
+### The Breakroom
+
+Punk venue, 4204 Hamilton St [Website](https://omahaunderground.net/venues/the-breakroom)
+
+<!-- I've been there, may be on hiatus, shows in LR and basement. Couple in Gifford Park, Their kids' name is Fox, seem connected w/ community 3504 Cass St
+### The FoxHole
+
+Someone's house. Ask around. Basement shows. [IG](https://www.instagram.com/thefoxholeomaha/?hl=en) -->
+
+<!-- haven't been there.
 ### Red Lion
 
-Jazz club. [Website](https://www.redlionlounge.com/)
+Jazz club. [Website](https://www.redlionlounge.com/) -->
 
-<!-- check it out first
+<!-- nascent, POC Dave Nesbit from synth group. Nice setup, PA, mixer, projector
 
 ### Second Unitarian Church
 
@@ -87,8 +97,16 @@ Black-owned community space that hosts monthly-ish art battles and local shows. 
 <a id="downtown"></a>
 ## Downtown
 
-<!--  dead
-### The Verdict
+### Red Light Lounge (fka The Verdict)
+
+Note: new ownership
+
+- **New Wave Night ([Club Noir](https://www.eventbrite.com/o/noir-omaha-59519005883))**: 1st Saturday
+- **The Slab ([new goth night](https://instagram.com/djlusterdust))**: 2nd Sat
+- **Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/))**: 3rd Sat + special events
+
+<!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. similar ppl run events (DJ barrens, nevermore), 
+### Red Light Lounge (fka The Verdict)
 
 Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
 
@@ -121,4 +139,4 @@ Small-ish venue, local and larger acts. [Calendar](https://theslowdown.com/event
 
 ### Flixx Lounge 🛋️
 
-Gay bar with weekly drag shows. Gendered bathrooms with plenty of stalls. [Website](https://www.flixxlounge.com/upcoming-events)
+Gay bar with weekly drag shows. [Website](https://www.flixxlounge.com/upcoming-events)

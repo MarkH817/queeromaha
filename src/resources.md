@@ -72,7 +72,7 @@ Also operates PHC Aesthetics for laser hair removal etc
 
 ### UNMC Trans Care Center (Omaha)
 
-[Gender-affirming care](https://www.nebraskamed.com/transgender-care) [Voice Training](https://www.unomaha.edu/college-of-education-health-and-human-sciences/special-education-communication-disorders/speech-language-clinic/index.php)
+[Gender-affirming care](https://www.nebraskamed.com/transgender-care) | [Voice Training](https://www.unomaha.edu/college-of-education-health-and-human-sciences/special-education-communication-disorders/speech-language-clinic/index.php)
 
 ### UNL Voice Training (Lincoln)
 
@@ -98,7 +98,7 @@ Abortion resources for the state/region [Website](https://neabortionresources.or
 
 ### Heartland Family Services
 Nonprofit offering mental health counseling, substance use treatment, housing assistance, and family support services. Welcoming to LGBTQ+ individuals and families. Offices in Omaha, Council Bluffs, and surrounding areas.
-[Website](https://heartlandfamilyservice.org/) [Housing](https://www.heartlandfamilyservice.org/services/heartland-housing-sanctuary/)
+[Website](https://heartlandfamilyservice.org/) | [Housing](https://www.heartlandfamilyservice.org/services/heartland-housing-sanctuary/)
 
 ### Community Alliance / Safe Harbor (Omaha)
 Local nonprofit providing mental health services, peer support, housing, and recovery programs. Safe Harbor is their crisis stabilization center, open 24/7 for adults needing immediate support. Welcoming to LGBTQ+ and marginalized communities.
