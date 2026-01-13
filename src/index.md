@@ -37,7 +37,7 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 
 ### OwOmaha
 
-Furry group with in-person / online meetups. Moderated to limit "adult" activity. [Calendar](https://www.owomaha.com/meet-up-calendar) [Discord](https://discord.gg/owomaha) [IG](https://www.instagram.com/owo.omaha/) [Telegram](https://t.me/owo_omaha)
+Furry group with in-person / online meetups. Well moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) [Discord](https://discord.gg/owomaha) [IG](https://www.instagram.com/owo.omaha/) [Telegram](https://t.me/owo_omaha)
 
 <!-- ongoing?
 ### BFF Queer Nite
@@ -51,15 +51,15 @@ Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.faceboo
 
 ### Ananda Yoga Omaha
 
-Brooke runs a "Mad Girls Club" class on emotional release - one is that's queer and trans specific and PWYC [Classes](https://www.anandaomaha.com/classes/) | [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+Brooke runs a "Mad Girls Club" queer emotional release class (PWYC) on Sundays @ 12:30 [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
 ### Honey Locust Sangha
 
-[Progressive Buddhist](https://plumvillage.org/articles/expanding-the-spectrum-of-love) tradition started by [Thich Nahn Hanh](https://plumvillage.org/articles/homosexuality-and-discrimination). Mondays 6:30PM-8:15PM at Yoga Path for sitting meditation and talk. silent meditations,  and retreats. [Website](https://www.honeylocustsangha.org/)
+Progressive Buddhist tradition started by activist monk Thich Nahn Hanh. Mondays 6:30PM-8:15PM at Yoga Path for sitting meditation and talk. [Website](https://www.honeylocustsangha.org/)
 
 ### Nebraska Zen Center
 
-Queer supportive tradition including queer visiting priests and sangha members. Sundays 9:45AM to noon for sitting meditation and talk. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/)
+US branch of Zen out of San Francisco. Has queer visiting priests. Sundays 9:45AM to noon for sitting meditation and talk. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/)
 
 ---
 <!-- unverified, I don't have FB
