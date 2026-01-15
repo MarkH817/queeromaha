@@ -138,7 +138,3 @@ New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha
 ### Slowdown
 
 Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown)
-
-### Flixx Lounge 🛋️
-
-Gay bar with weekly drag shows. [Website](https://www.flixxlounge.com/upcoming-events)
