@@ -15,9 +15,10 @@ A guide to creative spaces, resources, and opportunities for making art, music, 
 - Opportunities for collaboration and exhibition
 - Local creative organizations
 
+### Local Artists Local Art
+Runs payphone installation and other funding
 
-
-
+https://lalaomaha.org/
 
 ## Featured Creative Spaces
 

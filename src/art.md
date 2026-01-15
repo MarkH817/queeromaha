@@ -3,20 +3,17 @@ title: Art
 layout: layouts/base.njk
 ---
 
+## Art Events
+
 [Listings](#listings) | [Groups](#groups) | [Benson](#benson) | [Downtown](#downtown) | [Midtown](#midtown) | [South Omaha](#south-omaha)
 
 - 🚻 = Single-stall available
 
 <a id="listings"></a>
-## Event Listings
 
-[OmahaUnderground.NET](https://omahaunderground.net)
+## Listings
 
-[Omaha Buzz](https://omahabuzz.substack.com/)
-
-[Omaha Blues Society](https://omahablues.com/events/)
-
-[Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/)
+[OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) | [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/)
 
 ---
 
@@ -30,12 +27,25 @@ Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave) owned by [T
 
 ### Sober Socials Omaha
 
-Hikes, ecstatic dance, singing bowls and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
+Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
+
+<!-- not relevant for most people
+### SoundArte
+
+Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) [IG](https://www.instagram.com/soundarte.mx/?hl=en) [Music Label](https://eacrecords.bandcamp.com/) -->
+
+### No Coast Punk Market
+
+Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
+
+### Collective of Queers
+
+Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
 
 
 ### Soundry Experimental Music Group
 
-Ran by Stacey Barelos, experimental music education and demonstration. [IG](https://www.instagram.com/omahasoundry/) [Website](https://staceybarelos.com/soundry/)
+Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.instagram.com/omahasoundry/) [Website](https://staceybarelos.com/soundry/)
 
 ### Modular Synth Group
 
@@ -52,18 +62,6 @@ Members with social presence:
 
 Experimental music and sound art collective. Centered out of Project Project. [IG](https://www.instagram.com/nocoastnoise/) [Website](https://www.nocoastnoise.net/)
 
-### SoundArte
-
-Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) [IG](https://www.instagram.com/soundarte.mx/?hl=en) [Music Label](https://eacrecords.bandcamp.com/)
-
-### No Coast Punk Market
-
-Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
-
-### Collective of Queers
-
-Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
-
 ---
 
 <a id="benson"></a>
@@ -77,11 +75,7 @@ Punk/queer space for provocative art and experimental music. [IG](https://www.in
 
 ### MaMo Gallery
 
-Mobile gallery, sometimes parked near Petshop. Shows smaller local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) [FB](https://www.facebook.com/MaMOgallery/) [Website](https://www.bffomaha.org/mamo)
-
-### Trudy's
-
-Open artist studios and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/)
+Mobile gallery, often parked near Petshop. Shows smaller local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) [FB](https://www.facebook.com/MaMOgallery/) [Website](https://www.bffomaha.org/mamo)
 
 ### Maple Street Construct
 
@@ -93,11 +87,16 @@ Large gallery showing larger local artists. [Website](https://www.radialartscent
 
 ### BFF Gallery
 
-Small gallery smaller local artists. [IG](https://www.instagram.com/thebffgallery/?hl=en)
+Small gallery showing smaller local artists. [IG](https://www.instagram.com/thebffgallery/?hl=en)
 
 ### Ming Toy Gallery
 
-Small gallery with interesting shows next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) [Website](https://www.mingtoygallery.com/)
+Small but interesting gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) [Website](https://www.mingtoygallery.com/)
+<!-- 
+### Trudy's
+
+Open artist studios and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/) -->
+
 
 ---
 
@@ -135,7 +134,7 @@ Art markets and outdoor music in the summer. Get the Momos at Inner Rail. [Event
 
 ### Samuel Bak Museum
 
-Holocaust survivor's art in Aksarben. Has art workshops and education programs. [Website](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/index.php/)
+Small Holocaust survivor's art museum with workshops and education programs. [Website](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/index.php/)
 
 ---
 

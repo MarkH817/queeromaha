@@ -56,11 +56,11 @@ Food Pantry
 <a id="medical"></a>
 
 ## Medical
-
+<!-- update after reopen
 ### OmahaForUs
 
-Free STI testing on Thurs 4-6 through Nebraska AIDS Project
-
+Free STI testing on Thurs 4-6
+ -->
 
 ### Pride Health Clinic
 
@@ -78,10 +78,13 @@ Also operates PHC Aesthetics for laser hair removal etc
 
 [Voice Training](https://cehs.unl.edu/secd/gender-diverse-communication-services/)
 
+### Nebraska AIDS Project
+
+PReP consults, Free testing, food pantry, support groups,  [Website](https://www.nap.org/)
+
 ### Heartland Center for Reproductive Medicine
 
-Fertility services in Omaha with queer experience
-[Website](https://www.hcrmfertility.com/services/lgbtq-family-building/)
+Fertility services in Omaha with queer experience [Website](https://www.hcrmfertility.com/services/lgbtq-family-building/)
 
 ### Planned Parenthood Omaha
 
@@ -89,25 +92,17 @@ Gender-affirming care, Plan B, STI testing, mental health, birth control, aborti
 
 ### NEAR (Nebraska Abortion Resources)
 
-Abortion resources for the state/region [Website](https://neabortionresources.org/resources/)
+Abortion resources for the state/region [Website](https://neabortionresources.org/resources/) [Clinic List](https://abortionclinics.org/omaha/abortion-clinic-omaha-ne/)
 
-## Legal
+## Crisis Support
 
-[Website](https://abortionclinics.org/omaha/abortion-clinic-omaha-ne/)
+### Community Alliance - Safe Harbor
 
+Crisis support in-person Mon-Fri: 8:30am - 4:30pm. 7150 Arbor St, Omaha (72nd and Center-ish, has bus stop)  [Website](https://community-alliance.org/) [Hotline / Door Access](tel://+14023425128)
 
 ### Heartland Family Services
-Nonprofit offering mental health counseling, substance use treatment, housing assistance, and family support services. Welcoming to LGBTQ+ individuals and families. Offices in Omaha, Council Bluffs, and surrounding areas.
-[Website](https://heartlandfamilyservice.org/) | [Housing](https://www.heartlandfamilyservice.org/services/heartland-housing-sanctuary/)
 
-### Community Alliance / Safe Harbor (Omaha)
-Local nonprofit providing mental health services, peer support, housing, and recovery programs. Safe Harbor is their crisis stabilization center, open 24/7 for adults needing immediate support. Welcoming to LGBTQ+ and marginalized communities.
-[Website](https://community-alliance.org/)
-
-
-### Nebraska AIDS Project
-HIV/STI testing, prevention, education, and support services for LGBTQ+ and all communities. Offers free and confidential testing, case management, and community outreach. Offices in Omaha, Lincoln, and statewide.
-[Website](https://www.nap.org/)
+Crisis support in-person 24/7. 302 American Pkwy, Papillion, NE 68046 and 1515 Avenue J, Council Bluffs, IA 51501. [Website](https://www.heartlandfamilyservice.org/services/crisis-center/) | [Housing](https://www.heartlandfamilyservice.org/services/heartland-housing-sanctuary/) | [NE Hotline](tel://+4029901659) | [IA Hotline](tel://+7123255657)
 
 ---
 

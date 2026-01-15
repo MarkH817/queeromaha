@@ -3,6 +3,8 @@ title: Venues
 layout: layouts/base.njk
 ---
 
+## Venues
+
 [Benson](#benson) | [Midtown](#midtown) | [Downtown](#downtown)
 
 - 🚻 = Single-stall available
@@ -19,17 +21,17 @@ Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesi
 
 ### The Waiting Room
 
-Medium venue, gets local and larger acts. [Website](https://www.waitingroomlounge.com/)
+Medium venue for local and large-ish acts. Very little / uncomfortable seating. [Website](https://www.waitingroomlounge.com/)
 
 ### Reverb Lounge 🛋️
 
-Small venue, gets smaller acts than Waiting Room. [Website](https://www.reverblounge.com/)
+Small venue for smaller acts. OK seating for a venue. [Website](https://www.reverblounge.com/)
 
-### The Sydney
+### The Sydney 🚻
 
-Dive bar for local / small acts. Has burlesque shows and drag. [Website](https://thesydneybenson.com/)
+Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Website](https://thesydneybenson.com/)
 
-### Floors Floors Floors 🚻
+### Floors Floors Floors 🚻🛋️
 
 Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
 
@@ -97,7 +99,7 @@ Black-owned community space that hosts monthly-ish art battles and local shows. 
 <a id="downtown"></a>
 ## Downtown
 
-### Red Light Lounge (fka The Verdict)
+### Red Light Lounge (fka The Verdict) 🛋️
 
 Note: new ownership
 
@@ -135,7 +137,7 @@ New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha
 
 ### Slowdown
 
-Small-ish venue, local and larger acts. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown)
+Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown)
 
 ### Flixx Lounge 🛋️
 

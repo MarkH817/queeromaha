@@ -3,20 +3,6 @@ title: Queer
 layout: layouts/base.njk
 ---
 
-## OmahaForUs
-
-Hub of social activity and resources: food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study.
-<!-- update after they move
-- 19+ Peer Support group every Wed 6-7:30 (alternates in-person and virtual) - ([Register here](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1))
-- Food pantry open during operating hours
-- Free STI testing on Thurs 4-6
-- Game night Thurs 5-7 (Jackbox, card games, Mario Kart)
-- 19+ Arts and Crafts every other Wed 6-7:30
-- D&D every other Tues @ 4:30 PM
-- [Teen/youth programs](https://www.omahaforus.org/proud-horizons) -->
-[Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
-
----
 ## Social Groups
 
 ### Out Wild Adventures
@@ -43,6 +29,21 @@ Furry group with in-person / online meetups. Well moderated. [Calendar](https://
 ### BFF Queer Nite
 
 Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.facebook.com/queernite/) -->
+---
+
+## OmahaForUs
+
+Hub of social activity and resources: food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study.
+<!-- update after they move
+- 19+ Peer Support group every Wed 6-7:30 (alternates in-person and virtual) - ([Register here](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1))
+- Food pantry open during operating hours
+- Free STI testing on Thurs 4-6
+- Game night Thurs 5-7 (Jackbox, card games, Mario Kart)
+- 19+ Arts and Crafts every other Wed 6-7:30
+- D&D every other Tues @ 4:30 PM
+- [Teen/youth programs](https://www.omahaforus.org/proud-horizons) -->
+[Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
+
 
 ---
 ## Spiritual Stuff
@@ -74,7 +75,7 @@ Student org. Runs [Queer Prom](https://mavsync.unomaha.edu/organization/qts/even
 
 [Breakout groups for Black, Bi, Trans folks](https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php) -->
 
-<!-- 
+<!-- these are smaller / more niche
 ## Furbraska
 
 Regional furry group

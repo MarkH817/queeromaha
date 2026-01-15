@@ -3,31 +3,24 @@ title: Cafes
 layout: layouts/base.njk
 ---
 
-
-# Queer-Supportive Cafes
+## Queer-Supportive Cafes
 
 - 🚻 = Single-stall available
 - 🛋️ = Decent Seating available
 
-
 ### Mill on Leavenworth (Midtown) 🛋️
 
-Large popular cafe. [Website](https://millcoffee.com/)
-
-
+Large popular cafe. Lots of seating, often full. Has good drip decaf. Food is overpriced. [Website](https://millcoffee.com/)
 
 ### Roast Coffeehouse (Aksarben Village + 114th & Blondo) 🚻
 
-Great people, coffee and pastries. Aksarben location has limited seating. [Website](https://www.roastcoffeehouse.com/)
+Great people, coffee and pastries. Aksarben location has limited seating. Doesn't sell lunch. [Website](https://www.roastcoffeehouse.com/)
 
 
 ### Spielbound (Midtown) 🚻
 
-Board game cafe, popular so may need a reservation (made at walk-in time or via a group) [Website](https://www.spielbound.com/how-to-spielbound) | [Meetup](https://www.meetup.com/playing-games-at-spielbound/) 
+Board game cafe. Weekends you'll probably need a reservation (made at walk-in time). Lots of meetups. Food limited to candy and pizza. [Website](https://www.spielbound.com/how-to-spielbound) | [Active public Meetup](https://www.meetup.com/playing-games-at-spielbound/) 
 <!-- | [Possibly inactive trans meetup](https://www.facebook.com/events/1312754133797586/) -->
-
-
-
 
 <!-- quality may have gone to shit, worker pay issues
 ## Hardy Coffee (Benson, etc) 🛋️ 🚻
@@ -36,23 +29,22 @@ Chill hipster cafe. [IG](https://www.instagram.com/hardycoffeeco/?hl=en) [FB](ht
 
 ### Edge of the Universe Cafe (Benson) 🚻 🛋️
 
-Truly unique place, the owners are artists who build out themed art every few months. Good for intimate dates. [Website](https://www.edgeoftheuniverseomaha.com/)
-
+Truly unique place, the owners are artists who build out themed art every few months. Great for intimate dates and post-BFF chilling. OK coffee, pricy pastries. [Website](https://www.edgeoftheuniverseomaha.com/)
 
 
 ### Legends Comics & Coffee (Benson) 🚻 🛋️
 
-Comic shop with queer section. Has board game meetups in the backroom. [FB](https://www.facebook.com/LegendComics/) | [IG](https://www.instagram.com/legendcomicsandcoffee/?hl=en)
+Comic shop with a large queer section. Has board game meetups in the backroom. I didn't like the coffee. [FB](https://www.facebook.com/LegendComics/) | [IG](https://www.instagram.com/legendcomicsandcoffee/?hl=en)
 
 
 ### Blue Line Coffee (Dundee) 🚻
 
-Limited seating, lots of flyers for local shows and events. [FB](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727) | [IG](https://www.instagram.com/bluelinecoffeeomaha/?hl=en)
+Very limited seating, lots of flyers for local shows and events. I like the coffee. Doesn't sell lunch. [FB](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727) | [IG](https://www.instagram.com/bluelinecoffeeomaha/?hl=en)
 
 
 ### Archetype Coffee (Blackstone & Little Bohemia) 🚻
 
-Great coffee, their Lil BoHo location has brunch from Know Good. Limited and very uncomfortable seating. [Website](https://archetypecoffee.com/)
+Great coffee, their Lil BoHo location has brunch from Know Good. Decent sized but uncomfortable seating. [Website](https://archetypecoffee.com/)
 
 
 ### Sweet Magnolias (Bemis Park, Downtown)
@@ -62,19 +54,18 @@ Queer pastry shop, takeout only. [IG](https://www.instagram.com/sweetmagnoliasba
 
 ### Amateur Coffee (Bemis Park)
 
-Next to Sweet Mags. Takeout coffee in glass containers with deposit. Very little / uncomfortable seating. Small back patio. [IG](https://www.instagram.com/amateurcoffee/?hl=en) | [FB](https://www.instagram.com/amateurcoffee) | [Website](https://www.amateurcoffee.com/)
+Pricy. Takeout coffee comes in glass containers with deposit. Doesn't sell lunch. Limited and uncomfortable seating [IG](https://www.instagram.com/amateurcoffee/?hl=en) | [FB](https://www.instagram.com/amateurcoffee) | [Website](https://www.amateurcoffee.com/)
 
 
 
 ### Urban Abbey (Downtown) 🛋️
 
-Progressive Methodist cafe / bookstore with a queer section. [Website](https://www.urbanabbeyomaha.com/)
+Progressive Methodist cafe / bookstore with a queer section. Chill place to hang out. Doesn't sell lunch. I didn't like their coffee. [Website](https://www.urbanabbeyomaha.com/)
 
+<!-- visit first
+### Reading Room (Downtown) 
 
-
-### Reading Room (Downtown)
-
-Bookstore cafe with a poetry open mic night. [FB](https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/) | [IG](https://www.instagram.com/reading_room_omaha/) | [Website](https://readingroomomaha.com/events/) 
+Bookstore cafe with a poetry open mic night. [FB](https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/) | [IG](https://www.instagram.com/reading_room_omaha/) | [Website](https://readingroomomaha.com/events/)  -->
 
 <!-- go there first 
 ## Rally Coffee (Downtown)
@@ -85,7 +76,7 @@ Renowed cafe downtown. [Website](https://www.rallycoffee.co/pages/locations) -->
 
 ### Zen Coffee (Downtown, West O) 🚻
 
-Good place to study / work. [IG](https://www.instagram.com/zencoffeeco/?hl=en) | [FB](https://www.facebook.com/zencoffeecompany/) | [Website](https://www.zencoffeecompany.com/)
+OK coffee. Seating is limited and uncomfortable. Doesn't sell lunch. [IG](https://www.instagram.com/zencoffeeco/?hl=en) | [FB](https://www.facebook.com/zencoffeecompany/) | [Website](https://www.zencoffeecompany.com/)
 
 <!-- recommended, haven't been there
 
@@ -93,6 +84,6 @@ Good place to study / work. [IG](https://www.instagram.com/zencoffeeco/?hl=en) |
 
 [IG](https://www.instagram.com/howlinhounds/?hl=en) -->
 
-### Karma Koffee (West O) 🚻
+### Karma Koffee (West O) 🚻 🛋️
 
-Legit Buddhist decor, fairly small space. [FB](https://www.facebook.com/karmakoffeeomaha/) | [IG](https://www.instagram.com/karma_koffee/?hl=en) | [Website](https://www.karmakoffee.com/)
+Nice theme and decor, good coffee. Has pricy lunch / breakfast sandwiches. [FB](https://www.facebook.com/karmakoffeeomaha/) | [IG](https://www.instagram.com/karma_koffee/?hl=en) | [Website](https://www.karmakoffee.com/)
