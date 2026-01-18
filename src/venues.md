@@ -15,25 +15,25 @@ layout: layouts/base.njk
 
 ## Benson
 
+### Floors Floors Floors 🚻🛋️
+
+Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
+
 ### Shakedown Street 🚻
 
 Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). [Website](https://www.facebook.com/shakedownstreettavern/)
 
 ### The Waiting Room
 
-Medium venue for local and large-ish acts. Very little / uncomfortable seating. [Website](https://www.waitingroomlounge.com/)
+Mid-size venue for local and large-ish acts. Very little seating. [Website](https://www.waitingroomlounge.com/)
 
 ### Reverb Lounge 🛋️
 
-Small venue for smaller acts. OK seating for a venue. [Website](https://www.reverblounge.com/)
+Small venue for local/mid-sized acts. OK seating. [Website](https://www.reverblounge.com/)
 
 ### The Sydney 🚻
 
 Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Website](https://thesydneybenson.com/)
-
-### Floors Floors Floors 🚻🛋️
-
-Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
 
 ---
 
@@ -52,13 +52,14 @@ Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) [FB]
 
 Medium-sized space with projector and sound system. Gets local art / music groups. [Calendar](https://www.joslyncastle.com/events/)
 
-### Pageturners Lounge
+<!-- ### Pageturners Lounge
 
 Bookish bar with local acts. [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en) -->
 
+<!-- 
 ### The Breakroom
 
-Punk venue, 4204 Hamilton St [Website](https://omahaunderground.net/venues/the-breakroom)
+Punk venue, 4204 Hamilton St [Website](https://omahaunderground.net/venues/the-breakroom) -->
 
 <!-- I've been there, may be on hiatus, shows in LR and basement. Couple in Gifford Park, Their kids' name is Fox, seem connected w/ community 3504 Cass St
 ### The FoxHole
@@ -101,11 +102,9 @@ Black-owned community space that hosts monthly-ish art battles and local shows. 
 
 ### Red Light Lounge (fka The Verdict) 🛋️
 
-Note: new ownership
-
-- **New Wave Night ([Club Noir](https://www.eventbrite.com/o/noir-omaha-59519005883))**: 1st Saturday
-- **The Slab ([new goth night](https://instagram.com/djlusterdust))**: 2nd Sat
-- **Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/))**: 3rd Sat + special events
+- New Wave Night ([Club Noir](https://www.eventbrite.com/o/noir-omaha-59519005883))**: 1st Saturday
+- The Slab ([new goth night](https://instagram.com/djlusterdust))**: 2nd Sat
+- Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/)): 3rd Sat + special events
 
 <!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. similar ppl run events (DJ barrens, nevermore), 
 ### Red Light Lounge (fka The Verdict)
@@ -130,10 +129,10 @@ New goth/alt club opening soon at the former Down Under Bar location. Details TB
 ### Sokol (Admiral) 🛋️
 
 Medium-ish venue, gets larger acts. ADA seating upstairs. [Calendar](https://admiralomaha.com/events/)
-
+<!-- 
 ### Steelhouse
 
-New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha.com/events/)
+New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha.com/events/) -->
 
 ### Slowdown
 

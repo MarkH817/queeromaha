@@ -38,10 +38,6 @@ Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo mus
 
 Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
 
-### Collective of Queers
-
-Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
-
 
 ### Soundry Experimental Music Group
 
@@ -73,13 +69,6 @@ Open galleries, shows, artist markets. [Benson First Fridays (BFF)](https://www.
 
 Punk/queer space for provocative art and experimental music. [IG](https://www.instagram.com/petshopgallery/?hl=en) [Website](https://www.bffomaha.org/petshop)
 
-### MaMo Gallery
-
-Mobile gallery, often parked near Petshop. Shows smaller local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) [FB](https://www.facebook.com/MaMOgallery/) [Website](https://www.bffomaha.org/mamo)
-
-### Maple Street Construct
-
-Minimalist art space. Has a cool upstairs. [Website](https://www.maplestconstruct.com/) [FB](https://www.facebook.com/maplestconstruct/)
 
 ### Radial Arts Center 🚻
 
@@ -92,6 +81,14 @@ Small gallery showing smaller local artists. [IG](https://www.instagram.com/theb
 ### Ming Toy Gallery
 
 Small but interesting gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) [Website](https://www.mingtoygallery.com/)
+
+### Maple Street Construct
+
+Minimalist art space. Has a cool upstairs. [Website](https://www.maplestconstruct.com/) [FB](https://www.facebook.com/maplestconstruct/)
+
+### MaMo Gallery
+
+Mobile gallery, often parked near Petshop. Shows smaller local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) [FB](https://www.facebook.com/MaMOgallery/) [Website](https://www.bffomaha.org/mamo)
 <!-- 
 ### Trudy's
 
@@ -103,7 +100,7 @@ Open artist studios and free workshops ran by BFF. [Website](https://www.bffomah
 <a id="south-omaha"></a>
 # South Omaha
 
-Local galleries / venues on 2nd Fridays [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/)
+[Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) 2nd Fridays  
 
 ### Church Art House 🚻
 
