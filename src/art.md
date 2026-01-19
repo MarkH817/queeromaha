@@ -45,14 +45,14 @@ Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.
 
 ### Modular Synth Group
 
-Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Plug in, hook up, drop out. Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
-
+Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
+<!-- 
 Members with social presence:
 
 - Aaron Gum [musician IG](https://www.instagram.com/aarongum/)
 - Dylan Barry [custom synths](https://loess-labs.net/)
 - Mike Machian [photographer](https://www.facebook.com/ShootToFill/)
-- Tob [Mastodon](https://mastodon.sdf.org/@tob)
+- Tob [Mastodon](https://mastodon.sdf.org/@tob) -->
 
 ### No-Coast Noise Collective
 
