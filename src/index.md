@@ -31,6 +31,10 @@ Monthly online Trans* group ran by Babs Ramsey. [Signup (vetted)](https://www.tr
 
 Social group for Trans Masc folks. [Signup (vetted)](https://secondsunday.xyz/meet-up)
 
+### (remote) San Mateo Pride Center groups
+
+Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Trans](https://tinyurl.com/smpctransgroup)
+
 ### Open Arms Trans Social Group (OATS)
 
 Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq)
@@ -39,6 +43,9 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 
 Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) [Discord](https://discord.gg/owomaha) [IG](https://www.instagram.com/owo.omaha/) [Telegram](https://t.me/owo_omaha)
 
+### No Coast Punk Market
+
+Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
 
 ### Collective of Queers
 

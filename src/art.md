@@ -29,16 +29,6 @@ Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave) owned by [T
 
 Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
 
-<!-- not relevant for most people
-### SoundArte
-
-Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) [IG](https://www.instagram.com/soundarte.mx/?hl=en) [Music Label](https://eacrecords.bandcamp.com/) -->
-
-### No Coast Punk Market
-
-Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
-
-
 ### Soundry Experimental Music Group
 
 Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.instagram.com/omahasoundry/) [Website](https://staceybarelos.com/soundry/)
@@ -46,6 +36,10 @@ Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.
 ### Modular Synth Group
 
 Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
+
+### SoundArte
+
+Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) [IG](https://www.instagram.com/soundarte.mx/?hl=en) [Music Label](https://eacrecords.bandcamp.com/) -->
 <!-- 
 Members with social presence:
 
