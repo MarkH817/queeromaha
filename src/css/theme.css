@@ -121,16 +121,16 @@ main {
 footer {
   background: #6d28d9;
   color: #fff;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   letter-spacing: 0.05em;
   position: relative;
-  text-align: center;
+  text-align: end;
 }
 
 footer div {
   display: flex;
-  gap: 1rem;
+  gap:1.5rem;
   position: absolute;
   left: 1rem;
   top: 50%;
