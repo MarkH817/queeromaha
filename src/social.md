@@ -5,9 +5,11 @@ layout: layouts/base.njk
 
 ## Social Groups
 
-### OmahaForUs 
+### OmahaForUs
 
 Hub of social activity and resources
+[Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
+
 <!-- food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. -->
 
 <!-- - 19+ Peer Support group every Wed 6-7:30 (alternates in-person and virtual) - ([Register here](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1))
@@ -17,7 +19,6 @@ Hub of social activity and resources
 - 19+ Arts and Crafts every other Wed 6-7:30
 - D&D every other Tues @ 4:30 PM
 - [Teen/youth programs](https://www.omahaforus.org/proud-horizons)  -->
-[Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
 
 ### Out Wild Adventures
 

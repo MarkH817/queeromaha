@@ -92,7 +92,7 @@ Black-owned community space that hosts monthly-ish art battles and local shows. 
 
 [FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
 -->
-<!-- 
+<!-- pulled due to comment on 'safety' on noir's page. I trust them, there's queers there. something funky's going on w/ new ownership, and industrial night guy is a bit wonky anyway. https://www.instagram.com/noiromaha/?hl=en
 ### Red Light Lounge (fka The Verdict) 🛋️
 
 - New Wave Night ([)): 1st Saturday
