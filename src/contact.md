@@ -16,8 +16,9 @@ layout: layouts/base.njk
   </p>
   
   <p>
-
+    <label>Your Message:
     <textarea id="message" name="message" required rows="8" placeholder="Suggest an event, a local maker, a venue, or tell me a joke!" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit;"></textarea>
+    </label>
   </p>
   
   <p>
