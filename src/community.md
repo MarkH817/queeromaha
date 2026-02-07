@@ -26,6 +26,17 @@ Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts so
 
 Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
 
+### Ananda Yoga
+
+Queer and Trans* PWYC "Mad Girl" class on Sundays @ 12:30 50th and Dodge. Park in the back, go in the backdoor and all the way down the stairs. Other free classes. [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+
+<!-- 
+### Open Arms Trans Social Group (OATS)
+
+Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq) -->
+
+---
+
 ### TransNebraska
 
 Monthly online Trans* group ran by Babs Ramsey. [Signup (vetted)](https://www.transnebraska.online/get-involved)
@@ -38,10 +49,6 @@ Social group for Trans Masc folks. [Signup (vetted)](https://secondsunday.xyz/me
 
 Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Trans](https://tinyurl.com/smpctransgroup) -->
 
-### Open Arms Trans Social Group (OATS)
-
-Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq)
-
 ### OwOmaha
 
 Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
@@ -51,22 +58,15 @@ Furry group with in-person / online meetups. Moderated. [Calendar](https://www.o
 
 Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.facebook.com/queernite/) -->
 
----
-## Spiritual
-
-### Ananda Yoga Omaha
-
-Brooke runs a "Mad Girls Club" queer emotional release class (PWYC) on Sundays @ 12:30 [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
-
+<!-- just felt weird
 ### Honey Locust Sangha
 
 Informal group meditation on Mondays @ 6:30PM-8:15PM at Yoga Path 72nd and Pacific. [Website](https://www.honeylocustsangha.org/)
 
 ### Nebraska Zen Center
 
-Zazen and dharma talk on Sundays @ 9:45AM to noon at NZC 38th and Farnam. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/)
+Zazen and dharma talk on Sundays @ 9:45AM to noon at NZC 38th and Farnam. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/) -->
 
----
 <!-- unverified, I don't have FB
 ### Omaha LGBT* Group
 

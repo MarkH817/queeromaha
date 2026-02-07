@@ -13,7 +13,7 @@ Inclusion on this site is not an endorsement. Please keep yourself safe.
 
 [Let me know!](/contact)
 
-I don't list bars that aren't also venues. I prefer lesser-known things.
+I don't list bars that aren't also venues. I prefer lesser-known things. 
 
 Lack of inclusion does not imply judgement or knowledge on my part.
 

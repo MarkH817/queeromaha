@@ -89,7 +89,7 @@ North O place for exhibits, studios, classes, and talks. [Website](https://www.u
 <a id="south-omaha"></a>
 ## South Omaha
 
-Friday2 on Vinton - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
+[Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
 
 ### Church Art House 🚻
 
@@ -120,7 +120,7 @@ New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) 
 
 ### Aksarben Village 🚻
 
-Mix of normies and queers. Art markets and outdoor music in the summer. Get the Momos at Inner Rail. [Events Calendar](https://www.aksarbenvillage.com/events)
+Art market and outdoor music in the summer. Get the Momos at Inner Rail. [Events](https://www.aksarbenvillage.com/events)
 
 ### Samuel Bak Museum
 
@@ -138,7 +138,7 @@ Monthly arts and spirituality event series at Urban Abbey. Features workshops, p
 
 ### Low End at Bemis
 
-Experimental music series at Bemis Center featuring (inter)national artists. [Website](https://www.bemiscenter.org/programs/low-end)
+Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org/programs/low-end)
 
 ### Millwork Commons 🚻
 

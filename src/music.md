@@ -3,10 +3,6 @@ title: Music
 layout: layouts/base.njk
 ---
 
-<a id="benson"></a>
-
-## Benson
-
 ### Floors Floors Floors 🚻🛋️
 
 Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
@@ -21,28 +17,30 @@ Mid-size venue for local and large-ish acts. Very little seating. [Website](http
 
 ### Reverb Lounge 🛋️
 
-Small venue for local/mid-sized acts. OK seating. [Website](https://www.reverblounge.com/)
+Decent space for local acts. [Website](https://www.reverblounge.com/)
 
 ### The Sydney 🚻
 
 Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Website](https://thesydneybenson.com/)
 
----
+### Culxr House
 
-<a id="midtown"></a>
-## Midtown
+Black-owned community space for shows and art events. [FB](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
+
+
+---
 
 ### O'Leaver's
 
-Bar that gets small/medium acts. [FB](https://www.facebook.com/oleavers/) | [IG](https://www.instagram.com/oleavers/?hl=en)
-
+Did you know it's owned by members of the band Cursive? [FB](https://www.facebook.com/oleavers/) | [IG](https://www.instagram.com/oleavers/?hl=en)
+<!-- 
 ### B Bar
 
-Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [FB](https://www.facebook.com/TheB.BarOmaha//)
+Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [FB](https://www.facebook.com/TheB.BarOmaha//) -->
 
 ### Joslyn Castle Carriage House 🚻
 
-Medium-sized space with projector and sound system. Gets local art / music groups. [Calendar](https://www.joslyncastle.com/events/)
+Ye Olde Garage [Website](https://www.joslyncastle.com/events/)
 
 
 ### No Coast Punk Market
@@ -51,7 +49,7 @@ Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_om
 
 ### Goth Night (Noir Omaha)
 
-In transition after The Verdict changed ownership. Queer/trans continent at that venue, watch this space. Events at Joslyn Carriage House, Shakedown Street, O'Leavers.
+In transition from The Verdict, at Joslyn Carriage House, Shakedown Street, O'Leavers.
 [Website](https://www.instagram.com/noiromaha/) | [IG](https://www.instagram.com/noiromaha/?hl=en) | [FB](https://www.facebook.com/NoirOmaha/)
 
 <!-- ### Pageturners Lounge
@@ -89,21 +87,18 @@ TBD, jazz club?
 
 [FB](https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/) -->
 
-
-### Culxr House
-
-Black-owned community space for shows and art events. [FB](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
-
 <!-- pulled due to comment on 'safety' on noir's page. I trust them, there's queers there. something funky's going on w/ new ownership, and industrial night guy is a bit wonky anyway. https://www.instagram.com/noiromaha/?hl=en
 
 seems like a local modeling group has collab'd with the slab
-https://www.instagram.com/the_mourning_dolls/
+https://www.instagram.com/the_mourning_dolls/ -->
 
 ### Red Light Lounge (fka The Verdict) 🛋️
 
-- New Wave Night ([)): 1st Saturday
-- The Slab ([new goth night](https://instagram.com/djlusterdust)): 2nd Sat
-- Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/)): 3rd Sat + special events -->
+NOTE under new ownership as of Jan '26. I don't have a lot of information.
+
+[The Slab](https://instagram.com/djlusterdust) on 2nd Saturdays
+
+[Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
 
 <!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. Unclear who owns it. Seems like a weird scene. similar ppl run events (DJ barrens, nevermore), 
 ### Red Light Lounge (fka The Verdict)
