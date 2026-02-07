@@ -3,10 +3,6 @@ title: Cafes
 layout: layouts/base.njk
 ---
 
-## Queer-Supportive Cafes
-
-- 🚻 = Single-stall available
-- 🛋️ = Decent Seating available
 
 ### Roast Coffeehouse (Aksarben Village + 114th & Blondo) 🚻
 

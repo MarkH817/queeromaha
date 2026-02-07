@@ -3,20 +3,6 @@ title: Art
 layout: layouts/base.njk
 ---
 
-## Art Events
-
-[Listings](#listings) | [Groups](#groups) | [Benson](#benson) | [Downtown](#downtown) | [Midtown](#midtown) | [South Omaha](#south-omaha)
-
-- 🚻 = Single-stall available
-
-<a id="listings"></a>
-
-## Listings
-
-[OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) | [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/)
-
----
-
 <a id="groups"></a>
 
 ## Music/Art Groups
@@ -55,7 +41,7 @@ Experimental music and sound art collective. Centered out of Project Project. [I
 ---
 
 <a id="benson"></a>
-# Benson
+## Benson
 
 Open galleries, shows, artist markets. [Benson First Fridays (BFF)](https://www.bffomaha.org/)
 
@@ -92,7 +78,7 @@ Open artist studios and free workshops ran by BFF. [Website](https://www.bffomah
 ---
 
 <a id="south-omaha"></a>
-# South Omaha
+## South Omaha
 
 [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) 2nd Fridays  
 
@@ -117,11 +103,11 @@ New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) 
 ---
 <a id="midtown"></a>
 
-# Midtown
+## Midtown
 
 ### Aksarben Village 🚻
 
-Art markets and outdoor music in the summer. Get the Momos at Inner Rail. [Events Calendar](https://www.aksarbenvillage.com/events)
+Mix of normies and queers. Art markets and outdoor music in the summer. Get the Momos at Inner Rail. [Events Calendar](https://www.aksarbenvillage.com/events)
 
 ### Samuel Bak Museum
 

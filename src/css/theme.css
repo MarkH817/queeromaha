@@ -10,7 +10,7 @@ body {
   flex-direction: column;
 }
 header {
-  background: #7c3aed;
+  background: #6d28d9;
   color: #fff;
   padding: 0.35rem 0 0 0;
   box-shadow: 0 2px 8px rgba(124,58,237,0.08);
@@ -26,10 +26,27 @@ nav a {
   margin: 0 1.2rem;
   font-weight: 500;
   transition: color 0.2s;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
 }
 nav a:hover {
   color: #e9d5ff;
 }
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Emoji tooltip styles */
+span[title] {
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+}
+
+span[title]:hover {
+  opacity: 0.8;
+}
+
 
 main {
   flex: 1;
@@ -49,9 +66,14 @@ footer {
   letter-spacing: 0.05em;
 }
 
-h1, h2, h3 {
+h1, h3 {
   margin-top: 0;
   margin-bottom: 0.2rem;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 p {

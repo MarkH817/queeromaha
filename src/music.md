@@ -3,14 +3,6 @@ title: Music
 layout: layouts/base.njk
 ---
 
-## Music
-
-[Benson](#benson) | [Midtown](#midtown) | [Downtown](#downtown)
-
-- 🚻 = Single-stall available
-- 🛋️ = Decent Seating available
----
-
 <a id="benson"></a>
 
 ## Benson

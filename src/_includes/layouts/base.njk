@@ -24,5 +24,64 @@
   <footer>
     <p>You are not alone.</p>
   </footer>
+  <script>
+    // Emoji tooltip mapping
+    const emojiMap = {
+      '🚻': 'Gender-neutral bathroom',
+      '🛋️': 'Decent Seating available',
+      '🏳️‍🌈': 'Confirmed queer owned',
+    };
+
+    // Add titles to emojis in main content
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+      const walker = document.createTreeWalker(
+        mainContent,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+      );
+
+      let node;
+      const nodesToReplace = [];
+
+      while (node = walker.nextNode()) {
+        const text = node.textContent;
+        let hasEmoji = false;
+
+        for (const emoji in emojiMap) {
+          if (text.includes(emoji)) {
+            hasEmoji = true;
+            break;
+          }
+        }
+
+        if (hasEmoji) {
+          nodesToReplace.push(node);
+        }
+      }
+
+      nodesToReplace.forEach(node => {
+        let html = node.textContent;
+        for (const emoji in emojiMap) {
+          const title = emojiMap[emoji];
+          html = html.replace(new RegExp(emoji.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), 
+                             `<span title="${title}">${emoji}</span>`);
+        }
+        const temp = document.createElement('span');
+        temp.innerHTML = html;
+        node.replaceWith(...temp.childNodes);
+      });
+    }
+
+    // Highlight the current page's nav link
+    const links = document.querySelectorAll('nav a');
+    const currentPath = window.location.pathname;
+    links.forEach(link => {
+      if (link.pathname === currentPath || link.pathname === currentPath.replace(/\/$/, '')) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
