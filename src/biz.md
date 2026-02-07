@@ -12,23 +12,20 @@ layout: layouts/base.njk
 
 Queer-friendly tabletop gaming shop and event space in Benson. Offers D&D, board games, dice, miniatures, and regular community game nights. Welcoming to all identities. Hosts events for LGBTQ+ and allied gamers.
 
-[Website](https://www.dungeoncrate.com/)
-[Events](https://www.dungeoncrate.com/events-2-1)
-[IG](https://www.instagram.com/dungeon_crate/) | [FB](https://www.facebook.com/dungeoncrate)
+[Website](https://www.dungeoncrate.com/) | [Events](https://www.dungeoncrate.com/events-2-1) | [IG](https://www.instagram.com/dungeon_crate/) | [FB](https://www.facebook.com/dungeoncrate)
 
 ### Spielbound Board Game Cafe (Midtown)
 
 Board game cafe and community space in Midtown Omaha. Huge library of games, food and drinks, regular events, and a welcoming environment for all identities. Family-friendly and LGBTQ+ inclusive.
 
-[Website](https://spielbound.org/)
-[IG](https://www.instagram.com/spielbound/)
+[Website](https://spielbound.org/) | [IG](https://www.instagram.com/spielbound/)
 
 
 ## Spiritual Stuff
 
 ### Ananda Yoga Omaha
 
-Yoga classes and guided meditation. Brooke runs classes on emotional release for femmes and queer/NB/trans people [Classes](https://www.anandaomaha.com/classes/) [Booking](https://www.anandaomaha.com/brooke-monaco-wellness)
+Yoga classes and guided meditation. Brooke runs classes on emotional release for femmes and queer/NB/trans people [Classes](https://www.anandaomaha.com/classes/) | [Booking](https://www.anandaomaha.com/brooke-monaco-wellness)
 
 ### Honey Locust Sangha
 

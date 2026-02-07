@@ -34,11 +34,11 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Web
 
 ### O'Leaver's
 
-Bar that gets small/medium acts. [FB](https://www.facebook.com/oleavers/)  [IG](https://www.instagram.com/oleavers/?hl=en)
+Bar that gets small/medium acts. [FB](https://www.facebook.com/oleavers/) | [IG](https://www.instagram.com/oleavers/?hl=en)
 
 ### B Bar
 
-Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) [FB](https://www.facebook.com/TheB.BarOmaha//)
+Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [FB](https://www.facebook.com/TheB.BarOmaha//)
 
 ### Joslyn Castle Carriage House 🚻
 
@@ -47,7 +47,7 @@ Medium-sized space with projector and sound system. Gets local art / music group
 
 ### No Coast Punk Market
 
-Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
+Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) | [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
 
 <!-- ### Pageturners Lounge
 
@@ -85,13 +85,10 @@ TBD, jazz club?
 [FB](https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/) -->
 
 
-<!-- no recent events jan '26
 ### Culxr House
 
-Black-owned community space that hosts monthly-ish art battles and local shows. Single-stall bathrooms.
+Black-owned community space for shows and art events. [FB](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
 
-[FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
--->
 <!-- pulled due to comment on 'safety' on noir's page. I trust them, there's queers there. something funky's going on w/ new ownership, and industrial night guy is a bit wonky anyway. https://www.instagram.com/noiromaha/?hl=en
 ### Red Light Lounge (fka The Verdict) 🛋️
 

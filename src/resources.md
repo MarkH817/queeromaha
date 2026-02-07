@@ -128,7 +128,7 @@ Fertility services in Omaha with queer experience [Website](https://www.hcrmfert
 
 ### NEAR (Nebraska Abortion Resources)
 
-Abortion resources for the state/region [Website](https://neabortionresources.org/resources/) [Clinic List](https://abortionclinics.org/omaha/abortion-clinic-omaha-ne/)
+Abortion resources for the state/region [Website](https://neabortionresources.org/resources/) | [Clinic List](https://abortionclinics.org/omaha/abortion-clinic-omaha-ne/)
 
 ---
 
@@ -136,7 +136,7 @@ Abortion resources for the state/region [Website](https://neabortionresources.or
 
 ### Community Alliance - Safe Harbor
 
-Crisis support in-person Mon-Fri: 8:30am - 4:30pm. 7150 Arbor St, Omaha (72nd and Center-ish, has bus stop)  [Website](https://community-alliance.org/) [Hotline / Door Access](tel://+14023425128)
+Crisis support in-person Mon-Fri: 8:30am - 4:30pm. 7150 Arbor St, Omaha (72nd and Center-ish, has bus stop)  [Website](https://community-alliance.org/) | [Hotline / Door Access](tel://+14023425128)
 
 ### Heartland Family Services
 

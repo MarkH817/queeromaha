@@ -46,7 +46,7 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 
 ### OwOmaha
 
-Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) [Discord](https://discord.gg/owomaha) [IG](https://www.instagram.com/owo.omaha/) [Telegram](https://t.me/owo_omaha)
+Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 <!-- ongoing?
 ### BFF Queer Nite
@@ -56,18 +56,17 @@ Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.faceboo
 ---
 ## Spiritual
 
-
-### Honey Locust Sangha
-
-Progressive Buddhist tradition, Mondays 6:30PM-8:15PM at Yoga Path for sitting meditation and talk. [Website](https://www.honeylocustsangha.org/)
-
-### Nebraska Zen Center
-
-Queer-informed, Sundays 9:45AM to noon for sitting meditation and talk. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/)
-
 ### Ananda Yoga Omaha
 
 Brooke runs a "Mad Girls Club" queer emotional release class (PWYC) on Sundays @ 12:30 [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+
+### Honey Locust Sangha
+
+Informal group meditation on Mondays @ 6:30PM-8:15PM at Yoga Path 72nd and Pacific. [Website](https://www.honeylocustsangha.org/)
+
+### Nebraska Zen Center
+
+Zazen and dharma talk on Sundays @ 9:45AM to noon at NZC 38th and Farnam. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/)
 
 ---
 <!-- unverified, I don't have FB
