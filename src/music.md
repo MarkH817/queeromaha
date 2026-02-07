@@ -14,10 +14,10 @@ Gallery and events space with local music and queer markets. [IG](https://www.in
 ### Shakedown Street 🚻
 
 Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). [Website](https://www.facebook.com/shakedownstreettavern/)
-
+<!-- 
 ### The Waiting Room
 
-Mid-size venue for local and large-ish acts. Very little seating. [Website](https://www.waitingroomlounge.com/)
+Mid-size venue for local and large-ish acts. Very little seating. [Website](https://www.waitingroomlounge.com/) -->
 
 ### Reverb Lounge 🛋️
 
@@ -48,6 +48,11 @@ Medium-sized space with projector and sound system. Gets local art / music group
 ### No Coast Punk Market
 
 Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) | [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
+
+### Goth Night (Noir Omaha)
+
+In transition after The Verdict changed ownership. Queer/trans continent at that venue, watch this space. Events at Joslyn Carriage House, Shakedown Street, O'Leavers.
+[Website](https://www.instagram.com/noiromaha/) | [IG](https://www.instagram.com/noiromaha/?hl=en) | [FB](https://www.facebook.com/NoirOmaha/)
 
 <!-- ### Pageturners Lounge
 
@@ -90,13 +95,17 @@ TBD, jazz club?
 Black-owned community space for shows and art events. [FB](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
 
 <!-- pulled due to comment on 'safety' on noir's page. I trust them, there's queers there. something funky's going on w/ new ownership, and industrial night guy is a bit wonky anyway. https://www.instagram.com/noiromaha/?hl=en
+
+seems like a local modeling group has collab'd with the slab
+https://www.instagram.com/the_mourning_dolls/
+
 ### Red Light Lounge (fka The Verdict) 🛋️
 
 - New Wave Night ([)): 1st Saturday
 - The Slab ([new goth night](https://instagram.com/djlusterdust)): 2nd Sat
 - Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/)): 3rd Sat + special events -->
 
-<!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. similar ppl run events (DJ barrens, nevermore), 
+<!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. Unclear who owns it. Seems like a weird scene. similar ppl run events (DJ barrens, nevermore), 
 ### Red Light Lounge (fka The Verdict)
 
 Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
@@ -106,9 +115,6 @@ Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
 - **Goth Night ([Club Noir](https://www.eventbrite.com/o/noir-omaha-59519005883))**: 3rd Sat
 - **Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/))**: Last Sat + special events
 
-[IG](https://www.instagram.com/verdictbaromaha/)
-[FB](https://www.facebook.com/verdictbaromaha)
-[Website](https://www.theverdictomaha.com/events.html) -->
 
 <!-- if/when it opens
 ### Goth Club (Old Down Under Location)

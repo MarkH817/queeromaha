@@ -3,8 +3,20 @@ title: About
 layout: layouts/base.njk
 ---
 
-## Who Am I?
-Tara (xe/her), artist, musician as [null/V01D](https://omahaunderground.net/nullvoid). You've probably seen me around town. I'm bald, have a beard, agender, genderfluid, nonbinary, usually wear women's yoga clothes or all-black, sometimes wear a dog collar.
+## Why is something included?
 
-## What is this list?
-Non-comprehensive list of cool stuff in town. 
+I believe it's queer-owned or enthusiastically supportive.
+
+Inclusion on this site is not an endorsement. Please keep yourself safe.
+
+## Why isn't the thing I like included?
+
+[Let me know!](/contact)
+
+I don't list bars that aren't also venues. I prefer lesser-known things.
+
+Lack of inclusion does not imply judgement or knowledge on my part.
+
+## Why is this thing I don't like included?
+
+Contact me with direct knowledge for why something should not be listed.

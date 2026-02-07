@@ -25,7 +25,7 @@ Chill hipster cafe. [IG](https://www.instagram.com/hardycoffeeco/?hl=en) [FB](ht
 
 ### Edge of the Universe Cafe (Benson) 🚻 🛋️
 
-Truly unique place, the owners are artists who build out themed art every few months.[Website](https://www.edgeoftheuniverseomaha.com/)
+Truly unique place, the owners are artists who build out themed art every few months. [Website](https://www.edgeoftheuniverseomaha.com/)
 
 
 ### Legends Comics & Coffee (Benson) 🚻 🛋️

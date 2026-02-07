@@ -3,10 +3,6 @@ title: Art
 layout: layouts/base.njk
 ---
 
-<a id="groups"></a>
-
-## Music/Art Groups
-
 ### Sober Socials Omaha
 
 Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
@@ -14,7 +10,6 @@ Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobe
 ### Soundry Experimental Music Group
 
 Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.instagram.com/omahasoundry/) | [Website](https://staceybarelos.com/soundry/)
-
 
 ### Omaha Drum Family
 
@@ -26,7 +21,7 @@ Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically).
 
 ### SoundArte
 
-Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) | [IG](https://www.instagram.com/soundarte.mx/?hl=en) | [Music Label](https://eacrecords.bandcamp.com/) -->
+Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) | [IG](https://www.instagram.com/soundarte.mx/?hl=en) | [Music Label](https://eacrecords.bandcamp.com/)
 <!-- 
 Members with social presence:
 

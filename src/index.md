@@ -6,8 +6,8 @@ permalink: /index.html
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/social/">
-<script>window.location.replace('/social/');</script>
+<meta http-equiv="refresh" content="0; url=/community/">
+<script>window.location.replace('/community/');</script>
 </head>
 <body></body>
 </html>
