@@ -3,6 +3,10 @@ title: Music
 layout: layouts/base.njk
 ---
 
+[OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) 
+
+<!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
+
 ### Low End at Bemis
 
 Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org/programs/low-end)
