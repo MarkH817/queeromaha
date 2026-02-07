@@ -31,10 +31,39 @@ Email signup: <megsmiththerapy@outlook.com> / 402 871 5920
 Parents Support group 2nd Thursday of the month 7PM at Countryside Community Church  
 [Website](http://www.pflag-omaha.org/)
 
+### Spirit Rock Rainbow Sangha
+
+LGBTQIA+ sangha, Wednesdays 5:30-7:00 PM PT (online via Zoom, donation-based)
+[Register/More Info](https://spirit-rock.secure.retreat.guru/program/rainbow-sangha-06rs26/)
+
+### SFZC Queer Dharma Group
+
+Queer-centered sangha, various Saturdays 1:00 PM PT (online)
+[Calendar/More Info](https://www.sfzc.org/practice-centers/city-center/zen-meditation-practice-city-center/practice-groups-city-center/queer-dharma) 
+
+### Upaya Queer and Trans Sangha
+
+Monthly online sangha (Zoom), 7:00 PM Mountain Time
+Meets first Thursday of each month (Feb 5, Mar 5, Apr 2, May 7, Jun 4, Jul 2, Aug 6, Sep 3, Oct 1, Nov 5, Dec 3)
+[Register/More Info](https://www.upaya.org/program/queer-and-trans-zazen-online-2025/)
+
+### Alphabet Sangha
+
+LGBTQIA+ sangha, Tuesdays 7:00 PM PST (online & hybrid—in-person 1st & 3rd Tuesdays)
+Free, donations welcome
+[More Info](https://alphabet.eastbaymeditation.org/)
+
+### Q Sangha
+
+Queer sangha for LGBTQIA+ and allies, 4th Saturday of each month 7:30-9:00 PM CDT
+In-person at 2929 24th Street (SF) or [Online Zoom](https://bit.ly/qsangha)
+Free, donations welcome
+[More Info](https://sfdharmacollective.org/events/r/hybrid-q-sangha)
+
 <a id="food-housing"></a>
 
 ---
-<!-- after they reopen
+
 ## Food Pantries / Housing
 
 ### OmahaForUs
@@ -42,7 +71,7 @@ Parents Support group 2nd Thursday of the month 7PM at Countryside Community Chu
 - Food pantry
 - Hygiene and transition products
 - Clothes closet with private try-on room
-- Private Shower -->
+- Private Shower
 
 ### Food Bank for the Heartland
 
