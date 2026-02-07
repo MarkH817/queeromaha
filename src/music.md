@@ -3,6 +3,12 @@ title: Music
 layout: layouts/base.njk
 ---
 
+### Low End at Bemis
+
+Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org/programs/low-end)
+
+---
+
 ### Floors Floors Floors 🚻🛋️
 
 Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)

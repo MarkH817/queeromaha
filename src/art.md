@@ -5,7 +5,7 @@ layout: layouts/base.njk
 
 ### Sober Socials Omaha
 
-Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
+Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer. [IG](https://www.instagram.com/sobersocialsomaha/)
 
 ### Soundry Experimental Music Group
 
@@ -13,15 +13,15 @@ Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.
 
 ### Omaha Drum Family
 
-Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave) [FB](https://www.facebook.com/drumomaha/) | [Havalynn Russell](https://www.instagram.com/havalynn1/?hl=en) | [Tere Lea](https://www.facebook.com/tere.lea.2025/)
-
+Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave). Also at Church Art House. [FB](https://www.facebook.com/drumomaha/) | [singing bowls w/ Havalynn Russell](https://www.instagram.com/havalynn1/?hl=en) | [Tere Lea](https://www.facebook.com/tere.lea.2025/)
+<!-- 
 ### Modular Synth Group
 
-Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
-
+Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site. -->
+<!-- 
 ### SoundArte
 
-Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) | [IG](https://www.instagram.com/soundarte.mx/?hl=en) | [Music Label](https://eacrecords.bandcamp.com/)
+Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) | [IG](https://www.instagram.com/soundarte.mx/?hl=en) | [Music Label](https://eacrecords.bandcamp.com/) -->
 <!-- 
 Members with social presence:
 
@@ -36,49 +36,12 @@ Experimental music and sound art collective. Centered out of Project Project. [I
 
 ---
 
-<a id="benson"></a>
-## Benson
-
-[Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets. 
-
-### Petshop 🚻
-
-Punk/queer space for provocative art and experimental music. [IG](https://www.instagram.com/petshopgallery/?hl=en) | [Website](https://www.bffomaha.org/petshop)
-
-
-### Radial Arts Center 🚻
-
-Large gallery showing larger local artists. [Website](https://www.radialartscenter.org/)
-
-### BFF Gallery
-
-Small gallery showing smaller local artists. [IG](https://www.instagram.com/thebffgallery/?hl=en)
-
-### Ming Toy Gallery
-
-Small but interesting gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) | [Website](https://www.mingtoygallery.com/)
-
-### Maple Street Construct
-
-Minimalist art space. Has a cool upstairs. [Website](https://www.maplestconstruct.com/) | [FB](https://www.facebook.com/maplestconstruct/)
-
-### MaMo Gallery
-
-Mobile gallery, often parked near Petshop. Shows smaller local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) | [FB](https://www.facebook.com/MaMOgallery/) | [Website](https://www.bffomaha.org/mamo)
-<!-- 
-### Trudy's
-
-Open artist studios and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/) -->
-
----
 ## North Omaha
-
 
 ### Culxr House
 
 Black-owned community space for shows and art events.
 [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [FB](https://www.facebook.com/culxrhouse/)
-
 
 ### Union for Contemporary Art
 
@@ -114,6 +77,42 @@ Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Frid
 New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) [Events](https://clover24.org/events) -->
 
 ---
+
+<a id="benson"></a>
+## Benson
+
+[Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets. 
+
+### Petshop 🚻
+
+Punk/queer space for provocative art and experimental music. [IG](https://www.instagram.com/petshopgallery/?hl=en) | [Website](https://www.bffomaha.org/petshop)
+
+
+<!-- ### Radial Arts Center 🚻
+
+Large gallery showing larger local artists. [Website](https://www.radialartscenter.org/) -->
+
+### BFF Gallery
+
+Punk local gallery. [IG](https://www.instagram.com/thebffgallery/?hl=en)
+<!-- 
+### Ming Toy Gallery
+
+Small gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) | [Website](https://www.mingtoygallery.com/)
+
+### Maple Street Construct
+
+Minimalist space with a cool upstairs. [Website](https://www.maplestconstruct.com/) | [FB](https://www.facebook.com/maplestconstruct/)
+ -->
+### MaMo Gallery
+
+Mobile gallery often parked near Petshop showing local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) | [FB](https://www.facebook.com/MaMOgallery/) | [Website](https://www.bffomaha.org/mamo)
+<!-- 
+### Trudy's
+
+Open artist studios and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/) -->
+
+---
 <a id="midtown"></a>
 
 ## Midtown
@@ -124,7 +123,7 @@ Art market and outdoor music in the summer. Get the Momos at Inner Rail. [Events
 
 ### Samuel Bak Museum
 
-Small Holocaust survivor's art museum with workshops and education programs. [Website](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/index.php/)
+Holocaust survivor's art museum with workshops and education programs. [Website](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/index.php/)
 
 ---
 
