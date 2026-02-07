@@ -116,7 +116,7 @@ Small Holocaust survivor's art museum with workshops and education programs. [We
 
 ---
 
-# Downtown
+## Downtown
 
 <a id="downtown"></a>
 <!-- go to at least one before listing it. Is there a better direct link?
@@ -136,6 +136,10 @@ Apartment complex with art showings/ events. [Events](https://millworkcommons.co
 
 Artist-run gallery. [Website](https://www.omahaartistscoop.com/)
 
+### Hot Shops
+
+[Website](https://www.hotshopsartcenter.com/) | [IG](https://www.instagram.com/hotshopsartcenter/?hl=en) | [FB](https://www.facebook.com/hotshopsartcenter/)
+<!-- 
 ### Old Market Passageway
 
 Alley with small art galleries. [Website](https://omahaexploration.com/2025/12/13/the-old-market-passageway/)
@@ -144,4 +148,4 @@ Check out the nearby Garden of the Zodiac [IG](https://www.instagram.com/gardeno
 
 ### Joslyn 🚻
 
-Free museum with events. [Website](https://joslyn.org/visit/calendar/)
+Free museum with events. [Website](https://joslyn.org/visit/calendar/) -->
