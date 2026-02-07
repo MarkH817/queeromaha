@@ -12,11 +12,13 @@ body {
 header {
   background: #7c3aed;
   color: #fff;
-  padding: 0.35rem 0 0.25rem 0;
+  padding: 0.35rem 0 0 0;
   box-shadow: 0 2px 8px rgba(124,58,237,0.08);
 }
 nav {
   text-align: center;
+  padding: 0.2rem 0;
+  margin: 0;
 }
 nav a {
   color: #fff;
@@ -32,11 +34,11 @@ nav a:hover {
 main {
   flex: 1;
   max-width: 700px;
-  margin: 0.2rem auto 0.5rem auto;
+  margin: 0 auto 0.5rem auto;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(124,58,237,0.07);
-  padding: 0.4rem 0.7rem;
+  padding: 0.3rem 0.7rem;
 }
 footer {
   background: #4b206b;
@@ -45,4 +47,14 @@ footer {
   padding: 0.2rem 0;
   font-size: 1rem;
   letter-spacing: 0.05em;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+p {
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
 }
