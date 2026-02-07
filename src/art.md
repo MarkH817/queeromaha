@@ -7,10 +7,6 @@ layout: layouts/base.njk
 
 ## Music/Art Groups
 
-### Omaha Drum Family
-
-Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave) owned by [Tere Lea](https://www.facebook.com/tere.lea.2025/). Her and [Havalynn Russell](https://www.instagram.com/havalynn1/?hl=en) do singing bowls, [Jason Horacek](https://www.facebook.com/jason.horacek.5/) has an array of African drums. [FB](https://www.facebook.com/drumomaha/)
-
 ### Sober Socials Omaha
 
 Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobersocialsomaha/)
@@ -18,6 +14,11 @@ Hikes, ecstatic dance and spiritual singing. [IG](https://www.instagram.com/sobe
 ### Soundry Experimental Music Group
 
 Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.instagram.com/omahasoundry/) [Website](https://staceybarelos.com/soundry/)
+
+
+### Omaha Drum Family
+
+Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave) [FB](https://www.facebook.com/drumomaha/) | [Havalynn Russell (singing bowls)](https://www.instagram.com/havalynn1/?hl=en) | [Tere Lea (owns the place)](https://www.facebook.com/tere.lea.2025/)
 
 ### Modular Synth Group
 

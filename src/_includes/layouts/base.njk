@@ -10,12 +10,9 @@
   <header>
     <nav>
       <a href="/social/">Social</a>
-      <span class="nav-sep">|</span>
-        <a href="/art/">Art</a>
-        <span class="nav-sep">|</span>
-        <a href="/cafes/">Cafes</a>
-        <span class="nav-sep">|</span>
-        <a href="/music/">Music</a>
+      <a href="/art/">Art</a>
+      <a href="/cafes/">Cafes</a>
+      <a href="/music/">Music</a>
     </nav>
   </header>
   <main>
@@ -32,55 +29,44 @@
       '🏳️‍🌈': 'Confirmed queer owned',
     };
 
-    // Add titles to emojis in main content
-    const mainContent = document.querySelector('main');
-    if (mainContent) {
-      const walker = document.createTreeWalker(
-        mainContent,
-        NodeFilter.SHOW_TEXT,
-        null,
-        false
-      );
+    // Wrap emojis with tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+      const main = document.querySelector('main');
+      if (!main) return;
 
-      let node;
-      const nodesToReplace = [];
-
-      while (node = walker.nextNode()) {
-        const text = node.textContent;
-        let hasEmoji = false;
-
-        for (const emoji in emojiMap) {
-          if (text.includes(emoji)) {
-            hasEmoji = true;
-            break;
-          }
-        }
-
-        if (hasEmoji) {
-          nodesToReplace.push(node);
-        }
+      // Process the entire main content
+      let html = main.innerHTML;
+      
+      // Replace each emoji with wrapped version
+      for (const [emoji, description] of Object.entries(emojiMap)) {
+        const wrapped = `<span title="${description}">${emoji}</span>`;
+        html = html.split(emoji).join(wrapped);
       }
+      
+      main.innerHTML = html;
 
-      nodesToReplace.forEach(node => {
-        let html = node.textContent;
-        for (const emoji in emojiMap) {
-          const title = emojiMap[emoji];
-          html = html.replace(new RegExp(emoji.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), 
-                             `<span title="${title}">${emoji}</span>`);
+      // Open external links in new tab (without switching focus)
+      const mainLinks = document.querySelectorAll('main a');
+      mainLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Open external links in new tab (those that start with http/https or mailto)
+        if (href && (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:'))) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(href, '_blank');
+          });
+          link.setAttribute('rel', 'noopener noreferrer');
         }
-        const temp = document.createElement('span');
-        temp.innerHTML = html;
-        node.replaceWith(...temp.childNodes);
       });
-    }
 
-    // Highlight the current page's nav link
-    const links = document.querySelectorAll('nav a');
-    const currentPath = window.location.pathname;
-    links.forEach(link => {
-      if (link.pathname === currentPath || link.pathname === currentPath.replace(/\/$/, '')) {
-        link.classList.add('active');
-      }
+      // Highlight the current page's nav link
+      const links = document.querySelectorAll('nav a');
+      const currentPath = window.location.pathname;
+      links.forEach(link => {
+        if (link.pathname === currentPath || link.pathname === currentPath.replace(/\/$/, '')) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>

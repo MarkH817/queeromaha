@@ -92,16 +92,12 @@ Black-owned community space that hosts monthly-ish art battles and local shows. 
 
 [FB](https://www.facebook.com/culxrhouse/) [Website](https://www.culxrhouse.com/) [IG](https://www.instagram.com/culxrhouse/) [Art battle IG](https://www.instagram.com/artbattleomaha/)
 -->
----
-
-<a id="downtown"></a>
-## Downtown
-
+<!-- 
 ### Red Light Lounge (fka The Verdict) 🛋️
 
-- New Wave Night ([Club Noir](https://www.eventbrite.com/o/noir-omaha-59519005883))**: 1st Saturday
-- The Slab ([new goth night](https://instagram.com/djlusterdust))**: 2nd Sat
-- Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/)): 3rd Sat + special events
+- New Wave Night ([)): 1st Saturday
+- The Slab ([new goth night](https://instagram.com/djlusterdust)): 2nd Sat
+- Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/)): 3rd Sat + special events -->
 
 <!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. similar ppl run events (DJ barrens, nevermore), 
 ### Red Light Lounge (fka The Verdict)
@@ -122,15 +118,15 @@ Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
 
 New goth/alt club opening soon at the former Down Under Bar location. Details TBD—watch this space for updates!
  -->
-
+<!-- 
 ### Sokol (Admiral) 🛋️
 
 Medium-ish venue, gets larger acts. ADA seating upstairs. [Calendar](https://admiralomaha.com/events/)
 <!-- 
 ### Steelhouse
 
-New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha.com/events/) -->
+New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha.com/events/)
 
 ### Slowdown
 
-Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown)
+Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown) -->

@@ -12,50 +12,106 @@ body {
 header {
   background: #6d28d9;
   color: #fff;
-  padding: 0.35rem 0 0 0;
+  padding: 0;
   box-shadow: 0 2px 8px rgba(124,58,237,0.08);
 }
 nav {
+  display: flex;
+  gap: 0;
   text-align: center;
-  padding: 0.2rem 0;
+  padding: 0;
   margin: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1.2rem;
+  flex: 1;
+  color: #fffaf0;
+  background: transparent;
+  border: none;
+  margin: 0;
   font-weight: 500;
-  transition: color 0.2s;
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 1rem 0.8rem 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  border-bottom: none;
 }
 nav a:hover {
   color: #e9d5ff;
+  background-color: rgba(255, 255, 255, 0.05);
 }
+
 nav a.active {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;}
 
 /* Emoji tooltip styles */
 span[title] {
   cursor: help;
+  position: relative;
   border-bottom: 1px dotted currentColor;
 }
 
-span[title]:hover {
-  opacity: 0.8;
+span[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 0.6rem;
+  background: #333;
+  color: #fff;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  z-index: 1000;
+  margin-bottom: 0.3rem;
+  pointer-events: none;
+}
+
+span[title]:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #333;
+  margin-bottom: -0.2rem;
+  z-index: 1000;
+  pointer-events: none;
 }
 
 
 main {
   flex: 1;
   max-width: 700px;
+  width: 100%;
   margin: 0 auto 0.5rem auto;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(124,58,237,0.07);
-  padding: 0.3rem 0.7rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  main {
+    max-width: 100%;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin: 0 0.25rem 0.5rem 0.25rem;
+    padding: 1rem;
+  }
 }
 footer {
   background: #4b206b;
@@ -79,4 +135,16 @@ h2 {
 p {
   margin-top: 0.2rem;
   margin-bottom: 1rem;
+}
+
+/* Link styles */
+main a {
+  color: #0563c1;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid #e9d5ff;
+}
+
+main a:hover {
+  color: #0563c1;
 }
