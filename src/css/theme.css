@@ -134,7 +134,7 @@ footer {
 footer div {
   display: flex;
   gap:1.5rem;
-  position: absolute;
+  position: fixed;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
