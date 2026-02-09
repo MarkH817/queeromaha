@@ -127,14 +127,14 @@ footer {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   letter-spacing: 0.05em;
-  position: relative;
+  position: sticky;
   text-align: center;
 }
 
 footer div {
   display: flex;
   gap:1.5rem;
-  position: fixed;
+  position: absolute;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
