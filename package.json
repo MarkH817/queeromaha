@@ -1,6 +1,6 @@
 {
-  "name": "coolstuffinomaha.biz",
-  "version": "1.0.0",
+  "name": "queeromaha.com",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "db:studio": "netlify dev:exec drizzle-kit studio"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "drizzle-kit": "^0.31.8"
