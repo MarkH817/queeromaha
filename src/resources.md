@@ -7,6 +7,9 @@ layout: layouts/base.njk
 
 ---
 
+<!-- outdated, focused on stabilization / housing. Has youth stuff and FBB stuff but not much I don't already have. >
+[Huespring list ](https://www.huespring.org/community-resources/#social)
+
 <a id="support-groups"></a>
 
 ## Support Groups
