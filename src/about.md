@@ -15,7 +15,7 @@ Inclusion on this site is not an endorsement. Please keep yourself safe.
 
 I don't list bars that aren't also venues. I prefer lesser-known things. 
 
-Lack of inclusion does not imply judgement or knowledge on my part.
+Lack of inclusion does not imply judgement on my part.
 
 ## Why is this thing I don't like included?
 
