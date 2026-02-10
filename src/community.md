@@ -1,5 +1,5 @@
 ---
-title: Community
+title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 

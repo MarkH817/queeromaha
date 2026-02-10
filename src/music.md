@@ -1,5 +1,5 @@
 ---
-title: Music
+title: Local Music Events / Venues
 layout: layouts/base.njk
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Art
+title: Local Art Events / Venues
 layout: layouts/base.njk
 ---
 

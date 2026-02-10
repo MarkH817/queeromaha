@@ -1,5 +1,5 @@
 ---
-title: Biz
+title: Local Queer/Friendly Businesses
 layout: layouts/base.njk
 ---
 

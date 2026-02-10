@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Contact Page
 layout: layouts/base.njk
 ---
 

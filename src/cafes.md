@@ -1,5 +1,5 @@
 ---
-title: Cafes
+title: Local Queer/Friendly Cafes
 layout: layouts/base.njk
 ---
 
