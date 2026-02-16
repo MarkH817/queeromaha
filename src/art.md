@@ -45,7 +45,7 @@ Black-owned community space for shows and art events.
 
 ### Union for Contemporary Art
 
-North O place for exhibits, studios, classes, and talks. [Website](https://www.u-ca.org/ourprograms)
+Exhibits, studios, classes, and talks. [Website](https://www.u-ca.org/ourprograms)
 
 ---
 
