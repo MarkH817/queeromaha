@@ -8,10 +8,13 @@ layout: layouts/base.njk
 
 Great people, coffee and pastries. Aksarben location has limited seating. [Website](https://www.roastcoffeehouse.com/)
 
+### Godega (Aksarben) 🏳️‍🌈🚻🛋️
+
+[Website](https://godegamarket.com/) | [IG](https://www.instagram.com/godegamarket/)
+
 ### Mill on Leavenworth (Midtown) 🛋️
 
 Large popular cafe. [Website](https://millcoffee.com/)
-
 
 ### Spielbound (Midtown) 🚻
 
@@ -43,7 +46,7 @@ Great coffee and cool people. Posts flyers for local events. [FB](https://www.fa
 Best coffee in town. Lil BoHo location has brunch from Know Good. [Website](https://archetypecoffee.com/)
 
 
-### Sweet Magnolias (Bemis Park, Downtown)
+### Sweet Magnolias (Bemis Park, Downtown) 🏳️‍🌈
 
 Queer pastry shop. [IG](https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en) | [Website](https://www.sweetmagnoliasbakeshop.com/)
 
