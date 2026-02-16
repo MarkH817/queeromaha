@@ -56,7 +56,7 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 ### Open Arms Trans Social Group (OATS)
 
-Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq) -->
+Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq)
 
 <!-- ongoing?
 ### BFF Queer Nite
