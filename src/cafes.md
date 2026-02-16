@@ -3,50 +3,63 @@ title: Local Queer/Friendly Cafes
 layout: layouts/base.njk
 ---
 
+> **Aksarben**
 
 ### Roast Coffeehouse (Aksarben Village + 114th & Blondo) 🚻
 
 Great people, coffee and pastries. Aksarben location has limited seating. [Website](https://www.roastcoffeehouse.com/)
 
-### Godega (Aksarben) 🏳️‍🌈🚻🛋️
+### Godega 🏳️‍🌈🚻🛋️
 
 [Website](https://godegamarket.com/) | [IG](https://www.instagram.com/godegamarket/)
+
+> **Midtown**
 
 ### Mill on Leavenworth (Midtown) 🛋️
 
 Large popular cafe. [Website](https://millcoffee.com/)
 
-### Spielbound (Midtown) 🚻
+### Spielbound 🚻
 
-Board game cafe with lots of meetups. [Website](https://www.spielbound.com/how-to-spielbound) | [Active public Meetup](https://www.meetup.com/playing-games-at-spielbound/) 
+Board game cafe with lots of meetups. Some trans specific [Website](https://www.spielbound.com/how-to-spielbound) | [Active public Meetup](https://www.meetup.com/playing-games-at-spielbound/) 
 <!-- | [Possibly inactive trans meetup](https://www.facebook.com/events/1312754133797586/) -->
+
+---
+
+> **Benson**
 
 <!-- quality may have gone to shit, worker pay issues
 ## Hardy Coffee (Benson, etc) 🛋️ 🚻
 
 Chill hipster cafe. [IG](https://www.instagram.com/hardycoffeeco/?hl=en) [FB](https://www.facebook.com/hardycoffeeco/) [Website](https://www.hardycoffee.com/) -->
 
-### Edge of the Universe Cafe (Benson) 🚻 🛋️
+### Edge of the Universe Cafe  🚻 🛋️
 
 Truly unique place, the owners are artists who build out themed art every few months. [Website](https://www.edgeoftheuniverseomaha.com/)
 
 
-### Legends Comics & Coffee (Benson) 🚻 🛋️
+### Legends Comics & Coffee  🚻 🛋️
 
 Comic shop with a large queer section. Has board game meetups in the backroom. [FB](https://www.facebook.com/LegendComics/) | [IG](https://www.instagram.com/legendcomicsandcoffee/?hl=en)
 
+---
 
-### Blue Line Coffee (Dundee) 🚻
+> **Dundee**
+
+### Blue Line Coffee 🚻
 
 Great coffee and cool people. Posts flyers for local events. [FB](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727) | [IG](https://www.instagram.com/bluelinecoffeeomaha/?hl=en)
 
+---
 
-### Archetype Coffee (Blackstone & Little Bohemia) 🚻
+> **Midtown**
 
-Best coffee in town. Lil BoHo location has brunch from Know Good. [Website](https://archetypecoffee.com/)
+### Archetype Coffee 🚻
+
+Best coffee in town. Lil BoHo location serves brunch from Know Good. [Website](https://archetypecoffee.com/)
 
 
-### Sweet Magnolias (Bemis Park, Downtown) 🏳️‍🌈
+### Sweet Magnolias 🏳️‍🌈
 
 Queer pastry shop. [IG](https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en) | [Website](https://www.sweetmagnoliasbakeshop.com/)
 
@@ -83,6 +96,8 @@ OK coffee. Seating is limited and uncomfortable. Doesn't sell lunch. [IG](https:
 
 [IG](https://www.instagram.com/howlinhounds/?hl=en) -->
 
-### Karma Koffee (West O) 🚻 🛋️
+> **West O**
 
-Buddhist themed cafe out in the burbs. [FB](https://www.facebook.com/karmakoffeeomaha/) | [IG](https://www.instagram.com/karma_koffee/?hl=en) | [Website](https://www.karmakoffee.com/)
+### Karma Koffee 🚻 🛋️
+
+Buddhist themed cafe with vegan options and authentic thangkas. [FB](https://www.facebook.com/karmakoffeeomaha/) | [IG](https://www.instagram.com/karma_koffee/?hl=en) | [Website](https://www.karmakoffee.com/)

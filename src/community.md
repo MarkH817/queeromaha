@@ -3,6 +3,8 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
+> **Organizations**
+
 ### OmahaForUs
 
 Hub of social activity and resources
@@ -35,6 +37,10 @@ Queer-specific PWYC class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. Park 
 Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 ---
+
+> **Social Groups**
+
+
 
 ### TransNebraska
 

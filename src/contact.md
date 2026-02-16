@@ -3,7 +3,7 @@ title: Contact Page
 layout: layouts/base.njk
 ---
 
-### Contact a human
+### Send me a note
 
 <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
   <p style="display: none;">
@@ -11,12 +11,12 @@ layout: layouts/base.njk
   </p>
   
   <p>
-    <label for="email"></label><br>
+    <label for="email"></label><br / >
     <input type="email" id="email" name="email" placeholder="Your email address (optional)" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 4px;">
   </p>
   
   <p>
-    <label>Your Message:
+    <label for="message"></label><br / >
     <textarea id="message" name="message" required rows="8" placeholder="Suggest an event, a local maker, a venue, or tell me a joke!" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit;"></textarea>
     </label>
   </p>

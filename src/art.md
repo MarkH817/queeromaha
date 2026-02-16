@@ -3,6 +3,8 @@ title: Local Art Events / Venues
 layout: layouts/base.njk
 ---
 
+> **Social Groups**
+
 ### Sober Socials Omaha
 
 Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer. [IG](https://www.instagram.com/sobersocialsomaha/)
@@ -30,13 +32,9 @@ Members with social presence:
 - Mike Machian [photographer](https://www.facebook.com/ShootToFill/)
 - Tob [Mastodon](https://mastodon.sdf.org/@tob) -->
 
-### No-Coast Noise Collective
-
-Experimental music and sound art collective. Centered out of Project Project. [IG](https://www.instagram.com/nocoastnoise/) | [Website](https://www.nocoastnoise.net/)
-
 ---
 
-## North Omaha
+> **North O**
 
 ### Culxr House 🚻
 
@@ -49,14 +47,15 @@ Exhibits, studios, classes, and talks. [Website](https://www.u-ca.org/ourprogram
 
 ---
 
-<a id="south-omaha"></a>
-## South Omaha
+> **South O**
 
-[Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
+
+> Check out [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
+
 
 ### Church Art House 🚻
 
-Unique artistic space in a de-consecrated church, shared by punks, electronic synthesists, shoegaze aficionados and spiritual folx. Has a clay wheel and kiln in the basement. [IG](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
+Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement. [IG](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
 
 ### Project Project 🚻
 
@@ -78,58 +77,55 @@ New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) 
 
 ---
 
-<a id="benson"></a>
-## Benson
+> **Benson**
 
-[Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets. 
+> Check out [Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets.
 
-### Petshop 🚻
+### Petshop 🏳️‍🌈 🚻
 
 Punk/queer space for provocative art and experimental music. [IG](https://www.instagram.com/petshopgallery/?hl=en) | [Website](https://www.bffomaha.org/petshop)
 
+### Radial Arts Center 🚻
 
-<!-- ### Radial Arts Center 🚻
+Large gallery showing larger local artists. [Website](https://www.radialartscenter.org/)
 
-Large gallery showing larger local artists. [Website](https://www.radialartscenter.org/) -->
-
-### BFF Gallery
+### BFF Gallery 🏳️‍🌈
 
 Punk local gallery. [IG](https://www.instagram.com/thebffgallery/?hl=en)
-<!-- 
+
 ### Ming Toy Gallery
 
-Small gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) | [Website](https://www.mingtoygallery.com/)
+Cozy gallery next to Edge of the Universe. [IG](https://www.instagram.com/mingtoygallery/) | [Website](https://www.mingtoygallery.com/)
 
 ### Maple Street Construct
 
 Minimalist space with a cool upstairs. [Website](https://www.maplestconstruct.com/) | [FB](https://www.facebook.com/maplestconstruct/)
- -->
-### MaMo Gallery
+
+
+### MaMo Mobile Gallery Semi-Truck 🏳️‍🌈
 
 Mobile gallery often parked near Petshop showing local artists. [IG](https://www.instagram.com/bffmamo/?hl=en) | [FB](https://www.facebook.com/MaMOgallery/) | [Website](https://www.bffomaha.org/mamo)
-<!-- 
-### Trudy's
 
-Open artist studios and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/) -->
+### Trudy's 🏳️‍🌈
+
+Open artist studios, music and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/)
 
 ---
-<a id="midtown"></a>
 
-## Midtown
+> **Midtown**
 
 ### Aksarben Village 🚻
 
-Art market and outdoor music in the summer. Get the Momos at Inner Rail. [Events](https://www.aksarbenvillage.com/events)
+Mix of normies and queers. Art market and outdoor music in the summer. Get the Momos at Inner Rail. [Events](https://www.aksarbenvillage.com/events)
 
 ### Samuel Bak Museum
 
-Holocaust survivor's art museum with workshops and education programs. [Website](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/index.php/)
+Holocaust survivor's art museum with workshops and education programs. [Education Events](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php) | [Lectures](https://events.unomaha.edu/department/samuel_bak_museum_the_learning_center)
 
 ---
 
-## Downtown
+> **Downtown**
 
-<a id="downtown"></a>
 <!-- go to at least one before listing it. Is there a better direct link?
 ## Urban Abbey: Soul Arts (Downtown)
 Monthly arts and spirituality event series at Urban Abbey. Features workshops, performances, and community art projects. Welcoming to all, with a focus on creativity and connection. See their site for upcoming dates and details.

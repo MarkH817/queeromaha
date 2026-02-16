@@ -3,15 +3,35 @@ title: Local Music Events / Venues
 layout: layouts/base.njk
 ---
 
+> **Event Listings**
+
 [OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) 
 
 <!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
+
+> **Downtown and South O**
 
 ### Low End at Bemis
 
 Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org/programs/low-end)
 
+
+### Church Art House 🚻
+
+Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. [IG](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
+
+
+### No-Coast Noise Collective
+
+Experimental music and sound art collective. Centered out of Project Project. [IG](https://www.instagram.com/nocoastnoise/) | [Website](https://www.nocoastnoise.net/)
+
+### Project Project 🚻
+
+Punk/queer DIY space with experimental music and local art. [IG](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/)
+
 ---
+
+> **Benson**
 
 ### Floors Floors Floors 🚻🛋️
 
@@ -27,11 +47,15 @@ Mid-size venue for local and large-ish acts. Very little seating. [Website](http
 
 ### Reverb Lounge 🛋️
 
-Decent space for local acts. [Website](https://www.reverblounge.com/)
+Mid-size space for local acts. [Website](https://www.reverblounge.com/)
 
 ### The Sydney 🚻
 
 Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Website](https://thesydneybenson.com/)
+
+---
+
+> **North O**
 
 ### Culxr House
 
@@ -39,6 +63,8 @@ Black-owned community space for shows and art events. [FB](https://www.facebook.
 
 
 ---
+
+> **Midtown**
 
 ### O'Leaver's
 
@@ -52,7 +78,6 @@ Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [F
 
 Ye Olde Garage [Website](https://www.joslyncastle.com/events/)
 
-
 ### No Coast Punk Market
 
 Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) | [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
@@ -62,9 +87,9 @@ Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_om
 In transition from The Verdict, at Joslyn Carriage House, Shakedown Street, O'Leavers.
 [Website](https://www.instagram.com/noiromaha/) | [IG](https://www.instagram.com/noiromaha/?hl=en) | [FB](https://www.facebook.com/NoirOmaha/)
 
-<!-- ### Pageturners Lounge
+### Pageturners Lounge
 
-Bookish bar with local acts. [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en) -->
+Bookish bar with local acts. [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en)
 
 <!-- 
 ### The Breakroom
@@ -102,9 +127,11 @@ TBD, jazz club?
 seems like a local modeling group has collab'd with the slab
 https://www.instagram.com/the_mourning_dolls/ -->
 
+> **Downtown**
+
 ### Red Light Lounge (fka The Verdict) 🛋️
 
-NOTE under new ownership as of Jan '26. I don't have a lot of information.
+NOTE under new ownership as of Jan '26. Watch this space. Club Noir left the venue.
 
 [The Slab](https://instagram.com/djlusterdust) on 2nd Saturdays
 
