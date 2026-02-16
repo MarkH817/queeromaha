@@ -38,7 +38,7 @@ Experimental music and sound art collective. Centered out of Project Project. [I
 
 ## North Omaha
 
-### Culxr House
+### Culxr House 🚻
 
 Black-owned community space for shows and art events.
 [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [FB](https://www.facebook.com/culxrhouse/)
