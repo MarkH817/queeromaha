@@ -28,12 +28,11 @@ Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.co
 
 ### Ananda Yoga
 
-Queer and Trans* PWYC "Mad Girl" class on Sundays @ 12:30 50th and Dodge. Park in the back, go in the backdoor and all the way down the stairs. Other free classes. [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+Queer-specific PWYC class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. Park in the back, go in the backdoor and all the way down the stairs. [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
-<!-- 
-### Open Arms Trans Social Group (OATS)
+### OwOmaha
 
-Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq) -->
+Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 ---
 
@@ -49,16 +48,16 @@ Social group for Trans Masc folks. [Signup (vetted)](https://secondsunday.xyz/me
 
 Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Trans](https://tinyurl.com/smpctransgroup) -->
 
-### OwOmaha
+### Open Arms Trans Social Group (OATS)
 
-Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
+Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq) -->
 
 <!-- ongoing?
 ### BFF Queer Nite
 
 Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.facebook.com/queernite/) -->
 
-<!-- just felt weird
+<!-- just felt weird to put them since I also go there
 ### Honey Locust Sangha
 
 Informal group meditation on Mondays @ 6:30PM-8:15PM at Yoga Path 72nd and Pacific. [Website](https://www.honeylocustsangha.org/)
