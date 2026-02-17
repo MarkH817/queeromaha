@@ -25,8 +25,10 @@ The place for queer spaces in omaha
 •  Admin approval options
 ◦  Admin HTTP endpoint: POST /api/makers/approve with header X-Admin-Token set to $MAKERS_ADMIN_TOKEN.
 ▪  Body: { "id": 123, "approved": true } (approved defaults to true).
+▪  GET /api/makers/approve (same header) returns a JSON array of unapproved makers (id, human_name, biz_name, instagram, facebook, website, description).
 ▪  Set MAKERS_ADMIN_TOKEN in Netlify env vars.
 ◦  CLI helper: scripts/approve-maker.mjs
+▪  List unapproved: netlify dev:exec -- node scripts/approve-maker.mjs list
 ▪  Approve by ID locally or via Netlify env injection:
 ▪  netlify dev:exec -- node scripts/approve-maker.mjs 123
 ▪  netlify dev:exec -- node scripts/approve-maker.mjs 123 false  # to unapprove
