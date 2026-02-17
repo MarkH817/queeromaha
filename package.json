@@ -9,14 +9,15 @@
     "serve": "eleventy --serve",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "netlify dev:exec drizzle-kit migrate",
-    "db:studio": "netlify dev:exec drizzle-kit studio"
+    "db:studio": "netlify dev:exec drizzle-kit studio",
+    "db:seed": "netlify dev:exec node scripts/seed-makers.mjs"
   },
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "drizzle-kit": "^0.31.8"
+    "drizzle-kit": "^0.31.9"
   },
   "dependencies": {
     "@netlify/neon": "^0.1.2",
