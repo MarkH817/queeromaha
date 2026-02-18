@@ -18,10 +18,6 @@ layout: layouts/base.njk
 .makers-empty { text-align:center; padding:2rem; color:#6d28d9; font-style:italic; }
 </style>
 
-<div class="makers-intro" id="makers-intro">
-  <h1>Local Queer Makers</h1>
-</div>
-
 <div id="makers-container" class="makers-grid">
   <div class="makers-loading" role="status" aria-live="polite">
     <i class="bi bi-arrow-repeat" aria-hidden="true"></i> Loading makers...
@@ -33,6 +29,7 @@ layout: layouts/base.njk
   // Show a success banner if redirected after submission
   try {
     const usp = new URLSearchParams(location.search);
+    // TODO - we don't use this method anymore, it was bot-generated so meh
     if (usp.get('submitted') === '1') {
       const intro = document.getElementById('makers-intro');
       if (intro) {
@@ -50,7 +47,7 @@ layout: layouts/base.njk
     if (!res.ok) throw new Error('Bad status ' + res.status);
     const makers = await res.json();
     if (!makers || makers.length === 0) {
-      container.innerHTML = '<p class="makers-empty">No makers yet. Know someone? <a href="/contact/">Tell us.</a></p>';
+      container.innerHTML = '<p class="makers-empty">Aint no makers here, boyo</p>';
       return;
     }
     container.innerHTML = makers.map(m => {
@@ -78,8 +75,7 @@ layout: layouts/base.njk
 
 <hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />
 
-<h2 style="margin-top: 0;">Add a Maker</h2>
-<p>Put someone on the list (can be yourself)</p>
+<h3 style="margin-top: 0;">Submit someone for consideration</h3>
 
 <form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
   <input type="hidden" name="form-name" value="maker" />
@@ -88,13 +84,13 @@ layout: layouts/base.njk
   </p>
 
 <p>
-    <label for="human_name">The Person's Name (required)</label><br />
-    <input id="human_name" name="human_name" required aria-required="true" placeholder="A Cool Name" maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="human_name">Name (required)</label><br />
+    <input id="human_name" name="human_name" required aria-required="true" placeholder="Your Real Human Name" maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
     <label for="email">Email (required)</label><br />
-    <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com" maxlength="255" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input type="email" id="email" name="email" required aria-required="true" placeholder="you@cool.biz" maxlength="255" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
@@ -103,19 +99,21 @@ layout: layouts/base.njk
   </p>
 
   <p>
-    <label for="website">Website (optional)</label><br />
-    <input type="text" id="website" name="website" inputmode="url" placeholder="cool.biz or https://cool.biz" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="instagram">Instagram Link (optional)</label><br />
+    <input id="instagram" name="instagram" placeholder="@username or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
-    <label for="instagram">Instagram (optional)</label><br />
-    <input id="instagram" name="instagram" placeholder="@handle or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="facebook">Facebook Link (optional)</label><br />
+    <input type="text" id="facebook" name="facebook" placeholder="facebook page name or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
+
   <p>
-    <label for="facebook">Facebook (optional)</label><br />
-    <input type="text" id="facebook" name="facebook" placeholder="facebook.com/... or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="website">Website Link (optional)</label><br />
+    <input type="text" id="website" name="website" inputmode="url" placeholder="cool.biz" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
+
 
 <p>
     <label for="description">Short description (max 280 chars, optional)</label><br />
