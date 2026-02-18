@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "eleventy",
     "serve": "eleventy --serve",
+    "approve":"netlify dev:exec -- scripts/approve-maker.mjs",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "netlify dev:exec drizzle-kit migrate",
-    "db:studio": "netlify dev:exec drizzle-kit studio",
-    "db:seed": "netlify dev:exec node scripts/seed-makers.mjs"
+    "db:migrate": "netlify dev:exec -- drizzle-kit migrate",
+    "db:studio": "netlify dev:exec -- drizzle-kit studio",
+    "db:seed": "netlify dev:exec -- node scripts/seed-makers.mjs"
   },
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",

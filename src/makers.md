@@ -29,7 +29,7 @@ layout: layouts/base.njk
   // Show a success banner if redirected after submission
   try {
     const usp = new URLSearchParams(location.search);
-    // TODO - we don't use this method anymore, it was bot-generated so meh
+    // TODO - post-submission redirect just loads page with 'ok' (presumably json payload) instead of doing a thing in the site or whatever. the button doesn't change. we don't use this method anymore, it was bot-generated so meh
     if (usp.get('submitted') === '1') {
       const intro = document.getElementById('makers-intro');
       if (intro) {
