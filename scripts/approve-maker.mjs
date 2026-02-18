@@ -2,6 +2,8 @@ import { neon } from '@netlify/neon';
 
 const arg = process.argv[2];
 
+// TODO - this works in co context and not in per context, , may need to run against prod?
+
 // list: show unapproved makers
 if (arg === 'list' || arg === 'ls') {
   const sql = neon();
