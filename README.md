@@ -7,6 +7,12 @@ Also queeromaha.net
 
 The place for queer spaces in omaha
 
+## Apply DB Migrations
+
+> bun db:generate
+
+> bun db:migrate
+
 ## Moderation
 
 •  DB schema

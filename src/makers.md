@@ -20,7 +20,6 @@ layout: layouts/base.njk
 
 <div class="makers-intro" id="makers-intro">
   <h1>Local Queer Makers</h1>
-  <p>Support local queers: artists, crafters, punks, creators — the weirdos making cool stuff.</p>
 </div>
 
 <div id="makers-container" class="makers-grid">
@@ -40,7 +39,7 @@ layout: layouts/base.njk
         const note = document.createElement('div');
         note.setAttribute('role', 'status');
         note.style.cssText = 'background:#ecfeff;color:#042f2e;border:2px solid #06b6d4;padding:.75rem 1rem;margin:.5rem 0 1rem 0;font-weight:600;';
-        note.textContent = 'Thanks for your submission — it will appear once approved.';
+        note.textContent = 'Thanks! My people will call your people.';
         intro.after(note);
       }
     }
@@ -60,7 +59,7 @@ layout: layouts/base.njk
       if (m.website) links.push(`<a href="${esc(m.website)}" aria-label="Website for ${esc(m.biz_name)}"><i class="bi bi-globe" aria-hidden="true"></i>Web</a>`);
       if (m.instagram) { const ig = m.instagram.startsWith('http')?m.instagram:`https://instagram.com/${m.instagram.replace('@','')}`; links.push(`<a href="${esc(ig)}" aria-label="Instagram for ${esc(m.biz_name)}"><i class="bi bi-instagram" aria-hidden="true"></i>IG</a>`); }
       if (m.facebook) { const fb = m.facebook.startsWith('http')?m.facebook:`https://facebook.com/${m.facebook}`; links.push(`<a href="${esc(fb)}" aria-label="Facebook for ${esc(m.biz_name)}"><i class="bi bi-facebook" aria-hidden="true"></i>FB</a>`); }
-const title = m.biz_name ? esc(m.biz_name) : esc(m.human_name);
+      const title = m.biz_name ? esc(m.biz_name) : esc(m.human_name);
       const secondary = m.biz_name && m.human_name ? `<p class=\"maker-human\">${esc(m.human_name)}</p>` : '';
       return `
         <article class="maker-card">
@@ -80,27 +79,32 @@ const title = m.biz_name ? esc(m.biz_name) : esc(m.human_name);
 <hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />
 
 <h2 style="margin-top: 0;">Add a Maker</h2>
-<p>Know a local queer maker? Submit them here. We review before listing to keep it real.</p>
+<p>Put someone on the list (can be yourself)</p>
 
-<form name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/?submitted=1">
+<form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
   <input type="hidden" name="form-name" value="maker" />
   <p style="display:none;">
     <label>Don’t fill this out: <input name="bot-field" /></label>
   </p>
 
 <p>
-    <label for="human_name">Human name (required)</label><br />
-    <input id="human_name" name="human_name" required maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="human_name">The Person's Name (required)</label><br />
+    <input id="human_name" name="human_name" required aria-required="true" placeholder="A Cool Name" maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
-    <label for="biz_name">Business name (optional)</label><br />
-    <input id="biz_name" name="biz_name" maxlength="150" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="email">Email (required)</label><br />
+    <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com" maxlength="255" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+  </p>
+
+  <p>
+    <label for="biz_name">Business Name (optional)</label><br />
+    <input id="biz_name" name="biz_name" placeholder="Cool Biz" maxlength="150" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
     <label for="website">Website (optional)</label><br />
-    <input id="website" name="website" inputmode="url" placeholder="https://example.com" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input type="text" id="website" name="website" inputmode="url" placeholder="cool.biz or https://cool.biz" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
@@ -110,17 +114,56 @@ const title = m.biz_name ? esc(m.biz_name) : esc(m.human_name);
 
   <p>
     <label for="facebook">Facebook (optional)</label><br />
-    <input id="facebook" name="facebook" placeholder="page slug or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input type="text" id="facebook" name="facebook" placeholder="facebook.com/... or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
 <p>
     <label for="description">Short description (max 280 chars, optional)</label><br />
-    <textarea id="description" name="description" maxlength="280" rows="4" placeholder="What do they make? Keep it punchy." style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px; font-family:inherit;"></textarea>
+    <textarea id="description" name="description" maxlength="280" rows="4" placeholder="What do they make?" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px; font-family:inherit;"></textarea>
   </p>
 
   <p>
     <button type="submit" style="background:#6d28d9; color:#fff; padding:0.75rem 1.5rem; border:none; border-radius:6px; cursor:pointer; font-size:1rem; font-weight:600;">Submit</button>
   </p>
 
-  <p style="font-size:0.85rem; color:#555;">We don’t sell your info. Submissions are moderated to avoid clout-chasers.</p>
+  <p style="font-size:0.85rem; color:#555;">Submissions are moderated before posting.</p>
 </form>
+
+<script>
+(function() {
+  const form = document.getElementById('maker-form');
+  if (!form) return;
+  const intro = document.getElementById('makers-intro');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const origLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
+    try {
+      const res = await fetch(form.action || '/makers/', {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(form)),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        redirect: 'manual'
+      });
+      if (res.type === 'opaqueredirect' || res.status === 0 || res.status === 200 || res.status === 302) {
+        if (intro) {
+          const note = document.createElement('div');
+          note.setAttribute('role', 'status');
+          note.style.cssText = 'background:#ecfeff;color:#042f2e;border:2px solid #06b6d4;padding:.75rem 1rem;margin:.5rem 0 1rem 0;font-weight:600;';
+          note.textContent = 'Thanks for your submission — it will appear once approved.';
+          intro.after(note);
+        }
+        form.reset();
+      } else {
+        if (submitBtn) submitBtn.textContent = 'Submit again';
+        alert('Something went wrong. Try again.');
+      }
+    } catch (err) {
+      if (submitBtn) submitBtn.textContent = 'Submit again';
+      alert('Something went wrong. Try again.');
+    }
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origLabel; }
+  });
+})();
+</script>

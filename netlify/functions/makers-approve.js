@@ -16,7 +16,7 @@ export default async (request) => {
     try {
       const sql = neon();
       const rows = await sql`
-        SELECT id, human_name, biz_name, instagram, facebook, website, description
+        SELECT id, human_name, biz_name, email, instagram, facebook, website, description
         FROM makers
         WHERE approved = false
         ORDER BY id ASC
