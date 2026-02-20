@@ -1,12 +1,11 @@
 import { neon } from '@netlify/neon';
-
+const sql = neon();
 const arg = process.argv[2];
 
 // TODO - this works in co context and not in per context, , may need to run against prod?
 
 // list: show unapproved makers
 if (arg === 'list' || arg === 'ls') {
-  const sql = neon();
   const rows = await sql`
     SELECT id, human_name, biz_name, description
     FROM makers
@@ -34,10 +33,9 @@ if (!id || id < 1) {
 }
 const approved = process.argv[3] === 'false' ? false : true;
 
-const sql = neon();
 const res = await sql`UPDATE makers SET approved = ${approved} WHERE id = ${id} RETURNING id, approved`;
 if (!res?.length) {
   console.error('No maker found for id', id);
   process.exit(2);
 }
-console.log('Updated:', res[0]);
+console.log('Approved Maker ID:', res[0]);
