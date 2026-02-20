@@ -18,64 +18,10 @@ layout: layouts/base.njk
 .makers-empty { text-align:center; padding:2rem; color:#6d28d9; font-style:italic; }
 </style>
 
-<div id="makers-container" class="makers-grid">
-  <div class="makers-loading" role="status" aria-live="polite">
-    <i class="bi bi-arrow-repeat" aria-hidden="true"></i> Loading makers...
-  </div>
-</div>
-
-<script>
-(async function() {
-  // Show a success banner if redirected after submission
-  try {
-    const usp = new URLSearchParams(location.search);
-    // TODO - post-submission redirect just loads page with 'ok' (presumably json payload) instead of doing a thing in the site or whatever. the button doesn't change. we don't use this method anymore, it was bot-generated so meh
-    if (usp.get('submitted') === '1') {
-      const intro = document.getElementById('makers-intro');
-      if (intro) {
-        const note = document.createElement('div');
-        note.setAttribute('role', 'status');
-        note.style.cssText = 'background:#ecfeff;color:#042f2e;border:2px solid #06b6d4;padding:.75rem 1rem;margin:.5rem 0 1rem 0;font-weight:600;';
-        note.textContent = 'Thanks! My people will call your people.';
-        intro.after(note);
-      }
-    }
-  } catch (_) {}
-  const container = document.getElementById('makers-container');
-  try {
-    const res = await fetch('/api/makers');
-    if (!res.ok) throw new Error('Bad status ' + res.status);
-    const makers = await res.json();
-    if (!makers || makers.length === 0) {
-      container.innerHTML = '<p class="makers-empty">Aint no makers here, boyo</p>';
-      return;
-    }
-    container.innerHTML = makers.map(m => {
-      const esc = (t) => { const d=document.createElement('div'); d.textContent=String(t||''); return d.innerHTML; };
-      const links = [];
-      if (m.website) links.push(`<a href="${esc(m.website)}" aria-label="Website for ${esc(m.biz_name)}"><i class="bi bi-globe" aria-hidden="true"></i>Web</a>`);
-      if (m.instagram) { const ig = m.instagram.startsWith('http')?m.instagram:`https://instagram.com/${m.instagram.replace('@','')}`; links.push(`<a href="${esc(ig)}" aria-label="Instagram for ${esc(m.biz_name)}"><i class="bi bi-instagram" aria-hidden="true"></i>IG</a>`); }
-      if (m.facebook) { const fb = m.facebook.startsWith('http')?m.facebook:`https://facebook.com/${m.facebook}`; links.push(`<a href="${esc(fb)}" aria-label="Facebook for ${esc(m.biz_name)}"><i class="bi bi-facebook" aria-hidden="true"></i>FB</a>`); }
-      const title = m.biz_name ? esc(m.biz_name) : esc(m.human_name);
-      const secondary = m.biz_name && m.human_name ? `<p class=\"maker-human\">${esc(m.human_name)}</p>` : '';
-      return `
-        <article class="maker-card">
-          <h3 class="maker-biz">${title}</h3>
-          ${secondary}
-          ${m.description ? `<p class=\"maker-desc\">${esc(m.description)}</p>` : ''}
-          ${links.length?`<div class=\"maker-links\">${links.join('')}</div>`:''}
-        </article>`;
-    }).join('');
-  } catch (e) {
-    console.error(e);
-    container.innerHTML = '<p class="makers-error" role="alert">Couldn\'t load makers. Try again later.</p>';
-  }
-})();
-</script>
 
 <hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />
 
-<h3 style="margin-top: 0;">Submit someone for consideration</h3>
+<h3 style="margin-top: 0;">Add a maker!</h3></brs>
 
 <form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
   <input type="hidden" name="form-name" value="maker" />
@@ -126,42 +72,4 @@ layout: layouts/base.njk
 
   <p style="font-size:0.85rem; color:#555;">Submissions are moderated before posting.</p>
 </form>
-
-<script>
-(function() {
-  const form = document.getElementById('maker-form');
-  if (!form) return;
-  const intro = document.getElementById('makers-intro');
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const origLabel = submitBtn ? submitBtn.textContent : '';
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
-    try {
-      const res = await fetch(form.action || '/makers/', {
-        method: 'POST',
-        body: new URLSearchParams(new FormData(form)),
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        redirect: 'manual'
-      });
-      if (res.type === 'opaqueredirect' || res.status === 0 || res.status === 200 || res.status === 302) {
-        if (intro) {
-          const note = document.createElement('div');
-          note.setAttribute('role', 'status');
-          note.style.cssText = 'background:#ecfeff;color:#042f2e;border:2px solid #06b6d4;padding:.75rem 1rem;margin:.5rem 0 1rem 0;font-weight:600;';
-          note.textContent = 'Thanks for your submission — it will appear once approved.';
-          intro.after(note);
-        }
-        form.reset();
-      } else {
-        if (submitBtn) submitBtn.textContent = 'Submit again';
-        alert('Something went wrong. Try again.');
-      }
-    } catch (err) {
-      if (submitBtn) submitBtn.textContent = 'Submit again';
-      alert('Something went wrong. Try again.');
-    }
-    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origLabel; }
-  });
-})();
-</script>
+<hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />

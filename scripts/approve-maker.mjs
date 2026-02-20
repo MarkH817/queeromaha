@@ -2,7 +2,7 @@ import { neon } from '@netlify/neon';
 const sql = neon();
 const arg = process.argv[2];
 
-// TODO - this works in co context and not in per context, , may need to run against prod?
+// TODO - this script should just call function api endpoint (will have admin env var injected so it'll work)
 
 // list: show unapproved makers
 if (arg === 'list' || arg === 'ls') {

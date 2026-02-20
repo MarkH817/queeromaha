@@ -7,6 +7,7 @@ function checkAuth(request) {
 }
 
 export default async (request) => {
+  // TODO - this doesn't seem to gate requests, GET still lists them
   if (!checkAuth(request)) {
     return new Response('Unauthorized', { status: 401 });
   }
