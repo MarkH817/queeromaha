@@ -3,13 +3,14 @@ title: Local Music Events / Venues
 layout: layouts/base.njk
 ---
 
-> **Event Listings**
+**Event Listings**
 
 [OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) 
-
 <!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
 
-> **Downtown and South O**
+---
+
+**Downtown and South Omaha**
 
 ### Low End at Bemis
 
@@ -19,7 +20,6 @@ Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org
 ### Church Art House 🚻
 
 Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. [IG](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
-
 
 ### No-Coast Noise Collective
 
@@ -31,7 +31,7 @@ Punk/queer DIY space with experimental music and local art. [IG](https://www.ins
 
 ---
 
-> **Benson**
+**Benson**
 
 ### Floors Floors Floors 🚻🛋️
 
@@ -55,7 +55,7 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Web
 
 ---
 
-> **North O**
+**North O**
 
 ### Culxr House
 
@@ -64,15 +64,15 @@ Black-owned community space for shows and art events. [FB](https://www.facebook.
 
 ---
 
-> **Midtown**
+**Midtown**
 
 ### O'Leaver's
 
 Did you know it's owned by members of the band Cursive? [FB](https://www.facebook.com/oleavers/) | [IG](https://www.instagram.com/oleavers/?hl=en)
-<!-- 
+ 
 ### B Bar
 
-Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [FB](https://www.facebook.com/TheB.BarOmaha//) -->
+Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [FB](https://www.facebook.com/TheB.BarOmaha)
 
 ### Joslyn Castle Carriage House 🚻
 
@@ -127,7 +127,7 @@ TBD, jazz club?
 seems like a local modeling group has collab'd with the slab
 https://www.instagram.com/the_mourning_dolls/ -->
 
-> **Downtown**
+**Downtown**
 
 ### Red Light Lounge (fka The Verdict) 🛋️
 

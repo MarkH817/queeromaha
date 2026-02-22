@@ -3,7 +3,16 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
-> **Organizations**
+---
+### Announcements
+
+- Seeking queer makers to [to be listed here](/makers)
+
+---
+
+**Groups**
+
+---
 
 ### OmahaForUs
 
@@ -38,7 +47,7 @@ Furry group with in-person / online meetups. Moderated. [Calendar](https://www.o
 
 ---
 
-> **Social Groups**
+**Social Groups**
 
 
 

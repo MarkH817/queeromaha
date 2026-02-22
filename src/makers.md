@@ -18,11 +18,12 @@ layout: layouts/base.njk
 .makers-empty { text-align:center; padding:2rem; color:#6d28d9; font-style:italic; }
 </style>
 
+<h3 style="margin-top: 0;">Want to be showcased on this page?</h3></brs>
 
-<hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />
+- I'll confirm your listing via email before posting.
+- You can pull it at any time. [Contact me here](/contact)
 
-<h3 style="margin-top: 0;">Add a maker!</h3></brs>
-
+<br/>
 <form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
   <input type="hidden" name="form-name" value="maker" />
   <p style="display:none;">
@@ -70,6 +71,6 @@ layout: layouts/base.njk
     <button type="submit" style="background:#6d28d9; color:#fff; padding:0.75rem 1.5rem; border:none; border-radius:6px; cursor:pointer; font-size:1rem; font-weight:600;">Submit</button>
   </p>
 
-  <p style="font-size:0.85rem; color:#555;">Submissions are moderated before posting.</p>
+  <p style="font-size:0.85rem; color:#555;">It will always be free to post your listing.</p>
+
 </form>
-<hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />

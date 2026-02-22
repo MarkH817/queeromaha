@@ -3,7 +3,9 @@ title: Local Art Events / Venues
 layout: layouts/base.njk
 ---
 
-> **Social Groups**
+**Social Groups**
+
+---
 
 ### Sober Socials Omaha
 
@@ -34,7 +36,7 @@ Members with social presence:
 
 ---
 
-> **North O**
+**North O**
 
 ### Culxr House 🚻
 
@@ -47,10 +49,10 @@ Exhibits, studios, classes, and talks. [Website](https://www.u-ca.org/ourprogram
 
 ---
 
-> **South O**
+**South O**
 
 
-> Check out [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
+Check out [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
 
 
 ### Church Art House 🚻
@@ -77,9 +79,9 @@ New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) 
 
 ---
 
-> **Benson**
+**Benson**
 
-> Check out [Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets.
+Check out [Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets.
 
 ### Petshop 🏳️‍🌈 🚻
 
@@ -112,7 +114,7 @@ Open artist studios, music and free workshops ran by BFF. [Website](https://www.
 
 ---
 
-> **Midtown**
+**Midtown**
 
 ### Aksarben Village 🚻
 
@@ -124,7 +126,7 @@ Holocaust survivor's art museum with workshops and education programs. [Educatio
 
 ---
 
-> **Downtown**
+**Downtown**
 
 <!-- go to at least one before listing it. Is there a better direct link?
 ## Urban Abbey: Soul Arts (Downtown)
