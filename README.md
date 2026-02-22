@@ -13,7 +13,7 @@ The place for queer spaces in omaha
 
 > bun db:migrate
 
-## Moderation
+## Moderation edit by chatbot
 
 •  DB schema
 ◦  Added approved boolean (default false, NOT NULL).

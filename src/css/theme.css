@@ -1,22 +1,22 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Helvetica', sans-serif;
   background: #f6f0fa;
   color: #222;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 180vh;
   display: flex;
   flex-direction: column;
 }
 
 header {
-  background: #6d28d9;
+  background: #6e4da7;
   color: #fff;
   padding: 0;
   font-size: large;
   border: #533c78;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(124,58,237,0.08);
+  border-radius: 0.6rem;
+  box-shadow: 0 3px 10px rgba(118, 75, 192, 0.08);
 }
 nav {
   display: flex;
@@ -24,7 +24,7 @@ nav {
   text-align: center;
   padding: 0;
   margin: 0;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.169);
 }
 
 nav a {
@@ -37,10 +37,10 @@ nav a {
   font-weight: 500;
   font-family: inherit;
   font-size: inherit;
-  padding: 0.5rem 1rem 0.8rem 1rem;
+  padding: 0.8rem 0.8rem 0.8rem 1rem;
   cursor: pointer;
   transition: all 0.2s;
-  text-decoration: none;
+  text-decoration: underline;
   box-shadow: 
     inset 1px 1px 0 rgba(255, 255, 255, 0.3),
     inset -1px -1px 0 rgba(0, 0, 0, 0.2);
@@ -124,19 +124,20 @@ main {
 footer {
   background: #6d28d9;
   color: #fff;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.4rem 2rem;  
+  font-size: 1.2rem;
   letter-spacing: 0.05em;
-  position: sticky;
+  position: relative;
   text-align: center;
 }
 
 footer div {
   display: flex;
-  gap:1.5rem;
-  position: absolute;
-  left: 1rem;
-  top: 50%;
+  gap: 1.5rem;
+  position: relative;
+  left: -1rem;
+  bottom: -2.3rem;
+  top: auto;
   transform: translateY(-50%);
 }
 
