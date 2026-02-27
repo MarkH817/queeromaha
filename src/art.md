@@ -15,9 +15,9 @@ Ecstatic dance, figure drawing and spiritual singing, usually at Church Art Hous
 
 Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.instagram.com/omahasoundry/) | [Website](https://staceybarelos.com/soundry/)
 
-### Omaha Drum Family
+### Drum Circles
 
-Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave). Also at Church Art House. [Events on FB](https://www.facebook.com/drumomaha/) | [See also: Tere Lea on FB](https://www.facebook.com/tere.lea.2025/)
+3rd Friday 7 to 9 @ Whole Rejuvenation House (4312 Camden Ave) [Events on FB](https://www.facebook.com/drumomaha/)
 <!-- 
 ### Modular Synth Group
 
