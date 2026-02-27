@@ -17,7 +17,7 @@ Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.
 
 ### Omaha Drum Family
 
-Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave). Also at Church Art House. [FB](https://www.facebook.com/drumomaha/) | [singing bowls w/ Havalynn Russell](https://www.instagram.com/havalynn1/?hl=en) | [Tere Lea](https://www.facebook.com/tere.lea.2025/)
+Drum Circle 3rd Friday at Whole Rejuvenation House (4312 Camden Ave). Also at Church Art House. [Events on FB](https://www.facebook.com/drumomaha/) | [See also: Tere Lea on FB](https://www.facebook.com/tere.lea.2025/)
 <!-- 
 ### Modular Synth Group
 
