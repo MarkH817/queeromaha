@@ -66,7 +66,7 @@ Black-owned community space for shows and art events. [FB](https://www.facebook.
 
 **Midtown**
 
-### O'Leaver's
+### O'Leaver's 🚻
 
 Did you know it's owned by members of the band Cursive? [FB](https://www.facebook.com/oleavers/) | [IG](https://www.instagram.com/oleavers/?hl=en)
  
