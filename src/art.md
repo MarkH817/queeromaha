@@ -93,7 +93,7 @@ Large gallery showing larger local artists. [Website](https://www.radialartscent
 
 ### BFF Gallery 🏳️‍🌈
 
-Punk local gallery. [IG](https://www.instagram.com/thebffgallery/?hl=en)
+Punk gallery. My art was in it! [IG](https://www.instagram.com/thebffgallery/?hl=en)
 
 ### Ming Toy Gallery
 
