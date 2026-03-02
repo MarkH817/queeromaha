@@ -1,6 +1,8 @@
 .cursor
 .vscode
 
+.neon
+
 # Node modules
 **/node_modules/**
 
