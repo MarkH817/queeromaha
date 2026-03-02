@@ -36,7 +36,7 @@ Members with social presence:
 
 ---
 
-**North O**
+**North Omaha**
 
 ### Culxr House 🚻
 
@@ -49,7 +49,7 @@ Exhibits, studios, classes, and talks. [Website](https://www.u-ca.org/ourprogram
 
 ---
 
-**South O**
+**South Omaha**
 
 
 Check out [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries [IG](https://www.instagram.com/friday2onvinton_omaha/) | [FB](https://www.facebook.com/friday2onvinton/)
@@ -110,7 +110,7 @@ Mobile gallery often parked near Petshop showing local artists. [IG](https://www
 
 ### Trudy's 🏳️‍🌈
 
-Open artist studios, music and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) [FB](https://www.facebook.com/people/Trudys/61561806150499/)
+Open artist studios, music and free workshops ran by BFF. [Website](https://www.bffomaha.org/learn) | [FB](https://www.facebook.com/people/Trudys/61561806150499/)
 
 ---
 
