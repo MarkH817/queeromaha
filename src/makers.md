@@ -18,6 +18,8 @@ layout: layouts/base.njk
 .makers-empty { text-align:center; padding:2rem; color:#6d28d9; font-style:italic; }
 </style>
 
+---
+
 <h3 style="margin-top: 0;">Want to be showcased on this page?</h3></brs>
 
 - I'll confirm your listing via email before posting.

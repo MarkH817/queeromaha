@@ -3,9 +3,9 @@ title: Local Art Events / Venues
 layout: layouts/base.njk
 ---
 
-**Social Groups**
-
 ---
+
+**Creative Groups**
 
 ### Sober Socials Omaha
 

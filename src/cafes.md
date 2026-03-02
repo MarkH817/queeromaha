@@ -3,9 +3,11 @@ title: Local Queer/Friendly Cafes
 layout: layouts/base.njk
 ---
 
+---
+
 **Aksarben**
 
-### Roast Coffeehouse (Aksarben Village + 114th & Blondo) 🚻
+### Roast Coffeehouse🚻
 
 Great people, coffee and pastries. Aksarben location has limited seating. [Website](https://www.roastcoffeehouse.com/)
 
@@ -17,7 +19,7 @@ Great people, coffee and pastries. Aksarben location has limited seating. [Websi
 
 **Midtown**
 
-### Mill on Leavenworth (Midtown) 🛋️
+### Mill on Leavenworth 🛋️
 
 Large popular cafe. [Website](https://millcoffee.com/)
 
@@ -63,7 +65,7 @@ Comic shop with a large queer section. Has board game meetups in the backroom. [
 Great coffee and cool people. Posts flyers for local events. [IG](https://www.instagram.com/bluelinecoffeeomaha/?hl=en) | [FB](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727)
 
  
-### Amateur Coffee (Bemis Park)
+### Amateur Coffee 🚻
 
 Takeout coffee comes in glass containers with deposit. [IG](https://www.instagram.com/amateurcoffee/?hl=en) | [FB](https://www.instagram.com/amateurcoffee) | [Website](https://www.amateurcoffee.com/)
 

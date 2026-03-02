@@ -3,14 +3,7 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
----
-### Announcements
-
-- Seeking queer makers to [to be listed here](/makers)
-
----
-
-**Groups**
+> Are you a local maker? [Send me your listing here!](/makers)
 
 ---
 

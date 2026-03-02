@@ -3,6 +3,8 @@ title: Local Music Events / Venues
 layout: layouts/base.njk
 ---
 
+---
+
 **Event Listings**
 
 [OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) 
@@ -84,7 +86,7 @@ Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_om
 
 ### Goth Night (Noir Omaha)
 
-In transition from The Verdict, at Joslyn Carriage House, Shakedown Street, O'Leavers.
+Darkwave dance nights Joslyn Carriage House, Shakedown Street, O'Leavers.
 [Website](https://www.instagram.com/noiromaha/) | [IG](https://www.instagram.com/noiromaha/?hl=en) | [FB](https://www.facebook.com/NoirOmaha/)
 
 ### Pageturners Lounge
