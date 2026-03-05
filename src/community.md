@@ -24,7 +24,7 @@ Hub of social activity and resources
 
 ### Out Wild Adventures
 
-Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [Signup (vetted)](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
+Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [**Signup (vetted)**](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
 
 ### The Queer Collective
 
@@ -42,15 +42,13 @@ Furry group with in-person / online meetups. Moderated. [Calendar](https://www.o
 
 **Social Groups**
 
-
-
 ### TransNebraska
 
-Monthly online Trans* group ran by Babs Ramsey. [Signup (vetted)](https://www.transnebraska.online/get-involved)
+Monthly online Trans* group ran by Babs Ramsey. [**Signup (vetted)**](https://www.transnebraska.online/get-involved)
 
 ### TransMasc Second Sunday
 
-Social group for Trans Masc folks. [Signup (vetted)](https://secondsunday.xyz/meet-up)
+Social group for Trans Masc folks. [**Signup (vetted)**](https://secondsunday.xyz/meet-up)
 
 <!-- relevant? ### (remote) San Mateo Pride Center groups
 
