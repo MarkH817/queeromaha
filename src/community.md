@@ -22,17 +22,9 @@ Hub of social activity and resources
 - D&D every other Tues @ 4:30 PM
 - [Teen/youth programs](https://www.omahaforus.org/proud-horizons)  -->
 
-### Out Wild Adventures
-
-Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [**Signup (vetted)**](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
-
 ### The Queer Collective
 
 Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
-
-### Ananda Yoga
-
-Queer-specific PWYC class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. Park in the back, go in the backdoor and all the way down the stairs. [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
 ### OwOmaha
 
@@ -41,6 +33,10 @@ Furry group with in-person / online meetups. Moderated. [Calendar](https://www.o
 ---
 
 **Social Groups**
+
+### Out Wild Adventures
+
+Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [**Signup (vetted)**](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
 
 ### TransNebraska
 
@@ -63,7 +59,12 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 
 Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.facebook.com/queernite/) -->
 
-<!-- just felt weird to put them since I also go there
+<!-- 
+
+### Ananda Yoga
+
+Queer-specific PWYC class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. Park in the back, go in the backdoor and all the way down the stairs. [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+
 ### Honey Locust Sangha
 
 Informal group meditation on Mondays @ 6:30PM-8:15PM at Yoga Path 72nd and Pacific. [Website](https://www.honeylocustsangha.org/)
