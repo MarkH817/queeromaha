@@ -24,11 +24,7 @@ Hub of social activity and resources
 
 ### The Queer Collective
 
-Mutual Aid, drag shows, line dancing, art markets. [IG](https://www.instagram.com/collectiveofqueers/)
-
-### OwOmaha
-
-Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
+Mutual Aid, drag shows, line dancing, art markets. [Instagram](https://www.instagram.com/collectiveofqueers/)
 
 ---
 
@@ -49,6 +45,10 @@ Social group for Trans Masc folks. [**Signup (vetted)**](https://secondsunday.xy
 <!-- relevant? ### (remote) San Mateo Pride Center groups
 
 Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Trans](https://tinyurl.com/smpctransgroup) -->
+
+### OwOmaha
+
+Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 ### Open Arms Trans Social Group (OATS)
 
