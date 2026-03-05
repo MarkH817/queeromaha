@@ -7,7 +7,7 @@ layout: layouts/base.njk
 
 **Event Listings**
 
-[OmahaUnderground.NET](https://omahaunderground.net) has the good stuff. Post your show flyers here!
+[OmahaUnderground.NET](https://omahaunderground.net) has got the goods. Post your show flyers here!
 
 [Omaha Buzz](https://omahabuzz.substack.com/) makes weekly posts with lots of shows
 
