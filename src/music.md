@@ -7,7 +7,11 @@ layout: layouts/base.njk
 
 **Event Listings**
 
-[OmahaUnderground.NET](https://omahaunderground.net) | [Omaha Buzz](https://omahabuzz.substack.com/) 
+[OmahaUnderground.NET](https://omahaunderground.net) has the good stuff. Post your show flyers here!
+
+[Omaha Buzz](https://omahabuzz.substack.com/) makes weekly posts with lots of shows
+
+
 <!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
 
 ---
