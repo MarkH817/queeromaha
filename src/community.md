@@ -24,7 +24,7 @@ Hub of social activity and resources
 
 ### Out Wild Adventures
 
-Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [Signup (vetted)](https://forms.gle/k2HhE8boH47rkJpT6) | [IG](https://www.instagram.com/out_wild_adventures/) | [FB](https://www.facebook.com/groups/outwildadventures/) | [Website](https://flow.page/outwildadventures)
+Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [Signup (vetted)](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
 
 ### The Queer Collective
 
