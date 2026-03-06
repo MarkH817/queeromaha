@@ -18,9 +18,11 @@ layout: layouts/base.njk
 
 **Downtown and South Omaha**
 
-### Low End at Bemis
+### Low End at Bemis Center
 
-Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org/programs/low-end)
+Amazing experimental music series. Many trans and queer artists have performed.
+
+[Events Calendar](https://www.bemiscenter.org/low-end)
 
 
 ### Church Art House 🚻
