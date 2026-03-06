@@ -73,11 +73,15 @@ Free ample parking behind the State Farm building. A door near the big State Far
 
 ### Honey Locust Sangha
 
-Informal group meditation on Mondays @ 6:30PM-8:15PM at Yoga Path 72nd and Pacific. [Website](https://www.honeylocustsangha.org/)
+Group meditation on Mondays @ 6:30PM at [Yoga Path 72nd and Pacific](https://maps.app.goo.gl/UjcppyjUyC8gAQzbA?g_st=ic)
+
+[Website](https://www.honeylocustsangha.org/)
 
 ### Nebraska Zen Center
 
-Zazen and dharma talk on Sundays @ 9:45AM to noon at NZC 38th and Farnam. [Events](https://nebraskazencenter.org/upcoming-events/) | [Calendar](https://nebraskazencenter.org/calendar/) -->
+Group meditation and talk on Sundays @ 9:45AM at [38th and Farnam](https://maps.app.goo.gl/EThTMpF3eR4kJ83M9?g_st=ic)
+
+[Events Calendar](https://nebraskazencenter.org/upcoming-events/)
 
 <!-- unverified, I don't have FB
 ### Omaha LGBT* Group
