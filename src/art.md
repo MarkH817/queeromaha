@@ -13,9 +13,9 @@ Ecstatic dance, figure drawing and spiritual singing, usually at Church Art Hous
 
 [Insta](https://www.instagram.com/sobersocialsomaha/)
 
-### Soundry Experimental Music Group
+### Soundry w/ Stacey Barelos
 
-Experimental music education and demos.
+Experimental music education and demos. Amazing creative expression.
 
 [Insta](https://www.instagram.com/omahasoundry/) | [Events Calendar](https://staceybarelos.com/soundry/)
 
