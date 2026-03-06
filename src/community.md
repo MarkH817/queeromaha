@@ -63,9 +63,9 @@ Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.faceboo
 
 ### Ananda Yoga
 
-Emotional Release class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. 
+Queer-centered Emotional Release class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. The owner Brooke is extremely supportive. Class is called "Mad Girls Club - For Trans + Queer Folx" 
 
-Pay what you can, no registration required. [Maps Link](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic)
+Pay What You Can, no registration required. [Maps Link](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic)
 
 Free ample parking behind the State Farm building. A door near the big State Farm sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway. Get there early to respect the container.
 
