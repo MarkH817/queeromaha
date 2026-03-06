@@ -13,7 +13,7 @@ Ecstatic dance, figure drawing and spiritual singing, usually at Church Art Hous
 
 ### Soundry Experimental Music Group
 
-Ran by Stacey Barelos, experimental music education and demos. [IG](https://www.instagram.com/omahasoundry/) | [Website](https://staceybarelos.com/soundry/)
+Experimental music education and demos. [Insta](https://www.instagram.com/omahasoundry/) | [Event Calendar / Website](https://staceybarelos.com/soundry/)
 
 ### Drum Circles
 
