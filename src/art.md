@@ -170,7 +170,7 @@ Monthly arts and spirituality event series at Urban Abbey. Features workshops, p
 
 Experimental music series at Bemis Center. Cannot recommend highly enough.
 
-[Website](https://www.bemiscenter.org/programs/low-end)
+[Website](https://www.bemiscenter.org/low-end)
 
 ### Millwork Commons 🚻
 
