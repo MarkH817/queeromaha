@@ -59,11 +59,17 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 
 Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.facebook.com/queernite/) -->
 
-<!-- 
+## Spiritual Practice
 
 ### Ananda Yoga
 
-Queer-specific PWYC class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. Park in the back, go in the backdoor and all the way down the stairs. [Booking](https://www.anandaomaha.com/brooke-monaco-wellness) | [IG](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+Emotional Release class on Sundays @ 12:30 Ananda Yoga @ 50th and Dodge. 
+
+Pay what you can, no registration required. [Maps Link](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic)
+
+Free ample parking behind the State Farm building. A door near the big State Farm sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway. Get there early to respect the container.
+
+[Class Schedule / Signup](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
 ### Honey Locust Sangha
 
