@@ -54,7 +54,7 @@ Black-owned community space for shows and art events.
 
 Exhibits, studios, classes, and talks. 
 
-[Events Calendar](https://www.u-ca.org/ourprograms)
+[Events Calendar](https://www.u-ca.org/happenings)
 
 ---
 
