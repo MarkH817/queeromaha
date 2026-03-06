@@ -149,7 +149,7 @@ Open artist studios, music and free workshops ran by BFF.
 
 ### Aksarben Village 🚻
 
-Mix of normies and queers. Art market and outdoor music in the summer. Get the Momos at Inner Rail.
+Art market and outdoor music in the summer. Get the Momos at Inner Rail.
 
 [Events Calendar](https://www.aksarbenvillage.com/events)
 
