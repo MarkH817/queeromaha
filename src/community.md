@@ -3,7 +3,7 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
-> Are you a local maker? [Send me your listing here!](/makers)
+> Are you a local maker? [Post your listing here!](/makers)
 
 ---
 
