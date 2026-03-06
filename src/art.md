@@ -178,7 +178,7 @@ Apartment complex with art showings/ events.
 
 Artist-run gallery. 
 
-[Website](https://www.omahaartistscoop.com/)
+[Website](http://artistscoopomaha.com/)
 
 ### Hot Shops
 
