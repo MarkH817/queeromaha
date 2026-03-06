@@ -162,9 +162,9 @@ Holocaust survivor's art museum with workshops and education programs. [Events C
 Monthly arts and spirituality event series at Urban Abbey. Features workshops, performances, and community art projects. Welcoming to all, with a focus on creativity and connection. See their site for upcoming dates and details.
 [Events](https://www.theurbanabbey.org/events) -->
 
-### Low End at Bemis
+### Bemis Center
 
-Experimental music series at Bemis Center. Cannot recommend highly enough.
+Amazing experimental art museum with Low End music series, talks, resident open houses.
 
 [Insta](https://www.instagram.com/bemiscenter/) | [Events Calendar](https://www.bemiscenter.org/low-end) | [BookFace](https://www.facebook.com/bemiscenter/)
 
