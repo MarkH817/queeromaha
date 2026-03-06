@@ -19,11 +19,11 @@ Experimental music education and demos. Amazing creative expression.
 
 [Insta](https://www.instagram.com/omahasoundry/) | [Events Calendar](https://staceybarelos.com/soundry/)
 
-### Drum Circles
+### Omaha Drum Family (Drum Circles)
 
 3rd Friday 7 to 9 @ Whole Rejuvenation House (4312 Camden Ave)
 
-[Events calendar](https://www.facebook.com/drumomaha/)
+[Events Calendar](https://www.facebook.com/drumomaha/)
 <!-- 
 ### Modular Synth Group
 
