@@ -188,7 +188,7 @@ Artist-run gallery.
 
 Glassblowing and classes 
 
-[IG](https://www.instagram.com/hotshopsartcenter/?hl=en) | [Website](https://www.hotshopsartcenter.com/)  [FB](https://www.facebook.com/hotshopsartcenter/)
+[Insta](https://www.instagram.com/hotshopsartcenter/?hl=en) | [Events Calendar](https://hotshopsartcenter.org/events/) | [BookFace](https://www.facebook.com/hotshopsartcenter/)
 
 
 <!-- 
