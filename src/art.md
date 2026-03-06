@@ -63,9 +63,6 @@ Exhibits, studios, classes, and talks.
 
 Check out [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries
 
-[Insta](https://www.instagram.com/friday2onvinton_omaha/) | [BookFace](https://www.facebook.com/friday2onvinton/)
-
-
 ### Church Art House 🚻
 
 Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
