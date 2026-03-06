@@ -151,7 +151,7 @@ Art market and outdoor music in the summer. Get the Momos at Inner Rail.
 
 ### Samuel Bak Museum
 
-Holocaust survivor's art museum with workshops and education programs. [Education Events](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php) | [Lectures](https://events.unomaha.edu/department/samuel_bak_museum_the_learning_center)
+Holocaust survivor's art museum with workshops and education programs. [Education Events](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php)
 
 ---
 
