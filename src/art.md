@@ -172,15 +172,21 @@ Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org
 
 ### Millwork Commons 🚻
 
-Apartment complex with art showings/ events. [Events](https://millworkcommons.com/events/) | [IG](https://www.instagram.com/millworkcommons/)
+Apartment complex with art showings/ events. 
+
+[Insta](https://www.instagram.com/millworkcommons/) | [Events Calendar](https://millworkcommons.com/events/) 
 
 ### Omaha Artists Cooperative Gallery 🚻
 
-Artist-run gallery. [Website](https://www.omahaartistscoop.com/)
+Artist-run gallery. 
+
+[Website](https://www.omahaartistscoop.com/)
 
 ### Hot Shops
 
-Glassblowing and classes [Website](https://www.hotshopsartcenter.com/) | [IG](https://www.instagram.com/hotshopsartcenter/?hl=en) | [FB](https://www.facebook.com/hotshopsartcenter/)
+Glassblowing and classes 
+
+[IG](https://www.instagram.com/hotshopsartcenter/?hl=en) | [Website](https://www.hotshopsartcenter.com/)  [FB](https://www.facebook.com/hotshopsartcenter/)
 
 
 <!-- 
