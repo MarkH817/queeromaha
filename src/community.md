@@ -75,7 +75,7 @@ Free ample parking behind the State Farm building. A door near the big State Far
 
 Group meditation on Mondays @ 6:30PM at [Yoga Path 72nd and Pacific](https://maps.app.goo.gl/UjcppyjUyC8gAQzbA?g_st=ic)
 
-[Website](https://www.honeylocustsangha.org/)
+[Website](https://honeylocustsangha.org/)
 
 ### Nebraska Zen Center
 
