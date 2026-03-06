@@ -48,7 +48,7 @@ Members with social presence:
 
 Black-owned community space for shows and art events.
 
-[Events Calendar](https://www.houseofculxr.com/all-events) | [Insta](https://www.instagram.com/culxrhouse/) | [BookFace](https://www.facebook.com/culxrhouse/)
+[Insta](https://www.instagram.com/culxrhouse/) | [Events Calendar](https://www.houseofculxr.com/all-events) | [BookFace](https://www.facebook.com/culxrhouse/)
 
 ### Union for Contemporary Art
 
