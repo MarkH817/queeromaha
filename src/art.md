@@ -60,8 +60,7 @@ Exhibits, studios, classes, and talks.
 
 **South Omaha**
 
-
-Check out [Friday2 on Vinton](https://www.instagram.com/friday2onvinton_omaha/) - music and art galleries
+[Second Fridays on Vinton](https://www.instagram.com/friday2onvinton_omaha/)
 
 ### Church Art House 🚻
 
@@ -95,7 +94,7 @@ New-ish studio and gallery space [Insta](https://www.instagram.com/clover24omaha
 
 **Benson**
 
-Check out [Benson First Fridays (BFF)](https://www.bffomaha.org/) Open galleries, shows, artist markets.
+[Benson First Fridays (BFF)](https://www.bffomaha.org/)
 
 ### Petshop 🏳️‍🌈 🚻
 
