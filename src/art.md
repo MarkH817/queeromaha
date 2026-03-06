@@ -90,9 +90,9 @@ Local artists, music and market at rotating venues eg Church Art House.
 Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm 
 [FB](https://www.facebook.com/poetiklee77/) [IG](https://www.instagram.com/razor_wire_productions/) -->
 
-<!-- after I check it out ## Clover24
+## Clover24
 
-New-ish studio and gallery space [IG](https://www.instagram.com/clover24omaha/) [Events](https://clover24.org/events) -->
+New-ish studio and gallery space [Insta](https://www.instagram.com/clover24omaha/) [Events Calendar](https://clover24.org/events)
 
 ---
 
