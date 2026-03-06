@@ -135,7 +135,7 @@ Minimalist space with a cool upstairs.
 
 Mobile gallery often parked near Petshop showing local artists.
 
-[Insta](https://www.instagram.com/bffmamo/?hl=en) | [BookFace](https://www.facebook.com/MaMOgallery/) | [Website](https://www.bffomaha.org/mamo)
+[Insta](https://www.instagram.com/bffmamo/?hl=en) | [Website](https://www.bffomaha.org/mamo) |  [BookFace](https://www.facebook.com/MaMOgallery/)
 
 ### Trudy's 🏳️‍🌈
 
@@ -168,7 +168,9 @@ Monthly arts and spirituality event series at Urban Abbey. Features workshops, p
 
 ### Low End at Bemis
 
-Experimental music series at Bemis Center. [Website](https://www.bemiscenter.org/programs/low-end)
+Experimental music series at Bemis Center. Cannot recommend highly enough.
+
+[Website](https://www.bemiscenter.org/programs/low-end)
 
 ### Millwork Commons 🚻
 
