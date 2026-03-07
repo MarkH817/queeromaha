@@ -27,15 +27,15 @@ Amazing experimental music series. Many trans and queer artists have performed.
 
 ### Church Art House 🚻
 
-Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. [IG](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
+Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. [Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
 
 ### No-Coast Noise Collective
 
-Experimental music and sound art collective. Centered out of Project Project. [IG](https://www.instagram.com/nocoastnoise/) | [Website](https://www.nocoastnoise.net/)
+Experimental music and sound art collective. Centered out of Project Project. [Insta](https://www.instagram.com/nocoastnoise/) | [Website](https://www.nocoastnoise.net/)
 
 ### Project Project 🚻
 
-Punk/queer DIY space with experimental music and local art. [IG](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/)
+Punk/queer DIY space with experimental music and local art. [Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/)
 
 ---
 
@@ -43,7 +43,7 @@ Punk/queer DIY space with experimental music and local art. [IG](https://www.ins
 
 ### Floors Floors Floors 🚻🛋️
 
-Gallery and events space with local music and queer markets. [IG](https://www.instagram.com/floorsfloorsfloors_7052maple)
+Gallery and events space with local music and queer markets. [Insta](https://www.instagram.com/floorsfloorsfloors_7052maple)
 
 ### Shakedown Street 🚻
 
@@ -67,7 +67,7 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Web
 
 ### Culxr House
 
-Black-owned community space for shows and art events. [FB](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [IG](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
+Black-owned community space for shows and art events. [BookFace](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [Insta](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
 
 
 ---
@@ -76,11 +76,11 @@ Black-owned community space for shows and art events. [FB](https://www.facebook.
 
 ### O'Leaver's 🚻
 
-Did you know it's owned by members of the band Cursive? [FB](https://www.facebook.com/oleavers/) | [IG](https://www.instagram.com/oleavers/?hl=en)
+Did you know it's owned by members of the band Cursive? [BookFace](https://www.facebook.com/oleavers/) | [Insta](https://www.instagram.com/oleavers/?hl=en)
  
 ### B Bar
 
-Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [FB](https://www.facebook.com/TheB.BarOmaha)
+Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [BookFace](https://www.facebook.com/TheB.BarOmaha)
 
 ### Joslyn Castle Carriage House 🚻
 
@@ -88,16 +88,16 @@ Ye Olde Garage [Website](https://www.joslyncastle.com/events/)
 
 ### No Coast Punk Market
 
-Punk / queer / DIY market [IG](https://www.instagram.com/no_coast_flea_market_omaha/) | [FB](https://www.facebook.com/nocoastpunkrockfleamarket/)
+Punk / queer / DIY market [Insta](https://www.instagram.com/no_coast_flea_market_omaha/) | [BookFace](https://www.facebook.com/nocoastpunkrockfleamarket/)
 
 ### Goth Night (Noir Omaha)
 
 Darkwave dance nights Joslyn Carriage House, Shakedown Street, O'Leavers.
-[Website](https://www.instagram.com/noiromaha/) | [IG](https://www.instagram.com/noiromaha/?hl=en) | [FB](https://www.facebook.com/NoirOmaha/)
+[Website](https://www.instagram.com/noiromaha/) | [Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
 
 ### Pageturners Lounge
 
-Bookish bar with local acts. [FB](https://www.facebook.com/pageturnerslounge/) [IG](https://www.instagram.com/pageturnerslounge/?hl=en)
+Bookish bar with local acts. [BookFace](https://www.facebook.com/pageturnerslounge/) [Insta](https://www.instagram.com/pageturnerslounge/?hl=en)
 
 <!-- 
 ### The Breakroom
@@ -107,7 +107,7 @@ Punk venue, 4204 Hamilton St [Website](https://omahaunderground.net/venues/the-b
 <!-- I've been there, may be on hiatus, shows in LR and basement. Couple in Gifford Park, Their kids' name is Fox, seem connected w/ community 3504 Cass St
 ### The FoxHole
 
-Someone's house. Ask around. Basement shows. [IG](https://www.instagram.com/thefoxholeomaha/?hl=en) -->
+Someone's house. Ask around. Basement shows. [Insta](https://www.instagram.com/thefoxholeomaha/?hl=en) -->
 
 <!-- haven't been there.
 ### Red Lion
@@ -128,7 +128,7 @@ Has a stage, seating, PA and projector. Fairly new to hosting music/local events
 ### Dreamland Lounge
 TBD, jazz club?
 
-[FB](https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/) -->
+[BookFace](https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/) -->
 
 <!-- pulled due to comment on 'safety' on noir's page. I trust them, there's queers there. something funky's going on w/ new ownership, and industrial night guy is a bit wonky anyway. https://www.instagram.com/noiromaha/?hl=en
 
@@ -172,4 +172,4 @@ New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha
 
 ### Slowdown
 
-Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [IG](https://www.instagram.com/theslowdown/) [FB](https://www.facebook.com/theslowdown) -->
+Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [Insta](https://www.instagram.com/theslowdown/) [BookFace](https://www.facebook.com/theslowdown) -->

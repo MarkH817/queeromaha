@@ -31,7 +31,7 @@ Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically).
 <!-- 
 ### SoundArte
 
-Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) | [IG](https://www.instagram.com/soundarte.mx/?hl=en) | [Music Label](https://eacrecords.bandcamp.com/) -->
+Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival. [Website](https://soundarte.net) | [Insta](https://www.instagram.com/soundarte.mx/?hl=en) | [Music Label](https://eacrecords.bandcamp.com/) -->
 <!-- 
 Members with social presence:
 
@@ -84,7 +84,7 @@ Local artists, music and market at rotating venues eg Church Art House.
 ## Razor Wire Productions Open Mic
 
 Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm 
-[FB](https://www.facebook.com/poetiklee77/) [IG](https://www.instagram.com/razor_wire_productions/) -->
+[BookFace](https://www.facebook.com/poetiklee77/) [Insta](https://www.instagram.com/razor_wire_productions/) -->
 
 ### Clover24
 
@@ -192,7 +192,7 @@ Glassblowing and classes
 
 Alley with small art galleries. [Website](https://omahaexploration.com/2025/12/13/the-old-market-passageway/)
 
-Check out the nearby Garden of the Zodiac [IG](https://www.instagram.com/gardenofthezodiac/?hl=en)
+Check out the nearby Garden of the Zodiac [Insta](https://www.instagram.com/gardenofthezodiac/?hl=en)
 
 ### Joslyn 🚻
 

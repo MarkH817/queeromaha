@@ -48,7 +48,7 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 ### OwOmaha Furry Group
 
-Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [IG](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
+Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [Insta](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 ### Open Arms Trans Social Group (OATS)
 
@@ -57,7 +57,7 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 <!-- ongoing?
 ### BFF Queer Nite
 
-Drag shows / queer events at BFF / Petshop / The Sydney [FB](https://www.facebook.com/queernite/) -->
+Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.facebook.com/queernite/) -->
 
 ## Spiritual Practice
 
@@ -69,7 +69,7 @@ Pay What You Can, no registration required. The owner Brooke is extremely suppor
 
 Free ample parking behind the State Farm building. A door near the big State Farm sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway. Get there early to respect the container.
 
-[Class Schedule / Signup](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [FB](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+[Class Schedule / Signup](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
 ### Honey Locust Sangha
 
@@ -86,7 +86,7 @@ Group meditation and talk on Sundays @ 9:45AM at [38th and Farnam](https://maps.
 <!-- unverified, I don't have FB
 ### Omaha LGBT* Group
 
-[FB](https://www.facebook.com/groups/428335397593645) -->
+[BookFace](https://www.facebook.com/groups/428335397593645) -->
 
 <!-- unverified, would need to ask bug / others who know
 ### UNO Queer and Trans Student Alliance (QTS)
@@ -100,7 +100,7 @@ Student org. Runs [Queer Prom](https://mavsync.unomaha.edu/organization/qts/even
 
 Regional furry group
 
-[Telegram](https://t.me/s/furbraska) | [FB](https://www.facebook.com/groups/furrbraska/)
+[Telegram](https://t.me/s/furbraska) | [BookFace](https://www.facebook.com/groups/furrbraska/)
 
 ---
 
@@ -109,7 +109,7 @@ too small?
 
 Omaha furry group
 
-[Telegram](https://t.me/AnthroNE) | [IG](https://www.instagram.com/anthronebraska/?hl=en)
+[Telegram](https://t.me/AnthroNE) | [Insta](https://www.instagram.com/anthronebraska/?hl=en)
 
 ---
 -->
