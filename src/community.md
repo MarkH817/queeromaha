@@ -10,7 +10,8 @@ layout: layouts/base.njk
 ### OmahaForUs
 
 Hub of social activity and resources
-[Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
+
+[Events Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
 
 <!-- food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. -->
 
@@ -24,7 +25,9 @@ Hub of social activity and resources
 
 ### The Queer Collective
 
-Mutual Aid, drag shows, line dancing, art markets. [Instagram](https://www.instagram.com/collectiveofqueers/)
+Mutual Aid, drag shows, line dancing, art markets.
+
+[Insta](https://www.instagram.com/collectiveofqueers/)
 
 ---
 
@@ -32,15 +35,21 @@ Mutual Aid, drag shows, line dancing, art markets. [Instagram](https://www.insta
 
 ### Out Wild Adventures
 
-Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events. [**Signup (vetted)**](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
+Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events.
+
+[**Signup (vetted)**](https://forms.gle/k2HhE8boH47rkJpT6) | [More Information](https://flow.page/outwildadventures)
 
 ### TransNebraska
 
-Monthly online Trans* group ran by Babs Ramsey. [**Signup (vetted)**](https://www.transnebraska.online/get-involved)
+Monthly online Trans* group ran by Babs Ramsey. 
+
+[**Signup (vetted)**](https://www.transnebraska.online/get-involved)
 
 ### TransMasc Second Sunday
 
-Social group for Trans Masc folks. [**Signup (vetted)**](https://secondsunday.xyz/meet-up)
+Social group for Trans Masc folks. 
+
+[**Signup (vetted)**](https://secondsunday.xyz/meet-up)
 
 <!-- relevant? ### (remote) San Mateo Pride Center groups
 
@@ -48,11 +57,15 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 ### OwOmaha Furry Group
 
-Furry group with in-person / online meetups. Moderated. [Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [Insta](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
+Furry group with in-person / online meetups. Well-Moderated.
+
+[Events Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [Insta](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 ### Open Arms Trans Social Group (OATS)
 
-Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha  [Website](https://2uomaha.org/justice/lgbtq)
+Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha
+
+[More Information](https://2uomaha.org/justice/lgbtq)
 
 <!-- ongoing?
 ### BFF Queer Nite
@@ -65,21 +78,19 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 
 Queer-centered Emotional Release class on Sundays @ 12:30PM at [Ananda Yoga on 49th and Dodge](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic)
 
-Pay What You Can, no registration required. The owner Brooke is extremely supportive. Class is called "Mad Girls Club - For Trans + Queer Folx"
+Pay What You Can, no registration required. Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
 
-Free ample parking behind the State Farm building. A door near the big State Farm sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway. Get there early to respect the container.
-
-[Class Schedule / Signup](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+[Class Schedule](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
 ### Honey Locust Sangha
 
-Group meditation on Mondays @ 6:30PM at [Yoga Path 72nd and Pacific](https://maps.app.goo.gl/UjcppyjUyC8gAQzbA?g_st=ic)
+Group meditation on Mondays @ 6:30PM at [The Yoga Path on 72nd and Pacific](https://maps.app.goo.gl/UjcppyjUyC8gAQzbA?g_st=ic)
 
 [Events Calendar](https://honeylocustsangha.org/events.html)
 
 ### Nebraska Zen Center
 
-Group meditation and talk on Sundays @ 9:45AM at [38th and Farnam](https://maps.app.goo.gl/EThTMpF3eR4kJ83M9?g_st=ic)
+Group meditation and talk on Sundays @ 9:45AM in a neighborhood at [38th and Farnam](https://maps.app.goo.gl/EThTMpF3eR4kJ83M9?g_st=ic)
 
 [Events Calendar](https://nebraskazencenter.org/upcoming-events/)
 
