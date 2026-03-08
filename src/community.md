@@ -55,7 +55,7 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 ### OwOmaha Furry Group
 
-Furry group with in-person / online meetups. Well-Moderated.
+Furry group with in-person / online meetups.
 
 [Events Calendar](https://www.owomaha.com/meet-up-calendar) | [Discord](https://discord.gg/owomaha) | [Insta](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
