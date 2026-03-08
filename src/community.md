@@ -3,8 +3,6 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
-> Are you a local maker? [Post your listing here!](/makers)
-
 ---
 
 ### OmahaForUs
