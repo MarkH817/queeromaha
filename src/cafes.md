@@ -7,27 +7,45 @@ layout: layouts/base.njk
 
 **Aksarben**
 
-### Roast Coffeehouse🚻
+### Roast Coffeehouse🚻💻
 
-Great people, coffee and pastries. Can get busy.
+Great people, coffee and pastries.
 
 [Insta](https://www.instagram.com/roast_coffeehouse/) | [Website](https://www.roastcoffeehouse.com/) | [BookFace](https://www.facebook.com/profile.php/?id=100089484920886)
 
-### Godega 🏳️‍🌈🚻🛋️
+### Godega 🏳️‍🌈🚻🛋️💻
 
-Grab-and-go place with specialty snacks. Quiet comfortable place to hang out.
+Grab-and-go place with specialty snacks.
 
 [Insta](https://www.instagram.com/godegamarket/) | [Website](https://godegamarket.com/) | [BookFace](https://www.facebook.com/GodegaMarket/)
+
+### Marigold's 🚻🛋️
+
+Artisinal goods and crafts. Technically a cafe since they have coffee samples.
+
+[Insta](https://www.instagram.com/marigoldsmercantile) | [Website](https://www.marigoldsmercantile.com/) | [BookFace](https://www.facebook.com/marigoldsmercantile/)
 
 ---
 
 **Midtown**
 
-### Mill on Leavenworth 🛋️
+### Mill on Leavenworth 🛋️💻
 
 Large popular cafe. Good for meetups and working.
 
 [Website](https://millcoffee.com/)
+
+
+ ### Archetype Coffee 🚻💻
+
+Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/). Uncomfortable seating.
+
+[Website](https://archetypecoffee.com/)
+
+<!-- ### Sweet Magnolias 🏳️‍🌈
+
+Queer pastry shop. [Insta](https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en) | [Website](https://www.sweetmagnoliasbakeshop.com/) -->
+
 
 ### Spielbound 🚻
 
@@ -36,17 +54,6 @@ Board game cafe with lots of meetups.
 [Official Discord](https://discord.com/invite/official-spellbound-861024184947572736) | [Website](https://www.spielbound.com/how-to-spielbound) | [Active Meetup Group](https://www.meetup.com/playing-games-at-spielbound/) 
 <!-- | [Possibly inactive trans meetup](https://www.facebook.com/events/1312754133797586/) -->
 
-
- ### Archetype Coffee 🚻
-
-Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/).
-
-[Website](https://archetypecoffee.com/)
-
-
-### Sweet Magnolias 🏳️‍🌈
-
-Queer pastry shop. [Insta](https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en) | [Website](https://www.sweetmagnoliasbakeshop.com/)
 
 ---
 
@@ -57,14 +64,14 @@ Queer pastry shop. [Insta](https://www.instagram.com/sweetmagnoliasbakeshop/?hl=
 
 Chill hipster cafe. [Insta](https://www.instagram.com/hardycoffeeco/?hl=en) [BookFace](https://www.facebook.com/hardycoffeeco/) [Website](https://www.hardycoffee.com/) -->
 
-### Edge of the Universe Cafe  🚻 🛋️
+### Edge of the Universe Cafe  🚻🛋️
 
-Truly unique place built out of art made by the owners. Good place for a date.
+Truly unique place built out of art made by the owners. Great date spot.
 
 [Insta](https://www.instagram.com/edgeuniversebff/) | [Events Calendar](https://www.edgeoftheuniverseomaha.com/) | [BookFace](https://www.facebook.com/Edgeuniversebff/about/)
 
 
-### Legends Comics & Coffee  🚻 🛋️
+### Legends Comics & Coffee  🚻🛋️
 
 Comic shop with a large queer section. Hosts board game meetups.
 
@@ -74,16 +81,16 @@ Comic shop with a large queer section. Hosts board game meetups.
 
 **Dundee**
 
-### Blue Line Coffee 🚻
+### Blue Line Coffee 🚻💻
 
-Great coffee and cool people. Posts flyers for local events. 
+Great coffee and cool people. Posts flyers for local events. Limited and uncomfortable seating.
 
 [Insta](https://www.instagram.com/bluelinecoffeeomaha/?hl=en) | [BookFace](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727)
 
  
 ### Amateur Coffee 🚻
 
-Takeout coffee comes in glass containers with deposit. 
+Small place whose takeout coffee comes in glass containers with deposit.
 
 [Insta](https://www.instagram.com/amateurcoffee/?hl=en) | [Website](https://www.amateurcoffee.com/) | [BookFace](https://www.instagram.com/amateurcoffee)
 
@@ -120,7 +127,7 @@ Bookstore cafe / bar with a [poetry reading open mic night](https://www.nepoetry
 
 **West O**
 
-### Karma Koffee 🚻 🛋️
+### Karma Koffee 🚻🛋️💻
 
 Buddhist themed cafe with vegan options and authentic thangkas. 
 

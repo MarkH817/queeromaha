@@ -96,7 +96,7 @@ New-ish studio and gallery space [Insta](https://www.instagram.com/clover24omaha
 
 [Benson First Fridays (BFF)](https://www.bffomaha.org/)
 
-### Petshop 🏳️‍🌈 🚻
+### Petshop 🏳️‍🌈🚻
 
 Punk/queer space for provocative art and experimental music.
 
@@ -110,7 +110,7 @@ Large gallery showing larger local artists.
 
 ### BFF Gallery 🏳️‍🌈
 
-Punk gallery. My art was in it! 
+Cool punk gallery. My art was in it! 
 
 [Insta](https://www.instagram.com/thebffgallery/?hl=en)
 
@@ -145,13 +145,15 @@ Open artist studios, music and free workshops ran by BFF.
 
 ### Aksarben Village 🚻
 
-Art market and outdoor music in the summer. Get the Momos at Inner Rail.
+Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge.
 
 [Events Calendar](https://www.aksarbenvillage.com/events)
 
 ### Samuel Bak Museum
 
-Holocaust survivor's art museum with workshops and education programs. [Events Calendar](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php)
+Holocaust survivor's art museum with workshops and education programs. 
+
+[Events Calendar](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php)
 
 ---
 
@@ -164,7 +166,7 @@ Monthly arts and spirituality event series at Urban Abbey. Features workshops, p
 
 ### Bemis Center
 
-Amazing experimental art museum with Low End music series, talks, resident open houses.
+Cutting-edge museum with resident artists, the Low End music series and major installations.
 
 [Insta](https://www.instagram.com/bemiscenter/) | [Events Calendar](https://www.bemiscenter.org/low-end) | [BookFace](https://www.facebook.com/bemiscenter/)
 
@@ -176,13 +178,13 @@ Apartment complex with art showings/ events.
 
 ### Omaha Artists Cooperative Gallery 🚻
 
-Artist-run gallery. 
+
 
 [Events Calendar](http://artistscoopomaha.com/events?view=calendar)
 
 ### Hot Shops
 
-Glassblowing and classes 
+Glassblowing studio with classes and events.
 
 [Insta](https://www.instagram.com/hotshopsartcenter/?hl=en) | [Events Calendar](https://hotshopsartcenter.org/events/) | [BookFace](https://www.facebook.com/hotshopsartcenter/)
 
