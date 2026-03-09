@@ -92,6 +92,14 @@ Group meditation and talk on Sundays @ 9:45AM in a neighborhood at [38th and Far
 
 [Events Calendar](https://nebraskazencenter.org/upcoming-events/)
 
+### Sound Baths / Singing Bowls w/ Havalynn Russell
+
+Deeply relaxing experience in an intentional container.
+
+At Church Arthouse on Sundays @ 10:30AM. ~20$ / PWYC / NOTAFLOF
+
+[Insta](https://www.instagram.com/havalynn1/)
+
 <!-- unverified, I don't have FB
 ### Omaha LGBT* Group
 
