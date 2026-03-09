@@ -178,7 +178,7 @@ Apartment complex with art showings/ events.
 
 ### Omaha Artists Cooperative Gallery 🚻
 
-
+Artist-owned gallery showcasing a wide variety of local art.
 
 [Events Calendar](http://artistscoopomaha.com/events?view=calendar)
 
