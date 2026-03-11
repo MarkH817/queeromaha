@@ -139,8 +139,6 @@ https://www.instagram.com/the_mourning_dolls/ -->
 
 ### Red Light Lounge (fka The Verdict) 🛋️
 
-NOTE under new ownership as of Jan '26. Watch this space. Club Noir left the venue.
-
 [The Slab](https://instagram.com/djlusterdust) on 2nd Saturdays
 
 [Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
