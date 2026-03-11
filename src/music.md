@@ -139,11 +139,15 @@ https://www.instagram.com/the_mourning_dolls/ -->
 
 ### Red Light Lounge (fka The Verdict) 🛋️
 
-[The Slab](https://instagram.com/djlusterdust) on 2nd Saturdays
+Industrial and Goth / Darkwave nights
+
+Special events thru [Mourning Dolls](https://www.instagram.com/the_mourning_dolls)
+
+[The Slab - Darkwave and Rock](https://instagram.com/djlusterdust) on 2nd Saturdays
 
 [Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
 
-<!--  changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. Unclear who owns it. Seems like a weird scene. similar ppl run events (DJ barrens, nevermore), 
+<!--  per Cassandra it was the samr owners just rebrand. bad info : rumint from torie i think. noir likely will be at Coven. the Dolls are now involved. seems like a burlesque/ marketing/LA style thing dor thag to me. DID NOT changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. Unclear who owns it. Seems like a weird scene. similar ppl run events (DJ barrens, nevermore), 
 ### Red Light Lounge (fka The Verdict)
 
 Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
