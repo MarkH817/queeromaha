@@ -7,9 +7,11 @@ layout: layouts/base.njk
 
 **Event Listings**
 
-[OmahaUnderground.NET](https://omahaunderground.net) has got the goods. Post your show flyers here!
+[Omaha Underground's Insta](https:/Instagram.com/Omahaunderground) has the good shit.
 
-[Omaha Buzz](https://omahabuzz.substack.com/) makes weekly posts with lots of shows
+[Post your show flyers thwre at websites OmahaUnderground.NET](https://omahaunderground.net)
+
+The [Omaha Buzz Substack](https://omahabuzz.substack.com/) posts a ton of shows weekly
 
 
 <!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
