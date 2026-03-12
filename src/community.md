@@ -84,13 +84,13 @@ Pay What You Can, no registration required. Park behind the State Farm building,
 
 ### Honey Locust Sangha
 
-Group meditation on Mondays @ 6:30PM at [The Yoga Path on 72nd and Pacific](https://maps.app.goo.gl/UjcppyjUyC8gAQzbA?g_st=ic)
+Group meditation on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific
 
 [Events Calendar](https://honeylocustsangha.org/events.html)
 
 ### Nebraska Zen Center
 
-Group meditation and talk on Sundays @ 9:45AM in a neighborhood at [38th and Farnam](https://maps.app.goo.gl/EThTMpF3eR4kJ83M9?g_st=ic)
+Group meditation and talk on Sundays @ 9:45AM in a neighborhood near 38th and Farnam
 
 [Events Calendar](https://nebraskazencenter.org/upcoming-events/)
 
