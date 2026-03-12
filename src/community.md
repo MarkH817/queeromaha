@@ -70,7 +70,9 @@ Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Un
 
 Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.facebook.com/queernite/) -->
 
-## Spiritual Practice
+---
+
+**Spiritual Practice**
 
 ### Ananda Yoga
 
