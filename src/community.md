@@ -11,7 +11,7 @@ layout: layouts/base.njk
 
 Hub of social activity and resources
 
-[Events Calendar](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
+[**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
 
 <!-- food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. -->
 
@@ -27,7 +27,7 @@ Hub of social activity and resources
 
 Mutual Aid, drag shows, line dancing, art markets.
 
-[Insta](https://www.instagram.com/collectiveofqueers/)
+[**Insta**](https://www.instagram.com/collectiveofqueers/)
 
 ---
 
@@ -59,7 +59,7 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 Furry group with in-person / online meetups.
 
-[**Events Calendar**)[https://www.owomaha.com/calendar] | [Discord](https://discord.gg/owomaha) | [Insta](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
+[**Events Calendar**][https://www.owomaha.com/calendar] | [Discord](https://discord.gg/owomaha) | [Insta](https://www.instagram.com/owo.omaha/) | [Telegram](https://t.me/owo_omaha)
 
 ### Open Arms Trans Social Group (OATS)
 
@@ -78,23 +78,23 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 
 ### Ananda Yoga
 
-Queer-centered Emotional Release class on Sundays @ 12:30PM at [Ananda Yoga on 49th and Dodge](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic)
+Queer-centered Emotional Release class on Sundays @ 12:30PM at [Ananda Yoga on 49th and Dodge](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic). Pay What You Can, no registration required. 
 
-Pay What You Can, no registration required. Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
+Finding it can be tricky. Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
 
-[Class Schedule](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
+[**Class Schedule**](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
 ### Honey Locust Sangha
 
 Group meditation on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific
 
-[Events Calendar](https://honeylocustsangha.org/events.html)
+[**Events Calendar**](https://honeylocustsangha.org/events.html)
 
 ### Nebraska Zen Center
 
 Group meditation and talk on Sundays @ 9:45AM in a neighborhood near 38th and Farnam
 
-[Events Calendar](https://nebraskazencenter.org/upcoming-events/)
+[**Events Calendar**](https://nebraskazencenter.org/upcoming-events/)
 
 ### Sound Baths / Singing Bowls w/ Havalynn Russell
 
@@ -102,7 +102,7 @@ Deeply relaxing experience in an intentional container.
 
 At Church Arthouse on Sundays @ 10:30AM. ~20$ / PWYC / NOTAFLOF
 
-[Insta](https://www.instagram.com/havalynn1/)
+[**Insta**](https://www.instagram.com/havalynn1/)
 
 <!-- unverified, I don't have FB
 ### Omaha LGBT* Group
