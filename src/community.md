@@ -5,6 +5,8 @@ layout: layouts/base.njk
 
 ---
 
+**Community**
+
 ### OmahaForUs
 
 Hub of social activity and resources
