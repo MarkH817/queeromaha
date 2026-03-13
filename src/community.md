@@ -104,6 +104,12 @@ At Church Arthouse on Sundays @ 10:30AM. ~20$ / PWYC / NOTAFLOF
 
 [**Insta**](https://www.instagram.com/havalynn1/)
 
+<!-- 
+### Processing religious trauma
+
+[Recovering From Religion](https://www.recoveringfromreligion.org/) | [Online Meetup Groups](https://www.meetup.com/missouri-kansas-chapter/?eventOrigin=pro_network)
+-->
+
 <!-- unverified, I don't have FB
 ### Omaha LGBT* Group
 

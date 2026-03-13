@@ -24,6 +24,17 @@ Experimental music education and demos. Amazing creative expression.
 3rd Friday 7 to 9 @ Whole Rejuvenation House (4312 Camden Ave)
 
 [Events Calendar](https://www.facebook.com/drumomaha/)
+
+### Sound Baths / Singing Bowls w/ Havalynn Russell
+
+Deeply relaxing experience in an intentional container.
+
+At Church Arthouse on Sundays @ 10:30AM. ~20$ / PWYC / NOTAFLOF
+
+[Insta](https://www.instagram.com/havalynn1/)
+
+
+
 <!-- 
 ### Modular Synth Group
 
