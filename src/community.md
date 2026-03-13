@@ -80,7 +80,15 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 ---
 
 <a id='spirituality'></a>
-## Spiritual Practice
+**Spiritual Practice**
+
+### Vocal Release 
+
+Saturdsays in March from 11AM to 1PM @ Ananda Yoga. DaWaune creates a safe container to be unapologetically heard. I really benefited from it.
+
+~20$ or PWYC
+
+[Their LinkTree](https://linktr.ee/dawaune)
 
 ### Ananda Yoga
 
