@@ -20,11 +20,22 @@ layout: layouts/base.njk
 
 ---
 
+## Cryptid Creations
+
+Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. (I love my 'gendervoid' one from them)
+
+Their statement:
+"I work in a multitude of mediums and with many themes. My most common mediums are paintings on glass, digital art, and select sculpture. Common themes for my work revolve around beauty in death, ttrpg content creation, character art, and diety portraits."
+
+Find them at punk and queer markets [and online on Insta](https://www.instagram.com/morstro98_hg)
+
 ## Meridian City Tarot (Cyberpunk)
 
-Local artist Haidyn Sosalla-Bahr creates Major Arcana cards with their original cyberpunk universe
+Local artist Haidyn Sosalla-Bahr (they/them) creates Major Arcana cards with their original cyberpunk universe
 
-Find them at art markets around town [or Online](https://meridiancitytarot.carrd.co/)
+Find them at the BFF art market [and Online](https://meridiancitytarot.carrd.co/)
+
+---
 
 <h3 style="margin-top: 0;">Want to be showcased on this page?</h3></brs>
 
