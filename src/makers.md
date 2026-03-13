@@ -22,10 +22,7 @@ layout: layouts/base.njk
 
 ## Cryptid Creations
 
-Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. (I love my 'gendervoid' one from them)
-
-Their statement:
-"I work in a multitude of mediums and with many themes. My most common mediums are paintings on glass, digital art, and select sculpture. Common themes for my work revolve around beauty in death, ttrpg content creation, character art, and diety portraits."
+Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. (I love my 'gendervoid' one from them
 
 Find them at punk and queer markets [and online on Insta](https://www.instagram.com/morstro98_hg)
 
