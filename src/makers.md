@@ -20,6 +20,34 @@ layout: layouts/base.njk
 
 ---
 
+## Gabi Ghoul Art
+
+Gabi identifies as a Queer, Disabled and BIPOC artist with a love for mixed medium works, often blending a use of acrylic painted scenes highlighted by hand stitched beads.
+
+I love her "cute ghost in pride flag colors" pieces and her femme-forward style.
+
+[Insta](https://instagram.com/gabighoul.art)
+
+## Cryptid Creations
+
+Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. I love my 'gendervoid' one from them
+
+Find them at punk and queer markets [and online on Insta](https://www.instagram.com/morstro98_hg)
+
+[RedBubble](https://www.redbubble.com/people/F12F3Horses2/shop)
+
+[ThreadLess](https://cryptcreations.threadless.com/)
+
+[Their LinkTree](https://linktr.ee/crypt.creations)
+
+## Meridian City Tarot (Cyberpunk)
+
+Local artist Haidyn Sosalla-Bahr (they/them) creates Major Arcana cards with their original cyberpunk universe
+
+Find them at the BFF art market [and Online](https://meridiancitytarot.carrd.co/)
+
+---
+
 <h3 style="margin-top: 0;">Want to be showcased on this page?</h3></brs>
 
 - I'll confirm your listing via email before posting.
