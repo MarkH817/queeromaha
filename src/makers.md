@@ -20,9 +20,17 @@ layout: layouts/base.njk
 
 ---
 
+## Gabi Ghoul Art
+
+Gabi identifies as a Queer, Disabled and BIPOC artist with a love for mixed medium works, often blending a use of acrylic painted scenes highlighted by hand stitched beads.
+
+I love her "cute ghost in pride flag colors" pieces and her femme-forward style.
+
+[Insta](https://instagram.com/gabighoul.art)
+
 ## Cryptid Creations
 
-Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. (I love my 'gendervoid' one from them
+Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. I love my 'gendervoid' one from them
 
 Find them at punk and queer markets [and online on Insta](https://www.instagram.com/morstro98_hg)
 
