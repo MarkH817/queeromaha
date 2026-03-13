@@ -25,15 +25,7 @@ Experimental music education and demos. Amazing creative expression.
 
 [Events Calendar](https://www.facebook.com/drumomaha/)
 
-### Sound Baths / Singing Bowls w/ Havalynn Russell
-
-Deeply relaxing experience in an intentional container.
-
-At Church Arthouse on Sundays @ 10:30AM. ~20$ / PWYC / NOTAFLOF
-
-[Insta](https://www.instagram.com/havalynn1/)
-
-
+<!-- Also the Group that Jo (sic) runs at Legends on Sunday mornings. Art jam / coworking. -->
 
 <!-- 
 ### Modular Synth Group
@@ -53,25 +45,10 @@ Members with social presence:
 
 ---
 
-**North Omaha**
-
-### Culxr House 🚻
-
-Black-owned community space for shows and art events.
-
-[Insta](https://www.instagram.com/culxrhouseomaha/) | [Events Calendar](https://www.houseofculxr.com/eventscalendar) | [BookFace](https://www.facebook.com/culxrhouse/)
-
-### Union for Contemporary Art
-
-Exhibits, studios, classes, and talks. 
-
-[Events Calendar](https://www.u-ca.org/happenings)
-
----
-
+<a id='southo'></a>
 **South Omaha**
 
-[Second Fridays on Vinton](https://www.instagram.com/friday2onvinton_omaha/)
+Check out [Second Fridays on Vinton](https://www.instagram.com/friday2onvinton_omaha/)
 
 ### Church Art House 🚻
 
@@ -99,13 +76,16 @@ Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Frid
 
 ### Clover24
 
-New-ish studio and gallery space [Insta](https://www.instagram.com/clover24omaha/) [Events Calendar](https://clover24.org/events)
+New-ish studio and gallery space
+
+[Insta](https://www.instagram.com/clover24omaha/) [Events Calendar](https://clover24.org/events)
 
 ---
 
+<a id='benson'></a>
 **Benson**
 
-[Benson First Fridays (BFF)](https://www.bffomaha.org/)
+Check out [Benson First Fridays (BFF)](https://www.bffomaha.org/)
 
 ### Petshop 🏳️‍🌈🚻
 
@@ -156,7 +136,7 @@ Open artist studios, music and free workshops ran by BFF.
 
 ### Aksarben Village 🚻
 
-Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge.
+Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
 
 [Events Calendar](https://www.aksarbenvillage.com/events)
 
@@ -167,7 +147,7 @@ Holocaust survivor's art museum with workshops and education programs.
 [Events Calendar](https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php)
 
 ---
-
+<a id='downtown'></a>
 **Downtown**
 
 <!-- go to at least one before listing it. Is there a better direct link?
@@ -181,6 +161,13 @@ Cutting-edge museum with resident artists, the Low End music series and major in
 
 [Insta](https://www.instagram.com/bemiscenter/) | [Events Calendar](https://www.bemiscenter.org/low-end) | [BookFace](https://www.facebook.com/bemiscenter/)
 
+### Hot Shops
+
+Glassblowing studio with classes and events.
+
+[Insta](https://www.instagram.com/hotshopsartcenter/?hl=en) | [Events Calendar](https://hotshopsartcenter.org/events/) | [BookFace](https://www.facebook.com/hotshopsartcenter/)
+
+
 ### Millwork Commons 🚻
 
 Apartment complex with art showings/ events. 
@@ -193,11 +180,22 @@ Artist-owned gallery showcasing a wide variety of local art.
 
 [Events Calendar](http://artistscoopomaha.com/events?view=calendar)
 
-### Hot Shops
+---
+<a id='northo'></a>
+**North Omaha**
 
-Glassblowing studio with classes and events.
+### Culxr House 🚻
+Black-owned community space for shows and art events.
 
-[Insta](https://www.instagram.com/hotshopsartcenter/?hl=en) | [Events Calendar](https://hotshopsartcenter.org/events/) | [BookFace](https://www.facebook.com/hotshopsartcenter/)
+[Insta](https://www.instagram.com/culxrhouse/) | [Art Battles](https://artbattle.com/tag/omaha/) |
+[BookFace](https://www.facebook.com/culxrhouse/) | [Events Calendar](https://www.houseofculxr.com/all-events) 
+<!-- | [Art battle Insta](https://www.instagram.com/artbattleomaha/) -->
+
+### Union for Contemporary Art
+
+Exhibits, studios, classes, and talks. 
+
+[Events Calendar](https://www.u-ca.org/happenings)
 
 
 <!-- 

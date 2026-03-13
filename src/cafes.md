@@ -5,40 +5,42 @@ layout: layouts/base.njk
 
 ---
 
+<a id='aksarben'></a>
 **Aksarben**
 
 ### Roast Coffeehouse🚻💻
 
-Great people, coffee and pastries.
+Great people, coffee and pastries
 
 [Insta](https://www.instagram.com/roast_coffeehouse/) | [Website](https://www.roastcoffeehouse.com/) | [BookFace](https://www.facebook.com/profile.php/?id=100089484920886)
 
 ### Godega 🏳️‍🌈🚻🛋️💻
 
-Grab-and-go place with specialty snacks.
+Grab-and-go food, specialty snacks, places to sit
 
 [Insta](https://www.instagram.com/godegamarket/) | [Website](https://godegamarket.com/) | [BookFace](https://www.facebook.com/GodegaMarket/)
 
 ### Marigold's 🚻🛋️
 
-Artisinal goods and crafts. Technically a cafe since they have coffee samples.
+Artisinal goods and crafts. Technically a cafe since they have coffee samples
 
 [Insta](https://www.instagram.com/marigoldsmercantile) | [Website](https://www.marigoldsmercantile.com/) | [BookFace](https://www.facebook.com/marigoldsmercantile/)
 
 ---
+<a id='midtown'></a>
 
 **Midtown**
 
 ### Mill on Leavenworth 🛋️💻
 
-Large popular cafe. Good for meetups and working.
+Large popular cafe. Good for meetups and "working"
 
 [Website](https://millcoffee.com/)
 
 
  ### Archetype Coffee 🚻💻
 
-Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/). Uncomfortable seating.
+Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/)
 
 [Website](https://archetypecoffee.com/)
 
@@ -57,6 +59,7 @@ Board game cafe with lots of meetups.
 
 ---
 
+<a id='benson'></a>
 **Benson**
 
 <!-- quality may have gone to shit, worker pay issues
@@ -66,7 +69,7 @@ Chill hipster cafe. [Insta](https://www.instagram.com/hardycoffeeco/?hl=en) [Boo
 
 ### Edge of the Universe Cafe  🚻🛋️
 
-Truly unique place built out of art made by the owners. Great date spot.
+Truly unique place with artist owners. Great date spot.
 
 [Insta](https://www.instagram.com/edgeuniversebff/) | [Events Calendar](https://www.edgeoftheuniverseomaha.com/) | [BookFace](https://www.facebook.com/Edgeuniversebff/about/)
 
@@ -79,6 +82,7 @@ Comic shop with a large queer section. Hosts board game meetups.
 
 ---
 
+<a id='dundee'></a>
 **Dundee**
 
 ### Blue Line Coffee 🚻💻
@@ -125,6 +129,7 @@ Bookstore cafe / bar with a [poetry reading open mic night](https://www.nepoetry
 [Insta](https://www.instagram.com/howlinhounds/?hl=en) -->
 ---
 
+<a id='westo'></a>
 **West O**
 
 ### Karma Koffee 🚻🛋️💻

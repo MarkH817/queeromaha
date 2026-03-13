@@ -7,48 +7,68 @@ layout: layouts/base.njk
 
 **Event Listings**
 
-[Omaha Underground's Insta](https:/Instagram.com/Omahaunderground) posts flyers for local shows and events
+> [**Post your flyer at OmahaUnderground.NET!**](https://omahaunderground.net)
 
-[Post your flyer at OmahaUnderground.NET!](https://omahaunderground.net)
+See this week's shows on the [Omaha Underground Instagram](https:/Instagram.com/Omahaunderground)
 
-The [Omaha Buzz Substack](https://omahabuzz.substack.com/) makes huge weekly posts of shows
+Also the [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
 
 <!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
 
 ---
 
-**Downtown and South Omaha**
-
 ### Low End at Bemis Center
 
-Amazing experimental music series. Many trans and queer artists have performed.
+Amazing experimental music series. Many trans and queer artists have performed
 
 [Events Calendar](https://www.bemiscenter.org/low-end)
 
 
+### Goth Night (Noir Omaha)
+
+Darkwave dance nights
+
+[Website](https://www.instagram.com/noiromaha/) | [Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
+
+
+
+---
+
+<a id='southo'></a>
+**South Omaha**
+
 ### Church Art House 🚻
 
-Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. [Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/)
+Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters
 
+[Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/) | [BookFace](https://www.facebook.com/thechurcharthouse/)
+<!-- 
 ### No-Coast Noise Collective
 
-Experimental music and sound art collective. Centered out of Project Project. [Insta](https://www.instagram.com/nocoastnoise/) | [Website](https://www.nocoastnoise.net/)
+Experimental music and sound art collective. Centered out of Project Project. [Insta](https://www.instagram.com/nocoastnoise/) | [Website](https://www.nocoastnoise.net/) -->
 
 ### Project Project 🚻
 
-Punk/queer DIY space with experimental music and local art. [Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/)
+Punk/queer DIY space with experimental music and local art
+
+[Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/) | [BookFace](https://www.facebook.com/weareprojectproject/)
 
 ---
+<a id='benson'></a>
 
 **Benson**
 
 ### Floors Floors Floors 🚻🛋️
 
-Gallery and events space with local music and queer markets. [Insta](https://www.instagram.com/floorsfloorsfloors_7052maple)
+Gallery and events space with local music and queer markets
+
+[Insta](https://www.instagram.com/floorsfloorsfloors_7052maple)
 
 ### Shakedown Street 🚻
 
-Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month (typically). [Website](https://www.facebook.com/shakedownstreettavern/)
+Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month 
+
+[Insta](https://www.instagram.com/shakedownstreettavern/) | [Website](https://www.facebook.com/shakedownstreettavern/) | [BookFace](https://www.facebook.com/shakedownstreettavern/)
 <!-- 
 ### The Waiting Room
 
@@ -56,49 +76,39 @@ Mid-size venue for local and large-ish acts. Very little seating. [Website](http
 
 ### Reverb Lounge 🛋️
 
-Mid-size space for local acts. [Website](https://www.reverblounge.com/)
+Mid-size space for local acts. 
+
+[Website](https://www.reverblounge.com/)
 
 ### The Sydney 🚻
 
-Dive bar for local acts. Has burlesque shows and drag. Very little seating. [Website](https://thesydneybenson.com/)
+Dive bar for local acts. Has burlesque shows and drag. Very little seating. 
+
+[Website](https://thesydneybenson.com/)
 
 ---
 
-**North O**
-
-### Culxr House
-
-Black-owned community space for shows and art events. [BookFace](https://www.facebook.com/culxrhouse/) | [Website](https://www.houseofculxr.com/all-events) | [Insta](https://www.instagram.com/culxrhouse/) | [Art battle IG](https://www.instagram.com/artbattleomaha/)
-
-
----
-
+<a id='midtown'></a>
 **Midtown**
 
 ### O'Leaver's 🚻
 
-Did you know it's owned by members of the band Cursive? [BookFace](https://www.facebook.com/oleavers/) | [Insta](https://www.instagram.com/oleavers/?hl=en)
+Did you know it's owned by members of the band Cursive?
+
+[Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/)
  
 ### B Bar
 
-Weekly blues shows and local acts. [Website](https://www.thebbaromaha.com/) | [BookFace](https://www.facebook.com/TheB.BarOmaha)
+Weekly blues shows and local acts.
+
+[Website](https://www.thebbaromaha.com/) | [BookFace](https://www.facebook.com/TheB.BarOmaha)
 
 ### Joslyn Castle Carriage House 🚻
 
-Ye Olde Garage [Website](https://www.joslyncastle.com/events/)
+Ye Olde Garage
 
-### No Coast Punk Market
-
-Punk / queer / DIY market [Insta](https://www.instagram.com/no_coast_flea_market_omaha/) | [BookFace](https://www.facebook.com/nocoastpunkrockfleamarket/)
-
-### Goth Night (Noir Omaha)
-
-Darkwave dance nights Joslyn Carriage House, Shakedown Street, O'Leavers.
-[Website](https://www.instagram.com/noiromaha/) | [Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
-
-### Pageturners Lounge
-
-Bookish bar with local acts. [BookFace](https://www.facebook.com/pageturnerslounge/) [Insta](https://www.instagram.com/pageturnerslounge/?hl=en)
+[Insta](https://www.instagram.com/joslyncastle/) | 
+[Website](https://www.joslyncastle.com/events/)
 
 <!-- 
 ### The Breakroom
@@ -131,39 +141,28 @@ TBD, jazz club?
 
 [BookFace](https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/) -->
 
-<!-- pulled due to comment on 'safety' on noir's page. I trust them, there's queers there. something funky's going on w/ new ownership, and industrial night guy is a bit wonky anyway. https://www.instagram.com/noiromaha/?hl=en
+---
 
-seems like a local modeling group has collab'd with the slab
-https://www.instagram.com/the_mourning_dolls/ -->
-
+<a id='downtown'></a>
 **Downtown**
 
-### Red Light Lounge (fka The Verdict) 🛋️
+
+<!--  per Cassandra it was the same owners just rebrand. Unclear why noir left, since it mentioned 'safety issues' in a social post. noir likely will be at Coven. the Mourning Dolls are now involved at Verdict. seems like a burlesque/ marketing/LA style thing to me. DID NOT changed ownership to non-queers, just name. Slab still there. Lots of industrial nights planned by Jacob (dj sado_naut). c DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. similar ppl run events (DJ barrens, nevermore), -->
+
+### Red Light Lounge (fka The Verdict)
 
 Industrial and Goth / Darkwave nights
-
-Special events thru [Mourning Dolls](https://www.instagram.com/the_mourning_dolls)
 
 [The Slab - Darkwave and Rock](https://instagram.com/djlusterdust) on 2nd Saturdays
 
 [Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
 
-<!--  per Cassandra it was the samr owners just rebrand. bad info : rumint from torie i think. noir likely will be at Coven. the Dolls are now involved. seems like a burlesque/ marketing/LA style thing dor thag to me. DID NOT changed ownership to non-queers and name. Slab apparently still was there in Jan. Lots of industrial nights planned by Jacob (dj sado_naut). clubnoir seems subsumed. DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. Unclear who owns it. Seems like a weird scene. similar ppl run events (DJ barrens, nevermore), 
-### Red Light Lounge (fka The Verdict)
+### Pageturners Lounge
 
-Trans/nonbinary contingent. Gendered bathrooms with plenty of stalls
+Bookish bar with local acts.
 
-- **New Wave Night**: 1st Saturday
-- **The Slab**: 2nd Sat
-- **Goth Night ([Club Noir](https://www.eventbrite.com/o/noir-omaha-59519005883))**: 3rd Sat
-- **Industrial Night ([Club Sinthesis](https://www.facebook.com/clubsinthesis/))**: Last Sat + special events
+[Insta](https://www.instagram.com/pageturnerslounge/?hl=en) | [BookFace](https://www.facebook.com/pageturnerslounge/)
 
-
-<!-- if/when it opens
-### Goth Club (Old Down Under Location)
-
-New goth/alt club opening soon at the former Down Under Bar location. Details TBD—watch this space for updates!
- -->
 <!-- 
 ### Sokol (Admiral) 🛋️
 
@@ -176,3 +175,8 @@ New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha
 ### Slowdown
 
 Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [Insta](https://www.instagram.com/theslowdown/) [BookFace](https://www.facebook.com/theslowdown) -->
+
+
+---
+
+

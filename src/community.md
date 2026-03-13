@@ -5,11 +5,9 @@ layout: layouts/base.njk
 
 ---
 
-**Community**
-
 ### OmahaForUs
 
-Hub of social activity and resources
+Hub of social groups and resources. New location north of Dodge at 108th is amazing!
 
 [**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
 
@@ -23,14 +21,15 @@ Hub of social activity and resources
 - D&D every other Tues @ 4:30 PM
 - [Teen/youth programs](https://www.omahaforus.org/proud-horizons)  -->
 
-### The Queer Collective
+### The Queer Collective and River Daze Collective
 
-Mutual Aid, drag shows, line dancing, art markets.
+Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
 
-[**Insta**](https://www.instagram.com/collectiveofqueers/)
+[**Insta**](https://www.instagram.com/collectiveofqueers/) | [BookFace](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
 ---
 
+<a id="social"></a>
 **Social Groups**
 
 ### Out Wild Adventures
@@ -45,6 +44,12 @@ Monthly online Trans* group ran by Babs Ramsey.
 
 [**Signup (vetted)**](https://www.transnebraska.online/get-involved)
 
+### TransFormative
+
+Online Trans* group ran by therapist Brit Gunther.
+
+[**Signup (vetted)***](https://www.braveresilience.com/register) | [More Information](https://www.braveresilience.com/transformative)
+
 ### TransMasc Second Sunday
 
 Social group for Trans Masc folks. 
@@ -57,13 +62,13 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 ### OwOmaha Furry Group
 
-Furry group with in-person / online meetups.
+All-inclusive, well-moderated Furry group with in-person / online meetups.
 
 [**Events Calendar**](https://www.owomaha.com/calendar) | [Discord](https://discord.gg/owomaha) | [Telegram](https://t.me/owo_omaha)
 
 ### Open Arms Trans Social Group (OATS)
 
-Trans folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha
+In-person meetup of Trans* folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha
 
 [More Information](https://2uomaha.org/justice/lgbtq)
 
@@ -74,7 +79,8 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 
 ---
 
-**Spiritual Practice**
+<a id='spirituality'></a>
+## Spiritual Practice
 
 ### Ananda Yoga
 
@@ -100,7 +106,9 @@ Group meditation and talk on Sundays @ 9:45AM in a neighborhood near 38th and Fa
 
 Deeply relaxing experience in an intentional container.
 
-At Church Arthouse on Sundays @ 10:30AM. ~20$ / PWYC / NOTAFLOF
+10:30 at Church Arthouse on Sunday.
+
+~20$ / PWYC / NOTAFLOF
 
 [**Insta**](https://www.instagram.com/havalynn1/)
 
