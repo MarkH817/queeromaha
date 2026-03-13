@@ -26,6 +26,12 @@ Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls
 
 Find them at punk and queer markets [and online on Insta](https://www.instagram.com/morstro98_hg)
 
+[RedBubble](https://www.redbubble.com/people/F12F3Horses2/shop)
+
+[ThreadLess](https://cryptcreations.threadless.com/)
+
+[Their LinkTree](https://linktr.ee/crypt.creations)
+
 ## Meridian City Tarot (Cyberpunk)
 
 Local artist Haidyn Sosalla-Bahr (they/them) creates Major Arcana cards with their original cyberpunk universe
