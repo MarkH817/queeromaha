@@ -3,6 +3,10 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
+Announcements:
+- Added Gabi, Morgue, and Hayden to the [Makers page!](/makers)
+- Added Dawaune's vocal release yoga classes [on Saturdays in March at Ananda!](#spirituality)
+
 ---
 
 ### OmahaForUs
@@ -84,17 +88,17 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 
 ### Vocal Release 
 
-Saturdsays in March from 11AM to 1PM @ Ananda Yoga. DaWaune creates a safe container to be unapologetically heard. I really benefited from it.
+Dawaune creates a safe container to be unapologetically heard on Saturdays in March (14th,21st,28th) from 11AM to 1PM @ Ananda Yoga. See below for notes on how to get to Ananda.
 
 ~20$ or PWYC
 
-[Their LinkTree](https://linktr.ee/dawaune)
+[Their Insta](https://www.instagram.com/dawaune.one)
 
 ### Ananda Yoga
 
 Queer-centered Emotional Release class on Sundays @ 12:30PM at [Ananda Yoga on 49th and Dodge](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic). Pay What You Can, no registration required. 
 
-Finding it can be tricky. Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
+Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
 
 [**Class Schedule**](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
