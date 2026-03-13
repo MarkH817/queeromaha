@@ -20,6 +20,12 @@ layout: layouts/base.njk
 
 ---
 
+## Meridian City Tarot (Cyberpunk)
+
+Local artist Haidyn Sosalla-Bahr creates Major Arcana cards with their original cyberpunk universe
+
+Find them at art markets around town [or Online](https://meridiancitytarot.carrd.co/)
+
 <h3 style="margin-top: 0;">Want to be showcased on this page?</h3></brs>
 
 - I'll confirm your listing via email before posting.
