@@ -24,9 +24,11 @@ Amazing experimental music series. Many trans and queer artists have performed
 [Events Calendar](https://www.bemiscenter.org/low-end)
 
 
-### Goth Night (Noir Omaha)
+### Noir Omaha Goth Night at The Coven
 
-Darkwave dance nights
+Second Saturday of every month
+
+Darkwave / industrial dance nights at The Coven (old Down Under location 3530 Farnum St)
 
 [Website](https://www.instagram.com/noiromaha/) | [Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
 
