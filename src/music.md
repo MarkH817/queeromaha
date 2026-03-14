@@ -26,7 +26,7 @@ Amazing experimental music series. Many trans and queer artists have performed
 
 ### Noir Omaha Goth Night at The Coven
 
-Second Saturday of every month
+Second Saturday of every month 8PM to close
 
 Darkwave / industrial dance nights at The Coven (old Down Under location 3530 Farnum St)
 
