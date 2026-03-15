@@ -88,15 +88,17 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 
 ### Vocal Release 
 
-Dawaune creates a safe container to be unapologetically heard on Saturdays in March (14th,21st,28th) from 11AM to 1PM @ Ananda Yoga. See below for notes on how to get to Ananda.
+Dawaune creates a safe container to be unapologetically heard on Saturdays in March (14th,21st,28th) from 11AM to 1PM @ Ananda Yoga.
 
-~20$ or PWYC
+~20$ / PWYC / NOTAFLOF
 
 [**Their Insta**](https://www.instagram.com/dawaune.one)
 
 ### Ananda Yoga
 
-Queer-centered Emotional Release class on Sundays @ 12:30PM at [Ananda Yoga on 49th and Dodge](https://maps.app.goo.gl/iD7mLnrwrpgR671d7?g_st=ic). Pay What You Can, no registration required. 
+Weekly Queer-centered Emotional Release class on Sundays @ 12:30PM at Ananda Yoga on 49th and Dodge. 
+
+PWYC / NOTAFLOF / no registration
 
 Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
 
@@ -104,13 +106,13 @@ Park behind the State Farm building, a door near the big sign will be propped op
 
 ### Honey Locust Sangha
 
-Group meditation on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific
+Low-key meditation in progressive Buddhist tradition on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific.
 
 [**Events Calendar**](https://honeylocustsangha.org/events.html)
 
 ### Nebraska Zen Center
 
-Group meditation and talk on Sundays @ 9:45AM in a neighborhood near 38th and Farnam
+In-person / online meditation on Sundays @ 9:45AM.
 
 [**Events Calendar**](https://nebraskazencenter.org/upcoming-events/)
 
