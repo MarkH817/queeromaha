@@ -106,7 +106,7 @@ Progressive Methodist cafe / bookstore with a queer section. Chill place to hang
 
 ### Reading Room (Downtown) 🛋️
 
-Bookstore cafe / bar with a [poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also local [poetry events](https://poetrymenu.com/)
+Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See Poetry Menu for many other [poetry events](https://poetrymenu.com/)
 
 [Insta](https://www.instagram.com/reading_room_omaha/) | [Events Calendar](https://readingroomomaha.com/events/) | [BookFace](https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/)
 
