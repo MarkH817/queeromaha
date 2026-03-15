@@ -116,9 +116,8 @@ Bookstore cafe / bar with a [poetry reading open mic night](https://www.nepoetry
  cafe downtown. [Website](https://www.rallycoffee.co/pages/locations) -->
 
 
-<!--> meh idk
+<!--
 ### Zen Coffee (Downtown, West O) 🚻
-
 
 [Insta](https://www.instagram.com/zencoffeeco/?hl=en) | [BookFace](https://www.facebook.com/zencoffeecompany/) | [Website](https://www.zencoffeecompany.com/) -->
 
