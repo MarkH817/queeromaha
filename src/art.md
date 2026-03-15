@@ -7,11 +7,12 @@ layout: layouts/base.njk
 
 **Creative Groups**
 
+<!--
 ### Sober Socials Omaha
 
 Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
 
-[Insta](https://www.instagram.com/sobersocialsomaha/)
+[Insta](https://www.instagram.com/sobersocialsomaha/) -->
 
 ### Soundry w/ Stacey Barelos
 
