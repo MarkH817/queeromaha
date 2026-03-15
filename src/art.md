@@ -56,7 +56,10 @@ Check out [Second Fridays on Vinton](https://www.instagram.com/friday2onvinton_o
 
 Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
 
-[Insta](https://www.instagram.com/thechurcharthouse/) | [Events Calendar](https://www.thechurcharthouse.love/)
+[Insta](https://www.instagram.com/thechurcharthouse/) 
+<!-- site isnt usable
+
+| [Events Calendar](https://www.thechurcharthouse.love/schedule) -->
 
 ### Project Project 🚻
 
