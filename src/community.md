@@ -4,6 +4,7 @@ layout: layouts/base.njk
 ---
 
 Announcements:
+- Added Noir Omaha @ The Coven to [Venues](/venues#midtown)
 - Added Gabi, Morgue, and Hayden to the [Makers page!](/makers)
 - Added Dawaune's vocal release yoga classes [on Saturdays in March at Ananda!](#spirituality)
 

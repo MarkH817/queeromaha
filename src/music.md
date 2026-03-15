@@ -30,9 +30,7 @@ Second Saturday of every month 8PM to close
 
 Darkwave / industrial dance nights at The Coven (old Down Under location 3530 Farnum St)
 
-[Website](https://www.instagram.com/noiromaha/) | [Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
-
-
+[Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
 
 ---
 
@@ -93,6 +91,14 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating.
 <a id='midtown'></a>
 **Midtown**
 
+### The Coven
+
+Goth club at the old Down Under address with great sound system (not that loud!)
+
+Noir Omaha's goth night on Second Saturday 8PM to close
+
+[Coven Insta](https://www.instagram.com/covenbaromaha/) | [Noir's Insta](https://www.instagram.com/noiromaha/?hl=en)
+
 ### O'Leaver's 🚻
 
 Did you know it's owned by members of the band Cursive?
@@ -111,6 +117,12 @@ Ye Olde Garage
 
 [Insta](https://www.instagram.com/joslyncastle/) | 
 [Website](https://www.joslyncastle.com/events/)
+
+### Fifth House 🚻
+
+Vegan restaurant in Blackstone with resident DJs performing on Saturdays.
+
+[Insta](https://www.instagram.com/fifthhouseveg/) | [Website](https://www.fifthhouseomaha.com/) | [BookFace](https://www.facebook.com/FifthHouseOmaha/)
 
 <!-- 
 ### The Breakroom
