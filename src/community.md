@@ -92,7 +92,7 @@ Dawaune creates a safe container to be unapologetically heard on Saturdays in Ma
 
 ~20$ or PWYC
 
-[Their Insta](https://www.instagram.com/dawaune.one)
+[**Their Insta**](https://www.instagram.com/dawaune.one)
 
 ### Ananda Yoga
 
