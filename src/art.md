@@ -7,21 +7,23 @@ layout: layouts/base.njk
 
 **Creative Groups**
 
+<!--
 ### Sober Socials Omaha
 
 Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
 
-[Insta](https://www.instagram.com/sobersocialsomaha/)
+[Insta](https://www.instagram.com/sobersocialsomaha/) -->
 
 ### Soundry w/ Stacey Barelos
 
-Experimental music education and demos. Amazing creative expression.
+Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?  
 
 [Insta](https://www.instagram.com/omahasoundry/) | [Events Calendar](https://staceybarelos.com/soundry/)
 
-### Omaha Drum Family (Drum Circles)
+### Omaha Drum Family
+Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave)
 
-3rd Friday 7 to 9 @ Whole Rejuvenation House (4312 Camden Ave)
+Bring a drum or try one of theirs!
 
 [Events Calendar](https://www.facebook.com/drumomaha/)
 
@@ -54,13 +56,16 @@ Check out [Second Fridays on Vinton](https://www.instagram.com/friday2onvinton_o
 
 Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
 
-[Insta](https://www.instagram.com/thechurcharthouse/) | [Events Calendar](https://www.thechurcharthouse.love/)
+[Insta](https://www.instagram.com/thechurcharthouse/) 
+<!-- site isnt usable
+
+| [Events Calendar](https://www.thechurcharthouse.love/schedule) -->
 
 ### Project Project 🚻
 
 Punk/queer DIY space with experimental music and local art. 
 
-[Insta](https://www.instagram.com/weareprojectproject) | [Events Calendar](https://projectprojectomaha.com/)
+[Insta](https://www.instagram.com/weareprojectproject) | [Events Calendar](https://projectprojectomaha.com/current-show)
 
 ### Tilt23
 
