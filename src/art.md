@@ -15,13 +15,14 @@ Ecstatic dance, figure drawing and spiritual singing, usually at Church Art Hous
 
 ### Soundry w/ Stacey Barelos
 
-Experimental music education and demos. Amazing creative expression.
+Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?  
 
 [Insta](https://www.instagram.com/omahasoundry/) | [Events Calendar](https://staceybarelos.com/soundry/)
 
-### Omaha Drum Family (Drum Circles)
+### Omaha Drum Family
+Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave)
 
-3rd Friday 7 to 9 @ Whole Rejuvenation House (4312 Camden Ave)
+Bring a drum or try one of theirs!
 
 [Events Calendar](https://www.facebook.com/drumomaha/)
 
