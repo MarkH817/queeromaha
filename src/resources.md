@@ -76,6 +76,8 @@ Free, donations welcome
 - Clothes closet with private try-on room
 - Private Shower
 
+### pride health clinic has food pantry and huge clothes closer 
+
 ### Food Bank for the Heartland
 
 Food Pantry
