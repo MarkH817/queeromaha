@@ -65,7 +65,7 @@ Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ec
 
 Punk/queer DIY space with experimental music and local art. 
 
-[Insta](https://www.instagram.com/weareprojectproject) | [Events Calendar](https://projectprojectomaha.com/)
+[Insta](https://www.instagram.com/weareprojectproject) | [Events Calendar](https://projectprojectomaha.com/current-show)
 
 ### Tilt23
 
