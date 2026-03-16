@@ -16,7 +16,7 @@ Great people, coffee and pastries
 
 ### Godega 🏳️‍🌈🚻🛋️💻
 
-Grab-and-go food, specialty snacks, places to sit
+Grab-and-go food, specialty snacks, places to sit. Has Bagel Bin bagels!
 
 [Insta](https://www.instagram.com/godegamarket/) | [Website](https://godegamarket.com/) | [BookFace](https://www.facebook.com/GodegaMarket/)
 
