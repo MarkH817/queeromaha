@@ -16,15 +16,15 @@ Hub of social groups and resources. New location north of Dodge at 108th is amaz
 
 [**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
 
-<!-- food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. -->
+Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study.
 
-<!-- - 19+ Peer Support group every Wed 6-7:30 (alternates in-person and virtual) - ([Register here](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1))
-- Food pantry open during operating hours
-- Free STI testing on Thurs 4-6
-- Game night Thurs 5-7 (Jackbox, card games, Mario Kart)
-- 19+ Arts and Crafts every other Wed 6-7:30
-- D&D every other Tues @ 4:30 PM
-- [Teen/youth programs](https://www.omahaforus.org/proud-horizons)  -->
+ 
+- Support group every Wed @ 6 - [**Register here**](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1)
+- Game night Thurs @ 5
+- Free STI testing on some Thurs @ 4
+<!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
+- D&D every other Tues @ 4
+- [Teen/youth programs](https://www.omahaforus.org/proud-horizons)
 
 ### The Queer Collective and River Daze Collective
 

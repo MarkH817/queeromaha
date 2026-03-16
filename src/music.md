@@ -101,19 +101,23 @@ Noir Omaha's goth night on Second Saturday 8PM to close
 
 ### O'Leaver's 🚻
 
+Legendary dive bar with small stage and great local / regional acts
+
 Did you know it's owned by members of the band Cursive?
+
+BRs are labeled with gendered antique signs, they are single-stall
 
 [Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/)
  
 ### B Bar
 
-Weekly blues shows and local acts.
+Weekly blues shows and local acts. Punk market was there
 
 [Website](https://www.thebbaromaha.com/) | [BookFace](https://www.facebook.com/TheB.BarOmaha)
 
 ### Joslyn Castle Carriage House 🚻
 
-Ye Olde Garage
+Ye Olde Garage. Decent-sized space with a projector and PAs. Seems cool with queers and goth stuff. Electronic / experimental music there sometimes.
 
 [Insta](https://www.instagram.com/joslyncastle/) | 
 [Website](https://www.joslyncastle.com/events/)
