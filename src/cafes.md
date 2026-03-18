@@ -51,9 +51,9 @@ Queer pastry shop. [Insta](https://www.instagram.com/sweetmagnoliasbakeshop/?hl=
 
 ### Spielbound 🚻
 
-Board game cafe with lots of meetups. 
+Board game cafe. There's an [Active Meetup Group](https://www.meetup.com/playing-games-at-spielbound/)
 
-[Official Discord](https://discord.com/invite/official-spellbound-861024184947572736) | [Website](https://www.spielbound.com/how-to-spielbound) | [Active Meetup Group](https://www.meetup.com/playing-games-at-spielbound/) 
+[Official Discord](https://discord.com/invite/official-spellbound-861024184947572736) | [Website](https://www.spielbound.com/how-to-spielbound) 
 <!-- | [Possibly inactive trans meetup](https://www.facebook.com/events/1312754133797586/) -->
 
 

@@ -26,11 +26,17 @@ Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing cla
 - D&D every other Tues @ 4
 - [Teen/youth programs](https://www.omahaforus.org/proud-horizons)
 
-### The Queer Collective and River Daze Collective
+<!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
 
-Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
+### The Queer Collective and River Daze Collective and Wild Garden
 
-[**Insta**](https://www.instagram.com/collectiveofqueers/) | [BookFace](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
+Instagram groups that organize events Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
+
+[Queer Collective Insta](https://www.instagram.com/collectiveofqueers/)
+
+[River Daze Collective Insta](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
+
+[Wild Garden Insta](https://www.instagram.com/thewildgardenomaha/)
 
 ---
 
