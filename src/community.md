@@ -71,11 +71,14 @@ Social group for Trans Masc folks.
 
 Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Trans](https://tinyurl.com/smpctransgroup) -->
 
-### OwOmaha Furry Group
+### OWOmaha Furry Group
 
 All-inclusive, well-moderated Furry group with in-person / online meetups.
 
-[**Events Calendar**](https://www.owomaha.com/calendar) | [Discord](https://discord.gg/owomaha) | [Telegram](https://t.me/owo_omaha)
+[**Events Calendar**](https://www.owomaha.com/calendar) |  [Carrd](https://owomaha.carrd.co/) | 
+[13+ Discord Server](https://discord.com/invite/3Vq63UFrhH)
+[Telegram Information Channel](https://t.me/+JCS5zIVuifhiMzAz) | 
+[BookFace](https://www.facebook.com/share/g/17BEEcHZ3d/)
 
 ### Open Arms Trans Social Group (OATS)
 
