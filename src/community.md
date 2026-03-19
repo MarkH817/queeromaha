@@ -75,8 +75,8 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 All-inclusive, well-moderated Furry group with in-person / online meetups.
 
-[**Events Calendar**](https://www.owomaha.com/calendar) |  [Carrd](https://owomaha.carrd.co/) | 
-[13+ Discord Server](https://discord.com/invite/3Vq63UFrhH)
+[**Events Calendar**](https://www.owomaha.com/calendar) |  [Carrd](https://owomaha.carrd.co/) |
+[13+ Discord Server](https://discord.com/invite/3Vq63UFrhH) | 
 [Telegram Information Channel](https://t.me/+JCS5zIVuifhiMzAz) | 
 [BookFace](https://www.facebook.com/share/g/17BEEcHZ3d/)
 
