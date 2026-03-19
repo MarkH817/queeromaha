@@ -16,10 +16,10 @@ Hub of social groups and resources. New location north of Dodge at 108th is amaz
 
 [**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
 
-Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study.
+Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. Private high quality showers.
 
  
-- Support group every Wed @ 6 - [**Register here**](https://docs.google.com/forms/d/1Yc_ic-kgUiwZ3x7VYhZ0ILcym8AhwpY6fdCV-J9QAd0/viewform?pli=1&pli=1)
+- Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
 - Game night Thurs @ 5
 - Free STI testing on some Thurs @ 4
 <!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
