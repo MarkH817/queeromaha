@@ -1,5 +1,5 @@
 ---
-title: Local Music Events / Venues
+title: Music Events / Venues
 layout: layouts/base.njk
 ---
 
@@ -93,7 +93,7 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating.
 
 ### The Coven
 
-Goth club at the old Down Under address with great sound system (not that loud!)
+Goth club at the old Down Under address. Great sound system. Will have local music shows as well as goth / industrial stuff.
 
 Noir Omaha's goth night on Second Saturday 8PM to close
 
