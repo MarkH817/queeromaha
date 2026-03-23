@@ -105,7 +105,7 @@ Legendary dive bar with small stage and great local / regional acts
 
 Did you know it's owned by members of the band Cursive?
 
-BRs are labeled with gendered antique signs, they are single-stall
+"Women's" BRs is single-stall, Men's is disgusting.
 
 [Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/)
  
