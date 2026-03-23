@@ -73,7 +73,7 @@ Bay Area online social groups. [Poly](https://tinyurl.com/smpcpolypeerpower [Tra
 
 ### OWOmaha Furry Group
 
-All-inclusive, well-moderated Furry group with in-person / online meetups.
+All-inclusive, actively moderated Furry group with in-person / online meetups.
 
 [**Events Calendar**](https://www.owomaha.com/calendar) |  [Carrd](https://owomaha.carrd.co/) |
 [13+ Discord Server invite link](https://discord.com/invite/3Vq63UFrhH) 
@@ -94,9 +94,9 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 <a id='spirituality'></a>
 **Spiritual Practice**
 
-### Vocal Release 
+### Vocal Release Class 
 
-Dawaune creates a safe container to be unapologetically heard on Saturdays in March (14th,21st,28th) from 11AM to 1PM @ Ananda Yoga.
+Dawaune creates a container to be unapologetically heard on Saturdays in March (14th,21st,28th) from 11AM to 1PM @ Ananda Yoga.
 
 ~20$ / PWYC / NOTAFLOF
 
