@@ -32,7 +32,7 @@ Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing cla
 
 Instagram groups that organize events Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
 
-[Queer Collective Insta](https://www.instagram.com/collectiveofqueers/)
+[**Queer Collective Insta**](https://www.instagram.com/collectiveofqueers/)
 
 [River Daze Collective Insta](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
@@ -108,7 +108,7 @@ Weekly Queer-centered Emotional Release class on Sundays @ 12:30PM at Ananda Yog
 
 PWYC / NOTAFLOF / no registration
 
-Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
+Getting There: Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
 
 [**Class Schedule**](https://www.anandaomaha.com/brooke-monaco-wellness) | [Insta](https://www.instagram.com/ananda.omaha/) | [BookFace](https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/)
 
