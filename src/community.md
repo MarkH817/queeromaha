@@ -4,9 +4,8 @@ layout: layouts/base.njk
 ---
 
 Announcements:
-- Added Noir Omaha @ The Coven to [Venues](/venues#midtown)
 - Added Gabi, Morgue, and Hayden to the [Makers page!](/makers)
-- Added Dawaune's vocal release yoga classes [on Saturdays in March at Ananda!](#spirituality)
+- Added Dawaune's vocal release yoga classes [on Saturdays at Ananda!](#spirituality)
 
 ---
 
@@ -37,6 +36,8 @@ Instagram groups that organize events Mutual Aid, drag shows, line dancing, art 
 [River Daze Collective Insta](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
 [Wild Garden Insta](https://www.instagram.com/thewildgardenomaha/)
+
+[Gabi Galles](https://instagram.com/gabighoul.art)
 
 ---
 
@@ -96,7 +97,7 @@ Drag shows / queer events at BFF / Petshop / The Sydney [BookFace](https://www.f
 
 ### Vocal Release Class 
 
-Dawaune creates a container to be unapologetically heard on Saturdays in March (14th,21st,28th) from 11AM to 1PM @ Ananda Yoga.
+Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga.
 
 ~20$ / PWYC / NOTAFLOF
 
