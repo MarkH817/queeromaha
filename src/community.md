@@ -27,15 +27,16 @@ Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing cla
 
 <!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
 
-### The Queer Collective and River Daze Collective and Wild Garden
+### Art Market Instagrams
 
-Instagram groups that organize events Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
+Groups that organize events Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
 
-[**Queer Collective Insta**](https://www.instagram.com/collectiveofqueers/)
+[**Queer Collective**](https://www.instagram.com/collectiveofqueers/)
 
-[River Daze Collective Insta](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
+[River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
-[Wild Garden Insta](https://www.instagram.com/thewildgardenomaha/)
+<!--
+[Wild Garden](https://www.instagram.com/thewildgardenomaha/)-->
 
 [Gabi Galles](https://instagram.com/gabighoul.art)
 
