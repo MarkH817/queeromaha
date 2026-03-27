@@ -33,6 +33,7 @@ Groups that organize events Mutual Aid, drag shows, line dancing, art markets. O
 
 [**Queer Collective**](https://www.instagram.com/collectiveofqueers/)
 
+<!--
 [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
 <!--
