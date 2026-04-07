@@ -85,14 +85,16 @@ Comic shop with a large queer section. Hosts board game meetups.
 <a id='dundee'></a>
 **Dundee**
 
-### Blue Line Coffee 🚻💻
+### Blue Line Coffee 🚻💻🏳️‍🌈
 
 Great coffee and cool people. Posts flyers for local events. Limited and uncomfortable seating.
 
 [Insta](https://www.instagram.com/bluelinecoffeeomaha/?hl=en) | [BookFace](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727)
 
  
-### Amateur Coffee 🚻
+<!-- owner by jayson met at nzc who stated it's queer owned    -->
+
+### Amateur Coffee 🚻🏳️‍🌈
 
 Small place whose takeout coffee comes in glass containers with deposit.
 

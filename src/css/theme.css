@@ -124,21 +124,25 @@ main {
 footer {
   background: #6d28d9;
   color: #fff;
-  padding: 0.4rem 2rem;  
+  padding: .1rem 2rem .1rem;  
   font-size: 1.2rem;
   letter-spacing: 0.05em;
-  position: relative;
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
   text-align: center;
 }
 
 footer div {
   display: flex;
   gap: 1.5rem;
+  justify-content: space-between;
   position: relative;
   left: -1rem;
-  bottom: -2.3rem;
+  bottom: -2.4rem;
   top: auto;
   transform: translateY(-50%);
+  width: calc(100% + 2rem);
 }
 
 footer a {

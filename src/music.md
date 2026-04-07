@@ -11,7 +11,7 @@ layout: layouts/base.njk
 
 See this week's shows on the [Omaha Underground Instagram](https:/Instagram.com/Omahaunderground)
 
-Also the [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
+The [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
 
 <!-- I haven't done personally| [Omaha Blues Society](https://omahablues.com/events/) | [Open Mics FB](https://www.facebook.com/groups/OmahaOpenMics/) -->
 
@@ -97,18 +97,18 @@ Goth club at the old Down Under address. Great sound system. Will have local mus
 
 Noir Omaha's goth night on Second Saturday 8PM to close
 
-[Coven Insta](https://www.instagram.com/covenbaromaha/) | 
-[Coven Website] (https://covenomaha.com/)| 
+[Coven's Insta](https://www.instagram.com/covenbaromaha/) | 
+[Coven's Website](https://covenomaha.com/)| 
 [Noir's Insta](https://www.instagram.com/noiromaha/?hl=en)
 
 
-### O'Leaver's 🚻
+### O'Leaver's
 
 Legendary dive bar with small stage and great local / regional acts
 
 Did you know it's owned by members of the band Cursive?
 
-"Women's" BRs is single-stall, Men's is disgusting.
+"Women's" BR has stalls (not single), Men's is disgusting.
 
 [Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/)
  
@@ -172,6 +172,8 @@ TBD, jazz club?
 
 update april
 - sadonaut (jacob) had some screed on FB about nevermore who runs Noir, they apparently worked together in 2025. claims of NM looting funds from 'dark market'. I don't like that J had that kind of accusatoin and made a bunch of butthurt claims like 'J is banned and NM doesn't reply / is blocked'. meh. NM apparently made some SA accusation while at verdict, J claims to 'distrsct from something' I don't care, or have any sides. I'm distanced from J anyway. Noir is resident at Coven and J / inducstrial does play there. so IDK what coven is about. Dark market / goth day coming up @ joselyn castle. Barrens used as catspaw by J. unclear what their interest is. Haven't engaged w/ any of this. Barrens was proferred in FJ's FB posts as 'ref' for stuff. Barrens performs w/ Industrial and some goth around town. Not w/ noir, seems like J's ppl were banned from it.
+
+Torie at O4Us doesn't know shit, says verdict changed owner and name. Cassandra says just rebrand. meh. Barrens would be a good next contact prob if I wanted to interrogate.
 -->
 
 ### Red Light Lounge (fka The Verdict)
