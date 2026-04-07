@@ -186,7 +186,7 @@ Industrial and Goth / Darkwave nights
 
 [Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
 
-[Emo Nite (RAWR XD)](https://www.theverdictomaha.com/events.html)
+[Emo Nite (RAWR XD)](https://www.theverdictomaha.com/events.html) on Last Saturdays
 
 <!-- not great layout, old site [Event Calendar](https://www.theverdictomaha.com/events.html) -->
 
