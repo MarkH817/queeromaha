@@ -186,3 +186,14 @@ Pet play and pup group often at Flixx. Vetted membership.
 ### Flixx Lounge 🛋️
 
 Gay bar with weekly drag shows. [Website](https://www.flixxlounge.com/upcoming-events) -->
+
+
+<!--
+SoJ discord
+
+Ethology bay area (remote)
+
+Less into posting this locally, maybe cell nw so ppl actually ahve reasonable education
+https://ethology.chase.pet/
+https://discord.com/invite/EjGZ64p9T4
+-->
