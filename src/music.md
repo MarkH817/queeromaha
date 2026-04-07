@@ -184,7 +184,7 @@ Industrial and Goth / Darkwave nights
 
 [Emo Nite (RAWR XD)](https://www.theverdictomaha.com/events.html)
 
-[Event Calendar](https://www.theverdictomaha.com/events.html)
+<!-- not great layout, old site [Event Calendar](https://www.theverdictomaha.com/events.html) -->
 
 ### Pageturners Lounge
 
