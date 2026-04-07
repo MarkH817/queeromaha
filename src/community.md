@@ -81,6 +81,10 @@ All-inclusive, actively moderated Furry group with in-person / online meetups.
 [**Events Calendar**](https://www.owomaha.com/calendar) |  [Carrd](https://owomaha.carrd.co/) |
 [13+ Discord Server invite link](https://discord.com/invite/3Vq63UFrhH) 
 
+### Omaha Goth Discord
+
+[Discord](https://discord.gg/M5JUCgY9c)
+
 ### Open Arms Trans Social Group (OATS)
 
 In-person meetup of Trans* folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha
