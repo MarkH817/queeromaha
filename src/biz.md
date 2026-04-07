@@ -3,8 +3,9 @@ title: Local Queer/Friendly Businesses
 layout: layouts/base.njk
 ---
 
-## Health & Wellness
+### Maddyco
 
+Will make you custom collars and key tags, has trans flags , rainbow etc
 
 ## Games & Community Businesses
 

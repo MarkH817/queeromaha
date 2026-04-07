@@ -91,6 +91,9 @@ Great coffee and cool people. Posts flyers for local events. Limited and uncomfo
 
 [Insta](https://www.instagram.com/bluelinecoffeeomaha/?hl=en) | [BookFace](https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727)
 
+<!-- ### Lola's
+
+Pricy cafe in the movie theater. Good for dates. -->
  
 <!-- owner by jayson met at nzc who stated it's queer owned    -->
 
