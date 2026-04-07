@@ -139,6 +139,15 @@ Open artist studios, music and free workshops ran by BFF.
 
 **Midtown**
 
+### Hispanic Arts Center
+
+Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.~
+
+[BookFace](https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/)
+
+
+<!-- incoming (milt is setting up) [Website](https://www.haco-ne.com/events.html)  -->
+
 ### Aksarben Village 🚻
 
 Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
