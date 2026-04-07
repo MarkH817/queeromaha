@@ -120,7 +120,9 @@ Weekly blues shows and local acts. Punk market was there
 
 ### Joslyn Castle Carriage House 🚻
 
-Ye Olde Garage. Decent-sized space with a projector and PAs. Seems cool with queers and goth stuff. Electronic / experimental music there sometimes.
+Ye Olde Garage. 
+
+Decent-sized space with a projector and PAs. Goth events, electronic / experimental music.
 
 [Insta](https://www.instagram.com/joslyncastle/) | 
 [Website](https://www.joslyncastle.com/events/)
