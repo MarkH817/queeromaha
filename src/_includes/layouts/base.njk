@@ -25,9 +25,12 @@
   <main>
     {{ content | safe }}
   </main>
-  <footer>
+   <footer>
     <a href="/contact/">Contact</a>
-    <p><a href="https://samaritanshope.org/series/lgbtq-safeplace-meeting-2/">You are not alone</a></p>
+    <p>
+      {%- set randomMsg = footerMessages.messages[range(0, footerMessages.messages.length) | random] %}
+      {{ randomMsg.text }}
+    </p>
     <a href="/about/">About</a>
   </footer>
   <button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up-circle"></i></button>
