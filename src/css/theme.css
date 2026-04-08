@@ -160,6 +160,22 @@ footer p a {
   flex: none;
 }
 
+/* Disclaimer - only visible when scrolled past footer */
+#disclaimer {
+  background: #f6f0fa;
+  color: #666;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.85rem;
+  border-top: 1px solid #e9d5ff;
+  position: relative;
+}
+
+#disclaimer p {
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
 h1, h3 {
   margin-top: 0;
   margin-bottom: 0.2rem;
