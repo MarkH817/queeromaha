@@ -15,23 +15,23 @@
 <body>
   <header>
     <nav>
-      <a href="/community/">Hubs</a>
-      <a href="/art/">Art</a>
-      <a href="/cafes/">Cafes</a>
-      <a href="/music/">Music</a>
-      <a href="/makers/">Makers</a>
+      <a href="/community">Hubs</a>
+      <a href="/art">Art</a>
+      <a href="/cafes">Cafes</a>
+      <a href="/music">Music</a>
+      <a href="/makers">Makers</a>
     </nav>
   </header>
   <main>
     {{ content | safe }}
   </main>
    <footer>
-    <a href="/contact/">Contact</a>
+    <a href="/contact">Contact</a>
     <p>
       {%- set randomMsg = footerMessages.messages[range(0, footerMessages.messages.length) | random] %}
       {{ randomMsg.text }}
     </p>
-    <a href="/about/">About</a>
+    <a href="/about">About</a>
   </footer>
   <div id="disclaimer">
     <p>inclusion on this site does not imply endorsement</p>
