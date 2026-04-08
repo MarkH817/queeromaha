@@ -4,8 +4,7 @@ layout: layouts/base.njk
 ---
 
 Announcements:
-- Added Gabi, Morgue, and Hayden to the [Makers page!](/makers)
-- Added Dawaune's vocal release yoga classes [on Saturdays at Ananda!](#spirituality)
+- Are you a musician? [Apply here](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform) for a 1K grant and 2 days of recording studio time. Closes midnight on April 27 [More Info here](https://www.bemiscenter.org/residency/community-tracks)
 
 ---
 
