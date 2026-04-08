@@ -2,9 +2,6 @@
   publish = "_site"
   command = "bun run build"
 
-[functions]
-  directory = "netlify/functions"
-
 [[redirects]]
   from = "/"
   to = "/community"
