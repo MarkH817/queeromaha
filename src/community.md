@@ -13,24 +13,24 @@ Announcements:
 Hub of social groups and resources. New location north of Dodge at 108th is amazing!
 
 [**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
-
+<!-- 
 Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. Private high quality showers.
 
- 
+  -->
 - Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
 - Game night Thurs @ 5
 - Free STI testing on some Thurs @ 4
-<!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
 - D&D every other Tues @ 4
 - [Teen/youth programs](https://www.omahaforus.org/proud-horizons)
+<!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
 
 <!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
 
-### Art Market Instagrams
+### Queer Collective
 
-Groups that organize events Mutual Aid, drag shows, line dancing, art markets. Often at Floors Floors Floors in Benson.
+Mutual Aid, drag shows, line dancing, art markets. Often at [Floors Floors Floors](/art#benson) in Benson and [Church Art House](/art#southo) in South O.
 
-[**Queer Collective**](https://www.instagram.com/collectiveofqueers/)
+[**Insta**](https://www.instagram.com/collectiveofqueers/)
 
 <!--
 [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
@@ -38,7 +38,10 @@ Groups that organize events Mutual Aid, drag shows, line dancing, art markets. O
 <!--
 [Wild Garden](https://www.instagram.com/thewildgardenomaha/)-->
 
-[Gabi Galles](https://instagram.com/gabighoul.art)
+### Art Markets and Swaps
+Gabi Galles runs art markets and swaps! oOften at Floors x3 and people's houses.
+
+[Insta](https://instagram.com/gabighoul.art)
 
 ---
 
