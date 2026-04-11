@@ -118,7 +118,8 @@ Did you know it's owned by members of the band Cursive?
 
 "Women's" BR has stalls (not single), Men's is disgusting.
 
-[Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/)
+[Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/) |
+[Events on Omahaunderground](https://omahaunderground.net/venues/oleavers)
  
 ### B Bar
 
