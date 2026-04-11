@@ -83,7 +83,8 @@ Mid-size venue for local and large-ish acts. Very little seating. [Website](http
 
 Mid-size space for local acts. 
 
-[Website](https://www.reverblounge.com/)
+[Website](https://www.reverblounge.com/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/reverb-lounge)
 
 ### The Sydney 🚻
 
