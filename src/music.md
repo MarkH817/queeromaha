@@ -87,7 +87,8 @@ Mid-size space for local acts.
 
 Dive bar for local acts. Has burlesque shows and drag. Very little seating. 
 
-[Website](https://thesydneybenson.com/)
+[Website](https://thesydneybenson.com/)| 
+[Events on OmahaUnderground](https://omahaunderground.net/venues/the-sydney) 
 
 ---
 
