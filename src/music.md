@@ -61,13 +61,17 @@ Punk/queer DIY space with experimental music and local art
 
 Gallery and events space with local music and queer markets
 
-[Insta](https://www.instagram.com/floorsfloorsfloors_7052maple)
+[Insta](https://www.instagram.com/floorsfloorsfloors_7052maple) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/floors-floors-floors) 
 
 ### Shakedown Street 🚻
 
 Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month 
 
-[Insta](https://www.instagram.com/shakedownstreettavern/) | [Website](https://www.facebook.com/shakedownstreettavern/) | [BookFace](https://www.facebook.com/shakedownstreettavern/)
+[Insta](https://www.instagram.com/shakedownstreettavern/) | [Website](https://www.facebook.com/shakedownstreettavern/) | [BookFace](https://www.facebook.com/shakedownstreettavern/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/shakedown-street-tavern)
+
+
 <!-- 
 ### The Waiting Room
 
