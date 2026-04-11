@@ -50,7 +50,8 @@ Experimental music and sound art collective. Centered out of Project Project. [I
 
 Punk/queer DIY space with experimental music and local art
 
-[Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/) | [BookFace](https://www.facebook.com/weareprojectproject/)
+[Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/) | [BookFace](https://www.facebook.com/weareprojectproject/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/project-project) 
 
 ---
 <a id='benson'></a>
