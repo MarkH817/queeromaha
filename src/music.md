@@ -40,7 +40,8 @@ Amazing experimental music series. Many trans and queer artists have performed
 
 Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters
 
-[Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/) | [BookFace](https://www.facebook.com/thechurcharthouse/)
+[Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/) | [BookFace](https://www.facebook.com/thechurcharthouse/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/the-church-arthouse)
 <!-- 
 ### No-Coast Noise Collective
 
@@ -105,9 +106,8 @@ Noir Omaha's goth night every Second Saturday - 8PM to close
 [Coven's Insta](https://www.instagram.com/covenbaromaha/) | 
 [Coven's Website](https://covenomaha.com/) | 
 [Noir's Insta](https://www.instagram.com/noiromaha/?hl=en) |
-[Noir's BookFace](https://www.facebook.com/NoirOmaha/)
-
-
+[Noir's BookFace](https://www.facebook.com/NoirOmaha/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/the-coven)
 
 ### O'Leaver's
 
