@@ -193,6 +193,7 @@ Industrial and Goth / Darkwave nights
 
 [Emo Nite (RAWR XD)](https://www.theverdictomaha.com/events.html) on Last Saturdays
 
+[Omahaunderground Events](https://omahaunderground.net/venues/red-light-lounge)
 <!-- not great layout, old site [Event Calendar](https://www.theverdictomaha.com/events.html) -->
 
 ### Pageturners Lounge
