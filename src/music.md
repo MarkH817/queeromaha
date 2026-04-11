@@ -31,15 +31,6 @@ Amazing experimental music series. Many trans and queer artists have performed
 
 [Events Calendar](https://www.bemiscenter.org/low-end)
 
-
-### Noir Omaha Goth Night at The Coven
-
-Second Saturday of every month 8PM to close
-
-Darkwave / industrial dance nights at The Coven (old Down Under location - 3530 Farnam St)
-
-[Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
-
 ---
 
 <a id='southo'></a>
@@ -103,11 +94,13 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating.
 
 Goth club at the old Down Under address. Great sound system. Will have local music shows as well as goth / industrial stuff.
 
-Noir Omaha's goth night on Second Saturday 8PM to close
+Noir Omaha's goth night every Second Saturday - 8PM to close
 
 [Coven's Insta](https://www.instagram.com/covenbaromaha/) | 
 [Coven's Website](https://covenomaha.com/) | 
-[Noir's Insta](https://www.instagram.com/noiromaha/?hl=en)
+[Noir's Insta](https://www.instagram.com/noiromaha/?hl=en) |
+[Noir's BookFace](https://www.facebook.com/NoirOmaha/)
+
 
 
 ### O'Leaver's
