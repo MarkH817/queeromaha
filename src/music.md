@@ -21,7 +21,7 @@ The [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts
 
 Bemis pays $1K and gives you two days of recording studio time in their space. Open until April 27, 2026 at 11:59 PM CT
 
-[Application](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform)|
+[Application](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform) |
 [More Info](https://www.bemiscenter.org/residency/community-tracks)
 
 <a id='bemis'></a>
