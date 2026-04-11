@@ -92,7 +92,7 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating.
 
 ### The Coven
 
-Goth club at the old Down Under address. Great sound system. Will have local music shows as well as goth / industrial stuff.
+Goth club at the old Down Under address. Great sound system. Local and touring punk / darkwave / industrial.
 
 Noir Omaha's goth night every Second Saturday - 8PM to close
 
