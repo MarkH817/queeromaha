@@ -4,5 +4,5 @@
 
 [[redirects]]
   from = "/"
-  to = "/community"
+  to = "/home"
   status = 301
