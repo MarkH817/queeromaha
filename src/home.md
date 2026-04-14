@@ -38,7 +38,7 @@ Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing cla
 
 - Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
-- Art by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
+- Meetups by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
 
 ---
 
