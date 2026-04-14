@@ -9,7 +9,7 @@ layout: layouts/base.njk
 
 ---
 
-**Essentials**
+**Start Here!**
 
 ### OmahaForUs
 
@@ -20,11 +20,11 @@ Hub of social groups and resources. New location north of Dodge at 108th is amaz
 Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. Private high quality showers.
 
   -->
-- Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
-- Game night Thurs @ 5
-- Free STI testing on some Thurs @ 4
-- D&D every other Tues @ 4
-- [Teen/youth programs](https://www.omahaforus.org/proud-horizons)
+- Peer Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
+- Game night Thursdays @ 5 - 8
+- Free STI testing Thursdays @ 4 - 6
+- D&D every other Tues @ 4 - 7
+- Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
 <!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
 
 <!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
@@ -32,12 +32,9 @@ Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing cla
 ### Queer Groups on Instagram
 
 - Mutual aid and dancing by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
-
 - Art Markets and Swaps by 
 [Gabi Galles](https://instagram.com/gabighoul.art)
-
 - Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
-
 - Meetups by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
 
 ---
