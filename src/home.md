@@ -3,10 +3,13 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
-Announcements:
-- Are you a musician? [Apply here](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform) for a 1K grant and 2 days of recording studio time. Closes midnight on April 27 [More Info here](https://www.bemiscenter.org/residency/community-tracks)
+**Announcements**
+
+- $1000 and 2 days of recording studio time through Bemis - [Apply here](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform). Closes midnight on April 27. [More Info](https://www.bemiscenter.org/residency/community-tracks)
 
 ---
+
+**Essentials**
 
 ### OmahaForUs
 
@@ -26,22 +29,16 @@ Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing cla
 
 <!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
 
-### Queer Collective
+### Queer Groups on Instagram
 
-Mutual Aid, drag shows, line dancing, art markets. Often at [Floors Floors Floors](/art#benson) in Benson and [Church Art House](/art#southo) in South O.
+- Mutual aid and dancing by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
 
-[**Insta**](https://www.instagram.com/collectiveofqueers/)
+- Art Markets and Swaps by 
+[Gabi Galles](https://instagram.com/gabighoul.art)
 
-<!--
-[River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
+- Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
 
-<!--
-[Wild Garden](https://www.instagram.com/thewildgardenomaha/)-->
-
-### Art Markets and Swaps
-Gabi Galles runs art markets and swaps! oOften at Floors x3 and people's houses.
-
-[Insta](https://instagram.com/gabighoul.art)
+- Art by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
 
 ---
 
