@@ -21,7 +21,7 @@ The [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts
 
 Bemis pays $1K and gives you two days of recording studio time in their space. Open until April 27, 2026 at 11:59 PM CT
 
-[Application](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform)|
+[Application](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform) |
 [More Info](https://www.bemiscenter.org/residency/community-tracks)
 
 <a id='bemis'></a>
@@ -30,15 +30,6 @@ Bemis pays $1K and gives you two days of recording studio time in their space. O
 Amazing experimental music series. Many trans and queer artists have performed
 
 [Events Calendar](https://www.bemiscenter.org/low-end)
-
-
-### Noir Omaha Goth Night at The Coven
-
-Second Saturday of every month 8PM to close
-
-Darkwave / industrial dance nights at The Coven (old Down Under location 3530 Farnum St)
-
-[Insta](https://www.instagram.com/noiromaha/?hl=en) | [BookFace](https://www.facebook.com/NoirOmaha/)
 
 ---
 
@@ -49,7 +40,8 @@ Darkwave / industrial dance nights at The Coven (old Down Under location 3530 Fa
 
 Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters
 
-[Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/) | [BookFace](https://www.facebook.com/thechurcharthouse/)
+[Insta](https://www.instagram.com/thechurcharthouse/) | [Website](https://www.thechurcharthouse.love/) | [BookFace](https://www.facebook.com/thechurcharthouse/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/the-church-arthouse)
 <!-- 
 ### No-Coast Noise Collective
 
@@ -59,7 +51,8 @@ Experimental music and sound art collective. Centered out of Project Project. [I
 
 Punk/queer DIY space with experimental music and local art
 
-[Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/) | [BookFace](https://www.facebook.com/weareprojectproject/)
+[Insta](https://www.instagram.com/weareprojectproject) | [Website](https://projectprojectomaha.com/) | [BookFace](https://www.facebook.com/weareprojectproject/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/project-project) 
 
 ---
 <a id='benson'></a>
@@ -70,13 +63,17 @@ Punk/queer DIY space with experimental music and local art
 
 Gallery and events space with local music and queer markets
 
-[Insta](https://www.instagram.com/floorsfloorsfloors_7052maple)
+[Insta](https://www.instagram.com/floorsfloorsfloors_7052maple) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/floors-floors-floors) 
 
 ### Shakedown Street 🚻
 
 Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month 
 
-[Insta](https://www.instagram.com/shakedownstreettavern/) | [Website](https://www.facebook.com/shakedownstreettavern/) | [BookFace](https://www.facebook.com/shakedownstreettavern/)
+[Insta](https://www.instagram.com/shakedownstreettavern/) | [Website](https://www.facebook.com/shakedownstreettavern/) | [BookFace](https://www.facebook.com/shakedownstreettavern/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/shakedown-street-tavern)
+
+
 <!-- 
 ### The Waiting Room
 
@@ -86,13 +83,15 @@ Mid-size venue for local and large-ish acts. Very little seating. [Website](http
 
 Mid-size space for local acts. 
 
-[Website](https://www.reverblounge.com/)
+[Website](https://www.reverblounge.com/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/reverb-lounge)
 
 ### The Sydney 🚻
 
 Dive bar for local acts. Has burlesque shows and drag. Very little seating. 
 
-[Website](https://thesydneybenson.com/)
+[Website](https://thesydneybenson.com/)| 
+[Events on OmahaUnderground](https://omahaunderground.net/venues/the-sydney) 
 
 ---
 
@@ -101,14 +100,15 @@ Dive bar for local acts. Has burlesque shows and drag. Very little seating.
 
 ### The Coven
 
-Goth club at the old Down Under address. Great sound system. Will have local music shows as well as goth / industrial stuff.
+Goth club at the old Down Under address. Great sound system. Local and touring punk / darkwave / industrial.
 
-Noir Omaha's goth night on Second Saturday 8PM to close
+Noir Omaha's goth night every Second Saturday - 8PM to close
 
 [Coven's Insta](https://www.instagram.com/covenbaromaha/) | 
-[Coven's Website](https://covenomaha.com/)| 
-[Noir's Insta](https://www.instagram.com/noiromaha/?hl=en)
-
+[Coven's Website](https://covenomaha.com/) | 
+[Noir's Insta](https://www.instagram.com/noiromaha/?hl=en) |
+[Noir's BookFace](https://www.facebook.com/NoirOmaha/) |
+[Events on OmahaUnderground](https://omahaunderground.net/venues/the-coven)
 
 ### O'Leaver's
 
@@ -118,7 +118,8 @@ Did you know it's owned by members of the band Cursive?
 
 "Women's" BR has stalls (not single), Men's is disgusting.
 
-[Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/)
+[Insta](https://www.instagram.com/oleavers/?hl=en) | [BookFace](https://www.facebook.com/oleavers/) |
+[Events on Omahaunderground](https://omahaunderground.net/venues/oleavers)
  
 ### B Bar
 
@@ -183,19 +184,20 @@ TBD, jazz club?
 update april
 - sadonaut (jacob) had some screed on FB about nevermore who runs Noir, they apparently worked together in 2025. claims of NM looting funds from 'dark market'. I don't like that J had that kind of accusatoin and made a bunch of butthurt claims like 'J is banned and NM doesn't reply / is blocked'. meh. NM apparently made some SA accusation while at verdict, J claims to 'distrsct from something' I don't care, or have any sides. I'm distanced from J anyway. Noir is resident at Coven and J / inducstrial does play there. so IDK what coven is about. Dark market / goth day coming up @ joselyn castle. Barrens used as catspaw by J. unclear what their interest is. Haven't engaged w/ any of this. Barrens was proferred in FJ's FB posts as 'ref' for stuff. Barrens performs w/ Industrial and some goth around town. Not w/ noir, seems like J's ppl were banned from it.
 
-Torie at O4Us doesn't know shit, says verdict changed owner and name. Cassandra says just rebrand. meh. Barrens would be a good next contact prob if I wanted to interrogate.
+Torie at O4Us doesn't seem tp have accurate info besides RUMINT , says verdict changed owner and name. Cassandra says just rebrand. meh. Barrens would be a good next contact prob if I wanted to interrogate.
 -->
 
 ### Red Light Lounge (fka The Verdict)
 
 Industrial and Goth / Darkwave nights
 
-[The Slab - Darkwave and Rock](https://instagram.com/djlusterdust) on 2nd Saturdays
+[The Slab - Darkwave and Rock](https://www.instagram.com/omaha_goth_and_alternative/) on 2nd Saturdays
 
 [Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
 
 [Emo Nite (RAWR XD)](https://www.theverdictomaha.com/events.html) on Last Saturdays
 
+[Omahaunderground Events](https://omahaunderground.net/venues/red-light-lounge)
 <!-- not great layout, old site [Event Calendar](https://www.theverdictomaha.com/events.html) -->
 
 ### Pageturners Lounge

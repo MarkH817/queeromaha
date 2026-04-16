@@ -3,10 +3,13 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
-Announcements:
-- Are you a musician? [Apply here](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform) for a 1K grant and 2 days of recording studio time. Closes midnight on April 27 [More Info here](https://www.bemiscenter.org/residency/community-tracks)
+**Announcements**
+
+- $1000 and 2 days of recording studio time through Bemis - [Apply here](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform). Closes midnight on April 27. [More Info](https://www.bemiscenter.org/residency/community-tracks)
 
 ---
+
+**Start Here!**
 
 ### OmahaForUs
 
@@ -17,31 +20,22 @@ Hub of social groups and resources. New location north of Dodge at 108th is amaz
 Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. Private high quality showers.
 
   -->
-- Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
-- Game night Thurs @ 5
-- Free STI testing on some Thurs @ 4
-- D&D every other Tues @ 4
-- [Teen/youth programs](https://www.omahaforus.org/proud-horizons)
+- Peer Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
+- Game night Thursdays @ 5 - 8
+- Free STI testing Thursdays @ 4 - 6
+- D&D every other Tues @ 4 - 7
+- Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
 <!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
 
 <!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
 
-### Queer Collective
+### Queer Groups on Instagram
 
-Mutual Aid, drag shows, line dancing, art markets. Often at [Floors Floors Floors](/art#benson) in Benson and [Church Art House](/art#southo) in South O.
-
-[**Insta**](https://www.instagram.com/collectiveofqueers/)
-
-<!--
-[River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
-
-<!--
-[Wild Garden](https://www.instagram.com/thewildgardenomaha/)-->
-
-### Art Markets and Swaps
-Gabi Galles runs art markets and swaps! oOften at Floors x3 and people's houses.
-
-[Insta](https://instagram.com/gabighoul.art)
+- Mutual aid and dancing by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
+- Art Markets and Swaps by 
+[Gabi Galles](https://instagram.com/gabighoul.art)
+- Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
+- Meetups by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
 
 ---
 
