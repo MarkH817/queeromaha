@@ -199,3 +199,5 @@ Less into posting this locally, maybe cell nw so ppl actually ahve reasonable ed
 https://ethology.chase.pet/
 https://discord.com/invite/EjGZ64p9T4
 -->
+
+<!-- Link dump from UNL https://gsc.unl.edu/lgbtqa-resources-nebraska/ -->
