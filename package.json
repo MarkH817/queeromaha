@@ -22,5 +22,8 @@
   "dependencies": {
     "@netlify/neon": "^0.1.2",
     "drizzle-orm": "^0.45.1"
+  },
+  "volta": {
+    "node": "22.22.2"
   }
 }
