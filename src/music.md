@@ -110,6 +110,13 @@ Noir Omaha's goth night every Second Saturday - 8PM to close
 [Noir's BookFace](https://www.facebook.com/NoirOmaha/) |
 [Events on OmahaUnderground](https://omahaunderground.net/venues/the-coven)
 
+### Pageturners Lounge
+
+Bookish bar with local acts.
+
+[Insta](https://www.instagram.com/pageturnerslounge/?hl=en) | [BookFace](https://www.facebook.com/pageturnerslounge/)
+
+
 ### O'Leaver's
 
 Legendary dive bar with small stage and great local / regional acts
@@ -200,26 +207,20 @@ Industrial and Goth / Darkwave nights
 [Omahaunderground Events](https://omahaunderground.net/venues/red-light-lounge)
 <!-- not great layout, old site [Event Calendar](https://www.theverdictomaha.com/events.html) -->
 
-### Pageturners Lounge
-
-Bookish bar with local acts.
-
-[Insta](https://www.instagram.com/pageturnerslounge/?hl=en) | [BookFace](https://www.facebook.com/pageturnerslounge/)
 
 <!-- 
 ### Sokol (Admiral) 🛋️
 
 Medium-ish venue, gets larger acts. ADA seating upstairs. [Calendar](https://admiralomaha.com/events/)
-<!-- 
+
+<!-- NOPE, transphobic operator, warmed-over fox news host who couldn't afford lipo / facelift so eneded up telling me to use 'family' restrooms' instead of the real ones. Enabling the old-ass boomer EMT pretending to be a cop.  -->
+
 ### Steelhouse
 
-New large-ish venue, pricy, gets larger acts. [Calendar](https://steelhouseomaha.com/events/)
+NO GO  - unsafe for trans / queer folx. Polices bathrooms and empowers transphobes. Overpriced anyway. 
 
+<!--
 ### Slowdown
 
 Small-ish venue, local and larger acts. Very little seating. [Calendar](https://theslowdown.com/events/) [Insta](https://www.instagram.com/theslowdown/) [BookFace](https://www.facebook.com/theslowdown) -->
-
-
----
-
 
