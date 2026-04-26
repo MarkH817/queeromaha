@@ -5,7 +5,7 @@ layout: layouts/base.njk
 
 **Announcements**
 
-- $1000 and 2 days of recording studio time through Bemis - [Apply here](https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform). Closes midnight on April 27. [More Info](https://www.bemiscenter.org/residency/community-tracks)
+- Don't attend shows at ~~SteelHouse~~ that overpriced new downtown venue, they empower bathroom police.
 
 ---
 
