@@ -29,10 +29,9 @@ Bring a drum or try one of theirs!
 
 <!-- Also the Group that Jo (sic) runs at Legends on Sunday mornings. Art jam / coworking. -->
 
-<!-- 
-### Modular Synth Group
+### Synth Night
 
-Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site. -->
+Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
 <!-- 
 ### SoundArte
 
