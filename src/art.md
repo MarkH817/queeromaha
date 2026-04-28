@@ -31,7 +31,9 @@ Bring a drum or try one of theirs!
 
 ### Synth Night
 
-Meets at Shakedown Street 8-10pm on the last Wednesday of the month (typically). Also meets at Joslyn Carriage House and 2nd Unitarian. No dedicated socials/site.
+Electronic music jam session at Shakedown Street 8-10pm on the last Wednesday of the month.
+
+[Events Calendar](https://omahaunderground.net/venues/shakedown-street-tavern)
 <!-- 
 ### SoundArte
 
