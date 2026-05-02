@@ -5,7 +5,7 @@ layout: layouts/base.njk
 
 **Announcements**
 
-- Don't attend shows at ~~SteelHouse~~ that overpriced new downtown venue, they empower bathroom police.
+- Don't attend shows at ~~SteelHouse~~ overpriced downtown venue, its management empowers bathroom police.
 
 ---
 
