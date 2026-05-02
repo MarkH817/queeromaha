@@ -13,25 +13,24 @@ layout: layouts/base.njk
 
 ### OmahaForUs
 
-Hub of social groups and resources. New location north of Dodge at 108th is amazing!
+Hub of community, resources, and events.
 
-[**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs)
-<!-- 
-Food/hygiene pantry, clothes closet, support groups, arts and crafts, sewing classes, drag resources, and game nights. Transition clothing and supplies. Name-change / legal resources. Teen events and groups. Reading room and lending library. Internships and work-study. Private high quality showers.
+[**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs) | [Google Maps](https://maps.app.goo.gl/LumDam5UoHgmNcGF8)
 
-  -->
-- Peer Support group every Wed @ 6 [**Register**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u)
-- Game night Thursdays @ 5 - 8
-- Free STI testing Thursdays @ 4 - 6
-- D&D every other Tues @ 4 - 7
+Transition clothing and supplies, Food/hygiene pantry, clothes closet, arts and crafts. Name-change / legal resources. Teen events and groups. Reading room and lending library. Private showers. Volunteering opportunities.
+
+- Support group (19+) every Wednesday evening 6PM to 7:30PM [**Register Here**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u).
+  > Outside of Omaha? It's Remote every other week!
+- Game night every Thursday evening 5PM to 8PM
+- Dungeons & Dragons on the 1st and 3rd Tuesdays evenings  4PM to 7PM
 - Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
-<!-- seems not anymore - Craft Night every other Wed 6-7:30 -->
+- Craft Night on Wednesday evening 6PM to 7:30PM
 
-<!-- per torie the QC does inpersons like OWA, just organized via insta - presumably gabi is my POC there -->
+<!-- testing is not on cal, unclear. POC Moo and NE aids proj / douglas cty who does it - Free STI testing Thursdays @ 4 - 6 -->
 
-### Queer Groups on Instagram
+### Local Queer Groups On Instagram  
 
-- Mutual aid and dancing by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
+- Events and Mutual aid by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
 - Art Markets and Swaps by 
 [Gabi Galles](https://instagram.com/gabighoul.art)
 - Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
