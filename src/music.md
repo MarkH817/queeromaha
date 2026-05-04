@@ -185,13 +185,12 @@ TBD, jazz club?
 <a id='downtown'></a>
 **Downtown**
 
-
 <!--  per Cassandra it was the same owners just rebrand. Unclear why noir left, since it mentioned 'safety issues' in a social post. noir likely will be at Coven. the Mourning Dolls are now involved at Verdict. seems like a burlesque/ marketing/LA style thing to me. DID NOT changed ownership to non-queers, just name. Slab still there. Lots of industrial nights planned by Jacob (dj sado_naut). c DJ Barrens (queer?/trans?) white person who is bartender has stayed on since they work at the bar. similar ppl run events (DJ barrens, nevermore), 
 
 update april
 - sadonaut (jacob) had some screed on FB about nevermore who runs Noir, they apparently worked together in 2025. claims of NM looting funds from 'dark market'. I don't like that J had that kind of accusatoin and made a bunch of butthurt claims like 'J is banned and NM doesn't reply / is blocked'. meh. NM apparently made some SA accusation while at verdict, J claims to 'distrsct from something' I don't care, or have any sides. I'm distanced from J anyway. Noir is resident at Coven and J / inducstrial does play there. so IDK what coven is about. Dark market / goth day coming up @ joselyn castle. Barrens used as catspaw by J. unclear what their interest is. Haven't engaged w/ any of this. Barrens was proferred in FJ's FB posts as 'ref' for stuff. Barrens performs w/ Industrial and some goth around town. Not w/ noir, seems like J's ppl were banned from it.
 
-Torie at O4Us doesn't seem tp have accurate info besides RUMINT , says verdict changed owner and name. Cassandra says just rebrand. meh. Barrens would be a good next contact prob if I wanted to interrogate.
+Torie at O4Us doesn't seem to have accurate info besides RUMINT , says verdict changed owner and name. Cassandra says just rebrand. meh. Barrens would be a good next contact prob if I wanted to interrogate.
 -->
 
 ### Red Light Lounge (fka The Verdict)
