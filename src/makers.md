@@ -51,7 +51,7 @@ Find them at the BFF art market [and Online](https://meridiancitytarot.carrd.co/
 
 Kayla Thor creates Gifts & Glasses for Every Ghoul. Glass tumblers, mugs, earrings, notebooks and other accessories for the dark and spooky.
 
-[Insta](https://www.instagram.com/thingsbythor) | [BookFace](https://www.facebook.com/thingsbythor/)
+[Insta](https://www.instagram.com/thingsbythor) | [BookFace](https://www.facebook.com/thingsbythor/) | [Website](thingsbythor.com)
 
 ---
 
