@@ -3,12 +3,6 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 ---
 
-**Announcements**
-
-- Don't attend shows at ~~SteelHouse~~ overpriced downtown venue, mgmt empowers bathroom police.
-
----
-
 **Start Here!**
 
 ### OmahaForUs
