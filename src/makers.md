@@ -46,6 +46,13 @@ Local artist Haidyn Sosalla-Bahr (they/them) creates Major Arcana cards with the
 
 Find them at the BFF art market [and Online](https://meridiancitytarot.carrd.co/)
 
+
+## Things By Thor
+
+Kayla Thor creates Gifts & Glasses for Every Ghoul. Glass tumblers, mugs, earrings, notebooks and other accessories for the dark and spooky.
+
+[Insta](https://www.instagram.com/thingsbythor) | [BookFace](https://www.facebook.com/thingsbythor/)
+
 ---
 
 <h3 style="margin-top: 0;">Want to be showcased on this page?</h3></brs>
