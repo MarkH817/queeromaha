@@ -18,7 +18,7 @@ intro: |
   - Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
   - Craft Night on Wednesday evening 6PM to 7:30PM
 
-  ### Queerstagram
+  ### Queerstagrams!
 
   - Events and Mutual aid by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
   - Art Markets and Swaps by [Gabi Galles](https://instagram.com/gabighoul.art)
