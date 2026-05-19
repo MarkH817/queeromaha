@@ -41,6 +41,7 @@
           </div>
         {% endif %}
       {% endfor %}
+      {% if content %}{{ content | safe }}{% endif %}
     {% else %}
       {{ content | safe }}
     {% endif %}
