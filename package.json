@@ -9,8 +9,8 @@
     "build": "bunx @11ty/eleventy",
     "serve:cms": "bunx decap-server",
     "prepare": "husky",
-    "fix": "prettier --write .",
-    "lint": "prettier --check  ."
+    "fix": "bunx prettier --write .",
+    "lint": "bunx prettier --check ."
   },
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
