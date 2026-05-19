@@ -4,7 +4,6 @@ layout: layouts/base.njk
 public: true
 ---
 
-
 ## Gabi Ghoul Art
 
 Gabi identifies as a Queer, Disabled and BIPOC artist with a love for mixed medium works, often blending a use of acrylic painted scenes highlighted by hand stitched beads.
