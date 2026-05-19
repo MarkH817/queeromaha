@@ -16,6 +16,17 @@ Thumbs.db
 # Local Netlify folder
 .netlify
 
+
+# chatbots
+CLAUDE*
+.claude/
+AGENTS.md
+.cursor/
+.cursorrules
+settings.json
+rules/
+.mcp.json
+
 # Logs
 logs
 *.log
