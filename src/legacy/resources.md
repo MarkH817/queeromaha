@@ -31,7 +31,7 @@ Email signup: <megsmiththerapy@outlook.com> / 402 871 5920
 
 ### PFLAG Omaha
 
-Parents Support group 2nd Thursday of the month 7PM at Countryside Community Church  
+Parents Support group 2nd Thursday of the month 7PM at Countryside Community Church
 [Website](http://www.pflag-omaha.org/)
 
 ### Spirit Rock Rainbow Sangha
@@ -42,7 +42,7 @@ LGBTQIA+ sangha, Wednesdays 5:30-7:00 PM PT (online via Zoom, donation-based)
 ### SFZC Queer Dharma Group
 
 Queer-centered sangha, various Saturdays 1:00 PM PT (online)
-[Calendar/More Info](https://www.sfzc.org/practice-centers/city-center/zen-meditation-practice-city-center/practice-groups-city-center/queer-dharma) 
+[Calendar/More Info](https://www.sfzc.org/practice-centers/city-center/zen-meditation-practice-city-center/practice-groups-city-center/queer-dharma)
 
 ### Upaya Queer and Trans Sangha
 
@@ -76,7 +76,7 @@ Free, donations welcome
 - Clothes closet with private try-on room
 - Private Shower
 
-### pride health clinic has food pantry and huge clothes closer 
+### pride health clinic has food pantry and huge clothes closer
 
 ### Food Bank for the Heartland
 
@@ -106,7 +106,7 @@ Free STI testing on Thurs 4-6
 ### Pride Health Clinic
 
 Gender-affirming care, medications, injections, prescriptions, PReP  
-Free STI tests - walk-in Thursdays from 3:00-6:00 pm or [by appt](https://www.pridehealthclinic.com/sti-testing), food pantry, clothes closet, free rubbers, plan B, Narcan and fent test strips. [Website](https://www.pridehealthclinic.com/). 
+Free STI tests - walk-in Thursdays from 3:00-6:00 pm or [by appt](https://www.pridehealthclinic.com/sti-testing), food pantry, clothes closet, free rubbers, plan B, Narcan and fent test strips. [Website](https://www.pridehealthclinic.com/).
 
 Also operates PHC Aesthetics for laser hair removal, fillers, botox, skin treatments.
 [Website](https://phcaesthetics.com/)
@@ -121,7 +121,7 @@ Also operates PHC Aesthetics for laser hair removal, fillers, botox, skin treatm
 
 ### Nebraska AIDS Project
 
-PReP consults, Free testing, food pantry, support groups,  [Website](https://www.nap.org/)
+PReP consults, Free testing, food pantry, support groups, [Website](https://www.nap.org/)
 
 ### Planned Parenthood Omaha
 
@@ -141,7 +141,7 @@ Abortion resources for the state/region [Website](https://neabortionresources.or
 
 ### Community Alliance - Safe Harbor
 
-Crisis support in-person Mon-Fri: 8:30am - 4:30pm. 7150 Arbor St, Omaha (72nd and Center-ish, has bus stop)  [Website](https://community-alliance.org/) | [Hotline / Door Access](tel://+14023425128)
+Crisis support in-person Mon-Fri: 8:30am - 4:30pm. 7150 Arbor St, Omaha (72nd and Center-ish, has bus stop) [Website](https://community-alliance.org/) | [Hotline / Door Access](tel://+14023425128)
 
 ### Heartland Family Services
 
@@ -158,16 +158,18 @@ Crisis support in-person 24/7. 302 American Pkwy, Papillion, NE 68046 and 1515 A
 Statewide LGBTQ+ advocacy and community organization. Offers resources, support, and a comprehensive event listing for queer and trans Nebraskans. Connects people to local groups, events, and opportunities across the state.
 [Event Listing](https://outnebraska.org/event-listing/)
 
-
 ### Legal Aid of Nebraska
+
 Free and low-cost legal help for Nebraskans in civil matters, including housing, family law, public benefits, and more. Services available to those who qualify based on income and legal need.
 [Website](https://www.legalaidofnebraska.org/)
 
 ### ACLU Nebraska
+
 Legal resources, name-change  
 [Website](https://transnebraska.org/resources/)
 
 ### UNO Student Legal Services
+
 Free legal advice and services for currently enrolled UNO students. Covers landlord/tenant issues, name/gender marker changes, contracts, and more. Confidential and provided by licensed attorneys.
 [Website](https://www.unomaha.edu/student-life/student-safety/student-legal-services/index.php)
 

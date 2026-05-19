@@ -31,7 +31,7 @@
       {% for entry in items %}
         {% if entry.type == 'section' %}
           <a id="{{ entry.id }}"></a>
-          <p><strong>{{ entry.label }}</strong></p>
+          <h2 class="section-header">{{ entry.label }}</h2>
           {% if entry.note %}{{ entry.note | markdown | safe }}{% endif %}
         {% elif entry.public != false %}
           <div class="item">

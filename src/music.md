@@ -2,7 +2,7 @@
 title: Music Events / Venues
 layout: layouts/base.njk
 public: true
-notes: Unverified event listing resources (haven't done personally) — Omaha Blues Society https://omahablues.com/events/ | Open Mics FB https://www.facebook.com/groups/OmahaOpenMics/ | Dreamland Lounge (jazz club, not open yet) https://www.facebook.com/people/Dreamland-Lounge-Omaha/61584213254814/
+
 intro: |
   **Event Listings**
 
@@ -12,28 +12,6 @@ intro: |
 
   The [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
 items:
-  - type: section
-    label: Featured
-    id: featured
-
-  - type: item
-    name: Application for Community Tracks @ Bemis
-    public: true
-    description: Bemis pays $1K and gives you two days of recording studio time in their space. Open until April 27, 2026 at 11:59 PM CT.
-    links:
-      - label: Application
-        url: https://docs.google.com/forms/d/e/1FAIpQLSecA_i7GxWrFWAKugzPIflmH3iUWf7oQev0YPZlXcdYFS_trQ/viewform
-      - label: More Info
-        url: https://www.bemiscenter.org/residency/community-tracks
-
-  - type: item
-    name: Low End at Bemis Center
-    public: true
-    description: Amazing experimental music series. Many trans and queer artists have performed.
-    links:
-      - label: Events Calendar
-        url: https://www.bemiscenter.org/low-end
-
   - type: section
     label: South Omaha
     id: southo
@@ -186,7 +164,7 @@ items:
 
       Did you know it's owned by members of the band Cursive?
 
-      "Women's" BR has stalls (not single), Men's is disgusting.
+      "Women's" BR has stalls (not single-stall tho)
     links:
       - label: Insta
         url: https://www.instagram.com/oleavers/?hl=en
@@ -198,7 +176,7 @@ items:
   - type: item
     name: B Bar
     public: true
-    description: Weekly blues shows and local acts. Punk market was there.
+    description: Weekly blues shows and local acts.
     links:
       - label: Website
         url: https://www.thebbaromaha.com/
@@ -213,7 +191,7 @@ items:
     description: |
       Ye Olde Garage.
 
-      Decent-sized space with a projector and PAs. Goth events, electronic / experimental music.
+      Goth events, electronic / experimental music.
     links:
       - label: Insta
         url: https://www.instagram.com/joslyncastle/
@@ -237,7 +215,7 @@ items:
   - type: item
     name: The Breakroom
     public: false
-    description: Punk venue, 4204 Hamilton St.
+    description: Punk venue @ someone's house. Ask around.
     links:
       - label: Website
         url: https://omahaunderground.net/venues/the-breakroom
@@ -245,11 +223,11 @@ items:
   - type: item
     name: The FoxHole
     public: false
-    description: Someone's house. Ask around. Basement shows.
+    description: Indie venue @ Someone's house. Ask around.
     links:
       - label: Insta
         url: https://www.instagram.com/thefoxholeomaha/?hl=en
-    notes: "I've been there, may be on hiatus. Shows in LR and basement. Couple in Gifford Park, their kids' name is Fox, seem connected w/ community. 3504 Cass St."
+    notes: May be on hiatus. Gifford Park
 
   - type: item
     name: Red Lion
@@ -267,11 +245,19 @@ items:
     links:
       - label: Website
         url: https://2uomaha.org/about-us/facility-rental
-    notes: "Nascent — POC Dave Nesbit from synth group. Nice setup, PA, mixer, projector."
+    notes: "POC Dave Nesbit from synth group. Nice setup, PA, mixer, projector."
 
   - type: section
     label: Downtown
     id: downtown
+
+  - type: item
+    name: Low End at Bemis Center
+    public: true
+    description: Amazing experimental music series uplifting BIPOC, trans and queer artists.
+    links:
+      - label: Events Calendar
+        url: https://www.bemiscenter.org/low-end
 
   - type: item
     name: Red Light Lounge (fka The Verdict)
@@ -288,11 +274,7 @@ items:
       - label: OmahaUnderground Events
         url: https://omahaunderground.net/venues/red-light-lounge
     notes: |
-      Per Cassandra it was the same owners just rebrand. Unclear why noir left (mentioned 'safety issues' in a social post). Noir likely will be at Coven. The Mourning Dolls are now involved at Verdict. DID NOT change ownership to non-queers, just name. Slab still there. Lots of industrial nights planned by Jacob (dj sado_naut). DJ Barrens (queer?/trans?) white person who is bartender has stayed on.
-
-      Update April — sadonaut (jacob) had some screed on FB about nevermore who runs Noir. Claims of NM looting funds from 'dark market'. Noir is resident at Coven. Dark market / goth day coming up @ joslyn castle. Haven't engaged with any of this.
-
-      Old site (not great layout): https://www.theverdictomaha.com/events.html
+      Rebranded circa late 2025, apparently same owners. The Mourning Dolls + Slab are big. DJ Barrens and Jacob (sadonaut) are POCs. Club Noir moved from Verdict to Coven circa spring 2026.
 
   - type: item
     name: Sokol (Admiral)
@@ -303,12 +285,11 @@ items:
     links:
       - label: Calendar
         url: https://admiralomaha.com/events/
-    notes: Transphobic operator — told me to use 'family' restrooms instead of the real ones. Enabling a transphobic EMT.
 
   - type: item
     name: Steelhouse
     public: true
-    description: "**NO GO** — unsafe for trans / queer folx. Polices bathrooms and empowers transphobes. Overpriced anyway."
+    description: "**NO GO** — unsafe for trans / queer folx. Empowers literal bathroom police."
 
   - type: item
     name: Slowdown
@@ -321,4 +302,28 @@ items:
         url: https://www.instagram.com/theslowdown/
       - label: BookFace
         url: https://www.facebook.com/theslowdown
+
+  - type: item
+    name: Dreamland Lounge
+    public: false
+    description: New(?) jazz club
+    links:
+      - label: BookFace
+        url: https://www.facebook.com/people/Dreamland-Lounge-
+
+  - type: item
+    name: Omaha Open Mics / Comedy
+    public: false
+    description: local open mic / comedy circuit
+    links:
+      - label: BookFace
+        url: https://www.facebook.com/groups/OmahaOpenMics/
+
+  - type: item
+    name: Omaha Blues Society
+    public: false
+    description: major local blues events group / scene
+    links:
+      - label: Website
+        url: https://omahablues.com/events/
 ---

@@ -50,6 +50,7 @@ The "makers" feature is a curated list of queer businesses/individuals. New subm
 ### Database Schema (Drizzle ORM)
 
 **Key tables:**
+
 - `posts`: Blog posts (id, title, content)
 - `makers`: Queer makers/businesses (id, humanName, bizName, email, instagram, facebook, website, description, approved)
 
@@ -96,23 +97,27 @@ The "makers" feature is a curated list of queer businesses/individuals. New subm
 ## Common Tasks
 
 ### Add a new API endpoint
+
 1. Create `netlify/functions/endpoint-name.mjs`
 2. Export async default function and config: `export const config = { path: '/api/endpoint-name' }`
 3. Use Neon client for database queries
 4. Test locally with `netlify dev`
 
 ### Modify the makers table schema
+
 1. Edit `db/schema.ts`
 2. Run `bun run db:generate` (creates a new migration file)
 3. Run `bun run db:migrate` to apply
 4. Update the corresponding API function if needed
 
 ### Add a new static page
+
 1. Create `.md` file in `src/` (e.g., `src/new-page.md`)
 2. Eleventy will auto-generate HTML in `_site/new-page/index.html`
 3. Add navigation link in `src/_includes/layouts/base.njk`
 
 ### Approve a maker (local dev)
+
 ```bash
 # List unapproved makers
 netlify dev:exec -- node scripts/approve-maker.mjs list
@@ -124,11 +129,14 @@ netlify dev:exec -- node scripts/approve-maker.mjs 123
 ## Environment Variables
 
 ### Required in Netlify Dashboard
+
 - **`NETLIFY_DATABASE_URL`** - PostgreSQL connection string from Neon (auto-configured for production)
 - **`MAKERS_ADMIN_TOKEN`** - Secret token for the `/api/makers/approve` endpoint (set via `netlify env:set MAKERS_ADMIN_TOKEN "your-token"`)
 
 ### Local Development
+
 Environment variables are loaded from Netlify config when running `netlify dev`. For isolated testing, create a `.env.local` file (not committed) with:
+
 ```
 NETLIFY_DATABASE_URL=<your-database-url>
 MAKERS_ADMIN_TOKEN=<your-admin-token>
@@ -137,12 +145,15 @@ MAKERS_ADMIN_TOKEN=<your-admin-token>
 ## MCP Servers Configuration
 
 ### Netlify MCP Server
+
 The Netlify MCP server is pre-configured in the `copilot-setup-steps.yml` workflow. This provides:
+
 - Access to Netlify CLI for managing deployments and environment variables
 - Ability to inspect function logs and deployment history
 - Direct access to form submissions and build status
 
 **Local setup**: Install Netlify CLI globally:
+
 ```bash
 npm install -g netlify-cli
 netlify login
@@ -158,6 +169,7 @@ The site uses **Netlify Forms** for the "Add a Maker" form (`src/makers.md` and 
 4. **User feedback**: After submit, users see a success message at `/makers/?submitted=1` redirected from form action
 
 **Adding new form fields**:
+
 1. Add the HTML input to the form (name attribute = database field name in snake_case)
 2. Update `db/schema.ts` to add the new column
 3. Update `netlify/functions/submission-created.mjs` to handle the new field
@@ -168,12 +180,14 @@ The site uses **Netlify Forms** for the "Add a Maker" form (`src/makers.md` and 
 The site uses a **custom CSS approach** (no framework) with a purple/violet color scheme:
 
 **Color palette** (in `src/css/theme.css`):
+
 - Primary purple: `#6e4da7` (header nav)
 - Accent purple: `#6d28d9` (footer)
 - Light background: `#f6f0fa`
 - Interactive hover: `#a855f7`
 
 **Key patterns**:
+
 - Cards/boxes use `box-shadow: 4px 4px 0 #color` for a playful offset effect (see `.maker-card` in `src/makers.md`)
 - Emoji tooltips handled via `span[title]` with CSS-generated popups (see `base.njk` emoji mapping logic)
 - Responsive breakpoints: `768px` (tablet) and `480px` (mobile)
@@ -186,32 +200,37 @@ Pages like `src/makers.md` use `<style>` blocks for card layouts. Keep these sco
 ## Troubleshooting
 
 ### Database connection issues
+
 - **Error**: "Failed to fetch makers" in API
 - **Solution**: Check `NETLIFY_DATABASE_URL` is set correctly in Netlify env or `.env.local`
 - **Local test**: `netlify dev` and check the Netlify CLI output for connection errors
 
 ### Migrations not applying
+
 - **Error**: "migration file not found" or schema mismatches
-- **Solution**: 
+- **Solution**:
   1. Always run `bun run db:generate` BEFORE `bun run db:migrate`
   2. Never edit files in `migrations/` directly
   3. If stuck, use `bun run db:studio` to inspect current schema in Drizzle Studio
 
 ### Build failing locally
+
 - **Error**: `eleventy` or `bun` not found
-- **Solution**: 
+- **Solution**:
   1. Check Node version matches `.nvmrc` (currently v20+)
   2. Install bun: `curl -fsSL https://bun.sh/install | bash`
   3. Reinstall dependencies: `rm -rf node_modules bun.lock && bun install`
 
 ### Functions not available during `netlify dev`
+
 - **Error**: 404 on `/api/makers`
-- **Solution**: 
+- **Solution**:
   1. Stop and restart `netlify dev`
   2. Check function filenames match route expectations (e.g., `makers.mjs` → `/api/makers`)
   3. Verify `export const config = { path: '/api/...' }` is present in function
 
 ### Admin approval endpoint returns 401
+
 - **Error**: "Unauthorized" when calling `/api/makers/approve`
 - **Solution**:
   1. Check the `x-admin-token` header matches `MAKERS_ADMIN_TOKEN`
@@ -219,6 +238,7 @@ Pages like `src/makers.md` use `<style>` blocks for card layouts. Keep these sco
   3. Use lowercase header: `x-admin-token` (not `X-Admin-Token`)
 
 ### Pull request preview database issues
+
 - **Context**: GitHub Actions creates temporary Neon branches for PRs
 - **If migrations fail**: Check that `db:migrate` is enabled in the workflow (currently commented out)
 - **Branch cleanup**: Neon branches expire after 14 days automatically

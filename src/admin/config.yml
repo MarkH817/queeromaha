@@ -17,7 +17,12 @@ collections:
         file: src/home.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
@@ -29,23 +34,41 @@ collections:
                 fields:
                   - { label: Label, name: label, widget: string }
                   - { label: Anchor ID, name: id, widget: string }
-                  - { label: Note, name: note, widget: markdown, required: false }
+                  - {
+                      label: Note,
+                      name: note,
+                      widget: markdown,
+                      required: false,
+                    }
               - label: Item
                 name: item
                 fields:
                   - { label: Name, name: name, widget: string }
-                  - { label: Public, name: public, widget: boolean, default: true }
+                  - {
+                      label: Public,
+                      name: public,
+                      widget: boolean,
+                      default: true,
+                    }
                   - label: Tags
                     name: tags
                     widget: select
                     multiple: true
                     required: false
                     options:
-                      - { label: "🚻 Gender-neutral Bathroom", value: "neutral-bathrooms" }
+                      - {
+                          label: "🚻 Gender-neutral Bathroom",
+                          value: "neutral-bathrooms",
+                        }
                       - { label: "🛋️ Seating Available", value: "seating" }
                       - { label: "💻 Work/Study Spot", value: "work-spot" }
                       - { label: "🏳️‍🌈 Queer Owned", value: "queer-owned" }
-                  - { label: Description, name: description, widget: markdown, required: false }
+                  - {
+                      label: Description,
+                      name: description,
+                      widget: markdown,
+                      required: false,
+                    }
                   - label: Links
                     name: links
                     widget: list
@@ -61,7 +84,12 @@ collections:
         file: src/art.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
@@ -73,23 +101,41 @@ collections:
                 fields:
                   - { label: Label, name: label, widget: string }
                   - { label: Anchor ID, name: id, widget: string }
-                  - { label: Note, name: note, widget: markdown, required: false }
+                  - {
+                      label: Note,
+                      name: note,
+                      widget: markdown,
+                      required: false,
+                    }
               - label: Item
                 name: item
                 fields:
                   - { label: Name, name: name, widget: string }
-                  - { label: Public, name: public, widget: boolean, default: true }
+                  - {
+                      label: Public,
+                      name: public,
+                      widget: boolean,
+                      default: true,
+                    }
                   - label: Tags
                     name: tags
                     widget: select
                     multiple: true
                     required: false
                     options:
-                      - { label: "🚻 Gender-neutral Bathroom", value: "neutral-bathrooms" }
+                      - {
+                          label: "🚻 Gender-neutral Bathroom",
+                          value: "neutral-bathrooms",
+                        }
                       - { label: "🛋️ Seating Available", value: "seating" }
                       - { label: "💻 Work/Study Spot", value: "work-spot" }
                       - { label: "🏳️‍🌈 Queer Owned", value: "queer-owned" }
-                  - { label: Description, name: description, widget: markdown, required: false }
+                  - {
+                      label: Description,
+                      name: description,
+                      widget: markdown,
+                      required: false,
+                    }
                   - label: Links
                     name: links
                     widget: list
@@ -105,7 +151,12 @@ collections:
         file: src/music.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
@@ -117,23 +168,41 @@ collections:
                 fields:
                   - { label: Label, name: label, widget: string }
                   - { label: Anchor ID, name: id, widget: string }
-                  - { label: Note, name: note, widget: markdown, required: false }
+                  - {
+                      label: Note,
+                      name: note,
+                      widget: markdown,
+                      required: false,
+                    }
               - label: Item
                 name: item
                 fields:
                   - { label: Name, name: name, widget: string }
-                  - { label: Public, name: public, widget: boolean, default: true }
+                  - {
+                      label: Public,
+                      name: public,
+                      widget: boolean,
+                      default: true,
+                    }
                   - label: Tags
                     name: tags
                     widget: select
                     multiple: true
                     required: false
                     options:
-                      - { label: "🚻 Gender-neutral Bathroom", value: "neutral-bathrooms" }
+                      - {
+                          label: "🚻 Gender-neutral Bathroom",
+                          value: "neutral-bathrooms",
+                        }
                       - { label: "🛋️ Seating Available", value: "seating" }
                       - { label: "💻 Work/Study Spot", value: "work-spot" }
                       - { label: "🏳️‍🌈 Queer Owned", value: "queer-owned" }
-                  - { label: Description, name: description, widget: markdown, required: false }
+                  - {
+                      label: Description,
+                      name: description,
+                      widget: markdown,
+                      required: false,
+                    }
                   - label: Links
                     name: links
                     widget: list
@@ -149,7 +218,12 @@ collections:
         file: src/cafes.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
@@ -161,23 +235,41 @@ collections:
                 fields:
                   - { label: Label, name: label, widget: string }
                   - { label: Anchor ID, name: id, widget: string }
-                  - { label: Note, name: note, widget: markdown, required: false }
+                  - {
+                      label: Note,
+                      name: note,
+                      widget: markdown,
+                      required: false,
+                    }
               - label: Item
                 name: item
                 fields:
                   - { label: Name, name: name, widget: string }
-                  - { label: Public, name: public, widget: boolean, default: true }
+                  - {
+                      label: Public,
+                      name: public,
+                      widget: boolean,
+                      default: true,
+                    }
                   - label: Tags
                     name: tags
                     widget: select
                     multiple: true
                     required: false
                     options:
-                      - { label: "🚻 Gender-neutral Bathroom", value: "neutral-bathrooms" }
+                      - {
+                          label: "🚻 Gender-neutral Bathroom",
+                          value: "neutral-bathrooms",
+                        }
                       - { label: "🛋️ Seating Available", value: "seating" }
                       - { label: "💻 Work/Study Spot", value: "work-spot" }
                       - { label: "🏳️‍🌈 Queer Owned", value: "queer-owned" }
-                  - { label: Description, name: description, widget: markdown, required: false }
+                  - {
+                      label: Description,
+                      name: description,
+                      widget: markdown,
+                      required: false,
+                    }
                   - label: Links
                     name: links
                     widget: list
@@ -193,7 +285,12 @@ collections:
         file: src/makers.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Body, name: body, widget: markdown }
           - { label: Page Notes, name: notes, widget: text, required: false }
@@ -203,7 +300,12 @@ collections:
         file: src/about.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Body, name: body, widget: markdown }
           - { label: Page Notes, name: notes, widget: text, required: false }
@@ -213,7 +315,12 @@ collections:
         file: src/contact.md
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Layout, name: layout, widget: hidden, default: layouts/base.njk }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
           - { label: Public, name: public, widget: boolean, default: true }
           - { label: Body, name: body, widget: markdown }
           - { label: Page Notes, name: notes, widget: text, required: false }

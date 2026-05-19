@@ -1,4 +1,3 @@
-
 ---
 title: Creation
 layout: layouts/base.njk
@@ -9,6 +8,7 @@ layout: layouts/base.njk
 A guide to creative spaces, resources, and opportunities for making art, music, crafts, and more in Omaha and nearby.
 
 ## What you'll find here
+
 - Studios, workshops, and maker spaces
 - Art supply stores and creative retailers
 - Community art programs and classes
@@ -16,6 +16,7 @@ A guide to creative spaces, resources, and opportunities for making art, music, 
 - Local creative organizations
 
 ### Local Artists Local Art
+
 Runs payphone installation and other funding
 
 https://lalaomaha.org/
@@ -35,7 +36,8 @@ https://lalaomaha.org/
 - [BFF Omaha](https://bffomaha.org/) — Community art, events, gallery, zine library
 - [The Union for Contemporary Art](https://www.u-ca.org/) — Studios, classes, exhibitions, community programs
 -->
+
 ## Grants & Funding
 
 - [Amplify Arts Grants](https://www.amplifyarts.org/) — Omaha-based nonprofit supporting artists and creatives through grants, fellowships, and project funding. Open calls for local and regional artists, with a focus on equity and community impact. Check their site for current opportunities and deadlines.
-	- [Alternate Currents](https://www.amplifyarts.org/alternate-currents) — Artist-driven regranting program supporting experimental, collaborative, and community-based projects in Omaha and the region.
+  - [Alternate Currents](https://www.amplifyarts.org/alternate-currents) — Artist-driven regranting program supporting experimental, collaborative, and community-based projects in Omaha and the region.

@@ -21,7 +21,6 @@ Board game cafe and community space in Midtown Omaha. Huge library of games, foo
 
 [Website](https://spielbound.org/) | [Insta](https://www.instagram.com/spielbound/)
 
-
 ## Spiritual Stuff
 
 ### Ananda Yoga Omaha
@@ -55,7 +54,6 @@ Satellite in West O [Folklore Tattoo](https://folkloretattoo.com/) does both wal
 LC is Custom bookings only. I've heard good things. [Website](https://www.lcsgtattoo.com/liquid-courage)
 
 SG is Walk-ins only (I think?) [Website](https://www.lcsgtattoo.com/sailors-grave)
-
 
 ### Green Fox Tattoo (Omaha)
 

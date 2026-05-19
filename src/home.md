@@ -3,8 +3,6 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 public: true
 intro: |
-  **Start Here!**
-
   ### OmahaForUs
 
   Hub of community, resources, and events.
@@ -20,16 +18,16 @@ intro: |
   - Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
   - Craft Night on Wednesday evening 6PM to 7:30PM
 
-  ### Local Queer Groups On Instagram
+  ### Queerstagram
 
   - Events and Mutual aid by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
   - Art Markets and Swaps by [Gabi Galles](https://instagram.com/gabighoul.art)
   - Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
   - Meetups by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
 notes: |
-  OmahaForUs STI testing — testing is not on cal, unclear. POC Moo and NE aids proj / douglas cty who does it. Free STI testing Thursdays @ 4 - 6.
+  Free STI testing Thursdays @ 4 - 6 (periodic)
   Link dump from UNL: https://gsc.unl.edu/lgbtqa-resources-nebraska/
-  SoJ discord, Ethology bay area (remote): https://ethology.chase.pet/ / https://discord.com/invite/EjGZ64p9T4 — less into posting this locally, maybe if cell nw so ppl have reasonable education
+
 items:
   - type: section
     label: Social Groups
@@ -72,17 +70,6 @@ items:
         url: https://secondsunday.xyz/meet-up
 
   - type: item
-    name: San Mateo Pride Center Groups (remote)
-    public: false
-    description: Bay Area online social groups.
-    links:
-      - label: Poly Group
-        url: https://tinyurl.com/smpcpolypeerpower
-      - label: Trans Group
-        url: https://tinyurl.com/smpctransgroup
-    notes: Relevant? Haven't verified recently.
-
-  - type: item
     name: OWOmaha Furry Group
     public: true
     description: All-inclusive, actively moderated Furry group with in-person / online meetups.
@@ -97,6 +84,7 @@ items:
   - type: item
     name: Omaha Goth Discord
     public: true
+    description: Place to hang out with other wallflowers wearing all-black
     links:
       - label: Discord
         url: https://discord.gg/M5JUCgY9c
@@ -116,7 +104,7 @@ items:
     links:
       - label: BookFace
         url: https://www.facebook.com/queernite/
-    notes: Ongoing? Verify before listing.
+    notes: possibly defunct
 
   - type: section
     label: Spiritual Practice
@@ -191,12 +179,12 @@ items:
 
   - type: item
     name: UNO Queer and Trans Student Alliance (QTS)
-    public: false
+    public: true
     description: Student org. Runs [Queer Prom](https://mavsync.unomaha.edu/organization/qts/events). Has breakout groups for Black, Bi, Trans folks.
     links:
       - label: Website
         url: https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php
-    notes: Unverified — would need to ask bug / others who know.
+    notes: For UNO students
 
   - type: item
     name: Furbraska
@@ -207,7 +195,6 @@ items:
         url: https://t.me/s/furbraska
       - label: BookFace
         url: https://www.facebook.com/groups/furrbraska/
-    notes: Smaller / more niche.
 
   - type: item
     name: AnthroNebraska
@@ -218,29 +205,4 @@ items:
         url: https://t.me/AnthroNE
       - label: Insta
         url: https://www.instagram.com/anthronebraska/?hl=en
-    notes: Too small?
-
-  - type: item
-    name: Nebraska Pets and Handlers (NEB-PAH)
-    public: false
-    description: Pet play and pup group often at Flixx. Vetted membership.
-    links:
-      - label: FB (events)
-        url: https://www.facebook.com/NEBPAH/
-      - label: Discord (announcements)
-        url: https://discord.gg/nqfkUnr8
-      - label: Website
-        url: https://www.nebpah.org/
-      - label: Telegram (vetted)
-        url: https://t.me/+e-BRHkaIC1g5OTMx
-
-  - type: item
-    name: Flixx Lounge
-    public: false
-    tags:
-      - seating
-    description: Gay bar with weekly drag shows.
-    links:
-      - label: Website
-        url: https://www.flixxlounge.com/upcoming-events
 ---

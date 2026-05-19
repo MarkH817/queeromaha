@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   background: #f6f0fa;
   color: #222;
   margin: 0;
@@ -30,19 +30,20 @@ nav {
 
 nav a {
   flex: 1;
-  color: #fffaf0;
+  color: #fff;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   font-family: inherit;
   font-size: inherit;
   padding: 0.8rem 0.8rem 0.8rem 1rem;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: underline;
-  box-shadow: 
+  box-shadow:
     inset 1px 1px 0 rgba(255, 255, 255, 0.3),
     inset -1px -1px 0 rgba(0, 0, 0, 0.2);
 }
@@ -53,8 +54,11 @@ nav a:hover {
 }
 
 nav a.active {
-  background-color: rgba(62, 4, 109, 0.1);
-  color: #ffffff;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 3px solid #e9d5ff;
+  padding-bottom: calc(0.8rem - 3px);
 }
 
 /* Emoji tooltip styles */
@@ -82,7 +86,7 @@ span[title]:hover::after {
 }
 
 span[title]:hover::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -94,7 +98,6 @@ span[title]:hover::before {
   pointer-events: none;
 }
 
-
 main {
   flex: 1;
   max-width: 700px;
@@ -102,7 +105,7 @@ main {
   margin: 0 auto 0.5rem auto;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(124,58,237,0.07);
+  box-shadow: 0 2px 16px rgba(124, 58, 237, 0.07);
   padding: 1.5rem;
   box-sizing: border-box;
 }
@@ -125,7 +128,7 @@ main {
 footer {
   background: #6d28d9;
   color: #fff;
-  padding: 0.4rem 2rem;  
+  padding: 0.75rem 2rem;
   font-size: 1.2rem;
   letter-spacing: 0.05em;
   position: sticky;
@@ -177,7 +180,8 @@ footer p a {
   letter-spacing: 0.02em;
 }
 
-h1, h3 {
+h1,
+h3 {
   margin-top: 0;
   margin-bottom: 0.2rem;
 }
@@ -185,6 +189,21 @@ h1, h3 {
 h2 {
   margin-top: 1rem;
   margin-bottom: 0.8rem;
+}
+
+.section-header {
+  margin: 2rem 0 0.5rem;
+  padding: 0.25rem 0 0.25rem 0.75rem;
+  border-left: 4px solid #7c3aed;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6d28d9;
+}
+
+.item {
+  margin-bottom: 1.25rem;
 }
 
 p {
@@ -217,13 +236,17 @@ main a:hover {
   height: 3rem;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 
+  box-shadow:
     0 4px 12px rgba(109, 40, 217, 0.4),
     inset 1px 1px 3px rgba(255, 255, 255, 0.4),
     inset -1px -1px 3px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, transform 0.2s, background-color 0.2s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    transform 0.2s,
+    background-color 0.2s;
   z-index: 1000;
   line-height: 1;
   display: flex;
@@ -243,7 +266,7 @@ main a:hover {
 #backToTop:hover {
   background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 6px 16px rgba(109, 40, 217, 0.5),
     inset 1px 1px 3px rgba(255, 255, 255, 0.4),
     inset -1px -1px 3px rgba(0, 0, 0, 0.2);

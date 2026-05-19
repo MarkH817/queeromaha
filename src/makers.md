@@ -33,7 +33,7 @@ I love her "cute ghost in pride flag colors" pieces and her femme-forward style.
 
 Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. I love my 'gendervoid' one from them
 
-Find them at punk and queer markets 
+Find them at punk and queer markets
 
 [Insta](https://www.instagram.com/morstro98_hg) | [RedBubble](https://www.redbubble.com/people/F12F3Horses2/shop) | [ThreadLess](https://cryptcreations.threadless.com/) | [Linktree](https://linktr.ee/crypt.creations)
 
@@ -41,10 +41,9 @@ Find them at punk and queer markets
 
 Local artist Haidyn Sosalla-Bahr (they/them) creates Major Arcana cards with their original cyberpunk universe
 
-Find them at the BFF art market 
+Find them at the BFF art market
 
 [Website](https://meridiancitytarot.carrd.co/#howtopurchase) | [Online Store](https://www.inprnt.com/gallery/blueranyk/)
-
 
 ## Things By Thor
 
@@ -91,12 +90,10 @@ Kayla Thor creates Gifts & Glasses for Every Ghoul. Glass tumblers, mugs, earrin
     <input type="text" id="facebook" name="facebook" placeholder="facebook page name or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
-
   <p>
     <label for="website">Website Link (optional)</label><br />
     <input type="text" id="website" name="website" inputmode="url" placeholder="cool.biz" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
-
 
 <p>
     <label for="description">Short description (max 280 chars, optional)</label><br />

@@ -32,7 +32,6 @@ items:
     links:
       - label: Events Calendar
         url: https://www.facebook.com/drumomaha/
-    notes: Also the Group that Jo (sic) runs at Legends on Sunday mornings. Art jam / coworking.
 
   - type: item
     name: Synth Night
@@ -74,7 +73,8 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/thechurcharthouse/
-    notes: Site isn't usable — Events Calendar at https://www.thechurcharthouse.love/schedule
+      - label: Events Calendar
+        url: https://www.thechurcharthouse.love/schedule
 
   - type: item
     name: Project Project
@@ -214,7 +214,9 @@ items:
     links:
       - label: BookFace
         url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
-    notes: "incoming (milt is setting up) — website: https://www.haco-ne.com/events.html"
+      - label: Events Calendar
+        url: https://www.haco-ne.com/events.html
+    notes: POC Milt
 
   - type: item
     name: Aksarben Village
@@ -237,6 +239,26 @@ items:
   - type: section
     label: Downtown
     id: downtown
+
+  - type: item
+    name: Old Market Passageway
+    public: true
+    description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
+    links:
+      - label: Website
+        url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
+      - label: Garden of the Zodiac Insta
+        url: https://www.instagram.com/gardenofthezodiac/?hl=en
+
+  - type: item
+    name: Joslyn
+    public: false
+    tags:
+      - neutral-bathrooms
+    description: Free museum with events.
+    links:
+      - label: Website
+        url: https://joslyn.org/visit/calendar/
 
   - type: item
     name: Urban Abbey — Soul Arts
@@ -320,24 +342,4 @@ items:
     links:
       - label: Events Calendar
         url: https://www.u-ca.org/happenings
-
-  - type: item
-    name: Old Market Passageway
-    public: false
-    description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
-    links:
-      - label: Website
-        url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
-      - label: Garden of the Zodiac Insta
-        url: https://www.instagram.com/gardenofthezodiac/?hl=en
-
-  - type: item
-    name: Joslyn
-    public: false
-    tags:
-      - neutral-bathrooms
-    description: Free museum with events.
-    links:
-      - label: Website
-        url: https://joslyn.org/visit/calendar/
 ---

@@ -1,24 +1,26 @@
-import { neon } from '@netlify/neon';
+import { neon } from "@netlify/neon";
 
 const sql = neon();
 
 const seed = [
   {
-    human_name: 'Moth',
-    biz_name: 'Gutter Glitter Zines',
-    instagram: '@gutter_glitter',
+    human_name: "Moth",
+    biz_name: "Gutter Glitter Zines",
+    instagram: "@gutter_glitter",
     facebook: null,
-    website: 'https://gutterglitter.example',
-    description: 'DIY zines about queer joy and rage. Staples, xerox, neon ink. Limited runs.'
+    website: "https://gutterglitter.example",
+    description:
+      "DIY zines about queer joy and rage. Staples, xerox, neon ink. Limited runs.",
   },
   {
-    human_name: 'Ash',
-    biz_name: 'Hex Stitch Co.',
-    instagram: '@hexstitchco',
-    facebook: 'hexstitchco',
+    human_name: "Ash",
+    biz_name: "Hex Stitch Co.",
+    instagram: "@hexstitchco",
+    facebook: "hexstitchco",
     website: null,
-    description: 'Hand-embroidered patches + upcycled denim. Sliding scale, trades welcome.'
-  }
+    description:
+      "Hand-embroidered patches + upcycled denim. Sliding scale, trades welcome.",
+  },
 ];
 
 for (const m of seed) {
@@ -29,4 +31,4 @@ for (const m of seed) {
   `;
 }
 
-console.log('✓ Seeded example makers');
+console.log("✓ Seeded example makers");
