@@ -42,6 +42,14 @@ items:
         url: https://omahaunderground.net/venues/shakedown-street-tavern
 
   - type: item
+    name: Sowing Seeds
+    public: true
+    description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/sowingseeds.omaha/
+
+  - type: item
     name: SoundArte
     public: false
     description: Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival.
