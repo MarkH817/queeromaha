@@ -84,9 +84,7 @@ describe("markdown front matter", () => {
       expect(end).toBeGreaterThan(0); // closing --- must exist
 
       const frontMatterLines = lines.slice(start + 1, end);
-      const titleLine = frontMatterLines.find((l) =>
-        l.match(/^title\s*:/)
-      );
+      const titleLine = frontMatterLines.find((l) => l.match(/^title\s*:/));
       expect(titleLine).toBeDefined();
 
       const titleValue = titleLine.replace(/^title\s*:\s*/, "").trim();
