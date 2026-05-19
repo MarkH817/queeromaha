@@ -18,6 +18,6 @@
   "devDependencies": {},
   "dependencies": {},
   "volta": {
-    "node": "22.22.2"
+    "node": "24.15.0"
   }
 }
