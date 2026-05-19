@@ -97,6 +97,16 @@ items:
       - label: More Information
         url: https://2uomaha.org/justice/lgbtq
 
+
+  - type: item
+    name: UNO Queer and Trans Student Alliance (QTS)
+    public: true
+    description: Runs Queer Prom! Has sub-groups for Black, Lesbian, Bi, Trans folks.
+    links:
+      - label: Website
+        url: https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php
+    notes: For UNO students
+
   - type: item
     name: BFF Queer Nite
     public: false
@@ -176,15 +186,6 @@ items:
       - label: BookFace
         url: https://www.facebook.com/groups/428335397593645
     notes: Unverified — I don't have FB.
-
-  - type: item
-    name: UNO Queer and Trans Student Alliance (QTS)
-    public: true
-    description: Student org. Runs [Queer Prom](https://mavsync.unomaha.edu/organization/qts/events). Has breakout groups for Black, Bi, Trans folks.
-    links:
-      - label: Website
-        url: https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php
-    notes: For UNO students
 
   - type: item
     name: Furbraska
