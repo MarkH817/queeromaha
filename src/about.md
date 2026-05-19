@@ -1,6 +1,7 @@
 ---
 title: About
 layout: layouts/base.njk
+public: true
 ---
 
 I'm Tara. You've seen me around town.

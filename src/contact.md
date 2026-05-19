@@ -1,6 +1,7 @@
 ---
 title: Contact Page
 layout: layouts/base.njk
+public: true
 ---
 
 ### Send me a note

@@ -1,16 +1,19 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/admin");
   // Copy `img/favicon/` to `_site/`
   eleventyConfig.addPassthroughCopy({ "img": "/" });
-  
-  // Strip HTML comments from output
-  eleventyConfig.addTransform("stripComments", function(content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html")) {
-      return content.replace(/<!--[\s\S]*?-->/g, "");
-    }
-    return content;
+
+  let markdownLibrary;
+  eleventyConfig.amendLibrary("md", mdLib => {
+    markdownLibrary = mdLib;
   });
-  
+
+  eleventyConfig.addFilter("markdown", content => {
+    if (!content) return '';
+    return markdownLibrary.render(String(content));
+  });
+
   return {
     dir: {
       input: "src",

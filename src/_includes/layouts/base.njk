@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <header>
@@ -23,7 +24,26 @@
     </nav>
   </header>
   <main>
-    {{ content | safe }}
+    {% if intro %}
+      {{ intro | markdown | safe }}
+    {% endif %}
+    {% if items %}
+      {% for entry in items %}
+        {% if entry.type == 'section' %}
+          <a id="{{ entry.id }}"></a>
+          <p><strong>{{ entry.label }}</strong></p>
+          {% if entry.note %}{{ entry.note | markdown | safe }}{% endif %}
+        {% elif entry.public != false %}
+          <div class="item">
+            <h3>{{ entry.name }}{% if entry.tags %}{% for tag in entry.tags %}{% if tagMap[tag] %} <span title="{{ tagMap[tag].label }}">{{ tagMap[tag].emoji }}</span>{% endif %}{% endfor %}{% endif %}</h3>
+            {% if entry.description %}{{ entry.description | markdown | safe }}{% endif %}
+            {% if entry.links %}<p>{% for link in entry.links %}{% if not loop.first %} | {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</p>{% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {{ content | safe }}
+    {% endif %}
   </main>
    <footer>
     <a href="/contact">Contact</a>
@@ -105,6 +125,16 @@
         });
       });
     });
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function(user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function() {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>
