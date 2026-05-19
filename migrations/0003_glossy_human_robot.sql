@@ -1,1 +1,0 @@
-ALTER TABLE "makers" ADD COLUMN "email" varchar(255);
