@@ -237,7 +237,9 @@ main a {
   text-decoration: none;
   font-weight: 500;
   border-bottom: 2px solid #e9d5ff;
-  transition: color 0.15s, border-bottom-color 0.15s;
+  transition:
+    color 0.15s,
+    border-bottom-color 0.15s;
 }
 
 main a:hover {
