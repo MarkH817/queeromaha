@@ -9,7 +9,7 @@ items:
     label: Social Groups
     id: social
 
-  - item:
+  - type: item
     name: OmahaForUs LGBTQIA* Center
     public: true
     description: "Hub of community, resources, and events"
@@ -31,7 +31,7 @@ items:
       Craft Night on Wednesday evening 6PM to 7:30PM
       STI testing certain Thursdays (check schedule)
 
-  - item:
+  - type: item
     name: Queerstagrams
     public: true
     description: Cool Insta accounts!
