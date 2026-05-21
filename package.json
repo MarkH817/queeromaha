@@ -4,7 +4,7 @@
   "description": "queer stuff in omaha",
   "main": "index.js",
   "scripts": {
-    "test": "bun test",
+    "test": "bun test test/site.test.js && bunx playwright test",
     "serve": "bunx @11ty/eleventy --serve",
     "build": "bunx @11ty/eleventy",
     "serve:cms": "bunx decap-server",
