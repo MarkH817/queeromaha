@@ -41,6 +41,8 @@ items:
         url: https://www.instagram.com/nocoastnoise/
       - label: Website
         url: https://www.nocoastnoise.net/
+      - label: LinkTree
+        url: https://linktr.ee/nocoastnoise
 
   - type: item
     name: Project Project
