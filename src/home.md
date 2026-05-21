@@ -32,17 +32,19 @@ items:
       STI testing certain Thursdays (check schedule)
 
   - type: item
-    name: Queerstagrams
+    name: Queer Social Accounts
     public: true
-    description: Cool Insta accounts!
+    description:
     links:
-      - label: Collective of Queers - Queer Markets
+      - label: Collective of Queers Insta
         url: https://www.instagram.com/collectiveofqueers
-      - label: Gabi Galles - Art Markets
+      - label: Queer Collective BookFace
+        url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
+      - label: Gabi Galles Insta
         url: https://instagram.com/gabighoul.art
-      - label: River Daze Collective - Craft Markets
+      - label: River Daze Collective Insta 
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
-      - label: Wild Garden - Queer Meetups
+      - label: Wild Garden Insta 
         url: https://www.instagram.com/thewildgardenomaha/
 
   - type: item
