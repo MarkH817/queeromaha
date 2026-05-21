@@ -3,6 +3,10 @@ title: Local Queer Makers
 layout: layouts/base.njk
 public: true
 items:
+  - type: section
+    label: Omaha Makers
+    id: omaha
+
   - type: item
     name: Gabi Ghoul Art
     public: true
@@ -48,6 +52,10 @@ items:
         url: https://thingsbythor.com
       - label: Linktree
         url: https://linktr.ee/Thingsbythor
+
+  - type: section
+    label: Signup Form
+    id: signup
 ---
 
 <h3 style="margin-top: 0;">Want to be showcased on this page?</h3>
@@ -98,7 +106,7 @@ items:
   </p>
 
   <p>
-    <button type="submit" style="background:#6d28d9; color:#fff; padding:0.75rem 1.5rem; border:none; border-radius:6px; cursor:pointer; font-size:1rem; font-weight:600;">Submit</button>
+    <button type="submit" style="background:#6d28d9; color:#fff; padding:0.75rem 1.5rem; border:none; border-radius:6px; cursor:pointer; font-size:1rem; font-weight:600;">Signup</button>
   </p>
 
   <p style="font-size:0.85rem; color:#555;">It will always be free to post your listing.</p>
