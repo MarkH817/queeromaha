@@ -50,8 +50,16 @@ items:
         url: https://www.instagram.com/sowingseeds.omaha/
 
   - type: item
+    name: Alternative Publishing (Zines)
+    public: true
+    description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, Linocuts
+    links:
+      - label: Insta
+        url: https://www.instagram.com/altpubomaha/
+
+  - type: item
     name: SoundArte
-    public: false
+    public: true
     description: Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival.
     links:
       - label: Website
