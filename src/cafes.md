@@ -13,7 +13,7 @@ items:
     tags:
       - neutral-bathrooms
       - work-spot
-    description: Great people, coffee and pastries.
+    description: Great people, coffee and pastries in Aksarben. Larger location at 120th and Blondo with more comfortable seating.
     links:
       - label: Insta
         url: https://www.instagram.com/roast_coffeehouse/
