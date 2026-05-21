@@ -3,36 +3,47 @@ title: Local Queer Community / Resources
 layout: layouts/base.njk
 permalink: /
 public: true
-intro: |
-  ### OmahaForUs
-
-  Hub of community, resources, and events.
-
-  [**Events Calendar**](https://www.omahaforus.org/events) | [Programs](https://www.omahaforus.org/programs) | [Google Maps](https://maps.app.goo.gl/LumDam5UoHgmNcGF8)
-
-  Transition clothing and supplies, Food/hygiene pantry, clothes closet, arts and crafts. Name-change / legal resources. Teen events and groups. Reading room and lending library. Private showers. Volunteering opportunities.
-
-  - Support group (19+) every Wednesday evening 6PM to 7:30PM [**Register Here**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u).
-    > Outside of Omaha? It's Remote every other week!
-  - Game night every Thursday evening 5PM to 8PM
-  - Dungeons & Dragons on the 1st and 3rd Tuesdays evenings  4PM to 7PM
-  - Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
-  - Craft Night on Wednesday evening 6PM to 7:30PM
-
-  ### Queerstagrams!
-
-  - Events and Mutual aid by [Collective of Queers](https://www.instagram.com/collectiveofqueers/)
-  - Art Markets and Swaps by [Gabi Galles](https://instagram.com/gabighoul.art)
-  - Art by [River Daze Collective](https://www.facebook.com/people/River-Daze-Collective/61565416288577/)
-  - Meetups by [Wild Garden](https://www.instagram.com/thewildgardenomaha/)
-notes: |
-  Free STI testing Thursdays @ 4 - 6 (periodic)
-  Link dump from UNL: https://gsc.unl.edu/lgbtqa-resources-nebraska/
-
+intro:
 items:
   - type: section
     label: Social Groups
     id: social
+
+  - item:
+    name: OmahaForUs LGBTQIA* Center
+    public: true
+    description: "Hub of community, resources, and events"
+    links:
+      - label: Events Calendar
+        url: https://www.omahaforus.org/events
+      - label: Programs
+        url: https://www.omahaforus.org/programs
+      - label: Support group (hybrid)
+        url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
+      - label: Teen Programs with private space
+        url: https://www.omahaforus.org/proud-horizons
+    notes: |
+      Transition clothing and supplies, Food/hygiene pantry, clothes closet, arts and crafts. Name-change / legal resources. Teen events and groups. Reading room and lending library. Private showers. Volunteering opportunities.
+      Support group (19+) every Wednesday evening 6PM to 7:30PM [**Register Here**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u). Outside of Omaha? It's Remote every other week!
+      Game night every Thursday evening 5PM to 8PM
+      Dungeons & Dragons on the 1st and 3rd Tuesdays evenings  4PM to 7PM
+      Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
+      Craft Night on Wednesday evening 6PM to 7:30PM
+      STI testing certain Thursdays (check schedule)
+
+  - item:
+    name: Queerstagrams
+    public: true
+    description: Cool Insta accounts!
+    links:
+      - label: Collective of Queers - Queer Markets
+        url: https://www.instagram.com/collectiveofqueers
+      - label: Gabi Galles - Art Markets
+        url: https://instagram.com/gabighoul.art
+      - label: River Daze Collective - Craft Markets
+        url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
+      - label: Wild Garden - Queer Meetups
+        url: https://www.instagram.com/thewildgardenomaha/
 
   - type: item
     name: Out Wild Adventures
@@ -125,7 +136,7 @@ items:
     public: true
     description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC / NOTAFLOF.
     links:
-      - label: Their Insta
+      - label: Insta
         url: https://www.instagram.com/dawaune.one
 
   - type: item
