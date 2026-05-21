@@ -1,6 +1,7 @@
 ---
 title: Local Queer Community / Resources
 layout: layouts/base.njk
+permalink: /
 public: true
 intro: |
   ### OmahaForUs
