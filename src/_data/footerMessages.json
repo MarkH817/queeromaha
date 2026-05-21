@@ -1,41 +1,33 @@
 {
   "messages": [
-    { "text": "you are enough" },
+    { "text": "You are enough" },
     {
-      "text": "You are not alone",
-      "url": "currently_not_rendered"
+      "text": "You are not alone"
+    },
+
+    {
+      "text": "You belong here"
     },
     {
-      "text": "You belong here",
-      "url": "currently_not_rendered"
+      "text": "Experience Queer joy!"
     },
     {
-      "text": "Experience Queer joy!",
-      "url": "currently_not_rendered"
+      "text": "You are allowed to feel"
     },
     {
-      "text": "You are allowed to feel",
-      "url": "currently_not_rendered"
+      "text": "You get to rest"
     },
     {
-      "text": "You get to rest",
-      "url": "currently_not_rendered"
+      "text": "You are valid"
     },
     {
-      "text": "You are valid",
-      "url": "currently_not_rendered"
+      "text": "You matter"
     },
     {
-      "text": "You matter",
-      "url": "currently_not_rendered"
+      "text": "You have value"
     },
     {
-      "text": "You have value",
-      "url": "currently_not_rendered"
-    },
-    {
-      "text": "You are worth it",
-      "url": "currently_not_rendered"
+      "text": "You are worth it"
     }
   ]
 }
