@@ -157,7 +157,7 @@ footer a:hover {
 
 footer p {
   margin: 0;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .footer-credit {
@@ -176,19 +176,22 @@ footer p {
   color: #ddd6fe;
 }
 
-/* Disclaimer - only visible when scrolled past footer */
-#disclaimer {
+wa-callout#disclaimer {
+  display: block;
   background: #f6f0fa;
-  color: #666;
-  text-align: center;
-  padding: 1.5rem 2rem;
-  font-size: 0.85rem;
   border-top: 1px solid #e9d5ff;
-  position: relative;
 }
 
-#disclaimer p {
-  margin: 0;
+wa-callout#disclaimer::part(icon) {
+  display: none;
+}
+
+wa-callout#disclaimer::part(message) {
+  justify-content: center;
+  text-align: center;
+  padding: 0.75rem 2rem;
+  color: #888;
+  font-size: 0.8rem;
   letter-spacing: 0.02em;
 }
 
@@ -214,15 +217,30 @@ h2 {
   color: #6d28d9;
 }
 
-.item {
-  margin-bottom: 0;
-  padding-bottom: 1rem;
-  padding-top: 0.25rem;
+wa-card.item {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+wa-card.item::part(base) {
+  border-color: #e9d5ff;
+  box-shadow: 0 1px 4px rgba(124, 58, 237, 0.06);
+}
+
+wa-card.item::part(header) {
+  padding: 0.5rem 0.75rem 0.3rem;
+  background: #faf5ff;
   border-bottom: 1px solid #f3e8ff;
 }
 
-.item:last-child {
-  border-bottom: none;
+wa-card.item::part(body) {
+  padding: 0.5rem 0.75rem 0.4rem;
+}
+
+wa-card.item::part(footer) {
+  padding: 0.2rem 0.75rem 0.5rem;
+  border-top: 1px solid #f3e8ff;
+  background: #faf5ff;
 }
 
 p {
@@ -260,50 +278,52 @@ blockquote p {
 }
 
 /* Back to top button */
-#backToTop {
+wa-button#backToTop {
   position: fixed;
   bottom: 5.5rem;
   right: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  z-index: 1000;
+}
+
+wa-button#backToTop::part(base) {
   background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  font-size: 1.5rem;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow:
     0 4px 12px rgba(109, 40, 217, 0.4),
     inset 1px 1px 3px rgba(255, 255, 255, 0.4),
     inset -1px -1px 3px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  visibility: hidden;
   transition:
-    opacity 0.3s,
-    visibility 0.3s,
     transform 0.2s,
-    background-color 0.2s;
-  z-index: 1000;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background 0.2s;
+  cursor: pointer;
 }
 
-#backToTop wa-icon {
-  font-size: 1.8rem;
-}
-
-#backToTop.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-#backToTop:hover {
+wa-button#backToTop::part(base):hover {
   background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
   transform: translateY(-2px);
   box-shadow:
     0 6px 16px rgba(109, 40, 217, 0.5),
     inset 1px 1px 3px rgba(255, 255, 255, 0.4),
     inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+wa-button#backToTop wa-icon {
+  font-size: 1.8rem;
+}
+
+wa-button#backToTop.show {
+  opacity: 1;
+  visibility: visible;
 }

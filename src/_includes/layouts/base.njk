@@ -35,11 +35,11 @@
           <h2 class="section-header">{{ entry.label }}</h2>
           {% if entry.note %}{{ entry.note | markdown | safe }}{% endif %}
         {% elif entry.public != false %}
-          <div class="item">
-            <h3>{{ entry.name }}{% if entry.tags %}{% for tag in entry.tags %}{% if tagMap[tag] %} <span title="{{ tagMap[tag].label }}">{{ tagMap[tag].emoji }}</span>{% endif %}{% endfor %}{% endif %}</h3>
+          <wa-card class="item">
+            <h3 slot="header">{{ entry.name }}{% if entry.tags %}{% for tag in entry.tags %}{% if tagMap[tag] %} <span title="{{ tagMap[tag].label }}">{{ tagMap[tag].emoji }}</span>{% endif %}{% endfor %}{% endif %}</h3>
             {% if entry.description %}{{ entry.description | markdown | safe }}{% endif %}
-            {% if entry.links %}<p>{% for link in entry.links %}{% if not loop.first %} | {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</p>{% endif %}
-          </div>
+            {% if entry.links %}<p slot="footer">{% for link in entry.links %}{% if not loop.first %} | {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</p>{% endif %}
+          </wa-card>
         {% endif %}
       {% endfor %}
       {% if content %}{{ content | safe }}{% endif %}
@@ -61,10 +61,12 @@
       <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub" class="footer-icon"><wa-icon family="brands" name="github" label="GitHub"></wa-icon></a>
     </nav>
   </footer>
-  <div id="disclaimer">
-    <p>inclusion on this site does not imply endorsement</p>
-  </div>
-  <button id="backToTop" aria-label="Back to top"><wa-icon name="circle-arrow-up" variant="solid"></wa-icon></button>
+  <wa-callout id="disclaimer" variant="neutral" appearance="plain">
+    inclusion on this site does not imply endorsement
+  </wa-callout>
+  <wa-button id="backToTop" aria-label="Back to top">
+    <wa-icon name="circle-arrow-up" variant="solid" label="Back to top"></wa-icon>
+  </wa-button>
   <script>
     // Emoji tooltip mapping
     const emojiMap = {

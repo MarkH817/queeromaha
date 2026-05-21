@@ -42,9 +42,9 @@ items:
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
       - label: Gabi Galles Insta
         url: https://instagram.com/gabighoul.art
-      - label: River Daze Collective Insta 
+      - label: River Daze Collective Insta
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
-      - label: Wild Garden Insta 
+      - label: Wild Garden Insta
         url: https://www.instagram.com/thewildgardenomaha/
 
   - type: item
