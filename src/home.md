@@ -97,7 +97,6 @@ items:
       - label: More Information
         url: https://2uomaha.org/justice/lgbtq
 
-
   - type: item
     name: UNO Queer and Trans Student Alliance (QTS)
     public: true
@@ -164,7 +163,7 @@ items:
   - type: item
     name: Sound Baths / Singing Bowls w/ Havalynn Russell
     public: true
-    description: Deeply relaxing experience in an intentional container. 10:30 at Church Arthouse on Sunday. ~20$ / PWYC / NOTAFLOF.
+    description: Every Sunday @ 10:30AM (besides the 1st Sun of the month) bathe in Havalynn's crystal singing bowls and authentic Native sound bath. PWYC / NOTAFLOF.
     links:
       - label: Insta
         url: https://www.instagram.com/havalynn1/
