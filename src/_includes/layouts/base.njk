@@ -16,12 +16,12 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/art">Art</a>
-      <a href="/cafes">Cafes</a>
-      <a href="/music">Music</a>
-      <a href="/makers">Makers</a>
+    <nav class="main-nav">
+      <wa-button href="/" appearance="plain">Home</wa-button>
+      <wa-button href="/art" appearance="plain">Art</wa-button>
+      <wa-button href="/cafes" appearance="plain">Cafes</wa-button>
+      <wa-button href="/music" appearance="plain">Music</wa-button>
+      <wa-button href="/makers" appearance="plain">Makers</wa-button>
     </nav>
   </header>
   <main>
@@ -82,10 +82,17 @@
       // Process the entire main content
       let html = main.innerHTML;
       
-      // Replace each emoji with wrapped version
+      let tipIdx = 0;
       for (const [emoji, description] of Object.entries(emojiMap)) {
-        const wrapped = `<span title="${description}">${emoji}</span>`;
-        html = html.split(emoji).join(wrapped);
+        const parts = html.split(emoji);
+        if (parts.length > 1) {
+          let rebuilt = parts[0];
+          for (let i = 1; i < parts.length; i++) {
+            const id = `et${tipIdx++}`;
+            rebuilt += `<wa-tooltip for="${id}">${description}</wa-tooltip><span id="${id}">${emoji}</span>` + parts[i];
+          }
+          html = rebuilt;
+        }
       }
       
       main.innerHTML = html;
@@ -105,12 +112,11 @@
       });
 
       // Highlight the current page's nav link
-      const links = document.querySelectorAll('nav a');
-      const currentPath = window.location.pathname;
-      links.forEach(link => {
-        if (link.pathname === currentPath || link.pathname === currentPath.replace(/\/$/, '')) {
-          link.classList.add('active');
-        }
+      const navBtns = document.querySelectorAll('.main-nav wa-button');
+      const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+      navBtns.forEach(btn => {
+        const href = (btn.getAttribute('href') || '').replace(/\/$/, '') || '/';
+        if (href === currentPath) btn.classList.add('active');
       });
 
       // Back to top button
