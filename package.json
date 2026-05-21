@@ -15,7 +15,10 @@
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "husky": "^9.1.7"
+  },
   "dependencies": {},
   "volta": {
     "node": "24.15.0"

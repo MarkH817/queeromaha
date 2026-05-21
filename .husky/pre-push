@@ -1,1 +1,2 @@
 bun test
+bunx playwright test
