@@ -1,5 +1,5 @@
 ---
-title: Local Queer/Friendly Cafes
+title: Omaha Queer Friendly Cafes
 layout: layouts/base.njk
 public: true
 items:

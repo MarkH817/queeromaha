@@ -7,8 +7,9 @@ layout: layouts/base.njk
 
 ---
 
-<!-- outdated, focused on stabilization / housing. Has youth stuff and FBB stuff but not much I don't already have. >
+<!-- outdated >
 [Huespring list ](https://www.huespring.org/community-resources/#social)
+-->
 
 <a id="support-groups"></a>
 
@@ -91,17 +92,15 @@ Food Pantry
 
 Food and housing services. 302 American Pkwy, Papillion, NE 68046 and 1515 Avenue J, Council Bluffs, IA. [Website](https://www.heartlandfamilyservice.org/services/crisis-center/) | [Housing](https://www.heartlandfamilyservice.org/services/heartland-housing-sanctuary/) | [NE Hotline](tel://+4029901659) | [IA Hotline](tel://+7123255657)
 
-
 ---
 
 <a id="medical"></a>
 
 ## Medical
-<!-- update after reopen
+
 ### OmahaForUs
 
-Free STI testing on Thurs 4-6
- -->
+Free STI testing on some Thurs 4-6 thru Planned Parenthood / Nebraska AIDS Project
 
 ### Pride Health Clinic
 

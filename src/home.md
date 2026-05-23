@@ -1,5 +1,5 @@
 ---
-title: Local Queer Community / Resources
+title: Omaha Queer Community / Resources
 layout: layouts/base.njk
 permalink: /
 public: true

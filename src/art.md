@@ -1,5 +1,5 @@
 ---
-title: Local Art Events / Venues
+title: Omaha Art Events / Venues
 layout: layouts/base.njk
 public: true
 items:

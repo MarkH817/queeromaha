@@ -1,5 +1,5 @@
 ---
-title: Local Queer/Friendly Businesses
+title: Omaha Queer Friendly Businesses
 layout: layouts/base.njk
 ---
 

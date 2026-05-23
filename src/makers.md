@@ -1,5 +1,5 @@
 ---
-title: Local Queer Makers
+title: Omaha Queer Makers
 layout: layouts/base.njk
 public: true
 items:
