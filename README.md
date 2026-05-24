@@ -14,7 +14,7 @@ The place for queer spaces in Omaha.
 ## Development
 
 ```sh
-bun install
+bun install --development
 bun run serve        # local dev server with live reload
 bun run serve:cms    # run local Decap CMS proxy (for local content editing)
 ```
