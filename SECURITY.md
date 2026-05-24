@@ -4,7 +4,9 @@
 
 For "nice to haves" or low CVSS vulns, make a PR. 
 
-For high severity or active exploitation / compromise including any issues with the live hosting of the site ping Tara (or any other admins) on Signal or Protonmail. 
+For high severity issues, see the GitHub Security Advisory feature
+
+For active exploitation / compromise including any issues with the live hosting of the site ping Tara (or any other admins) on Signal or Protonmail. 
 
 ## Privacy
 
