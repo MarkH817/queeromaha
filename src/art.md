@@ -71,9 +71,9 @@ items:
         url: https://eacrecords.bandcamp.com/
     notes: |
       Members with social presence:
-      - Aaron Gum [musician IG](https://www.instagram.com/aarongum/)
-      - Dylan Barry [custom synths](https://loess-labs.net/)
-      - Mike Machian [photographer](https://www.facebook.com/ShootToFill/)
+      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
+      - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
+      - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
       - Tob [Mastodon](https://mastodon.sdf.org/@tob)
 
   - type: section
