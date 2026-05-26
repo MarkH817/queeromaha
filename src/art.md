@@ -10,6 +10,7 @@ items:
   - type: item
     name: Sober Socials Omaha
     public: false
+    notes: potentially inactive circa spring 2026
     description: Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
     links:
       - label: Insta
@@ -23,7 +24,7 @@ items:
       - label: Insta
         url: https://www.instagram.com/omahasoundry/
       - label: Events Calendar
-        url: https://staceybarelos.com/soundry/
+        url: https://omahasoundry.org
 
   - type: item
     name: Omaha Drum Family
@@ -36,10 +37,10 @@ items:
   - type: item
     name: Synth Night
     public: true
-    description: Electronic music jam session at Shakedown Street 8-10pm on the last Wednesday of the month.
+    description: Electronic music jam session at Shakedown Street 8-10pm on the last Monday of the month.
     links:
       - label: Events Calendar
-        url: https://omahaunderground.net/venues/shakedown-street-tavern
+        url: https://synthomaha.net/
 
   - type: item
     name: Sowing Seeds
@@ -70,9 +71,9 @@ items:
         url: https://eacrecords.bandcamp.com/
     notes: |
       Members with social presence:
-      - Aaron Gum [musician IG](https://www.instagram.com/aarongum/)
-      - Dylan Barry [custom synths](https://loess-labs.net/)
-      - Mike Machian [photographer](https://www.facebook.com/ShootToFill/)
+      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
+      - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
+      - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
       - Tob [Mastodon](https://mastodon.sdf.org/@tob)
 
   - type: section
