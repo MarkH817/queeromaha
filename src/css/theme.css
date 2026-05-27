@@ -258,6 +258,48 @@ blockquote p {
   margin: 0;
 }
 
+.entry-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+}
+.entry-links li {
+  margin: 0;
+}
+.entry-links li:not(:last-child) {
+  padding-right: 0;
+  border-right: none;
+}
+.entry-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: #f3e8ff;
+  border: 1px solid #c4b5fd;
+  color: #5b21b6;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: none;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+  min-height: 2rem;
+  white-space: nowrap;
+}
+.entry-links a:hover {
+  background: #ede9fe;
+  border-color: #a78bfa;
+  color: #4c1d95;
+  border-bottom: none;
+}
+
 /* Back to top button */
 #backToTop {
   position: fixed;
