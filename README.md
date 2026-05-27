@@ -5,10 +5,12 @@
 Directory of queer/trans groups, venues and spaces in Omaha.
 
 ## Dependencies
-- A working *nix shell
+
+- A working \*nix shell
 - [Bun](https://bun.sh/) as drop-in Node interpreter replacement, package manager and test runner
 
 ## Stack
+
 - [11ty](https://www.11ty.dev/) — static site generator
 - [Decap CMS](https://decapcms.org/) — content management
 - (optional) [Netlify CLI](https://docs.netlify.com/cli/get-started/) for managing live deployment
@@ -41,7 +43,7 @@ bun run build # 11ty output to _site
 
 ### Code Style
 
-Husky requires lint to pass on pre-commit. Fix and re-commit. 
+Husky requires lint to pass on pre-commit. Fix and re-commit.
 
 ```
 bun run lint # check formatting
