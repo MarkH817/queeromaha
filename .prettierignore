@@ -1,0 +1,7 @@
+_site/
+node_modules/
+bun.lock
+deno.lock
+.husky/
+.prettierignore
+*njk
