@@ -12,16 +12,18 @@ items:
   - type: item
     name: OmahaForUs LGBTQIA* Center
     public: true
-    description: "Hub of community, resources, and events"
+    description: "Hub of community, resources, and events. Food bank, gender affirming clothing, provider referrals. Quiet/sensory room"
     links:
       - label: Events Calendar
-        url: https://www.omahaforus.org/events
+        url: https://omahafor.us/events-calendar
       - label: Programs
-        url: https://www.omahaforus.org/programs
+        url: https://omahafor.us/programs/programs-community-support
       - label: Support group (hybrid)
         url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
-      - label: Teen Programs with private space
-        url: https://www.omahaforus.org/proud-horizons
+      - label: Mental Health Resources
+        url: https://omahafor.us/programs/mental-health
+      - label: Dedicated Teen / Youth Programs and Space
+        url: https://omahafor.us/programs/youth-programs
     notes: |
       Transition clothing and supplies, Food/hygiene pantry, clothes closet, arts and crafts. Name-change / legal resources. Teen events and groups. Reading room and lending library. Private showers. Volunteering opportunities.
       Support group (19+) every Wednesday evening 6PM to 7:30PM [**Register Here**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u). Outside of Omaha? It's Remote every other week!
