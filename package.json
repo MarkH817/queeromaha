@@ -9,18 +9,22 @@
     "build": "bunx @11ty/eleventy",
     "serve:cms": "bunx decap-server",
     "prepare": "husky",
-    "fix": "bunx prettier --write .",
-    "lint": "bunx prettier --check ."
+    "lint": "bunx lint-staged",
+    "lint:fix": "bunx prettier --write ."
   },
   "keywords": [],
   "author": "Tara <tara@queeromaha.net>",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5"
   },
   "dependencies": {},
   "volta": {
     "node": "24.15.0"
+  },
+  "lint-staged": {
+    "*": "bunx prettier --write"
   }
 }
