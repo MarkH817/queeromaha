@@ -10,13 +10,39 @@ body {
 }
 
 .skip-link {
-  background-color: inherit;
+  background-color: #fff;
+  color: #6d28d9;
   top: 0.75rem;
   left: 0.75rem;
   padding: 0.75rem 0.5rem;
   position: absolute;
   z-index: 101;
   outline-offset: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-link:focus-visible {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  overflow: visible;
+  white-space: normal;
+  width: auto;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 header {
@@ -86,6 +112,11 @@ main {
   padding: 1.5rem;
   box-sizing: border-box;
   outline: none;
+}
+
+main:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
