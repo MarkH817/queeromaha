@@ -39,7 +39,7 @@
           <wa-card class="item">
             <h3 slot="header">{{ entry.name }}{% if entry.tags %}{% for tag in entry.tags %}{% if tagMap[tag] %} <span role="img" aria-label="{{ tagMap[tag].label }}" title="{{ tagMap[tag].label }}">{{ tagMap[tag].emoji }}</span>{% endif %}{% endfor %}{% endif %}</h3>
             {% if entry.description %}{{ entry.description | markdown | safe }}{% endif %}
-            {% if entry.links %}<ul class="entry-links" slot="footer">{% for link in entry.links %}<li><a href="{{ link.url }}">{{ link.label }}</a></li>{% endfor %}</ul>{% endif %}
+            {% if entry.links %}<ul class="entry-links" slot="footer">{% for link in entry.links %}<li><a href="{{ link.url }}" rel="noopener noreferrer" target="_blank" aria-label="{{ link.label }} (opens in new tab)">{{ link.label }}</a></li>{% endfor %}</ul>{% endif %}
           </wa-card>
         {% endif %}
       {% endfor %}
@@ -59,7 +59,7 @@
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="/contact">Contact</a>
       <a href="/about">About</a>
-      <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub (opens in new tab)" class="footer-icon"><wa-icon family="brands" name="github" label="GitHub"></wa-icon></a>
+      <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub (opens in new tab)" class="footer-icon" rel="noopener noreferrer" target="_blank"><wa-icon family="brands" name="github" label="GitHub"></wa-icon></a>
     </nav>
   </footer>
   <button id="backToTop" aria-label="Back to top"><wa-icon name="circle-arrow-up" variant="solid"></wa-icon></button>
@@ -94,23 +94,6 @@
       }
 
       main.innerHTML = html;
-
-      // Open external links in new tab with accessible notice
-      const mainLinks = document.querySelectorAll('main a');
-      mainLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open(href, '_blank');
-          });
-          link.setAttribute('rel', 'noopener noreferrer');
-          const notice = document.createElement('span');
-          notice.className = 'sr-only';
-          notice.textContent = ' (opens in new tab)';
-          link.appendChild(notice);
-        }
-      });
 
       // Highlight the current page's nav link
       const navBtns = document.querySelectorAll('.main-nav wa-button');
