@@ -8,9 +8,9 @@ intro: |
 
   > [**Post your flyer at OmahaUnderground.NET!**](https://omahaunderground.net)
 
-  See this week's shows on the [Omaha Underground Instagram](https://www.instagram.com/Omahaunderground)
+  See this week's shows on the [Omaha Underground Instagram](https://www.instagram.com/omaha_underground/)
 
-  The [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
+  Also the [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
 items:
   - type: section
     label: South Omaha
@@ -21,7 +21,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
-    description: Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters.
+    description: Rachel opened her heart to create an unconditionally welcoming, authentic space in a deconsecrated church. Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. CLay throwing classes, kiln and glazing.
     links:
       - label: Insta
         url: https://www.instagram.com/thechurcharthouse/
@@ -49,7 +49,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
-    description: Punk/queer DIY space with experimental music and local art.
+    description: Punk DIY space for experimental music and local art. Highly recommend.
     links:
       - label: Insta
         url: https://www.instagram.com/weareprojectproject
@@ -66,7 +66,7 @@ items:
 
   - type: item
     name: Floors Floors Floors
-    public: true
+    public: false
     tags:
       - neutral-bathrooms
       - seating
@@ -76,13 +76,14 @@ items:
         url: https://www.instagram.com/floorsfloorsfloors_7052maple
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/floors-floors-floors
+    notes: per sources, venue is not able to host public events due to landlords
 
   - type: item
     name: Shakedown Street
     public: true
     tags:
       - neutral-bathrooms
-    description: Dive bar next to Petshop with drag / burlesque shows and music. Modular Synthesizer Group meets there 8-10 on the last Wed of the month.
+    description: Dive bar next to Petshop with drag / burlesque shows and music.
     links:
       - label: Insta
         url: https://www.instagram.com/shakedownstreettavern/
@@ -106,7 +107,7 @@ items:
     public: true
     tags:
       - seating
-    description: Mid-size space for local acts.
+    description: Gets a lot of cool local and regional acts.
     links:
       - label: Website
         url: https://www.reverblounge.com/
@@ -133,9 +134,11 @@ items:
     name: The Coven
     public: true
     description: |
-      Goth club at the old Down Under address. Great sound system. Local and touring punk / darkwave / industrial.
+      Goth club at the old Down Under address. Punk / darkwave / industrial shows.
 
-      Noir Omaha's goth night every Second Saturday - 8PM to close
+      Noir Omaha hosts a goth night every Second Saturday - 8PM to close
+
+      Extremely popular, expect long lines. Get there early as in 6PM
     links:
       - label: "Coven's Insta"
         url: https://www.instagram.com/covenbaromaha/
@@ -147,6 +150,7 @@ items:
         url: https://www.facebook.com/NoirOmaha/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/the-coven
+    notes: DJ Cemetery Gates, Courtney Noir, Ex-Lover
 
   - type: item
     name: Pageturners Lounge
@@ -157,16 +161,16 @@ items:
         url: https://www.instagram.com/pageturnerslounge/?hl=en
       - label: FB
         url: https://www.facebook.com/pageturnerslounge/
+      - label: Events on OmahaUnderground
+        url: https://omahaunderground.net/venues/pageturners-lounge
 
   - type: item
     name: "O'Leaver's"
     public: true
     description: |
-      Legendary dive bar with small stage and great local / regional acts.
+      Legendary dive bar with small stage and great local / regional acts. Bathrooms nigh unusable.
 
       Did you know it's owned by members of the band Cursive?
-
-      "Women's" BR has stalls (not single-stall tho)
     links:
       - label: Insta
         url: https://www.instagram.com/oleavers/?hl=en
@@ -178,7 +182,7 @@ items:
   - type: item
     name: B Bar
     public: true
-    description: Weekly blues shows and local acts.
+    description: Long-running blues shows and local acts.
     links:
       - label: Website
         url: https://www.thebbaromaha.com/
@@ -193,7 +197,7 @@ items:
     description: |
       Ye Olde Garage.
 
-      Goth events, electronic / experimental music.
+      Cool arts, punk-adjacent, electronic / experimental music.
     links:
       - label: Insta
         url: https://www.instagram.com/joslyncastle/
@@ -265,18 +269,19 @@ items:
     name: Red Light Lounge (fka The Verdict)
     public: true
     description: |
-      Industrial and Goth / Darkwave nights
-
-      [The Slab - Darkwave and Rock](https://www.instagram.com/omaha_goth_and_alternative/) on 2nd Saturdays
-
-      [Industrial Night](https://www.facebook.com/clubsinthesis/) on 3rd Saturdays
-
-      [Emo Nite (RAWR XD)](https://www.theverdictomaha.com/events.html) on Last Saturdays
+      The Slab (Darkwave and Rock), Industrial Night,
+      RAWR XD Emo Nite
     links:
+      - label: Industrial Night (3rd Saturdays)
+        url: https://www.facebook.com/clubsinthesis/
+      - label: The Slab (2nd Saturdays) and RAWR XD Emo Nite (Last Saturdays)
+        url: https://www.instagram.com/omaha_goth_and_alternative/
+      - label: Mourning Dolls Burlesque, Craft Nights
+        url: https://www.facebook.com/TheMourningDolls/
       - label: OmahaUnderground Events
         url: https://omahaunderground.net/venues/red-light-lounge
     notes: |
-      Rebranded circa late 2025, apparently same owners. The Mourning Dolls + Slab are big. DJ Barrens and Jacob (sadonaut) are POCs. Club Noir moved from Verdict to Coven circa spring 2026.
+      Rebranded circa late 2025, apparently same owners. The Mourning Dolls (burlesque, crafts) + Slab are resident. DJ Barrens and Jacob (sadonaut) are POCs. Club Noir moved from Verdict to Coven circa spring 2026. verdict site's events calendar is nigh unusable https://www.theverdictomaha.com/events.html
 
   - type: item
     name: Sokol (Admiral)

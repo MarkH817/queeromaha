@@ -34,26 +34,13 @@ items:
       STI testing certain Thursdays (check schedule)
 
   - type: item
-    name: Social Accounts To Follow
-    public: true
-    description:
-    links:
-      - label: The Queer Collective Insta
-        url: https://www.instagram.com/queercollectiveomaha
-      - label: The Queer Collective FB
-        url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
-      - label: Gabi Galles's Insta
-        url: https://instagram.com/gabighoul.art
-      - label: River Daze Collective FB
-        url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
-  - type: item
     name: Wild Garden Insta
     public: false
     description: Social group
     links:
       - label: Instagram
         url: https://www.instagram.com/thewildgardenomaha/
-    notes: Potentially inactive circa spring '26
+    notes: Potentially inactive circa spring '26. Local inperson group presumably
 
   - type: item
     name: Out Wild Adventures
@@ -66,7 +53,7 @@ items:
         url: https://flow.page/outwildadventures
 
   - type: item
-    name: TransNebraska
+    name: TransNebraska - Online
     public: true
     description: Monthly online Trans* group ran by Babs Ramsey.
     links:
@@ -76,19 +63,20 @@ items:
         url: https://www.transnebraska.online
 
   - type: item
-    name: TransFormative
-    public: true
+    name: TransFormative - In Person
+    public: false
     description: Online Trans* group ran by therapist Brit Gunther.
     links:
       - label: Signup (vetted)
         url: https://www.braveresilience.com/register
       - label: More Information
         url: https://www.braveresilience.com/transformative
+    notes: Good group per Babs, completely full with waitlist per Brit
 
   - type: item
-    name: Second Sunday (Trans Men and Enby Trans Masc)
+    name: Second Sunday - In Person
     public: true
-    description: Social group centering Trans Masc folks.
+    description: In-person social group centering Trans Men, Trans Masc* and Nonbinary folks.
     links:
       - label: Signup (vetted)
         url: https://secondsunday.xyz/meet-up
@@ -110,7 +98,7 @@ items:
   - type: item
     name: Omaha Goth Discord
     public: true
-    description: Music and other events for the Omaha goth / darkwave / industrial scene
+    description: Local scene for goth / darkwave / industrial
     links:
       - label: Discord
         url: https://discord.com/invite/M5JUCgY9c
@@ -158,11 +146,11 @@ items:
     name: Ananda Omaha Wellness and Yoga
     public: true
     description: |
-      Weekly Queer-centered Emotional Release class on Sundays @ 12:30PM at Ananda Yoga on 49th and Dodge.
+      Brooke hosts a Queer-centered Emotional Release class on Sundays @ 12:30PM as well as 
 
-      PWYC / NOTAFLOF / no registration
+      PWYC
 
-      Getting There: Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
+      Getting There: Park in the back of the corner Shiki building on north side of Dodge at 49th, go in the door at the rear entrance of State Farm in the back corner of the lot, Go all the way down the stairs, following signs to the end of the hallway.
     links:
       - label: Class Schedule (scroll down)
         url: https://www.anandaomaha.com/brooke-monaco-wellness
@@ -180,8 +168,10 @@ items:
   - type: item
     name: Nebraska Zen Center
     public: true
-    description: In-person / online meditation on Sundays @ 9:45AM.
+    description: In-person meditation Sundays @ 9:45AM in Bemis Park
     links:
+      - label: Sunday 9:45AM Open Zen
+        url: https://nebraskazencenter.org/sunday-open-zen/
       - label: Events Calendar
         url: https://nebraskazencenter.org/upcoming-events/
 

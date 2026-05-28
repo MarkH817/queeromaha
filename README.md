@@ -46,8 +46,8 @@ bun run build # 11ty output to _site
 Husky requires lint to pass on pre-commit. Fix and re-commit.
 
 ```
-bun run lint # check formatting
-bun run fix # auto-fix formatting
+bun run lint # check formatting - NOTE: only staged files are linted
+bun run lint:fix # auto-fix formatting
 ```
 
 ### Tests
