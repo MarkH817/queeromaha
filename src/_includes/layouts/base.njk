@@ -15,8 +15,9 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main navigation">
       <wa-button href="/" appearance="plain">Home</wa-button>
       <wa-button href="/art" appearance="plain">Art</wa-button>
       <wa-button href="/cafes" appearance="plain">Cafes</wa-button>
@@ -24,21 +25,21 @@
       <wa-button href="/makers" appearance="plain">Makers</wa-button>
     </nav>
   </header>
-  <main>
+  <main id="main" tabindex="-1">
+    {% if title %}<h1 class="wa-visually-hidden">{{ title }}</h1>{% endif %}
     {% if intro %}
       {{ intro | markdown | safe }}
     {% endif %}
     {% if items %}
       {% for entry in items %}
         {% if entry.type == 'section' %}
-          <a id="{{ entry.id }}"></a>
-          <h2 class="section-header">{{ entry.label }}</h2>
+          <h2 id="{{ entry.id }}" class="section-header">{{ entry.label }}</h2>
           {% if entry.note %}{{ entry.note | markdown | safe }}{% endif %}
         {% elif entry.public != false %}
           <wa-card class="item">
-            <h3 slot="header">{{ entry.name }}{% if entry.tags %}{% for tag in entry.tags %}{% if tagMap[tag] %} <span title="{{ tagMap[tag].label }}">{{ tagMap[tag].emoji }}</span>{% endif %}{% endfor %}{% endif %}</h3>
+            <h3 slot="header">{{ entry.name }}{% if entry.tags %}{% for tag in entry.tags %}{% if tagMap[tag] %} <span role="img" aria-label="{{ tagMap[tag].label }}" title="{{ tagMap[tag].label }}">{{ tagMap[tag].emoji }}</span>{% endif %}{% endfor %}{% endif %}</h3>
             {% if entry.description %}{{ entry.description | markdown | safe }}{% endif %}
-            {% if entry.links %}<p slot="footer">{% for link in entry.links %}{% if not loop.first %} | {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</p>{% endif %}
+            {% if entry.links %}<ul class="entry-links" slot="footer">{% for link in entry.links %}<li><a href="{{ link.url }}" rel="noopener noreferrer" target="_blank" aria-label="{{ link.label }} (opens in new tab)">{{ link.label }}</a></li>{% endfor %}</ul>{% endif %}
           </wa-card>
         {% endif %}
       {% endfor %}
@@ -55,10 +56,10 @@
       </p>
       <p class="footer-credit">built with <wa-icon name="heart" class="footer-heart"></wa-icon> by the Omaha queer community</p>
     </div>
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Footer navigation">
       <a href="/contact">Contact</a>
       <a href="/about">About</a>
-      <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub" class="footer-icon"><wa-icon family="brands" name="github" label="GitHub"></wa-icon></a>
+      <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub (opens in new tab)" class="footer-icon" rel="noopener noreferrer" target="_blank"><wa-icon family="brands" name="github" label="GitHub"></wa-icon></a>
     </nav>
   </footer>
   <button id="backToTop" aria-label="Back to top"><wa-icon name="circle-arrow-up" variant="solid"></wa-icon></button>
@@ -86,34 +87,23 @@
           let rebuilt = parts[0];
           for (let i = 1; i < parts.length; i++) {
             const id = `et${tipIdx++}`;
-            rebuilt += `<wa-tooltip for="${id}">${description}</wa-tooltip><span id="${id}">${emoji}</span>` + parts[i];
+            rebuilt += `<wa-tooltip for="${id}">${description}</wa-tooltip><span id="${id}" role="img" aria-label="${description}">${emoji}</span>` + parts[i];
           }
           html = rebuilt;
         }
       }
-      
-      main.innerHTML = html;
 
-      // Open external links in new tab (without switching focus)
-      const mainLinks = document.querySelectorAll('main a');
-      mainLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        // Open external links in new tab (those that start with http/https or mailto)
-        if (href && (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:'))) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open(href, '_blank');
-          });
-          link.setAttribute('rel', 'noopener noreferrer');
-        }
-      });
+      main.innerHTML = html;
 
       // Highlight the current page's nav link
       const navBtns = document.querySelectorAll('.main-nav wa-button');
       const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
       navBtns.forEach(btn => {
         const href = (btn.getAttribute('href') || '').replace(/\/$/, '') || '/';
-        if (href === currentPath) btn.classList.add('active');
+        if (href === currentPath) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-current', 'page');
+        }
       });
 
       // Back to top button
