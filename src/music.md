@@ -274,7 +274,7 @@ items:
     links:
       - label: Industrial Night (3rd Saturdays)
         url: https://www.facebook.com/clubsinthesis/
-      - label: The Slab (2nd Saturdays) and RAWR XD Emo Nite (Last Saturdays)
+      - label: The Slab (2nd Saturdays) + RAWR XD Emo Nite (Last Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
       - label: Mourning Dolls Burlesque, Craft Nights
         url: https://www.facebook.com/TheMourningDolls/
