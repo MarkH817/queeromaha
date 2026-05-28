@@ -7,6 +7,14 @@ layout: layouts/base.njk
 
 ---
 
+### Next Foundation
+
+Expressive Art Therapy
+
+https://www.nextfoundationomaha.com/
+
+https://www.facebook.com/people/NExT-Foundation-Omaha/100092199015102/
+
 <!-- outdated >
 [Huespring list ](https://www.huespring.org/community-resources/#social)
 -->
