@@ -46,7 +46,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/thingsbythor
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/thingsbythor/
       - label: Website
         url: https://thingsbythor.com

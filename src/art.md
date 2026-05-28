@@ -112,7 +112,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/tilt23showcase/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/tilt23/
 
   - type: item
@@ -120,7 +120,7 @@ items:
     public: false
     description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm.
     links:
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/poetiklee77/
       - label: Insta
         url: https://www.instagram.com/razor_wire_productions/
@@ -191,7 +191,7 @@ items:
     links:
       - label: Website
         url: https://www.maplestconstruct.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/maplestconstruct/
 
   - type: item
@@ -205,7 +205,7 @@ items:
         url: https://www.instagram.com/bffmamo/?hl=en
       - label: Website
         url: https://www.bffomaha.org/mamo
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/MaMOgallery/
 
   - type: item
@@ -217,7 +217,7 @@ items:
     links:
       - label: Website
         url: https://www.bffomaha.org/learn
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/people/Trudys/61561806150499/
 
   - type: section
@@ -229,7 +229,7 @@ items:
     public: true
     description: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
     links:
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
       - label: Events Calendar
         url: https://www.haco-ne.com/events.html
@@ -295,7 +295,7 @@ items:
         url: https://www.instagram.com/bemiscenter/
       - label: Events Calendar
         url: https://www.bemiscenter.org/low-end
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/bemiscenter/
 
   - type: item
@@ -307,7 +307,7 @@ items:
         url: https://www.instagram.com/hotshopsartcenter/?hl=en
       - label: Events Calendar
         url: https://hotshopsartcenter.org/events/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/hotshopsartcenter/
 
   - type: item
@@ -347,7 +347,7 @@ items:
         url: https://www.instagram.com/culxrhouse/
       - label: Art Battles
         url: https://artbattle.com/tag/omaha/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/culxrhouse/
       - label: Events Calendar
         url: https://www.houseofculxr.com/all-events

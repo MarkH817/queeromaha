@@ -27,7 +27,7 @@ items:
         url: https://www.instagram.com/thechurcharthouse/
       - label: Website
         url: https://www.thechurcharthouse.love/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/thechurcharthouse/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/the-church-arthouse
@@ -55,7 +55,7 @@ items:
         url: https://www.instagram.com/weareprojectproject
       - label: Website
         url: https://projectprojectomaha.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/weareprojectproject/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/project-project
@@ -88,7 +88,7 @@ items:
         url: https://www.instagram.com/shakedownstreettavern/
       - label: Website
         url: https://www.facebook.com/shakedownstreettavern/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/shakedownstreettavern/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/shakedown-street-tavern
@@ -143,7 +143,7 @@ items:
         url: https://covenomaha.com/
       - label: "Noir's Insta"
         url: https://www.instagram.com/noiromaha/?hl=en
-      - label: "Noir's BookFace"
+      - label: "Noir's FB"
         url: https://www.facebook.com/NoirOmaha/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/the-coven
@@ -155,7 +155,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/pageturnerslounge/?hl=en
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/pageturnerslounge/
 
   - type: item
@@ -170,7 +170,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/oleavers/?hl=en
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/oleavers/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/oleavers
@@ -182,7 +182,7 @@ items:
     links:
       - label: Website
         url: https://www.thebbaromaha.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/TheB.BarOmaha
 
   - type: item
@@ -211,7 +211,7 @@ items:
         url: https://www.instagram.com/fifthhouseveg/
       - label: Website
         url: https://www.fifthhouseomaha.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/FifthHouseOmaha/
 
   - type: item
@@ -302,7 +302,7 @@ items:
         url: https://theslowdown.com/events/
       - label: Insta
         url: https://www.instagram.com/theslowdown/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/theslowdown
 
   - type: item
@@ -310,7 +310,7 @@ items:
     public: false
     description: New(?) jazz club
     links:
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/people/Dreamland-Lounge-
 
   - type: item
@@ -318,7 +318,7 @@ items:
     public: false
     description: local open mic / comedy circuit
     links:
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/groups/OmahaOpenMics/
 
   - type: item

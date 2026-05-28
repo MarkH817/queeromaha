@@ -13,7 +13,7 @@ Will make you custom collars and key tags, has trans flags , rainbow etc
 
 Queer-friendly tabletop gaming shop and event space in Benson. Offers D&D, board games, dice, miniatures, and regular community game nights. Welcoming to all identities. Hosts events for LGBTQ+ and allied gamers.
 
-[Website](https://www.dungeoncrate.com/) | [Events](https://www.dungeoncrate.com/events-2-1) | [Insta](https://www.instagram.com/dungeon_crate/) | [BookFace](https://www.facebook.com/dungeoncrate)
+[Website](https://www.dungeoncrate.com/) | [Events](https://www.dungeoncrate.com/events-2-1) | [Insta](https://www.instagram.com/dungeon_crate/) | [FB](https://www.facebook.com/dungeoncrate)
 
 ### Spielbound Board Game Cafe (Midtown)
 

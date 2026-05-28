@@ -19,7 +19,7 @@ items:
         url: https://www.instagram.com/roast_coffeehouse/
       - label: Website
         url: https://www.roastcoffeehouse.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/profile.php/?id=100089484920886
 
   - type: item
@@ -36,7 +36,7 @@ items:
         url: https://www.instagram.com/godegamarket/
       - label: Website
         url: https://godegamarket.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/GodegaMarket/
 
   - type: item
@@ -51,7 +51,7 @@ items:
         url: https://www.instagram.com/marigoldsmercantile
       - label: Website
         url: https://www.marigoldsmercantile.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/marigoldsmercantile/
 
   - type: section
@@ -118,7 +118,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/hardycoffeeco/?hl=en
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/hardycoffeeco/
       - label: Website
         url: https://www.hardycoffee.com/
@@ -136,7 +136,7 @@ items:
         url: https://www.instagram.com/edgeuniversebff/
       - label: Events Calendar
         url: https://www.edgeoftheuniverseomaha.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/Edgeuniversebff/about/
 
   - type: item
@@ -149,7 +149,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/legendcomicsandcoffee/?hl=en
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/LegendComics/
 
   - type: section
@@ -167,7 +167,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/bluelinecoffeeomaha/?hl=en
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727
 
   - type: item
@@ -188,7 +188,7 @@ items:
         url: https://www.instagram.com/amateurcoffee/?hl=en
       - label: Website
         url: https://www.amateurcoffee.com/
-      - label: BookFace
+      - label: FB
         url: https://www.instagram.com/amateurcoffee
 
   - type: item
@@ -213,7 +213,7 @@ items:
         url: https://www.instagram.com/reading_room_omaha/
       - label: Events Calendar
         url: https://readingroomomaha.com/events/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/
 
   - type: item
@@ -234,7 +234,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/zencoffeeco/?hl=en
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/zencoffeecompany/
       - label: Website
         url: https://www.zencoffeecompany.com/
@@ -264,6 +264,6 @@ items:
         url: https://www.instagram.com/karma_koffee/?hl=en
       - label: Website
         url: https://www.karmakoffee.com/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/karmakoffeeomaha/
 ---

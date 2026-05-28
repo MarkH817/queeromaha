@@ -40,11 +40,11 @@ items:
     links:
       - label: The Queer Collective Insta
         url: https://www.instagram.com/queercollectiveomaha
-      - label: The Queer Collective BookFace
+      - label: The Queer Collective FB
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
       - label: Gabi Galles's Insta
         url: https://instagram.com/gabighoul.art
-      - label: River Daze Collective BookFace
+      - label: River Daze Collective FB
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
   - type: item
     name: Wild Garden Insta
@@ -133,7 +133,7 @@ items:
     public: false
     description: Drag shows / queer events at BFF / Petshop / The Sydney.
     links:
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/queernite/
     notes: possibly defunct
 
@@ -163,7 +163,7 @@ items:
         url: https://www.anandaomaha.com/brooke-monaco-wellness
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/
 
   - type: item
@@ -204,7 +204,7 @@ items:
     name: Omaha LGBT* Group
     public: false
     links:
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/groups/428335397593645
     notes: Unverified — I don't have FB.
 
@@ -215,7 +215,7 @@ items:
     links:
       - label: Telegram
         url: https://t.me/s/furbraska
-      - label: BookFace
+      - label: FB
         url: https://www.facebook.com/groups/furrbraska/
 
   - type: item
