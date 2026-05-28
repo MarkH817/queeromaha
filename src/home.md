@@ -72,6 +72,8 @@ items:
     links:
       - label: Signup (vetted)
         url: https://www.transnebraska.online/get-involved
+      - label: More Information
+        url: https://www.transnebraska.online
 
   - type: item
     name: TransFormative
@@ -84,17 +86,19 @@ items:
         url: https://www.braveresilience.com/transformative
 
   - type: item
-    name: TransMasc Second Sunday
+    name: Second Sunday (Trans Men and Enby Trans Masc)
     public: true
-    description: Social group for Trans Masc folks.
+    description: Social group centering Trans Masc folks.
     links:
       - label: Signup (vetted)
         url: https://secondsunday.xyz/meet-up
+      - label: Discord
+        url: https://discord.com/invite/EdVFccyJeT
 
   - type: item
     name: OWOmaha Furry Group
     public: true
-    description: All-inclusive, actively moderated Furry group with in-person / online meetups.
+    description: All-inclusive, actively moderated Furry group with frequent in-person and Discord meetups.
     links:
       - label: Events Calendar
         url: https://www.owomaha.com/calendar
@@ -106,15 +110,15 @@ items:
   - type: item
     name: Omaha Goth Discord
     public: true
-    description: Place to hang out with other wallflowers wearing all-black
+    description: Music and other events for the Omaha goth / darkwave / industrial scene
     links:
       - label: Discord
-        url: https://discord.gg/M5JUCgY9c
+        url: https://discord.com/invite/M5JUCgY9c
 
   - type: item
     name: Open Arms Trans Social Group (OATS)
     public: true
-    description: In-person meetup of Trans* folks, queer people and allies on 3rd Saturday from Noon to 2 p.m @ 2nd Unitarian Church of Omaha.
+    description: Long-running meetup of Trans* folks, queer people and allies on every 3rd Saturday @ Noon at 2nd Unitarian Church of Omaha.
     links:
       - label: More Information
         url: https://2uomaha.org/justice/lgbtq
@@ -143,14 +147,15 @@ items:
 
   - type: item
     name: Vocal Release Class
-    public: true
-    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC / NOTAFLOF.
+    public: false
+    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC
     links:
       - label: Insta
         url: https://www.instagram.com/dawaune.one
+    notes: IG profile is age-restricted, doublecheck
 
   - type: item
-    name: Ananda Yoga
+    name: Ananda Omaha Wellness and Yoga
     public: true
     description: |
       Weekly Queer-centered Emotional Release class on Sundays @ 12:30PM at Ananda Yoga on 49th and Dodge.
@@ -159,12 +164,10 @@ items:
 
       Getting There: Park behind the State Farm building, a door near the big sign will be propped open. Go all the way down the stairs, following signs to the end of the hallway.
     links:
-      - label: Class Schedule
+      - label: Class Schedule (scroll down)
         url: https://www.anandaomaha.com/brooke-monaco-wellness
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
-      - label: FB
-        url: https://www.facebook.com/p/Ananda-Yoga-Therapy-100089315147595/
 
   - type: item
     name: Honey Locust Sangha
@@ -183,9 +186,9 @@ items:
         url: https://nebraskazencenter.org/upcoming-events/
 
   - type: item
-    name: Sound Baths / Singing Bowls w/ Havalynn Russell
+    name: Sound Baths and Singing Bowls w/ Havalynn Russell
     public: true
-    description: Every Sunday @ 10:30AM (besides the 1st Sun of the month) bathe in Havalynn's crystal singing bowls and authentic Native sound bath. PWYC / NOTAFLOF.
+    description: Get stratospheric with Havalynn at Church Art House every Sunday (besides the 1st of the month) @ 10:30AM.  PWYC
     links:
       - label: Insta
         url: https://www.instagram.com/havalynn1/

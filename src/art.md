@@ -29,18 +29,24 @@ items:
   - type: item
     name: Omaha Drum Family
     public: true
-    description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or try one of theirs!
+    description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
     links:
       - label: Events Calendar
         url: https://www.facebook.com/drumomaha/
 
   - type: item
-    name: Synth Night
+    name: SynthOmaha Electronic Music Jam
     public: true
-    description: Electronic music jam session at Shakedown Street 8-10pm on the last Monday of the month.
+    description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
     links:
       - label: Events Calendar
         url: https://synthomaha.net/
+    notes: |
+      Members with social presence:
+      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
+      - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
+      - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
+      - Tob [Mastodon](https://mastodon.sdf.org/@tob)
 
   - type: item
     name: Sowing Seeds
@@ -53,15 +59,15 @@ items:
   - type: item
     name: Alternative Publishing (Zines)
     public: true
-    description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, Linocuts
+    description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
     links:
       - label: Insta
         url: https://www.instagram.com/altpubomaha/
 
   - type: item
     name: SoundArte
-    public: true
-    description: Network of artists and musicians ran by Sener who puts on a yearly Ex Nihilo music festival.
+    public: false
+    description: Network of electronic artists and musicians.
     links:
       - label: Website
         url: https://soundarte.net
@@ -69,12 +75,7 @@ items:
         url: https://www.instagram.com/soundarte.mx/?hl=en
       - label: Music Label
         url: https://eacrecords.bandcamp.com/
-    notes: |
-      Members with social presence:
-      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
-      - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
-      - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
-      - Tob [Mastodon](https://mastodon.sdf.org/@tob)
+    notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat sporadic updates to site
 
   - type: section
     label: South Omaha
@@ -135,6 +136,34 @@ items:
         url: https://www.instagram.com/clover24omaha/
       - label: Events Calendar
         url: https://clover24.org/events
+
+  - type: section
+    label: North Omaha
+    id: northo
+
+  - type: item
+    name: Culxr House
+    public: true
+    tags:
+      - neutral-bathrooms
+    description: Black-owned community space for shows and art events.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/culxrhouse/
+      - label: FB
+        url: https://www.facebook.com/culxrhouse/
+      - label: Events Calendar
+        url: https://www.houseofculxr.com/all-events
+    notes: art battles seem sporadic / dead as of spring '26'
+
+  - type: item
+    name: Union for Contemporary Art
+    public: true
+    description: Exhibits, studios, classes, and talks.
+    links:
+      - label: Events Calendar
+        url: https://www.u-ca.org/happenings
+    notes: tara hasn't been there yet. trusting its chill.
 
   - type: section
     label: Benson
@@ -259,13 +288,14 @@ items:
 
   - type: item
     name: Old Market Passageway
-    public: true
+    public: false
     description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
     links:
       - label: Website
         url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
       - label: Garden of the Zodiac Insta
         url: https://www.instagram.com/gardenofthezodiac/?hl=en
+    notes: possibly too normie. willing to entertain arguments as per its queerness
 
   - type: item
     name: Joslyn
@@ -276,6 +306,7 @@ items:
     links:
       - label: Website
         url: https://joslyn.org/visit/calendar/
+    notes: boo their president, boo this man!
 
   - type: item
     name: Urban Abbey — Soul Arts
@@ -284,7 +315,7 @@ items:
     links:
       - label: Events
         url: https://www.theurbanabbey.org/events
-    notes: Go to at least one before listing. Is there a better direct link?
+    notes: active? Is there a better direct link? the calendar is a JS thingie
 
   - type: item
     name: Bemis Center
@@ -315,7 +346,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
-    description: Apartment complex with art showings and events.
+    description: Apartment complex with art showings, music shows and business-y mixers
     links:
       - label: Insta
         url: https://www.instagram.com/millworkcommons/
@@ -331,32 +362,4 @@ items:
     links:
       - label: Events Calendar
         url: http://artistscoopomaha.com/events?view=calendar
-
-  - type: section
-    label: North Omaha
-    id: northo
-
-  - type: item
-    name: Culxr House
-    public: true
-    tags:
-      - neutral-bathrooms
-    description: Black-owned community space for shows and art events.
-    links:
-      - label: Insta
-        url: https://www.instagram.com/culxrhouse/
-      - label: Art Battles
-        url: https://artbattle.com/tag/omaha/
-      - label: FB
-        url: https://www.facebook.com/culxrhouse/
-      - label: Events Calendar
-        url: https://www.houseofculxr.com/all-events
-
-  - type: item
-    name: Union for Contemporary Art
-    public: true
-    description: Exhibits, studios, classes, and talks.
-    links:
-      - label: Events Calendar
-        url: https://www.u-ca.org/happenings
 ---
