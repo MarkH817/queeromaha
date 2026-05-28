@@ -34,25 +34,31 @@ items:
       STI testing certain Thursdays (check schedule)
 
   - type: item
-    name: Queer Social Accounts
+    name: Social Accounts To Follow
     public: true
     description:
     links:
-      - label: Collective of Queers Insta
-        url: https://www.instagram.com/collectiveofqueers
-      - label: Queer Collective BookFace
+      - label: The Queer Collective Insta
+        url: https://www.instagram.com/queercollectiveomaha
+      - label: The Queer Collective BookFace
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
-      - label: Gabi Galles Insta
+      - label: Gabi Galles's Insta
         url: https://instagram.com/gabighoul.art
-      - label: River Daze Collective Insta
+      - label: River Daze Collective BookFace
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
-      - label: Wild Garden Insta
+  - type: item
+    name: Wild Garden Insta
+    public: false
+    description: Social group
+    links:
+      - label: Instagram
         url: https://www.instagram.com/thewildgardenomaha/
+    notes: Potentially inactive circa spring '26
 
   - type: item
     name: Out Wild Adventures
     public: true
-    description: Coffee meetups, movie nights, hikes, seasonal parties. Moderated, often hosts sober events.
+    description: Hikes, coffee chats, movie nights, etc. Sober-friendly
     links:
       - label: Signup (vetted)
         url: https://forms.gle/k2HhE8boH47rkJpT6
