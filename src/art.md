@@ -353,7 +353,7 @@ items:
 
   - type: item
     name: Millwork Commons
-    public: true
+    public: false
     tags:
       - neutral-bathrooms
     description: Apartment complex with art showings, music shows and business-y mixers
@@ -362,6 +362,7 @@ items:
         url: https://www.instagram.com/millworkcommons/
       - label: Events Calendar
         url: https://millworkcommons.com/events/
+    notes: unpublished may 2026. bathroom police.
 
   - type: item
     name: Omaha Artists Cooperative Gallery
