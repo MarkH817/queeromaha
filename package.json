@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "bun test test/site.test.js && bunx playwright test",
-    "serve": "bunx @11ty/eleventy --serve",
-    "build": "bunx @11ty/eleventy",
+    "serve": "eleventy --serve",
+    "build": "eleventy",
     "serve:cms": "bunx decap-server",
     "prepare": "husky",
     "lint": "bunx lint-staged",
@@ -16,6 +16,7 @@
   "author": "Tara <tara@queeromaha.net>",
   "license": "MIT",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
     "@playwright/test": "^1.60.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5",
@@ -26,6 +27,6 @@
     "node": "24.15.0"
   },
   "lint-staged": {
-    "*": "bunx prettier --write"
+    "*.{css,html,js,cjs,json,md,toml,yml}": "bunx prettier --write"
   }
 }
