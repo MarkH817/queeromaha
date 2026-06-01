@@ -254,6 +254,16 @@ items:
     id: midtown
 
   - type: item
+    name: Cali Commons
+    public: true
+    description: Arts collective and neighborhood gallery
+    links:
+      - label: Events Calendar
+        url: https://calicommons.com/calendar-of-events/
+      - label: Join Artist Collective
+        url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
+
+  - type: item
     name: Hispanic Arts Center
     public: true
     description: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
