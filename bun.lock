@@ -4,8 +4,10 @@
   "workspaces": {
     "": {
       "name": "queeromaha.com",
-      "devDependencies": {
+      "dependencies": {
         "@11ty/eleventy": "^3.1.5",
+      },
+      "devDependencies": {
         "@playwright/test": "^1.60.0",
         "husky": "^9.1.7",
         "lint-staged": "^17.0.5",
