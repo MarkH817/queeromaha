@@ -292,6 +292,17 @@ collections:
             name: items
             widget: list
             types:
+              - label: Section Header
+                name: section
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Anchor ID, name: id, widget: string }
+                  - {
+                      label: Note,
+                      name: note,
+                      widget: markdown,
+                      required: false,
+                    }
               - label: Maker
                 name: item
                 fields:

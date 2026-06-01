@@ -10,7 +10,7 @@ items:
   - type: item
     name: Gabi Ghoul Art
     public: true
-    description: Gabi identifies as a Queer, Disabled and BIPOC artist with a love for mixed medium works, often blending a use of acrylic painted scenes highlighted by hand stitched beads. I love her "cute ghost in pride flag colors" pieces and her femme-forward style.
+    description: Gabi identifies as a Queer, Disabled and BIPOC artist with a love for mixed medium works, often blending a use of acrylic painted scenes highlighted by hand stitched beads.
     links:
       - label: Insta
         url: https://instagram.com/gabighoul.art
