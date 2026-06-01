@@ -32,12 +32,14 @@ items:
   - type: item
     name: Cyberpunk Tarot Decks
     public: true
-    description: Local artist Haidyn Sosalla-Bahr (they/them) creates Major Arcana cards with their original cyberpunk universe. Find them at the BFF art market.
+    description: Haidyn Sosalla-Bahr (they/them) created a full Tarot Deck based on their original cyberpunk universe. Find them at the BFF Art Market, Omaha Arts Festival Aksarben June 12-14, and Rockbrook Arts Festival September 12 from 10-6 and September 13 from 10-5
     links:
       - label: Website
         url: https://meridiancitytarot.carrd.co/#howtopurchase
       - label: Online Store
         url: https://www.inprnt.com/gallery/blueranyk/
+      - label: Insta
+        url: https://instagram.com/blueranyk
 
   - type: item
     name: Things By Thor
