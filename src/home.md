@@ -53,7 +53,7 @@ items:
         url: https://flow.page/outwildadventures
 
   - type: item
-    name: TransNebraska - Online
+    name: TransNebraska.Online
     public: true
     description: Monthly online Trans* group ran by Babs Ramsey.
     links:
@@ -74,7 +74,7 @@ items:
     notes: Good group per Babs, completely full with waitlist per Brit
 
   - type: item
-    name: Second Sunday - In Person
+    name: Second Sunday - Trans Masc Meetup
     public: true
     description: In-person social group centering Trans Men, Trans Masc* and Nonbinary folks.
     links:
