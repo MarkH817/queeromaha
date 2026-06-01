@@ -3,7 +3,6 @@ title: Omaha Queer Community / Resources
 layout: layouts/base.njk
 permalink: /
 public: true
-intro:
 items:
   - type: section
     label: Social Groups

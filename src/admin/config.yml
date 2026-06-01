@@ -24,7 +24,6 @@ collections:
               default: layouts/base.njk,
             }
           - { label: Public, name: public, widget: boolean, default: true }
-          - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
             name: items
             widget: list
@@ -91,7 +90,6 @@ collections:
               default: layouts/base.njk,
             }
           - { label: Public, name: public, widget: boolean, default: true }
-          - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
             name: items
             widget: list
@@ -158,7 +156,6 @@ collections:
               default: layouts/base.njk,
             }
           - { label: Public, name: public, widget: boolean, default: true }
-          - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
             name: items
             widget: list
@@ -225,7 +222,6 @@ collections:
               default: layouts/base.njk,
             }
           - { label: Public, name: public, widget: boolean, default: true }
-          - { label: Intro, name: intro, widget: markdown, required: false }
           - label: Items
             name: items
             widget: list

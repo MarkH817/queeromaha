@@ -27,9 +27,6 @@
   </header>
   <main id="main" tabindex="-1">
     {% if title %}<h1 class="wa-visually-hidden">{{ title }}</h1>{% endif %}
-    {% if intro %}
-      {{ intro | markdown | safe }}
-    {% endif %}
     {% if items %}
       {% for entry in items %}
         {% if entry.type == 'section' %}

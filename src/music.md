@@ -2,16 +2,21 @@
 title: Music Events / Venues
 layout: layouts/base.njk
 public: true
-
-intro: |
-  **Event Listings**
-
-  > [**Post your flyer at OmahaUnderground.NET!**](https://omahaunderground.net)
-
-  See this week's shows on the [Omaha Underground Instagram](https://www.instagram.com/omaha_underground/)
-
-  Also the [Omaha Buzz Substack](https://omahabuzz.substack.com/) has huge weekly posts of shows
 items:
+  - type: section
+    label: Show Flyers
+    id: webring
+
+  - type: item
+    name: OmahaUnderground.NET and friends
+    description: Where to learn about the cool shows
+    public: true
+    links:
+      - label: Omahaunderground.net
+        url: https://omahaunderground.net/shows/
+      - label: Omaha Buzz
+        url: https://omahabuzz.substack.com
+
   - type: section
     label: South Omaha
     id: southo
@@ -21,7 +26,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
-    description: Rachel opened her heart to create an unconditionally welcoming, authentic space in a deconsecrated church. Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. CLay throwing classes, kiln and glazing.
+    description: Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. Clay throwing classes, kiln and glazing.
     links:
       - label: Insta
         url: https://www.instagram.com/thechurcharthouse/
@@ -49,7 +54,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
-    description: Punk DIY space for experimental music and local art. Highly recommend.
+    description: Punk DIY space for experimental music and local art.
     links:
       - label: Insta
         url: https://www.instagram.com/weareprojectproject
@@ -119,7 +124,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
-    description: Dive bar for local acts. Has burlesque shows and drag. Very little seating.
+    description: Dive bar for local acts,burlesque shows and drag.
     links:
       - label: Website
         url: https://thesydneybenson.com/
