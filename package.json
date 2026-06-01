@@ -18,7 +18,8 @@
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.5"
+    "lint-staged": "^17.0.5",
+    "prettier-plugin-toml": "^2.0.6"
   },
   "dependencies": {},
   "volta": {
