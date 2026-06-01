@@ -13,17 +13,16 @@
     "lint:fix": "bunx prettier --write ."
   },
   "keywords": [],
-  "author": "Tara <tara@queeromaha.net>",
+  "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
     "@playwright/test": "^1.60.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5",
     "prettier-plugin-toml": "^2.0.6"
   },
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.5"
-  },
+  "dependencies": {},
   "volta": {
     "node": "24.15.0"
   },
