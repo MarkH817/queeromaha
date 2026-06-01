@@ -54,14 +54,9 @@ items:
         url: https://linktr.ee/Thingsbythor
 
   - type: section
-    label: Signup Form
+    label: Submit A Maker
     id: signup
 ---
-
-<h3 style="margin-top: 0;">Want to be showcased on this page?</h3>
-
-- I'll confirm your listing via email before posting.
-- You can pull it at any time. [Contact me here](/contact)
 
 <br/>
 <form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
@@ -71,18 +66,18 @@ items:
   </p>
 
 <p>
-    <label for="human_name">Name (required)</label><br />
-    <input id="human_name" name="human_name" required aria-required="true" placeholder="Your Real Human Name" maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <label for="name">Name (required)</label><br />
+    <input id="name" name="name" required aria-required="true" placeholder="Maker's Name" maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
     <label for="email">Email (required)</label><br />
-    <input type="email" id="email" name="email" required aria-required="true" placeholder="you@cool.biz" maxlength="255" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input type="email" id="email" name="email" required aria-required="true" placeholder="maker@cool.gay" maxlength="255" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
     <label for="biz_name">Business Name (optional)</label><br />
-    <input id="biz_name" name="biz_name" placeholder="Cool Biz" maxlength="150" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input id="biz_name" name="biz_name" placeholder="Cool Gay Biz" maxlength="150" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
@@ -92,23 +87,21 @@ items:
 
   <p>
     <label for="facebook">Facebook Link (optional)</label><br />
-    <input type="text" id="facebook" name="facebook" placeholder="facebook page name or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input type="text" id="facebook" name="facebook" placeholder="facebook page or full URL" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
   <p>
     <label for="website">Website Link (optional)</label><br />
-    <input type="text" id="website" name="website" inputmode="url" placeholder="cool.biz" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
+    <input type="text" id="website" name="website" inputmode="url" placeholder="cool.gay" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
   </p>
 
 <p>
-    <label for="description">Short description (max 280 chars, optional)</label><br />
+    <label for="description">Short description (optional)</label><br />
     <textarea id="description" name="description" maxlength="280" rows="4" placeholder="What do they make?" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px; font-family:inherit;"></textarea>
   </p>
 
   <p>
     <button type="submit" style="background:#6d28d9; color:#fff; padding:0.75rem 1.5rem; border:none; border-radius:6px; cursor:pointer; font-size:1rem; font-weight:600;">Signup</button>
   </p>
-
-  <p style="font-size:0.85rem; color:#555;">It will always be free to post your listing.</p>
 
 </form>
