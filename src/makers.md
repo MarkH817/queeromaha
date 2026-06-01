@@ -35,11 +35,15 @@ items:
     description: Haidyn Sosalla-Bahr (they/them) created a full Tarot Deck based on their original cyberpunk universe. Find them at the BFF Art Market, Omaha Arts Festival Aksarben June 12-14, and Rockbrook Arts Festival September 12 from 10-6 and September 13 from 10-5
     links:
       - label: Website
-        url: https://meridiancitytarot.carrd.co/#howtopurchase
+        url: https://meridiancitytarot.carrd.co/#about
       - label: Online Store
         url: https://www.inprnt.com/gallery/blueranyk/
       - label: Insta
         url: https://instagram.com/blueranyk
+      - label: Carrd
+        url: https://blueranyk.carrd.co/
+      - label: BlueSky
+        url: https://bsky.app/profile/blueranyk.bsky.social
 
   - type: item
     name: Things By Thor
