@@ -10,23 +10,24 @@
     "serve:cms": "bunx decap-server",
     "prepare": "husky",
     "lint": "bunx lint-staged",
-    "lint:fix": "bunx prettier --write ."
+    "lint:fix": "bunx biome format --write ."
   },
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
+    "@biomejs/biome": "^2.4.16",
     "@playwright/test": "^1.60.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.5",
-    "prettier-plugin-toml": "^2.0.6"
+    "lint-staged": "^17.0.5"
   },
   "dependencies": {},
   "volta": {
     "node": "24.15.0"
   },
   "lint-staged": {
-    "*.{css,html,js,cjs,json,md,toml,yml}": "bunx prettier --write"
+    "*.{css,html,js,cjs,json,md,yml}": "bunx biome format --write",
+    "*.{js,cjs,json,md,yml}": "bunx biome lint --write"
   }
 }
