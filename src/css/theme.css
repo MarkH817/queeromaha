@@ -196,11 +196,6 @@ footer a:hover {
   padding: 0;
 }
 
-footer p {
-  margin: 0;
-  font-size: 1rem;
-}
-
 .footer-credit {
   font-size: 0.6rem;
   letter-spacing: 0.08em;
@@ -268,6 +263,11 @@ wa-card.item::part(footer) {
 p {
   margin-top: 0.2rem;
   margin-bottom: 1rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 /* Link styles */
