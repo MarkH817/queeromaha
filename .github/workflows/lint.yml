@@ -23,25 +23,31 @@ jobs:
           
           SAVE_SUPER_LINTER_SUMMARY: true
           
-          # what do we check for
+          # ignore "spelling" and copypasta check
           VALIDATE_SPELL_CODESPELL: false
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_JSCPD: false
           
+          # ignore the "pin action" alert
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+
+          # we use ruff not black
+          VALIDATE_PYTHON_BLACK: false
+          VALIDATE_PYTHON_RUFF: true
+          
           # what do we fix
           FIX_CSS: true
           FIX_MARKDOWN: true
-          FIX_MARKDOWN_PRETTIER: true
           FIX_SHELL_SHFMT: true
           FIX_BIOME_FORMAT: true
           FIX_BIOME_LINT: true
-          FIX_YAML_PRETTIER: true
           FIX_TSX: true
-          VALIDATE_PYTHON_BLACK: false
-          VALIDATE_PYTHON_RUFF: true
-
+          
           # using biome instead of prettier
-          FIX_GITHUB_ACTIONS_ZIZMOR: true
+          # biome doesnt support yaml or markdown
+          FIX_YAML_PRETTIER: true
+          FIX_MARKDOWN_PRETTIER: true
+          
           FIX_GRAPHQL_PRETTIER: false
           FIX_HTML_PRETTIER: false
           FIX_JAVASCRIPT_PRETTIER: false
