@@ -43,10 +43,24 @@ Email signup: <megsmiththerapy@outlook.com> / 402 871 5920
 Parents Support group 2nd Thursday of the month 7PM at Countryside Community Church
 [Website](http://www.pflag-omaha.org/)
 
+## Outside of Omaha (bay area)
+
 ### Spirit Rock Rainbow Sangha
 
 LGBTQIA+ sangha, Wednesdays 5:30-7:00 PM PT (online via Zoom, donation-based)
 [Register/More Info](https://spirit-rock.secure.retreat.guru/program/rainbow-sangha-06rs26/)
+
+### San Mateo Trans / Poly / Queer Groups
+
+Remote, from San Mateo Pride Center
+
+https://sanmateopride.org/programs/peer-groups/
+
+Poly
+https://tinyurl.com/smpcpolypeerpower
+
+Trans\*
+https://tinyurl.com/smpctransgroup
 
 ### SFZC Queer Dharma Group
 
