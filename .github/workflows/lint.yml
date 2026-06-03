@@ -23,40 +23,29 @@ jobs:
           
           SAVE_SUPER_LINTER_SUMMARY: true
           
-          # ignore "spelling" and copypasta check
-          VALIDATE_SPELL_CODESPELL: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_JSCPD: false
-          
-          # ignore the "pin action" alert
-          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
-
-          # we use ruff not black
-          VALIDATE_PYTHON_BLACK: false
-          VALIDATE_PYTHON_RUFF: true
-          
-          # what do we fix
-          FIX_CSS: true
-          FIX_MARKDOWN: true
-          FIX_SHELL_SHFMT: true
+          # biome doesnt support yaml or markdown
           FIX_BIOME_FORMAT: true
           FIX_BIOME_LINT: true
-          FIX_TSX: true
-          
-          # using biome instead of prettier
-          # biome doesnt support yaml or markdown
-          FIX_YAML_PRETTIER: true
+          FIX_CSS_PRETTIER: true
+          FIX_CSS: true
+          FIX_GRAPHQL_PRETTIER: true
+          FIX_HTML_PRETTIER: true
+          FIX_JAVASCRIPT_PRETTIER: true
+          FIX_JSONC_PRETTIER: true
+          FIX_JSON_PRETTIER: true
+          FIX_JSX_PRETTIER: true
           FIX_MARKDOWN_PRETTIER: true
+          FIX_MARKDOWN: true
+          FIX_SHELL_SHFMT: true
+          FIX_TSX: true
+          FIX_TYPESCRIPT_PRETTIER: true
+          FIX_VUE_PRETTIER: true
+          FIX_YAML_PRETTIER: true
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+          VALIDATE_JSCPD: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_SPELL_CODESPELL: false
           
-          FIX_GRAPHQL_PRETTIER: false
-          FIX_HTML_PRETTIER: false
-          FIX_JAVASCRIPT_PRETTIER: false
-          FIX_JSON_PRETTIER: false
-          FIX_JSONC_PRETTIER: false
-          FIX_JSX_PRETTIER: false
-          FIX_TYPESCRIPT_PRETTIER: false
-          FIX_VUE_PRETTIER: false
-          FIX_CSS_PRETTIER: false
           
           # To reuse the same Super-linter configuration that you use in the
           # lint job without duplicating it, see
