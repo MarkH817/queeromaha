@@ -18,7 +18,6 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
-          ref: ${{ github.head_ref }}
 
       - name: Super-Linter
         uses: super-linter/super-linter@v8.6.0 # x-release-please-version
