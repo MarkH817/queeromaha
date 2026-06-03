@@ -4,9 +4,6 @@ name: Lint
 on: # yamllint disable-line rule:truthy
   pull_request: null
 
-permissions:
-  contents: read
-
 jobs:
   fix-lint-issues:
     permissions:
@@ -20,7 +17,7 @@ jobs:
           persist-credentials: true
 
       - name: Super-Linter
-        uses: super-linter/super-linter@v8.6.0 # x-release-please-version
+        uses: super-linter/super-linter@35955a2af8395c8224c7072732b91350f7f02c2ae9ee751842776ef29092a6cc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
@@ -34,10 +31,26 @@ jobs:
           # what do we fix
           FIX_CSS: true
           FIX_MARKDOWN: true
+          FIX_MARKDOWN_PRETTIER: true
           FIX_SHELL_SHFMT: true
           FIX_BIOME_FORMAT: true
           FIX_BIOME_LINT: true
+          FIX_YAML_PRETTIER: true
+          FIX_TSX: true
+          VALIDATE_PYTHON_BLACK: false
+          VALIDATE_PYTHON_RUFF: true
+
+          # using biome instead of prettier
           FIX_GITHUB_ACTIONS_ZIZMOR: true
+          FIX_GRAPHQL_PRETTIER: false
+          FIX_HTML_PRETTIER: false
+          FIX_JAVASCRIPT_PRETTIER: false
+          FIX_JSON_PRETTIER: false
+          FIX_JSONC_PRETTIER: false
+          FIX_JSX_PRETTIER: false
+          FIX_TYPESCRIPT_PRETTIER: false
+          FIX_VUE_PRETTIER: false
+          FIX_CSS_PRETTIER: false
           
           # To reuse the same Super-linter configuration that you use in the
           # lint job without duplicating it, see
