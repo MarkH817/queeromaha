@@ -20,7 +20,6 @@
       "!**/bun.lock",
       "!**/deno.lock",
       "!**/.husky/",
-      "!**/.prettierignore",
       "!**/*njk"
     ]
   },
