@@ -4,7 +4,14 @@
   "description": "queer stuff in omaha",
   "main": "index.js",
   "scripts": {
-    "test": "bun test test/site.test.js && playwright test",
+    "test": "bun run test:unit && playwright test",
+    "test:fast": "bun run lint && bun run test:data",
+    "test:data": "bun test test/data.test.js",
+    "test:build": "bun test test/build.test.js",
+    "test:unit": "bun test test/data.test.js test/build.test.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
     "serve": "eleventy --serve",
     "build": "eleventy",
     "serve:cms": "bunx decap-server",
@@ -18,7 +25,8 @@
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
     "@playwright/test": "^1.60.0",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "yaml": "^2.9.0"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.5"

@@ -9,8 +9,8 @@ export default defineConfig({
   webServer: {
     command: 'bunx serve _site -l 4242 -n',
     url: 'http://localhost:4242',
-    reuseExistingServer: false,
-    timeout: 10_000,
+    reuseExistingServer: !process.env.CI,
+    timeout: 30_000,
   },
   projects: [
     {
