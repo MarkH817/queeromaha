@@ -1,0 +1,15 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# Queer Omaha
+
+> Community-maintained directory of queer-friendly spaces, events, and resources in Omaha, Nebraska. Anyone can contribute via GitHub.
+
+## Pages
+
+{%- for p in collections.all %}
+{%- if p.url and p.data.title and p.data.description and not p.url.startsWith('/admin') %}
+- [{{ p.data.title }}]({{ site.url }}{{ p.url }}): {{ p.data.description }}
+{%- endif %}
+{%- endfor %}

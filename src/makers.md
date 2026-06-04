@@ -1,5 +1,6 @@
 ---
 title: Omaha Queer Makers
+description: Maker spaces, craft studios, and hands-on creative communities in Omaha.
 layout: layouts/base.njk
 public: true
 items:

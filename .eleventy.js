@@ -3,6 +3,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/admin')
   // Copy `img/favicon/` to `_site/`
   eleventyConfig.addPassthroughCopy({ img: '/' })
+  eleventyConfig.addPassthroughCopy({ 'src/_headers': '_headers' })
 
   let markdownLibrary
   eleventyConfig.amendLibrary('md', (mdLib) => {
@@ -30,6 +31,10 @@ module.exports = (eleventyConfig) => {
     if (!content) return ''
     return markdownLibrary.render(String(content))
   })
+
+  eleventyConfig.addFilter('isoDate', (date) =>
+    new Date(date).toISOString().slice(0, 10),
+  )
 
   return {
     dir: {
