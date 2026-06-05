@@ -14,6 +14,21 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Queer Omaha" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Queer Omaha" />
+  {% if description %}<meta property="og:description" content="{{ description }}" />{% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Queer Omaha",
+    "url": "{{ site.url }}",
+    "description": "Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
+  }
+  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
