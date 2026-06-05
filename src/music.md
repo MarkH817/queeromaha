@@ -278,11 +278,13 @@ items:
       The Slab (Darkwave and Rock), Industrial Night,
       RAWR XD Emo Nite
     links:
-      - label: Industrial Night (3rd Saturdays)
-        url: https://www.facebook.com/clubsinthesis/
-      - label: The Slab (2nd Saturdays) + RAWR XD Emo Nite (Last Saturdays)
+      - label: The Slab (2nd Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
-      - label: Mourning Dolls Burlesque, Craft Nights
+       - label: Industrial Night (3rd Saturdays)
+        url: https://www.facebook.com/clubsinthesis/
+      - label: RAWR XD Emo Nite (Last Saturdays)
+        url: https://www.instagram.com/omaha_goth_and_alternative/
+      - label: Mourning Dolls Burlesque Shows and Craft Nights
         url: https://www.facebook.com/TheMourningDolls/
       - label: OmahaUnderground Events
         url: https://omahaunderground.net/venues/red-light-lounge
