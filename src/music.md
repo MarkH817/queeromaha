@@ -280,7 +280,7 @@ items:
     links:
       - label: The Slab (2nd Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
-       - label: Industrial Night (3rd Saturdays)
+      - label: Industrial Night (3rd Saturdays)
         url: https://www.facebook.com/clubsinthesis/
       - label: RAWR XD Emo Nite (Last Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
