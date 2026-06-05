@@ -21,39 +21,38 @@ Run locally with hot-reloading
 
 ```
 bun install --development
+bun run build # 11ty output to _site
 bun run serve # local 11ty server at localhost:8080
 bun run serve:cms # local decapCMS at /admin
 ```
 
-The live site auto-deploys on pushes to main.
+### Deployment
 
-That workflow looks like:
+PRs create a preview branch on Netlify.
+
+The live site auto-deploys on pushes to `main`
+
+Manual deployment
 
 ```
 bun install -g netlify-cli
 netlify login
-netlify dev
-```
-
-### Build
-
-```
-bun run build # 11ty output to _site
+netlify deploy
 ```
 
 ### Code Style
 
-Husky requires lint to pass on pre-commit. Fix and re-commit.
+Husky requires lint to pass on pre-commit.
 
 ```
-bun run lint # check formatting - NOTE: only staged files are linted
-bun run lint:fix # auto-fix formatting
+bun run lint # check formatting of staged files
+bun run format # auto-fix formatting
 ```
 
 ### Tests
 
-Husky requires tests to pass on a pre-push. Please add tests for significant changes.
+Husky requires tests to pass on pre/push. Please add tests for significant changes.
 
 ```
-bun test # unit tests + Playwright
+bun run test # unit tests + Playwright
 ```
