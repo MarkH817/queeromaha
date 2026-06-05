@@ -5,7 +5,7 @@ layout: layouts/base.njk
 public: true
 ---
 
-### Send me a note
+### Send a note
 
 <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
   <p style="display: none;">
