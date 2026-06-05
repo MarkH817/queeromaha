@@ -1,5 +1,6 @@
 ---
 title: Omaha Queer Friendly Cafes
+description: Queer-friendly coffee shops and cafes in Omaha, including queer-owned spots and locations with gender-neutral bathrooms.
 layout: layouts/base.njk
 public: true
 items:

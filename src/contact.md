@@ -1,5 +1,6 @@
 ---
 title: Contact Page
+description: Get in touch with the Queer Omaha project.
 layout: layouts/base.njk
 public: true
 ---

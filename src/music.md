@@ -1,5 +1,6 @@
 ---
 title: Music Events / Venues
+description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 layout: layouts/base.njk
 public: true
 items:

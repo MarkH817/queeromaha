@@ -1,5 +1,6 @@
 ---
 title: Omaha Art Events / Venues
+description: Art events, creative groups, and venues in Omaha with a queer-friendly presence.
 layout: layouts/base.njk
 public: true
 items:

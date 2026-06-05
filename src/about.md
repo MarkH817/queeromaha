@@ -1,5 +1,6 @@
 ---
 title: About
+description: About Queer Omaha — a community-maintained directory of queer spaces and resources in Omaha that anyone can contribute to via GitHub.
 layout: layouts/base.njk
 public: true
 ---

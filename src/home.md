@@ -1,5 +1,6 @@
 ---
 title: Omaha Queer Community / Resources
+description: Community-maintained guide to queer social groups, spiritual spaces, and resources in Omaha, Nebraska.
 layout: layouts/base.njk
 permalink: /
 public: true
