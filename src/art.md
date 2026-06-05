@@ -25,7 +25,7 @@ items:
       - label: Insta
         url: https://www.instagram.com/omahasoundry/
       - label: Events Calendar
-        url: https://omahasoundry.org
+        url: https://soundryomaha.org
 
   - type: item
     name: Omaha Drum Family
