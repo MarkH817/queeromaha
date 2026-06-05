@@ -11,6 +11,6 @@ Open-Source [on GitHub](https://github.com/taraxvoid/queeromaha)
 
 [Send a note](/contact) to request access to the CMS backing the site (or make a Github PR with your proposed changes)
 
-Created by Tara, with deep gratitude to the Omaha queer /trans community and unconditional allies.
+Created by Tara, with deep gratitude to the Native and Indigenous peoples whose stolen land we reside on, the Black and Brown folx who built this town, and the Omaha Queer / Trans community.
 
 Inclusion on this site does not imply endorsement or vetting.
