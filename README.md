@@ -56,3 +56,9 @@ Husky requires tests to pass on pre/push. Please add tests for significant chang
 ```
 bun run test # unit tests + Playwright
 ```
+
+### CMS
+
+DecapCMS is backed by [DecapBridge](https://decapbridge.com/) as Netlify Identity is deprecated. This is attached to @taraxvoid 's Google account currently. 
+
+Users can be invited via email (inclusion Google SSO) to edit content at [the CMS admin panel](https://queeromaha.net/admin)
