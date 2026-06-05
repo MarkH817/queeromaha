@@ -50,14 +50,14 @@ describe('eleventy build', () => {
     const sitemap = readFileSync(join(ROOT, '_site', 'sitemap.xml'), 'utf8')
     expect(sitemap).toContain('<urlset')
     for (const path of ['/', '/cafes/', '/music/', '/art/', '/makers/']) {
-      expect(sitemap).toContain(`queeromaha.com${path}`)
+      expect(sitemap).toContain(`queeromaha.net${path}`)
     }
   })
 
   test('llms.txt has site description and page listings', () => {
     const llms = readFileSync(join(ROOT, '_site', 'llms.txt'), 'utf8')
     expect(llms).toContain('# Queer Omaha')
-    expect(llms).toContain('queeromaha.com')
+    expect(llms).toContain('queeromaha.net')
     expect(llms).toContain('Cafes')
   })
 })
