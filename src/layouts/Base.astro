@@ -1,0 +1,277 @@
+---
+import footerMessages from '../data/footerMessages.json'
+import site from '../data/site.json'
+import '../styles/theme.css'
+
+interface Props {
+  title?: string
+  description?: string
+  initialCategories?: string[]
+  initialTags?: string[]
+}
+
+const {
+  title,
+  description,
+  initialCategories = [],
+  initialTags = [],
+} = Astro.props
+const pageTitle = title ? `${title} | Queer Omaha` : 'Queer Omaha'
+const canonicalUrl = new URL(Astro.url.pathname, site.url).href
+const randomMsg =
+  footerMessages.messages[
+    Math.floor(Math.random() * footerMessages.messages.length)
+  ]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.7.0/styles/webawesome.css" />
+    <script type="module" src="https://ka-f.webawesome.com/webawesome@3.7.0/webawesome.loader.js"></script>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Queer Omaha" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Queer Omaha",
+        url: site.url,
+        description: "Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska.",
+      })}
+    </script>
+  </head>
+  <body data-initial-categories={initialCategories.join(' ')} data-initial-tags={initialTags.join(' ')}>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+      <nav class="main-nav" aria-label="Main navigation">
+        <wa-button href="/social" appearance="plain" data-filter="social" data-filter-type="category" aria-pressed="false">Social</wa-button>
+        <wa-button href="/spiritual" appearance="plain" data-filter="spiritual" data-filter-type="category" aria-pressed="false">Spiritual</wa-button>
+        <wa-button href="/art" appearance="plain" data-filter="art" data-filter-type="category" aria-pressed="false">Art</wa-button>
+        <wa-button href="/cafes" appearance="plain" data-filter="cafes" data-filter-type="category" aria-pressed="false">Cafes</wa-button>
+        <wa-button href="/music" appearance="plain" data-filter="music" data-filter-type="category" aria-pressed="false">Music</wa-button>
+        <wa-button href="/makers" appearance="plain" data-filter="makers" data-filter-type="category" aria-pressed="false">Makers</wa-button>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      {title && <h1 class="wa-visually-hidden">{title}</h1>}
+      <slot />
+    </main>
+    <footer>
+      <div class="footer-text">
+        <p class="footer-message">{randomMsg.text}</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+        <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub (opens in new tab)" class="footer-icon" rel="noopener noreferrer" target="_blank">
+          <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
+        </a>
+      </nav>
+    </footer>
+    <button id="backToTop" aria-label="Back to top">
+      <wa-icon name="circle-arrow-up" variant="solid"></wa-icon>
+    </button>
+    <script>
+      const emojiMap: Record<string, string> = {
+        '🚻': 'Gender-neutral bathroom',
+        '🛋️': 'Seating available',
+        '💻': 'Work/study spot',
+        '🏳️‍🌈': 'Queer owned',
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Emoji tooltips
+        const main = document.querySelector('main')
+        if (main) {
+          let html = main.innerHTML
+          let tipIdx = 0
+          for (const [emoji, desc] of Object.entries(emojiMap)) {
+            const parts = html.split(emoji)
+            if (parts.length > 1) {
+              let rebuilt = parts[0]
+              for (let i = 1; i < parts.length; i++) {
+                const id = `et${tipIdx++}`
+                rebuilt += `<wa-tooltip for="${id}">${desc}</wa-tooltip><span id="${id}" role="img" aria-label="${desc}">${emoji}</span>` + parts[i]
+              }
+              html = rebuilt
+            }
+          }
+          main.innerHTML = html
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop')
+        const header = document.querySelector('header')
+        if (backToTopButton && header) {
+          window.addEventListener('scroll', () => {
+            backToTopButton.classList.toggle('show', window.scrollY > header.offsetHeight)
+          })
+          backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          })
+        }
+
+        // Nav active state (for about/contact)
+        const navBtns = document.querySelectorAll('.main-nav wa-button')
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/'
+        navBtns.forEach(btn => {
+          const href = (btn.getAttribute('href') ?? '').replace(/\/$/, '') || '/'
+          if (href === currentPath) {
+            btn.classList.add('active')
+            btn.setAttribute('aria-current', 'page')
+          }
+        })
+
+        // Filter logic
+        const cards = document.querySelectorAll('[data-category]')
+        const pills = document.querySelectorAll('[data-filter]')
+        const clearBtn = document.getElementById('filterClear')
+        const activeTags = new Set()
+        const activeCategories = new Set()
+
+        function updateClearBtn() {
+          if (clearBtn) clearBtn.hidden = activeTags.size === 0
+        }
+
+        function applyFilters() {
+          cards.forEach(card => {
+            const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
+            const cardCat = card.dataset.category || ''
+            const tagMatch = activeTags.size === 0 || [...activeTags].every(t => cardTags.includes(t))
+            const catMatch = activeCategories.size === 0 || activeCategories.has(cardCat)
+            card.hidden = !(tagMatch && catMatch)
+          })
+          document.querySelectorAll('[data-category-heading]').forEach(heading => {
+            const cat = heading.dataset.categoryHeading || ''
+            heading.hidden = ![...cards].some(c => c.dataset.category === cat && !c.hidden)
+          })
+          updatePillAvailability()
+        }
+
+        function wouldHaveResults(slug, type) {
+          // Would any currently-visible card still match if we also added this filter?
+          return [...cards].some(card => {
+            if (card.hidden) return false
+            if (type === 'category') {
+              const testCats = new Set(activeCategories)
+              testCats.add(slug)
+              return testCats.has(card.dataset.category || '')
+            }
+            if (type === 'tag') {
+              const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
+              const testTags = new Set(activeTags)
+              testTags.add(slug)
+              return [...testTags].every(t => cardTags.includes(t))
+            }
+            return false
+          })
+        }
+
+        function updatePillAvailability() {
+          pills.forEach(pill => {
+            if (pill.classList.contains('active')) {
+              pill.disabled = false
+              pill.classList.remove('unavailable')
+              return
+            }
+            const slug = pill.dataset.filter || ''
+            const type = pill.dataset.filterType || ''
+            const available = wouldHaveResults(slug, type)
+            pill.disabled = !available
+            pill.classList.toggle('unavailable', !available)
+          })
+        }
+
+        function activateFilter(slug) {
+          const pill = document.querySelector('[data-filter="' + slug + '"]')
+          if (!pill) return
+          if (pill.dataset.filterType === 'category') activeCategories.add(slug)
+          else if (pill.dataset.filterType === 'tag') activeTags.add(slug)
+          pill.classList.add('active')
+          pill.setAttribute('aria-pressed', 'true')
+          applyFilters()
+          updateClearBtn()
+        }
+
+        function deactivateFilter(slug) {
+          const pill = document.querySelector('[data-filter="' + slug + '"]')
+          if (!pill) return
+          if (pill.dataset.filterType === 'category') activeCategories.delete(slug)
+          else if (pill.dataset.filterType === 'tag') activeTags.delete(slug)
+          pill.classList.remove('active')
+          pill.setAttribute('aria-pressed', 'false')
+          applyFilters()
+          updateClearBtn()
+        }
+
+        function buildUrl() {
+          const parts = [...activeCategories, ...activeTags]
+          return parts.length === 0 ? '/' : '/' + parts.join('/')
+        }
+
+        function setCategory(slug) {
+          // XOR: clear any active category before activating the new one
+          [...activeCategories].forEach(cat => {
+            const p = document.querySelector('[data-filter="' + cat + '"]')
+            if (p) { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false') }
+          })
+          activeCategories.clear()
+          activateFilter(slug)
+        }
+
+        if (clearBtn) {
+          clearBtn.addEventListener('click', () => {
+            activeTags.clear()
+            pills.forEach(p => {
+              if (p.dataset.filterType === 'tag') {
+                p.classList.remove('active')
+                p.setAttribute('aria-pressed', 'false')
+              }
+            })
+            applyFilters()
+            updateClearBtn()
+            history.pushState({}, '', buildUrl())
+          })
+        }
+
+        pills.forEach(pill => {
+          pill.addEventListener('click', (e) => {
+            e.preventDefault()
+            const slug = pill.dataset.filter || ''
+            const type = pill.dataset.filterType || ''
+            const isActive = pill.classList.contains('active')
+            if (type === 'category') {
+              if (isActive) deactivateFilter(slug)
+              else setCategory(slug)
+            } else {
+              if (isActive) deactivateFilter(slug)
+              else activateFilter(slug)
+            }
+            history.pushState({}, '', buildUrl())
+          })
+        })
+
+        // Activate filters from URL on load
+        const initCats = (document.body.dataset.initialCategories || '').split(' ').filter(Boolean)
+        const initTags = (document.body.dataset.initialTags || '').split(' ').filter(Boolean)
+        if (initCats.length > 0) setCategory(initCats[0])
+        initTags.forEach(activateFilter)
+      })
+    </script>
+  </body>
+</html>

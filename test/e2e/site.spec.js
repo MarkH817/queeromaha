@@ -3,12 +3,13 @@ import { expect, test } from '@playwright/test'
 const pages = [
   { path: '/', titleContains: 'Queer' },
   { path: '/about/', titleContains: 'About' },
-  { path: '/music/', titleContains: 'Music' },
-  { path: '/cafes/', titleContains: 'Cafe' },
-  { path: '/art/', titleContains: 'Art' },
-  { path: '/spiritual/', titleContains: 'Spirituality' },
-  { path: '/makers/', titleContains: 'Maker' },
   { path: '/contact/', titleContains: 'Contact' },
+  // filter slug pages all share the directory title
+  { path: '/music/', titleContains: 'Queer' },
+  { path: '/cafes/', titleContains: 'Queer' },
+  { path: '/art/', titleContains: 'Queer' },
+  { path: '/spiritual/', titleContains: 'Queer' },
+  { path: '/makers/', titleContains: 'Queer' },
 ]
 
 for (const { path, titleContains } of pages) {
@@ -65,4 +66,16 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
 test('footer is present', async ({ page }) => {
   await page.goto('/')
   await expect(page.locator('footer')).toBeVisible()
+})
+
+test('filter pills are present on home page', async ({ page }) => {
+  await page.goto('/')
+  const pills = page.locator('.filter-pill')
+  expect(await pills.count()).toBeGreaterThan(0)
+})
+
+test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
+  await page.goto('/spiritual/')
+  const pill = page.locator('[data-filter="spiritual"]')
+  await expect(pill).toHaveClass(/active/)
 })

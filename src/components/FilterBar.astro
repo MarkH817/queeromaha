@@ -1,0 +1,25 @@
+---
+import tagMap from '../data/tagMap.json'
+
+const tags = Object.entries(
+  tagMap as Record<string, { emoji: string; label: string }>,
+).map(([slug, { emoji, label }]) => ({ slug, emoji, label }))
+---
+
+<div class="filter-bar" role="group" aria-label="Filter by tag">
+  <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" hidden>
+    ✕ Clear
+  </button>
+  <div class="filter-pills">
+    {tags.map(({ slug, emoji, label }) => (
+      <button
+        class="filter-pill"
+        data-filter={slug}
+        data-filter-type="tag"
+        aria-pressed="false"
+      >
+        {emoji} {label}
+      </button>
+    ))}
+  </div>
+</div>

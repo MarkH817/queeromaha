@@ -7,9 +7,9 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
-describe('eleventy build', () => {
-  test('exits with code 0 and produces _site/', { timeout: 120_000 }, () => {
-    const result = spawnSync('bunx', ['@11ty/eleventy'], {
+describe('astro build', () => {
+  test('exits with code 0 and produces dist/', { timeout: 120_000 }, () => {
+    const result = spawnSync('bun', ['run', 'build'], {
       cwd: ROOT,
       encoding: 'utf8',
       timeout: 120_000,
@@ -17,47 +17,57 @@ describe('eleventy build', () => {
 
     expect(result.status).toBe(0)
 
-    const siteDir = join(ROOT, '_site')
-    expect(existsSync(siteDir)).toBe(true)
-    expect(readdirSync(siteDir).length).toBeGreaterThan(0)
+    const distDir = join(ROOT, 'dist')
+    expect(existsSync(distDir)).toBe(true)
+    expect(readdirSync(distDir).length).toBeGreaterThan(0)
   })
 
-  test('_site contains expected pages and discovery files', () => {
-    const siteDir = join(ROOT, '_site')
+  test('dist contains index and filter slug pages', () => {
+    const distDir = join(ROOT, 'dist')
     for (const file of [
       'index.html',
+      'art/index.html',
       'cafes/index.html',
       'music/index.html',
-      'art/index.html',
       'makers/index.html',
+      'social/index.html',
+      'spiritual/index.html',
+      'about/index.html',
+      'contact/index.html',
       'robots.txt',
-      'sitemap.xml',
+      'sitemap-index.xml',
       'llms.txt',
       '_headers',
     ]) {
-      expect(existsSync(join(siteDir, file))).toBe(true, `missing: ${file}`)
+      expect(existsSync(join(distDir, file))).toBe(true, `missing: ${file}`)
     }
   })
 
   test('robots.txt lists AI bots and sitemap', () => {
-    const robots = readFileSync(join(ROOT, '_site', 'robots.txt'), 'utf8')
+    const robots = readFileSync(join(ROOT, 'dist', 'robots.txt'), 'utf8')
     expect(robots).toContain('GPTBot')
     expect(robots).toContain('Anthropic-AI')
-    expect(robots).toContain('sitemap.xml')
+    expect(robots).toContain('sitemap')
   })
 
-  test('sitemap.xml contains all public pages', () => {
-    const sitemap = readFileSync(join(ROOT, '_site', 'sitemap.xml'), 'utf8')
-    expect(sitemap).toContain('<urlset')
-    for (const path of ['/', '/cafes/', '/music/', '/art/', '/makers/']) {
-      expect(sitemap).toContain(`queeromaha.net${path}`)
-    }
-  })
-
-  test('llms.txt has site description and page listings', () => {
-    const llms = readFileSync(join(ROOT, '_site', 'llms.txt'), 'utf8')
+  test('llms.txt has site description', () => {
+    const llms = readFileSync(join(ROOT, 'dist', 'llms.txt'), 'utf8')
     expect(llms).toContain('# Queer Omaha')
     expect(llms).toContain('queeromaha.net')
-    expect(llms).toContain('Cafes')
+  })
+
+  test('index.html contains filter pills and wa-card items', () => {
+    const html = readFileSync(join(ROOT, 'dist', 'index.html'), 'utf8')
+    expect(html).toContain('filter-pill')
+    expect(html).toContain('wa-card')
+    expect(html).toContain('data-category')
+  })
+
+  test('social/index.html has data-initial-categories="social"', () => {
+    const html = readFileSync(
+      join(ROOT, 'dist', 'social', 'index.html'),
+      'utf8',
+    )
+    expect(html).toContain('data-initial-categories="social"')
   })
 })

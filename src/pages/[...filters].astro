@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content'
+import FilterBar from '../components/FilterBar.astro'
+import ItemCard from '../components/ItemCard.astro'
+import tagMap from '../data/tagMap.json'
+import Base from '../layouts/Base.astro'
+
+const categorySlugs = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+const tagSlugs = Object.keys(tagMap as Record<string, unknown>)
+
+export async function getStaticPaths() {
+  const cats = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+  const tags = ['neutral-bathrooms', 'seating', 'work-spot']
+  const paths: { params: { filters: string } }[] = []
+
+  // Single slugs
+  for (const s of [...cats, ...tags]) {
+    paths.push({ params: { filters: s } })
+  }
+  // Cat + tag combos (both orderings)
+  for (const cat of cats) {
+    for (const tag of tags) {
+      paths.push({ params: { filters: `${cat}/${tag}` } })
+      paths.push({ params: { filters: `${tag}/${cat}` } })
+    }
+  }
+
+  return paths
+}
+
+const { filters = '' } = Astro.params
+const filterSlugs = filters.split('/').filter(Boolean)
+const initialCategories = filterSlugs.filter((s) => categorySlugs.includes(s))
+const initialTags = filterSlugs.filter((s) => tagSlugs.includes(s))
+
+const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+const entries = await getCollection('directory')
+entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
+
+const categoryLabels: Record<string, string> = {
+  social: 'Social',
+  spiritual: 'Spiritual',
+  art: 'Art',
+  cafes: 'Cafes',
+  music: 'Music',
+  makers: 'Makers',
+}
+---
+
+<Base
+  title="Queer Omaha — LGBTQ+ Community Directory"
+  description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
+  initialCategories={initialCategories}
+  initialTags={initialTags}
+>
+  <FilterBar />
+  {entries.map(entry => {
+    const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+    if (publicItems.length === 0) return null
+    return (
+      <section aria-label={categoryLabels[entry.id] ?? entry.id}>
+        <h2 class="section-header" data-category-heading={entry.id}>
+          {categoryLabels[entry.id] ?? entry.id}
+        </h2>
+        {publicItems.map(item => (
+          <ItemCard item={item} category={entry.id} />
+        ))}
+      </section>
+    )
+  })}
+</Base>

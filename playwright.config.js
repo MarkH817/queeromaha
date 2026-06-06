@@ -7,7 +7,7 @@ export default defineConfig({
     baseURL: 'http://localhost:4242',
   },
   webServer: {
-    command: 'bunx serve _site -l 4242 -n',
+    command: 'bunx serve dist -l 4242 -n',
     url: 'http://localhost:4242',
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,

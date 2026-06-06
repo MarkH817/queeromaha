@@ -1,0 +1,13 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '../layouts/Base.astro'
+
+const entries = await getCollection('simple')
+const entry = entries.find((e) => e.id === 'contact')
+if (!entry) throw new Error('contact.md not found')
+const { Content } = await render(entry)
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <Content />
+</Base>
