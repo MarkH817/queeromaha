@@ -6,6 +6,7 @@ const pages = [
   { path: '/music/', titleContains: 'Music' },
   { path: '/cafes/', titleContains: 'Cafe' },
   { path: '/art/', titleContains: 'Art' },
+  { path: '/spiritual/', titleContains: 'Spirituality' },
   { path: '/makers/', titleContains: 'Maker' },
   { path: '/contact/', titleContains: 'Contact' },
 ]
