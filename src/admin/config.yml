@@ -35,9 +35,75 @@ collections:
   - name: pages
     label: Pages
     files:
-      - label: Home
-        name: home
-        file: src/home.md
+      - label: Social
+        name: social
+        file: src/social.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - {
+              label: Layout,
+              name: layout,
+              widget: hidden,
+              default: layouts/base.njk,
+            }
+          - { label: Public, name: public, widget: boolean, default: true }
+          - label: Items
+            name: items
+            widget: list
+            types:
+              - label: Section Header
+                name: section
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Anchor ID, name: id, widget: string }
+                  - {
+                      label: Note,
+                      name: note,
+                      widget: markdown,
+                      required: false,
+                    }
+              - label: Item
+                name: item
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - {
+                      label: Public,
+                      name: public,
+                      widget: boolean,
+                      default: true,
+                    }
+                  - label: Tags
+                    name: tags
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - {
+                          label: "🚻 Gender-neutral Bathroom",
+                          value: "neutral-bathrooms",
+                        }
+                      - { label: "🛋️ Seating Available", value: "seating" }
+                      - { label: "💻 Work/Study Spot", value: "work-spot" }
+                      - { label: "🏳️‍🌈 Queer Owned", value: "queer-owned" }
+                  - {
+                      label: Description,
+                      name: description,
+                      widget: markdown,
+                      required: false,
+                    }
+                  - label: Links
+                    name: links
+                    widget: list
+                    required: false
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - { label: URL, name: url, widget: string }
+                  - { label: Notes, name: notes, widget: text, required: false }
+          - { label: Page Notes, name: notes, widget: text, required: false }
+
+      - label: Spirituality
+        name: spiritual
+        file: src/spiritual.md
         fields:
           - { label: Title, name: title, widget: string }
           - {
