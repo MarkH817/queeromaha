@@ -1,4 +1,8 @@
+# Astro generated
+.astro/
+
 # Editor
+.claude/
 .cursor
 .vscode/
 .idea
@@ -10,7 +14,6 @@ Thumbs.db
 # Dependencies
 node_modules/
 
-.claude/
 
 # Eleventy output
 _site/

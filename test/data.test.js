@@ -6,23 +6,17 @@ import { parse as parseYaml } from 'yaml'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const DATA_DIR = join(ROOT, 'src', '_data')
-const SRC_DIR = join(ROOT, 'src')
-
-function parseFrontMatter(filePath) {
-  const content = readFileSync(filePath, 'utf8')
-  const match = content.match(/^---\n([\s\S]*?)\n---/)
-  if (!match) return null
-  return parseYaml(match[1])
-}
+const DATA_DIR = join(ROOT, 'src', 'data')
+const CONTENT_DIR = join(ROOT, 'src', 'content', 'pages')
 
 // ---------------------------------------------------------------------------
 // Data files
 // ---------------------------------------------------------------------------
 
 describe('footerMessages.json', () => {
-  const raw = readFileSync(join(DATA_DIR, 'footerMessages.json'), 'utf8')
-  const data = JSON.parse(raw)
+  const data = JSON.parse(
+    readFileSync(join(DATA_DIR, 'footerMessages.json'), 'utf8'),
+  )
 
   test('has a messages array', () => {
     expect(Array.isArray(data.messages)).toBe(true)
@@ -38,8 +32,7 @@ describe('footerMessages.json', () => {
 })
 
 describe('tagMap.json', () => {
-  const raw = readFileSync(join(DATA_DIR, 'tagMap.json'), 'utf8')
-  const data = JSON.parse(raw)
+  const data = JSON.parse(readFileSync(join(DATA_DIR, 'tagMap.json'), 'utf8'))
 
   test('is a non-empty object', () => {
     expect(typeof data).toBe('object')
@@ -58,56 +51,33 @@ describe('tagMap.json', () => {
 })
 
 // ---------------------------------------------------------------------------
-// Front matter — top-level .md files
+// Directory YAML files
 // ---------------------------------------------------------------------------
 
-describe('markdown front matter', () => {
-  const mdFiles = readdirSync(SRC_DIR).filter((f) => f.endsWith('.md'))
-
-  test('there is at least one markdown file', () => {
-    expect(mdFiles.length).toBeGreaterThan(0)
-  })
-
-  for (const file of mdFiles) {
-    test(`${file} has a title`, () => {
-      const data = parseFrontMatter(join(SRC_DIR, file))
-      expect(data).not.toBeNull()
-      expect(typeof data.title).toBe('string')
-      expect(data.title.length).toBeGreaterThan(0)
-    })
-  }
-})
-
-// ---------------------------------------------------------------------------
-// Content item validation — all .md files with an items array
-// ---------------------------------------------------------------------------
-
-describe('content items', () => {
-  const tagMapRaw = readFileSync(join(DATA_DIR, 'tagMap.json'), 'utf8')
-  const tagMap = JSON.parse(tagMapRaw)
+describe('directory yaml files', () => {
+  const tagMap = JSON.parse(readFileSync(join(DATA_DIR, 'tagMap.json'), 'utf8'))
   const validTags = new Set(Object.keys(tagMap))
 
-  const mdFiles = readdirSync(SRC_DIR).filter((f) => f.endsWith('.md'))
+  const yamlFiles = readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.yaml'))
 
-  for (const file of mdFiles) {
-    const data = parseFrontMatter(join(SRC_DIR, file))
-    if (!data?.items) continue
+  test('there is at least one yaml file', () => {
+    expect(yamlFiles.length).toBeGreaterThan(0)
+  })
+
+  for (const file of yamlFiles) {
+    const data = parseYaml(readFileSync(join(CONTENT_DIR, file), 'utf8'))
 
     describe(file, () => {
-      test('sections have label and id', () => {
-        for (const item of data.items) {
-          if (item.type !== 'section') continue
-          expect(typeof item.label).toBe('string', `section missing label`)
-          expect(item.label.length).toBeGreaterThan(0)
-          expect(typeof item.id).toBe('string', `section missing id`)
-          expect(item.id.length).toBeGreaterThan(0)
-        }
+      test('has a title', () => {
+        expect(typeof data.title).toBe('string')
+        expect(data.title.length).toBeGreaterThan(0)
       })
 
-      test('items have a name', () => {
+      if (!data.items) return
+
+      test('all items have a name', () => {
         for (const item of data.items) {
-          if (item.type !== 'item') continue
-          expect(typeof item.name).toBe('string', `item missing name`)
+          expect(typeof item.name).toBe('string', 'item missing name')
           expect(item.name.length).toBeGreaterThan(0)
         }
       })
@@ -124,7 +94,7 @@ describe('content items', () => {
         }
       })
 
-      test('links have label and url', () => {
+      test('links have label and parseable url', () => {
         for (const item of data.items) {
           if (!item.links) continue
           for (const link of item.links) {
@@ -137,32 +107,55 @@ describe('content items', () => {
               'string',
               `link in "${item.name}" missing url`,
             )
-            expect(link.url.length).toBeGreaterThan(0)
-          }
-        }
-      })
-
-      test('link URLs are parseable', () => {
-        for (const item of data.items) {
-          if (!item.links) continue
-          for (const link of item.links) {
-            if (!link.url) continue
-            expect(
-              () => new URL(link.url),
+            expect(() => new URL(link.url)).not.toThrow(
               `"${item.name}" > "${link.label}" has unparseable URL: ${link.url}`,
-            ).not.toThrow()
+            )
           }
         }
       })
 
       test('no duplicate item names', () => {
-        const names = data.items
-          .filter((i) => i.type === 'item' && i.name)
-          .map((i) => i.name)
         const seen = new Set()
-        for (const name of names) {
-          expect(seen.has(name)).toBe(false, `duplicate item name: "${name}"`)
-          seen.add(name)
+        for (const item of data.items) {
+          expect(seen.has(item.name)).toBe(
+            false,
+            `duplicate item name: "${item.name}"`,
+          )
+          seen.add(item.name)
+        }
+      })
+
+      test('recurring_events have required fields and valid formats', () => {
+        for (const item of data.items) {
+          if (!item.recurring_events) continue
+          for (const evt of item.recurring_events) {
+            const ctx = `"${item.name}" recurring event "${evt.summary}"`
+            expect(typeof evt.summary).toBe('string', `${ctx}: missing summary`)
+            expect(evt.summary.length).toBeGreaterThan(0)
+            expect(typeof evt.rrule).toBe('string', `${ctx}: missing rrule`)
+            expect(evt.rrule.length).toBeGreaterThan(0)
+            expect(typeof evt.dtstart).toBe('string', `${ctx}: missing dtstart`)
+            expect(evt.dtstart).toMatch(
+              /^\d{8}$/,
+              `${ctx}: dtstart must be YYYYMMDD`,
+            )
+            expect(typeof evt.time).toBe('string', `${ctx}: missing time`)
+            expect(evt.time).toMatch(
+              /^\d{1,2}:\d{2}$/,
+              `${ctx}: time must be HH:MM`,
+            )
+            if (evt.end_time !== undefined) {
+              expect(evt.end_time).toMatch(
+                /^\d{1,2}:\d{2}$/,
+                `${ctx}: end_time must be HH:MM`,
+              )
+            }
+            if (evt.url !== undefined) {
+              expect(() => new URL(evt.url)).not.toThrow(
+                `${ctx}: unparseable url`,
+              )
+            }
+          }
         }
       })
     })

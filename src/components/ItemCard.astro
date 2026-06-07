@@ -1,0 +1,42 @@
+---
+import { marked } from 'marked'
+import type { z } from 'zod'
+import type { itemSchema } from '../content.config'
+import tagMap from '../data/tagMap.json'
+
+type TagMap = Record<string, { emoji: string; label: string }>
+const tags = tagMap as TagMap
+
+interface Props {
+  item: z.infer<typeof itemSchema>
+  category: string
+}
+
+const { item, category } = Astro.props
+const descHtml = item.description ? marked.parse(item.description) : ''
+const tagsAttr = item.tags?.join(' ') ?? ''
+---
+
+<wa-card class="item" data-category={category} data-tags={tagsAttr}>
+  <h3 slot="header">
+    {item.name}
+    {item.tags?.map(tag => {
+      const t = tags[tag]
+      return t ? (
+        <span role="img" aria-label={t.label} title={t.label}>{t.emoji}</span>
+      ) : null
+    })}
+  </h3>
+  {descHtml && <Fragment set:html={descHtml} />}
+  {item.links && item.links.length > 0 && (
+    <ul class="entry-links" slot="footer">
+      {item.links.map(link => (
+        <li>
+          <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+</wa-card>
