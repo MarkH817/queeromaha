@@ -124,6 +124,40 @@ describe('directory yaml files', () => {
           seen.add(item.name)
         }
       })
+
+      test('recurring_events have required fields and valid formats', () => {
+        for (const item of data.items) {
+          if (!item.recurring_events) continue
+          for (const evt of item.recurring_events) {
+            const ctx = `"${item.name}" recurring event "${evt.summary}"`
+            expect(typeof evt.summary).toBe('string', `${ctx}: missing summary`)
+            expect(evt.summary.length).toBeGreaterThan(0)
+            expect(typeof evt.rrule).toBe('string', `${ctx}: missing rrule`)
+            expect(evt.rrule.length).toBeGreaterThan(0)
+            expect(typeof evt.dtstart).toBe('string', `${ctx}: missing dtstart`)
+            expect(evt.dtstart).toMatch(
+              /^\d{8}$/,
+              `${ctx}: dtstart must be YYYYMMDD`,
+            )
+            expect(typeof evt.time).toBe('string', `${ctx}: missing time`)
+            expect(evt.time).toMatch(
+              /^\d{1,2}:\d{2}$/,
+              `${ctx}: time must be HH:MM`,
+            )
+            if (evt.end_time !== undefined) {
+              expect(evt.end_time).toMatch(
+                /^\d{1,2}:\d{2}$/,
+                `${ctx}: end_time must be HH:MM`,
+              )
+            }
+            if (evt.url !== undefined) {
+              expect(() => new URL(evt.url)).not.toThrow(
+                `${ctx}: unparseable url`,
+              )
+            }
+          }
+        }
+      })
     })
   }
 })
