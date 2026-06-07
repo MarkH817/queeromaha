@@ -31,7 +31,7 @@ const randomMsg =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.7.0/styles/webawesome.css" />
-    <script type="module" src="https://ka-f.webawesome.com/webawesome@3.7.0/webawesome.loader.js"></script>
+    <script is:inline type="module" src="https://ka-f.webawesome.com/webawesome@3.7.0/webawesome.loader.js"></script>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -46,7 +46,7 @@ const randomMsg =
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     {description && <meta property="og:description" content={description} />}
-    <script type="application/ld+json">
+    <script is:inline type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -148,12 +148,12 @@ const randomMsg =
         })
 
         // Filter logic — only active on directory pages that have cards
-        const cards = document.querySelectorAll('[data-category]')
-        const pills = document.querySelectorAll('[data-filter]')
-        const clearBtn = document.getElementById('filterClear')
+        const cards = document.querySelectorAll<HTMLElement>('[data-category]')
+        const pills = document.querySelectorAll<HTMLElement & { disabled: boolean }>('[data-filter]')
+        const clearBtn = document.getElementById('filterClear') as HTMLButtonElement | null
         if (cards.length === 0) return
-        const activeTags = new Set()
-        const activeCategories = new Set()
+        const activeTags = new Set<string>()
+        const activeCategories = new Set<string>()
 
         function updateClearBtn() {
           if (clearBtn) clearBtn.disabled = activeTags.size === 0
@@ -167,14 +167,14 @@ const randomMsg =
             const catMatch = activeCategories.size === 0 || activeCategories.has(cardCat)
             card.hidden = !(tagMatch && catMatch)
           })
-          document.querySelectorAll('[data-category-heading]').forEach(heading => {
+          document.querySelectorAll<HTMLElement>('[data-category-heading]').forEach(heading => {
             const cat = heading.dataset.categoryHeading || ''
             heading.hidden = ![...cards].some(c => c.dataset.category === cat && !c.hidden)
           })
           updatePillAvailability()
         }
 
-        function wouldHaveResults(slug, type) {
+        function wouldHaveResults(slug: string, type: string) {
           // Would any currently-visible card still match if we also added this filter?
           return [...cards].some(card => {
             if (card.hidden) return false
@@ -208,8 +208,8 @@ const randomMsg =
           })
         }
 
-        function activateFilter(slug) {
-          const pill = document.querySelector('[data-filter="' + slug + '"]')
+        function activateFilter(slug: string) {
+          const pill = document.querySelector<HTMLElement>('[data-filter="' + slug + '"]')
           if (!pill) return
           if (pill.dataset.filterType === 'category') activeCategories.add(slug)
           else if (pill.dataset.filterType === 'tag') activeTags.add(slug)
@@ -219,8 +219,8 @@ const randomMsg =
           updateClearBtn()
         }
 
-        function deactivateFilter(slug) {
-          const pill = document.querySelector('[data-filter="' + slug + '"]')
+        function deactivateFilter(slug: string) {
+          const pill = document.querySelector<HTMLElement>('[data-filter="' + slug + '"]')
           if (!pill) return
           if (pill.dataset.filterType === 'category') activeCategories.delete(slug)
           else if (pill.dataset.filterType === 'tag') activeTags.delete(slug)
@@ -235,7 +235,7 @@ const randomMsg =
           return parts.length === 0 ? '/' : '/' + parts.join('/')
         }
 
-        function setCategory(slug) {
+        function setCategory(slug: string) {
           // XOR: clear any active category before activating the new one
           [...activeCategories].forEach(cat => {
             const p = document.querySelector('[data-filter="' + cat + '"]')

@@ -13,7 +13,7 @@ export const recurringEventSchema = z.object({
   duration: z.string().optional(),
   location: z.string().optional(),
   description: z.string().optional(),
-  url: z.string().url().optional(),
+  url: z.url().optional(),
 })
 
 export const itemSchema = z.object({
@@ -21,9 +21,7 @@ export const itemSchema = z.object({
   public: z.boolean().optional(),
   description: z.string().optional(),
   tags: z.array(tagEnum).optional(),
-  links: z
-    .array(z.object({ label: z.string(), url: z.string().url() }))
-    .optional(),
+  links: z.array(z.object({ label: z.string(), url: z.url() })).optional(),
   notes: z.string().optional(),
   recurring_events: z.array(recurringEventSchema).optional(),
 })
