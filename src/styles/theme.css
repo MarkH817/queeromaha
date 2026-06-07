@@ -173,6 +173,9 @@ footer {
   min-width: 0;
   padding: 0.25rem 0.75rem;
   opacity: 0.8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .footer-nav {
@@ -299,7 +302,9 @@ p {
 footer p {
   margin: 0;
   font-size: 0.9rem;
-  overflow-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* Link styles */

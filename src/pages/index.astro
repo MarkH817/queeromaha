@@ -18,7 +18,7 @@ const categoryLabels: Record<string, string> = {
 }
 ---
 
-<Base title="Queer Omaha — LGBTQ+ Community Directory" description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska.">
+<Base title="Queer Omaha — LGBTQ+ Community Directory" description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska." initialCategories={['social']}>
   <FilterBar />
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
