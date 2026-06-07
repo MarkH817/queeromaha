@@ -12,6 +12,9 @@ items:
   - name: Soundry w/ Stacey Barelos
     public: true
     description: Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?
+     tags:
+      - neutral-bathrooms
+      - seating
     links:
       - label: Insta
         url: https://www.instagram.com/omahasoundry/
