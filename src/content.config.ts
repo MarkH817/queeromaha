@@ -4,6 +4,18 @@ import { z } from 'zod'
 
 export const tagEnum = z.enum(['neutral-bathrooms', 'seating', 'work-spot'])
 
+export const recurringEventSchema = z.object({
+  summary: z.string(),
+  rrule: z.string(),
+  dtstart: z.string(),
+  time: z.string(),
+  end_time: z.string().optional(),
+  duration: z.string().optional(),
+  location: z.string().optional(),
+  description: z.string().optional(),
+  url: z.string().url().optional(),
+})
+
 export const itemSchema = z.object({
   name: z.string(),
   public: z.boolean().optional(),
@@ -13,6 +25,7 @@ export const itemSchema = z.object({
     .array(z.object({ label: z.string(), url: z.string().url() }))
     .optional(),
   notes: z.string().optional(),
+  recurring_events: z.array(recurringEventSchema).optional(),
 })
 
 // Directory pages: structured yaml, no markdown body

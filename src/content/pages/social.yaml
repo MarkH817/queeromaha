@@ -28,6 +28,39 @@ items:
       Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
       Craft Night on Wednesday evening 6PM to 7:30PM
       STI testing certain Thursdays (check schedule)
+    recurring_events:
+      - summary: Support Group (19+) — OmahaForUs
+        rrule: FREQ=WEEKLY;BYDAY=WE
+        dtstart: "20250101"
+        time: "18:00"
+        end_time: "19:30"
+        location: OmahaForUs LGBTQIA* Center
+        description: Weekly support group for LGBTQ+ adults 19+. Hybrid — remote every other week.
+        url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
+      - summary: Game Night — OmahaForUs
+        rrule: FREQ=WEEKLY;BYDAY=TH
+        dtstart: "20250101"
+        time: "17:00"
+        end_time: "20:00"
+        location: OmahaForUs LGBTQIA* Center
+        description: Weekly queer game night. All welcome.
+        url: https://omahafor.us/events-calendar
+      - summary: Dungeons & Dragons — OmahaForUs
+        rrule: FREQ=MONTHLY;BYDAY=1TU,3TU
+        dtstart: "20250107"
+        time: "16:00"
+        end_time: "19:00"
+        location: OmahaForUs LGBTQIA* Center
+        description: D&D on the 1st and 3rd Tuesdays of each month.
+        url: https://omahafor.us/events-calendar
+      - summary: Craft Night — OmahaForUs
+        rrule: FREQ=WEEKLY;BYDAY=WE
+        dtstart: "20250101"
+        time: "18:00"
+        end_time: "19:30"
+        location: OmahaForUs LGBTQIA* Center
+        description: Weekly craft night at OmahaForUs.
+        url: https://omahafor.us/events-calendar
   - name: Wild Garden Insta
     public: false
     description: Social group
