@@ -157,7 +157,7 @@ main:focus-visible {
 footer {
   background: #6d28d9;
   color: #fff;
-  padding: 0.4rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   position: sticky;
   bottom: 0;
   z-index: 999;
@@ -179,7 +179,7 @@ footer {
 .footer-nav {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0;
   flex-shrink: 0;
 }
 
@@ -188,6 +188,7 @@ footer a {
   text-decoration: none;
   font-size: 1rem;
   opacity: 0.8;
+  padding: 0.3rem 0.75rem;
 }
 
 footer a:hover {
@@ -199,22 +200,34 @@ footer a:hover {
 .footer-icon {
   display: flex;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   background: none;
   border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: none;
-  padding: 0;
+  padding: 0.1rem 0.5rem 0.1rem 0.75rem;
 }
 
 .footer-credit {
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  opacity: 0.6;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.1rem 0.75rem 0.1rem 0;
 }
 
 .footer-credit a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #e9d5ff;
+  text-decoration: none;
   font-size: inherit;
-  color: inherit;
+  opacity: 0.8;
+}
+
+.footer-credit a:hover {
+  color: #fff;
   opacity: 1;
 }
 
@@ -422,8 +435,13 @@ blockquote p {
     color 0.15s;
 }
 
-.filter-clear:hover {
+.filter-clear:hover:not(:disabled) {
   background: #f3e8ff;
+}
+
+.filter-clear:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .filter-bar {

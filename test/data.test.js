@@ -127,26 +127,3 @@ describe('directory yaml files', () => {
     })
   }
 })
-
-// ---------------------------------------------------------------------------
-// Simple pages (.md) — about, contact
-// ---------------------------------------------------------------------------
-
-describe('simple pages', () => {
-  const mdFiles = readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.md'))
-
-  test('there is at least one md file', () => {
-    expect(mdFiles.length).toBeGreaterThan(0)
-  })
-
-  for (const file of mdFiles) {
-    test(`${file} has a title in frontmatter`, () => {
-      const content = readFileSync(join(CONTENT_DIR, file), 'utf8')
-      const match = content.match(/^---\n([\s\S]*?)\n---/)
-      expect(match).not.toBeNull()
-      const data = parseYaml(match[1])
-      expect(typeof data.title).toBe('string')
-      expect(data.title.length).toBeGreaterThan(0)
-    })
-  }
-})

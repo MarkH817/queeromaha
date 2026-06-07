@@ -151,17 +151,6 @@ declare module 'astro:content' {
         filePath?: string
       }
     >
-    simple: Record<
-      string,
-      {
-        id: string
-        body?: string
-        collection: 'simple'
-        data: InferEntrySchema<'simple'>
-        rendered?: RenderedContent
-        filePath?: string
-      }
-    >
   }
 
   type ExtractLoaderTypes<T> = T extends import('astro/loaders').LiveLoader<

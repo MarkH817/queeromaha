@@ -16,6 +16,10 @@ items:
         url: https://omahafor.us/programs/mental-health
       - label: Dedicated Teen / Youth Programs and Space
         url: https://omahafor.us/programs/youth-programs
+    tags:
+      - work-spot
+      - neutral-bathrooms
+      - seating
     notes: |
       Transition clothing and supplies, Food/hygiene pantry, clothes closet, arts and crafts. Name-change / legal resources. Teen events and groups. Reading room and lending library. Private showers. Volunteering opportunities.
       Support group (19+) every Wednesday evening 6PM to 7:30PM [**Register Here**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u). Outside of Omaha? It's Remote every other week!
@@ -30,7 +34,7 @@ items:
     links:
       - label: Instagram
         url: https://www.instagram.com/thewildgardenomaha/
-    notes: Potentially inactive circa spring '26. Local inperson group presumably
+    notes: Potentially inactive circa spring 2026. Local inperson group presumably
   - name: Out Wild Adventures
     public: true
     description: Hikes, coffee chats, movie nights, etc. Sober-friendly
@@ -99,7 +103,7 @@ items:
     links:
       - label: FB
         url: https://www.facebook.com/queernite/
-    notes: possibly defunct
+    notes: appears to be  inactive
   - name: Omaha LGBT* Group
     public: false
     links:

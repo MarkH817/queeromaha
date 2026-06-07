@@ -72,12 +72,16 @@ const randomMsg =
       <slot />
     </main>
     <footer>
+      <div class="footer-credit">
+        <a href="https://github.com/ravenflight" rel="noopener noreferrer" target="_blank" aria-label="ravenflight on GitHub (opens in new tab)">
+          made with <wa-icon name="heart" variant="solid" class="footer-heart"></wa-icon> by rvnflt
+        </a>
+      </div>
       <div class="footer-text">
         <p class="footer-message">{randomMsg.text}</p>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/contact">Contact</a>
-        <a href="/about">About</a>
+        <a href="/about">About &amp; Contact</a>
         <a href="https://github.com/taraxvoid/queeromaha" aria-label="GitHub (opens in new tab)" class="footer-icon" rel="noopener noreferrer" target="_blank">
           <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
         </a>
@@ -137,15 +141,16 @@ const randomMsg =
           }
         })
 
-        // Filter logic
+        // Filter logic — only active on directory pages that have cards
         const cards = document.querySelectorAll('[data-category]')
         const pills = document.querySelectorAll('[data-filter]')
         const clearBtn = document.getElementById('filterClear')
+        if (cards.length === 0) return
         const activeTags = new Set()
         const activeCategories = new Set()
 
         function updateClearBtn() {
-          if (clearBtn) clearBtn.hidden = activeTags.size === 0
+          if (clearBtn) clearBtn.disabled = activeTags.size === 0
         }
 
         function applyFilters() {

@@ -7,8 +7,8 @@ const tags = Object.entries(
 ---
 
 <div class="filter-bar" role="group" aria-label="Filter by tag">
-  <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" hidden>
-    ✕ Clear
+  <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
+    ✕ Clear Tags
   </button>
   <div class="filter-pills">
     {tags.map(({ slug, emoji, label }) => (

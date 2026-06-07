@@ -23,20 +23,9 @@ export const directoryPageSchema = z.object({
   items: z.array(itemSchema).optional(),
 })
 
-// Simple pages: frontmatter + markdown body (about, contact)
-export const simplePageSchema = z.object({
-  title: z.string(),
-  description: z.string().optional(),
-  public: z.boolean().default(true),
-})
-
 export const collections = {
   directory: defineCollection({
     loader: glob({ pattern: '*.yaml', base: './src/content/pages' }),
     schema: directoryPageSchema,
-  }),
-  simple: defineCollection({
-    loader: glob({ pattern: '*.md', base: './src/content/pages' }),
-    schema: simplePageSchema,
   }),
 }

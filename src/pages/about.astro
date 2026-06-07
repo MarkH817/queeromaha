@@ -1,13 +1,52 @@
 ---
-import { getCollection, render } from 'astro:content'
 import Base from '../layouts/Base.astro'
-
-const entries = await getCollection('simple')
-const entry = entries.find((e) => e.id === 'about')
-if (!entry) throw new Error('about.md not found')
-const { Content } = await render(entry)
 ---
 
-<Base title={entry.data.title} description={entry.data.description}>
-  <Content />
+<Base
+  title="About"
+  description="About Queer Omaha — a community-maintained directory of queer spaces and resources in Omaha that anyone can contribute to via GitHub."
+>
+  <section aria-label="About">
+    <h2 class="section-header" data-category-heading="about">About</h2>
+    <p>Community-maintained list of Omaha queer groups, events, venues, and spaces.</p>
+    <p>Open-Source <a href="https://github.com/taraxvoid/queeromaha">on GitHub</a></p>
+    <p>
+      Created by Tara, with deep gratitude to the Native and Indigenous peoples whose stolen land we
+      reside on, the Black and Brown folx who built this town, and the Omaha Queer / Trans community.
+    </p>
+    <p>Inclusion on this site does not imply endorsement or vetting.</p>
+  </section>
+
+  <section aria-label="Contact">
+    <h2 class="section-header" data-category-heading="contact">Contact</h2>
+    <p>Suggest a venue or group, or request CMS access to contribute directly.</p>
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <p style="display: none;">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <p>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address (optional)"
+          style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+        />
+      </p>
+      <p>
+        <textarea
+          name="message"
+          required
+          rows="6"
+          placeholder="Suggest an event, group, venue — or ask for CMS access"
+          style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit;"
+        ></textarea>
+      </p>
+      <p>
+        <button
+          type="submit"
+          style="background: #6d28d9; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: 500;"
+        >Send</button>
+      </p>
+    </form>
+  </section>
 </Base>

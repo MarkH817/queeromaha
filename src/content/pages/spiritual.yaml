@@ -3,6 +3,9 @@ description: Spiritual groups, meditation, and wellness resources in Omaha with 
 public: true
 items:
   - name: Vocal Release Class
+    tags:
+      - neutral-bathrooms
+      - seating
     public: false
     description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC
     links:
@@ -17,6 +20,9 @@ items:
       PWYC
 
       Getting There: Park in the back of the corner Shiki building on north side of Dodge at 49th, go in the door at the rear entrance of State Farm in the back corner of the lot, Go all the way down the stairs, following signs to the end of the hallway.
+    tags:
+      - neutral-bathrooms
+      - seating
     links:
       - label: Class Schedule (scroll down)
         url: https://www.anandaomaha.com/brooke-monaco-wellness
@@ -24,11 +30,17 @@ items:
         url: https://www.instagram.com/ananda.omaha/
   - name: Honey Locust Sangha
     public: true
+    tags:
+      - neutral-bathrooms
+      - seating
     description: Low-key meditation in progressive Buddhist tradition on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific.
     links:
       - label: Events Calendar
         url: https://honeylocustsangha.org/events.html
   - name: Nebraska Zen Center
+    tags:
+      - neutral-bathrooms
+      - seating
     public: true
     description: In-person meditation Sundays @ 9:45AM in Bemis Park
     links:
@@ -37,6 +49,9 @@ items:
       - label: Events Calendar
         url: https://nebraskazencenter.org/upcoming-events/
   - name: Sound Bath Sundays w/ Havalynn Russell
+    tags:
+      - neutral-bathrooms
+      - seating
     public: true
     description: Get stratospheric with Havalynn at Church Art House every Sunday (except the 1st of the month) @ 10:30AM.  PWYC
     links:

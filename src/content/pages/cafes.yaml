@@ -4,7 +4,7 @@ public: true
 items:
   - name: Roast Coffeehouse
     public: true
-    description: Great people, coffee and pastries in Aksarben. Larger location at 120th and Blondo with more comfortable seating.
+    description: Great people, coffee and pastries both in Aksarben / 120th and Blondo. 
     links:
       - label: Insta
         url: https://www.instagram.com/roast_coffeehouse/
@@ -17,7 +17,7 @@ items:
       - work-spot
   - name: Godega
     public: true
-    description: Grab-and-go food, specialty snacks, places to sit. Has Bagel Bin bagels!
+    description: Grab-and-go food, specialty snacks, and a place to hang out
     links:
       - label: Insta
         url: https://www.instagram.com/godegamarket/
@@ -31,7 +31,7 @@ items:
       - work-spot
   - name: Marigold's
     public: true
-    description: Artisinal goods and crafts. Technically a cafe since they have coffee samples.
+    description: Artisanal goods and crafts. 
     links:
       - label: Insta
         url: https://www.instagram.com/marigoldsmercantile
@@ -61,8 +61,8 @@ items:
       - neutral-bathrooms
       - work-spot
   - name: Sweet Magnolias
-    public: false
-    description: Queer pastry shop.
+    public: true
+    description: Queer-owned pastry shop.
     links:
       - label: Insta
         url: https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en
@@ -70,7 +70,7 @@ items:
         url: https://www.sweetmagnoliasbakeshop.com/
   - name: Spielbound
     public: true
-    description: Board game cafe. There's an [Active Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
+    description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
     links:
       - label: Official Discord
         url: https://discord.com/invite/official-spellbound-861024184947572736
@@ -88,7 +88,7 @@ items:
         url: https://www.facebook.com/hardycoffeeco/
       - label: Website
         url: https://www.hardycoffee.com/
-    notes: Quality may have gone to shit, worker pay issues.
+    notes: RUMINT quality / worker pay concerns
     tags:
       - seating
       - neutral-bathrooms
@@ -107,7 +107,7 @@ items:
       - seating
   - name: Legends Comics & Coffee
     public: true
-    description: Comic shop with a large queer section. Hosts board game meetups.
+    description: Comic shop with a large queer section. Board game space in the back.
     links:
       - label: Insta
         url: https://www.instagram.com/legendcomicsandcoffee/?hl=en
@@ -118,7 +118,7 @@ items:
       - seating
   - name: Blue Line Coffee
     public: true
-    description: Great coffee and cool people. Posts flyers for local events. Limited and uncomfortable seating.
+    description: Great coffee and cool people. Posts flyers for local events. 
     links:
       - label: Insta
         url: https://www.instagram.com/bluelinecoffeeomaha/?hl=en
@@ -130,7 +130,6 @@ items:
   - name: Lola's
     public: false
     description: Pricy cafe in the movie theater. Good for dates.
-    notes: Owner is Jayson, met at NZC, stated it's queer owned.
   - name: Amateur Coffee
     public: true
     description: Small place whose takeout coffee comes in glass containers with deposit.
@@ -143,6 +142,7 @@ items:
         url: https://www.instagram.com/amateurcoffee
     tags:
       - neutral-bathrooms
+    notes: Met Owner at NZC who stated it's queer owned.
   - name: Urban Abbey
     public: false
     description: Progressive Methodist cafe / bookstore with a queer section. Chill place to hang out.
@@ -154,7 +154,7 @@ items:
       - seating
   - name: Reading Room
     public: true
-    description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See Poetry Menu for many other [poetry events](https://poetrymenu.com/).
+    description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
     links:
       - label: Insta
         url: https://www.instagram.com/reading_room_omaha/
@@ -172,7 +172,7 @@ items:
         url: https://www.rallycoffee.co/pages/locations
     notes: Go there first before listing.
   - name: Zen Coffee
-    public: false
+    public: true
     description: Downtown and West O locations.
     links:
       - label: Insta
@@ -183,6 +183,7 @@ items:
         url: https://www.zencoffeecompany.com/
     tags:
       - neutral-bathrooms
+      - seating
   - name: Howlin Hounds
     public: false
     links:

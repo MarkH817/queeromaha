@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 const pages = [
   { path: '/', titleContains: 'Queer' },
   { path: '/about/', titleContains: 'About' },
-  { path: '/contact/', titleContains: 'Contact' },
+  { path: '/contact/', titleContains: 'About' },
   // filter slug pages all share the directory title
   { path: '/music/', titleContains: 'Queer' },
   { path: '/cafes/', titleContains: 'Queer' },

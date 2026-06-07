@@ -6,8 +6,7 @@ export async function GET() {
 ## Pages
 
 - [Queer Omaha Directory](https://queeromaha.net/): Full directory of queer groups, venues, cafes, music, art, and spiritual spaces in Omaha.
-- [About](https://queeromaha.net/about): About the Queer Omaha project.
-- [Contact](https://queeromaha.net/contact): Get in touch with the Queer Omaha project.
+- [About &amp; Contact](https://queeromaha.net/about): About the project and how to get in touch.
 `
   return new Response(body, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },

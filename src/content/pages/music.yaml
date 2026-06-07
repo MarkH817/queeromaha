@@ -6,7 +6,7 @@ items:
     description: Where to learn about the cool shows
     public: true
     links:
-      - label: Omahaunderground.net
+      - label: omahaunderground.net
         url: https://omahaunderground.net/shows/
       - label: Omaha Buzz
         url: https://omahabuzz.substack.com
@@ -14,6 +14,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
+      - seating
     description: Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. Clay throwing classes, kiln and glazing.
     links:
       - label: Insta
@@ -25,7 +26,7 @@ items:
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/the-church-arthouse
   - name: No-Coast Noise Collective
-    public: false
+    public: true
     description: Experimental music and sound art collective. Centered out of Project Project.
     links:
       - label: Insta
@@ -102,6 +103,9 @@ items:
         url: https://omahaunderground.net/venues/the-sydney
   - name: The Coven
     public: true
+    tags:
+      - neutral-bathrooms
+      - seating
     description: |
       Goth club at the old Down Under address. Punk / darkwave / industrial shows.
 
@@ -168,6 +172,7 @@ items:
     public: true
     tags:
       - neutral-bathrooms
+      - seating
     description: Vegan restaurant in Blackstone with resident DJs performing on Saturdays.
     links:
       - label: Insta
@@ -211,9 +216,8 @@ items:
         url: https://www.bemiscenter.org/low-end
   - name: Red Light Lounge (fka The Verdict)
     public: true
-    description: |
-      The Slab (Darkwave and Rock), Industrial Night,
-      RAWR XD Emo Nite
+    description: Hub of industrial and darkwave scene 
+
     links:
       - label: The Slab (2nd Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
