@@ -70,4 +70,36 @@ describe('astro build', () => {
     )
     expect(html).toContain('data-initial-categories="social"')
   })
+
+  test('dist contains events.ics', () => {
+    expect(existsSync(join(ROOT, 'dist', 'events.ics'))).toBe(true)
+  })
+
+  test('events.ics is a valid VCALENDAR', () => {
+    const ics = readFileSync(join(ROOT, 'dist', 'events.ics'), 'utf8')
+    expect(ics).toContain('BEGIN:VCALENDAR')
+    expect(ics).toContain('END:VCALENDAR')
+    expect(ics).toContain('VERSION:2.0')
+    expect(ics).toContain('X-WR-CALNAME:Queer Omaha Events')
+  })
+
+  test('events.ics contains seeded OmahaForUs recurring events', () => {
+    const ics = readFileSync(join(ROOT, 'dist', 'events.ics'), 'utf8')
+    expect(ics).toContain('RRULE:')
+    expect(ics).toContain('Support Group')
+    expect(ics).toContain('Game Night')
+  })
+
+  test('index.html contains footer calendar subscribe link', () => {
+    const html = readFileSync(join(ROOT, 'dist', 'index.html'), 'utf8')
+    expect(html).toContain('calendar.google.com')
+    expect(html).toContain('footer-cal')
+  })
+
+  test('index.html has calendar autodiscovery link', () => {
+    const html = readFileSync(join(ROOT, 'dist', 'index.html'), 'utf8')
+    expect(html).toContain('rel="alternate"')
+    expect(html).toContain('type="text/calendar"')
+    expect(html).toContain('/events.ics')
+  })
 })

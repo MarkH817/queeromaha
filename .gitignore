@@ -1,3 +1,6 @@
+# Astro generated
+.astro/
+
 # Editor
 .cursor
 .vscode/

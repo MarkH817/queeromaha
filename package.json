@@ -13,6 +13,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
     "dev": "astro dev",
+    "check": "astro check",
     "serve": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -31,10 +32,12 @@
     "yaml": "^2.9.0"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.4",
     "marked": "^18.0.4",
-    "queeromaha.com": "."
+    "queeromaha.com": ".",
+    "typescript": "^6.0.3"
   },
   "volta": {
     "node": "24.15.0"
