@@ -39,10 +39,12 @@ const FETCH_HEADERS = {
 // classification to avoid false positives
 const SKIP_DOMAINS = [
   'facebook.com',
+  'synthomaha.net',
+  'soundryomaha.org',
   'm.facebook.com',
   'fb.com',
   'linkedin.com',
-  'fifthhouseomaha.com', // filters headless clients; confirmed live
+  'fifthhouseomaha.com',
 ]
 
 // Platform-specific "not found" body text — returned as HTTP 200
