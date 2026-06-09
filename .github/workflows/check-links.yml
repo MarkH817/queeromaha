@@ -9,32 +9,18 @@ on:
       - "src/content/pages/**"
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
-  # Scheduled / manual: check all links, create issue + PR for dead ones
+  # Scheduled / manual: check all links
   check-all:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Configure git identity
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-
       - uses: oven-sh/setup-bun@v2
-
       - run: bun install --frozen-lockfile
-
       - run: bun scripts/check-links.js
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
 
   # PR check: only verify newly added links; fails if any are dead
   check-pr:
@@ -44,11 +30,8 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-
       - uses: oven-sh/setup-bun@v2
-
       - run: bun install --frozen-lockfile
-
       - run: bun scripts/check-links.js --pr
         env:
           GITHUB_BASE_REF: ${{ github.base_ref }}
