@@ -20,22 +20,24 @@
     "serve:cms": "bunx decap-server",
     "prepare": "husky",
     "lint": "biome check .",
-    "format": "biome check --write ."
+    "format": "biome check --write .",
+    "check:links": "bun scripts/check-links.js",
+    "check:links:pr": "bun scripts/check-links.js --pr"
   },
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
+    "@astrojs/check": "^0.9.9",
+    "@biomejs/biome": "2.4.16",
     "@playwright/test": "^1.60.0",
     "husky": "^9.1.7",
     "yaml": "^2.9.0"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.4",
-    "marked": "^18.0.4",
+    "marked": "^18.0.5",
     "queeromaha.com": ".",
     "typescript": "^6.0.3"
   },
