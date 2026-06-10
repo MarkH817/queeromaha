@@ -20,7 +20,9 @@
     "serve:cms": "bunx decap-server",
     "prepare": "husky",
     "lint": "biome check .",
-    "format": "biome check --write ."
+    "format": "biome check --write .",
+    "check:links": "bun scripts/check-links.js",
+    "check:links:pr": "bun scripts/check-links.js --pr"
   },
   "keywords": [],
   "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
