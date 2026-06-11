@@ -53,7 +53,6 @@ items:
         location: OmahaForUs LGBTQIA* Center
         description: D&D on the 1st and 3rd Tuesdays of each month.
         url: https://omahafor.us/events-calendar
-        calendar
       - summary: Open Volunteering Day — OmahaForUs
         rrule: FREQ=MONTHLY;BYDAY=2FR
         dtstart: "20250107"
