@@ -22,6 +22,7 @@ site_url: https://queeromaha.net
 local_backend: true
 media_folder: public/img
 public_folder: /img
+publish_mode: editorial_workflow
 
 # Reusable field definitions via YAML anchors
 _item_fields: &item_fields
