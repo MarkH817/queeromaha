@@ -8,12 +8,15 @@ Directory of queer/trans groups, venues and spaces in Omaha.
 
 - A working \*nix shell
 - [Bun](https://bun.sh/) as drop-in Node interpreter replacement, package manager and test runner
+- (optional) [volta](https://volta.sh/) for node ver wrangling
+- (optional) [Netlify CLI](https://docs.netlify.com/cli/get-started/) for managing live deployment
+
 
 ## Stack
 
-- [11ty](https://www.11ty.dev/) — static site generator
+- [Astro](https://astro.build/) — static site generator
 - [Decap CMS](https://decapcms.org/) — content management
-- (optional) [Netlify CLI](https://docs.netlify.com/cli/get-started/) for managing live deployment
+- [Biome](https://biomejs.dev/) - lint
 
 ## Local Dev
 
