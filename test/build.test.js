@@ -53,10 +53,17 @@ describe('astro build', () => {
     )
   })
 
-  test('llms.txt has site description', () => {
+  test('llms.txt has appropriate fields', () => {
     const llms = readFileSync(join(ROOT, 'dist', 'llms.txt'), 'utf8')
-    expect(llms).toContain('# Queer Omaha')
-    expect(llms).toContain('queeromaha.net')
+    expect(llms).toContain('Queer Omaha Directory')
+    expect(llms).toContain('queeromaha.net/about')
+  })
+
+  test('_header has appropriate fields', () => {
+    const headers = readFileSync(join(ROOT, 'public', '_headers'), 'utf8')
+    expect(headers).toContain('sitemap.xml')
+    expect(headers).toContain('llms.txt')
+    expect(headers).toContain('service-doc')
   })
 
   test('index.html contains filter pills and wa-card items', () => {
