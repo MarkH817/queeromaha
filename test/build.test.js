@@ -43,11 +43,14 @@ describe('astro build', () => {
     }
   })
 
-  test('robots.txt lists AI bots and sitemap', () => {
+  test('robots.txt sets content-signal and sitemap', () => {
     const robots = readFileSync(join(ROOT, 'dist', 'robots.txt'), 'utf8')
     expect(robots).toContain('GPTBot')
     expect(robots).toContain('Anthropic-AI')
     expect(robots).toContain('sitemap')
+    expect(robots).toContain(
+      'Content-Signal: ai-train=no, search=yes, ai-input=yes',
+    )
   })
 
   test('llms.txt has site description', () => {
