@@ -79,3 +79,41 @@ test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
   const pill = page.locator('[data-filter="spiritual"]')
   await expect(pill).toHaveClass(/active/)
 })
+
+test('footer message is hidden when it would overflow on narrow screens', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 700 })
+  await page.goto('/')
+  const footerText = page.locator('.footer-text')
+  const footerMessage = page.locator('.footer-message')
+
+  await expect(async () => {
+    const hidden = await footerText.isHidden()
+    if (!hidden) {
+      const overflowing = await footerMessage.evaluate(
+        (el) => el.scrollWidth > el.clientWidth,
+      )
+      expect(overflowing).toBe(false)
+    }
+  }).toPass()
+
+  // calendar link and footer nav remain visible regardless
+  await expect(page.locator('.footer-cal a')).toBeVisible()
+  await expect(page.locator('.footer-nav a[href="/about"]')).toBeVisible()
+})
+
+test('footer message is visible and unclipped on wide screens', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1024, height: 800 })
+  await page.goto('/')
+  const footerText = page.locator('.footer-text')
+  const footerMessage = page.locator('.footer-message')
+
+  await expect(footerText).toBeVisible()
+  const overflowing = await footerMessage.evaluate(
+    (el) => el.scrollWidth > el.clientWidth,
+  )
+  expect(overflowing).toBe(false)
+})

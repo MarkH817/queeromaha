@@ -124,6 +124,18 @@ const randomMsg =
           main.innerHTML = html
         }
 
+        // Hide footer message if it doesn't fit (e.g. narrow mobile screens)
+        const footerText = document.querySelector<HTMLElement>('.footer-text')
+        const footerMessage = document.querySelector<HTMLElement>('.footer-message')
+        if (footerText && footerMessage) {
+          const checkFooterFit = () => {
+            footerText.hidden = false
+            footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
+          }
+          checkFooterFit()
+          window.addEventListener('resize', checkFooterFit)
+        }
+
         // Back to top button
         const backToTopButton = document.getElementById('backToTop')
         const header = document.querySelector('header')
