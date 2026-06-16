@@ -2,26 +2,35 @@
 import { getCollection } from 'astro:content'
 import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
-import tagMap from '../data/tagMap.json'
 import Base from '../layouts/Base.astro'
+import { slugify } from '../utils/slugify'
 
 const categorySlugs = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
-const tagSlugs = Object.keys(tagMap as Record<string, unknown>)
 
 export async function getStaticPaths() {
   const cats = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
-  const tags = ['neutral-bathrooms', 'seating', 'work-spot']
+  const entries = await getCollection('directory')
+  const neighborhoodSlugs = [
+    ...new Set(
+      entries.flatMap((e) =>
+        (e.data.items ?? [])
+          .filter((i) => i.public !== false && i.location?.neighborhood)
+          .map((i) => slugify(i.location?.neighborhood ?? '')),
+      ),
+    ),
+  ]
+
   const paths: { params: { filters: string } }[] = []
 
   // Single slugs
-  for (const s of [...cats, ...tags]) {
+  for (const s of [...cats, ...neighborhoodSlugs]) {
     paths.push({ params: { filters: s } })
   }
-  // Cat + tag combos (both orderings)
+  // Cat + neighborhood combos (both orderings)
   for (const cat of cats) {
-    for (const tag of tags) {
-      paths.push({ params: { filters: `${cat}/${tag}` } })
-      paths.push({ params: { filters: `${tag}/${cat}` } })
+    for (const n of neighborhoodSlugs) {
+      paths.push({ params: { filters: `${cat}/${n}` } })
+      paths.push({ params: { filters: `${n}/${cat}` } })
     }
   }
 
@@ -31,11 +40,29 @@ export async function getStaticPaths() {
 const { filters = '' } = Astro.params
 const filterSlugs = filters.split('/').filter(Boolean)
 const initialCategories = filterSlugs.filter((s) => categorySlugs.includes(s))
-const initialTags = filterSlugs.filter((s) => tagSlugs.includes(s))
 
 const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
 const entries = await getCollection('directory')
 entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
+
+const allNeighborhoods: { slug: string; label: string }[] = []
+const seenSlugs = new Set<string>()
+for (const entry of entries) {
+  for (const item of entry.data.items ?? []) {
+    if (item.public !== false && item.location?.neighborhood) {
+      const slug = slugify(item.location.neighborhood)
+      if (!seenSlugs.has(slug)) {
+        seenSlugs.add(slug)
+        allNeighborhoods.push({ slug, label: item.location.neighborhood })
+      }
+    }
+  }
+}
+
+const neighborhoodSlugs = allNeighborhoods.map((n) => n.slug)
+const initialNeighborhoods = filterSlugs.filter((s) =>
+  neighborhoodSlugs.includes(s),
+)
 
 const categoryLabels: Record<string, string> = {
   social: 'Social',
@@ -51,9 +78,9 @@ const categoryLabels: Record<string, string> = {
   title="Queer Omaha — LGBTQ+ Community Directory"
   description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
   initialCategories={initialCategories}
-  initialTags={initialTags}
+  initialNeighborhoods={initialNeighborhoods}
 >
-  <FilterBar />
+  <FilterBar neighborhoods={allNeighborhoods} />
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null

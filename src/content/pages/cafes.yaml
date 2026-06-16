@@ -15,6 +15,10 @@ items:
     tags:
       - neutral-bathrooms
       - work-spot
+    location:
+      street: "120th and Blondo"
+      neighborhood: "West O"
+      google_maps_url: "https://maps.app.goo.gl/4qViWqoWxHpZn4oR9"
   - name: Godega
     public: true
     description: Grab-and-go food, specialty snacks, and a place to hang out

@@ -3,11 +3,26 @@ import { getCollection } from 'astro:content'
 import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
 import Base from '../layouts/Base.astro'
+import { slugify } from '../utils/slugify'
 
 const ORDER = ['social', 'art', 'cafes', 'music', 'makers']
 
 const entries = await getCollection('directory')
 entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
+
+const allNeighborhoods: { slug: string; label: string }[] = []
+const seenSlugs = new Set<string>()
+for (const entry of entries) {
+  for (const item of entry.data.items ?? []) {
+    if (item.public !== false && item.location?.neighborhood) {
+      const slug = slugify(item.location.neighborhood)
+      if (!seenSlugs.has(slug)) {
+        seenSlugs.add(slug)
+        allNeighborhoods.push({ slug, label: item.location.neighborhood })
+      }
+    }
+  }
+}
 
 const categoryLabels: Record<string, string> = {
   social: 'Social',
@@ -18,8 +33,12 @@ const categoryLabels: Record<string, string> = {
 }
 ---
 
-<Base title="Queer Omaha — LGBTQ+ Community Directory" description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska." initialCategories={['social']}>
-  <FilterBar />
+<Base
+  title="Queer Omaha — LGBTQ+ Community Directory"
+  description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
+  initialCategories={['social']}
+>
+  <FilterBar neighborhoods={allNeighborhoods} />
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null
