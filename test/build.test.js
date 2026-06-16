@@ -43,17 +43,27 @@ describe('astro build', () => {
     }
   })
 
-  test('robots.txt lists AI bots and sitemap', () => {
+  test('robots.txt sets content-signal and sitemap', () => {
     const robots = readFileSync(join(ROOT, 'dist', 'robots.txt'), 'utf8')
     expect(robots).toContain('GPTBot')
     expect(robots).toContain('Anthropic-AI')
     expect(robots).toContain('sitemap')
+    expect(robots).toContain(
+      'Content-Signal: ai-train=no, search=yes, ai-input=yes',
+    )
   })
 
-  test('llms.txt has site description', () => {
+  test('llms.txt has appropriate fields', () => {
     const llms = readFileSync(join(ROOT, 'dist', 'llms.txt'), 'utf8')
-    expect(llms).toContain('# Queer Omaha')
-    expect(llms).toContain('queeromaha.net')
+    expect(llms).toContain('Queer Omaha Directory')
+    expect(llms).toContain('queeromaha.net/about')
+  })
+
+  test('_header has appropriate fields', () => {
+    const headers = readFileSync(join(ROOT, 'public', '_headers'), 'utf8')
+    expect(headers).toContain('sitemap.xml')
+    expect(headers).toContain('llms.txt')
+    expect(headers).toContain('service-doc')
   })
 
   test('index.html contains filter pills and wa-card items', () => {

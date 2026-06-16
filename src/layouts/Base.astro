@@ -80,7 +80,7 @@ const randomMsg =
           rel="noopener noreferrer"
           aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
         >
-          📅 Queer Omaha Calendar
+          📅 Subscribe to QueerOmaha Calendar
         </a>
       </div>
       <div class="footer-text">
@@ -122,6 +122,18 @@ const randomMsg =
             }
           }
           main.innerHTML = html
+        }
+
+        // Hide footer message if it doesn't fit (e.g. narrow mobile screens)
+        const footerText = document.querySelector<HTMLElement>('.footer-text')
+        const footerMessage = document.querySelector<HTMLElement>('.footer-message')
+        if (footerText && footerMessage) {
+          const checkFooterFit = () => {
+            footerText.hidden = false
+            footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
+          }
+          checkFooterFit()
+          window.addEventListener('resize', checkFooterFit)
         }
 
         // Back to top button
