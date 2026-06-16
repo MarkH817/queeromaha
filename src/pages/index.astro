@@ -16,6 +16,7 @@ for (const entry of entries) {
   for (const item of entry.data.items ?? []) {
     if (item.public !== false && item.location?.neighborhood) {
       const slug = slugify(item.location.neighborhood)
+      if (!slug) continue
       if (!seenSlugs.has(slug)) {
         seenSlugs.add(slug)
         allNeighborhoods.push({ slug, label: item.location.neighborhood })

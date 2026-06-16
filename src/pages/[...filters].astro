@@ -15,7 +15,8 @@ export async function getStaticPaths() {
       entries.flatMap((e) =>
         (e.data.items ?? [])
           .filter((i) => i.public !== false && i.location?.neighborhood)
-          .map((i) => slugify(i.location?.neighborhood ?? '')),
+          .map((i) => slugify(i.location?.neighborhood ?? ''))
+          .filter(Boolean),
       ),
     ),
   ]
@@ -30,7 +31,6 @@ export async function getStaticPaths() {
   for (const cat of cats) {
     for (const n of neighborhoodSlugs) {
       paths.push({ params: { filters: `${cat}/${n}` } })
-      paths.push({ params: { filters: `${n}/${cat}` } })
     }
   }
 
@@ -51,6 +51,7 @@ for (const entry of entries) {
   for (const item of entry.data.items ?? []) {
     if (item.public !== false && item.location?.neighborhood) {
       const slug = slugify(item.location.neighborhood)
+      if (!slug) continue
       if (!seenSlugs.has(slug)) {
         seenSlugs.add(slug)
         allNeighborhoods.push({ slug, label: item.location.neighborhood })
