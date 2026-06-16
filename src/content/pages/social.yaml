@@ -16,6 +16,13 @@ items:
         url: https://omahafor.us/programs/mental-health
       - label: Dedicated Teen / Youth Programs and Space
         url: https://omahafor.us/programs/youth-programs
+    location:
+      neighborhood: "Midtown"
+      street: 742 N 109th Ct
+      city: Omaha
+      state: NE 
+      zip: 68154
+      google_maps_url: "https://maps.app.goo.gl/jqUnPGEamuFRGZT49"
     tags:
       - work-spot
       - neutral-bathrooms

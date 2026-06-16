@@ -17,11 +17,11 @@ export const recurringEventSchema = z.object({
 })
 
 export const locationSchema = z.object({
-  street: z.string().optional(),
-  city: z.string().optional(),
-  state: z.string().optional(),
-  zip: z.string().optional(),
-  neighborhood: z.string().optional(),
+  street: z.coerce.string().optional(),
+  city: z.coerce.string().optional(),
+  state: z.coerce.string().optional(),
+  zip: z.coerce.string().optional(),
+  neighborhood: z.coerce.string().optional(),
   google_maps_url: z.url().optional(),
 })
 

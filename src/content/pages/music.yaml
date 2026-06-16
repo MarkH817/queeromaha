@@ -25,6 +25,8 @@ items:
         url: https://www.facebook.com/thechurcharthouse/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/the-church-arthouse
+    location:
+      neighborhood: "South Omaha"
   - name: No-Coast Noise Collective
     public: true
     description: Experimental music and sound art collective. Centered out of Project Project.
@@ -35,6 +37,8 @@ items:
         url: https://www.nocoastnoise.net/
       - label: LinkTree
         url: https://linktr.ee/nocoastnoise
+    location:
+      neighborhood: "South Omaha"
   - name: Project Project
     public: true
     tags:
@@ -49,6 +53,8 @@ items:
         url: https://www.facebook.com/weareprojectproject/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/project-project
+    location:
+      neighborhood: "South Omaha"
   - name: Floors Floors Floors
     public: false
     tags:
@@ -61,6 +67,8 @@ items:
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/floors-floors-floors
     notes: per sources, venue is not able to host public events due to landlords
+    location:
+      neighborhood: "Benson"
   - name: Shakedown Street
     public: true
     tags:
@@ -75,12 +83,16 @@ items:
         url: https://www.facebook.com/shakedownstreettavern/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/shakedown-street-tavern
+    location:
+      neighborhood: "Benson"
   - name: The Waiting Room
     public: false
     description: Mid-size venue for local and large-ish acts. Very little seating.
     links:
       - label: Website
         url: https://www.waitingroomlounge.com/
+    location:
+      neighborhood: "Benson"
   - name: Reverb Lounge
     public: true
     tags:
@@ -91,6 +103,8 @@ items:
         url: https://www.reverblounge.com/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/reverb-lounge
+    location:
+      neighborhood: "Benson"
   - name: The Sydney
     public: true
     tags:
@@ -101,11 +115,15 @@ items:
         url: https://thesydneybenson.com/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/the-sydney
+    location:
+      neighborhood: "Benson"
   - name: The Coven
     public: true
     tags:
       - neutral-bathrooms
       - seating
+    location:
+      neighborhood: "Midtown"
     description: |
       Goth club at the old Down Under address. Punk / darkwave / industrial shows.
 
@@ -134,6 +152,8 @@ items:
         url: https://www.facebook.com/pageturnerslounge/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/pageturners-lounge
+    location:
+      neighborhood: "Midtown"
   - name: O'Leaver's
     public: true
     description: |
@@ -147,6 +167,8 @@ items:
         url: https://www.facebook.com/oleavers/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/oleavers
+    location:
+      neighborhood: "Midtown"
   - name: B Bar
     public: true
     description: Long-running blues shows and local acts.
@@ -155,6 +177,8 @@ items:
         url: https://www.thebbaromaha.com/
       - label: FB
         url: https://www.facebook.com/TheB.BarOmaha
+    location:
+      neighborhood: "Midtown"
   - name: Joslyn Castle Carriage House
     public: true
     tags:
@@ -168,6 +192,8 @@ items:
         url: https://www.instagram.com/joslyncastle/
       - label: Website
         url: https://www.joslyncastle.com/events/
+    location:
+      neighborhood: "Midtown"
   - name: Fifth House
     public: true
     tags:
@@ -181,12 +207,16 @@ items:
         url: https://www.fifthhouseomaha.com/
       - label: FB
         url: https://www.facebook.com/FifthHouseOmaha/
+    location:
+      neighborhood: "Midtown"
   - name: The Breakroom
     public: false
     description: Punk venue @ someone's house. Ask around.
     links:
       - label: Website
         url: https://omahaunderground.net/venues/the-breakroom
+    location:
+      neighborhood: "Midtown"
   - name: The FoxHole
     public: false
     description: Indie venue @ Someone's house. Ask around.
@@ -194,6 +224,8 @@ items:
       - label: Insta
         url: https://www.instagram.com/thefoxholeomaha/?hl=en
     notes: May be on hiatus. Gifford Park
+    location:
+      neighborhood: "Midtown"
   - name: Red Lion
     public: false
     description: Jazz club.
@@ -201,6 +233,8 @@ items:
       - label: Website
         url: https://www.redlionlounge.com/
     notes: Haven't been there.
+    location:
+      neighborhood: "Midtown"
   - name: Second Unitarian Church
     public: false
     description: Has a stage, seating, PA and projector. Fairly new to hosting music/local events.
@@ -208,15 +242,19 @@ items:
       - label: Website
         url: https://2uomaha.org/about-us/facility-rental
     notes: POC Dave Nesbit from synth group. Nice setup, PA, mixer, projector.
+    location:
+      neighborhood: "Midtown"
   - name: Low End at Bemis Center
     public: true
     description: Amazing experimental music series uplifting BIPOC, trans and queer artists.
     links:
       - label: Events Calendar
         url: https://www.bemiscenter.org/low-end
+    location:
+      neighborhood: "Downtown"
   - name: Red Light Lounge (fka The Verdict)
     public: true
-    description: Hub of industrial and darkwave scene 
+    description: Hub of industrial and darkwave scene
 
     links:
       - label: The Slab (2nd Saturdays)
@@ -231,6 +269,8 @@ items:
         url: https://omahaunderground.net/venues/red-light-lounge
     notes: |
       Rebranded circa late 2025, apparently same owners. The Mourning Dolls (burlesque, crafts) + Slab are resident. DJ Barrens and Jacob (sadonaut) are POCs. Club Noir moved from Verdict to Coven circa spring 2026. verdict site's events calendar is nigh unusable https://www.theverdictomaha.com/events.html
+    location:
+      neighborhood: "Downtown"
   - name: Sokol (Admiral)
     public: false
     tags:
@@ -239,9 +279,13 @@ items:
     links:
       - label: Calendar
         url: https://admiralomaha.com/events/
+    location:
+      neighborhood: "Downtown"
   - name: Steelhouse
     public: true
     description: "**NO GO** — unsafe for trans / queer folx. Empowers literal bathroom police."
+    location:
+      neighborhood: "Downtown"
   - name: Slowdown
     public: false
     description: Small-ish venue, local and larger acts. Very little seating.
@@ -252,21 +296,29 @@ items:
         url: https://www.instagram.com/theslowdown/
       - label: FB
         url: https://www.facebook.com/theslowdown
+    location:
+      neighborhood: "Downtown"
   - name: Dreamland Lounge
     public: false
     description: New(?) jazz club
     links:
       - label: FB
         url: https://www.facebook.com/people/Dreamland-Lounge-
+    location:
+      neighborhood: "Downtown"
   - name: Omaha Open Mics / Comedy
     public: false
     description: local open mic / comedy circuit
     links:
       - label: FB
         url: https://www.facebook.com/groups/OmahaOpenMics/
+    location:
+      neighborhood: "Downtown"
   - name: Omaha Blues Society
     public: false
     description: major local blues events group / scene
     links:
       - label: Website
         url: https://omahablues.com/events/
+    location:
+      neighborhood: "Downtown"
