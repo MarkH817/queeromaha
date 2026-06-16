@@ -8,6 +8,7 @@ interface Props {
   description?: string
   initialCategories?: string[]
   initialTags?: string[]
+  initialNeighborhoods?: string[]
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description,
   initialCategories = [],
   initialTags = [],
+  initialNeighborhoods = [],
 } = Astro.props
 const pageTitle = title ? `${title} | Queer Omaha` : 'Queer Omaha'
 const canonicalUrl = new URL(Astro.url.pathname, site.url).href
@@ -56,7 +58,11 @@ const randomMsg =
       })}
     </script>
   </head>
-  <body data-initial-categories={initialCategories.join(' ')} data-initial-tags={initialTags.join(' ')}>
+  <body
+    data-initial-categories={initialCategories.join(' ')}
+    data-initial-tags={initialTags.join(' ')}
+    data-initial-neighborhoods={initialNeighborhoods.join(' ')}
+  >
     <a class="skip-link" href="#main">Skip to main content</a>
     <header>
       <nav class="main-nav" aria-label="Main navigation">
@@ -166,18 +172,21 @@ const randomMsg =
         if (cards.length === 0) return
         const activeTags = new Set<string>()
         const activeCategories = new Set<string>()
+        const activeNeighborhoods = new Set<string>()
 
         function updateClearBtn() {
-          if (clearBtn) clearBtn.disabled = activeTags.size === 0
+          if (clearBtn) clearBtn.disabled = activeTags.size === 0 && activeNeighborhoods.size === 0
         }
 
         function applyFilters() {
           cards.forEach(card => {
             const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
             const cardCat = card.dataset.category || ''
+            const cardNbr = card.dataset.neighborhood || ''
             const tagMatch = activeTags.size === 0 || [...activeTags].every(t => cardTags.includes(t))
             const catMatch = activeCategories.size === 0 || activeCategories.has(cardCat)
-            card.hidden = !(tagMatch && catMatch)
+            const nbrMatch = activeNeighborhoods.size === 0 || activeNeighborhoods.has(cardNbr)
+            card.hidden = !(tagMatch && catMatch && nbrMatch)
           })
           document.querySelectorAll<HTMLElement>('[data-category-heading]').forEach(heading => {
             const cat = heading.dataset.categoryHeading || ''
@@ -187,7 +196,6 @@ const randomMsg =
         }
 
         function wouldHaveResults(slug: string, type: string) {
-          // Would any currently-visible card still match if we also added this filter?
           return [...cards].some(card => {
             if (card.hidden) return false
             if (type === 'category') {
@@ -200,6 +208,10 @@ const randomMsg =
               const testTags = new Set(activeTags)
               testTags.add(slug)
               return [...testTags].every(t => cardTags.includes(t))
+            }
+            if (type === 'neighborhood') {
+              // OR logic: card matches if its neighborhood is this slug
+              return card.dataset.neighborhood === slug
             }
             return false
           })
@@ -225,6 +237,7 @@ const randomMsg =
           if (!pill) return
           if (pill.dataset.filterType === 'category') activeCategories.add(slug)
           else if (pill.dataset.filterType === 'tag') activeTags.add(slug)
+          else if (pill.dataset.filterType === 'neighborhood') activeNeighborhoods.add(slug)
           pill.classList.add('active')
           pill.setAttribute('aria-pressed', 'true')
           applyFilters()
@@ -236,6 +249,7 @@ const randomMsg =
           if (!pill) return
           if (pill.dataset.filterType === 'category') activeCategories.delete(slug)
           else if (pill.dataset.filterType === 'tag') activeTags.delete(slug)
+          else if (pill.dataset.filterType === 'neighborhood') activeNeighborhoods.delete(slug)
           pill.classList.remove('active')
           pill.setAttribute('aria-pressed', 'false')
           applyFilters()
@@ -243,7 +257,7 @@ const randomMsg =
         }
 
         function buildUrl() {
-          const parts = [...activeCategories, ...activeTags]
+          const parts = [...activeCategories, ...activeNeighborhoods]
           return parts.length === 0 ? '/' : '/' + parts.join('/')
         }
 
@@ -260,8 +274,9 @@ const randomMsg =
         if (clearBtn) {
           clearBtn.addEventListener('click', () => {
             activeTags.clear()
+            activeNeighborhoods.clear()
             pills.forEach(p => {
-              if (p.dataset.filterType === 'tag') {
+              if (p.dataset.filterType === 'tag' || p.dataset.filterType === 'neighborhood') {
                 p.classList.remove('active')
                 p.setAttribute('aria-pressed', 'false')
               }
@@ -291,8 +306,10 @@ const randomMsg =
 
         // Activate filters from URL on load
         const initCats = (document.body.dataset.initialCategories || '').split(' ').filter(Boolean)
+        const initNbrs = (document.body.dataset.initialNeighborhoods || '').split(' ').filter(Boolean)
         const initTags = (document.body.dataset.initialTags || '').split(' ').filter(Boolean)
         if (initCats.length > 0) setCategory(initCats[0])
+        initNbrs.forEach(activateFilter)
         initTags.forEach(activateFilter)
       })
     </script>

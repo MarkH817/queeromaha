@@ -80,6 +80,56 @@ test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
   await expect(pill).toHaveClass(/active/)
 })
 
+test('neighborhood filter pills render on the home page', async ({ page }) => {
+  await page.goto('/')
+  const pills = page.locator('[data-filter-type="neighborhood"]')
+  expect(await pills.count()).toBeGreaterThan(0)
+})
+
+test('/west-o pre-activates the west-o neighborhood pill', async ({ page }) => {
+  await page.goto('/west-o/')
+  const pill = page.locator('[data-filter="west-o"]')
+  await expect(pill).toHaveClass(/active/)
+})
+
+test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
+  page,
+}) => {
+  await page.goto('/cafes/')
+  const cards = page.locator('wa-card.item[data-category="cafes"]')
+  const totalCount = await cards.count()
+  expect(totalCount).toBeGreaterThan(0)
+
+  await page.locator('[data-filter="west-o"]').click()
+
+  const visibleCards = cards.filter({ hasNot: page.locator(':scope[hidden]') })
+  const visibleCount = await visibleCards.count()
+  expect(visibleCount).toBeGreaterThan(0)
+  expect(visibleCount).toBeLessThan(totalCount)
+  for (let i = 0; i < visibleCount; i++) {
+    expect(await visibleCards.nth(i).getAttribute('data-neighborhood')).toBe(
+      'west-o',
+    )
+  }
+})
+
+test('combining category and neighborhood pills narrows results', async ({
+  page,
+}) => {
+  await page.goto('/')
+  await page.locator('[data-filter="cafes"]').click()
+  await page.locator('[data-filter="west-o"]').click()
+
+  const visibleCards = page.locator('wa-card.item:not([hidden])')
+  const count = await visibleCards.count()
+  expect(count).toBeGreaterThan(0)
+  for (let i = 0; i < count; i++) {
+    const card = visibleCards.nth(i)
+    expect(await card.getAttribute('data-category')).toBe('cafes')
+    expect(await card.getAttribute('data-neighborhood')).toBe('west-o')
+  }
+})
+
 test('footer message is hidden when it would overflow on narrow screens', async ({
   page,
 }) => {

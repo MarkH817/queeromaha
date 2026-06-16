@@ -16,6 +16,15 @@ export const recurringEventSchema = z.object({
   url: z.url().optional(),
 })
 
+export const locationSchema = z.object({
+  street: z.coerce.string().optional(),
+  city: z.coerce.string().optional(),
+  state: z.coerce.string().optional(),
+  zip: z.coerce.string().optional(),
+  neighborhood: z.coerce.string().optional(),
+  google_maps_url: z.url().optional(),
+})
+
 export const itemSchema = z.object({
   name: z.string(),
   public: z.boolean().optional(),
@@ -23,6 +32,7 @@ export const itemSchema = z.object({
   tags: z.array(tagEnum).optional(),
   links: z.array(z.object({ label: z.string(), url: z.url() })).optional(),
   notes: z.string().optional(),
+  location: locationSchema.optional(),
   recurring_events: z.array(recurringEventSchema).optional(),
 })
 
