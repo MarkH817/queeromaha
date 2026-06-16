@@ -59,7 +59,7 @@ items:
         time: "11:00"
         end_time: "15:00"
         location: OmahaForUs LGBTQIA* Center
-        description: Open Monthly volunteer day - Registration required via rotating Doodle poll posted on the event page.
+        description: Open Monthly volunteer day - Register via the Doodle poll posted on the event page.
         url: https://omahafor.us/events-calendar
   - name: Wild Garden Insta
     public: false
