@@ -100,7 +100,7 @@ test('footer message is hidden when it would overflow on narrow screens', async 
 
   // calendar link and footer nav remain visible regardless
   await expect(page.locator('.footer-cal a')).toBeVisible()
-  await expect(page.locator('.footer-nav a[href="/about"]')).toBeVisible()
+  await expect(page.locator('.footer-nav a[href="/about#about"]')).toBeVisible()
 })
 
 test('footer message is visible and unclipped on wide screens', async ({
