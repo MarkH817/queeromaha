@@ -114,6 +114,15 @@ describe('directory yaml files', () => {
         }
       })
 
+      test('location google_maps_url is parseable when present', () => {
+        for (const item of data.items) {
+          if (!item.location?.google_maps_url) continue
+          expect(() => new URL(item.location.google_maps_url)).not.toThrow(
+            `"${item.name}" has unparseable google_maps_url: ${item.location.google_maps_url}`,
+          )
+        }
+      })
+
       test('no duplicate item names', () => {
         const seen = new Set()
         for (const item of data.items) {

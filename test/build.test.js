@@ -81,6 +81,25 @@ describe('astro build', () => {
     expect(html).toContain('data-initial-categories="social"')
   })
 
+  test('dist contains a generated neighborhood page', () => {
+    expect(existsSync(join(ROOT, 'dist', 'west-o', 'index.html'))).toBe(true)
+  })
+
+  test('west-o/index.html has data-initial-neighborhoods="west-o"', () => {
+    const html = readFileSync(
+      join(ROOT, 'dist', 'west-o', 'index.html'),
+      'utf8',
+    )
+    expect(html).toContain('data-initial-neighborhoods="west-o"')
+    expect(html).toContain('Roast Coffeehouse')
+  })
+
+  test('dist contains a category + neighborhood combo page', () => {
+    expect(
+      existsSync(join(ROOT, 'dist', 'cafes', 'west-o', 'index.html')),
+    ).toBe(true)
+  })
+
   test('dist contains events.ics', () => {
     expect(existsSync(join(ROOT, 'dist', 'events.ics'))).toBe(true)
   })
