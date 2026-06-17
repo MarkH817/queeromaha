@@ -1,5 +1,5 @@
 export async function GET() {
-  const body = `# Queer Omaha
+    const body = `# Queer Omaha
 
 > Community-maintained directory of queer-friendly spaces, events, and resources in Omaha, Nebraska. Anyone can contribute via GitHub.
 
@@ -10,7 +10,7 @@ export async function GET() {
 
 This file is advertised via an HTTP \`Link: </llms.txt>; rel="service-doc"\` response header.
 `
-  return new Response(body, {
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-  })
+    return new Response(body, {
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    })
 }

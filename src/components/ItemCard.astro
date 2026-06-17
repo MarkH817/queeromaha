@@ -3,21 +3,36 @@ import { marked } from 'marked'
 import type { z } from 'zod'
 import type { itemSchema } from '../content.config'
 import tagMap from '../data/tagMap.json'
+import { slugify } from '../utils/slugify'
 
 type TagMap = Record<string, { emoji: string; label: string }>
 const tags = tagMap as TagMap
 
 interface Props {
-  item: z.infer<typeof itemSchema>
-  category: string
+    item: z.infer<typeof itemSchema>
+    category: string
 }
 
 const { item, category } = Astro.props
 const descHtml = item.description ? marked.parse(item.description) : ''
 const tagsAttr = item.tags?.join(' ') ?? ''
+
+const loc = item.location
+const neighborhoodSlug = loc?.neighborhood ? slugify(loc.neighborhood) : ''
+const addrParts = [
+    loc?.street,
+    loc?.city,
+    loc?.state && loc?.zip
+        ? `${loc.state} ${loc.zip}`
+        : (loc?.state ?? loc?.zip),
+].filter(Boolean)
+const addrLine = addrParts.join(', ')
+const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
+    .filter(Boolean)
+    .join(' ')
 ---
 
-<wa-card class="item" data-category={category} data-tags={tagsAttr}>
+<wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>
   <h3 slot="header">
     {item.name}
     {item.tags?.map(tag => {
@@ -28,6 +43,17 @@ const tagsAttr = item.tags?.join(' ') ?? ''
     })}
   </h3>
   {descHtml && <Fragment set:html={descHtml} />}
+  {loc && locLine && (
+    <p class="item-location">
+      {loc.google_maps_url ? (
+        <a href={loc.google_maps_url} rel="noopener noreferrer" target="_blank" aria-label={`Map: ${locLine} (opens in new tab)`}>
+          📍 {locLine}
+        </a>
+      ) : (
+        <>📍 {locLine}</>
+      )}
+    </p>
+  )}
   {item.links && item.links.length > 0 && (
     <ul class="entry-links" slot="footer">
       {item.links.map(link => (

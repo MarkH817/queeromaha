@@ -1,2 +1,14 @@
+has_new_commits=false
+while read local_ref local_sha remote_ref remote_sha; do
+  if [ "$local_sha" != "$remote_sha" ]; then
+    has_new_commits=true
+  fi
+done
+
+if [ "$has_new_commits" = false ]; then
+  echo "pre-push: no new commits to push, skipping checks"
+  exit 0
+fi
+
 bun run check
 bun run test

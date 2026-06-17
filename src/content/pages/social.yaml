@@ -16,6 +16,13 @@ items:
         url: https://omahafor.us/programs/mental-health
       - label: Dedicated Teen / Youth Programs and Space
         url: https://omahafor.us/programs/youth-programs
+    location:
+      neighborhood: "Midtown"
+      street: 742 N 109th Ct
+      city: Omaha
+      state: NE 
+      zip: 68154
+      google_maps_url: "https://maps.app.goo.gl/jqUnPGEamuFRGZT49"
     tags:
       - work-spot
       - neutral-bathrooms
@@ -59,7 +66,7 @@ items:
         time: "11:00"
         end_time: "15:00"
         location: OmahaForUs LGBTQIA* Center
-        description: Open Monthly volunteer day - Registration required via rotating Doodle poll posted on the event page.
+        description: Open Monthly volunteer day - Register via the Doodle poll posted on the event page.
         url: https://omahafor.us/events-calendar
   - name: Wild Garden Insta
     public: false

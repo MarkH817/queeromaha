@@ -1,5 +1,5 @@
 export async function GET() {
-  const body = `
+    const body = `
   # As a condition of accessing this website, you agree to
 
 # abide by the following content signals:
@@ -90,7 +90,7 @@ Allow: /
 
 Sitemap: https://queeromaha.net/sitemap-index.xml
 `
-  return new Response(body, {
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-  })
+    return new Response(body, {
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    })
 }

@@ -1,47 +1,48 @@
 {
-  "name": "queeromaha.com",
-  "version": "1.0.3",
-  "description": "queer stuff in omaha",
-  "main": "index.js",
-  "scripts": {
-    "test": "bun run test:unit && playwright test",
-    "test:fast": "bun run lint && bun run test:data",
-    "test:data": "bun test test/data.test.js",
-    "test:build": "bun test test/build.test.js",
-    "test:unit": "bun test test/data.test.js test/build.test.js",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed",
-    "dev": "astro dev",
-    "check": "astro check",
-    "serve": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "serve:cms": "bunx decap-server",
-    "prepare": "husky",
-    "lint": "biome check .",
-    "format": "biome check --write .",
-    "check:links": "bun scripts/check-links.js",
-    "check:links:pr": "bun scripts/check-links.js --pr"
-  },
-  "keywords": [],
-  "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@biomejs/biome": "2.4.16",
-    "@playwright/test": "^1.60.0",
-    "husky": "^9.1.7",
-    "yaml": "^2.9.0"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.7.3",
-    "astro": "^6.4.6",
-    "marked": "^18.0.5",
-    "queeromaha.com": ".",
-    "typescript": "^6.0.3"
-  },
-  "volta": {
-    "node": "24.15.0"
-  }
+    "name": "queeromaha.com",
+    "version": "1.0.3",
+    "description": "queer stuff in omaha",
+    "main": "index.js",
+    "scripts": {
+        "test": "bun run test:unit && playwright test",
+        "test:fast": "bun run lint && bun run test:data",
+        "test:data": "bun test test/data.test.js",
+        "test:build": "bun test test/build.test.js",
+        "test:unit": "bun test test/data.test.js test/build.test.js",
+        "test:e2e": "playwright test",
+        "test:e2e:ui": "playwright test --ui",
+        "test:e2e:headed": "playwright test --headed",
+        "dev": "astro dev",
+        "check": "astro check",
+        "serve": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "serve:cms": "bun decap-server",
+        "prepare": "husky",
+        "lint": "biome check .",
+        "format": "biome check --write .",
+        "check:links": "bun scripts/check-links.js",
+        "check:links:pr": "bun scripts/check-links.js --pr"
+    },
+    "keywords": [],
+    "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@astrojs/check": "^0.9.9",
+        "@biomejs/biome": "2.5.0",
+        "@playwright/test": "^1.60.0",
+        "decap-server": "^3.9.0",
+        "husky": "^9.1.7",
+        "yaml": "^2.9.0"
+    },
+    "dependencies": {
+        "@astrojs/sitemap": "^3.7.3",
+        "astro": "^6.4.6",
+        "marked": "^18.0.5",
+        "queeromaha.com": ".",
+        "typescript": "^6.0.3"
+    },
+    "volta": {
+        "node": "24.15.0"
+    }
 }

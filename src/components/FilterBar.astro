@@ -1,16 +1,38 @@
 ---
 import tagMap from '../data/tagMap.json'
 
+interface Props {
+    neighborhoods?: { slug: string; label: string }[]
+}
+
+const { neighborhoods = [] } = Astro.props
+
 const tags = Object.entries(
-  tagMap as Record<string, { emoji: string; label: string }>,
+    tagMap as Record<string, { emoji: string; label: string }>,
 ).map(([slug, { emoji, label }]) => ({ slug, emoji, label }))
 ---
 
-<div class="filter-bar" role="group" aria-label="Filter by tag">
-  <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
-    ✕ Clear Tags
-  </button>
-  <div class="filter-pills">
+<div class="filter-bar">
+  {neighborhoods.length > 0 && (
+    <div class="location-bar" role="group" aria-label="Filter by location">
+      <div class="location-bar-scroll">
+        {neighborhoods.map(({ slug, label }) => (
+          <button
+            class="location-segment"
+            data-filter={slug}
+            data-filter-type="neighborhood"
+            aria-pressed="false"
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+  <div class="filter-pills filter-pills--tags" role="group" aria-label="Filter by tag">
+    <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
+      ✕ Clear
+    </button>
     {tags.map(({ slug, emoji, label }) => (
       <button
         class="filter-pill"
@@ -18,7 +40,7 @@ const tags = Object.entries(
         data-filter-type="tag"
         aria-pressed="false"
       >
-        {emoji} {label}
+        <span aria-hidden="true">{emoji}</span> {label}
       </button>
     ))}
   </div>
