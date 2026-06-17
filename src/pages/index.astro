@@ -13,24 +13,27 @@ entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
 const allNeighborhoods: { slug: string; label: string }[] = []
 const seenSlugs = new Set<string>()
 for (const entry of entries) {
-  for (const item of entry.data.items ?? []) {
-    if (item.public !== false && item.location?.neighborhood) {
-      const slug = slugify(item.location.neighborhood)
-      if (!slug) continue
-      if (!seenSlugs.has(slug)) {
-        seenSlugs.add(slug)
-        allNeighborhoods.push({ slug, label: item.location.neighborhood })
-      }
+    for (const item of entry.data.items ?? []) {
+        if (item.public !== false && item.location?.neighborhood) {
+            const slug = slugify(item.location.neighborhood)
+            if (!slug) continue
+            if (!seenSlugs.has(slug)) {
+                seenSlugs.add(slug)
+                allNeighborhoods.push({
+                    slug,
+                    label: item.location.neighborhood,
+                })
+            }
+        }
     }
-  }
 }
 
 const categoryLabels: Record<string, string> = {
-  social: 'Social',
-  art: 'Art',
-  cafes: 'Cafes',
-  music: 'Music',
-  makers: 'Makers',
+    social: 'Social',
+    art: 'Art',
+    cafes: 'Cafes',
+    music: 'Music',
+    makers: 'Makers',
 }
 ---
 

@@ -9,8 +9,8 @@ type TagMap = Record<string, { emoji: string; label: string }>
 const tags = tagMap as TagMap
 
 interface Props {
-  item: z.infer<typeof itemSchema>
-  category: string
+    item: z.infer<typeof itemSchema>
+    category: string
 }
 
 const { item, category } = Astro.props
@@ -20,14 +20,16 @@ const tagsAttr = item.tags?.join(' ') ?? ''
 const loc = item.location
 const neighborhoodSlug = loc?.neighborhood ? slugify(loc.neighborhood) : ''
 const addrParts = [
-  loc?.street,
-  loc?.city,
-  loc?.state && loc?.zip ? `${loc.state} ${loc.zip}` : (loc?.state ?? loc?.zip),
+    loc?.street,
+    loc?.city,
+    loc?.state && loc?.zip
+        ? `${loc.state} ${loc.zip}`
+        : (loc?.state ?? loc?.zip),
 ].filter(Boolean)
 const addrLine = addrParts.join(', ')
 const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
-  .filter(Boolean)
-  .join(' ')
+    .filter(Boolean)
+    .join(' ')
 ---
 
 <wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>

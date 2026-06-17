@@ -1,5 +1,5 @@
 {
-  "neutral-bathrooms": { "emoji": "🚻", "label": "Gender-neutral bathroom" },
-  "seating": { "emoji": "🛋️", "label": "Seating available" },
-  "work-spot": { "emoji": "💻", "label": "Work/study spot" }
+    "neutral-bathrooms": { "emoji": "🚻", "label": "Gender-neutral bathroom" },
+    "seating": { "emoji": "🛋️", "label": "Seating available" },
+    "work-spot": { "emoji": "💻", "label": "Work/study spot" }
 }
