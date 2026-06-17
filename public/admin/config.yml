@@ -9,11 +9,11 @@ backend:
   auth_token_endpoint: /sites/bc97b76f-9d17-419f-b270-59b5fb34dd05/token
   gateway_url: https://gateway.decapbridge.com
   commit_messages:
-    create: 'Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}>'
-    update: 'Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}>'
-    delete: 'Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}>'
-    uploadMedia: 'Upload "{{path}}" - {{author-name}} <{{author-login}}>'
-    deleteMedia: 'Delete "{{path}}" - {{author-name}} <{{author-login}}>'
+    create: 'Create {{collection}} "{{slug}}" - {{author-name}}'
+    update: 'Update {{collection}} "{{slug}}" - {{author-name}}'
+    delete: 'Delete {{collection}} "{{slug}}" - {{author-name}}'
+    uploadMedia: 'Upload "{{path}}" - {{author-name}}'
+    deleteMedia: 'Delete "{{path}}" - {{author-name}}'
 
 auth:
   email_claim: email
