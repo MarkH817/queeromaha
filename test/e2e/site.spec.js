@@ -132,6 +132,92 @@ test('combining category and neighborhood pills narrows results', async ({
     }
 })
 
+test('location bar renders as a single-select segmented bar', async ({
+    page,
+}) => {
+    await page.goto('/')
+    const bar = page.locator('.location-bar')
+    await expect(bar).toBeVisible()
+    const segments = bar.locator('.location-segment')
+    expect(await segments.count()).toBeGreaterThan(0)
+})
+
+test('clicking a different location segment switches directly without deactivating the first', async ({
+    page,
+}) => {
+    await page.goto('/cafes/')
+    const westO = page.locator('[data-filter="west-o"]')
+    const midtown = page.locator('[data-filter="midtown"]')
+
+    await westO.click()
+    await expect(westO).toHaveClass(/active/)
+    await expect(page).toHaveURL(/\/cafes\/west-o\/?$/)
+
+    await midtown.click()
+    await expect(midtown).toHaveClass(/active/)
+    await expect(westO).not.toHaveClass(/active/)
+    await expect(page).toHaveURL(/\/cafes\/midtown\/?$/)
+})
+
+test('tapping the active location segment again deselects it back to all locations', async ({
+    page,
+}) => {
+    await page.goto('/cafes/')
+    const westO = page.locator('[data-filter="west-o"]')
+
+    await westO.click()
+    await expect(westO).toHaveClass(/active/)
+
+    await westO.click()
+    await expect(westO).not.toHaveClass(/active/)
+    await expect(page).toHaveURL(/\/cafes\/?$/)
+})
+
+test('an unavailable location segment is disabled and not clickable', async ({
+    page,
+}) => {
+    await page.goto('/art/')
+    const westO = page.locator('[data-filter="west-o"]')
+    await expect(westO).toBeDisabled()
+    await expect(westO).toHaveClass(/unavailable/)
+})
+
+test('switching top-level category clears the active location and tags', async ({
+    page,
+}) => {
+    await page.goto('/art/')
+    const benson = page.locator('[data-filter="benson"]')
+    const tag = page.locator('[data-filter="neutral-bathrooms"]')
+
+    await benson.click()
+    await tag.click()
+    await expect(benson).toHaveClass(/active/)
+    await expect(tag).toHaveClass(/active/)
+
+    await page.locator('[data-filter="cafes"]').click()
+    await expect(page).toHaveURL(/\/cafes\/?$/)
+    await expect(benson).not.toHaveClass(/active/)
+    await expect(tag).not.toHaveClass(/active/)
+})
+
+test('clear button only clears tags, leaving the active location untouched', async ({
+    page,
+}) => {
+    await page.goto('/cafes/')
+    const westO = page.locator('[data-filter="west-o"]')
+    const tag = page.locator('[data-filter="neutral-bathrooms"]')
+    const clearBtn = page.locator('#filterClear')
+
+    await westO.click()
+    await tag.click()
+    await expect(clearBtn).toBeEnabled()
+
+    await clearBtn.click()
+    await expect(tag).not.toHaveClass(/active/)
+    await expect(westO).toHaveClass(/active/)
+    await expect(clearBtn).toBeDisabled()
+})
+
 test('footer message is hidden when it would overflow on narrow screens', async ({
     page,
 }) => {

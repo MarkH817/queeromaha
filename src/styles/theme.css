@@ -46,7 +46,7 @@ body {
 }
 
 header {
-    background: #6e4da7;
+    background: #4c3170;
     color: #fff;
     position: sticky;
     top: 0;
@@ -54,7 +54,8 @@ header {
     padding: 0;
     font-size: large;
     border: #533c78;
-    border-radius: 0.6rem;
+    border-radius: 999px;
+    overflow: hidden;
     box-shadow: 0 3px 10px rgba(118, 75, 192, 0.08);
 }
 .main-nav {
@@ -63,7 +64,7 @@ header {
     gap: 0;
     padding: 0;
     margin: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.169);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .main-nav wa-button {
@@ -81,29 +82,32 @@ header {
     width: 100%;
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 0;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: inherit;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     font-size: inherit;
     padding: 0.8rem;
     cursor: pointer;
     transition: all 0.2s;
     box-shadow:
-        inset 1px 1px 0 rgba(255, 255, 255, 0.3),
-        inset -1px -1px 0 rgba(0, 0, 0, 0.2);
+        inset 1px 1px 0 rgba(255, 255, 255, 0.35),
+        inset -1px -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .main-nav wa-button::part(base):hover {
-    color: #f3e8ff;
-    background-color: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .main-nav wa-button.active::part(base) {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.15);
     color: #fff;
     font-weight: 700;
+    box-shadow:
+        inset 1px 1px 0 rgba(0, 0, 0, 0.25),
+        inset -1px -1px 0 rgba(255, 255, 255, 0.15);
     border-bottom: 3px solid #e9d5ff;
     padding-bottom: calc(0.8rem - 3px);
 }
@@ -474,6 +478,69 @@ blockquote p {
     padding-top: 0.35rem;
     border-top: 1px solid #f3e8ff;
     width: 100%;
+}
+
+.location-bar {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 2px solid #c4b5fd;
+    background: #f9f5ff;
+    box-shadow:
+        inset 1px 1px 0 rgba(255, 255, 255, 0.6),
+        inset -1px -1px 0 rgba(124, 58, 237, 0.15);
+}
+
+.location-bar-scroll {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.location-bar-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.location-segment {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.4rem;
+    padding: 0 0.9rem;
+    margin: 0;
+    border: none;
+    border-right: 2px solid #c4b5fd;
+    background: transparent;
+    color: #6d28d9;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        color 0.15s;
+}
+
+.location-segment:last-child {
+    border-right: none;
+}
+
+.location-segment.active {
+    background: #c4b5fd;
+    color: #4c1d95;
+    box-shadow:
+        inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+        inset -1px -1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.location-segment.unavailable {
+    opacity: 0.35;
+    cursor: not-allowed;
 }
 
 .filter-pill {
