@@ -114,20 +114,39 @@ const randomMsg =
         // Emoji tooltips
         const main = document.querySelector('main')
         if (main) {
-          let html = main.innerHTML
           let tipIdx = 0
-          for (const [emoji, desc] of Object.entries(emojiMap)) {
-            const parts = html.split(emoji)
-            if (parts.length > 1) {
-              let rebuilt = parts[0]
-              for (let i = 1; i < parts.length; i++) {
-                const id = `et${tipIdx++}`
-                rebuilt += `<wa-tooltip for="${id}">${desc}</wa-tooltip><span id="${id}" role="img" aria-label="${desc}">${emoji}</span>` + parts[i]
+          const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT)
+          const textNodes: Text[] = []
+          let node: Node | null
+          while ((node = walker.nextNode())) textNodes.push(node as Text)
+          for (const textNode of textNodes) {
+            const parent = textNode.parentNode
+            if (!parent) continue
+            for (const [emoji, desc] of Object.entries(emojiMap)) {
+              if (!(textNode.textContent ?? '').includes(emoji)) continue
+              const parts = (textNode.textContent ?? '').split(emoji)
+              if (parts.length < 2) continue
+              const frag = document.createDocumentFragment()
+              for (let i = 0; i < parts.length; i++) {
+                if (parts[i]) frag.appendChild(document.createTextNode(parts[i]))
+                if (i < parts.length - 1) {
+                  const id = `et${tipIdx++}`
+                  const tip = document.createElement('wa-tooltip')
+                  tip.setAttribute('for', id)
+                  tip.textContent = desc
+                  const span = document.createElement('span')
+                  span.id = id
+                  span.setAttribute('role', 'img')
+                  span.setAttribute('aria-label', desc)
+                  span.textContent = emoji
+                  frag.appendChild(tip)
+                  frag.appendChild(span)
+                }
               }
-              html = rebuilt
+              parent.replaceChild(frag, textNode)
+              break
             }
           }
-          main.innerHTML = html
         }
 
         // Hide footer message if it doesn't fit (e.g. narrow mobile screens)

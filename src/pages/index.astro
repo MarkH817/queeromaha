@@ -5,7 +5,7 @@ import ItemCard from '../components/ItemCard.astro'
 import Base from '../layouts/Base.astro'
 import { slugify } from '../utils/slugify'
 
-const ORDER = ['social', 'art', 'cafes', 'music', 'makers']
+const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
 
 const entries = await getCollection('directory')
 entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
@@ -29,11 +29,12 @@ for (const entry of entries) {
 }
 
 const categoryLabels: Record<string, string> = {
-    social: 'Social',
-    art: 'Art',
-    cafes: 'Cafes',
-    music: 'Music',
-    makers: 'Makers',
+  social: 'Social',
+  spiritual: 'Spiritual',
+  art: 'Art',
+  cafes: 'Cafes',
+  music: 'Music',
+  makers: 'Makers',
 }
 ---
 
