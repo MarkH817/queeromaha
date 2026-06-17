@@ -6,6 +6,9 @@
 .cursor
 .vscode/
 .idea
+.superpowers
+docs/superpowers
+.playwright-mcp
 
 # OS
 .DS_Store

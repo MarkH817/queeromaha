@@ -175,18 +175,22 @@ const randomMsg =
         const activeNeighborhoods = new Set<string>()
 
         function updateClearBtn() {
-          if (clearBtn) clearBtn.disabled = activeTags.size === 0 && activeNeighborhoods.size === 0
+          if (clearBtn) clearBtn.disabled = activeTags.size === 0
+        }
+
+        function cardMatches(card: HTMLElement, cats: Set<string>, nbrs: Set<string>, tags: Set<string>) {
+          const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
+          const cardCat = card.dataset.category || ''
+          const cardNbr = card.dataset.neighborhood || ''
+          const tagMatch = tags.size === 0 || [...tags].every(t => cardTags.includes(t))
+          const catMatch = cats.size === 0 || cats.has(cardCat)
+          const nbrMatch = nbrs.size === 0 || nbrs.has(cardNbr)
+          return tagMatch && catMatch && nbrMatch
         }
 
         function applyFilters() {
           cards.forEach(card => {
-            const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
-            const cardCat = card.dataset.category || ''
-            const cardNbr = card.dataset.neighborhood || ''
-            const tagMatch = activeTags.size === 0 || [...activeTags].every(t => cardTags.includes(t))
-            const catMatch = activeCategories.size === 0 || activeCategories.has(cardCat)
-            const nbrMatch = activeNeighborhoods.size === 0 || activeNeighborhoods.has(cardNbr)
-            card.hidden = !(tagMatch && catMatch && nbrMatch)
+            card.hidden = !cardMatches(card, activeCategories, activeNeighborhoods, activeTags)
           })
           document.querySelectorAll<HTMLElement>('[data-category-heading]').forEach(heading => {
             const cat = heading.dataset.categoryHeading || ''
@@ -196,25 +200,27 @@ const randomMsg =
         }
 
         function wouldHaveResults(slug: string, type: string) {
-          return [...cards].some(card => {
-            if (card.hidden) return false
-            if (type === 'category') {
-              const testCats = new Set(activeCategories)
-              testCats.add(slug)
-              return testCats.has(card.dataset.category || '')
-            }
-            if (type === 'tag') {
-              const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
-              const testTags = new Set(activeTags)
-              testTags.add(slug)
-              return [...testTags].every(t => cardTags.includes(t))
-            }
-            if (type === 'neighborhood') {
-              // OR logic: card matches if its neighborhood is this slug
-              return card.dataset.neighborhood === slug
-            }
-            return false
-          })
+          // Build the hypothetical filter state if `slug` were chosen, rather
+          // than relying on card.hidden (which reflects the *current*
+          // selection and would wrongly veto switching category/location
+          // when the current combination has zero matches).
+          const testCats = new Set(activeCategories)
+          const testNbrs = new Set(activeNeighborhoods)
+          const testTags = new Set(activeTags)
+          if (type === 'category') {
+            // Switching category also clears location/tags (see
+            // setCategory), so availability shouldn't be constrained by them.
+            testCats.clear()
+            testCats.add(slug)
+            testNbrs.clear()
+            testTags.clear()
+          } else if (type === 'neighborhood') {
+            testNbrs.clear()
+            testNbrs.add(slug)
+          } else if (type === 'tag') {
+            testTags.add(slug)
+          }
+          return [...cards].some(card => cardMatches(card, testCats, testNbrs, testTags))
         }
 
         function updatePillAvailability() {
@@ -261,26 +267,34 @@ const randomMsg =
           return parts.length === 0 ? '/' : '/' + parts.join('/')
         }
 
-        function setCategory(slug: string) {
-          // XOR: clear any active category before activating the new one
-          [...activeCategories].forEach(cat => {
-            const p = document.querySelector('[data-filter="' + cat + '"]')
-            if (p) { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false') }
+        function clearType(type: string, activeSet: Set<string>) {
+          activeSet.clear()
+          pills.forEach(p => {
+            if (p.dataset.filterType === type) {
+              p.classList.remove('active')
+              p.setAttribute('aria-pressed', 'false')
+            }
           })
-          activeCategories.clear()
+        }
+
+        function setCategory(slug: string) {
+          clearType('category', activeCategories)
+          // Switching category also resets location and tags, since a
+          // filter combo from the old category may not make sense in the
+          // new one.
+          clearType('neighborhood', activeNeighborhoods)
+          clearType('tag', activeTags)
+          activateFilter(slug)
+        }
+
+        function setNeighborhood(slug: string) {
+          clearType('neighborhood', activeNeighborhoods)
           activateFilter(slug)
         }
 
         if (clearBtn) {
           clearBtn.addEventListener('click', () => {
-            activeTags.clear()
-            activeNeighborhoods.clear()
-            pills.forEach(p => {
-              if (p.dataset.filterType === 'tag' || p.dataset.filterType === 'neighborhood') {
-                p.classList.remove('active')
-                p.setAttribute('aria-pressed', 'false')
-              }
-            })
+            clearType('tag', activeTags)
             applyFilters()
             updateClearBtn()
             history.pushState({}, '', buildUrl())
@@ -296,6 +310,9 @@ const randomMsg =
             if (type === 'category') {
               if (isActive) deactivateFilter(slug)
               else setCategory(slug)
+            } else if (type === 'neighborhood') {
+              if (isActive) deactivateFilter(slug)
+              else setNeighborhood(slug)
             } else {
               if (isActive) deactivateFilter(slug)
               else activateFilter(slug)
