@@ -8,33 +8,35 @@ import { slugify } from '../utils/slugify'
 const categorySlugs = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
 
 export async function getStaticPaths() {
-  const cats = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
-  const entries = await getCollection('directory')
-  const neighborhoodSlugs = [
-    ...new Set(
-      entries.flatMap((e) =>
-        (e.data.items ?? [])
-          .filter((i) => i.public !== false && i.location?.neighborhood)
-          .map((i) => slugify(i.location?.neighborhood ?? ''))
-          .filter(Boolean),
-      ),
-    ),
-  ]
+    const cats = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+    const entries = await getCollection('directory')
+    const neighborhoodSlugs = [
+        ...new Set(
+            entries.flatMap((e) =>
+                (e.data.items ?? [])
+                    .filter(
+                        (i) => i.public !== false && i.location?.neighborhood,
+                    )
+                    .map((i) => slugify(i.location?.neighborhood ?? ''))
+                    .filter(Boolean),
+            ),
+        ),
+    ]
 
-  const paths: { params: { filters: string } }[] = []
+    const paths: { params: { filters: string } }[] = []
 
-  // Single slugs
-  for (const s of [...cats, ...neighborhoodSlugs]) {
-    paths.push({ params: { filters: s } })
-  }
-  // Cat + neighborhood combos (both orderings)
-  for (const cat of cats) {
-    for (const n of neighborhoodSlugs) {
-      paths.push({ params: { filters: `${cat}/${n}` } })
+    // Single slugs
+    for (const s of [...cats, ...neighborhoodSlugs]) {
+        paths.push({ params: { filters: s } })
     }
-  }
+    // Cat + neighborhood combos (both orderings)
+    for (const cat of cats) {
+        for (const n of neighborhoodSlugs) {
+            paths.push({ params: { filters: `${cat}/${n}` } })
+        }
+    }
 
-  return paths
+    return paths
 }
 
 const { filters = '' } = Astro.params
@@ -48,30 +50,33 @@ entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
 const allNeighborhoods: { slug: string; label: string }[] = []
 const seenSlugs = new Set<string>()
 for (const entry of entries) {
-  for (const item of entry.data.items ?? []) {
-    if (item.public !== false && item.location?.neighborhood) {
-      const slug = slugify(item.location.neighborhood)
-      if (!slug) continue
-      if (!seenSlugs.has(slug)) {
-        seenSlugs.add(slug)
-        allNeighborhoods.push({ slug, label: item.location.neighborhood })
-      }
+    for (const item of entry.data.items ?? []) {
+        if (item.public !== false && item.location?.neighborhood) {
+            const slug = slugify(item.location.neighborhood)
+            if (!slug) continue
+            if (!seenSlugs.has(slug)) {
+                seenSlugs.add(slug)
+                allNeighborhoods.push({
+                    slug,
+                    label: item.location.neighborhood,
+                })
+            }
+        }
     }
-  }
 }
 
 const neighborhoodSlugs = allNeighborhoods.map((n) => n.slug)
 const initialNeighborhoods = filterSlugs.filter((s) =>
-  neighborhoodSlugs.includes(s),
+    neighborhoodSlugs.includes(s),
 )
 
 const categoryLabels: Record<string, string> = {
-  social: 'Social',
-  spiritual: 'Spiritual',
-  art: 'Art',
-  cafes: 'Cafes',
-  music: 'Music',
-  makers: 'Makers',
+    social: 'Social',
+    spiritual: 'Spiritual',
+    art: 'Art',
+    cafes: 'Cafes',
+    music: 'Music',
+    makers: 'Makers',
 }
 ---
 

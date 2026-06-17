@@ -2,13 +2,13 @@
 import tagMap from '../data/tagMap.json'
 
 interface Props {
-  neighborhoods?: { slug: string; label: string }[]
+    neighborhoods?: { slug: string; label: string }[]
 }
 
 const { neighborhoods = [] } = Astro.props
 
 const tags = Object.entries(
-  tagMap as Record<string, { emoji: string; label: string }>,
+    tagMap as Record<string, { emoji: string; label: string }>,
 ).map(([slug, { emoji, label }]) => ({ slug, emoji, label }))
 ---
 

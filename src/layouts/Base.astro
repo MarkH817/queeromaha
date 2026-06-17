@@ -4,26 +4,26 @@ import site from '../data/site.json'
 import '../styles/theme.css'
 
 interface Props {
-  title?: string
-  description?: string
-  initialCategories?: string[]
-  initialTags?: string[]
-  initialNeighborhoods?: string[]
+    title?: string
+    description?: string
+    initialCategories?: string[]
+    initialTags?: string[]
+    initialNeighborhoods?: string[]
 }
 
 const {
-  title,
-  description,
-  initialCategories = [],
-  initialTags = [],
-  initialNeighborhoods = [],
+    title,
+    description,
+    initialCategories = [],
+    initialTags = [],
+    initialNeighborhoods = [],
 } = Astro.props
 const pageTitle = title ? `${title} | Queer Omaha` : 'Queer Omaha'
 const canonicalUrl = new URL(Astro.url.pathname, site.url).href
 const randomMsg =
-  footerMessages.messages[
-    Math.floor(Math.random() * footerMessages.messages.length)
-  ]
+    footerMessages.messages[
+        Math.floor(Math.random() * footerMessages.messages.length)
+    ]
 ---
 
 <!doctype html>
