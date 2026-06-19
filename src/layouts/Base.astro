@@ -216,6 +216,15 @@ const randomMsg =
             heading.hidden = ![...cards].some(c => c.dataset.category === cat && !c.hidden)
           })
           updatePillAvailability()
+          updateImpliedCategoryState()
+        }
+
+        function updateImpliedCategoryState() {
+          const allCategoriesImplied = activeNeighborhoods.size > 0 && activeCategories.size === 0
+          pills.forEach(pill => {
+            if (pill.dataset.filterType !== 'category') return
+            pill.classList.toggle('implied', allCategoriesImplied)
+          })
         }
 
         function wouldHaveResults(slug: string, type: string) {
