@@ -59,3 +59,6 @@ items:
     name: Paper Crane Tattoo and Bookery
     tags:
       - neutral-bathrooms
+    location:
+      google_maps_url: https://maps.app.goo.gl/uNNFQYeMmtKxYJkq6?g_st=ic
+      neighborhood: Midtown
