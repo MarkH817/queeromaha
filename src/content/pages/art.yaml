@@ -13,8 +13,8 @@ items:
     public: true
     description: Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?
     tags:
-    - neutral-bathrooms
-    - seating
+      - neutral-bathrooms
+      - seating
     links:
       - label: Insta
         url: https://www.instagram.com/omahasoundry/
@@ -151,7 +151,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Radial Arts Center
     public: true
     description: Large gallery showing larger local artists.
@@ -161,7 +161,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: BFF Gallery
     public: true
     description: Cool punk gallery. My art was in it!
@@ -169,7 +169,7 @@ items:
       - label: Insta
         url: https://www.instagram.com/thebffgallery/?hl=en
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Ming Toy Gallery
     public: true
     description: Cozy gallery next to Edge of the Universe.
@@ -179,7 +179,7 @@ items:
       - label: Website
         url: https://www.mingtoygallery.com/
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Maple Street Construct
     public: true
     description: Minimalist space with a cool upstairs.
@@ -189,7 +189,7 @@ items:
       - label: FB
         url: https://www.facebook.com/maplestconstruct/
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: MaMo Mobile Gallery Semi-Truck
     public: true
     description: Mobile gallery often parked near Petshop showing local artists.
@@ -201,7 +201,7 @@ items:
       - label: FB
         url: https://www.facebook.com/MaMOgallery/
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Trudy's
     public: true
     description: Open artist studios, music and free workshops ran by BFF.
@@ -211,7 +211,7 @@ items:
       - label: FB
         url: https://www.facebook.com/people/Trudys/61561806150499/
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Cali Commons
     public: true
     description: Arts collective and neighborhood gallery
@@ -221,7 +221,7 @@ items:
       - label: Join Artist Collective
         url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Hispanic Arts Center
     public: true
     description: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
@@ -232,7 +232,7 @@ items:
         url: https://www.haco-ne.com/events.html
     notes: POC Milt
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Aksarben Village
     public: true
     description: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
@@ -242,7 +242,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Samuel Bak Museum
     public: true
     description: Holocaust survivor's art museum with workshops and education programs.
@@ -250,7 +250,7 @@ items:
       - label: Events Calendar
         url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: NeXT Foundation Arts
     public: true
     description: Open Studios for Expressive Art at Millwork Commons
@@ -260,7 +260,7 @@ items:
       - label: Events Calendar
         url: https://www.nextfoundationomaha.com/programs-services
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Old Market Passageway
     public: false
     description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
@@ -271,7 +271,7 @@ items:
         url: https://www.instagram.com/gardenofthezodiac/?hl=en
     notes: possibly too normie. willing to entertain arguments as per its queerness
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Joslyn
     public: false
     description: Free museum with events.
@@ -282,7 +282,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Urban Abbey — Soul Arts
     public: false
     description: Monthly arts and spirituality event series at Urban Abbey. Features workshops, performances, and community art projects. Welcoming to all, with a focus on creativity and connection.
@@ -291,7 +291,7 @@ items:
         url: https://www.theurbanabbey.org/events
     notes: active? Is there a better direct link? the calendar is a JS thingie
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Bemis Center
     public: true
     description: Cutting-edge museum with resident artists, the Low End music series and major installations.
@@ -303,7 +303,7 @@ items:
       - label: FB
         url: https://www.facebook.com/bemiscenter/
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Hot Shops
     public: true
     description: Glassblowing studio with classes and events.
@@ -315,7 +315,7 @@ items:
       - label: FB
         url: https://www.facebook.com/hotshopsartcenter/
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Millwork Commons
     public: false
     description: Apartment complex with art showings, music shows and business-y mixers
@@ -328,7 +328,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
   - name: Omaha Artists Cooperative Gallery
     public: true
     description: Artist-owned gallery showcasing a wide variety of local art.
@@ -338,4 +338,4 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Downtown"
+      neighborhood: Downtown
