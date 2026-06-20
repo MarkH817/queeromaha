@@ -4,7 +4,7 @@ public: true
 items:
   - name: Roast Coffeehouse
     public: true
-    description: Great people, coffee and pastries both in Aksarben / 120th and Blondo. 
+    description: Great people, coffee and pastries both in Aksarben / 120th and Blondo.
     links:
       - label: Insta
         url: https://www.instagram.com/roast_coffeehouse/
@@ -18,7 +18,7 @@ items:
     location:
       street: 120th and Blondo
       neighborhood: West O
-      google_maps_url: "https://maps.app.goo.gl/4qViWqoWxHpZn4oR9"
+      google_maps_url: https://maps.app.goo.gl/4qViWqoWxHpZn4oR9
   - name: Godega
     public: true
     description: Grab-and-go food, specialty snacks, and a place to hang out
@@ -34,7 +34,7 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: "Aksarben"
+      neighborhood: Aksarben
   - name: Marigold's
     public: true
     description: Artisanal goods and crafts.
@@ -49,7 +49,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: "Aksarben"
+      neighborhood: Aksarben
   - name: Mill on Leavenworth
     public: true
     description: Large popular cafe. Good for meetups and "working".
@@ -60,7 +60,7 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Archetype Coffee
     public: true
     description: Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/).
@@ -71,7 +71,7 @@ items:
       - neutral-bathrooms
       - work-spot
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Sweet Magnolias
     public: true
     description: Queer-owned pastry shop.
@@ -81,7 +81,7 @@ items:
       - label: Website
         url: https://www.sweetmagnoliasbakeshop.com/
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Spielbound
     public: true
     description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
@@ -93,7 +93,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: "Midtown"
+      neighborhood: Midtown
   - name: Hardy Coffee
     public: false
     description: Chill hipster cafe.
@@ -109,7 +109,7 @@ items:
       - seating
       - neutral-bathrooms
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Edge of the Universe Cafe
     public: true
     description: Truly unique place with artist owners. Great date spot.
@@ -124,7 +124,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Legends Comics & Coffee
     public: true
     description: Comic shop with a large queer section. Board game space in the back.
@@ -137,7 +137,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: "Benson"
+      neighborhood: Benson
   - name: Blue Line Coffee
     public: true
     description: Great coffee and cool people. Posts flyers for local events.
@@ -150,12 +150,12 @@ items:
       - neutral-bathrooms
       - work-spot
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Lola's
     public: false
     description: Pricy cafe in the movie theater. Good for dates.
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Amateur Coffee
     public: true
     description: Small place whose takeout coffee comes in glass containers with deposit.
@@ -170,7 +170,7 @@ items:
       - neutral-bathrooms
     notes: Met Owner at NZC who stated it's queer owned.
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Urban Abbey
     public: false
     description: Progressive Methodist cafe / bookstore with a queer section. Chill place to hang out.
@@ -181,7 +181,7 @@ items:
     tags:
       - seating
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Reading Room
     public: true
     description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
@@ -195,7 +195,7 @@ items:
     tags:
       - seating
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Rally Coffee
     public: false
     description: Cafe downtown.
@@ -204,7 +204,7 @@ items:
         url: https://www.rallycoffee.co/pages/locations
     notes: Go there first before listing.
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Zen Coffee
     public: true
     description: Downtown and West O locations.
@@ -219,7 +219,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Howlin Hounds
     public: false
     links:
@@ -227,7 +227,7 @@ items:
         url: https://www.instagram.com/howlinhounds/?hl=en
     notes: Recommended, haven't been there.
     location:
-      neighborhood: "Dundee"
+      neighborhood: Dundee
   - name: Karma Koffee
     public: true
     description: Buddhist themed cafe with vegan options and authentic thangkas.
@@ -243,4 +243,4 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: "West O"
+      neighborhood: West O
