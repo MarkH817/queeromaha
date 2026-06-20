@@ -4,13 +4,18 @@ public: true
 items:
   - name: Gabi Ghoul Art
     public: true
-    description: Gabi identifies as a Queer, Disabled and BIPOC artist with a love for mixed medium works, often blending a use of acrylic painted scenes highlighted by hand stitched beads.
+    description: Gabi identifies as a Queer, Disabled and BIPOC artist with a love
+      for mixed medium works, often blending a use of acrylic painted scenes
+      highlighted by hand stitched beads.
     links:
       - label: Insta
         url: https://instagram.com/gabighoul.art
   - name: Cryptid Creations
     public: true
-    description: Artists Morgue and Stromer (both they/them) create sexy animal-skull pinup girls, reclaimed stained glass art and amazing cat-skull queer pride pins. I love my 'gendervoid' one from them. Find them at punk and queer markets.
+    description: Artists Morgue and Stromer (both they/them) create sexy
+      animal-skull pinup girls, reclaimed stained glass art and amazing
+      cat-skull queer pride pins. I love my 'gendervoid' one from them. Find
+      them at punk and queer markets.
     links:
       - label: Insta
         url: https://www.instagram.com/morstro98_hg
@@ -22,7 +27,10 @@ items:
         url: https://linktr.ee/crypt.creations
   - name: Cyberpunk Tarot Decks
     public: true
-    description: Haidyn Sosalla-Bahr (they/them) created a full Tarot Deck based on their original cyberpunk universe. Find them at the BFF Art Market, Omaha Arts Festival Aksarben June 12-14, and Rockbrook Arts Festival September 12 from 10-6 and September 13 from 10-5
+    description: Haidyn Sosalla-Bahr (they/them) created a full Tarot Deck based on
+      their original cyberpunk universe. Find them at the BFF Art Market, Omaha
+      Arts Festival Aksarben June 12-14, and Rockbrook Arts Festival September
+      12 from 10-6 and September 13 from 10-5
     links:
       - label: Website
         url: https://meridiancitytarot.carrd.co/#about
@@ -36,7 +44,8 @@ items:
         url: https://bsky.app/profile/blueranyk.bsky.social
   - name: Things By Thor
     public: true
-    description: Kayla Thor creates Gifts & Glasses for Every Ghoul. Glass tumblers, mugs, earrings, notebooks and other accessories for the dark and spooky.
+    description: Kayla Thor creates Gifts & Glasses for Every Ghoul. Glass tumblers,
+      mugs, earrings, notebooks and other accessories for the dark and spooky.
     links:
       - label: Insta
         url: https://www.instagram.com/thingsbythor
@@ -46,3 +55,5 @@ items:
         url: https://thingsbythor.com
       - label: Linktree
         url: https://linktr.ee/Thingsbythor
+  - public: false
+    name: Test
