@@ -265,6 +265,8 @@ items:
     public: true
     description: Hub of industrial and darkwave scene
     links:
+      - label: Sub_Culture (1st Saturdays)
+        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
       - label: The Slab (2nd Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
       - label: Industrial Night (3rd Saturdays)
@@ -275,8 +277,6 @@ items:
         url: https://www.facebook.com/TheMourningDolls/
       - label: OmahaUnderground Events
         url: https://omahaunderground.net/venues/red-light-lounge
-      - label: Sub_Culture (1st Saturdays)
-        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
     notes: Rebranded circa late 2025, apparently same owners. The Mourning Dolls
       (burlesque, crafts) + Slab are resident. DJ Barrens and Jacob (sadonaut)
       are POCs. Club Noir moved from Verdict to Coven circa spring 2026.
