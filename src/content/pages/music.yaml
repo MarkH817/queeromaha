@@ -282,6 +282,7 @@ items:
       spring 2026.
     location:
       neighborhood: Downtown
+      google_maps_url: https://maps.app.goo.gl/2bcSF3maPbCxcQ6B8?g_st=ic
   - name: Sokol (Admiral)
     public: false
     tags:
