@@ -256,20 +256,22 @@ items:
     public: true
     description: Hub of industrial and darkwave scene
     links:
+      - label: Sub_Culture (1st Saturdays)
+        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
       - label: The Slab (2nd Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
       - label: Industrial Night (3rd Saturdays)
         url: https://www.facebook.com/clubsinthesis/
       - label: RAWR XD Emo Nite (Last Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
-      - label: Mourning Dolls Burlesque Shows and Craft Nights
+      - label: Mourning Dolls Craft Night(every Tuesday)
         url: https://www.facebook.com/TheMourningDolls/
       - label: OmahaUnderground Events
         url: https://omahaunderground.net/venues/red-light-lounge
-    notes: |
-      Rebranded circa late 2025, apparently same owners. The Mourning Dolls (burlesque, crafts) + Slab are resident. DJ Barrens and Jacob (sadonaut) are POCs. Club Noir moved from Verdict to Coven circa spring 2026. verdict site's events calendar is nigh unusable https://www.theverdictomaha.com/events.html
+    notes: Rebranded circa late 2025, apparently same owners. DJ Barrens and Jacob (sadonaut) run industrial. Club Noir moved from Verdict to Coven circa spring 2026.
     location:
       neighborhood: Downtown
+      google_maps_url: https://maps.app.goo.gl/2bcSF3maPbCxcQ6B8?g_st=ic
   - name: Sokol (Admiral)
     public: false
     tags:
