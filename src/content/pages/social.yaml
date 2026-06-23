@@ -1,12 +1,10 @@
 title: Queer Omaha — LGBTQ+ Community Groups & Resources
-description: Community-maintained guide to queer social groups, spiritual
-  spaces, and resources in Omaha, Nebraska.
+description: Community-maintained guide to queer social groups, spiritual spaces, and resources in Omaha, Nebraska.
 public: true
 items:
   - name: OmahaForUs LGBTQIA* Center
     public: true
-    description: Hub of community, resources, and events. Food bank, gender
-      affirming clothing, provider referrals. Quiet/sensory room
+    description: Hub of community, resources, and events. Food bank, gender affirming clothing, provider referrals. Quiet/sensory room
     links:
       - label: Events Calendar
         url: https://omahafor.us/events-calendar
@@ -29,22 +27,13 @@ items:
       - work-spot
       - neutral-bathrooms
       - seating
-    notes: >
-      Transition clothing and supplies, Food/hygiene pantry, clothes closet,
-      arts and crafts. Name-change / legal resources. Teen events and groups.
-      Reading room and lending library. Private showers. Volunteering
-      opportunities.
-
+    notes: |
+      Transition clothing and supplies, Food/hygiene pantry, clothes closet, arts and crafts. Name-change / legal resources. Teen events and groups. Reading room and lending library. Private showers. Volunteering opportunities.
       Support group (19+) every Wednesday evening 6PM to 7:30PM [**Register Here**](https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u). Outside of Omaha? It's Remote every other week!
-
       Game night every Thursday evening 5PM to 8PM
-
       Dungeons & Dragons on the 1st and 3rd Tuesdays evenings  4PM to 7PM
-
       Dedicated space for [Teen/youth programs](https://www.omahaforus.org/proud-horizons) throughout the week
-
       Craft Night on Wednesday evening 6PM to 7:30PM
-
       STI testing certain Thursdays (check schedule)
     recurring_events:
       - summary: Support Group (19+) — OmahaForUs
@@ -53,8 +42,7 @@ items:
         time: 18:00
         end_time: 19:30
         location: OmahaForUs LGBTQIA* Center
-        description: Weekly support group (19+). Registration required. Hybrid — remote
-          every other week.
+        description: Weekly support group (19+). Registration required. Hybrid — remote every other week.
         url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
       - summary: Game Night — OmahaForUs
         rrule: FREQ=WEEKLY;BYDAY=TH
@@ -78,8 +66,7 @@ items:
         time: 11:00
         end_time: 15:00
         location: OmahaForUs LGBTQIA* Center
-        description: Open Monthly volunteer day - Register via the Doodle poll posted on
-          the event page.
+        description: Open Monthly volunteer day - Register via the Doodle poll posted on the event page.
         url: https://omahafor.us/events-calendar
   - name: Wild Garden Insta
     public: false
@@ -90,8 +77,7 @@ items:
     notes: Potentially inactive circa spring 2026. Local inperson group presumably
   - name: The Queer Collective
     public: true
-    description: Mutual aid, drag shows, line dancing, and art markets, often at
-      Floors Floors Floors in Benson. Organized via Instagram.
+    description: Mutual aid, drag shows, line dancing, and art markets, often at Floors Floors Floors in Benson. Organized via Instagram.
     links:
       - label: Instagram
         url: https://www.instagram.com/queercollectiveomaha
@@ -130,8 +116,7 @@ items:
     notes: Good group per Babs, completely full with waitlist per Brit
   - name: Second Sunday - Trans Masc Meetup
     public: true
-    description: In-person social group centering Trans Men, Trans Masc* and
-      Nonbinary folks.
+    description: In-person social group centering Trans Men, Trans Masc* and Nonbinary folks.
     links:
       - label: Signup (vetted)
         url: https://secondsunday.xyz/meet-up
@@ -139,8 +124,7 @@ items:
         url: https://discord.com/invite/EdVFccyJeT
   - name: OWOmaha Furry Group
     public: true
-    description: All-inclusive, actively moderated Furry group with frequent
-      in-person and Discord meetups.
+    description: All-inclusive, actively moderated Furry group with frequent in-person and Discord meetups.
     links:
       - label: Events Calendar
         url: https://www.owomaha.com/calendar
@@ -156,8 +140,7 @@ items:
         url: https://discord.com/invite/M5JUCgY9c
   - name: Open Arms Trans Social Group (OATS)
     public: false
-    description: Long-running meetup of Trans* folks, queer people and allies on
-      every 3rd Saturday @ Noon at 2nd Unitarian Church of Omaha.
+    description: Long-running meetup of Trans* folks, queer people and allies on every 3rd Saturday @ Noon at 2nd Unitarian Church of Omaha.
     links:
       - label: More Information
         url: https://2uomaha.org/justice/lgbtq
