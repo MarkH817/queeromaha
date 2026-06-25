@@ -56,7 +56,7 @@ bun run format # auto-fix formatting
 
 ### Tests
 
-Husky requires tests to pass on pre/push. Please add tests for significant changes.
+Husky requires tests to pass on pre-push. Please add tests for significant changes.
 
 ```
 bun run test # unit tests + Playwright
