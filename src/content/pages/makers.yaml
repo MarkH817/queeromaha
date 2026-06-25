@@ -46,7 +46,7 @@ items:
         url: https://thingsbythor.com
       - label: Linktree
         url: https://linktr.ee/Thingsbythor
-  - public: true
+  - public: false
     name: Paper Crane Tattoo and Bookery
     tags:
       - neutral-bathrooms
