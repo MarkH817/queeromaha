@@ -220,16 +220,6 @@ const randomMsg =
             pill.disabled = !available
             pill.classList.toggle('unavailable', !available)
           })
-          sortNeighborhoodPills()
-        }
-
-        function sortNeighborhoodPills() {
-          const scroll = document.querySelector('.location-bar-scroll')
-          if (!scroll) return
-          const neighborhoodBtns = [...scroll.querySelectorAll<HTMLElement>('.location-segment')]
-          neighborhoodBtns
-            .sort((a, b) => (a.classList.contains('unavailable') ? 1 : 0) - (b.classList.contains('unavailable') ? 1 : 0))
-            .forEach(btn => scroll.appendChild(btn))
         }
 
         function activateFilter(slug: string) {
