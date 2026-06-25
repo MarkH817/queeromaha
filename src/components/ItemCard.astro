@@ -4,6 +4,7 @@ import type { z } from 'zod'
 import type { itemSchema } from '../content.config'
 import tagMap from '../data/tagMap.json'
 import { slugify } from '../utils/slugify'
+import EntryTag from './EntryTag.astro'
 
 type TagMap = Record<string, { emoji: string; label: string }>
 const tags = tagMap as TagMap
@@ -38,7 +39,7 @@ const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
     {item.tags?.map(tag => {
       const t = tags[tag]
       return t ? (
-        <span role="img" aria-label={t.label} title={t.label}>{t.emoji}</span>
+        <EntryTag label={t.label} emoji={t.emoji} />
       ) : null
     })}
   </h3>

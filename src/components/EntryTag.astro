@@ -1,0 +1,30 @@
+---
+interface Props {
+    label: string
+    emoji: string
+}
+const { label, emoji } = Astro.props
+const id = `et-${crypto.randomUUID()}`
+---
+
+<span class="et" title={label} role="img" aria-label={label}>{emoji}</span
+><wa-tooltip for={id} aria-hidden>{label}</wa-tooltip><span
+    {id}
+    class="et-enhanced"
+    role="img"
+    aria-label={label}>{emoji}</span
+>
+<style>
+    /* Hides wa-tooltip after web awesome script loads */
+    .et:has(+ wa-tooltip:defined) {
+        display: none;
+    }
+
+    /* Hides wa-tooltip until web awesome script loads */
+    wa-tooltip:not(:defined) {
+        &,
+        & + .et-enhanced {
+            display: none;
+        }
+    }
+</style>
