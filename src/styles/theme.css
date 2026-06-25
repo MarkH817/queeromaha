@@ -489,7 +489,7 @@ blockquote p {
     position: relative;
     max-width: 100%;
     overflow: hidden;
-    border-radius: 999px;
+    border-radius: 8px;
     border: 2px solid #c4b5fd;
     background: #f9f5ff;
     box-shadow:
@@ -505,7 +505,7 @@ blockquote p {
     bottom: 0;
     width: 2.5rem;
     background: linear-gradient(to right, transparent, #f9f5ff 85%);
-    border-radius: 0 999px 999px 0;
+    border-radius: 0 8px 8px 0;
     pointer-events: none;
 }
 
@@ -544,7 +544,7 @@ blockquote p {
     align-items: center;
     justify-content: center;
     height: 2.4rem;
-    padding: 0 0.9rem;
+    padding: 0 0.6rem;
     margin: 0;
     border: none;
     border-right: 2px solid #c4b5fd;
