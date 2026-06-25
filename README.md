@@ -20,13 +20,15 @@ Directory of queer/trans groups, venues and spaces in Omaha.
 
 ## Local Dev
 
-Run locally with hot-reloading
+Run Astro locally with hot-reloading
 
 ```
 bun install --development
-bun run build # 11ty output to _site
-bun run serve # local 11ty server at localhost:8080
+bun run serve # astro server at localhost:4321
 bun run serve:cms # local decapCMS at /admin
+
+# alternatively
+bun run dev # full local setup
 ```
 
 ### Deployment
