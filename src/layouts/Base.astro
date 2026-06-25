@@ -32,7 +32,8 @@ const randomMsg =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
-    <link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.7.0/styles/webawesome.css" />
+    <link rel="stylesheet" href="/vendor/webawesome.css" />
+    <link rel="preconnect" href="https://ka-f.webawesome.com" crossorigin />
     <script is:inline type="module" src="https://ka-f.webawesome.com/webawesome@3.7.0/webawesome.loader.js"></script>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -86,7 +87,7 @@ const randomMsg =
           rel="noopener noreferrer"
           aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
         >
-          📅 Subscribe to QueerOmaha Calendar
+          <wa-icon name="calendar" aria-hidden="true"></wa-icon> Subscribe to QueerOmaha Calendar
         </a>
       </div>
       <div class="footer-text">
