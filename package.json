@@ -22,7 +22,8 @@
         "lint": "biome check . && bun scripts/format-yaml.js --check",
         "format": "biome check --write . && bun scripts/format-yaml.js",
         "check:links": "bun scripts/check-links.js",
-        "check:links:pr": "bun scripts/check-links.js --pr"
+        "check:links:pr": "bun scripts/check-links.js --pr",
+        "vendor:webawesome": "bun scripts/vendor-webawesome.js"
     },
     "keywords": [],
     "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
