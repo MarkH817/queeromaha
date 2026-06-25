@@ -6,7 +6,7 @@ import tagMap from '../data/tagMap.json'
 import { slugify } from '../utils/slugify'
 import EntryTag from './EntryTag.astro'
 
-type TagMap = Record<string, { emoji: string; label: string }>
+type TagMap = Record<string, { icon: string; label: string }>
 const tags = tagMap as TagMap
 
 interface Props {
@@ -28,9 +28,7 @@ const addrParts = [
         : (loc?.state ?? loc?.zip),
 ].filter(Boolean)
 const addrLine = addrParts.join(', ')
-const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
-    .filter(Boolean)
-    .join(' ')
+const locLine = [addrLine, loc?.neighborhood].filter(Boolean).join(' - ')
 ---
 
 <wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>
@@ -39,19 +37,20 @@ const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
     {item.tags?.map(tag => {
       const t = tags[tag]
       return t ? (
-        <EntryTag label={t.label} emoji={t.emoji} />
+        <EntryTag label={t.label} icon={t.icon} />
       ) : null
     })}
   </h3>
   {descHtml && <Fragment set:html={descHtml} />}
   {loc && locLine && (
     <p class="item-location">
+      <wa-icon name="location-dot" aria-hidden="true"></wa-icon>
       {loc.google_maps_url ? (
         <a href={loc.google_maps_url} rel="noopener noreferrer" target="_blank" aria-label={`Map: ${locLine} (opens in new tab)`}>
-          📍 {locLine}
+          {locLine}
         </a>
       ) : (
-        <>📍 {locLine}</>
+        locLine
       )}
     </p>
   )}

@@ -587,6 +587,24 @@ blockquote p {
     cursor: not-allowed;
 }
 
+.item-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #9061dc;
+}
+
+.item-location a {
+    color: #9061dc;
+    border-bottom-color: transparent;
+}
+
+.item-location a:hover {
+    color: #7c3aed;
+    border-bottom-color: transparent;
+}
+
 /* Nav github icon in header */
 .nav-github {
     display: flex;
