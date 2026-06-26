@@ -30,7 +30,7 @@ items:
     location:
       neighborhood: South O
   - name: No-Coast Noise Collective
-    public: false
+    public: true
     description: Experimental music and sound art collective. Centered out of
       Project Project.
     links:
