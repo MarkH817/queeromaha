@@ -29,6 +29,22 @@ items:
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
       neighborhood: South O
+  - name: Project Project
+    public: true
+    tags:
+      - neutral-bathrooms
+    description: Punk DIY space for experimental music and local art.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/weareprojectproject
+      - label: Website
+        url: https://projectprojectomaha.com/
+      - label: FB
+        url: https://www.facebook.com/weareprojectproject/
+      - label: Events on OmahaUnderground
+        url: https://omahaunderground.net/venues/project-project
+    location:
+      neighborhood: South O
   - name: No-Coast Noise Collective
     public: true
     description: Experimental music and sound art collective. Centered out of
@@ -46,22 +62,6 @@ items:
       neighborhood: South O
     notes: Joe Willard runs it, Phill Smith and Nester do booking, informal, discord
       is main chat, revolves around project project
-  - name: Project Project
-    public: true
-    tags:
-      - neutral-bathrooms
-    description: Punk DIY space for experimental music and local art.
-    links:
-      - label: Insta
-        url: https://www.instagram.com/weareprojectproject
-      - label: Website
-        url: https://projectprojectomaha.com/
-      - label: FB
-        url: https://www.facebook.com/weareprojectproject/
-      - label: Events on OmahaUnderground
-        url: https://omahaunderground.net/venues/project-project
-    location:
-      neighborhood: South O
   - name: Floors Floors Floors
     public: false
     tags:
