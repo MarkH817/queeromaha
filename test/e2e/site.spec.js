@@ -65,7 +65,7 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
 
 test('footer is present', async ({ page }) => {
     await page.goto('/')
-    await expect(page.locator('footer')).toBeVisible()
+    await expect(page.getByRole('contentinfo')).toBeVisible()
 })
 
 test('filter pills are present on home page', async ({ page }) => {
