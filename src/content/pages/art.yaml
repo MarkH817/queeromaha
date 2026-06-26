@@ -1,17 +1,20 @@
 title: Omaha Art Events / Venues
-description: Art events, creative groups, and venues in Omaha with a queer-friendly presence.
+description: Art events, creative groups, and venues in Omaha with a
+  queer-friendly presence.
 public: true
 items:
   - name: Sober Socials Omaha
     public: false
     notes: potentially inactive circa spring 2026
-    description: Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
+    description: Ecstatic dance, figure drawing and spiritual singing, usually at
+      Church Art House. Outdoor events in the summer.
     links:
       - label: Insta
         url: https://www.instagram.com/sobersocialsomaha/
   - name: Soundry w/ Stacey Barelos
     public: true
-    description: Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?
+    description: Fun and inventive music workshops - want to smash a piano? How
+      quietly can you play a tambourine?
     tags:
       - neutral-bathrooms
       - seating
@@ -22,13 +25,16 @@ items:
         url: https://soundryomaha.org
   - name: Omaha Drum Family
     public: true
-    description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
+    description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole
+      Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of
+      theirs!
     links:
       - label: Events Calendar
         url: https://www.facebook.com/drumomaha/
   - name: SynthOmaha Electronic Music Jam
     public: true
-    description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
+    description: Bring your laptop, analog synth, or modular rig to Shakedown Street
+      @ 8-10pm on the last Monday of the month. Wallflowers welcome!
     links:
       - label: Events Calendar
         url: https://synthomaha.net/
@@ -40,13 +46,16 @@ items:
       - Tob [Mastodon](https://mastodon.sdf.org/@tob)
   - name: Sowing Seeds
     public: true
-    description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
+    description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on
+      the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're
+      working on and create alongside other artists and writers.
     links:
       - label: Insta
         url: https://www.instagram.com/sowingseeds.omaha/
   - name: Alternative Publishing (Zines)
     public: true
-    description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
+    description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix,
+      Poetry chapbooks, and Linocuts
     links:
       - label: Insta
         url: https://www.instagram.com/altpubomaha/
@@ -60,10 +69,13 @@ items:
         url: https://www.instagram.com/soundarte.mx/?hl=en
       - label: Music Label
         url: https://eacrecords.bandcamp.com/
-    notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat sporadic updates to site
+    notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat
+      sporadic updates to site
   - name: Church Art House
     public: true
-    description: Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
+    description: Unique artistic space in a de-consecrated church. Drawing classes,
+      acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the
+      basement.
     links:
       - label: Insta
         url: https://www.instagram.com/thechurcharthouse/
@@ -97,7 +109,8 @@ items:
       neighborhood: South O
   - name: Razor Wire Productions Open Mic
     public: false
-    description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm.
+    description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm
+      and 2nd Fridays @ 6pm.
     links:
       - label: FB
         url: https://www.facebook.com/poetiklee77/
@@ -224,7 +237,9 @@ items:
       neighborhood: Midtown
   - name: Hispanic Arts Center
     public: true
-    description: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
+    description: Traditional and contemporary Mexican folkloric dance, creative
+      expression, and community gathering. Has Dia de Los Muertos and Cinco de
+      la Mayo events.
     links:
       - label: FB
         url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
@@ -235,7 +250,9 @@ items:
       neighborhood: Midtown
   - name: Aksarben Village
     public: true
-    description: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
+    description: Has arts market and outdoor music in the summer. Get the Momos at
+      Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at
+      Inner Rail, Godega, Marigold's and Roast.
     links:
       - label: Events Calendar
         url: https://www.aksarbenvillage.com/events
@@ -261,6 +278,13 @@ items:
         url: https://www.nextfoundationomaha.com/programs-services
     location:
       neighborhood: Downtown
+      google_maps_url: https://maps.app.goo.gl/WbUkF54PX4qEiY827?g_st=ic
+      street: "1111 N 13th St #114"
+      city: Omaha
+      zip: "68102"
+    tags:
+      - neutral-bathrooms
+      - seating
   - name: Old Market Passageway
     public: false
     description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
@@ -285,7 +309,9 @@ items:
       neighborhood: Downtown
   - name: Urban Abbey — Soul Arts
     public: false
-    description: Monthly arts and spirituality event series at Urban Abbey. Features workshops, performances, and community art projects. Welcoming to all, with a focus on creativity and connection.
+    description: Monthly arts and spirituality event series at Urban Abbey. Features
+      workshops, performances, and community art projects. Welcoming to all,
+      with a focus on creativity and connection.
     links:
       - label: Events
         url: https://www.theurbanabbey.org/events
@@ -294,7 +320,8 @@ items:
       neighborhood: Downtown
   - name: Bemis Center
     public: true
-    description: Cutting-edge museum with resident artists, the Low End music series and major installations.
+    description: Cutting-edge museum with resident artists, the Low End music series
+      and major installations.
     links:
       - label: Insta
         url: https://www.instagram.com/bemiscenter/
