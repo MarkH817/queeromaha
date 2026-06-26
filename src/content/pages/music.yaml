@@ -1,5 +1,6 @@
 title: Music Events / Venues
-description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
+description: Live music venues, show listings, and music communities in Omaha
+  welcoming to queer folks.
 public: true
 items:
   - name: OmahaUnderground.NET and friends
@@ -15,7 +16,8 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-    description: Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. Clay throwing classes, kiln and glazing.
+    description: Nexus of punks, electronic synthesists, shoegaze aficionados and
+      acoustic singer-songwriters. Clay throwing classes, kiln and glazing.
     links:
       - label: Insta
         url: https://www.instagram.com/thechurcharthouse/
@@ -28,8 +30,9 @@ items:
     location:
       neighborhood: South O
   - name: No-Coast Noise Collective
-    public: true
-    description: Experimental music and sound art collective. Centered out of Project Project.
+    public: false
+    description: Experimental music and sound art collective. Centered out of
+      Project Project.
     links:
       - label: Insta
         url: https://www.instagram.com/nocoastnoise/
@@ -124,10 +127,13 @@ items:
       - seating
     location:
       neighborhood: Midtown
-    description: |
-      Goth club at the old Down Under address. Punk / darkwave / industrial shows.
+    description: >
+      Goth club at the old Down Under address. Punk / darkwave / industrial
+      shows.
+
 
       Noir Omaha hosts a goth night every Second Saturday - 8PM to close
+
 
       Extremely popular, expect long lines. Get there early as in 6PM
     links:
@@ -156,8 +162,10 @@ items:
       neighborhood: Midtown
   - name: O'Leaver's
     public: true
-    description: |
-      Legendary dive bar with small stage and great local / regional acts. Bathrooms nigh unusable.
+    description: >
+      Legendary dive bar with small stage and great local / regional acts.
+      Bathrooms nigh unusable.
+
 
       Did you know it's owned by members of the band Cursive?
     links:
@@ -237,7 +245,8 @@ items:
       neighborhood: Midtown
   - name: Second Unitarian Church
     public: false
-    description: Has a stage, seating, PA and projector. Fairly new to hosting music/local events.
+    description: Has a stage, seating, PA and projector. Fairly new to hosting
+      music/local events.
     links:
       - label: Website
         url: https://2uomaha.org/about-us/facility-rental
@@ -268,7 +277,9 @@ items:
         url: https://www.facebook.com/TheMourningDolls/
       - label: OmahaUnderground Events
         url: https://omahaunderground.net/venues/red-light-lounge
-    notes: Rebranded circa late 2025, apparently same owners. DJ Barrens and Jacob (sadonaut) run industrial. Club Noir moved from Verdict to Coven circa spring 2026.
+    notes: Rebranded circa late 2025, apparently same owners. DJ Barrens and Jacob
+      (sadonaut) run industrial. Club Noir moved from Verdict to Coven circa
+      spring 2026.
     location:
       neighborhood: Downtown
       google_maps_url: https://maps.app.goo.gl/2bcSF3maPbCxcQ6B8?g_st=ic
@@ -284,7 +295,8 @@ items:
       neighborhood: Downtown
   - name: Steelhouse
     public: true
-    description: "**NO GO** — unsafe for trans / queer folx. Empowers literal bathroom police."
+    description: "**NO GO** — unsafe for trans / queer folx. Empowers literal
+      bathroom police."
     location:
       neighborhood: Downtown
   - name: Slowdown
