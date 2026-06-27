@@ -32,8 +32,6 @@ const randomMsg =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
-    <link rel="stylesheet" href="https://ka-f.webawesome.com/webawesome@3.7.0/styles/webawesome.css" />
-    <script is:inline type="module" src="https://ka-f.webawesome.com/webawesome@3.7.0/webawesome.loader.js"></script>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -103,6 +101,11 @@ const randomMsg =
       <wa-icon name="circle-arrow-up" variant="solid"></wa-icon>
     </button>
     <script>
+      import '@awesome.me/webawesome/dist/components/button/button.js'
+      import '@awesome.me/webawesome/dist/components/card/card.js'
+      import '@awesome.me/webawesome/dist/components/icon/icon.js'
+      import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js'
+
       document.addEventListener('DOMContentLoaded', () => {
         // Hide footer message if it doesn't fit (e.g. narrow mobile screens)
         const footerText = document.querySelector<HTMLElement>('.footer-text')
