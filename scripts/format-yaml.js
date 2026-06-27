@@ -24,17 +24,30 @@ const CHECK_MODE = process.argv.includes('--check')
 
 const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.yaml'))
 
+let errors = []
 let changed = []
 
 for (const file of files) {
     const path = join(CONTENT_DIR, file)
     const src = readFileSync(path, 'utf8')
-    const canonical = stringify(parse(src), { lineWidth: 0 })
+    let canonical
+    try {
+        canonical = stringify(parse(src), { lineWidth: 0 })
+    } catch (err) {
+        errors.push(`  ${file}: ${err.message}`)
+        continue
+    }
 
     if (canonical === src) continue
 
     changed.push(file)
     if (!CHECK_MODE) writeFileSync(path, canonical)
+}
+
+if (errors.length > 0) {
+    console.error('YAML parse error(s) — fix before committing:')
+    for (const msg of errors) console.error(msg)
+    process.exit(1)
 }
 
 if (changed.length === 0) {
