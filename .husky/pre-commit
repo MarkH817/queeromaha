@@ -1,1 +1,2 @@
-bunx nano-staged
+#!/bin/sh
+bun run format && git diff --cached --name-only | xargs -r git add
