@@ -1,2 +1,2 @@
 #!/bin/sh
-bun run format && git diff --cached --name-only | xargs -r git add
+bun run format && git diff --cached --name-only --diff-filter=d | xargs -r git add
