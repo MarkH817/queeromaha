@@ -24,9 +24,8 @@
     },
     "linter": {
         "enabled": true,
-        "rules": { "recommended": true },
-        "rules": { "preset": "none" },
-        "includes": ["**", "!.astro/**", "!public/admin/**"]
+        "rules": { "preset": "recommended" },
+        "includes": ["**", "!.astro/**", "!public/admin/**", "!public/**/*.svg"]
     },
     "overrides": [
         {
