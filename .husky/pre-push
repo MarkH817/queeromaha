@@ -10,5 +10,12 @@ if [ "$has_new_commits" = false ]; then
   exit 0
 fi
 
-bun run check
+# run astro check and tests in parallel; both must pass
+bun run check &
+CHECK_PID=$!
 bun run test
+TEST_EXIT=$?
+wait $CHECK_PID
+CHECK_EXIT=$?
+[ $TEST_EXIT -ne 0 ] || [ $CHECK_EXIT -ne 0 ] && exit 1
+exit 0
