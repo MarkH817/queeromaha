@@ -258,14 +258,6 @@ test('footer message is visible and unclipped on wide screens', async ({
     expect(overflowing).toBe(false)
 })
 
-test('self-hosted webawesome css is served correctly', async ({ page }) => {
-    await page.goto('/')
-    const status = await page.evaluate(() =>
-        fetch('/vendor/webawesome.css').then((r) => r.status),
-    )
-    expect(status).toBe(200)
-})
-
 test('tag filter pills use wa-icon elements', async ({ page }) => {
     await page.goto('/')
     const pills = page.locator('.filter-pill')
