@@ -9,15 +9,14 @@
         "@awesome.me/webawesome": "^3.9.0",
         "astro": "^6.4.8",
         "marked": "^18.0.5",
-        "queeromaha.com": ".",
-        "typescript": "^6.0.3",
       },
       "devDependencies": {
         "@astrojs/check": "^0.9.9",
-        "@biomejs/biome": "2.5.0",
+        "@biomejs/biome": "^2.5.0",
         "@playwright/test": "^1.61.0",
         "decap-server": "^3.9.1",
         "husky": "^9.1.7",
+        "typescript": "^6.0.3",
         "yaml": "^2.9.0",
       },
     },
@@ -864,8 +863,6 @@
     "proxy-addr": ["proxy-addr@2.0.7", "", { "dependencies": { "forwarded": "0.2.0", "ipaddr.js": "1.9.1" } }, "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg=="],
 
     "qs": ["qs@6.15.2", "", { "dependencies": { "side-channel": "^1.1.0" } }, "sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw=="],
-
-    "queeromaha.com": ["queeromaha.com@root:", {}],
 
     "radix3": ["radix3@1.1.2", "", {}, "sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA=="],
 

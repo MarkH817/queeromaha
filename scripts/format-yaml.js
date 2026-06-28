@@ -24,8 +24,8 @@ const CHECK_MODE = process.argv.includes('--check')
 
 const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.yaml'))
 
-let errors = []
-let changed = []
+const errors = []
+const changed = []
 
 for (const file of files) {
     const path = join(CONTENT_DIR, file)
