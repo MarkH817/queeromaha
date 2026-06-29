@@ -636,11 +636,11 @@ blockquote p {
     align-items: center;
     gap: 0.3rem;
     font-size: 0.9rem;
-    color: #9061dc;
+    color: #7c3aed;
 }
 
 .item-location a {
-    color: #9061dc;
+    color: #7c3aed;
     border-bottom-color: transparent;
 }
 
