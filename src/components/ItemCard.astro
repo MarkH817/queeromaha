@@ -28,9 +28,7 @@ const addrParts = [
         : (loc?.state ?? loc?.zip),
 ].filter(Boolean)
 const addrLine = addrParts.join(', ')
-const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
-    .filter(Boolean)
-    .join(' ')
+const locLine = [addrLine, loc?.neighborhood].filter(Boolean).join(' - ')
 
 // Per-item structured data. As of 2026 schema.org markup — not llms.txt — is
 // what assistants and answer engines actually read when deciding which local
@@ -74,7 +72,6 @@ const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
 
 <script is:inline type="application/ld+json" set:html={jsonLdStr} />
 <wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>
-  <script is:inline type="application/ld+json" set:html={jsonLdStr} />
   <h3 slot="header">
     {item.name}
     {item.tags?.map(tag => {
