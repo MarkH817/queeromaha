@@ -1,8 +1,14 @@
+#!/bin/sh
 has_new_commits=false
+remote_name=""
+remote_branch=""
 while read local_ref local_sha remote_ref remote_sha; do
   if [ "$local_sha" != "$remote_sha" ]; then
     has_new_commits=true
   fi
+  # capture remote/branch for sync check (e.g. refs/heads/main -> main)
+  remote_name="$1"
+  remote_branch="${remote_ref#refs/heads/}"
 done
 
 if [ "$has_new_commits" = false ]; then
@@ -10,12 +16,22 @@ if [ "$has_new_commits" = false ]; then
   exit 0
 fi
 
-# run astro check and tests in parallel; both must pass
-bun run check &
-CHECK_PID=$!
-bun run test
-TEST_EXIT=$?
-wait $CHECK_PID
-CHECK_EXIT=$?
-[ $TEST_EXIT -ne 0 ] || [ $CHECK_EXIT -ne 0 ] && exit 1
+# sync check: fetch and bail early if remote is ahead
+if [ -n "$remote_name" ] && [ -n "$remote_branch" ]; then
+  if git fetch "$remote_name" "$remote_branch" --quiet 2>/dev/null; then
+    FETCH_HEAD=$(git rev-parse FETCH_HEAD 2>/dev/null) || true
+    LOCAL_HEAD=$(git rev-parse HEAD)
+    if [ -n "$FETCH_HEAD" ] && [ "$FETCH_HEAD" != "$LOCAL_HEAD" ]; then
+      MERGE_BASE=$(git merge-base HEAD FETCH_HEAD 2>/dev/null) || true
+      if [ -n "$MERGE_BASE" ] && [ "$MERGE_BASE" != "$FETCH_HEAD" ]; then
+        echo "pre-push: remote has commits not in local branch — pull or rebase before pushing"
+        exit 1
+      fi
+    fi
+  fi
+fi
+
+# run astro check first; bail early if it fails
+bun run check || exit 1
+bun run test || exit 1
 exit 0
