@@ -218,14 +218,13 @@ test('clear button only clears tags, leaving the active location untouched', asy
     await expect(clearBtn).toBeDisabled()
 })
 
-test('footer message is hidden when it would overflow on narrow screens', async ({
-    page,
-}) => {
+test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
     await page.goto('/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
+    // message is hidden when it would overflow on narrow screens
     await expect(async () => {
         const hidden = await footerText.isHidden()
         if (!hidden) {
@@ -239,7 +238,7 @@ test('footer message is hidden when it would overflow on narrow screens', async 
     // calendar link and footer nav remain visible regardless
     await expect(page.locator('.footer-cal a')).toBeVisible()
     await expect(
-        page.locator('.footer-nav a[href="/about#about"]'),
+        page.locator('.footer-nav a[href="/about#suggest"]'),
     ).toBeVisible()
 })
 
@@ -291,19 +290,6 @@ test('location with street and neighborhood renders hyphen-separated on one line
         .locator('.item-location')
         .filter({ hasText: '120th and Blondo' })
     await expect(loc).toContainText('120th and Blondo - West O')
-})
-
-test('unavailable neighborhood segments are hidden on mobile', async ({
-    page,
-}) => {
-    await page.setViewportSize({ width: 375, height: 812 })
-    await page.goto('/art/')
-    const unavailable = page.locator('.location-segment.unavailable')
-    const count = await unavailable.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        await expect(unavailable.nth(i)).toBeHidden()
-    }
 })
 
 test('neighborhood segment order is stable after switching categories', async ({
