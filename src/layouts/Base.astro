@@ -32,11 +32,14 @@ const randomMsg =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#4c3170" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Queer Omaha" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <link rel="alternate" type="text/calendar" href="/events.ics" title="Queer Omaha Events" />
     {description && <meta name="description" content={description} />}
@@ -54,6 +57,11 @@ const randomMsg =
         url: site.url,
         description: "Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska.",
       })}
+    </script>
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+      }
     </script>
   </head>
   <body
@@ -84,17 +92,14 @@ const randomMsg =
           rel="noopener noreferrer"
           aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
         >
-          <wa-icon name="calendar" aria-hidden="true"></wa-icon> Subscribe to QueerOmaha Calendar
+          <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon> Subscribe to Calendar
         </a>
       </div>
       <div class="footer-text">
         <p class="footer-message">{randomMsg.text}</p>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/about#about">About</a>
-        <a href="https://github.com/taraxvoid/queeromaha" aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)" class="footer-icon" rel="noopener noreferrer" target="_blank">
-          <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
-        </a>
+        <a href="/about#suggest"><wa-icon name="lightbulb" variant="regular" label="suggestion"></wa-icon>Suggestion Box</a>
       </nav>
     </footer>
     <button id="backToTop" aria-label="Back to top">
@@ -116,7 +121,13 @@ const randomMsg =
             footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
           }
           checkFooterFit()
-          window.addEventListener('resize', checkFooterFit)
+          let lastWidth = window.innerWidth
+          window.addEventListener('resize', () => {
+            if (window.innerWidth !== lastWidth) {
+              lastWidth = window.innerWidth
+              checkFooterFit()
+            }
+          })
         }
 
         // Back to top button
@@ -263,6 +274,11 @@ const randomMsg =
           })
         }
 
+        function scrollToTop() {
+          const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' })
+        }
+
         function setCategory(slug: string) {
           clearType('category', activeCategories)
           // Switching category also resets location and tags, since a
@@ -271,6 +287,7 @@ const randomMsg =
           clearType('neighborhood', activeNeighborhoods)
           clearType('tag', activeTags)
           activateFilter(slug)
+          scrollToTop()
         }
 
         function setNeighborhood(slug: string) {
@@ -294,7 +311,7 @@ const randomMsg =
             const type = pill.dataset.filterType || ''
             const isActive = pill.classList.contains('active')
             if (type === 'category') {
-              if (isActive) deactivateFilter(slug)
+              if (isActive) { scrollToTop(); return }
               else setCategory(slug)
             } else if (type === 'neighborhood') {
               if (isActive) deactivateFilter(slug)

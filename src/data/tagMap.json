@@ -1,8 +1,8 @@
 {
     "neutral-bathrooms": {
         "icon": "transgender",
-        "label": "Single-Stall BR"
+        "label": "Single-Stall"
     },
-    "seating": { "icon": "couch", "label": "Comfy Seating" },
+    "seating": { "icon": "couch", "label": "Seating" },
     "work-spot": { "icon": "laptop", "label": "Wifi/Power" }
 }

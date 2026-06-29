@@ -134,6 +134,25 @@ describe('directory yaml files', () => {
                 }
             })
 
+            test('location.neighborhood is a known value when present', () => {
+                const VALID_NEIGHBORHOODS = new Set([
+                    'Benson',
+                    'Downtown',
+                    'Midtown',
+                    'North O',
+                    'South O',
+                    'West O',
+                ])
+                for (const item of data.items) {
+                    const nbr = item.location?.neighborhood
+                    if (!nbr) continue
+                    expect(VALID_NEIGHBORHOODS.has(nbr)).toBe(
+                        true,
+                        `"${item.name}" has unknown neighborhood: "${nbr}"`,
+                    )
+                }
+            })
+
             test('no duplicate item names', () => {
                 const seen = new Set()
                 for (const item of data.items) {
