@@ -74,6 +74,7 @@ const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
 
 <script is:inline type="application/ld+json" set:html={jsonLdStr} />
 <wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>
+  <script is:inline type="application/ld+json" set:html={jsonLdStr} />
   <h3 slot="header">
     {item.name}
     {item.tags?.map(tag => {
