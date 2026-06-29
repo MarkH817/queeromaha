@@ -11,7 +11,9 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/dawaune.one/
-    notes: IG profile is age-restricted, doublecheck
+    location:
+      neighborhood: Midtown
+    notes: IG profile is age-restricted, doublecheck time/scheduling
   - name: Ananda Omaha Wellness and Yoga
     public: true
     description: |
@@ -23,8 +25,12 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+    location:
+      neighborhood: Midtown
+      google_maps_url: https://maps.app.goo.gl/L4Vy9oAPcSzFSWJG8
+      street: 49th and Dodge
     links:
-      - label: Class Schedule (scroll down)
+      - label: Class Schedule
         url: https://www.anandaomaha.com/brooke-monaco-wellness
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
@@ -37,12 +43,20 @@ items:
     links:
       - label: Events Calendar
         url: https://honeylocustsangha.org/events.html
+    location:
+      neighborhood: Midtown
+      google_maps_url: https://maps.app.goo.gl/SUfPwKNEv4ew5SeAA
+      street: 72nd and Pacific
   - name: Nebraska Zen Center
     tags:
       - neutral-bathrooms
       - seating
     public: true
-    description: In-person meditation Sundays @ 9:45AM in Bemis Park
+    location:
+      neighborhood: Midtown
+      google_maps_url: https://maps.app.goo.gl/m7owaPF5csEiKhzo8
+      street: 36th and Lafayette
+    description: In-person meditation Sundays @ 9:45AM
     links:
       - label: Sunday 9:45AM Open Zen
         url: https://nebraskazencenter.org/sunday-open-zen/
@@ -57,6 +71,10 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/havalynn1/
+    location:
+      neighborhood: South O
+      google_maps_url: https://maps.app.goo.gl/gHdwtFr8pqcomCvq6
+      street: 20th and Vinton
   - name: Sound Bath w/ Geoff Wertheim
     public: false
     description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM. Family-friendly.
@@ -64,6 +82,10 @@ items:
       - label: FB
         url: https://www.facebook.com/geoff.wertheim.9
     notes: Tara hasn't been to it yet, needs verify
+    location:
+      neighborhood: South O
+      google_maps_url: https://maps.app.goo.gl/gHdwtFr8pqcomCvq6
+      street: 20th and Vinton
   - name: Recovering From Religion
     public: false
     description: Resources for processing religious trauma.
