@@ -18,14 +18,15 @@ fi
 
 # sync check: fetch and bail early if remote is ahead
 if [ -n "$remote_name" ] && [ -n "$remote_branch" ]; then
-  git fetch "$remote_name" "$remote_branch" --quiet 2>/dev/null
-  FETCH_HEAD=$(git rev-parse FETCH_HEAD 2>/dev/null)
-  LOCAL_HEAD=$(git rev-parse HEAD)
-  if [ -n "$FETCH_HEAD" ] && [ "$FETCH_HEAD" != "$LOCAL_HEAD" ]; then
-    MERGE_BASE=$(git merge-base HEAD FETCH_HEAD)
-    if [ "$MERGE_BASE" != "$FETCH_HEAD" ]; then
-      echo "pre-push: remote has commits not in local branch — pull or rebase before pushing"
-      exit 1
+  if git fetch "$remote_name" "$remote_branch" --quiet 2>/dev/null; then
+    FETCH_HEAD=$(git rev-parse FETCH_HEAD 2>/dev/null) || true
+    LOCAL_HEAD=$(git rev-parse HEAD)
+    if [ -n "$FETCH_HEAD" ] && [ "$FETCH_HEAD" != "$LOCAL_HEAD" ]; then
+      MERGE_BASE=$(git merge-base HEAD FETCH_HEAD 2>/dev/null) || true
+      if [ -n "$MERGE_BASE" ] && [ "$MERGE_BASE" != "$FETCH_HEAD" ]; then
+        echo "pre-push: remote has commits not in local branch — pull or rebase before pushing"
+        exit 1
+      fi
     fi
   fi
 fi
