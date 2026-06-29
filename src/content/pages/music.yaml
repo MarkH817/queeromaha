@@ -2,13 +2,13 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: OmahaUnderground.NET and friends
+  - name: OmahaUnderground.NET and Omaha Buzz
     description: Where to learn about the cool shows
     public: true
     links:
-      - label: omahaunderground.net
+      - label: OmahaUnderground DOT net
         url: https://omahaunderground.net/shows/
-      - label: Omaha Buzz
+      - label: Omaha Buzz substack
         url: https://omahabuzz.substack.com
   - name: Church Art House
     public: true
