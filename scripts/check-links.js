@@ -59,6 +59,13 @@ const SHADOW_PATTERNS = [
 // Helpers
 // ---------------------------------------------------------------------------
 
+function normalizeUrl(url) {
+    if (typeof url === 'string' && /^@[\w.]+$/.test(url)) {
+        return `https://instagram.com/${url.slice(1)}`
+    }
+    return url
+}
+
 function getHost(url) {
     try {
         return new URL(url).hostname.replace(/^www\./, '')
@@ -213,7 +220,7 @@ function gatherAllLinks() {
                     file: filename,
                     itemName: item.name,
                     label: link.label,
-                    url: link.url,
+                    url: normalizeUrl(link.url),
                 })
             }
         }
@@ -232,7 +239,7 @@ function gatherNewLinksFromDiff() {
     for (const line of diff.split('\n')) {
         if (!line.startsWith('+') || line.startsWith('+++')) continue
         const match = line.match(/^\+\s+url:\s+(\S+)\s*$/)
-        if (match) urls.add(match[1])
+        if (match) urls.add(normalizeUrl(match[1]))
     }
     return [...urls]
 }

@@ -111,7 +111,12 @@ describe('directory yaml files', () => {
                             'string',
                             `link in "${item.name}" missing url`,
                         )
-                        expect(() => new URL(link.url)).not.toThrow(
+                        const resolvedUrl =
+                            typeof link.url === 'string' &&
+                            /^@[\w.]+$/.test(link.url)
+                                ? `https://instagram.com/${link.url.slice(1)}`
+                                : link.url
+                        expect(() => new URL(resolvedUrl)).not.toThrow(
                             `"${item.name}" > "${link.label}" has unparseable URL: ${link.url}`,
                         )
                     }
@@ -187,4 +192,38 @@ describe('directory yaml files', () => {
             })
         })
     }
+})
+
+// ---------------------------------------------------------------------------
+// @insta shorthand normalization
+// ---------------------------------------------------------------------------
+
+describe('@handle shorthand normalization', () => {
+    const normalize = (url) =>
+        typeof url === 'string' && /^@[\w.]+$/.test(url)
+            ? `https://instagram.com/${url.slice(1)}`
+            : url
+
+    test('expands @handle to instagram.com URL', () => {
+        expect(normalize('@sobersocials')).toBe(
+            'https://instagram.com/sobersocials',
+        )
+    })
+
+    test('expands @handle with dots and underscores', () => {
+        expect(normalize('@sober.socials_omaha')).toBe(
+            'https://instagram.com/sober.socials_omaha',
+        )
+    })
+
+    test('leaves full URLs unchanged', () => {
+        expect(normalize('https://instagram.com/sobersocials')).toBe(
+            'https://instagram.com/sobersocials',
+        )
+    })
+
+    test('leaves other non-handle strings unchanged', () => {
+        expect(normalize('https://example.com')).toBe('https://example.com')
+        expect(normalize('@')).toBe('@')
+    })
 })
