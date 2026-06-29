@@ -30,7 +30,20 @@ export const itemSchema = z.object({
     public: z.boolean().optional(),
     description: z.string().optional(),
     tags: z.array(tagEnum).optional(),
-    links: z.array(z.object({ label: z.string(), url: z.url() })).optional(),
+    links: z
+        .array(
+            z.object({
+                label: z.string(),
+                url: z.preprocess(
+                    (v) =>
+                        typeof v === 'string' && /^@[\w.]+$/.test(v)
+                            ? `https://instagram.com/${v.slice(1)}`
+                            : v,
+                    z.url(),
+                ),
+            }),
+        )
+        .optional(),
     notes: z.string().optional(),
     location: locationSchema.optional(),
     recurring_events: z.array(recurringEventSchema).optional(),
