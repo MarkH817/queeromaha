@@ -8,5 +8,42 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      const INSTAGRAM_PATH_SKIP = new Set(['p', 'reel', 'reels', 'explore', 'stories', 'tv'])
+
+      function normalizeInstagramUrl(url) {
+        if (!url) return url
+        try {
+          const u = new URL(url.includes('://') ? url : `https://${url}`)
+          if (u.hostname.replace(/^www\./, '') !== 'instagram.com') return url
+          const [username] = u.pathname.split('/').filter(Boolean)
+          if (!username || INSTAGRAM_PATH_SKIP.has(username)) return url
+          return `https://www.instagram.com/${username}/`
+        } catch {
+          return url
+        }
+      }
+
+      CMS.registerEventListener({
+        name: 'preSave',
+        handler: ({ entry }) => {
+          const items = entry.getIn(['data', 'items'])
+          if (!items) return entry
+          return entry.setIn(
+            ['data', 'items'],
+            items.map((item) => {
+              const links = item.get('links')
+              if (!links) return item
+              return item.set(
+                'links',
+                links.map((link) =>
+                  link.update('url', (url) => normalizeInstagramUrl(url)),
+                ),
+              )
+            }),
+          )
+        },
+      })
+    </script>
   </body>
 </html>
