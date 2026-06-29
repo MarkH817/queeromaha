@@ -57,7 +57,7 @@ items:
       - label: Website
         url: https://soundarte.net
       - label: Insta
-        url: https://www.instagram.com/soundarte.mx/?hl=en
+        url: https://www.instagram.com/soundarte.mx/
       - label: Music Label
         url: https://eacrecords.bandcamp.com/
     notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat sporadic updates to site
@@ -78,7 +78,7 @@ items:
     description: Punk/queer DIY space with experimental music and local art.
     links:
       - label: Insta
-        url: https://www.instagram.com/weareprojectproject
+        url: https://www.instagram.com/weareprojectproject/
       - label: Events Calendar
         url: https://projectprojectomaha.com/current-show
     tags:
@@ -145,7 +145,7 @@ items:
     description: Punk/queer space for provocative art and experimental music.
     links:
       - label: Insta
-        url: https://www.instagram.com/petshopgallery/?hl=en
+        url: https://www.instagram.com/petshopgallery/
       - label: Website
         url: https://www.bffomaha.org/petshop
     tags:
@@ -167,7 +167,7 @@ items:
     description: Cool punk gallery. My art was in it!
     links:
       - label: Insta
-        url: https://www.instagram.com/thebffgallery/?hl=en
+        url: https://www.instagram.com/thebffgallery/
     location:
       neighborhood: Benson
   - name: Ming Toy Gallery
@@ -195,7 +195,7 @@ items:
     description: Mobile gallery often parked near Petshop showing local artists.
     links:
       - label: Insta
-        url: https://www.instagram.com/bffmamo/?hl=en
+        url: https://www.instagram.com/bffmamo/
       - label: Website
         url: https://www.bffomaha.org/mamo
       - label: FB
@@ -275,7 +275,7 @@ items:
       - label: Website
         url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
       - label: Garden of the Zodiac Insta
-        url: https://www.instagram.com/gardenofthezodiac/?hl=en
+        url: https://www.instagram.com/gardenofthezodiac/
     notes: possibly too normie. willing to entertain arguments as per its queerness
     location:
       neighborhood: Downtown
@@ -316,7 +316,7 @@ items:
     description: Glassblowing studio with classes and events.
     links:
       - label: Insta
-        url: https://www.instagram.com/hotshopsartcenter/?hl=en
+        url: https://www.instagram.com/hotshopsartcenter/
       - label: Events Calendar
         url: https://hotshopsartcenter.org/events/
       - label: FB

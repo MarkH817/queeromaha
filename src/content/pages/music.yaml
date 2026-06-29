@@ -34,7 +34,7 @@ items:
     description: Punk DIY space for experimental music and local art.
     links:
       - label: Insta
-        url: https://www.instagram.com/weareprojectproject
+        url: https://www.instagram.com/weareprojectproject/
       - label: Website
         url: https://projectprojectomaha.com/
       - label: FB
@@ -66,7 +66,7 @@ items:
     description: Gallery and events space with local music and queer markets.
     links:
       - label: Insta
-        url: https://www.instagram.com/floorsfloorsfloors_7052maple
+        url: https://www.instagram.com/floorsfloorsfloors_7052maple/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/floors-floors-floors
     notes: per sources, venue is not able to host public events due to landlords
@@ -139,7 +139,7 @@ items:
       - label: Coven's Website
         url: https://covenomaha.com/
       - label: Noir's Insta
-        url: https://www.instagram.com/noiromaha/?hl=en
+        url: https://www.instagram.com/noiromaha/
       - label: Noir's FB
         url: https://www.facebook.com/NoirOmaha/
       - label: Events on OmahaUnderground
@@ -150,7 +150,7 @@ items:
     description: Bookish bar with local acts.
     links:
       - label: Insta
-        url: https://www.instagram.com/pageturnerslounge/?hl=en
+        url: https://www.instagram.com/pageturnerslounge/
       - label: FB
         url: https://www.facebook.com/pageturnerslounge/
       - label: Events on OmahaUnderground
@@ -165,7 +165,7 @@ items:
       Did you know it's owned by members of the band Cursive?
     links:
       - label: Insta
-        url: https://www.instagram.com/oleavers/?hl=en
+        url: https://www.instagram.com/oleavers/
       - label: FB
         url: https://www.facebook.com/oleavers/
       - label: Events on OmahaUnderground
@@ -225,7 +225,7 @@ items:
     description: Indie venue @ Someone's house. Ask around.
     links:
       - label: Insta
-        url: https://www.instagram.com/thefoxholeomaha/?hl=en
+        url: https://www.instagram.com/thefoxholeomaha/
     notes: May be on hiatus. Gifford Park
     location:
       neighborhood: Midtown
