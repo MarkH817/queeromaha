@@ -30,7 +30,7 @@ for (const image of response.images) {
 for (const file of response.files) {
     // Pretty-print JSON files with 4-space indent to match Biome's formatter
     const content = file.name.endsWith('.webmanifest')
-        ? JSON.stringify(JSON.parse(file.contents), null, 4) + '\n'
+        ? `${JSON.stringify(JSON.parse(file.contents), null, 4)}\n`
         : file.contents
     writeFileSync(join(dest, file.name), content)
     console.log('wrote', file.name)
