@@ -3,24 +3,14 @@ import Base from '../layouts/Base.astro'
 ---
 
 <Base
-  title="About"
-  description="About Queer Omaha — a community-maintained directory of queer spaces and resources in Omaha that anyone can contribute to via GitHub."
+  title="Suggestions, Contributions, Contact, About"
+  description="Contribute to Queer Omaha, Contact admins, make suggestions — an open-source community-maintained directory of queer spaces and resources in Omaha on  Github."
 >
-  <section id="about" aria-label="About">
-    <h2 class="section-header" data-category-heading="about">About</h2>
-    <p>Community-maintained list of Omaha queer groups, events, venues, and spaces.</p>
-    <p>Open-Source <a href="https://github.com/taraxvoid/queeromaha">on GitHub</a></p>
-    <p>
-      Created by Tara, with deep gratitude to the Native and Indigenous peoples whose stolen land we
-      reside on, the Black and Brown folx who built this town, and the Omaha Queer / Trans community.
-    </p>
-    <p>Inclusion on this site does not imply endorsement or vetting.</p>
-  </section>
 
-  <section id="contact" aria-label="Contact">
-    <h2 class="section-header" data-category-heading="contact">Contact</h2>
-    <p>Suggest a venue or group, or request CMS access to contribute directly.</p>
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+  <section id="suggest" aria-label="Suggest">
+    <h2 class="section-header" data-category-heading="contact">Suggestions</h2>
+    <p>Suggest a queer supportive / owned group, venue, space, cafe etc.</p>
+    <form name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
       <p style="display: none;">
         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
       </p>
@@ -36,8 +26,8 @@ import Base from '../layouts/Base.astro'
         <textarea
           name="message"
           required
-          rows="6"
-          placeholder="Suggest an event, group, venue — or ask for CMS access"
+          rows="2"
+          placeholder="Your Suggestion"
           style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit;"
         ></textarea>
       </p>
@@ -49,4 +39,18 @@ import Base from '../layouts/Base.astro'
       </p>
     </form>
   </section>
+
+  <hr class="section-divider" />
+
+  <section id="about" aria-label="About">
+    <h2 class="section-header" data-category-heading="about">About</h2>
+    <p>Community-maintained list of Omaha queer groups, events, venues, and spaces.</p>
+    <p>Open-Source <a href="https://github.com/taraxvoid/queeromaha">on GitHub</a></p>
+    <p>
+      Created with deep gratitude to the Native and Indigenous peoples whose stolen land we
+      reside on, the Black and Brown folx who built this town, and the Omaha Queer / Trans community.
+    </p>
+    <p>Inclusion on this site does not imply endorsement or vetting.</p>
+  </section>
+
 </Base>

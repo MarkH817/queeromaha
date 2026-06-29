@@ -40,10 +40,10 @@ describe('tagMap.json', () => {
         expect(Object.keys(data).length).toBeGreaterThan(0)
     })
 
-    test('every value has emoji and label strings', () => {
+    test('every value has icon and label strings', () => {
         for (const [key, value] of Object.entries(data)) {
-            expect(typeof value.emoji).toBe('string', `${key} missing emoji`)
-            expect(value.emoji.length).toBeGreaterThan(0)
+            expect(typeof value.icon).toBe('string', `${key} missing icon`)
+            expect(value.icon.length).toBeGreaterThan(0)
             expect(typeof value.label).toBe('string', `${key} missing label`)
             expect(value.label.length).toBeGreaterThan(0)
         }
@@ -130,6 +130,25 @@ describe('directory yaml files', () => {
                         () => new URL(item.location.google_maps_url),
                     ).not.toThrow(
                         `"${item.name}" has unparseable google_maps_url: ${item.location.google_maps_url}`,
+                    )
+                }
+            })
+
+            test('location.neighborhood is a known value when present', () => {
+                const VALID_NEIGHBORHOODS = new Set([
+                    'Benson',
+                    'Downtown',
+                    'Midtown',
+                    'North O',
+                    'South O',
+                    'West O',
+                ])
+                for (const item of data.items) {
+                    const nbr = item.location?.neighborhood
+                    if (!nbr) continue
+                    expect(VALID_NEIGHBORHOODS.has(nbr)).toBe(
+                        true,
+                        `"${item.name}" has unknown neighborhood: "${nbr}"`,
                     )
                 }
             })

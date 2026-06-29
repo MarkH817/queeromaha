@@ -257,3 +257,69 @@ test('footer message is visible and unclipped on wide screens', async ({
     )
     expect(overflowing).toBe(false)
 })
+
+test('tag filter pills use wa-icon elements', async ({ page }) => {
+    await page.goto('/')
+    const pills = page.locator('.filter-pill')
+    const count = await pills.count()
+    expect(count).toBeGreaterThan(0)
+    for (let i = 0; i < count; i++) {
+        await expect(pills.nth(i).locator('wa-icon')).toHaveCount(1)
+    }
+})
+
+test('item cards with a location show a location-dot icon', async ({
+    page,
+}) => {
+    await page.goto('/cafes/')
+    const locations = page.locator('.item-location')
+    const count = await locations.count()
+    expect(count).toBeGreaterThan(0)
+    for (let i = 0; i < count; i++) {
+        await expect(
+            locations.nth(i).locator('wa-icon[name="location-dot"]'),
+        ).toHaveCount(1)
+    }
+})
+
+test('location with street and neighborhood renders hyphen-separated on one line', async ({
+    page,
+}) => {
+    await page.goto('/cafes/')
+    // Roast Coffeehouse has street "120th and Blondo" + neighborhood "West O"
+    const loc = page
+        .locator('.item-location')
+        .filter({ hasText: '120th and Blondo' })
+    await expect(loc).toContainText('120th and Blondo - West O')
+})
+
+test('unavailable neighborhood segments are hidden on mobile', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto('/art/')
+    const unavailable = page.locator('.location-segment.unavailable')
+    const count = await unavailable.count()
+    expect(count).toBeGreaterThan(0)
+    for (let i = 0; i < count; i++) {
+        await expect(unavailable.nth(i)).toBeHidden()
+    }
+})
+
+test('neighborhood segment order is stable after switching categories', async ({
+    page,
+}) => {
+    await page.goto('/')
+    const getOrder = () =>
+        page
+            .locator('.location-segment')
+            .evaluateAll((els) => els.map((el) => el.dataset.filter))
+    const initialOrder = await getOrder()
+    expect(initialOrder.length).toBeGreaterThan(0)
+
+    await page.locator('[data-filter="cafes"]').click()
+    expect(await getOrder()).toEqual(initialOrder)
+
+    await page.locator('[data-filter="art"]').click()
+    expect(await getOrder()).toEqual(initialOrder)
+})

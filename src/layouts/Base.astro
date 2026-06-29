@@ -84,17 +84,14 @@ const randomMsg =
           rel="noopener noreferrer"
           aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
         >
-          📅 Subscribe to QueerOmaha Calendar
+          <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon> Subscribe to Calendar
         </a>
       </div>
       <div class="footer-text">
         <p class="footer-message">{randomMsg.text}</p>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/about#about">About</a>
-        <a href="https://github.com/taraxvoid/queeromaha" aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)" class="footer-icon" rel="noopener noreferrer" target="_blank">
-          <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
-        </a>
+        <a href="/about#suggest"><wa-icon name="lightbulb" variant="regular" label="suggestion"></wa-icon>Suggestion Box</a>
       </nav>
     </footer>
     <button id="backToTop" aria-label="Back to top">
@@ -116,7 +113,13 @@ const randomMsg =
             footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
           }
           checkFooterFit()
-          window.addEventListener('resize', checkFooterFit)
+          let lastWidth = window.innerWidth
+          window.addEventListener('resize', () => {
+            if (window.innerWidth !== lastWidth) {
+              lastWidth = window.innerWidth
+              checkFooterFit()
+            }
+          })
         }
 
         // Back to top button
@@ -263,6 +266,11 @@ const randomMsg =
           })
         }
 
+        function scrollToTop() {
+          const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' })
+        }
+
         function setCategory(slug: string) {
           clearType('category', activeCategories)
           // Switching category also resets location and tags, since a
@@ -271,6 +279,7 @@ const randomMsg =
           clearType('neighborhood', activeNeighborhoods)
           clearType('tag', activeTags)
           activateFilter(slug)
+          scrollToTop()
         }
 
         function setNeighborhood(slug: string) {
@@ -294,7 +303,7 @@ const randomMsg =
             const type = pill.dataset.filterType || ''
             const isActive = pill.classList.contains('active')
             if (type === 'category') {
-              if (isActive) deactivateFilter(slug)
+              if (isActive) { scrollToTop(); return }
               else setCategory(slug)
             } else if (type === 'neighborhood') {
               if (isActive) deactivateFilter(slug)
