@@ -1,35 +1,20 @@
 import { describe, expect, test } from 'bun:test'
-import { execSync, spawnSync } from 'node:child_process'
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { spawnSync } from 'node:child_process'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
-function distIsStale() {
-    try {
-        statSync(join(ROOT, 'dist', 'index.html'))
-    } catch {
-        return true
-    }
-    const newer = execSync(
-        'find src public astro.config.ts -newer dist/index.html 2>/dev/null | head -1',
-        { cwd: ROOT, encoding: 'utf8' },
-    ).trim()
-    return newer.length > 0
-}
-
 describe('astro build', () => {
     test('exits with code 0 and produces dist/', { timeout: 120_000 }, () => {
-        if (distIsStale()) {
-            const result = spawnSync('bun', ['run', 'build'], {
-                cwd: ROOT,
-                stdio: 'inherit',
-                timeout: 120_000,
-            })
-            expect(result.status).toBe(0)
-        }
+        const result = spawnSync('bun', ['run', 'build'], {
+            cwd: ROOT,
+            stdio: 'inherit',
+            timeout: 120_000,
+        })
+        expect(result.status).toBe(0)
 
         const distDir = join(ROOT, 'dist')
         expect(existsSync(distDir)).toBe(true)
