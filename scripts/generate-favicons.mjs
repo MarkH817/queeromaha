@@ -28,7 +28,11 @@ for (const image of response.images) {
     console.log('wrote', image.name)
 }
 for (const file of response.files) {
-    writeFileSync(join(dest, file.name), file.contents)
+    // Pretty-print JSON files with 4-space indent to match Biome's formatter
+    const content = file.name.endsWith('.webmanifest')
+        ? JSON.stringify(JSON.parse(file.contents), null, 4) + '\n'
+        : file.contents
+    writeFileSync(join(dest, file.name), content)
     console.log('wrote', file.name)
 }
 console.log('\nRecommended <head> tags:')
