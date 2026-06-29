@@ -1,3 +1,4 @@
+#!/bin/sh
 has_new_commits=false
 remote_name=""
 remote_branch=""
