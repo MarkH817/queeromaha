@@ -75,8 +75,12 @@ for (const file of files) {
             (_, prefix, value) => `${prefix}'${value.replace(/'/g, "''")}'`,
         )
         const parsed = parse(preprocessed)
-        normalizeLinks(parsed)
-        canonical = stringify(parsed, { lineWidth: 0 })
+        // Decap CMS wraps content under 'data:' with CMS metadata around it.
+        // If this shape is detected, extract just the page content.
+        const content =
+            parsed?.data && parsed?.collection != null ? parsed.data : parsed
+        normalizeLinks(content)
+        canonical = stringify(content, { lineWidth: 0 })
     } catch (err) {
         errors.push(`  ${file}: ${err.message}`)
         continue

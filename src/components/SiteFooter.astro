@@ -21,7 +21,9 @@ const { message } = Astro.props
     <p class="footer-message">{message}</p>
   </div>
   <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="/about#suggest"><wa-icon name="lightbulb" variant="regular" label="suggestion"></wa-icon>Suggestion Box</a>
+    <a class="footer-pill-btn" href="/about#suggest"
+      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon> Suggestion Box</a
+    >
   </nav>
 </footer>
 <button id="backToTop" aria-label="Back to top">
