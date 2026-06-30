@@ -3,30 +3,14 @@ import { getCollection } from 'astro:content'
 import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
 import Base from '../layouts/Base.astro'
-import { slugify } from '../utils/slugify'
+import { buildNeighborhoods } from '../utils/neighborhoods'
 
 const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
 
 const entries = await getCollection('directory')
 entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
 
-const allNeighborhoods: { slug: string; label: string }[] = []
-const seenSlugs = new Set<string>()
-for (const entry of entries) {
-    for (const item of entry.data.items ?? []) {
-        if (item.public !== false && item.location?.neighborhood) {
-            const slug = slugify(item.location.neighborhood)
-            if (!slug) continue
-            if (!seenSlugs.has(slug)) {
-                seenSlugs.add(slug)
-                allNeighborhoods.push({
-                    slug,
-                    label: item.location.neighborhood,
-                })
-            }
-        }
-    }
-}
+const allNeighborhoods = buildNeighborhoods(entries)
 
 const categoryLabels: Record<string, string> = {
     social: 'Social',
