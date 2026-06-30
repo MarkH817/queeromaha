@@ -53,4 +53,47 @@ import Base from '../layouts/Base.astro'
     <p>Inclusion on this site does not imply endorsement or vetting.</p>
   </section>
 
+  <script>
+    const form = document.querySelector<HTMLFormElement>('form[name="suggest"]')
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        const data = new URLSearchParams(
+          new FormData(form) as unknown as Record<string, string>,
+        )
+        data.set('form-name', 'suggest')
+        try {
+          const res = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: data.toString(),
+          })
+          if (res.ok) {
+            const thanks = document.createElement('p')
+            thanks.id = 'suggest-thanks'
+            thanks.textContent = 'Thanks! We got your suggestion.'
+            thanks.style.cssText =
+              'margin:0.5rem 0 1rem;padding:0.5rem 0.75rem;border-left:3px solid #c4b5fd;background:#f9f5ff;border-radius:0 4px 4px 0;color:#4a3d6b;'
+            form.replaceWith(thanks)
+          } else {
+            showError('Something went wrong. Try again or email us directly.')
+          }
+        } catch {
+          showError('Something went wrong. Check your connection and try again.')
+        }
+
+        function showError(msg: string) {
+          const existing = form.parentElement?.querySelector('#suggest-error')
+          if (existing) existing.remove()
+          const err = document.createElement('p')
+          err.id = 'suggest-error'
+          err.textContent = msg
+          err.style.cssText =
+            'margin:0.5rem 0 1rem;padding:0.5rem 0.75rem;border-left:3px solid #dc2626;background:#fff1f1;border-radius:0 4px 4px 0;color:#7f1d1d;'
+          form.insertAdjacentElement('beforebegin', err)
+        }
+      })
+    }
+  </script>
+
 </Base>
