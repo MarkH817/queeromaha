@@ -12,7 +12,9 @@ export async function getStaticPaths() {
     const entries = await getCollection('directory')
     const neighborhoodSlugs = buildNeighborhoods(entries).map((n) => n.slug)
 
-    const paths: { params: { filters: string } }[] = []
+    const paths: { params: { filters: string | undefined } }[] = [
+        { params: { filters: undefined } },
+    ]
 
     // Single slugs
     for (const s of [...cats, ...neighborhoodSlugs]) {
