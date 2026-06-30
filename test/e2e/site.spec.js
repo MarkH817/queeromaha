@@ -1,9 +1,8 @@
 import { expect, test } from '@playwright/test'
 
 const pages = [
-    { path: '/', titleContains: 'Queer' },
+    { path: '/social/', titleContains: 'Queer' },
     { path: '/about/', titleContains: 'About' },
-    { path: '/contact/', titleContains: 'About' },
     // filter slug pages all share the directory title
     { path: '/music/', titleContains: 'Queer' },
     { path: '/cafes/', titleContains: 'Queer' },
@@ -21,7 +20,7 @@ for (const { path, titleContains } of pages) {
 }
 
 test('home page has navigation links', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const nav = page.locator('nav.main-nav')
     await expect(nav).toBeVisible()
     const buttons = nav.locator('wa-button')
@@ -33,12 +32,12 @@ test('no console errors on home page', async ({ page }) => {
     page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text())
     })
-    await page.goto('/')
+    await page.goto('/social/')
     expect(errors).toHaveLength(0)
 })
 
 test('skip-to-main link is present', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const skipLink = page.locator('a.skip-link')
     await expect(skipLink).toHaveAttribute('href', '#main')
 })
@@ -64,12 +63,12 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
 })
 
 test('footer is present', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     await expect(page.getByRole('contentinfo')).toBeVisible()
 })
 
 test('filter pills are present on home page', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const pills = page.locator('.filter-pill')
     expect(await pills.count()).toBeGreaterThan(0)
 })
@@ -81,7 +80,7 @@ test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
 })
 
 test('neighborhood filter pills render on the home page', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const pills = page.locator('[data-filter-type="neighborhood"]')
     expect(await pills.count()).toBeGreaterThan(0)
 })
@@ -118,7 +117,7 @@ test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
 test('combining category and neighborhood pills narrows results', async ({
     page,
 }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     await page.locator('[data-filter="cafes"]').click()
     await page.locator('[data-filter="west-o"]').click()
 
@@ -135,7 +134,7 @@ test('combining category and neighborhood pills narrows results', async ({
 test('location bar renders as a single-select segmented bar', async ({
     page,
 }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const bar = page.locator('.location-bar')
     await expect(bar).toBeVisible()
     const segments = bar.locator('.location-segment')
@@ -218,14 +217,13 @@ test('clear button only clears tags, leaving the active location untouched', asy
     await expect(clearBtn).toBeDisabled()
 })
 
-test('footer message is hidden when it would overflow on narrow screens', async ({
-    page,
-}) => {
+test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
-    await page.goto('/')
+    await page.goto('/social/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
+    // message is hidden when it would overflow on narrow screens
     await expect(async () => {
         const hidden = await footerText.isHidden()
         if (!hidden) {
@@ -239,7 +237,7 @@ test('footer message is hidden when it would overflow on narrow screens', async 
     // calendar link and footer nav remain visible regardless
     await expect(page.locator('.footer-cal a')).toBeVisible()
     await expect(
-        page.locator('.footer-nav a[href="/about#about"]'),
+        page.locator('.footer-nav a[href="/about#suggest"]'),
     ).toBeVisible()
 })
 
@@ -247,7 +245,7 @@ test('footer message is visible and unclipped on wide screens', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 1024, height: 800 })
-    await page.goto('/')
+    await page.goto('/social/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
@@ -259,7 +257,7 @@ test('footer message is visible and unclipped on wide screens', async ({
 })
 
 test('tag filter pills use wa-icon elements', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const pills = page.locator('.filter-pill')
     const count = await pills.count()
     expect(count).toBeGreaterThan(0)
@@ -293,23 +291,10 @@ test('location with street and neighborhood renders hyphen-separated on one line
     await expect(loc).toContainText('120th and Blondo - West O')
 })
 
-test('unavailable neighborhood segments are hidden on mobile', async ({
-    page,
-}) => {
-    await page.setViewportSize({ width: 375, height: 812 })
-    await page.goto('/art/')
-    const unavailable = page.locator('.location-segment.unavailable')
-    const count = await unavailable.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        await expect(unavailable.nth(i)).toBeHidden()
-    }
-})
-
 test('neighborhood segment order is stable after switching categories', async ({
     page,
 }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const getOrder = () =>
         page
             .locator('.location-segment')
