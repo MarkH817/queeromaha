@@ -1,739 +1,351 @@
-partial: false
-path: src/content/pages/art.yaml
-meta:
-  path: src/content/pages/art.yaml
-isModification: null
-raw: >
-  title: Omaha Art Events / Venues
-
-  description: Art events, creative groups, and venues in Omaha with a queer-friendly presence.
-
-  public: true
-
-  items:
-    - name: Sober Socials Omaha
-      public: false
-      notes: potentially inactive circa spring 2026
-      description: Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/sobersocialsomaha/
-    - name: Soundry w/ Stacey Barelos
-      public: true
-      description: Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?
-      tags:
-        - neutral-bathrooms
-        - seating
-      links:
-        - label: Insta
-          url: https://www.instagram.com/omahasoundry/
-        - label: Events Calendar
-          url: https://soundryomaha.org
-    - name: Omaha Drum Family
-      public: true
-      description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
-      links:
-        - label: Events Calendar
-          url: https://www.facebook.com/drumomaha/
-    - name: SynthOmaha Electronic Music Jam
-      public: true
-      description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
-      links:
-        - label: Events Calendar
-          url: https://synthomaha.net/
-      notes: |
-        Members with social presence:
-        - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
-        - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
-        - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
-        - Tob [Mastodon](https://mastodon.sdf.org/@tob)
-    - name: Sowing Seeds
-      public: true
-      description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/sowingseeds.omaha/
-    - name: Alternative Publishing (Zines)
-      public: true
-      description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
-      links:
-        - label: Insta
-          url: https://www.instagram.com/altpubomaha/
-    - name: SoundArte
-      public: false
-      description: Network of electronic artists and musicians.
-      links:
-        - label: Website
-          url: https://soundarte.net
-        - label: Insta
-          url: https://www.instagram.com/soundarte.mx/
-        - label: Music Label
-          url: https://eacrecords.bandcamp.com/
-      notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat sporadic updates to site
-    - name: Church Art House
-      public: true
-      description: Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/thechurcharthouse/
-        - label: Events Calendar
-          url: https://www.thechurcharthouse.love/schedule
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: South O
-    - name: Project Project
-      public: true
-      description: Punk/queer DIY space with experimental music and local art.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/weareprojectproject/
-        - label: Events Calendar
-          url: https://projectprojectomaha.com/current-show
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: South O
-    - name: Tilt23
-      public: true
-      description: Local artists, music and market at rotating venues eg Church Art House.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/tilt23showcase/
-        - label: FB
-          url: https://www.facebook.com/tilt23/
-      location:
-        neighborhood: South O
-    - name: Razor Wire Productions Open Mic
-      public: false
-      description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm.
-      links:
-        - label: FB
-          url: https://www.facebook.com/poetiklee77/
-        - label: Insta
-          url: https://www.instagram.com/razor_wire_productions/
-      notes: Check it out first before listing.
-      location:
-        neighborhood: South O
-    - name: Clover24
-      public: true
-      description: New-ish studio and gallery space.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/clover24omaha/
-        - label: Events Calendar
-          url: https://clover24.org/events
-      location:
-        neighborhood: South O
-    - name: Culxr House
-      public: true
-      description: Black-owned community space for shows and art events.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/culxrhouse/
-        - label: FB
-          url: https://www.facebook.com/culxrhouse/
-        - label: Events Calendar
-          url: https://www.houseofculxr.com/all-events
-      notes: art battles seem sporadic / dead as of spring '26'
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: North O
-    - name: Union for Contemporary Art
-      public: true
-      description: Exhibits, studios, classes, and talks.
-      links:
-        - label: Events Calendar
-          url: https://www.u-ca.org/happenings
-      notes: tara hasn't been there yet. trusting its chill.
-      location:
-        neighborhood: North O
-    - name: Petshop
-      public: true
-      description: Punk/queer space for provocative art and experimental music.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/petshopgallery/
-        - label: Website
-          url: https://www.bffomaha.org/petshop
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Benson
-    - name: Radial Arts Center
-      public: true
-      description: Large gallery showing larger local artists.
-      links:
-        - label: Website
-          url: https://www.radialartscenter.org/
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Benson
-    - name: BFF Gallery
-      public: true
-      description: Cool punk gallery. My art was in it!
-      links:
-        - label: Insta
-          url: https://www.instagram.com/thebffgallery/
-      location:
-        neighborhood: Benson
-    - name: Ming Toy Gallery
-      public: true
-      description: Cozy gallery next to Edge of the Universe.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/mingtoygallery/
-        - label: Website
-          url: https://www.mingtoygallery.com/
-      location:
-        neighborhood: Benson
-    - name: Maple Street Construct
-      public: true
-      description: Minimalist space with a cool upstairs.
-      links:
-        - label: Website
-          url: https://www.maplestconstruct.com/
-        - label: FB
-          url: https://www.facebook.com/maplestconstruct/
-      location:
-        neighborhood: Benson
-    - name: MaMo Mobile Gallery Semi-Truck
-      public: true
-      description: Mobile gallery often parked near Petshop showing local artists.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/bffmamo/
-        - label: Website
-          url: https://www.bffomaha.org/mamo
-        - label: FB
-          url: https://www.facebook.com/MaMOgallery/
-      location:
-        neighborhood: Benson
-    - name: Trudy's
-      public: true
-      description: Open artist studios, music and free workshops ran by BFF.
-      links:
-        - label: Website
-          url: https://www.bffomaha.org/learn
-        - label: FB
-          url: https://www.facebook.com/people/Trudys/61561806150499/
-      location:
-        neighborhood: Benson
-    - name: Cali Commons
-      public: true
-      description: Arts collective and neighborhood gallery
-      links:
-        - label: Events Calendar
-          url: https://calicommons.com/calendar-of-events/
-        - label: Join Artist Collective
-          url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
-      location:
-        neighborhood: Midtown
-    - name: Hispanic Arts Center
-      public: true
-      description: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
-      links:
-        - label: FB
-          url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
-        - label: Events Calendar
-          url: https://www.haco-ne.com/events.html
-      notes: POC Milt
-      location:
-        neighborhood: Midtown
-    - name: Aksarben Village
-      public: true
-      description: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
-      links:
-        - label: Events Calendar
-          url: https://www.aksarbenvillage.com/events
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Midtown
-    - name: Samuel Bak Museum
-      public: true
-      description: Holocaust survivor's art museum with workshops and education programs.
-      links:
-        - label: Events Calendar
-          url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
-      location:
-        neighborhood: Midtown
-    - name: NeXT Foundation Arts
-      public: true
-      description: Open Studios for Expressive Art in the MasterCraft Building
-      links:
-        - label: Art Workshop (on Last Fridays)
-          url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
-        - label: Events Calendar
-          url: https://www.nextfoundationomaha.com/programs-services
-      location:
-        neighborhood: Downtown
-        google_maps_url: https://maps.app.goo.gl/WbUkF54PX4qEiY827?g_st=ic
-        street: "1111 N 13th St #114"
-        city: Omaha
-        zip: "68102"
-      tags:
-        - neutral-bathrooms
-        - seating
-    - name: Old Market Passageway
-      public: false
-      description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
-      links:
-        - label: Website
-          url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
-        - label: Garden of the Zodiac Insta
-          url: https://www.instagram.com/gardenofthezodiac/
-      notes: possibly too normie. willing to entertain arguments as per its queerness
-      location:
-        neighborhood: Downtown
-    - name: Joslyn
-      public: false
-      description: Free museum with events.
-      links:
-        - label: Website
-          url: https://joslyn.org/visit/calendar/
-      notes: boo their president, boo this man!
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Downtown
-    - name: Urban Abbey — Soul Arts
-      public: false
-      description: Monthly arts and spirituality event series at Urban Abbey. Features workshops, performances, and community art projects. Welcoming to all, with a focus on creativity and connection.
-      links:
-        - label: Events
-          url: https://www.theurbanabbey.org/events
-      notes: active? Is there a better direct link? the calendar is a JS thingie
-      location:
-        neighborhood: Downtown
-    - name: Bemis Center
-      public: true
-      description: Cutting-edge museum with resident artists, the Low End music series and major installations.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/bemiscenter/
-        - label: Events Calendar
-          url: https://www.bemiscenter.org/low-end
-        - label: FB
-          url: https://www.facebook.com/bemiscenter/
-      location:
-        neighborhood: Downtown
-    - name: Hot Shops
-      public: true
-      description: Glassblowing studio with classes and events.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/hotshopsartcenter/
-        - label: Events Calendar
-          url: https://hotshopsartcenter.org/events/
-        - label: FB
-          url: https://www.facebook.com/hotshopsartcenter/
-      location:
-        neighborhood: Downtown
-    - name: Millwork Commons
-      public: false
-      description: Apartment complex with art showings, music shows and business-y mixers
-      links:
-        - label: Insta
-          url: https://www.instagram.com/millworkcommons/
-        - label: Events Calendar
-          url: https://millworkcommons.com/events/
-      notes: unpublished may 2026. bathroom police.
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Downtown
-    - name: Omaha Artists Cooperative Gallery
-      public: true
-      description: Artist-owned gallery showcasing a wide variety of local art.
-      links:
-        - label: Events Calendar
-          url: http://artistscoopomaha.com/events?view=calendar
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Downtown
-data:
-  title: Omaha Art Events / Venues
-  description: Art events, creative groups, and venues in Omaha with a
-    queer-friendly presence.
-  public: true
-  items:
-    - name: Sober Socials Omaha
-      public: false
-      notes: potentially inactive circa spring 2026
-      description: Ecstatic dance, figure drawing and spiritual singing, usually at
-        Church Art House. Outdoor events in the summer.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/sobersocialsomaha/
-    - name: Soundry w/ Stacey Barelos
-      public: true
-      description: Fun and inventive music workshops - want to smash a piano? How
-        quietly can you play a tambourine?
-      tags:
-        - neutral-bathrooms
-        - seating
-      links:
-        - label: Insta
-          url: https://www.instagram.com/omahasoundry/
-        - label: Events Calendar
-          url: https://soundryomaha.org
-    - name: Omaha Drum Family
-      public: true
-      description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole
-        Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of
-        theirs!
-      links:
-        - label: Events Calendar
-          url: https://www.facebook.com/drumomaha/
-    - name: SynthOmaha Electronic Music Jam
-      public: true
-      description: Bring your laptop, analog synth, or modular rig to Shakedown Street
-        @ 8-10pm on the last Monday of the month. Wallflowers welcome!
-      links:
-        - label: Events Calendar
-          url: https://synthomaha.net/
-      notes: |
-        Members with social presence:
-        - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
-        - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
-        - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
-        - Tob [Mastodon](https://mastodon.sdf.org/@tob)
-    - name: Sowing Seeds
-      public: true
-      description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on
-        the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're
-        working on and create alongside other artists and writers.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/sowingseeds.omaha/
-    - name: Alternative Publishing (Zines)
-      public: true
-      description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix,
-        Poetry chapbooks, and Linocuts
-      links:
-        - label: Insta
-          url: https://www.instagram.com/altpubomaha/
-    - name: SoundArte
-      public: false
-      description: Network of electronic artists and musicians.
-      links:
-        - label: Website
-          url: https://soundarte.net
-        - label: Insta
-          url: https://www.instagram.com/soundarte.mx/
-        - label: Music Label
-          url: https://eacrecords.bandcamp.com/
-      notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat
-        sporadic updates to site
-    - name: Church Art House
-      public: true
-      description: Unique artistic space in a de-consecrated church. Drawing classes,
-        acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the
-        basement.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/thechurcharthouse/
-        - label: Events Calendar
-          url: https://www.thechurcharthouse.love/schedule
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: South O
-    - name: Project Project
-      public: true
-      description: Punk/queer DIY space with experimental music and local art.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/weareprojectproject/
-        - label: Events Calendar
-          url: https://projectprojectomaha.com/current-show
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: South O
-    - name: Tilt23
-      public: true
-      description: Local artists, music and market at rotating venues eg Church Art House.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/tilt23showcase/
-        - label: FB
-          url: https://www.facebook.com/tilt23/
-      location:
-        neighborhood: South O
-    - name: Razor Wire Productions Open Mic
-      public: false
-      description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm
-        and 2nd Fridays @ 6pm.
-      links:
-        - label: FB
-          url: https://www.facebook.com/poetiklee77/
-        - label: Insta
-          url: https://www.instagram.com/razor_wire_productions/
-      notes: Check it out first before listing.
-      location:
-        neighborhood: South O
-    - name: Clover24
-      public: true
-      description: New-ish studio and gallery space.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/clover24omaha/
-        - label: Events Calendar
-          url: https://clover24.org/events
-      location:
-        neighborhood: South O
-      tags:
-        - neutral-bathrooms
-        - seating
-    - name: Culxr House
-      public: true
-      description: Black-owned community space for shows and art events.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/culxrhouse/
-        - label: FB
-          url: https://www.facebook.com/culxrhouse/
-        - label: Events Calendar
-          url: https://www.houseofculxr.com/all-events
-      notes: art battles seem sporadic / dead as of spring '26'
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: North O
-    - name: Union for Contemporary Art
-      public: true
-      description: Exhibits, studios, classes, and talks.
-      links:
-        - label: Events Calendar
-          url: https://www.u-ca.org/happenings
-      notes: tara hasn't been there yet. trusting its chill.
-      location:
-        neighborhood: North O
-    - name: Petshop
-      public: true
-      description: Punk/queer space for provocative art and experimental music.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/petshopgallery/
-        - label: Website
-          url: https://www.bffomaha.org/petshop
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Benson
-    - name: Radial Arts Center
-      public: true
-      description: Large gallery showing larger local artists.
-      links:
-        - label: Website
-          url: https://www.radialartscenter.org/
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Benson
-    - name: BFF Gallery
-      public: true
-      description: Cool punk gallery. My art was in it!
-      links:
-        - label: Insta
-          url: https://www.instagram.com/thebffgallery/
-      location:
-        neighborhood: Benson
-    - name: Ming Toy Gallery
-      public: true
-      description: Cozy gallery next to Edge of the Universe.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/mingtoygallery/
-        - label: Website
-          url: https://www.mingtoygallery.com/
-      location:
-        neighborhood: Benson
-    - name: Maple Street Construct
-      public: true
-      description: Minimalist space with a cool upstairs.
-      links:
-        - label: Website
-          url: https://www.maplestconstruct.com/
-        - label: FB
-          url: https://www.facebook.com/maplestconstruct/
-      location:
-        neighborhood: Benson
-    - name: MaMo Mobile Gallery Semi-Truck
-      public: true
-      description: Mobile gallery often parked near Petshop showing local artists.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/bffmamo/
-        - label: Website
-          url: https://www.bffomaha.org/mamo
-        - label: FB
-          url: https://www.facebook.com/MaMOgallery/
-      location:
-        neighborhood: Benson
-    - name: Trudy's
-      public: true
-      description: Open artist studios, music and free workshops ran by BFF.
-      links:
-        - label: Website
-          url: https://www.bffomaha.org/learn
-        - label: FB
-          url: https://www.facebook.com/people/Trudys/61561806150499/
-      location:
-        neighborhood: Benson
-    - name: Cali Commons
-      public: true
-      description: Arts collective and neighborhood gallery
-      links:
-        - label: Events Calendar
-          url: https://calicommons.com/calendar-of-events/
-        - label: Join Artist Collective
-          url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
-      location:
-        neighborhood: Midtown
-    - name: Hispanic Arts Center
-      public: true
-      description: Traditional and contemporary Mexican folkloric dance, creative
-        expression, and community gathering. Has Dia de Los Muertos and Cinco de
-        la Mayo events.
-      links:
-        - label: FB
-          url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
-        - label: Events Calendar
-          url: https://www.haco-ne.com/events.html
-      notes: POC Milt
-      location:
-        neighborhood: Midtown
-    - name: Aksarben Village
-      public: true
-      description: Has arts market and outdoor music in the summer. Get the Momos at
-        Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs
-        at Inner Rail, Godega, Marigold's and Roast.
-      links:
-        - label: Events Calendar
-          url: https://www.aksarbenvillage.com/events
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Midtown
-    - name: Samuel Bak Museum
-      public: true
-      description: Holocaust survivor's art museum with workshops and education programs.
-      links:
-        - label: Events Calendar
-          url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
-      location:
-        neighborhood: Midtown
-    - name: NeXT Foundation Arts
-      public: true
-      description: Open Studios for Expressive Art in the MasterCraft Building
-      links:
-        - label: Art Workshop (on Last Fridays)
-          url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
-        - label: Events Calendar
-          url: https://www.nextfoundationomaha.com/programs-services
-      location:
-        neighborhood: Downtown
-        google_maps_url: https://maps.app.goo.gl/WbUkF54PX4qEiY827?g_st=ic
-        street: "1111 N 13th St #114"
-        city: Omaha
-        zip: "68102"
-      tags:
-        - neutral-bathrooms
-        - seating
-    - name: Old Market Passageway
-      public: false
-      description: Alley with small art galleries. Check out the nearby Garden of the
-        Zodiac.
-      links:
-        - label: Website
-          url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
-        - label: Garden of the Zodiac Insta
-          url: https://www.instagram.com/gardenofthezodiac/
-      notes: possibly too normie. willing to entertain arguments as per its queerness
-      location:
-        neighborhood: Downtown
-    - name: Joslyn
-      public: false
-      description: Free museum with events.
-      links:
-        - label: Website
-          url: https://joslyn.org/visit/calendar/
-      notes: boo their president, boo this man!
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Downtown
-    - name: Urban Abbey — Soul Arts
-      public: false
-      description: Monthly arts and spirituality event series at Urban Abbey. Features
-        workshops, performances, and community art projects. Welcoming to all,
-        with a focus on creativity and connection.
-      links:
-        - label: Events
-          url: https://www.theurbanabbey.org/events
-      notes: active? Is there a better direct link? the calendar is a JS thingie
-      location:
-        neighborhood: Downtown
-    - name: Bemis Center
-      public: true
-      description: Cutting-edge museum with resident artists, the Low End music series
-        and major installations.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/bemiscenter/
-        - label: Events Calendar
-          url: https://www.bemiscenter.org/low-end
-        - label: FB
-          url: https://www.facebook.com/bemiscenter/
-      location:
-        neighborhood: Downtown
-    - name: Hot Shops
-      public: true
-      description: Glassblowing studio with classes and events.
-      links:
-        - label: Insta
-          url: https://www.instagram.com/hotshopsartcenter/
-        - label: Events Calendar
-          url: https://hotshopsartcenter.org/events/
-        - label: FB
-          url: https://www.facebook.com/hotshopsartcenter/
-      location:
-        neighborhood: Downtown
-    - name: Millwork Commons
-      public: false
-      description: Apartment complex with art showings, music shows and business-y mixers
-      links:
-        - label: Insta
-          url: https://www.instagram.com/millworkcommons/
-        - label: Events Calendar
-          url: https://millworkcommons.com/events/
-      notes: unpublished may 2026. bathroom police.
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Downtown
-    - name: Omaha Artists Cooperative Gallery
-      public: true
-      description: Artist-owned gallery showcasing a wide variety of local art.
-      links:
-        - label: Events Calendar
-          url: http://artistscoopomaha.com/events?view=calendar
-      tags:
-        - neutral-bathrooms
-      location:
-        neighborhood: Downtown
-author: ""
-slug: art
-newRecord: false
-status: ""
-mediaFiles: []
-label: Art
-updatedOn: ""
-i18n: {}
-collection: pages
+title: Omaha Art Events / Venues
+description: Art events, creative groups, and venues in Omaha with a queer-friendly presence.
+public: true
+items:
+  - name: Sober Socials Omaha
+    public: false
+    notes: potentially inactive circa spring 2026
+    description: Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/sobersocialsomaha/
+  - name: Soundry w/ Stacey Barelos
+    public: true
+    description: Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?
+    tags:
+      - neutral-bathrooms
+      - seating
+    links:
+      - label: Insta
+        url: https://www.instagram.com/omahasoundry/
+      - label: Events Calendar
+        url: https://soundryomaha.org
+  - name: Omaha Drum Family
+    public: true
+    description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
+    links:
+      - label: Events Calendar
+        url: https://www.facebook.com/drumomaha/
+  - name: SynthOmaha Electronic Music Jam
+    public: true
+    description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
+    links:
+      - label: Events Calendar
+        url: https://synthomaha.net/
+    notes: |
+      Members with social presence:
+      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
+      - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
+      - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
+      - Tob [Mastodon](https://mastodon.sdf.org/@tob)
+  - name: Sowing Seeds
+    public: true
+    description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/sowingseeds.omaha/
+  - name: Alternative Publishing (Zines)
+    public: true
+    description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
+    links:
+      - label: Insta
+        url: https://www.instagram.com/altpubomaha/
+  - name: SoundArte
+    public: false
+    description: Network of electronic artists and musicians.
+    links:
+      - label: Website
+        url: https://soundarte.net
+      - label: Insta
+        url: https://www.instagram.com/soundarte.mx/
+      - label: Music Label
+        url: https://eacrecords.bandcamp.com/
+    notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat sporadic updates to site
+  - name: Church Art House
+    public: true
+    description: Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/thechurcharthouse/
+      - label: Events Calendar
+        url: https://www.thechurcharthouse.love/schedule
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: South O
+  - name: Project Project
+    public: true
+    description: Punk/queer DIY space with experimental music and local art.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/weareprojectproject/
+      - label: Events Calendar
+        url: https://projectprojectomaha.com/current-show
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: South O
+  - name: Tilt23
+    public: true
+    description: Local artists, music and market at rotating venues eg Church Art House.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/tilt23showcase/
+      - label: FB
+        url: https://www.facebook.com/tilt23/
+    location:
+      neighborhood: South O
+  - name: Razor Wire Productions Open Mic
+    public: false
+    description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm.
+    links:
+      - label: FB
+        url: https://www.facebook.com/poetiklee77/
+      - label: Insta
+        url: https://www.instagram.com/razor_wire_productions/
+    notes: Check it out first before listing.
+    location:
+      neighborhood: South O
+  - name: Clover24
+    public: true
+    description: New-ish studio and gallery space.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/clover24omaha/
+      - label: Events Calendar
+        url: https://clover24.org/events
+    location:
+      neighborhood: South O
+    tags:
+      - neutral-bathrooms
+      - seating
+  - name: Culxr House
+    public: true
+    description: Black-owned community space for shows and art events.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/culxrhouse/
+      - label: FB
+        url: https://www.facebook.com/culxrhouse/
+      - label: Events Calendar
+        url: https://www.houseofculxr.com/all-events
+    notes: art battles seem sporadic / dead as of spring '26'
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: North O
+  - name: Union for Contemporary Art
+    public: true
+    description: Exhibits, studios, classes, and talks.
+    links:
+      - label: Events Calendar
+        url: https://www.u-ca.org/happenings
+    notes: tara hasn't been there yet. trusting its chill.
+    location:
+      neighborhood: North O
+  - name: Petshop
+    public: true
+    description: Punk/queer space for provocative art and experimental music.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/petshopgallery/
+      - label: Website
+        url: https://www.bffomaha.org/petshop
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: Benson
+  - name: Radial Arts Center
+    public: true
+    description: Large gallery showing larger local artists.
+    links:
+      - label: Website
+        url: https://www.radialartscenter.org/
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: Benson
+  - name: BFF Gallery
+    public: true
+    description: Cool punk gallery. My art was in it!
+    links:
+      - label: Insta
+        url: https://www.instagram.com/thebffgallery/
+    location:
+      neighborhood: Benson
+  - name: Ming Toy Gallery
+    public: true
+    description: Cozy gallery next to Edge of the Universe.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/mingtoygallery/
+      - label: Website
+        url: https://www.mingtoygallery.com/
+    location:
+      neighborhood: Benson
+  - name: Maple Street Construct
+    public: true
+    description: Minimalist space with a cool upstairs.
+    links:
+      - label: Website
+        url: https://www.maplestconstruct.com/
+      - label: FB
+        url: https://www.facebook.com/maplestconstruct/
+    location:
+      neighborhood: Benson
+  - name: MaMo Mobile Gallery Semi-Truck
+    public: true
+    description: Mobile gallery often parked near Petshop showing local artists.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/bffmamo/
+      - label: Website
+        url: https://www.bffomaha.org/mamo
+      - label: FB
+        url: https://www.facebook.com/MaMOgallery/
+    location:
+      neighborhood: Benson
+  - name: Trudy's
+    public: true
+    description: Open artist studios, music and free workshops ran by BFF.
+    links:
+      - label: Website
+        url: https://www.bffomaha.org/learn
+      - label: FB
+        url: https://www.facebook.com/people/Trudys/61561806150499/
+    location:
+      neighborhood: Benson
+  - name: Cali Commons
+    public: true
+    description: Arts collective and neighborhood gallery
+    links:
+      - label: Events Calendar
+        url: https://calicommons.com/calendar-of-events/
+      - label: Join Artist Collective
+        url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
+    location:
+      neighborhood: Midtown
+  - name: Hispanic Arts Center
+    public: true
+    description: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
+    links:
+      - label: FB
+        url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
+      - label: Events Calendar
+        url: https://www.haco-ne.com/events.html
+    notes: POC Milt
+    location:
+      neighborhood: Midtown
+  - name: Aksarben Village
+    public: true
+    description: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
+    links:
+      - label: Events Calendar
+        url: https://www.aksarbenvillage.com/events
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: Midtown
+  - name: Samuel Bak Museum
+    public: true
+    description: Holocaust survivor's art museum with workshops and education programs.
+    links:
+      - label: Events Calendar
+        url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
+    location:
+      neighborhood: Midtown
+  - name: NeXT Foundation Arts
+    public: true
+    description: Open Studios for Expressive Art in the MasterCraft Building
+    links:
+      - label: Art Workshop (on Last Fridays)
+        url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
+      - label: Events Calendar
+        url: https://www.nextfoundationomaha.com/programs-services
+    location:
+      neighborhood: Downtown
+      google_maps_url: https://maps.app.goo.gl/WbUkF54PX4qEiY827?g_st=ic
+      street: "1111 N 13th St #114"
+      city: Omaha
+      zip: "68102"
+    tags:
+      - neutral-bathrooms
+      - seating
+  - name: Old Market Passageway
+    public: false
+    description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
+    links:
+      - label: Website
+        url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
+      - label: Garden of the Zodiac Insta
+        url: https://www.instagram.com/gardenofthezodiac/
+    notes: possibly too normie. willing to entertain arguments as per its queerness
+    location:
+      neighborhood: Downtown
+  - name: Joslyn
+    public: false
+    description: Free museum with events.
+    links:
+      - label: Website
+        url: https://joslyn.org/visit/calendar/
+    notes: boo their president, boo this man!
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: Downtown
+  - name: Urban Abbey — Soul Arts
+    public: false
+    description: Monthly arts and spirituality event series at Urban Abbey. Features workshops, performances, and community art projects. Welcoming to all, with a focus on creativity and connection.
+    links:
+      - label: Events
+        url: https://www.theurbanabbey.org/events
+    notes: active? Is there a better direct link? the calendar is a JS thingie
+    location:
+      neighborhood: Downtown
+  - name: Bemis Center
+    public: true
+    description: Cutting-edge museum with resident artists, the Low End music series and major installations.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/bemiscenter/
+      - label: Events Calendar
+        url: https://www.bemiscenter.org/low-end
+      - label: FB
+        url: https://www.facebook.com/bemiscenter/
+    location:
+      neighborhood: Downtown
+  - name: Hot Shops
+    public: true
+    description: Glassblowing studio with classes and events.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/hotshopsartcenter/
+      - label: Events Calendar
+        url: https://hotshopsartcenter.org/events/
+      - label: FB
+        url: https://www.facebook.com/hotshopsartcenter/
+    location:
+      neighborhood: Downtown
+  - name: Millwork Commons
+    public: false
+    description: Apartment complex with art showings, music shows and business-y mixers
+    links:
+      - label: Insta
+        url: https://www.instagram.com/millworkcommons/
+      - label: Events Calendar
+        url: https://millworkcommons.com/events/
+    notes: unpublished may 2026. bathroom police.
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: Downtown
+  - name: Omaha Artists Cooperative Gallery
+    public: true
+    description: Artist-owned gallery showcasing a wide variety of local art.
+    links:
+      - label: Events Calendar
+        url: http://artistscoopomaha.com/events?view=calendar
+    tags:
+      - neutral-bathrooms
+    location:
+      neighborhood: Downtown
