@@ -30,9 +30,11 @@ self.addEventListener('fetch', (e) => {
                 (r) =>
                     r ??
                     fetch(e.request).then((res) => {
-                        caches
-                            .open(CACHE)
-                            .then((c) => c.put(e.request, res.clone()))
+                        if (res.ok && res.type !== 'opaque') {
+                            caches
+                                .open(CACHE)
+                                .then((c) => c.put(e.request, res.clone()))
+                        }
                         return res
                     }),
             ),
@@ -43,7 +45,11 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
         fetch(e.request)
             .then((res) => {
-                caches.open(CACHE).then((c) => c.put(e.request, res.clone()))
+                if (res.ok && res.type !== 'opaque') {
+                    caches
+                        .open(CACHE)
+                        .then((c) => c.put(e.request, res.clone()))
+                }
                 return res
             })
             .catch(() => caches.match(e.request)),
