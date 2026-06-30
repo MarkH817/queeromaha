@@ -1,0 +1,58 @@
+---
+interface Props {
+    message: string
+}
+
+const { message } = Astro.props
+---
+
+<footer>
+  <div class="footer-cal">
+    <a
+      href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+    >
+      <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon> Subscribe to Calendar
+    </a>
+  </div>
+  <div class="footer-text">
+    <p class="footer-message">{message}</p>
+  </div>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="/about#suggest"><wa-icon name="lightbulb" variant="regular" label="suggestion"></wa-icon>Suggestion Box</a>
+  </nav>
+</footer>
+<button id="backToTop" aria-label="Back to top">
+  <wa-icon name="circle-arrow-up" variant="solid"></wa-icon>
+</button>
+<script>
+  const footerText = document.querySelector<HTMLElement>('.footer-text')
+  const footerMessage = document.querySelector<HTMLElement>('.footer-message')
+  if (footerText && footerMessage) {
+    const checkFooterFit = () => {
+      footerText.hidden = false
+      footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
+    }
+    checkFooterFit()
+    let lastWidth = window.innerWidth
+    window.addEventListener('resize', () => {
+      if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth
+        checkFooterFit()
+      }
+    })
+  }
+
+  const backToTopButton = document.getElementById('backToTop')
+  const header = document.querySelector('header')
+  if (backToTopButton && header) {
+    window.addEventListener('scroll', () => {
+      backToTopButton.classList.toggle('show', window.scrollY > header.offsetHeight)
+    })
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+  }
+</script>
