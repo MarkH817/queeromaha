@@ -116,6 +116,9 @@ items:
         url: https://clover24.org/events
     location:
       neighborhood: South O
+    tags:
+      - neutral-bathrooms
+      - seating
   - name: Culxr House
     public: true
     description: Black-owned community space for shows and art events.
