@@ -1,0 +1,25 @@
+---
+---
+
+<header>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <wa-button href="/social" appearance="plain" data-filter="social" data-filter-type="category" aria-pressed="false">Social</wa-button>
+    <wa-button href="/spiritual" appearance="plain" data-filter="spiritual" data-filter-type="category" aria-pressed="false">Spiritual</wa-button>
+    <wa-button href="/art" appearance="plain" data-filter="art" data-filter-type="category" aria-pressed="false">Art</wa-button>
+    <wa-button href="/cafes" appearance="plain" data-filter="cafes" data-filter-type="category" aria-pressed="false">Cafes</wa-button>
+    <wa-button href="/music" appearance="plain" data-filter="music" data-filter-type="category" aria-pressed="false">Music</wa-button>
+    <wa-button href="/makers" appearance="plain" data-filter="makers" data-filter-type="category" aria-pressed="false">Makers</wa-button>
+  </nav>
+</header>
+<script>
+  const navBtns = document.querySelectorAll('.main-nav wa-button')
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/'
+  navBtns.forEach((btn) => {
+    const href = (btn.getAttribute('href') ?? '').replace(/\/$/, '') || '/'
+    if (href === currentPath) {
+      btn.classList.add('active')
+      btn.setAttribute('aria-current', 'page')
+    }
+  })
+</script>
