@@ -309,3 +309,28 @@ test('neighborhood segment order is stable after switching categories', async ({
     await page.locator('[data-filter="art"]').click()
     expect(await getOrder()).toEqual(initialOrder)
 })
+
+test('suggestion form shows inline confirmation without navigating', async ({
+    page,
+}) => {
+    await page.goto('/about/')
+
+    // Netlify intercepts the real POST; mock it so the test is self-contained
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 200 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('textarea[name="message"]', 'Test suggestion')
+    await page.click('button[type="submit"]')
+
+    // Should stay on the about page
+    expect(page.url()).toContain('/about')
+
+    // Form replaced by confirmation message
+    await expect(page.locator('#suggest-thanks')).toBeVisible()
+    await expect(page.locator('form[name="suggest"]')).not.toBeAttached()
+})
