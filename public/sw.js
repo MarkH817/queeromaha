@@ -1,5 +1,5 @@
 const CACHE = 'qo-v1'
-const PRECACHE = ['/', '/about', '/contact', '/manifest.webmanifest']
+const PRECACHE = ['/social', '/about', '/manifest.webmanifest']
 
 self.addEventListener('install', (e) => {
     e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)))
@@ -23,6 +23,7 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     const url = new URL(e.request.url)
+    if (!url.protocol.startsWith('http')) return
     // Cache-first for hashed Astro assets (safe to cache forever)
     if (url.pathname.startsWith('/_astro/')) {
         e.respondWith(
@@ -30,9 +31,8 @@ self.addEventListener('fetch', (e) => {
                 (r) =>
                     r ??
                     fetch(e.request).then((res) => {
-                        caches
-                            .open(CACHE)
-                            .then((c) => c.put(e.request, res.clone()))
+                        const clone = res.clone()
+                        caches.open(CACHE).then((c) => c.put(e.request, clone))
                         return res
                     }),
             ),
@@ -43,7 +43,8 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
         fetch(e.request)
             .then((res) => {
-                caches.open(CACHE).then((c) => c.put(e.request, res.clone()))
+                const clone = res.clone()
+                caches.open(CACHE).then((c) => c.put(e.request, clone))
                 return res
             })
             .catch(() => caches.match(e.request)),

@@ -1,9 +1,8 @@
 import { expect, test } from '@playwright/test'
 
 const pages = [
-    { path: '/', titleContains: 'Queer' },
+    { path: '/social/', titleContains: 'Queer' },
     { path: '/about/', titleContains: 'About' },
-    { path: '/contact/', titleContains: 'About' },
     // filter slug pages all share the directory title
     { path: '/music/', titleContains: 'Queer' },
     { path: '/cafes/', titleContains: 'Queer' },
@@ -21,7 +20,7 @@ for (const { path, titleContains } of pages) {
 }
 
 test('home page has navigation links', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const nav = page.locator('nav.main-nav')
     await expect(nav).toBeVisible()
     const buttons = nav.locator('wa-button')
@@ -33,12 +32,12 @@ test('no console errors on home page', async ({ page }) => {
     page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text())
     })
-    await page.goto('/')
+    await page.goto('/social/')
     expect(errors).toHaveLength(0)
 })
 
 test('skip-to-main link is present', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const skipLink = page.locator('a.skip-link')
     await expect(skipLink).toHaveAttribute('href', '#main')
 })
@@ -64,12 +63,12 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
 })
 
 test('footer is present', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     await expect(page.getByRole('contentinfo')).toBeVisible()
 })
 
 test('filter pills are present on home page', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const pills = page.locator('.filter-pill')
     expect(await pills.count()).toBeGreaterThan(0)
 })
@@ -81,7 +80,7 @@ test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
 })
 
 test('neighborhood filter pills render on the home page', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const pills = page.locator('[data-filter-type="neighborhood"]')
     expect(await pills.count()).toBeGreaterThan(0)
 })
@@ -118,7 +117,7 @@ test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
 test('combining category and neighborhood pills narrows results', async ({
     page,
 }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     await page.locator('[data-filter="cafes"]').click()
     await page.locator('[data-filter="west-o"]').click()
 
@@ -135,7 +134,7 @@ test('combining category and neighborhood pills narrows results', async ({
 test('location bar renders as a single-select segmented bar', async ({
     page,
 }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const bar = page.locator('.location-bar')
     await expect(bar).toBeVisible()
     const segments = bar.locator('.location-segment')
@@ -220,7 +219,7 @@ test('clear button only clears tags, leaving the active location untouched', asy
 
 test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
-    await page.goto('/')
+    await page.goto('/social/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
@@ -246,7 +245,7 @@ test('footer message is visible and unclipped on wide screens', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 1024, height: 800 })
-    await page.goto('/')
+    await page.goto('/social/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
@@ -258,7 +257,7 @@ test('footer message is visible and unclipped on wide screens', async ({
 })
 
 test('tag filter pills use wa-icon elements', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const pills = page.locator('.filter-pill')
     const count = await pills.count()
     expect(count).toBeGreaterThan(0)
@@ -295,7 +294,7 @@ test('location with street and neighborhood renders hyphen-separated on one line
 test('neighborhood segment order is stable after switching categories', async ({
     page,
 }) => {
-    await page.goto('/')
+    await page.goto('/social/')
     const getOrder = () =>
         page
             .locator('.location-segment')
@@ -308,4 +307,29 @@ test('neighborhood segment order is stable after switching categories', async ({
 
     await page.locator('[data-filter="art"]').click()
     expect(await getOrder()).toEqual(initialOrder)
+})
+
+test('suggestion form shows inline confirmation without navigating', async ({
+    page,
+}) => {
+    await page.goto('/about/')
+
+    // Netlify intercepts the real POST; mock it so the test is self-contained
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 200 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('textarea[name="message"]', 'Test suggestion')
+    await page.click('button[type="submit"]')
+
+    // Should stay on the about page
+    expect(page.url()).toContain('/about')
+
+    // Form replaced by confirmation message
+    await expect(page.locator('#suggest-thanks')).toBeVisible()
+    await expect(page.locator('form[name="suggest"]')).not.toBeAttached()
 })
