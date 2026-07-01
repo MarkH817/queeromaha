@@ -41,6 +41,8 @@ items:
       - seating
     description: Low-key meditation in progressive Buddhist tradition on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific.
     links:
+      - label: Monday 6:30PM Open Zen
+        url: https://nebraskazencenter.org/sunday-open-zen/
       - label: Events Calendar
         url: https://honeylocustsangha.org/events.html
     location:

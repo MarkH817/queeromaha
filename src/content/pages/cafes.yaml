@@ -86,7 +86,7 @@ items:
     public: true
     description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
     links:
-      - label: Official Discord
+      - label: Discord
         url: https://discord.com/invite/official-spellbound-861024184947572736
       - label: Website
         url: https://www.spielbound.com/how-to-spielbound

@@ -2,11 +2,11 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: OmahaUnderground.NET and Omaha Buzz
-    description: Where to learn about the cool shows
+  - name: The Real Music Scene
+    description: Not that normie shit
     public: true
     links:
-      - label: OmahaUnderground DOT net
+      - label: OmahaUnderground.NET
         url: https://omahaunderground.net/shows/
       - label: Omaha Buzz substack
         url: https://omahabuzz.substack.com
@@ -23,7 +23,7 @@ items:
         url: https://www.thechurcharthouse.love/
       - label: FB
         url: https://www.facebook.com/thechurcharthouse/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
       neighborhood: South O
@@ -39,7 +39,7 @@ items:
         url: https://projectprojectomaha.com/
       - label: FB
         url: https://www.facebook.com/weareprojectproject/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/project-project
     location:
       neighborhood: South O
@@ -67,7 +67,7 @@ items:
     links:
       - label: Insta
         url: https://www.instagram.com/floorsfloorsfloors_7052maple/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/floors-floors-floors
     notes: per sources, venue is not able to host public events due to landlords
     location:
@@ -84,7 +84,7 @@ items:
         url: https://www.facebook.com/shakedownstreettavern/
       - label: FB
         url: https://www.facebook.com/shakedownstreettavern/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/shakedown-street-tavern
     location:
       neighborhood: Benson
@@ -104,7 +104,7 @@ items:
     links:
       - label: Website
         url: https://www.reverblounge.com/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/reverb-lounge
     location:
       neighborhood: Benson
@@ -116,7 +116,7 @@ items:
     links:
       - label: Website
         url: https://thesydneybenson.com/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/the-sydney
     location:
       neighborhood: Benson
@@ -142,7 +142,7 @@ items:
         url: https://www.instagram.com/noiromaha/
       - label: Noir's FB
         url: https://www.facebook.com/NoirOmaha/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/the-coven
     notes: DJ Cemetery Gates, Courtney Noir, Ex-Lover
   - name: Pageturners Lounge
@@ -153,7 +153,7 @@ items:
         url: https://www.instagram.com/pageturnerslounge/
       - label: FB
         url: https://www.facebook.com/pageturnerslounge/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/pageturners-lounge
     location:
       neighborhood: Midtown
@@ -168,7 +168,7 @@ items:
         url: https://www.instagram.com/oleavers/
       - label: FB
         url: https://www.facebook.com/oleavers/
-      - label: Events on OmahaUnderground
+      - label: Shows
         url: https://omahaunderground.net/venues/oleavers
     location:
       neighborhood: Midtown
@@ -249,9 +249,11 @@ items:
       neighborhood: Midtown
   - name: Low End at Bemis Center
     public: true
-    description: Amazing experimental music series uplifting BIPOC, trans and queer artists.
+    description: Experimental music series uplifting BIPOC, trans and queer artists.
     links:
       - label: Events Calendar
+        url: https://www.bemiscenter.org/events
+      - label: Website
         url: https://www.bemiscenter.org/low-end
     location:
       neighborhood: Downtown
@@ -287,7 +289,7 @@ items:
       neighborhood: Downtown
   - name: Steelhouse
     public: true
-    description: "**NO GO** — unsafe for trans / queer folx. Empowers literal bathroom police."
+    description: "**NO GO** — unsafe for trans / queer folx due to bathroom police"
     location:
       neighborhood: Downtown
   - name: Slowdown
