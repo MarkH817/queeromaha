@@ -596,7 +596,7 @@ blockquote p {
     align-items: center;
     justify-content: center;
     height: 2.4rem;
-    padding: 0 0.6rem;
+    padding: 0 1rem;
     margin: 0;
     border: none;
     border-right: 2px solid #c4b5fd;
@@ -619,7 +619,7 @@ blockquote p {
         flex: 0 1 auto;
         border: 1px solid #c4b5fd;
         border-radius: 6px;
-        padding: 0 0.55rem;
+        padding: 0 0.9rem;
         background: #f9f5ff;
     }
     .location-segment:last-child {
