@@ -544,7 +544,6 @@ blockquote p {
 }
 
 .location-bar {
-    position: relative;
     max-width: 100%;
     overflow: hidden;
     border-radius: 8px;
@@ -557,22 +556,42 @@ blockquote p {
 
 .location-bar-scroll {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
+}
+
+@media (min-width: 769px) {
+    .location-bar-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: #c4b5fd transparent;
+    }
+    .location-bar-scroll::-webkit-scrollbar {
+        height: 3px;
+    }
+    .location-bar-scroll::-webkit-scrollbar-thumb {
+        background: #c4b5fd;
+        border-radius: 999px;
+    }
 }
 
 @media (max-width: 768px) {
     .location-bar {
-        margin-left: -0.75rem;
-        margin-right: -0.75rem;
-        width: calc(100% + 1.5rem);
-        max-width: none;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        overflow: visible;
+    }
+    .location-bar-scroll {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        overflow-x: visible;
     }
 }
 
 .location-segment {
     box-sizing: border-box;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -597,8 +616,14 @@ blockquote p {
 
 @media (max-width: 768px) {
     .location-segment {
+        flex: 0 1 auto;
+        border: 1px solid #c4b5fd;
+        border-radius: 6px;
         padding: 0 0.55rem;
-        border-right-width: 1px;
+        background: #f9f5ff;
+    }
+    .location-segment:last-child {
+        border: 1px solid #c4b5fd;
     }
 }
 
