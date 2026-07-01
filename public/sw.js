@@ -23,6 +23,7 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     const url = new URL(e.request.url)
+    if (!url.protocol.startsWith('http')) return
     // Cache-first for hashed Astro assets (safe to cache forever)
     if (url.pathname.startsWith('/_astro/')) {
         e.respondWith(
