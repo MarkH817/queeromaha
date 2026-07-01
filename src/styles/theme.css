@@ -555,21 +555,10 @@ blockquote p {
         inset -1px -1px 0 rgba(124, 58, 237, 0.15);
 }
 
-.location-bar::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 2.5rem;
-    background: linear-gradient(to right, transparent, #f9f5ff 85%);
-    border-radius: 0 8px 8px 0;
-    pointer-events: none;
-}
-
 .location-bar-scroll {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -579,28 +568,11 @@ blockquote p {
         width: calc(100% + 1.5rem);
         max-width: none;
     }
-    .location-bar-scroll {
-        overflow-x: visible;
-    }
-}
-
-@media (min-width: 769px) {
-    .location-bar-scroll {
-        scrollbar-width: thin;
-        scrollbar-color: #c4b5fd transparent;
-    }
-    .location-bar-scroll::-webkit-scrollbar {
-        height: 3px;
-    }
-    .location-bar-scroll::-webkit-scrollbar-thumb {
-        background: #c4b5fd;
-        border-radius: 999px;
-    }
 }
 
 .location-segment {
     box-sizing: border-box;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -645,12 +617,6 @@ blockquote p {
 .location-segment.unavailable {
     opacity: 0.35;
     cursor: not-allowed;
-}
-
-@media (max-width: 768px) {
-    .location-bar::after {
-        display: none;
-    }
 }
 
 .filter-pill {

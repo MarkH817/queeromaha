@@ -34,7 +34,7 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: Marigold's
     public: true
     description: Artisanal goods and crafts.
@@ -49,7 +49,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: Mill on Leavenworth
     public: true
     description: Large popular cafe. Good for meetups and "working".
@@ -150,12 +150,12 @@ items:
       - neutral-bathrooms
       - work-spot
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Lola's
     public: false
     description: Pricy cafe in the movie theater. Good for dates.
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Amateur Coffee
     public: true
     description: Small place whose takeout coffee comes in glass containers with deposit.
@@ -170,7 +170,7 @@ items:
       - neutral-bathrooms
     notes: Met Owner at NZC who stated it's queer owned.
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Urban Abbey
     public: false
     description: Progressive Methodist cafe / bookstore with a queer section. Chill place to hang out.
@@ -181,7 +181,7 @@ items:
     tags:
       - seating
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Reading Room
     public: true
     description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
@@ -195,7 +195,7 @@ items:
     tags:
       - seating
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Rally Coffee
     public: false
     description: Cafe downtown.
@@ -204,7 +204,7 @@ items:
         url: https://www.rallycoffee.co/pages/locations
     notes: Go there first before listing.
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Zen Coffee
     public: true
     description: Downtown and West O locations.
@@ -219,7 +219,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Howlin Hounds
     public: false
     links:
@@ -227,7 +227,7 @@ items:
         url: https://www.instagram.com/howlinhounds/
     notes: Recommended, haven't been there.
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Karma Koffee
     public: true
     description: Buddhist themed cafe with vegan options and authentic thangkas.
