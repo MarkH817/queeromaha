@@ -104,8 +104,20 @@ const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
           pillIcon = { name: 'instagram', family: 'brands' }
         } else if (url.includes('facebook.com')) {
           pillIcon = { name: 'facebook', family: 'brands' }
+        } else if (url.includes('discord.com') || url.includes('discord.gg')) {
+          pillIcon = { name: 'discord', family: 'brands' }
+        } else if (url.includes('carrd.co')) {
+          pillIcon = { name: 'rectangle-list', family: 'classic' }
+        } else if (label.includes('website')) {
+          pillIcon = { name: 'earth-africa', family: 'classic' }
         } else if (label.includes('event') || label.includes('calendar')) {
           pillIcon = { name: 'calendar', family: 'classic' }
+        } else if (label.includes('register') || label.includes('signup')) {
+          pillIcon = { name: 'square-check', family: 'classic' }
+        } else if (label.includes('clothes') || label.includes('closet')) {
+          pillIcon = { name: 'person-half-dress', family: 'classic' }
+        } else if (label.includes('pantry') || label.includes('food')) {
+          pillIcon = { name: 'jar', family: 'classic' }
         }
         return (
           <li>
