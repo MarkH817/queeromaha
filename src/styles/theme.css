@@ -313,7 +313,9 @@ wa-card.item[hidden] {
 
 wa-card.item::part(base) {
     border-color: #e9d5ff;
-    box-shadow: 0 1px 4px rgba(124, 58, 237, 0.06);
+    box-shadow:
+        3px -3px 0 #e9d5ff,
+        5px -5px 0 #c4b5fd;
 }
 
 wa-card.item::part(header) {
@@ -399,6 +401,7 @@ blockquote p {
 .entry-links a {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     padding: 0.3rem 0.75rem;
     border-radius: 999px;
     background: #f3e8ff;
@@ -526,6 +529,18 @@ blockquote p {
     padding-top: 0.35rem;
     border-top: 1px solid #f3e8ff;
     width: 100%;
+}
+
+@media (max-width: 480px) {
+    .filter-pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+    .filter-pills::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .location-bar {
