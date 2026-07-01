@@ -8,9 +8,11 @@ items:
     links:
       - label: Events Calendar
         url: https://omahafor.us/events-calendar
-      - label: Pantry / Closet
+      - label: Food Pantry
         url: https://omahafor.us/programs/programs-community-support
-      - label: Support group (hybrid)
+      - label: Trans Closet
+        url: https://omahafor.us/programs/programs-community-support
+      - label: Support Group
         url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
       - label: Mental Health Resources
         url: https://omahafor.us/programs/mental-health
@@ -98,7 +100,7 @@ items:
     public: true
     description: Hikes, coffee chats, movie nights, etc. Sober-friendly
     links:
-      - label: Signup
+      - label: Register
         url: https://forms.gle/k2HhE8boH47rkJpT6
       - label: Website
         url: https://flow.page/outwildadventures
@@ -106,7 +108,7 @@ items:
     public: true
     description: Monthly online Trans* group ran by Babs Ramsey.
     links:
-      - label: Signup
+      - label: Register
         url: https://www.transnebraska.online/get-involved
       - label: Website
         url: https://www.transnebraska.online
@@ -114,7 +116,7 @@ items:
     public: false
     description: Online Trans* group ran by therapist Brit Gunther.
     links:
-      - label: Signup
+      - label: Register
         url: https://www.braveresilience.com/register
       - label: Website
         url: https://www.braveresilience.com/transformative
@@ -123,7 +125,7 @@ items:
     public: true
     description: In-person social group centering Trans Men, Trans Masc* and Nonbinary folks.
     links:
-      - label: Signup
+      - label: Register
         url: https://secondsunday.xyz/meet-up
       - label: Discord
         url: https://discord.com/invite/EdVFccyJeT
