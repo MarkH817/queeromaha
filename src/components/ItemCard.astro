@@ -96,13 +96,38 @@ const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
   )}
   {item.links && item.links.length > 0 && (
     <ul class="entry-links" slot="footer">
-      {item.links.map(link => (
-        <li>
-          <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
-            {link.label}
-          </a>
-        </li>
-      ))}
+      {item.links.map(link => {
+        const url = link.url.toLowerCase()
+        const label = link.label.toLowerCase()
+        let pillIcon: { name: string; family: string } | null = null
+        if (url.includes('instagram.com')) {
+          pillIcon = { name: 'instagram', family: 'brands' }
+        } else if (url.includes('facebook.com')) {
+          pillIcon = { name: 'facebook', family: 'brands' }
+        } else if (url.includes('discord.com') || url.includes('discord.gg')) {
+          pillIcon = { name: 'discord', family: 'brands' }
+        } else if (url.includes('carrd.co')) {
+          pillIcon = { name: 'rectangle-list', family: 'classic' }
+        } else if (label.includes('website')) {
+          pillIcon = { name: 'earth-africa', family: 'classic' }
+        } else if (label.includes('event') || label.includes('calendar')) {
+          pillIcon = { name: 'calendar', family: 'classic' }
+        } else if (label.includes('register') || label.includes('signup')) {
+          pillIcon = { name: 'square-check', family: 'classic' }
+        } else if (label.includes('clothes') || label.includes('closet')) {
+          pillIcon = { name: 'person-half-dress', family: 'classic' }
+        } else if (label.includes('pantry') || label.includes('food')) {
+          pillIcon = { name: 'jar', family: 'classic' }
+        }
+        return (
+          <li>
+            <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
+              {pillIcon && <wa-icon name={pillIcon.name} family={pillIcon.family} aria-hidden="true"></wa-icon>}
+              {link.label}
+            </a>
+          </li>
+        )
+      })}
     </ul>
   )}
 </wa-card>
