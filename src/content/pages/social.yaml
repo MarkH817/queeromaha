@@ -85,10 +85,15 @@ items:
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
   - name: River Daze Collective
     public: true
-    description: Social group with events organized via Facebook.
+    description: |-
+      Glassware and repurposed lamps for the discerning partaker
+
+      Runs queer markets
     links:
       - label: Facebook
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
+      - label: Insta
+        url: https://www.instagram.com/river.dazeco/
   - name: Out Wild Adventures
     public: true
     description: Hikes, coffee chats, movie nights, etc. Sober-friendly
