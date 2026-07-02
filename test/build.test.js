@@ -85,23 +85,23 @@ describe('astro build', () => {
     })
 
     test('dist contains a generated neighborhood page', () => {
-        expect(existsSync(join(ROOT, 'dist', 'west-o', 'index.html'))).toBe(
+        expect(existsSync(join(ROOT, 'dist', 'west-omaha', 'index.html'))).toBe(
             true,
         )
     })
 
-    test('west-o/index.html has data-initial-neighborhoods="west-o"', () => {
+    test('west-omaha/index.html has data-initial-neighborhoods="west-omaha"', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'west-o', 'index.html'),
+            join(ROOT, 'dist', 'west-omaha', 'index.html'),
             'utf8',
         )
-        expect(html).toContain('data-initial-neighborhoods="west-o"')
+        expect(html).toContain('data-initial-neighborhoods="west-omaha"')
         expect(html).toContain('Roast Coffeehouse')
     })
 
     test('dist contains a category + neighborhood combo page', () => {
         expect(
-            existsSync(join(ROOT, 'dist', 'cafes', 'west-o', 'index.html')),
+            existsSync(join(ROOT, 'dist', 'cafes', 'west-omaha', 'index.html')),
         ).toBe(true)
     })
 
