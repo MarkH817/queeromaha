@@ -51,7 +51,7 @@ const initialNeighborhoods = filterSlugs.filter((s) =>
 // same hidden state filter.ts would apply on load, so there's no flash of
 // the full unfiltered directory before JS hides it (a major CLS source).
 function matchesInitial(
-    item: (typeof entries)[number]['data']['items'][number],
+    item: NonNullable<(typeof entries)[number]['data']['items']>[number],
     catId: string,
 ) {
     const catOk =
