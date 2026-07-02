@@ -4,6 +4,7 @@ import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
 import Base from '../layouts/Base.astro'
 import { buildNeighborhoods } from '../utils/neighborhoods'
+import { slugify } from '../utils/slugify'
 
 const categorySlugs = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
 
@@ -45,6 +46,25 @@ const initialNeighborhoods = filterSlugs.filter((s) =>
     neighborhoodSlugs.includes(s),
 )
 
+// Mirrors cardMatches() in scripts/filter.ts (category + neighborhood only —
+// tags are never part of a static route). This lets the server render the
+// same hidden state filter.ts would apply on load, so there's no flash of
+// the full unfiltered directory before JS hides it (a major CLS source).
+function matchesInitial(
+    item: (typeof entries)[number]['data']['items'][number],
+    catId: string,
+) {
+    const catOk =
+        initialCategories.length === 0 || initialCategories.includes(catId)
+    const nbrSlug = item.location?.neighborhood
+        ? slugify(item.location.neighborhood)
+        : ''
+    const nbrOk =
+        initialNeighborhoods.length === 0 ||
+        initialNeighborhoods.includes(nbrSlug)
+    return catOk && nbrOk
+}
+
 const categoryLabels: Record<string, string> = {
     social: 'Social',
     spiritual: 'Spiritual',
@@ -63,15 +83,19 @@ const categoryLabels: Record<string, string> = {
 >
   <FilterBar neighborhoods={allNeighborhoods} />
   {entries.map(entry => {
-    const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+    let publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+    if (filterSlugs.length === 0) {
+      publicItems = publicItems.filter(i => i.recommended === true)
+    }
     if (publicItems.length === 0) return null
+    const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
     return (
       <section aria-label={categoryLabels[entry.id] ?? entry.id}>
-        <h2 class="section-header" data-category-heading={entry.id}>
+        <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
           {categoryLabels[entry.id] ?? entry.id}
         </h2>
         {publicItems.map(item => (
-          <ItemCard item={item} category={entry.id} />
+          <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />
         ))}
       </section>
     )

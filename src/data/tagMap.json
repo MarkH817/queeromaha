@@ -4,5 +4,5 @@
         "label": "Single-Stall"
     },
     "seating": { "icon": "couch", "label": "Seating" },
-    "work-spot": { "icon": "laptop", "label": "Wifi/Power" }
+    "work-spot": { "icon": "laptop", "label": "WiFi" }
 }

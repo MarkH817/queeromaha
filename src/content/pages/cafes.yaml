@@ -17,7 +17,7 @@ items:
       - work-spot
     location:
       street: 120th and Blondo
-      neighborhood: West O
+      neighborhood: West Omaha
       google_maps_url: https://maps.app.goo.gl/4qViWqoWxHpZn4oR9
   - name: Godega
     public: true
@@ -86,7 +86,7 @@ items:
     public: true
     description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
     links:
-      - label: Official Discord
+      - label: Discord
         url: https://discord.com/invite/official-spellbound-861024184947572736
       - label: Website
         url: https://www.spielbound.com/how-to-spielbound
@@ -243,4 +243,4 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: West O
+      neighborhood: West Omaha

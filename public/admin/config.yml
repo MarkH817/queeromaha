@@ -28,6 +28,7 @@ publish_mode: editorial_workflow
 _item_fields: &item_fields
   - { label: Name, name: name, widget: string }
   - { label: Public, name: public, widget: boolean, default: true }
+  - { label: Recommended, name: recommended, widget: boolean, default: false, required: false }
   - label: Tags
     name: tags
     widget: select

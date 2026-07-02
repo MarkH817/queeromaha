@@ -313,7 +313,9 @@ wa-card.item[hidden] {
 
 wa-card.item::part(base) {
     border-color: #e9d5ff;
-    box-shadow: 0 1px 4px rgba(124, 58, 237, 0.06);
+    box-shadow:
+        3px -3px 0 #e9d5ff,
+        5px -5px 0 #c4b5fd;
 }
 
 wa-card.item::part(header) {
@@ -399,6 +401,7 @@ blockquote p {
 .entry-links a {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     padding: 0.3rem 0.75rem;
     border-radius: 999px;
     background: #f3e8ff;
@@ -528,8 +531,19 @@ blockquote p {
     width: 100%;
 }
 
+@media (max-width: 480px) {
+    .filter-pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+    .filter-pills::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 .location-bar {
-    position: relative;
     max-width: 100%;
     overflow: hidden;
     border-radius: 8px;
@@ -540,33 +554,9 @@ blockquote p {
         inset -1px -1px 0 rgba(124, 58, 237, 0.15);
 }
 
-.location-bar::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 2.5rem;
-    background: linear-gradient(to right, transparent, #f9f5ff 85%);
-    border-radius: 0 8px 8px 0;
-    pointer-events: none;
-}
-
 .location-bar-scroll {
     display: flex;
     overflow-x: auto;
-}
-
-@media (max-width: 768px) {
-    .location-bar {
-        margin-left: -0.75rem;
-        margin-right: -0.75rem;
-        width: calc(100% + 1.5rem);
-        max-width: none;
-    }
-    .location-bar-scroll {
-        overflow-x: visible;
-    }
 }
 
 @media (min-width: 769px) {
@@ -583,6 +573,22 @@ blockquote p {
     }
 }
 
+@media (max-width: 768px) {
+    .location-bar {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        overflow: visible;
+    }
+    .location-bar-scroll {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        overflow-x: visible;
+    }
+}
+
 .location-segment {
     box-sizing: border-box;
     flex: 1 1 auto;
@@ -590,7 +596,7 @@ blockquote p {
     align-items: center;
     justify-content: center;
     height: 2.4rem;
-    padding: 0 0.6rem;
+    padding: 0 1rem;
     margin: 0;
     border: none;
     border-right: 2px solid #c4b5fd;
@@ -610,8 +616,14 @@ blockquote p {
 
 @media (max-width: 768px) {
     .location-segment {
-        padding: 0 0.55rem;
-        border-right-width: 1px;
+        flex: 0 1 auto;
+        border: 1px solid #c4b5fd;
+        border-radius: 6px;
+        padding: 0 0.9rem;
+        background: #f9f5ff;
+    }
+    .location-segment:last-child {
+        border: 1px solid #c4b5fd;
     }
 }
 
@@ -630,12 +642,6 @@ blockquote p {
 .location-segment.unavailable {
     opacity: 0.35;
     cursor: not-allowed;
-}
-
-@media (max-width: 768px) {
-    .location-bar::after {
-        display: none;
-    }
 }
 
 .filter-pill {
