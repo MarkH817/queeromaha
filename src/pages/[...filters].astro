@@ -83,7 +83,10 @@ const categoryLabels: Record<string, string> = {
 >
   <FilterBar neighborhoods={allNeighborhoods} />
   {entries.map(entry => {
-    const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+    let publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+    if (filterSlugs.length === 0) {
+      publicItems = publicItems.filter(i => i.recommended === true)
+    }
     if (publicItems.length === 0) return null
     const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
     return (
