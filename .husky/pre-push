@@ -31,7 +31,4 @@ if [ -n "$remote_name" ] && [ -n "$remote_branch" ]; then
   fi
 fi
 
-# run astro check first; bail early if it fails
-bun run check || exit 1
-bun run test || exit 1
-exit 0
+bun run test

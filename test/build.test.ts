@@ -1,8 +1,8 @@
-import { describe, expect, test } from 'bun:test'
 import { spawnSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { describe, expect, test } from 'vitest'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -36,9 +36,8 @@ describe('astro build', () => {
             'llms.txt',
             '_headers',
         ]) {
-            expect(existsSync(join(distDir, file))).toBe(
+            expect(existsSync(join(distDir, file)), `missing: ${file}`).toBe(
                 true,
-                `missing: ${file}`,
             )
         }
     })

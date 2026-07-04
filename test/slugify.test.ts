@@ -1,6 +1,5 @@
-import { describe, expect, test } from 'bun:test'
-
-const { slugify } = await import('../src/utils/slugify.ts')
+import { describe, expect, test } from 'vitest'
+import { slugify } from '../src/utils/slugify.ts'
 
 describe('slugify', () => {
     test('lowercases and replaces spaces with hyphens', () => {
