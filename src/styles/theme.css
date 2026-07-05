@@ -545,62 +545,26 @@ blockquote p {
 
 .location-bar {
     max-width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 2px solid #c4b5fd;
-    background: #f9f5ff;
-    box-shadow:
-        inset 1px 1px 0 rgba(255, 255, 255, 0.6),
-        inset -1px -1px 0 rgba(124, 58, 237, 0.15);
 }
 
 .location-bar-scroll {
     display: flex;
-    overflow-x: auto;
-}
-
-@media (min-width: 769px) {
-    .location-bar-scroll {
-        scrollbar-width: thin;
-        scrollbar-color: #c4b5fd transparent;
-    }
-    .location-bar-scroll::-webkit-scrollbar {
-        height: 3px;
-    }
-    .location-bar-scroll::-webkit-scrollbar-thumb {
-        background: #c4b5fd;
-        border-radius: 999px;
-    }
-}
-
-@media (max-width: 768px) {
-    .location-bar {
-        border: none;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 0;
-        overflow: visible;
-    }
-    .location-bar-scroll {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 4px;
-        overflow-x: visible;
-    }
+    flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
 .location-segment {
     box-sizing: border-box;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 2.4rem;
     padding: 0 1rem;
     margin: 0;
-    border: none;
-    border-right: 2px solid #c4b5fd;
-    background: transparent;
+    border: 2px solid #c4b5fd;
+    border-radius: 999px;
+    background: #f9f5ff;
     color: #6d28d9;
     font-size: 0.82rem;
     font-weight: 700;
@@ -611,24 +575,13 @@ blockquote p {
     cursor: pointer;
     transition:
         background 0.15s,
+        border-color 0.15s,
         color 0.15s;
 }
 
-@media (max-width: 768px) {
-    .location-segment {
-        flex: 0 1 auto;
-        border: 1px solid #c4b5fd;
-        border-radius: 6px;
-        padding: 0 0.9rem;
-        background: #f9f5ff;
-    }
-    .location-segment:last-child {
-        border: 1px solid #c4b5fd;
-    }
-}
-
-.location-segment:last-child {
-    border-right: none;
+.location-segment:hover {
+    background: #ede9fe;
+    border-color: #a78bfa;
 }
 
 .location-segment.active {
