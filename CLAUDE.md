@@ -6,7 +6,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 bun run serve          # dev server (Astro, localhost:4321) with hot-reload
-bun run serve:cms      # Decap CMS local proxy at /admin
 bun run build          # build static site to dist/
 bun run preview        # preview built dist/ locally
 
@@ -23,7 +22,7 @@ Husky hooks: lint must pass on pre-commit; all tests must pass on pre-push.
 
 ## Architecture
 
-Static site built with **Astro**, deployed to Netlify. Content is managed via **Decap CMS** (headless CMS that edits YAML files directly via git). Single layout at `src/layouts/Base.astro`.
+Static site built with **Astro**, deployed to Netlify. Content lives as plain YAML edited directly via git. Single layout at `src/layouts/Base.astro`.
 
 ### Content model
 

@@ -1,11 +1,6 @@
 #!/usr/bin/env bun
 // Canonicalizes src/content/pages/*.yaml formatting.
 //
-// Decap CMS re-serializes the whole file through its own YAML dumper on
-// every save (line-wraps long scalars, (un)quotes strings, etc), with no
-// config to control it. Keeping our committed files in that same canonical
-// shape means a CMS edit's diff only shows the real change.
-//
 // Check mode: bun scripts/format-yaml.js --check
 //   Exits 1 and lists files that would change, without writing.
 // Write mode: bun scripts/format-yaml.js
@@ -75,12 +70,8 @@ for (const file of files) {
             (_, prefix, value) => `${prefix}'${value.replace(/'/g, "''")}'`,
         )
         const parsed = parse(preprocessed)
-        // Decap CMS wraps content under 'data:' with CMS metadata around it.
-        // If this shape is detected, extract just the page content.
-        const content =
-            parsed?.data && parsed?.collection != null ? parsed.data : parsed
-        normalizeLinks(content)
-        canonical = stringify(content, { lineWidth: 0 })
+        normalizeLinks(parsed)
+        canonical = stringify(parsed, { lineWidth: 0 })
     } catch (err) {
         errors.push(`  ${file}: ${err.message}`)
         continue

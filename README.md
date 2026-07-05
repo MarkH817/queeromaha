@@ -15,7 +15,6 @@ Directory of queer/trans groups, venues and spaces in Omaha.
 ## Stack
 
 - [Astro](https://astro.build/) — static site generator
-- [Decap CMS](https://decapcms.org/) — content management
 - [Biome](https://biomejs.dev/) - lint
 
 ## Local Dev
@@ -25,10 +24,9 @@ Run Astro locally with hot-reloading
 ```
 bun install --development
 bun run serve # astro server at localhost:4321
-bun run serve:cms # local decapCMS at /admin
 
 # alternatively
-bun run dev # full local setup
+bun run dev
 ```
 
 ### Deployment
@@ -61,9 +59,3 @@ Husky requires tests to pass on pre-push. Please add tests for significant chang
 ```
 bun run test # unit tests + Playwright
 ```
-
-### CMS
-
-DecapCMS is backed by [DecapBridge](https://decapbridge.com/) as Netlify Identity is deprecated. This is attached to @taraxvoid 's Google account currently. 
-
-Users can be invited via email (supporting Google SSO) to edit content at [the CMS admin panel](https://queeromaha.net/admin)
