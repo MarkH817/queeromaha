@@ -16,12 +16,7 @@ items:
     notes: IG profile is age-restricted, doublecheck time/scheduling
   - name: Ananda Omaha Wellness and Yoga
     public: true
-    description: |
-      Brooke hosts a Queer-centered Emotional Release class on Sundays @ 12:30PM as well as 
-
-      PWYC
-
-      Getting There: Park in the back of the corner Shiki building on north side of Dodge at 49th, go in the door at the rear entrance of State Farm in the back corner of the lot, Go all the way down the stairs, following signs to the end of the hallway.
+    description: Brooke hosts a FREE/PWYC monthly Mad Folx class specifically for queer and trans emotional release at 12:30PM to 2PM on third Sundays
     tags:
       - neutral-bathrooms
       - seating
@@ -34,6 +29,8 @@ items:
         url: https://www.anandaomaha.com/brooke-monaco-wellness
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
+      - url: https://anandaomaha.as.me/schedule/80efeafb/?appointmentTypeIds%5B%5D=86384838
+        label: "PWYC Mad Folx class "
   - name: Honey Locust Sangha
     public: true
     tags:
