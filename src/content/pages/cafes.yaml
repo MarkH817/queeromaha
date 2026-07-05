@@ -17,7 +17,7 @@ items:
       - work-spot
     location:
       street: 120th and Blondo
-      neighborhood: West Omaha
+      neighborhood: West O
       google_maps_url: https://maps.app.goo.gl/4qViWqoWxHpZn4oR9
   - name: Godega
     public: true
@@ -209,7 +209,7 @@ items:
       neighborhood: Downtown
   - name: Zen Coffee
     public: true
-    description: Downtown and West Omaha locations.
+    description: Downtown and West O locations.
     links:
       - label: Insta
         url: https://www.instagram.com/zencoffeeco/
@@ -245,5 +245,5 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: West Omaha
+      neighborhood: West O
     notes: legit buddhist stuff

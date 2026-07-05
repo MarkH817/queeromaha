@@ -22,7 +22,7 @@ items:
       city: Omaha
       state: NE
       zip: 68154
-      neighborhood: West Omaha
+      neighborhood: West O
       google_maps_url: https://maps.app.goo.gl/jqUnPGEamuFRGZT49
     tags:
       - work-spot

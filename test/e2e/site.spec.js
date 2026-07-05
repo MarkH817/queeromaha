@@ -85,11 +85,9 @@ test('neighborhood filter pills render on the home page', async ({ page }) => {
     expect(await pills.count()).toBeGreaterThan(0)
 })
 
-test('/west-omaha pre-activates the west-omaha neighborhood pill', async ({
-    page,
-}) => {
-    await page.goto('/west-omaha/')
-    const pill = page.locator('[data-filter="west-omaha"]')
+test('/west-o pre-activates the west-o neighborhood pill', async ({ page }) => {
+    await page.goto('/west-o/')
+    const pill = page.locator('[data-filter="west-o"]')
     await expect(pill).toHaveClass(/active/)
 })
 
@@ -101,7 +99,7 @@ test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
     const totalCount = await cards.count()
     expect(totalCount).toBeGreaterThan(0)
 
-    await page.locator('[data-filter="west-omaha"]').click()
+    await page.locator('[data-filter="west-o"]').click()
 
     const visibleCards = cards.filter({
         hasNot: page.locator(':scope[hidden]'),
@@ -112,7 +110,7 @@ test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
     for (let i = 0; i < visibleCount; i++) {
         expect(
             await visibleCards.nth(i).getAttribute('data-neighborhood'),
-        ).toBe('west-omaha')
+        ).toBe('west-o')
     }
 })
 
@@ -121,7 +119,7 @@ test('combining category and neighborhood pills narrows results', async ({
 }) => {
     await page.goto('/social/')
     await page.locator('[data-filter="cafes"]').click()
-    await page.locator('[data-filter="west-omaha"]').click()
+    await page.locator('[data-filter="west-o"]').click()
 
     const visibleCards = page.locator('wa-card.item:not([hidden])')
     const count = await visibleCards.count()
@@ -129,7 +127,7 @@ test('combining category and neighborhood pills narrows results', async ({
     for (let i = 0; i < count; i++) {
         const card = visibleCards.nth(i)
         expect(await card.getAttribute('data-category')).toBe('cafes')
-        expect(await card.getAttribute('data-neighborhood')).toBe('west-omaha')
+        expect(await card.getAttribute('data-neighborhood')).toBe('west-o')
     }
 })
 
@@ -147,12 +145,12 @@ test('clicking a different location segment switches directly without deactivati
     page,
 }) => {
     await page.goto('/cafes/')
-    const westO = page.locator('[data-filter="west-omaha"]')
+    const westO = page.locator('[data-filter="west-o"]')
     const midtown = page.locator('[data-filter="midtown"]')
 
     await westO.click()
     await expect(westO).toHaveClass(/active/)
-    await expect(page).toHaveURL(/\/cafes\/west-omaha\/?$/)
+    await expect(page).toHaveURL(/\/cafes\/west-o\/?$/)
 
     await midtown.click()
     await expect(midtown).toHaveClass(/active/)
@@ -164,7 +162,7 @@ test('tapping the active location segment again deselects it back to all locatio
     page,
 }) => {
     await page.goto('/cafes/')
-    const westO = page.locator('[data-filter="west-omaha"]')
+    const westO = page.locator('[data-filter="west-o"]')
 
     await westO.click()
     await expect(westO).toHaveClass(/active/)
@@ -178,7 +176,7 @@ test('an unavailable location segment is disabled and not clickable', async ({
     page,
 }) => {
     await page.goto('/art/')
-    const westO = page.locator('[data-filter="west-omaha"]')
+    const westO = page.locator('[data-filter="west-o"]')
     await expect(westO).toBeDisabled()
     await expect(westO).toHaveClass(/unavailable/)
 })
@@ -205,7 +203,7 @@ test('clear button only clears tags, leaving the active location untouched', asy
     page,
 }) => {
     await page.goto('/cafes/')
-    const westO = page.locator('[data-filter="west-omaha"]')
+    const westO = page.locator('[data-filter="west-o"]')
     const tag = page.locator('[data-filter="neutral-bathrooms"]')
     const clearBtn = page.locator('#filterClear')
 
@@ -286,11 +284,11 @@ test('location with street and neighborhood renders hyphen-separated on one line
     page,
 }) => {
     await page.goto('/cafes/')
-    // Roast Coffeehouse has street "120th and Blondo" + neighborhood "West Omaha"
+    // Roast Coffeehouse has street "120th and Blondo" + neighborhood "West O"
     const loc = page
         .locator('.item-location')
         .filter({ hasText: '120th and Blondo' })
-    await expect(loc).toContainText('120th and Blondo - West Omaha')
+    await expect(loc).toContainText('120th and Blondo - West O')
 })
 
 test('neighborhood segment order is stable after switching categories', async ({
