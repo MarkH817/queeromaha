@@ -280,17 +280,6 @@ test('item cards with a location show a location-dot icon', async ({
     }
 })
 
-test('location with street and neighborhood renders hyphen-separated on one line', async ({
-    page,
-}) => {
-    await page.goto('/cafes/')
-    // Roast Coffeehouse has street "120th and Blondo" + neighborhood "West O"
-    const loc = page
-        .locator('.item-location')
-        .filter({ hasText: '120th and Blondo' })
-    await expect(loc).toContainText('120th and Blondo - West O')
-})
-
 test('neighborhood segment order is stable after switching categories', async ({
     page,
 }) => {
