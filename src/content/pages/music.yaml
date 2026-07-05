@@ -2,8 +2,8 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: The Real Music Scene
-    description: Not that normie shit
+  - name: Local Music Scene
+    description: Omaha has an awesome local music scene!
     public: true
     links:
       - label: OmahaUnderground.NET
