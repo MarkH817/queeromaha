@@ -60,4 +60,19 @@
     btn.addEventListener('touchstart', startTapPrefetch, { passive: true })
     btn.addEventListener('mousedown', startTapPrefetch)
   })
+
+  // The sticky header's height varies by breakpoint (nav pills wrap) and
+  // grows once the wa-button/wa-icon custom elements upgrade, so track it
+  // live in a CSS var used by theme.css's scroll-padding-top rule instead
+  // of hardcoding an offset for anchor-linked sections (e.g. /about#suggest).
+  const headerEl = document.querySelector('header')
+  if (headerEl) {
+    const setHeaderHeightVar = () =>
+      document.documentElement.style.setProperty(
+        '--header-height',
+        `${headerEl.getBoundingClientRect().height}px`,
+      )
+    setHeaderHeightVar()
+    new ResizeObserver(setHeaderHeightVar).observe(headerEl)
+  }
 </script>

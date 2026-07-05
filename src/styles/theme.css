@@ -3,6 +3,7 @@
 :root {
     --wa-focus-ring-color: #c4b5fd;
     -webkit-tap-highlight-color: rgba(196, 181, 253, 0.35);
+    scroll-padding-top: var(--header-height, 7.5rem);
 }
 
 /* Astro's ClientRouter view transitions are used only for real per-route
