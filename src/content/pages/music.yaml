@@ -26,7 +26,7 @@ items:
       - label: Shows
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
-      neighborhood: South Omaha
+      neighborhood: South O
   - name: Project Project
     public: true
     tags:
@@ -42,7 +42,7 @@ items:
       - label: Shows
         url: https://omahaunderground.net/venues/project-project
     location:
-      neighborhood: South Omaha
+      neighborhood: South O
   - name: No-Coast Noise Collective
     public: true
     description: Experimental music and sound art collective. Centered out of Project Project.

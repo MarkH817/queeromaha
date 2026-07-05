@@ -139,6 +139,8 @@ describe('directory yaml files', () => {
                     'Benson',
                     'Downtown',
                     'Midtown',
+                    'Dundee',
+                    'Aksarben',
                     'North O',
                     'South O',
                     'West O',

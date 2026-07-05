@@ -1,12 +1,15 @@
-const cards = document.querySelectorAll<HTMLElement>('[data-category]')
-const pills = document.querySelectorAll<HTMLElement & { disabled: boolean }>(
-    '[data-filter]',
-)
-const clearBtn = document.getElementById(
-    'filterClear',
-) as HTMLButtonElement | null
+import { navigate } from 'astro:transitions/client'
 
-if (cards.length > 0) {
+function initFilters() {
+    const cards = document.querySelectorAll<HTMLElement>('[data-category]')
+    const pills = document.querySelectorAll<
+        HTMLElement & { disabled: boolean }
+    >('[data-filter]')
+    const clearBtn = document.getElementById(
+        'filterClear',
+    ) as HTMLButtonElement | null
+
+    if (cards.length === 0) return
     const activeTags = new Set<string>()
     const activeCategories = new Set<string>()
     const activeNeighborhoods = new Set<string>()
@@ -44,9 +47,12 @@ if (cards.length > 0) {
             .querySelectorAll<HTMLElement>('[data-category-heading]')
             .forEach((heading) => {
                 const cat = heading.dataset.categoryHeading || ''
-                heading.hidden = ![...cards].some(
-                    (c) => c.dataset.category === cat && !c.hidden,
-                )
+                heading.hidden =
+                    cat === 'recommended'
+                        ? ![...cards].some((c) => !c.hidden)
+                        : ![...cards].some(
+                              (c) => c.dataset.category === cat && !c.hidden,
+                          )
             })
         updatePillAvailability()
         updateImpliedCategoryState()
@@ -89,6 +95,17 @@ if (cards.length > 0) {
 
     function updatePillAvailability() {
         pills.forEach((pill) => {
+            // Category pills are real navigations now (see the click
+            // handler below), not client-side toggles limited to whatever
+            // cards happen to already be in the current page's DOM (e.g.
+            // the homepage only has recommended-item cards, which would
+            // otherwise make every other category look "unavailable" even
+            // though visiting it works fine). They should never be disabled.
+            if (pill.dataset.filterType === 'category') {
+                pill.disabled = false
+                pill.classList.remove('unavailable')
+                return
+            }
             if (pill.classList.contains('active')) {
                 pill.disabled = false
                 pill.classList.remove('unavailable')
@@ -182,16 +199,24 @@ if (cards.length > 0) {
 
     pills.forEach((pill) => {
         pill.addEventListener('click', (e) => {
-            e.preventDefault()
             const slug = pill.dataset.filter || ''
             const type = pill.dataset.filterType || ''
             const isActive = pill.classList.contains('active')
+
             if (type === 'category') {
                 if (isActive) {
-                    scrollToTop()
-                    return
-                } else setCategory(slug)
-            } else if (type === 'neighborhood') {
+                    e.preventDefault()
+                    navigate('/')
+                }
+                // else: not active — let the pill's real href navigate
+                // (e.g. "/art"), intercepted by ClientRouter for a soft
+                // transition, so the target route's own SSR output (full
+                // category, not just recommended items) is what loads.
+                return
+            }
+
+            e.preventDefault()
+            if (type === 'neighborhood') {
                 if (isActive) deactivateFilter(slug)
                 else setNeighborhood(slug)
             } else {
@@ -215,4 +240,16 @@ if (cards.length > 0) {
     if (initCats.length > 0) setCategory(initCats[0])
     initNbrs.forEach(activateFilter)
     initTags.forEach(activateFilter)
+    // Astro renders `hidden={false}` on custom elements like <wa-card> as
+    // the literal attribute hidden="false", which the HTML boolean-attribute
+    // spec (and our `[hidden]` CSS) treats as truthy regardless of value.
+    // Setting `.hidden` via the JS property below is what actually clears
+    // it. The calls above only do this for cards touched by an active
+    // category/neighborhood/tag; this unconditional call covers routes
+    // (like the bare "/" homepage) with no initial filter at all.
+    applyFilters()
 }
+
+// Runs on first load and again after every ClientRouter soft navigation,
+// since the DOM (and therefore all queried cards/pills) is replaced.
+document.addEventListener('astro:page-load', initFilters)

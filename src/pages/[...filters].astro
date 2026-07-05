@@ -73,6 +73,24 @@ const categoryLabels: Record<string, string> = {
     music: 'Music',
     makers: 'Makers',
 }
+
+const categoryIcons: Record<string, string> = {
+    social: 'people-group',
+    spiritual: 'lotus',
+    art: 'palette',
+    cafes: 'mug-saucer',
+    music: 'music',
+    makers: 'hammer',
+}
+
+const isHome = filterSlugs.length === 0
+const recommendedItems = isHome
+    ? entries.flatMap((entry) =>
+          (entry.data.items ?? [])
+              .filter((i) => i.public !== false && i.recommended === true)
+              .map((item) => ({ item, categoryId: entry.id })),
+      )
+    : []
 ---
 
 <Base
@@ -82,22 +100,32 @@ const categoryLabels: Record<string, string> = {
   initialNeighborhoods={initialNeighborhoods}
 >
   <FilterBar neighborhoods={allNeighborhoods} />
-  {entries.map(entry => {
-    let publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
-    if (filterSlugs.length === 0) {
-      publicItems = publicItems.filter(i => i.recommended === true)
-    }
-    if (publicItems.length === 0) return null
-    const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
-    return (
-      <section aria-label={categoryLabels[entry.id] ?? entry.id}>
-        <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
-          {categoryLabels[entry.id] ?? entry.id}
+  {isHome ? (
+    recommendedItems.length > 0 && (
+      <section id="section-recommended" aria-label="Recommended">
+        <h2 class="section-header" data-category-heading="recommended">
+          <wa-icon name="star" aria-hidden="true"></wa-icon> Recommended
         </h2>
-        {publicItems.map(item => (
-          <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />
+        {recommendedItems.map(({ item, categoryId }) => (
+          <ItemCard item={item} category={categoryId} hidden={!matchesInitial(item, categoryId)} />
         ))}
       </section>
     )
-  })}
+  ) : (
+    entries.map(entry => {
+      const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+      if (publicItems.length === 0) return null
+      const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
+      return (
+        <section id={`section-${entry.id}`} aria-label={categoryLabels[entry.id] ?? entry.id}>
+          <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
+            <wa-icon name={categoryIcons[entry.id]} aria-hidden="true"></wa-icon> {categoryLabels[entry.id] ?? entry.id}
+          </h2>
+          {publicItems.map(item => (
+            <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />
+          ))}
+        </section>
+      )
+    })
+  )}
 </Base>

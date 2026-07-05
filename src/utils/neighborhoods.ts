@@ -6,6 +6,7 @@ export const NEIGHBORHOOD_ORDER = [
     'dundee',
     'midtown',
     'downtown',
+    'aksarben',
     'north-o',
     'south-o',
     'west-o',

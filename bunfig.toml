@@ -3,3 +3,4 @@ minimumReleaseAge = 604800 # 7 days
 
 # Packages that bypass the gate
 minimumReleaseAgeExcludes = ["@types/bun", "astro", "@astrojs/sitemap", "@astrojs/check", "@astrojs/react", "@awesome.me/webawesome"]
+pathIgnorePatterns = ["test/e2e/**"]
