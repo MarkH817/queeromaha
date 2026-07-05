@@ -25,13 +25,39 @@
   </nav>
 </header>
 <script>
+  import { prefetch } from 'astro:prefetch'
+
   const navBtns = document.querySelectorAll('.main-nav wa-button')
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/'
+  let hoverTimeout
+
   navBtns.forEach((btn) => {
-    const href = (btn.getAttribute('href') ?? '').replace(/\/$/, '') || '/'
-    if (href === currentPath) {
+    const rawHref = btn.getAttribute('href')
+    const href = (rawHref ?? '').replace(/\/$/, '') || '/'
+    const isActive = href === currentPath
+    if (isActive) {
       btn.classList.add('active')
       btn.setAttribute('aria-current', 'page')
+      return
     }
+    if (!rawHref) return
+
+    // Astro's built-in prefetch only listens on real <a> tags, and these
+    // are <wa-button href> custom elements, so it never picks them up.
+    // Wire the same hover-intent/tap timing Astro uses internally
+    // (astro/dist/prefetch/index.js) directly to the pills instead.
+    const startHoverPrefetch = () => {
+      clearTimeout(hoverTimeout)
+      hoverTimeout = setTimeout(() => prefetch(rawHref), 80)
+    }
+    const cancelHoverPrefetch = () => clearTimeout(hoverTimeout)
+    const startTapPrefetch = () => prefetch(rawHref, { ignoreSlowConnection: true })
+
+    btn.addEventListener('pointerenter', startHoverPrefetch)
+    btn.addEventListener('focus', startHoverPrefetch)
+    btn.addEventListener('pointerleave', cancelHoverPrefetch)
+    btn.addEventListener('blur', cancelHoverPrefetch)
+    btn.addEventListener('touchstart', startTapPrefetch, { passive: true })
+    btn.addEventListener('mousedown', startTapPrefetch)
   })
 </script>
