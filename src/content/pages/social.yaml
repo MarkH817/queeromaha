@@ -8,7 +8,7 @@ items:
     links:
       - label: Events Calendar
         url: https://omahafor.us/events-calendar
-      - label: Programs
+      - label: Pantry / Closet
         url: https://omahafor.us/programs/programs-community-support
       - label: Support group (hybrid)
         url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
@@ -17,11 +17,11 @@ items:
       - label: Dedicated Teen / Youth Programs and Space
         url: https://omahafor.us/programs/youth-programs
     location:
-      neighborhood: Midtown
       street: 742 N 109th Ct
       city: Omaha
       state: NE
       zip: 68154
+      neighborhood: Midtown
       google_maps_url: https://maps.app.goo.gl/jqUnPGEamuFRGZT49
     tags:
       - work-spot
@@ -77,18 +77,23 @@ items:
     notes: Potentially inactive circa spring 2026. Local inperson group presumably
   - name: The Queer Collective
     public: true
-    description: Mutual aid, drag shows, line dancing, and art markets, often at Floors Floors Floors in Benson. Organized via Instagram.
+    description: Queer Art Markets, drag shows, and gay line dancing
     links:
       - label: Instagram
-        url: https://www.instagram.com/queercollectiveomaha
+        url: https://www.instagram.com/queercollectiveomaha/
       - label: Facebook
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
   - name: River Daze Collective
     public: true
-    description: Social group with events organized via Facebook.
+    description: |-
+      Glassware for the discerning partaker
+
+      Organizes queer markets
     links:
       - label: Facebook
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
+      - url: https://www.instagram.com/river.dazeco/
+        label: Insta
   - name: Out Wild Adventures
     public: true
     description: Hikes, coffee chats, movie nights, etc. Sober-friendly

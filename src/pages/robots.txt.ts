@@ -57,8 +57,7 @@ export async function GET() {
 # IN THE DIGITAL SINGLE MARKET.
 
 User-agent: *
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
+# Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 
 User-agent: GPTBot

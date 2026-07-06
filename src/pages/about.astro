@@ -3,24 +3,14 @@ import Base from '../layouts/Base.astro'
 ---
 
 <Base
-  title="About"
-  description="About Queer Omaha — a community-maintained directory of queer spaces and resources in Omaha that anyone can contribute to via GitHub."
+  title="Suggestions, Contributions, Contact, About"
+  description="Contribute to Queer Omaha, Contact admins, make suggestions — an open-source community-maintained directory of queer spaces and resources in Omaha on  Github."
 >
-  <section id="about" aria-label="About">
-    <h2 class="section-header" data-category-heading="about">About</h2>
-    <p>Community-maintained list of Omaha queer groups, events, venues, and spaces.</p>
-    <p>Open-Source <a href="https://github.com/taraxvoid/queeromaha">on GitHub</a></p>
-    <p>
-      Created by Tara, with deep gratitude to the Native and Indigenous peoples whose stolen land we
-      reside on, the Black and Brown folx who built this town, and the Omaha Queer / Trans community.
-    </p>
-    <p>Inclusion on this site does not imply endorsement or vetting.</p>
-  </section>
 
-  <section id="contact" aria-label="Contact">
-    <h2 class="section-header" data-category-heading="contact">Contact</h2>
-    <p>Suggest a venue or group, or request CMS access to contribute directly.</p>
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+  <section id="suggest" aria-label="Suggest">
+    <h2 class="section-header" data-category-heading="contact">Suggestions</h2>
+    <p>Suggest a queer supportive / owned group, venue, space, cafe etc.</p>
+    <form name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
       <p style="display: none;">
         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
       </p>
@@ -36,8 +26,8 @@ import Base from '../layouts/Base.astro'
         <textarea
           name="message"
           required
-          rows="6"
-          placeholder="Suggest an event, group, venue — or ask for CMS access"
+          rows="2"
+          placeholder="Your Suggestion"
           style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit;"
         ></textarea>
       </p>
@@ -49,4 +39,61 @@ import Base from '../layouts/Base.astro'
       </p>
     </form>
   </section>
+
+  <hr class="section-divider" />
+
+  <section id="about" aria-label="About">
+    <h2 class="section-header" data-category-heading="about">About</h2>
+    <p>Community-maintained list of Omaha queer groups, events, venues, and spaces.</p>
+    <p>Open-Source <a href="https://github.com/taraxvoid/queeromaha">on GitHub</a></p>
+    <p>
+      Created with deep gratitude to the Native and Indigenous peoples whose stolen land we
+      reside on, the Black and Brown folx who built this town, and the Omaha Queer / Trans community.
+    </p>
+    <p>Inclusion on this site does not imply endorsement or vetting.</p>
+  </section>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>('form[name="suggest"]')
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        const data = new URLSearchParams(
+          new FormData(form) as unknown as Record<string, string>,
+        )
+        data.set('form-name', 'suggest')
+        try {
+          const res = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: data.toString(),
+          })
+          if (res.ok) {
+            const thanks = document.createElement('p')
+            thanks.id = 'suggest-thanks'
+            thanks.textContent = 'Thanks! We got your suggestion.'
+            thanks.style.cssText =
+              'margin:0.5rem 0 1rem;padding:0.5rem 0.75rem;border-left:3px solid #c4b5fd;background:#f9f5ff;border-radius:0 4px 4px 0;color:#4a3d6b;'
+            form.replaceWith(thanks)
+          } else {
+            showError('Something went wrong. Try again or email us directly.')
+          }
+        } catch {
+          showError('Something went wrong. Check your connection and try again.')
+        }
+
+        function showError(msg: string) {
+          const existing = form!.parentElement?.querySelector('#suggest-error')
+          if (existing) existing.remove()
+          const err = document.createElement('p')
+          err.id = 'suggest-error'
+          err.textContent = msg
+          err.style.cssText =
+            'margin:0.5rem 0 1rem;padding:0.5rem 0.75rem;border-left:3px solid #dc2626;background:#fff1f1;border-radius:0 4px 4px 0;color:#7f1d1d;'
+          form!.insertAdjacentElement('beforebegin', err)
+        }
+      })
+    }
+  </script>
+
 </Base>

@@ -34,13 +34,13 @@ items:
       - seating
       - work-spot
     location:
-      neighborhood: Aksarben
+      neighborhood: Midtown
   - name: Marigold's
     public: true
     description: Artisanal goods and crafts.
     links:
       - label: Insta
-        url: https://www.instagram.com/marigoldsmercantile
+        url: https://www.instagram.com/marigoldsmercantile/
       - label: Website
         url: https://www.marigoldsmercantile.com/
       - label: FB
@@ -49,7 +49,7 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: Aksarben
+      neighborhood: Midtown
   - name: Mill on Leavenworth
     public: true
     description: Large popular cafe. Good for meetups and "working".
@@ -77,7 +77,7 @@ items:
     description: Queer-owned pastry shop.
     links:
       - label: Insta
-        url: https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en
+        url: https://www.instagram.com/sweetmagnoliasbakeshop/
       - label: Website
         url: https://www.sweetmagnoliasbakeshop.com/
     location:
@@ -99,7 +99,7 @@ items:
     description: Chill hipster cafe.
     links:
       - label: Insta
-        url: https://www.instagram.com/hardycoffeeco/?hl=en
+        url: https://www.instagram.com/hardycoffeeco/
       - label: FB
         url: https://www.facebook.com/hardycoffeeco/
       - label: Website
@@ -130,7 +130,7 @@ items:
     description: Comic shop with a large queer section. Board game space in the back.
     links:
       - label: Insta
-        url: https://www.instagram.com/legendcomicsandcoffee/?hl=en
+        url: https://www.instagram.com/legendcomicsandcoffee/
       - label: FB
         url: https://www.facebook.com/LegendComics/
     tags:
@@ -143,34 +143,34 @@ items:
     description: Great coffee and cool people. Posts flyers for local events.
     links:
       - label: Insta
-        url: https://www.instagram.com/bluelinecoffeeomaha/?hl=en
+        url: https://www.instagram.com/bluelinecoffeeomaha/
       - label: FB
         url: https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727
     tags:
       - neutral-bathrooms
       - work-spot
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Lola's
     public: false
     description: Pricy cafe in the movie theater. Good for dates.
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Amateur Coffee
     public: true
     description: Small place whose takeout coffee comes in glass containers with deposit.
     links:
       - label: Insta
-        url: https://www.instagram.com/amateurcoffee/?hl=en
+        url: https://www.instagram.com/amateurcoffee/
       - label: Website
         url: https://www.amateurcoffee.com/
       - label: FB
-        url: https://www.instagram.com/amateurcoffee
+        url: https://www.instagram.com/amateurcoffee/
     tags:
       - neutral-bathrooms
     notes: Met Owner at NZC who stated it's queer owned.
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Urban Abbey
     public: false
     description: Progressive Methodist cafe / bookstore with a queer section. Chill place to hang out.
@@ -181,7 +181,7 @@ items:
     tags:
       - seating
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Reading Room
     public: true
     description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
@@ -195,7 +195,7 @@ items:
     tags:
       - seating
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Rally Coffee
     public: false
     description: Cafe downtown.
@@ -204,13 +204,13 @@ items:
         url: https://www.rallycoffee.co/pages/locations
     notes: Go there first before listing.
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Zen Coffee
     public: true
     description: Downtown and West O locations.
     links:
       - label: Insta
-        url: https://www.instagram.com/zencoffeeco/?hl=en
+        url: https://www.instagram.com/zencoffeeco/
       - label: FB
         url: https://www.facebook.com/zencoffeecompany/
       - label: Website
@@ -219,21 +219,21 @@ items:
       - neutral-bathrooms
       - seating
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Howlin Hounds
     public: false
     links:
       - label: Insta
-        url: https://www.instagram.com/howlinhounds/?hl=en
+        url: https://www.instagram.com/howlinhounds/
     notes: Recommended, haven't been there.
     location:
-      neighborhood: Dundee
+      neighborhood: Midtown
   - name: Karma Koffee
     public: true
     description: Buddhist themed cafe with vegan options and authentic thangkas.
     links:
       - label: Insta
-        url: https://www.instagram.com/karma_koffee/?hl=en
+        url: https://www.instagram.com/karma_koffee/
       - label: Website
         url: https://www.karmakoffee.com/
       - label: FB
@@ -244,3 +244,24 @@ items:
       - work-spot
     location:
       neighborhood: West O
+  - public: true
+    name: The Tea Smith
+    tags:
+      - neutral-bathrooms
+      - seating
+      - work-spot
+    location:
+      street: ""
+      city: ""
+      state: ""
+      zip: ""
+      google_maps_url: https://maps.app.goo.gl/9ws11mFW34a3RYkL8
+      neighborhood: Midtown
+    links:
+      - label: Website
+        url: https://www.theteasmith.com/
+      - url: https://www.instagram.com/theteasmith/
+        label: Insta
+      - label: FB
+        url: https://facebook.com/TheTeaSmith
+    description: Chill tea shop. Nice place for hanging out.

@@ -57,7 +57,7 @@ items:
       - label: Website
         url: https://soundarte.net
       - label: Insta
-        url: https://www.instagram.com/soundarte.mx/?hl=en
+        url: https://www.instagram.com/soundarte.mx/
       - label: Music Label
         url: https://eacrecords.bandcamp.com/
     notes: ran by Sener who puts on a yearly Ex Nihilo music festival. Somewhat sporadic updates to site
@@ -78,7 +78,7 @@ items:
     description: Punk/queer DIY space with experimental music and local art.
     links:
       - label: Insta
-        url: https://www.instagram.com/weareprojectproject
+        url: https://www.instagram.com/weareprojectproject/
       - label: Events Calendar
         url: https://projectprojectomaha.com/current-show
     tags:
@@ -116,6 +116,9 @@ items:
         url: https://clover24.org/events
     location:
       neighborhood: South O
+    tags:
+      - neutral-bathrooms
+      - seating
   - name: Culxr House
     public: true
     description: Black-owned community space for shows and art events.
@@ -145,7 +148,7 @@ items:
     description: Punk/queer space for provocative art and experimental music.
     links:
       - label: Insta
-        url: https://www.instagram.com/petshopgallery/?hl=en
+        url: https://www.instagram.com/petshopgallery/
       - label: Website
         url: https://www.bffomaha.org/petshop
     tags:
@@ -167,7 +170,7 @@ items:
     description: Cool punk gallery. My art was in it!
     links:
       - label: Insta
-        url: https://www.instagram.com/thebffgallery/?hl=en
+        url: https://www.instagram.com/thebffgallery/
     location:
       neighborhood: Benson
   - name: Ming Toy Gallery
@@ -195,7 +198,7 @@ items:
     description: Mobile gallery often parked near Petshop showing local artists.
     links:
       - label: Insta
-        url: https://www.instagram.com/bffmamo/?hl=en
+        url: https://www.instagram.com/bffmamo/
       - label: Website
         url: https://www.bffomaha.org/mamo
       - label: FB
@@ -253,7 +256,7 @@ items:
       neighborhood: Midtown
   - name: NeXT Foundation Arts
     public: true
-    description: Open Studios for Expressive Art at Millwork Commons
+    description: Open Studios for Expressive Art in the MasterCraft Building
     links:
       - label: Art Workshop (on Last Fridays)
         url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
@@ -261,6 +264,13 @@ items:
         url: https://www.nextfoundationomaha.com/programs-services
     location:
       neighborhood: Downtown
+      google_maps_url: https://maps.app.goo.gl/WbUkF54PX4qEiY827?g_st=ic
+      street: "1111 N 13th St #114"
+      city: Omaha
+      zip: "68102"
+    tags:
+      - neutral-bathrooms
+      - seating
   - name: Old Market Passageway
     public: false
     description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
@@ -268,7 +278,7 @@ items:
       - label: Website
         url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
       - label: Garden of the Zodiac Insta
-        url: https://www.instagram.com/gardenofthezodiac/?hl=en
+        url: https://www.instagram.com/gardenofthezodiac/
     notes: possibly too normie. willing to entertain arguments as per its queerness
     location:
       neighborhood: Downtown
@@ -309,7 +319,7 @@ items:
     description: Glassblowing studio with classes and events.
     links:
       - label: Insta
-        url: https://www.instagram.com/hotshopsartcenter/?hl=en
+        url: https://www.instagram.com/hotshopsartcenter/
       - label: Events Calendar
         url: https://hotshopsartcenter.org/events/
       - label: FB

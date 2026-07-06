@@ -2,13 +2,13 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: OmahaUnderground.NET and friends
+  - name: OmahaUnderground.NET and Omaha Buzz
     description: Where to learn about the cool shows
     public: true
     links:
-      - label: omahaunderground.net
+      - label: OmahaUnderground DOT net
         url: https://omahaunderground.net/shows/
-      - label: Omaha Buzz
+      - label: Omaha Buzz substack
         url: https://omahabuzz.substack.com
   - name: Church Art House
     public: true
@@ -27,18 +27,6 @@ items:
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
       neighborhood: South O
-  - name: No-Coast Noise Collective
-    public: true
-    description: Experimental music and sound art collective. Centered out of Project Project.
-    links:
-      - label: Insta
-        url: https://www.instagram.com/nocoastnoise/
-      - label: Website
-        url: https://www.nocoastnoise.net/
-      - label: LinkTree
-        url: https://linktr.ee/nocoastnoise
-    location:
-      neighborhood: South O
   - name: Project Project
     public: true
     tags:
@@ -46,7 +34,7 @@ items:
     description: Punk DIY space for experimental music and local art.
     links:
       - label: Insta
-        url: https://www.instagram.com/weareprojectproject
+        url: https://www.instagram.com/weareprojectproject/
       - label: Website
         url: https://projectprojectomaha.com/
       - label: FB
@@ -55,6 +43,21 @@ items:
         url: https://omahaunderground.net/venues/project-project
     location:
       neighborhood: South O
+  - name: No-Coast Noise Collective
+    public: true
+    description: Experimental music and sound art collective. Centered out of Project Project.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/nocoastnoise/
+      - label: Website
+        url: https://www.nocoastnoise.net/
+      - url: https://discord.com/invite/2j7cxb6g
+        label: Discord
+      - label: LinkTree
+        url: https://linktr.ee/nocoastnoise
+    location:
+      neighborhood: ""
+    notes: Joe Willard runs it, Phill Smith and Nester do booking, informal, discord is main chat, revolves around project project
   - name: Floors Floors Floors
     public: false
     tags:
@@ -63,7 +66,7 @@ items:
     description: Gallery and events space with local music and queer markets.
     links:
       - label: Insta
-        url: https://www.instagram.com/floorsfloorsfloors_7052maple
+        url: https://www.instagram.com/floorsfloorsfloors_7052maple/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/floors-floors-floors
     notes: per sources, venue is not able to host public events due to landlords
@@ -136,7 +139,7 @@ items:
       - label: Coven's Website
         url: https://covenomaha.com/
       - label: Noir's Insta
-        url: https://www.instagram.com/noiromaha/?hl=en
+        url: https://www.instagram.com/noiromaha/
       - label: Noir's FB
         url: https://www.facebook.com/NoirOmaha/
       - label: Events on OmahaUnderground
@@ -147,14 +150,14 @@ items:
     description: Bookish bar with local acts.
     links:
       - label: Insta
-        url: https://www.instagram.com/pageturnerslounge/?hl=en
+        url: https://www.instagram.com/pageturnerslounge/
       - label: FB
         url: https://www.facebook.com/pageturnerslounge/
       - label: Events on OmahaUnderground
         url: https://omahaunderground.net/venues/pageturners-lounge
     location:
       neighborhood: Midtown
-  - name: O'Leaver's
+  - name: O'Leaver's Pub and Sand Volleyball
     public: true
     description: |
       Legendary dive bar with small stage and great local / regional acts. Bathrooms nigh unusable.
@@ -162,7 +165,7 @@ items:
       Did you know it's owned by members of the band Cursive?
     links:
       - label: Insta
-        url: https://www.instagram.com/oleavers/?hl=en
+        url: https://www.instagram.com/oleavers/
       - label: FB
         url: https://www.facebook.com/oleavers/
       - label: Events on OmahaUnderground
@@ -222,7 +225,7 @@ items:
     description: Indie venue @ Someone's house. Ask around.
     links:
       - label: Insta
-        url: https://www.instagram.com/thefoxholeomaha/?hl=en
+        url: https://www.instagram.com/thefoxholeomaha/
     notes: May be on hiatus. Gifford Park
     location:
       neighborhood: Midtown

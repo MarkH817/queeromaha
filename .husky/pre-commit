@@ -1,3 +1,2 @@
-STAGED=$(git diff --cached --name-only)
-bun run format
-echo "$STAGED" | xargs -r git add --
+#!/bin/sh
+bun run format && git diff --cached --name-only --diff-filter=d | xargs -r git add

@@ -40,10 +40,10 @@ describe('tagMap.json', () => {
         expect(Object.keys(data).length).toBeGreaterThan(0)
     })
 
-    test('every value has emoji and label strings', () => {
+    test('every value has icon and label strings', () => {
         for (const [key, value] of Object.entries(data)) {
-            expect(typeof value.emoji).toBe('string', `${key} missing emoji`)
-            expect(value.emoji.length).toBeGreaterThan(0)
+            expect(typeof value.icon).toBe('string', `${key} missing icon`)
+            expect(value.icon.length).toBeGreaterThan(0)
             expect(typeof value.label).toBe('string', `${key} missing label`)
             expect(value.label.length).toBeGreaterThan(0)
         }
@@ -111,7 +111,12 @@ describe('directory yaml files', () => {
                             'string',
                             `link in "${item.name}" missing url`,
                         )
-                        expect(() => new URL(link.url)).not.toThrow(
+                        const resolvedUrl =
+                            typeof link.url === 'string' &&
+                            /^@[\w.]+$/.test(link.url)
+                                ? `https://instagram.com/${link.url.slice(1)}`
+                                : link.url
+                        expect(() => new URL(resolvedUrl)).not.toThrow(
                             `"${item.name}" > "${link.label}" has unparseable URL: ${link.url}`,
                         )
                     }
@@ -125,6 +130,25 @@ describe('directory yaml files', () => {
                         () => new URL(item.location.google_maps_url),
                     ).not.toThrow(
                         `"${item.name}" has unparseable google_maps_url: ${item.location.google_maps_url}`,
+                    )
+                }
+            })
+
+            test('location.neighborhood is a known value when present', () => {
+                const VALID_NEIGHBORHOODS = new Set([
+                    'Benson',
+                    'Downtown',
+                    'Midtown',
+                    'North O',
+                    'South O',
+                    'West O',
+                ])
+                for (const item of data.items) {
+                    const nbr = item.location?.neighborhood
+                    if (!nbr) continue
+                    expect(VALID_NEIGHBORHOODS.has(nbr)).toBe(
+                        true,
+                        `"${item.name}" has unknown neighborhood: "${nbr}"`,
                     )
                 }
             })
@@ -187,4 +211,38 @@ describe('directory yaml files', () => {
             })
         })
     }
+})
+
+// ---------------------------------------------------------------------------
+// @insta shorthand normalization
+// ---------------------------------------------------------------------------
+
+describe('@handle shorthand normalization', () => {
+    const normalize = (url) =>
+        typeof url === 'string' && /^@[\w.]+$/.test(url)
+            ? `https://instagram.com/${url.slice(1)}`
+            : url
+
+    test('expands @handle to instagram.com URL', () => {
+        expect(normalize('@sobersocials')).toBe(
+            'https://instagram.com/sobersocials',
+        )
+    })
+
+    test('expands @handle with dots and underscores', () => {
+        expect(normalize('@sober.socials_omaha')).toBe(
+            'https://instagram.com/sober.socials_omaha',
+        )
+    })
+
+    test('leaves full URLs unchanged', () => {
+        expect(normalize('https://instagram.com/sobersocials')).toBe(
+            'https://instagram.com/sobersocials',
+        )
+    })
+
+    test('leaves other non-handle strings unchanged', () => {
+        expect(normalize('https://example.com')).toBe('https://example.com')
+        expect(normalize('@')).toBe('@')
+    })
 })

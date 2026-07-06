@@ -6,7 +6,7 @@ import tagMap from '../data/tagMap.json'
 import { slugify } from '../utils/slugify'
 import EntryTag from './EntryTag.astro'
 
-type TagMap = Record<string, { emoji: string; label: string }>
+type TagMap = Record<string, { icon: string; label: string }>
 const tags = tagMap as TagMap
 
 interface Props {
@@ -28,30 +28,69 @@ const addrParts = [
         : (loc?.state ?? loc?.zip),
 ].filter(Boolean)
 const addrLine = addrParts.join(', ')
-const locLine = [addrLine, loc?.neighborhood ? `(${loc.neighborhood})` : '']
-    .filter(Boolean)
-    .join(' ')
+const locLine = [addrLine, loc?.neighborhood].filter(Boolean).join(' - ')
+
+// Per-item structured data. As of 2026 schema.org markup — not llms.txt — is
+// what assistants and answer engines actually read when deciding which local
+// entities to surface. We emit Organization (the truthful supertype across
+// support groups, venues, and cafes alike) rather than LocalBusiness, which
+// would assert a "this is a business" claim we can't verify for every entry.
+const itemLinks = item.links?.map((l) => l.url) ?? []
+const postalAddress =
+    loc?.street || loc?.city || loc?.state || loc?.zip
+        ? {
+              '@type': 'PostalAddress',
+              ...(loc?.street && { streetAddress: loc.street }),
+              ...(loc?.city && { addressLocality: loc.city }),
+              ...(loc?.state && { addressRegion: loc.state }),
+              ...(loc?.zip && { postalCode: loc.zip }),
+          }
+        : undefined
+const plainDesc = descHtml
+    ? String(descHtml)
+          .replace(/<[^>]+>/g, '')
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/\s+/g, ' ')
+          .trim()
+    : ''
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: item.name,
+    ...(plainDesc && { description: plainDesc }),
+    ...(itemLinks.length > 0 && { sameAs: itemLinks }),
+    ...(postalAddress && { address: postalAddress }),
+    ...(loc?.google_maps_url && { hasMap: loc.google_maps_url }),
+}
+// Escape `<` so a stray "</script>" in any field can't break out of the tag.
+const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
 ---
 
+<script is:inline type="application/ld+json" set:html={jsonLdStr} />
 <wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>
   <h3 slot="header">
     {item.name}
     {item.tags?.map(tag => {
       const t = tags[tag]
       return t ? (
-        <EntryTag label={t.label} emoji={t.emoji} />
+        <EntryTag label={t.label} icon={t.icon} />
       ) : null
     })}
   </h3>
   {descHtml && <Fragment set:html={descHtml} />}
   {loc && locLine && (
     <p class="item-location">
+      <wa-icon name="location-dot" aria-hidden="true"></wa-icon>
       {loc.google_maps_url ? (
         <a href={loc.google_maps_url} rel="noopener noreferrer" target="_blank" aria-label={`Map: ${locLine} (opens in new tab)`}>
-          📍 {locLine}
+          {locLine}
         </a>
       ) : (
-        <>📍 {locLine}</>
+        locLine
       )}
     </p>
   )}
