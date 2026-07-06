@@ -6,15 +6,6 @@
     scroll-padding-top: var(--header-height, 7.5rem);
 }
 
-/* Astro's ClientRouter view transitions are used only for real per-route
-   navigation on category clicks, not for their animation — disable it so
-   the swap is instant. */
-::view-transition-group(*),
-::view-transition-old(*),
-::view-transition-new(*) {
-    animation: none !important;
-}
-
 body {
     font-family: "Helvetica", sans-serif;
     background: #f6f0fa;

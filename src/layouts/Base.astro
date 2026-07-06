@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from 'astro:transitions'
 import footerMessages from '../data/footerMessages.json'
 import site from '../data/site.json'
 import '../styles/theme.css'
@@ -33,7 +32,6 @@ const randomMsg =
 <!doctype html>
 <html lang="en">
   <HeadMeta title={pageTitle} description={description} canonicalUrl={canonicalUrl} />
-  <ClientRouter />
   <body
     data-initial-categories={initialCategories.join(' ')}
     data-initial-tags={initialTags.join(' ')}
