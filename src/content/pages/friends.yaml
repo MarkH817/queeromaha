@@ -2,9 +2,9 @@ title: Queer Omaha — LGBTQ+ Community Groups & Resources
 description: Community-maintained guide to queer social groups, spiritual spaces, and resources in Omaha, Nebraska.
 public: true
 items:
-  - name: OmahaForUs LGBTQIA* Center
+  - name: OmahaForUs
     public: true
-    description: Hub of community, resources, and events. Food bank, gender affirming clothing, provider referrals. Quiet/sensory room
+    description: Hub of community, resources, and events. Has a Quiet Room.
     links:
       - label: Events Calendar
         url: https://omahafor.us/events-calendar
@@ -21,7 +21,6 @@ items:
       city: Omaha
       state: NE
       zip: 68154
-      neighborhood: West O
       google_maps_url: https://maps.app.goo.gl/jqUnPGEamuFRGZT49
     tags:
       - work-spot
@@ -74,18 +73,22 @@ items:
     links:
       - label: Instagram
         url: https://www.instagram.com/thewildgardenomaha/
+    location:
+      neighborhood: Online
     notes: Potentially inactive circa spring 2026. Local inperson group presumably
   - name: The Queer Collective
     public: true
-    description: Mutual aid, drag shows, line dancing, and art markets, often at Floors Floors Floors in Benson. Organized via Instagram.
+    description: Mutual aid, drag shows, line dancing, and art markets.
     links:
       - label: Instagram
         url: https://www.instagram.com/queercollectiveomaha/
       - label: Facebook
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
+    location:
+      neighborhood: Online
   - name: River Daze Collective
     public: true
-    description: Social group with events organized via Facebook.
+    description: Art markets and queer social events.
     links:
       - label: Facebook
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
@@ -93,7 +96,7 @@ items:
         url: https://www.instagram.com/river.dazeco/
   - name: Out Wild Adventures
     public: true
-    description: Hikes, coffee chats, movie nights, etc. Sober-friendly
+    description: Kayaking, hikes and coffee chats. Sober-friendly
     links:
       - label: Register
         url: https://forms.gle/k2HhE8boH47rkJpT6
@@ -101,15 +104,17 @@ items:
         url: https://flow.page/outwildadventures
   - name: TransNebraska.Online
     public: true
-    description: Monthly online Trans* group ran by Babs Ramsey.
+    description: Online peer social group ran by Babs Ramsey.
     links:
       - label: Register
         url: https://www.transnebraska.online/get-involved
       - label: Website
         url: https://www.transnebraska.online
-  - name: TransFormative - In Person
+    location:
+      neighborhood: Online
+  - name: TransFormative Support Group
     public: false
-    description: Online Trans* group ran by therapist Brit Gunther.
+    description: In-person Trans* group ran by therapist Brit Gunther.
     links:
       - label: Register
         url: https://www.braveresilience.com/register
@@ -118,7 +123,7 @@ items:
     notes: Good group per Babs, completely full with waitlist per Brit
   - name: Second Sunday - Trans Masc Meetup
     public: true
-    description: In-person social group centering Trans Men, Trans Masc* and Nonbinary folks.
+    description: Group centering Trans Men, Trans Masc* and Nonbinary folks.
     links:
       - label: Register
         url: https://secondsunday.xyz/meet-up
@@ -134,25 +139,34 @@ items:
         url: https://owomaha.carrd.co/
       - label: Discord (13+)
         url: https://discord.com/invite/3Vq63UFrhH
+    location:
+      neighborhood: Online
   - name: Omaha Goth Discord
     public: true
     description: Local scene for goth / darkwave / industrial
     links:
       - label: Discord
         url: https://discord.com/invite/M5JUCgY9c
+    location:
+      neighborhood: Online
   - name: Open Arms Trans Social Group (OATS)
     public: false
     description: Long-running meetup of Trans* folks, queer people and allies on every 3rd Saturday @ Noon at 2nd Unitarian Church of Omaha.
+    notes: may be inactive, went to 2UU in june and nobody was around for it
     links:
       - label: Website
         url: https://2uomaha.org/justice/lgbtq
   - name: UNO Queer and Trans Student Alliance (QTS)
     public: true
-    description: Runs Queer Prom! Has sub-groups for Black, Lesbian, Bi, Trans folks.
+    description: Runs Queer Prom!
     links:
+      - label: Insta
+        url: https://www.instagram.com/unoqts/
       - label: Website
         url: https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php
-    notes: For UNO students
+      - label: Public Facebook
+        url: https://www.facebook.com/UNOQTS/
+    notes: Defunded by UNO in 2024 following fed regime crackdown and scandal about buying dildos https://www.unothegateway.com/news/university/exclusive-nu-system-defunds-student-agencies-after-controversial-purchases/article_02ab32c0-980d-11ef-82e6-f3ef6b7f6f09.html - Private Facebook appears defunct. https://www.facebook.com/groups/unomaha.gso/
   - name: BFF Queer Nite
     public: false
     description: Drag shows / queer events at BFF / Petshop / The Sydney.
@@ -166,3 +180,5 @@ items:
       - label: FB
         url: https://www.facebook.com/groups/428335397593645
     notes: Unverified — I don't have FB.
+    location:
+      neighborhood: Online

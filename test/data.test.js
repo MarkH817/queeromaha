@@ -136,6 +136,7 @@ describe('directory yaml files', () => {
 
             test('location.neighborhood is a known value when present', () => {
                 const VALID_NEIGHBORHOODS = new Set([
+                    'Online',
                     'Benson',
                     'Downtown',
                     'Midtown',

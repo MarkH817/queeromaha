@@ -1,27 +1,20 @@
 ---
+import categoryMapJson from '../data/categoryMap.json'
+
+const categoryMap = categoryMapJson as Record<
+    string,
+    { icon: string; label: string; descriptor: string }
+>
 ---
 
 <header>
   <a class="skip-link" href="#main">Skip to main content</a>
   <nav class="main-nav" aria-label="Main navigation">
-    <wa-button href="/friends" appearance="plain" data-filter="friends" data-filter-type="category" aria-pressed="false">
-      <wa-icon name="people-group" aria-hidden="true"></wa-icon> Friends
-    </wa-button>
-    <wa-button href="/spiritual" appearance="plain" data-filter="spiritual" data-filter-type="category" aria-pressed="false">
-      <wa-icon name="lotus" aria-hidden="true"></wa-icon> Spiritual
-    </wa-button>
-    <wa-button href="/art" appearance="plain" data-filter="art" data-filter-type="category" aria-pressed="false">
-      <wa-icon name="palette" aria-hidden="true"></wa-icon> Art
-    </wa-button>
-    <wa-button href="/cafes" appearance="plain" data-filter="cafes" data-filter-type="category" aria-pressed="false">
-      <wa-icon name="mug-saucer" aria-hidden="true"></wa-icon> Cafes
-    </wa-button>
-    <wa-button href="/music" appearance="plain" data-filter="music" data-filter-type="category" aria-pressed="false">
-      <wa-icon name="music" aria-hidden="true"></wa-icon> Music
-    </wa-button>
-    <wa-button href="/makers" appearance="plain" data-filter="makers" data-filter-type="category" aria-pressed="false">
-      <wa-icon name="paintbrush" aria-hidden="true"></wa-icon> Makers
-    </wa-button>
+    {Object.entries(categoryMap).map(([slug, { icon, label }]) => (
+      <wa-button href={`/${slug}`} appearance="plain" data-filter={slug} data-filter-type="category" aria-pressed="false">
+        <wa-icon name={icon} aria-hidden="true"></wa-icon> {label}
+      </wa-button>
+    ))}
   </nav>
 </header>
 <script>

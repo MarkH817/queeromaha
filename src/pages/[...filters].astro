@@ -2,21 +2,19 @@
 import { getCollection } from 'astro:content'
 import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
+import categoryMapJson from '../data/categoryMap.json'
 import Base from '../layouts/Base.astro'
 import { buildNeighborhoods } from '../utils/neighborhoods'
 import { slugify } from '../utils/slugify'
 
-const categorySlugs = [
-    'friends',
-    'spiritual',
-    'art',
-    'cafes',
-    'music',
-    'makers',
-]
+const categoryMap = categoryMapJson as Record<
+    string,
+    { icon: string; label: string; descriptor: string }
+>
+const categorySlugs = Object.keys(categoryMap)
 
 export async function getStaticPaths() {
-    const cats = ['friends', 'spiritual', 'art', 'cafes', 'music', 'makers']
+    const cats = Object.keys(categoryMapJson)
     const entries = await getCollection('directory')
     const neighborhoodSlugs = buildNeighborhoods(entries).map((n) => n.slug)
 
@@ -46,9 +44,10 @@ const initialCategories = effectiveFilterSlugs.filter((s) =>
     categorySlugs.includes(s),
 )
 
-const ORDER = ['friends', 'spiritual', 'art', 'cafes', 'music', 'makers']
 const entries = await getCollection('directory')
-entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
+entries.sort(
+    (a, b) => categorySlugs.indexOf(a.id) - categorySlugs.indexOf(b.id),
+)
 
 const allNeighborhoods = buildNeighborhoods(entries)
 
@@ -76,33 +75,6 @@ function matchesInitial(
     return catOk && nbrOk
 }
 
-const categoryLabels: Record<string, string> = {
-    friends: 'Friends',
-    spiritual: 'Spiritual',
-    art: 'Art',
-    cafes: 'Cafes',
-    music: 'Music',
-    makers: 'Makers',
-}
-
-const categoryIcons: Record<string, string> = {
-    friends: 'people-group',
-    spiritual: 'lotus',
-    art: 'palette',
-    cafes: 'mug-saucer',
-    music: 'music',
-    makers: 'hammer',
-}
-
-const categoryDescriptors: Record<string, string> = {
-    friends: 'LGBTQ+ Groups & Community',
-    spiritual: 'Queer-Affirming Spiritual Spaces',
-    art: 'Queer Art & Culture',
-    cafes: 'LGBTQ+-Friendly Cafes',
-    music: 'Queer Music & Nightlife',
-    makers: 'Queer Makers & Artisans',
-}
-
 const activeCategory = initialCategories[0]
 const activeNeighborhoodSlug = initialNeighborhoods[0]
 const activeNeighborhoodLabel = allNeighborhoods.find(
@@ -110,8 +82,9 @@ const activeNeighborhoodLabel = allNeighborhoods.find(
 )?.label
 
 const categoryPart = activeCategory
-    ? (categoryDescriptors[activeCategory] ?? categoryDescriptors.friends)
-    : categoryDescriptors.friends
+    ? (categoryMap[activeCategory]?.descriptor ??
+      categoryMap.friends.descriptor)
+    : categoryMap.friends.descriptor
 const pageTitle = activeNeighborhoodLabel
     ? `${categoryPart} in ${activeNeighborhoodLabel}`
     : categoryPart
@@ -133,9 +106,9 @@ const pageDescription = activeNeighborhoodLabel
     if (publicItems.length === 0) return null
     const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
     return (
-      <section id={`section-${entry.id}`} aria-label={categoryLabels[entry.id] ?? entry.id}>
+      <section id={`section-${entry.id}`} aria-label={categoryMap[entry.id]?.label ?? entry.id}>
         <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
-          <wa-icon name={categoryIcons[entry.id]} aria-hidden="true"></wa-icon> {categoryLabels[entry.id] ?? entry.id}
+          <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true"></wa-icon> {categoryMap[entry.id]?.label ?? entry.id}
         </h2>
         {publicItems.map(item => (
           <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />

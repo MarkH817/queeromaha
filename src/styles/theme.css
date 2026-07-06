@@ -578,8 +578,8 @@ blockquote p {
     height: 2.4rem;
     padding: 0 1rem;
     margin: 0;
-    border: 1px solid #ddd6fe;
-    border-radius: 999px;
+    border: 1px solid #c4b5fd;
+    border-radius: 12px;
     background: #f9f5ff;
     color: #6d28d9;
     font-size: 0.82rem;
