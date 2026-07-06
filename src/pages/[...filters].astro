@@ -93,11 +93,37 @@ const categoryIcons: Record<string, string> = {
     music: 'music',
     makers: 'hammer',
 }
+
+const categoryDescriptors: Record<string, string> = {
+    friends: 'LGBTQ+ Groups & Community',
+    spiritual: 'Queer-Affirming Spiritual Spaces',
+    art: 'Queer Art & Culture',
+    cafes: 'LGBTQ+-Friendly Cafes',
+    music: 'Queer Music & Nightlife',
+    makers: 'Queer Makers & Artisans',
+}
+
+const activeCategory = initialCategories[0]
+const activeNeighborhoodSlug = initialNeighborhoods[0]
+const activeNeighborhoodLabel = allNeighborhoods.find(
+    (n) => n.slug === activeNeighborhoodSlug,
+)?.label
+
+const categoryPart = activeCategory
+    ? (categoryDescriptors[activeCategory] ?? categoryDescriptors.friends)
+    : categoryDescriptors.friends
+const pageTitle = activeNeighborhoodLabel
+    ? `${categoryPart} in ${activeNeighborhoodLabel}`
+    : categoryPart
+
+const pageDescription = activeNeighborhoodLabel
+    ? `${categoryPart} in the ${activeNeighborhoodLabel} neighborhood of Omaha, Nebraska.`
+    : `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
 ---
 
 <Base
-  title="Queer Omaha — LGBTQ+ Community Directory"
-  description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
+  title={pageTitle}
+  description={pageDescription}
   initialCategories={initialCategories}
   initialNeighborhoods={initialNeighborhoods}
 >
