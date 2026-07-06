@@ -1,5 +1,3 @@
-import { navigate } from 'astro:transitions/client'
-
 function initFilters() {
     const cards = document.querySelectorAll<HTMLElement>('[data-category]')
     const pills = document.querySelectorAll<
@@ -198,19 +196,19 @@ function initFilters() {
             const type = pill.dataset.filterType || ''
             const isActive = pill.classList.contains('active')
 
+            e.preventDefault()
+
             if (type === 'category') {
-                if (isActive) {
-                    e.preventDefault()
-                    navigate('/friends')
-                }
-                // else: not active — let the pill's real href navigate
-                // (e.g. "/art"), intercepted by ClientRouter for a soft
-                // transition, so the target route's own SSR output is what
-                // loads.
+                // Every static route already ships the full card DOM, so
+                // switching category is a local hidden-toggle (instant, no
+                // fetch) — the pill's real href is only a JS-off fallback.
+                // Tapping the active category resets to the default landing
+                // state (bare URL → /friends).
+                setCategory(isActive ? 'friends' : slug)
+                history.pushState({}, '', buildUrl())
                 return
             }
 
-            e.preventDefault()
             if (type === 'neighborhood') {
                 if (isActive) deactivateFilter(slug)
                 else setNeighborhood(slug)
@@ -245,6 +243,8 @@ function initFilters() {
     applyFilters()
 }
 
-// Runs on first load and again after every ClientRouter soft navigation,
-// since the DOM (and therefore all queried cards/pills) is replaced.
-document.addEventListener('astro:page-load', initFilters)
+// Category, neighborhood, and tag pills all filter client-side in place —
+// there's no soft navigation — so init once on normal page load.
+if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', initFilters)
+else initFilters()
