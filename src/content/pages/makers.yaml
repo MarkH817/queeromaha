@@ -46,17 +46,23 @@ items:
         url: https://thingsbythor.com
       - label: Linktree
         url: https://linktr.ee/Thingsbythor
-  - public: false
-    name: Paper Crane Tattoo and Bookery
+  - public: true
+    name: Paper Crane Books & Tattoo
     tags:
       - neutral-bathrooms
     location:
       google_maps_url: https://maps.app.goo.gl/uNNFQYeMmtKxYJkq6?g_st=ic
       neighborhood: Midtown
+      street: 735 N 120th
+      city: Omaha
     links:
       - label: Facebook
         url: https://www.facebook.com/p/Paper-Crane-Books-Tattoo-61578587493984/
       - label: Insta
-        url: https://www.instagram.com/papercraneomaha/
-    description: Free stickers! Used book section
-    notes: Working on having a community board
+        url: https://instagram.com/papercraneomaha
+    description: Friendly tattoo shop with used book section and cool stickers
+    notes: |-
+      Nikki runs book side / front desk, is chill
+
+      Free stickers in bowl
+notes: ""
