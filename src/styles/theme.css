@@ -241,7 +241,7 @@ footer a:hover {
     align-items: center;
     padding: 0.3rem 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 999px;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.1);
     color: #f3e8ff;
     text-decoration: none;
@@ -301,15 +301,21 @@ h2 {
 }
 
 .section-header {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     gap: 0.4rem;
+    width: 100%;
     margin: 0.75rem 0 0.5rem;
     color: #6d28d9;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.section-header wa-icon {
+    font-size: 1.2em;
 }
 
 .section-header[hidden] {
@@ -581,7 +587,7 @@ blockquote p {
     height: 2.4rem;
     padding: 0 1rem;
     margin: 0;
-    border: 2px solid #c4b5fd;
+    border: 1px solid #ddd6fe;
     border-radius: 999px;
     background: #f9f5ff;
     color: #6d28d9;
@@ -623,7 +629,7 @@ blockquote p {
     padding: 0.15rem 0.5rem;
     border-radius: 999px;
     background: #f9f5ff;
-    border: 2px solid #c4b5fd;
+    border: 1px solid #ddd6fe;
     color: #6d28d9;
     font-size: 0.72rem;
     font-weight: 600;
