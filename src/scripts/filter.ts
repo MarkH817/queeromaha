@@ -199,12 +199,12 @@ function initFilters() {
             e.preventDefault()
 
             if (type === 'category') {
+                // Tapping the already-active category is a no-op.
+                if (isActive) return
                 // Every static route already ships the full card DOM, so
                 // switching category is a local hidden-toggle (instant, no
                 // fetch) — the pill's real href is only a JS-off fallback.
-                // Tapping the active category resets to the default landing
-                // state (bare URL → /friends).
-                setCategory(isActive ? 'friends' : slug)
+                setCategory(slug)
                 history.pushState({}, '', buildUrl())
                 return
             }
