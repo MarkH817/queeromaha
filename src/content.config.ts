@@ -28,7 +28,6 @@ export const locationSchema = z.object({
 export const itemSchema = z.object({
     name: z.string(),
     public: z.boolean().optional(),
-    recommended: z.boolean().optional(),
     description: z.string().optional(),
     tags: z.array(tagEnum).optional(),
     links: z

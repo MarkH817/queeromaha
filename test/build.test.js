@@ -28,7 +28,7 @@ describe('astro build', () => {
             'cafes/index.html',
             'music/index.html',
             'makers/index.html',
-            'social/index.html',
+            'friends/index.html',
             'spiritual/index.html',
             'about/index.html',
             'robots.txt',
@@ -66,9 +66,9 @@ describe('astro build', () => {
         expect(headers).toContain('service-doc')
     })
 
-    test('social/index.html contains filter pills and wa-card items', () => {
+    test('friends/index.html contains filter pills and wa-card items', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('filter-pill')
@@ -76,12 +76,12 @@ describe('astro build', () => {
         expect(html).toContain('data-category')
     })
 
-    test('social/index.html has data-initial-categories="social"', () => {
+    test('friends/index.html has data-initial-categories="friends"', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
-        expect(html).toContain('data-initial-categories="social"')
+        expect(html).toContain('data-initial-categories="friends"')
     })
 
     test('dist contains a generated neighborhood page', () => {
@@ -124,18 +124,18 @@ describe('astro build', () => {
         expect(ics).toContain('Game Night')
     })
 
-    test('social/index.html contains footer calendar subscribe link', () => {
+    test('friends/index.html contains footer calendar subscribe link', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('calendar.google.com')
         expect(html).toContain('footer-cal')
     })
 
-    test('social/index.html has calendar autodiscovery link', () => {
+    test('friends/index.html has calendar autodiscovery link', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('rel="alternate"')

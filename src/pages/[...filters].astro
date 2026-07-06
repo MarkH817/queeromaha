@@ -6,10 +6,17 @@ import Base from '../layouts/Base.astro'
 import { buildNeighborhoods } from '../utils/neighborhoods'
 import { slugify } from '../utils/slugify'
 
-const categorySlugs = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+const categorySlugs = [
+    'friends',
+    'spiritual',
+    'art',
+    'cafes',
+    'music',
+    'makers',
+]
 
 export async function getStaticPaths() {
-    const cats = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+    const cats = ['friends', 'spiritual', 'art', 'cafes', 'music', 'makers']
     const entries = await getCollection('directory')
     const neighborhoodSlugs = buildNeighborhoods(entries).map((n) => n.slug)
 
@@ -33,9 +40,13 @@ export async function getStaticPaths() {
 
 const { filters = '' } = Astro.params
 const filterSlugs = filters.split('/').filter(Boolean)
-const initialCategories = filterSlugs.filter((s) => categorySlugs.includes(s))
+const effectiveFilterSlugs =
+    filterSlugs.length === 0 ? ['friends'] : filterSlugs
+const initialCategories = effectiveFilterSlugs.filter((s) =>
+    categorySlugs.includes(s),
+)
 
-const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+const ORDER = ['friends', 'spiritual', 'art', 'cafes', 'music', 'makers']
 const entries = await getCollection('directory')
 entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
 
@@ -66,7 +77,7 @@ function matchesInitial(
 }
 
 const categoryLabels: Record<string, string> = {
-    social: 'Social',
+    friends: 'Friends',
     spiritual: 'Spiritual',
     art: 'Art',
     cafes: 'Cafes',
@@ -75,22 +86,13 @@ const categoryLabels: Record<string, string> = {
 }
 
 const categoryIcons: Record<string, string> = {
-    social: 'people-group',
+    friends: 'people-group',
     spiritual: 'lotus',
     art: 'palette',
     cafes: 'mug-saucer',
     music: 'music',
     makers: 'hammer',
 }
-
-const isHome = filterSlugs.length === 0
-const recommendedItems = isHome
-    ? entries.flatMap((entry) =>
-          (entry.data.items ?? [])
-              .filter((i) => i.public !== false && i.recommended === true)
-              .map((item) => ({ item, categoryId: entry.id })),
-      )
-    : []
 ---
 
 <Base
@@ -100,32 +102,19 @@ const recommendedItems = isHome
   initialNeighborhoods={initialNeighborhoods}
 >
   <FilterBar neighborhoods={allNeighborhoods} />
-  {isHome ? (
-    recommendedItems.length > 0 && (
-      <section id="section-recommended" aria-label="Recommended">
-        <h2 class="section-header" data-category-heading="recommended">
-          <wa-icon name="star" aria-hidden="true"></wa-icon> Recommended
+  {entries.map(entry => {
+    const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
+    if (publicItems.length === 0) return null
+    const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
+    return (
+      <section id={`section-${entry.id}`} aria-label={categoryLabels[entry.id] ?? entry.id}>
+        <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
+          <wa-icon name={categoryIcons[entry.id]} aria-hidden="true"></wa-icon> {categoryLabels[entry.id] ?? entry.id}
         </h2>
-        {recommendedItems.map(({ item, categoryId }) => (
-          <ItemCard item={item} category={categoryId} hidden={!matchesInitial(item, categoryId)} />
+        {publicItems.map(item => (
+          <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />
         ))}
       </section>
     )
-  ) : (
-    entries.map(entry => {
-      const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
-      if (publicItems.length === 0) return null
-      const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
-      return (
-        <section id={`section-${entry.id}`} aria-label={categoryLabels[entry.id] ?? entry.id}>
-          <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
-            <wa-icon name={categoryIcons[entry.id]} aria-hidden="true"></wa-icon> {categoryLabels[entry.id] ?? entry.id}
-          </h2>
-          {publicItems.map(item => (
-            <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />
-          ))}
-        </section>
-      )
-    })
-  )}
+  })}
 </Base>

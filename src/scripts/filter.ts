@@ -47,12 +47,9 @@ function initFilters() {
             .querySelectorAll<HTMLElement>('[data-category-heading]')
             .forEach((heading) => {
                 const cat = heading.dataset.categoryHeading || ''
-                heading.hidden =
-                    cat === 'recommended'
-                        ? ![...cards].some((c) => !c.hidden)
-                        : ![...cards].some(
-                              (c) => c.dataset.category === cat && !c.hidden,
-                          )
+                heading.hidden = ![...cards].some(
+                    (c) => c.dataset.category === cat && !c.hidden,
+                )
             })
         updatePillAvailability()
         updateImpliedCategoryState()
@@ -97,10 +94,8 @@ function initFilters() {
         pills.forEach((pill) => {
             // Category pills are real navigations now (see the click
             // handler below), not client-side toggles limited to whatever
-            // cards happen to already be in the current page's DOM (e.g.
-            // the homepage only has recommended-item cards, which would
-            // otherwise make every other category look "unavailable" even
-            // though visiting it works fine). They should never be disabled.
+            // cards happen to already be in the current page's DOM. They
+            // should never be disabled.
             if (pill.dataset.filterType === 'category') {
                 pill.disabled = false
                 pill.classList.remove('unavailable')
@@ -152,7 +147,7 @@ function initFilters() {
 
     function buildUrl() {
         const parts = [...activeCategories, ...activeNeighborhoods]
-        return parts.length === 0 ? '/' : `/${parts.join('/')}`
+        return parts.length === 0 ? '/friends' : `/${parts.join('/')}`
     }
 
     function clearType(type: string, activeSet: Set<string>) {
@@ -206,12 +201,12 @@ function initFilters() {
             if (type === 'category') {
                 if (isActive) {
                     e.preventDefault()
-                    navigate('/')
+                    navigate('/friends')
                 }
                 // else: not active — let the pill's real href navigate
                 // (e.g. "/art"), intercepted by ClientRouter for a soft
-                // transition, so the target route's own SSR output (full
-                // category, not just recommended items) is what loads.
+                // transition, so the target route's own SSR output is what
+                // loads.
                 return
             }
 
@@ -245,8 +240,8 @@ function initFilters() {
     // spec (and our `[hidden]` CSS) treats as truthy regardless of value.
     // Setting `.hidden` via the JS property below is what actually clears
     // it. The calls above only do this for cards touched by an active
-    // category/neighborhood/tag; this unconditional call covers routes
-    // (like the bare "/" homepage) with no initial filter at all.
+    // category/neighborhood/tag; this unconditional call covers any card
+    // that ends up with no active filter touching it at all.
     applyFilters()
 }
 

@@ -1,3 +1,9 @@
 [build]
 publish = "dist"
 command = "bun run build"
+
+[[redirects]]
+  from = "/"
+  to = "/friends"
+  status = 301
+  force = true

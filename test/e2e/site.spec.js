@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 
 const pages = [
-    { path: '/social/', titleContains: 'Queer' },
+    { path: '/friends/', titleContains: 'Queer' },
     { path: '/about/', titleContains: 'About' },
     // filter slug pages all share the directory title
     { path: '/music/', titleContains: 'Queer' },
@@ -20,7 +20,7 @@ for (const { path, titleContains } of pages) {
 }
 
 test('home page has navigation links', async ({ page }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const nav = page.locator('nav.main-nav')
     await expect(nav).toBeVisible()
     const buttons = nav.locator('wa-button')
@@ -32,12 +32,12 @@ test('no console errors on home page', async ({ page }) => {
     page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text())
     })
-    await page.goto('/social/')
+    await page.goto('/friends/')
     expect(errors).toHaveLength(0)
 })
 
 test('skip-to-main link is present', async ({ page }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const skipLink = page.locator('a.skip-link')
     await expect(skipLink).toHaveAttribute('href', '#main')
 })
@@ -63,12 +63,12 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
 })
 
 test('footer is present', async ({ page }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     await expect(page.getByRole('contentinfo')).toBeVisible()
 })
 
 test('filter pills are present on home page', async ({ page }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const pills = page.locator('.filter-pill')
     expect(await pills.count()).toBeGreaterThan(0)
 })
@@ -80,7 +80,7 @@ test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
 })
 
 test('neighborhood filter pills render on the home page', async ({ page }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const pills = page.locator('[data-filter-type="neighborhood"]')
     expect(await pills.count()).toBeGreaterThan(0)
 })
@@ -117,7 +117,7 @@ test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
 test('combining category and neighborhood pills narrows results', async ({
     page,
 }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     await page.locator('[data-filter="cafes"]').click()
     await page.locator('[data-filter="west-o"]').click()
 
@@ -134,7 +134,7 @@ test('combining category and neighborhood pills narrows results', async ({
 test('location bar renders as a single-select segmented bar', async ({
     page,
 }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const bar = page.locator('.location-bar')
     await expect(bar).toBeVisible()
     const segments = bar.locator('.location-segment')
@@ -219,7 +219,7 @@ test('clear button only clears tags, leaving the active location untouched', asy
 
 test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
@@ -245,7 +245,7 @@ test('footer message is visible and unclipped on wide screens', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 1024, height: 800 })
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const footerText = page.locator('.footer-text')
     const footerMessage = page.locator('.footer-message')
 
@@ -257,7 +257,7 @@ test('footer message is visible and unclipped on wide screens', async ({
 })
 
 test('tag filter pills use wa-icon elements', async ({ page }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const pills = page.locator('.filter-pill')
     const count = await pills.count()
     expect(count).toBeGreaterThan(0)
@@ -283,7 +283,7 @@ test('item cards with a location show a location-dot icon', async ({
 test('neighborhood segment order is stable after switching categories', async ({
     page,
 }) => {
-    await page.goto('/social/')
+    await page.goto('/friends/')
     const getOrder = () =>
         page
             .locator('.location-segment')
