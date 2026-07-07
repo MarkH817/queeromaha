@@ -39,13 +39,7 @@ export const itemSchema = z.object({
         .array(
             z.object({
                 label: z.string(),
-                url: z.preprocess(
-                    (v) =>
-                        typeof v === 'string' && /^@[\w.]+$/.test(v)
-                            ? `https://instagram.com/${v.slice(1)}`
-                            : v,
-                    z.url(),
-                ),
+                url: z.url(),
             }),
         )
         .optional(),
