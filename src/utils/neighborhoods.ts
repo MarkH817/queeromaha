@@ -10,7 +10,6 @@ export const NEIGHBORHOOD_ORDER = [
     'north-o',
     'south-o',
     'west-o',
-    'online',
 ]
 
 export function buildNeighborhoods(

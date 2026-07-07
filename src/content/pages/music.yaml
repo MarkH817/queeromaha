@@ -2,7 +2,7 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: Local Music Scene
+  - name: Local Music
     description: Omaha has an awesome local music scene!
     public: true
     links:
@@ -10,6 +10,8 @@ items:
         url: https://omahaunderground.net/shows/
       - label: Omaha Buzz substack
         url: https://omahabuzz.substack.com
+    tags:
+      - online
   - name: Church Art House
     public: true
     tags:
@@ -43,21 +45,6 @@ items:
         url: https://omahaunderground.net/venues/project-project
     location:
       neighborhood: South O
-  - name: No-Coast Noise Collective
-    public: true
-    description: Experimental music and sound art collective. Centered out of Project Project.
-    links:
-      - label: Insta
-        url: https://www.instagram.com/nocoastnoise/
-      - label: Website
-        url: https://www.nocoastnoise.net/
-      - url: https://discord.com/invite/2j7cxb6g
-        label: Discord
-      - label: LinkTree
-        url: https://linktr.ee/nocoastnoise
-    location:
-      neighborhood: ""
-    notes: Joe Willard runs it, Phill Smith and Nester do booking, informal, discord is main chat, revolves around project project
   - name: Floors Floors Floors
     public: false
     tags:

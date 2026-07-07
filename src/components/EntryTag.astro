@@ -2,17 +2,18 @@
 interface Props {
     label: string
     icon: string
+    family?: string
 }
-const { label, icon } = Astro.props
+const { label, icon, family } = Astro.props
 const id = `et-${crypto.randomUUID()}`
 ---
 
-<span class="et" title={label} role="img" aria-label={label}><wa-icon name={icon} aria-hidden="true"></wa-icon></span
+<span class="et" title={label} role="img" aria-label={label}><wa-icon name={icon} family={family} aria-hidden="true"></wa-icon></span
 ><wa-tooltip for={id} aria-hidden>{label}</wa-tooltip><span
     {id}
     class="et-enhanced"
     role="img"
-    aria-label={label}><wa-icon name={icon} aria-hidden="true"></wa-icon></span
+    aria-label={label}><wa-icon name={icon} family={family} aria-hidden="true"></wa-icon></span
 >
 <style>
     /* Hides wa-tooltip after web awesome script loads */

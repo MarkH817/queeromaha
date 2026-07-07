@@ -23,7 +23,7 @@ items:
       zip: 68154
       google_maps_url: https://maps.app.goo.gl/jqUnPGEamuFRGZT49
     tags:
-      - work-spot
+      - wifi
       - neutral-bathrooms
       - seating
     notes: |
@@ -73,8 +73,8 @@ items:
     links:
       - label: Instagram
         url: https://www.instagram.com/thewildgardenomaha/
-    location:
-      neighborhood: Online
+    tags:
+      - online
     notes: Potentially inactive circa spring 2026. Local inperson group presumably
   - name: The Queer Collective
     public: true
@@ -84,8 +84,8 @@ items:
         url: https://www.instagram.com/queercollectiveomaha/
       - label: Facebook
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
-    location:
-      neighborhood: Online
+    tags:
+      - online
   - name: River Daze Collective
     public: true
     description: Art markets and queer social events.
@@ -110,8 +110,8 @@ items:
         url: https://www.transnebraska.online/get-involved
       - label: Website
         url: https://www.transnebraska.online
-    location:
-      neighborhood: Online
+    tags:
+      - online
   - name: TransFormative Support Group
     public: false
     description: In-person Trans* group ran by therapist Brit Gunther.
@@ -139,16 +139,16 @@ items:
         url: https://owomaha.carrd.co/
       - label: Discord (13+)
         url: https://discord.com/invite/3Vq63UFrhH
-    location:
-      neighborhood: Online
+    tags:
+      - online
   - name: Omaha Goth Discord
     public: true
     description: Local scene for goth / darkwave / industrial
     links:
       - label: Discord
         url: https://discord.com/invite/M5JUCgY9c
-    location:
-      neighborhood: Online
+    tags:
+      - online
   - name: Open Arms Trans Social Group (OATS)
     public: false
     description: Long-running meetup of Trans* folks, queer people and allies on every 3rd Saturday @ Noon at 2nd Unitarian Church of Omaha.
@@ -179,6 +179,19 @@ items:
     links:
       - label: FB
         url: https://www.facebook.com/groups/428335397593645
-    notes: Unverified — I don't have FB.
-    location:
-      neighborhood: Online
+    notes: Unverified — Tara don't got no FB.
+    tags:
+      - online
+  - name: No-Coast Noise Collective
+    public: true
+    description: Experimental music and sound art collective. Centered out of Project Project.
+    links:
+      - label: Insta
+        url: https://www.instagram.com/nocoastnoise/
+      - label: Website
+        url: https://www.nocoastnoise.net/
+      - url: https://discord.com/invite/2j7cxb6g
+        label: Discord
+      - label: LinkTree
+        url: https://linktr.ee/nocoastnoise
+    notes: Joe Willard runs it, Phill Smith and Nester do booking, informal, discord is main chat, revolves around project project

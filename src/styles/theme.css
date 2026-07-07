@@ -338,8 +338,8 @@ wa-card.item[hidden] {
 wa-card.item::part(base) {
     border-color: #e9d5ff;
     box-shadow:
-        3px -3px 0 #e9d5ff,
-        5px -5px 0 #c4b5fd;
+        3px 3px 0 #e9d5ff,
+        5px 5px 0 #c4b5fd;
 }
 
 wa-card.item::part(header) {
@@ -500,14 +500,17 @@ blockquote p {
 
 /* Filter bar */
 .filter-clear {
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 50%;
     background: none;
     border: 1px solid #c4b5fd;
     color: #7c3aed;
-    font-size: 0.75rem;
-    font-weight: 600;
-    font-family: inherit;
+    font-size: 1.1rem;
     cursor: pointer;
     transition:
         background 0.15s,
@@ -584,6 +587,7 @@ blockquote p {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.3rem;
     height: 2.4rem;
     padding: 0 1rem;
     margin: 0;

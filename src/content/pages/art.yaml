@@ -238,14 +238,14 @@ items:
       neighborhood: Midtown
   - name: Aksarben Village
     public: true
-    description: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
+    description: Arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. Single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
     links:
       - label: Events Calendar
         url: https://www.aksarbenvillage.com/events
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: Samuel Bak Museum
     public: true
     description: Holocaust survivor's art museum with workshops and education programs.
@@ -253,7 +253,7 @@ items:
       - label: Events Calendar
         url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: NeXT Foundation Arts
     public: true
     description: Open Studios for Expressive Art in the MasterCraft Building

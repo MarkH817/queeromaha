@@ -8,8 +8,8 @@ interface Props {
 const { neighborhoods = [] } = Astro.props
 
 const tags = Object.entries(
-    tagMap as Record<string, { icon: string; label: string }>,
-).map(([slug, { icon, label }]) => ({ slug, icon, label }))
+    tagMap as Record<string, { icon: string; label: string; family?: string }>,
+).map(([slug, { icon, label, family }]) => ({ slug, icon, label, family }))
 ---
 
 <div class="filter-bar">
@@ -31,16 +31,16 @@ const tags = Object.entries(
   )}
   <div class="filter-pills filter-pills--tags" role="group" aria-label="Filter by tag">
     <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
-      ✕ Clear
+      <wa-icon name="filter-circle-xmark" aria-hidden="true"></wa-icon>
     </button>
-    {tags.map(({ slug, icon, label }) => (
+    {tags.map(({ slug, icon, label, family }) => (
       <button
         class="filter-pill"
         data-filter={slug}
         data-filter-type="tag"
         aria-pressed="false"
       >
-        <wa-icon name={icon} aria-hidden="true"></wa-icon>{label}
+        <wa-icon name={icon} family={family} aria-hidden="true"></wa-icon>{label}
       </button>
     ))}
   </div>

@@ -76,6 +76,14 @@ function matchesInitial(
 }
 
 const activeCategory = initialCategories[0]
+const activeEntry = entries.find((e) => e.id === activeCategory)
+const activeCategoryHasFilters =
+    !activeCategory ||
+    (activeEntry?.data.items ?? []).some(
+        (item) =>
+            item.public !== false &&
+            (item.location?.neighborhood || (item.tags?.length ?? 0) > 0),
+    )
 const activeNeighborhoodSlug = initialNeighborhoods[0]
 const activeNeighborhoodLabel = allNeighborhoods.find(
     (n) => n.slug === activeNeighborhoodSlug,
@@ -100,7 +108,7 @@ const pageDescription = activeNeighborhoodLabel
   initialCategories={initialCategories}
   initialNeighborhoods={initialNeighborhoods}
 >
-  <FilterBar neighborhoods={allNeighborhoods} />
+  {activeCategoryHasFilters && <FilterBar neighborhoods={allNeighborhoods} />}
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null

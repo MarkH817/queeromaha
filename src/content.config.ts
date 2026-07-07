@@ -2,7 +2,12 @@ import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
 import { z } from 'zod'
 
-export const tagEnum = z.enum(['neutral-bathrooms', 'seating', 'work-spot'])
+export const tagEnum = z.enum([
+    'neutral-bathrooms',
+    'seating',
+    'wifi',
+    'online',
+])
 
 export const recurringEventSchema = z.object({
     summary: z.string(),

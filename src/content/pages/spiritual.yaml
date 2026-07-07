@@ -7,7 +7,7 @@ items:
       - neutral-bathrooms
       - seating
     public: false
-    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC
+    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga (Pay What You Can)
     links:
       - label: Insta
         url: https://www.instagram.com/dawaune.one/
@@ -17,11 +17,7 @@ items:
   - name: Ananda Omaha Wellness and Yoga
     public: true
     description: |
-      Brooke hosts a Queer-centered Emotional Release class on Sundays @ 12:30PM as well as 
-
-      PWYC
-
-      Getting There: Park in the back of the corner Shiki building on north side of Dodge at 49th, go in the door at the rear entrance of State Farm in the back corner of the lot, Go all the way down the stairs, following signs to the end of the hallway.
+      Queer / Trans* Emotional Release class on Sundays @ 12:30PM (Pay What You Can)
     tags:
       - neutral-bathrooms
       - seating
@@ -34,6 +30,7 @@ items:
         url: https://www.anandaomaha.com/brooke-monaco-wellness
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
+    notes: Brooke owner is chill
   - name: Honey Locust Sangha
     public: true
     tags:
@@ -69,7 +66,7 @@ items:
       - neutral-bathrooms
       - seating
     public: true
-    description: Get stratospheric with Havalynn at Church Art House every Sunday (except the 1st of the month) @ 10:30AM.  PWYC
+    description: Get stratospheric with Havalynn at Church Art House Sundays @ 10:30AM (besides the first Sunday) (Pay What You Can)
     links:
       - label: Insta
         url: https://www.instagram.com/havalynn1/
@@ -79,7 +76,7 @@ items:
       street: 20th and Vinton
   - name: Sound Bath w/ Geoff Wertheim
     public: false
-    description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM. Family-friendly.
+    description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM (Pay What You Can)
     links:
       - label: FB
         url: https://www.facebook.com/geoff.wertheim.9

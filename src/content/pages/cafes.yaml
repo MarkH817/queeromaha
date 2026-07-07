@@ -14,7 +14,7 @@ items:
         url: https://www.facebook.com/profile.php/?id=100089484920886
     tags:
       - neutral-bathrooms
-      - work-spot
+      - wifi
     location:
       street: 120th and Blondo
       neighborhood: West O
@@ -32,7 +32,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-      - work-spot
+      - wifi
     location:
       neighborhood: Aksarben
   - name: Marigold's
@@ -58,7 +58,7 @@ items:
         url: https://millcoffee.com/pages/the-mill-on-leavenworth
     tags:
       - seating
-      - work-spot
+      - wifi
     location:
       neighborhood: Midtown
   - name: Archetype Coffee
@@ -69,7 +69,7 @@ items:
         url: https://drinkarchetype.com/
     tags:
       - neutral-bathrooms
-      - work-spot
+      - wifi
     location:
       neighborhood: Midtown
   - name: Sweet Magnolias
@@ -148,7 +148,7 @@ items:
         url: https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727
     tags:
       - neutral-bathrooms
-      - work-spot
+      - wifi
       - seating
     location:
       neighborhood: Midtown
@@ -243,7 +243,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-      - work-spot
+      - wifi
     location:
       neighborhood: West O
     notes: legit buddhist stuff
