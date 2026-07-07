@@ -17,7 +17,7 @@ items:
       - wifi
     location:
       street: 120th and Blondo
-      neighborhood: West O
+      neighborhood: West Omaha
       google_maps_url: https://maps.app.goo.gl/4qViWqoWxHpZn4oR9
   - name: Godega
     public: true
@@ -253,7 +253,7 @@ items:
       - seating
       - wifi
     location:
-      neighborhood: West O
+      neighborhood: West Omaha
     notes: legit buddhist stuff
   - public: true
     name: The Tea Smith

@@ -28,7 +28,7 @@ items:
       - label: Shows
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Project Project
     public: true
     tags:
@@ -44,7 +44,7 @@ items:
       - label: Shows
         url: https://omahaunderground.net/venues/project-project
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Floors Floors Floors
     public: false
     tags:

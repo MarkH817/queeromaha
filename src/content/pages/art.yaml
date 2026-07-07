@@ -72,7 +72,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Project Project
     public: true
     description: Punk/queer DIY space with experimental music and local art.
@@ -84,7 +84,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Tilt23
     public: true
     description: Local artists, music and market at rotating venues eg Church Art House.
@@ -94,7 +94,7 @@ items:
       - label: FB
         url: https://www.facebook.com/tilt23/
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Razor Wire Productions Open Mic
     public: false
     description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm.
@@ -105,7 +105,7 @@ items:
         url: https://www.instagram.com/razor_wire_productions/
     notes: Check it out first before listing.
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Clover24
     public: true
     description: New-ish studio and gallery space.
@@ -115,7 +115,7 @@ items:
       - label: Events Calendar
         url: https://clover24.org/events
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
     tags:
       - neutral-bathrooms
       - seating
@@ -133,7 +133,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: North O
+      neighborhood: North Omaha
   - name: Union for Contemporary Art
     public: true
     description: Exhibits, studios, classes, and talks.
@@ -142,7 +142,7 @@ items:
         url: https://www.u-ca.org/happenings
     notes: tara hasn't been there yet. trusting its chill.
     location:
-      neighborhood: North O
+      neighborhood: North Omaha
   - name: Petshop
     public: true
     description: Punk/queer space for provocative art and experimental music.
