@@ -32,7 +32,7 @@ Item fields:
 
 - `name` (required string)
 - `public: false` — hides from builds
-- `description` — rendered as markdown via `marked`
+- `description` — plain text
 - `tags` — array of keys from `src/data/tagMap.json`
 - `links` — array of `{ label, url }`
 - `notes` — internal notes (not displayed)

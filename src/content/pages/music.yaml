@@ -276,7 +276,7 @@ items:
       neighborhood: Downtown
   - name: Steelhouse
     public: true
-    description: "**NO GO** — unsafe for trans / queer folx due to bathroom police"
+    description: NO GO — unsafe for trans / queer folx due to bathroom police
     location:
       neighborhood: Downtown
   - name: Slowdown
