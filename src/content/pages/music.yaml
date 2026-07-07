@@ -275,10 +275,11 @@ items:
     location:
       neighborhood: Downtown
   - name: Steelhouse
-    public: true
-    description: NO GO — unsafe for trans / queer folx due to bathroom police
+    public: false
+    description: meh
     location:
       neighborhood: Downtown
+    notes: Tara experienced severe harassment from OFD personnel acting as EMT at Avatar show. Others were also harassed due to Karens "reporting" trans folks using the BR. Highly recommend NOT attending. Overpriced anyways. Has the corporate pride entertainment contract for some reason
   - name: Slowdown
     public: false
     description: Small-ish venue, local and larger acts. Very little seating.
