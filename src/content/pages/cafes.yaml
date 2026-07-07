@@ -48,6 +48,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Aksarben
   - name: Mill on Leavenworth
@@ -96,6 +97,7 @@ items:
         url: https://www.meetup.com/playing-games-at-spielbound/
     tags:
       - neutral-bathrooms
+      - wifi
     location:
       neighborhood: Midtown
   - name: Hardy Coffee
@@ -112,6 +114,7 @@ items:
     tags:
       - seating
       - neutral-bathrooms
+      - wifi
     location:
       neighborhood: Benson
   - name: Edge of the Universe Cafe
@@ -127,6 +130,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Benson
   - name: Legends Comics & Coffee
@@ -140,6 +144,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Benson
   - name: Blue Line Coffee
@@ -174,6 +179,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     notes: Met Owner at NZC who stated it's queer owned.
     location:
       neighborhood: Midtown
@@ -228,6 +234,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Midtown
   - name: Howlin Hounds
