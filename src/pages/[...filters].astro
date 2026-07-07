@@ -4,8 +4,6 @@ import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
 import categoryMapJson from '../data/categoryMap.json'
 import Base from '../layouts/Base.astro'
-import { buildNeighborhoods } from '../utils/neighborhoods'
-import { slugify } from '../utils/slugify'
 
 const categoryMap = categoryMapJson as Record<
     string,
@@ -15,22 +13,13 @@ const categorySlugs = Object.keys(categoryMap)
 
 export async function getStaticPaths() {
     const cats = Object.keys(categoryMapJson)
-    const entries = await getCollection('directory')
-    const neighborhoodSlugs = buildNeighborhoods(entries).map((n) => n.slug)
 
     const paths: { params: { filters: string | undefined } }[] = [
         { params: { filters: undefined } },
     ]
 
-    // Single slugs
-    for (const s of [...cats, ...neighborhoodSlugs]) {
+    for (const s of cats) {
         paths.push({ params: { filters: s } })
-    }
-    // Cat + neighborhood combos (both orderings)
-    for (const cat of cats) {
-        for (const n of neighborhoodSlugs) {
-            paths.push({ params: { filters: `${cat}/${n}` } })
-        }
     }
 
     return paths
@@ -49,30 +38,12 @@ entries.sort(
     (a, b) => categorySlugs.indexOf(a.id) - categorySlugs.indexOf(b.id),
 )
 
-const allNeighborhoods = buildNeighborhoods(entries)
-
-const neighborhoodSlugs = allNeighborhoods.map((n) => n.slug)
-const initialNeighborhoods = filterSlugs.filter((s) =>
-    neighborhoodSlugs.includes(s),
-)
-
-// Mirrors cardMatches() in scripts/filter.ts (category + neighborhood only —
-// tags are never part of a static route). This lets the server render the
-// same hidden state filter.ts would apply on load, so there's no flash of
-// the full unfiltered directory before JS hides it (a major CLS source).
-function matchesInitial(
-    item: NonNullable<(typeof entries)[number]['data']['items']>[number],
-    catId: string,
-) {
-    const catOk =
-        initialCategories.length === 0 || initialCategories.includes(catId)
-    const nbrSlug = item.location?.neighborhood
-        ? slugify(item.location.neighborhood)
-        : ''
-    const nbrOk =
-        initialNeighborhoods.length === 0 ||
-        initialNeighborhoods.includes(nbrSlug)
-    return catOk && nbrOk
+// Mirrors cardMatches() in scripts/filter.ts (category only — tags are never
+// part of a static route). This lets the server render the same hidden state
+// filter.ts would apply on load, so there's no flash of the full unfiltered
+// directory before JS hides it (a major CLS source).
+function matchesInitial(catId: string) {
+    return initialCategories.length === 0 || initialCategories.includes(catId)
 }
 
 const activeCategory = initialCategories[0]
@@ -80,46 +51,34 @@ const activeEntry = entries.find((e) => e.id === activeCategory)
 const activeCategoryHasFilters =
     !activeCategory ||
     (activeEntry?.data.items ?? []).some(
-        (item) =>
-            item.public !== false &&
-            (item.location?.neighborhood || (item.tags?.length ?? 0) > 0),
+        (item) => item.public !== false && (item.tags?.length ?? 0) > 0,
     )
-const activeNeighborhoodSlug = initialNeighborhoods[0]
-const activeNeighborhoodLabel = allNeighborhoods.find(
-    (n) => n.slug === activeNeighborhoodSlug,
-)?.label
 
 const categoryPart = activeCategory
     ? (categoryMap[activeCategory]?.descriptor ??
       categoryMap.friends.descriptor)
     : categoryMap.friends.descriptor
-const pageTitle = activeNeighborhoodLabel
-    ? `${categoryPart} in ${activeNeighborhoodLabel}`
-    : categoryPart
-
-const pageDescription = activeNeighborhoodLabel
-    ? `${categoryPart} in the ${activeNeighborhoodLabel} neighborhood of Omaha, Nebraska.`
-    : `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
+const pageTitle = categoryPart
+const pageDescription = `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
 ---
 
 <Base
   title={pageTitle}
   description={pageDescription}
   initialCategories={initialCategories}
-  initialNeighborhoods={initialNeighborhoods}
 >
-  {activeCategoryHasFilters && <FilterBar neighborhoods={allNeighborhoods} />}
+  {activeCategoryHasFilters && <FilterBar />}
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null
-    const anyVisible = publicItems.some(item => matchesInitial(item, entry.id))
+    const anyVisible = matchesInitial(entry.id)
     return (
       <section id={`section-${entry.id}`} aria-label={categoryMap[entry.id]?.label ?? entry.id}>
         <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
           <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true"></wa-icon> {categoryMap[entry.id]?.label ?? entry.id}
         </h2>
         {publicItems.map(item => (
-          <ItemCard item={item} category={entry.id} hidden={!matchesInitial(item, entry.id)} />
+          <ItemCard item={item} category={entry.id} hidden={!matchesInitial(entry.id)} />
         ))}
       </section>
     )
