@@ -1,13 +1,9 @@
 import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
 import { z } from 'zod'
+import tagMap from './data/tagMap.json'
 
-export const tagEnum = z.enum([
-    'neutral-bathrooms',
-    'seating',
-    'wifi',
-    'online',
-])
+export const tagEnum = z.enum(Object.keys(tagMap) as [string, ...string[]])
 
 export const recurringEventSchema = z.object({
     summary: z.string(),

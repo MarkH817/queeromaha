@@ -42,21 +42,10 @@ describe('astro build', () => {
         }
     })
 
-    test('robots.txt sets content-signal and sitemap', () => {
-        const robots = readFileSync(join(ROOT, 'dist', 'robots.txt'), 'utf8')
-        expect(robots).toContain('GPTBot')
-        expect(robots).toContain('Anthropic-AI')
-        expect(robots).toContain('sitemap')
-        expect(robots).toContain(
-            'Content-Signal: ai-train=no, search=yes, ai-input=yes',
-        )
-    })
-
-    test('llms.txt has appropriate fields', () => {
-        const llms = readFileSync(join(ROOT, 'dist', 'llms.txt'), 'utf8')
-        expect(llms).toContain('Queer Omaha Directory')
-        expect(llms).toContain('queeromaha.net/about')
-    })
+    // robots.txt / llms.txt content details (bot allowlist, content-signal,
+    // title/URL fields) are unit tested directly against their route
+    // handlers in test/pages/robots-txt.test.ts and llms-txt.test.ts; this
+    // file only needs to confirm the build actually emits them (above).
 
     test('_header has appropriate fields', () => {
         const headers = readFileSync(join(ROOT, 'public', '_headers'), 'utf8')

@@ -202,3 +202,5 @@ function initFilters() {
 if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', initFilters)
 else initFilters()
+
+export {}
