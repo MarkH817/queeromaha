@@ -1,5 +1,4 @@
 ---
-import { marked } from 'marked'
 import type { z } from 'zod'
 import type { itemSchema } from '../content.config'
 import tagMap from '../data/tagMap.json'
@@ -17,7 +16,6 @@ interface Props {
 }
 
 const { item, category, hidden = false } = Astro.props
-const descHtml = item.description ? marked.parse(item.description) : ''
 const tagsAttr = item.tags?.join(' ') ?? ''
 
 const loc = item.location
@@ -40,17 +38,7 @@ const postalAddress =
               ...(loc?.zip && { postalCode: loc.zip }),
           }
         : undefined
-const plainDesc = descHtml
-    ? String(descHtml)
-          .replace(/<[^>]+>/g, '')
-          .replace(/&amp;/g, '&')
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
-          .replace(/&quot;/g, '"')
-          .replace(/&#39;/g, "'")
-          .replace(/\s+/g, ' ')
-          .trim()
-    : ''
+const plainDesc = item.description?.replace(/\s+/g, ' ').trim() ?? ''
 const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -217,7 +205,7 @@ function resolveLink(link: { url: string; label: string }) {
       ) : null
     })}
   </h3>
-  {descHtml && <Fragment set:html={descHtml} />}
+  {item.description && <p>{item.description}</p>}
   {loc && locLine && (
     <p class="item-location">
       <wa-icon name="location-dot" aria-hidden="true"></wa-icon>

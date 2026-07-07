@@ -63,10 +63,12 @@ items:
       neighborhood: Midtown
   - name: Archetype Coffee
     public: true
-    description: Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/).
+    description: Best coffee in town. Lil BoHo location serves great brunch food from Know Good.
     links:
       - label: Website
         url: https://drinkarchetype.com/
+      - label: Know Good
+        url: https://knowgoodeats.com/
     tags:
       - neutral-bathrooms
       - wifi
@@ -84,12 +86,14 @@ items:
       neighborhood: Midtown
   - name: Spielbound
     public: true
-    description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
+    description: Board game cafe with an active monthly Meetup Group.
     links:
       - label: Discord
         url: https://discord.com/invite/official-spellbound-861024184947572736
       - label: Website
         url: https://www.spielbound.com/how-to-spielbound
+      - label: Meetup Group
+        url: https://www.meetup.com/playing-games-at-spielbound/
     tags:
       - neutral-bathrooms
     location:
@@ -186,7 +190,7 @@ items:
       neighborhood: Downtown
   - name: Reading Room
     public: true
-    description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
+    description: Bookstore cafe / bar with a Queer-run poetry reading open mic night. See also the Poetry Menu site.
     links:
       - label: Insta
         url: https://www.instagram.com/reading_room_omaha/
@@ -194,6 +198,10 @@ items:
         url: https://readingroomomaha.com/events/
       - label: FB
         url: https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/
+      - label: Poetry Reading
+        url: https://www.nepoetrysociety.org/spoken-word
+      - label: Poetry Menu
+        url: https://poetrymenu.com/
     tags:
       - seating
     location:
@@ -252,7 +260,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-      - work-spot
+      - wifi
     location:
       street: ""
       city: ""
