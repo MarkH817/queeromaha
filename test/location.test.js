@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'bun:test'
+import { describe, expect, test } from 'vitest'
 
 const { formatLocationLine } = await import('../src/utils/location.ts')
 

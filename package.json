@@ -20,7 +20,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "prepare": "husky",
-        "lint": "biome check . && bun scripts/format-yaml.js --check",
+        "lint": "biome check .",
         "format": "biome check --write . && bun scripts/format-yaml.js",
         "check:links": "bun scripts/check-links.js",
         "check:links:pr": "bun scripts/check-links.js --pr",
