@@ -33,7 +33,20 @@ const tags = Object.entries(
     <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
       <wa-icon name="filter-circle-xmark" aria-hidden="true"></wa-icon>
     </button>
-    {tags.map(({ slug, icon, label, family }) => (
+    {tags.filter(({ slug }) => slug !== 'online').map(({ slug, icon, label, family }) => (
+      <button
+        class="filter-pill"
+        data-filter={slug}
+        data-filter-type="tag"
+        aria-pressed="false"
+      >
+        <wa-icon name={icon} family={family} aria-hidden="true"></wa-icon>{label}
+      </button>
+    ))}
+    {tags.some(({ slug }) => slug === 'online') && (
+      <span class="filter-pill-divider" aria-hidden="true"></span>
+    )}
+    {tags.filter(({ slug }) => slug === 'online').map(({ slug, icon, label, family }) => (
       <button
         class="filter-pill"
         data-filter={slug}

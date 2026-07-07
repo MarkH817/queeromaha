@@ -552,6 +552,15 @@ blockquote p {
     gap: 0.35rem;
 }
 
+.filter-pill-divider {
+    align-self: stretch;
+    width: 1px;
+    margin: 0.2rem 0.15rem;
+    background: #c4b5fd;
+    box-shadow: 1px 0 0 rgba(124, 58, 237, 0.15);
+    flex: 0 0 auto;
+}
+
 .filter-pills--tags {
     padding-top: 0.5rem;
     margin-top: 0.15rem;
