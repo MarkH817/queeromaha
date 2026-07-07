@@ -79,141 +79,28 @@ test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
     await expect(pill).toHaveClass(/active/)
 })
 
-test('neighborhood filter pills render on the home page', async ({ page }) => {
-    await page.goto('/friends/')
-    const pills = page.locator('[data-filter-type="neighborhood"]')
-    expect(await pills.count()).toBeGreaterThan(0)
-})
-
-test('/west-o pre-activates the west-o neighborhood pill', async ({ page }) => {
-    await page.goto('/west-o/')
-    const pill = page.locator('[data-filter="west-o"]')
-    await expect(pill).toHaveClass(/active/)
-})
-
-test('clicking a neighborhood pill filters cards by data-neighborhood', async ({
-    page,
-}) => {
-    await page.goto('/cafes/')
-    const cards = page.locator('wa-card.item[data-category="cafes"]')
-    const totalCount = await cards.count()
-    expect(totalCount).toBeGreaterThan(0)
-
-    await page.locator('[data-filter="west-o"]').click()
-
-    const visibleCards = cards.filter({
-        hasNot: page.locator(':scope[hidden]'),
-    })
-    const visibleCount = await visibleCards.count()
-    expect(visibleCount).toBeGreaterThan(0)
-    expect(visibleCount).toBeLessThan(totalCount)
-    for (let i = 0; i < visibleCount; i++) {
-        expect(
-            await visibleCards.nth(i).getAttribute('data-neighborhood'),
-        ).toBe('west-o')
-    }
-})
-
-test('combining category and neighborhood pills narrows results', async ({
-    page,
-}) => {
-    await page.goto('/friends/')
-    await page.locator('[data-filter="cafes"]').click()
-    await page.locator('[data-filter="west-o"]').click()
-
-    const visibleCards = page.locator('wa-card.item:not([hidden])')
-    const count = await visibleCards.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        const card = visibleCards.nth(i)
-        expect(await card.getAttribute('data-category')).toBe('cafes')
-        expect(await card.getAttribute('data-neighborhood')).toBe('west-o')
-    }
-})
-
-test('location bar renders as a single-select segmented bar', async ({
-    page,
-}) => {
-    await page.goto('/friends/')
-    const bar = page.locator('.location-bar')
-    await expect(bar).toBeVisible()
-    const segments = bar.locator('.location-segment')
-    expect(await segments.count()).toBeGreaterThan(0)
-})
-
-test('clicking a different location segment switches directly without deactivating the first', async ({
-    page,
-}) => {
-    await page.goto('/cafes/')
-    const westO = page.locator('[data-filter="west-o"]')
-    const midtown = page.locator('[data-filter="midtown"]')
-
-    await westO.click()
-    await expect(westO).toHaveClass(/active/)
-    await expect(page).toHaveURL(/\/cafes\/west-o\/?$/)
-
-    await midtown.click()
-    await expect(midtown).toHaveClass(/active/)
-    await expect(westO).not.toHaveClass(/active/)
-    await expect(page).toHaveURL(/\/cafes\/midtown\/?$/)
-})
-
-test('tapping the active location segment again deselects it back to all locations', async ({
-    page,
-}) => {
-    await page.goto('/cafes/')
-    const westO = page.locator('[data-filter="west-o"]')
-
-    await westO.click()
-    await expect(westO).toHaveClass(/active/)
-
-    await westO.click()
-    await expect(westO).not.toHaveClass(/active/)
-    await expect(page).toHaveURL(/\/cafes\/?$/)
-})
-
-test('an unavailable location segment is disabled and not clickable', async ({
-    page,
-}) => {
+test('switching top-level category clears active tags', async ({ page }) => {
     await page.goto('/art/')
-    const westO = page.locator('[data-filter="west-o"]')
-    await expect(westO).toBeDisabled()
-    await expect(westO).toHaveClass(/unavailable/)
-})
-
-test('switching top-level category clears the active location and tags', async ({
-    page,
-}) => {
-    await page.goto('/art/')
-    const benson = page.locator('[data-filter="benson"]')
     const tag = page.locator('[data-filter="neutral-bathrooms"]')
 
-    await benson.click()
     await tag.click()
-    await expect(benson).toHaveClass(/active/)
     await expect(tag).toHaveClass(/active/)
 
     await page.locator('[data-filter="cafes"]').click()
     await expect(page).toHaveURL(/\/cafes\/?$/)
-    await expect(benson).not.toHaveClass(/active/)
     await expect(tag).not.toHaveClass(/active/)
 })
 
-test('clear button only clears tags, leaving the active location untouched', async ({
-    page,
-}) => {
+test('clear button clears active tags', async ({ page }) => {
     await page.goto('/cafes/')
-    const westO = page.locator('[data-filter="west-o"]')
     const tag = page.locator('[data-filter="neutral-bathrooms"]')
     const clearBtn = page.locator('#filterClear')
 
-    await westO.click()
     await tag.click()
     await expect(clearBtn).toBeEnabled()
 
     await clearBtn.click()
     await expect(tag).not.toHaveClass(/active/)
-    await expect(westO).toHaveClass(/active/)
     await expect(clearBtn).toBeDisabled()
 })
 
@@ -278,24 +165,6 @@ test('item cards with a location show a location-dot icon', async ({
             locations.nth(i).locator('wa-icon[name="location-dot"]'),
         ).toHaveCount(1)
     }
-})
-
-test('neighborhood segment order is stable after switching categories', async ({
-    page,
-}) => {
-    await page.goto('/friends/')
-    const getOrder = () =>
-        page
-            .locator('.location-segment')
-            .evaluateAll((els) => els.map((el) => el.dataset.filter))
-    const initialOrder = await getOrder()
-    expect(initialOrder.length).toBeGreaterThan(0)
-
-    await page.locator('[data-filter="cafes"]').click()
-    expect(await getOrder()).toEqual(initialOrder)
-
-    await page.locator('[data-filter="art"]').click()
-    expect(await getOrder()).toEqual(initialOrder)
 })
 
 test('suggestion form shows inline confirmation without navigating', async ({

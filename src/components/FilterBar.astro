@@ -1,34 +1,12 @@
 ---
 import tagMap from '../data/tagMap.json'
 
-interface Props {
-    neighborhoods?: { slug: string; label: string }[]
-}
-
-const { neighborhoods = [] } = Astro.props
-
 const tags = Object.entries(
     tagMap as Record<string, { icon: string; label: string; family?: string }>,
 ).map(([slug, { icon, label, family }]) => ({ slug, icon, label, family }))
 ---
 
 <div class="filter-bar">
-  {neighborhoods.length > 0 && (
-    <div class="location-bar" role="group" aria-label="Filter by location">
-      <div class="location-bar-scroll">
-        {neighborhoods.map(({ slug, label }) => (
-          <button
-            class="location-segment"
-            data-filter={slug}
-            data-filter-type="neighborhood"
-            aria-pressed="false"
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-    </div>
-  )}
   <div class="filter-pills filter-pills--tags" role="group" aria-label="Filter by tag">
     <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
       <wa-icon name="filter-circle-xmark" aria-hidden="true"></wa-icon>

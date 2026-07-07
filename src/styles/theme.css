@@ -119,13 +119,6 @@ header {
     box-shadow: none;
 }
 
-.main-nav wa-button.implied::part(base) {
-    background: #ede9fe;
-    border-color: #a78bfa;
-    color: #4c1d95;
-    box-shadow: none;
-}
-
 main {
     flex: 1;
     max-width: 700px;
@@ -569,61 +562,6 @@ blockquote p {
     .filter-pills::-webkit-scrollbar {
         display: none;
     }
-}
-
-.location-bar {
-    max-width: 100%;
-}
-
-.location-bar-scroll {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-}
-
-.location-segment {
-    box-sizing: border-box;
-    flex: 0 1 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    height: 2.4rem;
-    padding: 0 1rem;
-    margin: 0;
-    border: 1px solid #c4b5fd;
-    border-radius: 12px;
-    background: #f9f5ff;
-    color: #6d28d9;
-    font-size: 0.82rem;
-    font-weight: 700;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    cursor: pointer;
-    transition:
-        background 0.15s,
-        border-color 0.15s,
-        color 0.15s;
-}
-
-.location-segment:hover {
-    background: #ede9fe;
-    border-color: #a78bfa;
-}
-
-.location-segment.active {
-    background: #c4b5fd;
-    color: #4c1d95;
-    box-shadow:
-        inset 1px 1px 0 rgba(0, 0, 0, 0.1),
-        inset -1px -1px 0 rgba(255, 255, 255, 0.4);
-}
-
-.location-segment.unavailable {
-    opacity: 0.35;
-    cursor: not-allowed;
 }
 
 .filter-pill {
