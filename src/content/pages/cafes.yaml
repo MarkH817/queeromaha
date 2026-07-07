@@ -247,3 +247,24 @@ items:
     location:
       neighborhood: West O
     notes: legit buddhist stuff
+  - public: true
+    name: The Tea Smith
+    tags:
+      - neutral-bathrooms
+      - seating
+      - work-spot
+    location:
+      street: ""
+      city: ""
+      state: ""
+      zip: ""
+      google_maps_url: https://maps.app.goo.gl/9ws11mFW34a3RYkL8
+      neighborhood: Midtown
+    links:
+      - label: Website
+        url: https://www.theteasmith.com/
+      - url: https://www.instagram.com/theteasmith/
+        label: Insta
+      - label: FB
+        url: https://facebook.com/TheTeaSmith
+    description: Chill tea shop. Nice place for hanging out.

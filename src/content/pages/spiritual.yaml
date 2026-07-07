@@ -30,6 +30,8 @@ items:
         url: https://www.anandaomaha.com/brooke-monaco-wellness
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
+      - url: https://anandaomaha.as.me/schedule/80efeafb/?appointmentTypeIds%5B%5D=86384838
+        label: "PWYC Mad Folx class "
     notes: Brooke owner is chill
   - name: Honey Locust Sangha
     public: true

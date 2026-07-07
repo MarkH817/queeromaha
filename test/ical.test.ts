@@ -1,7 +1,5 @@
-import { describe, expect, test } from 'bun:test'
-
-// Import the compiled TS via Bun's native TS support
-const { generateFeedICS } = await import('../src/utils/ical.ts')
+import { describe, expect, test } from 'vitest'
+import { generateFeedICS } from '../src/utils/ical.ts'
 
 const baseEvent = {
     summary: 'Test Event',

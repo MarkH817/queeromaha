@@ -5,9 +5,10 @@ export default defineConfig({
     timeout: 30_000,
     use: {
         baseURL: 'http://localhost:4242',
+        serviceWorkers: 'block',
     },
     webServer: {
-        command: 'bunx serve dist -l 4242 -n',
+        command: 'bun run preview --port 4242',
         url: 'http://localhost:4242',
         reuseExistingServer: !process.env.CI,
         timeout: 30_000,
@@ -15,7 +16,7 @@ export default defineConfig({
     projects: [
         {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            use: devices['Desktop Chrome'],
         },
     ],
 })
