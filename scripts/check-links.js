@@ -10,6 +10,12 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseDocument } from 'yaml'
+import {
+    getHost,
+    isSkipDomain,
+    isSuspiciousRedirect,
+    normalizeUrl,
+} from './helpers/link.helper'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -34,18 +40,6 @@ const FETCH_HEADERS = {
     'Upgrade-Insecure-Requests': '1',
 }
 
-// Domains that block crawlers regardless of page status — skip dead-link
-// classification to avoid false positives
-const SKIP_DOMAINS = [
-    'facebook.com',
-    'synthomaha.net',
-    'soundryomaha.org',
-    'm.facebook.com',
-    'fb.com',
-    'linkedin.com',
-    'fifthhouseomaha.com',
-]
-
 // Platform-specific "not found" body text — returned as HTTP 200
 const SHADOW_PATTERNS = [
     { host: 'instagram.com', needle: "Sorry, this page isn't available" },
@@ -56,48 +50,10 @@ const SHADOW_PATTERNS = [
 ]
 
 // ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function normalizeUrl(url) {
-    if (typeof url === 'string' && /^@[\w.]+$/.test(url)) {
-        return `https://instagram.com/${url.slice(1)}`
-    }
-    return url
-}
-
-function getHost(url) {
-    try {
-        return new URL(url).hostname.replace(/^www\./, '')
-    } catch {
-        return ''
-    }
-}
-
-function isSkipDomain(url) {
-    const h = getHost(url)
-    return SKIP_DOMAINS.some((d) => h === d || h.endsWith(`.${d}`))
-}
-
-// Detects when a URL with a real path redirected to its bare domain root,
-// e.g. instagram.com/someuser → instagram.com/ (profile was deleted)
-function isSuspiciousRedirect(originalUrl, finalUrl) {
-    try {
-        const o = new URL(originalUrl)
-        const f = new URL(finalUrl)
-        if (o.hostname !== f.hostname) return false
-        const origPath = o.pathname.replace(/\/$/, '')
-        const finalPath = f.pathname.replace(/\/$/, '')
-        return origPath.length > 1 && finalPath === ''
-    } catch {
-        return false
-    }
-}
-
-// ---------------------------------------------------------------------------
 // Link checking
 // ---------------------------------------------------------------------------
 
+/** @param {string} url */
 async function checkLink(url) {
     if (isSkipDomain(url)) {
         return { status: 'skip', reason: 'known bot-blocking domain' }
@@ -184,6 +140,7 @@ async function checkLink(url) {
 
 // Classic worker-pool — workers share an index, JS single-thread ensures no
 // race on idx++
+/** @param {string[]} urls */
 async function checkAll(urls) {
     const results = new Array(urls.length)
     let idx = 0

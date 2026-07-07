@@ -1,12 +1,15 @@
-import { describe, expect, test } from 'bun:test'
 import { readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { describe, expect, test } from 'vitest'
 import { parse as parseYaml } from 'yaml'
+import footerMessages from '../src/data/footerMessages.json' with {
+    type: 'json',
+}
+import tagMap from '../src/data/tagMap.json' with { type: 'json' }
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const DATA_DIR = join(ROOT, 'src', 'data')
 const CONTENT_DIR = join(ROOT, 'src', 'content', 'pages')
 
 // ---------------------------------------------------------------------------
@@ -14,17 +17,13 @@ const CONTENT_DIR = join(ROOT, 'src', 'content', 'pages')
 // ---------------------------------------------------------------------------
 
 describe('footerMessages.json', () => {
-    const data = JSON.parse(
-        readFileSync(join(DATA_DIR, 'footerMessages.json'), 'utf8'),
-    )
-
     test('has a messages array', () => {
-        expect(Array.isArray(data.messages)).toBe(true)
-        expect(data.messages.length).toBeGreaterThan(0)
+        expect(Array.isArray(footerMessages.messages)).toBe(true)
+        expect(footerMessages.messages.length).toBeGreaterThan(0)
     })
 
     test('every entry has a text string', () => {
-        for (const entry of data.messages) {
+        for (const entry of footerMessages.messages) {
             expect(typeof entry.text).toBe('string')
             expect(entry.text.length).toBeGreaterThan(0)
         }
@@ -32,19 +31,17 @@ describe('footerMessages.json', () => {
 })
 
 describe('tagMap.json', () => {
-    const data = JSON.parse(readFileSync(join(DATA_DIR, 'tagMap.json'), 'utf8'))
-
     test('is a non-empty object', () => {
-        expect(typeof data).toBe('object')
-        expect(data).not.toBeNull()
-        expect(Object.keys(data).length).toBeGreaterThan(0)
+        expect(typeof tagMap).toBe('object')
+        expect(tagMap).not.toBeNull()
+        expect(Object.keys(tagMap).length).toBeGreaterThan(0)
     })
 
     test('every value has icon and label strings', () => {
-        for (const [key, value] of Object.entries(data)) {
-            expect(typeof value.icon).toBe('string', `${key} missing icon`)
+        for (const [key, value] of Object.entries(tagMap)) {
+            expect(typeof value.icon, `${key} missing icon`).toBe('string')
             expect(value.icon.length).toBeGreaterThan(0)
-            expect(typeof value.label).toBe('string', `${key} missing label`)
+            expect(typeof value.label, `${key} missing label`).toBe('string')
             expect(value.label.length).toBeGreaterThan(0)
         }
     })
@@ -55,9 +52,6 @@ describe('tagMap.json', () => {
 // ---------------------------------------------------------------------------
 
 describe('directory yaml files', () => {
-    const tagMap = JSON.parse(
-        readFileSync(join(DATA_DIR, 'tagMap.json'), 'utf8'),
-    )
     const validTags = new Set(Object.keys(tagMap))
 
     const yamlFiles = readdirSync(CONTENT_DIR).filter((f) =>
@@ -81,7 +75,7 @@ describe('directory yaml files', () => {
 
             test('all items have a name', () => {
                 for (const item of data.items) {
-                    expect(typeof item.name).toBe('string', 'item missing name')
+                    expect(typeof item.name, 'item missing name').toBe('string')
                     expect(item.name.length).toBeGreaterThan(0)
                 }
             })
@@ -90,10 +84,10 @@ describe('directory yaml files', () => {
                 for (const item of data.items) {
                     if (!item.tags) continue
                     for (const tag of item.tags) {
-                        expect(validTags.has(tag)).toBe(
-                            true,
+                        expect(
+                            validTags.has(tag),
                             `"${item.name}" uses unknown tag: ${tag}`,
-                        )
+                        ).toBe(true)
                     }
                 }
             })
@@ -102,15 +96,15 @@ describe('directory yaml files', () => {
                 for (const item of data.items) {
                     if (!item.links) continue
                     for (const link of item.links) {
-                        expect(typeof link.label).toBe(
-                            'string',
+                        expect(
+                            typeof link.label,
                             `link in "${item.name}" missing label`,
-                        )
+                        ).toBe('string')
                         expect(link.label.length).toBeGreaterThan(0)
-                        expect(typeof link.url).toBe(
-                            'string',
+                        expect(
+                            typeof link.url,
                             `link in "${item.name}" missing url`,
-                        )
+                        ).toBe('string')
                         const resolvedUrl =
                             typeof link.url === 'string' &&
                             /^@[\w.]+$/.test(link.url)
@@ -146,20 +140,20 @@ describe('directory yaml files', () => {
                 for (const item of data.items) {
                     const nbr = item.location?.neighborhood
                     if (!nbr) continue
-                    expect(VALID_NEIGHBORHOODS.has(nbr)).toBe(
-                        true,
+                    expect(
+                        VALID_NEIGHBORHOODS.has(nbr),
                         `"${item.name}" has unknown neighborhood: "${nbr}"`,
-                    )
+                    ).toBe(true)
                 }
             })
 
             test('no duplicate item names', () => {
                 const seen = new Set()
                 for (const item of data.items) {
-                    expect(seen.has(item.name)).toBe(
-                        false,
+                    expect(
+                        seen.has(item.name),
                         `duplicate item name: "${item.name}"`,
-                    )
+                    ).toBe(false)
                     seen.add(item.name)
                 }
             })
@@ -169,37 +163,34 @@ describe('directory yaml files', () => {
                     if (!item.recurring_events) continue
                     for (const evt of item.recurring_events) {
                         const ctx = `"${item.name}" recurring event "${evt.summary}"`
-                        expect(typeof evt.summary).toBe(
-                            'string',
+                        expect(
+                            typeof evt.summary,
                             `${ctx}: missing summary`,
-                        )
+                        ).toBe('string')
                         expect(evt.summary.length).toBeGreaterThan(0)
-                        expect(typeof evt.rrule).toBe(
+                        expect(typeof evt.rrule, `${ctx}: missing rrule`).toBe(
                             'string',
-                            `${ctx}: missing rrule`,
                         )
                         expect(evt.rrule.length).toBeGreaterThan(0)
-                        expect(typeof evt.dtstart).toBe(
-                            'string',
+                        expect(
+                            typeof evt.dtstart,
                             `${ctx}: missing dtstart`,
-                        )
-                        expect(evt.dtstart).toMatch(
-                            /^\d{8}$/,
+                        ).toBe('string')
+                        expect(
+                            evt.dtstart,
                             `${ctx}: dtstart must be YYYYMMDD`,
-                        )
-                        expect(typeof evt.time).toBe(
+                        ).toMatch(/^\d{8}$/)
+                        expect(typeof evt.time, `${ctx}: missing time`).toBe(
                             'string',
-                            `${ctx}: missing time`,
                         )
-                        expect(evt.time).toMatch(
+                        expect(evt.time, `${ctx}: time must be HH:MM`).toMatch(
                             /^\d{1,2}:\d{2}$/,
-                            `${ctx}: time must be HH:MM`,
                         )
                         if (evt.end_time !== undefined) {
-                            expect(evt.end_time).toMatch(
-                                /^\d{1,2}:\d{2}$/,
+                            expect(
+                                evt.end_time,
                                 `${ctx}: end_time must be HH:MM`,
-                            )
+                            ).toMatch(/^\d{1,2}:\d{2}$/)
                         }
                         if (evt.url !== undefined) {
                             expect(() => new URL(evt.url)).not.toThrow(
@@ -211,38 +202,4 @@ describe('directory yaml files', () => {
             })
         })
     }
-})
-
-// ---------------------------------------------------------------------------
-// @insta shorthand normalization
-// ---------------------------------------------------------------------------
-
-describe('@handle shorthand normalization', () => {
-    const normalize = (url) =>
-        typeof url === 'string' && /^@[\w.]+$/.test(url)
-            ? `https://instagram.com/${url.slice(1)}`
-            : url
-
-    test('expands @handle to instagram.com URL', () => {
-        expect(normalize('@sobersocials')).toBe(
-            'https://instagram.com/sobersocials',
-        )
-    })
-
-    test('expands @handle with dots and underscores', () => {
-        expect(normalize('@sober.socials_omaha')).toBe(
-            'https://instagram.com/sober.socials_omaha',
-        )
-    })
-
-    test('leaves full URLs unchanged', () => {
-        expect(normalize('https://instagram.com/sobersocials')).toBe(
-            'https://instagram.com/sobersocials',
-        )
-    })
-
-    test('leaves other non-handle strings unchanged', () => {
-        expect(normalize('https://example.com')).toBe('https://example.com')
-        expect(normalize('@')).toBe('@')
-    })
 })
