@@ -100,6 +100,22 @@ items:
       - wifi
     location:
       neighborhood: Midtown
+    recurring_events:
+      - summary: Pick Up Games — Spielbound
+        rrule: FREQ=MONTHLY;BYDAY=3SU
+        dtstart: "20250119"
+        time: 13:30
+        end_time: 16:30
+        location: Spielbound (Midtown)
+        description: Usually the 2nd or 3rd Sunday of the month — check Meetup for the exact date. Standard day pass fee applies.
+        url: https://www.meetup.com/playing-games-at-spielbound/
+      - summary: LilyPalooza Free Demo — Spielbound
+        rrule: FREQ=MONTHLY;BYDAY=-1SU
+        dtstart: "20250126"
+        time: 13:30
+        location: Spielbound (Midtown)
+        description: Free board game demo, different game each month. Demoed games get a 10% discount afterward.
+        url: https://www.meetup.com/playing-games-at-spielbound/
   - name: Hardy Coffee
     public: false
     description: Chill hipster cafe.
