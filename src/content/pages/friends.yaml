@@ -195,3 +195,9 @@ items:
       - label: LinkTree
         url: https://linktr.ee/nocoastnoise
     notes: Joe Willard runs it, Phill Smith and Nester do booking, informal, discord is main chat, revolves around project project
+    location:
+      street: 1818 Vinton St
+      city: Omaha
+      state: NE
+      zip: "68108"
+      neighborhood: South Omaha
