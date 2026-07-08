@@ -191,3 +191,221 @@ test('suggestion form shows inline confirmation without navigating', async ({
     await expect(page.locator('#suggest-thanks')).toBeVisible()
     await expect(page.locator('form[name="suggest"]')).not.toBeAttached()
 })
+
+test('suggestion form shows an error message on a failed submission', async ({
+    page,
+}) => {
+    await page.goto('/about/')
+
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 500 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('textarea[name="message"]', 'Test suggestion')
+    await page.click('button[type="submit"]')
+
+    await expect(page.locator('#suggest-error')).toBeVisible()
+    await expect(page.locator('#suggest-error')).toContainText('Try again')
+    await expect(page.locator('form[name="suggest"]')).toBeAttached()
+})
+
+test('suggestion form shows a connection error message on a network failure', async ({
+    page,
+}) => {
+    await page.goto('/about/')
+
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.abort()
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('textarea[name="message"]', 'Test suggestion')
+    await page.click('button[type="submit"]')
+
+    await expect(page.locator('#suggest-error')).toBeVisible()
+    await expect(page.locator('#suggest-error')).toContainText('connection')
+})
+
+test('/events.ics returns a valid calendar feed', async ({ request }) => {
+    const response = await request.get('/events.ics')
+    expect(response.status()).toBe(200)
+    expect(response.headers()['content-type']).toContain('text/calendar')
+
+    const body = await response.text()
+    expect(body).toContain('BEGIN:VCALENDAR')
+    expect(body).toContain('BEGIN:VEVENT')
+    expect(body).toContain('SUMMARY:')
+})
+
+test('/llms.txt returns plain text with expected content', async ({
+    request,
+}) => {
+    const response = await request.get('/llms.txt')
+    expect(response.status()).toBe(200)
+    expect(response.headers()['content-type']).toContain('text/plain')
+    expect(await response.text()).toContain('# Queer Omaha')
+})
+
+test('/robots.txt returns plain text with sitemap and content signals', async ({
+    request,
+}) => {
+    const response = await request.get('/robots.txt')
+    expect(response.status()).toBe(200)
+    expect(response.headers()['content-type']).toContain('text/plain')
+    const body = await response.text()
+    expect(body).toContain('Sitemap:')
+    expect(body).toContain('Content-Signal:')
+})
+
+test('item cards emit valid Organization JSON-LD', async ({ page }) => {
+    await page.goto('/cafes/')
+    // ItemCard.astro emits the <script> as a preceding sibling of its
+    // <wa-card>, not a child, so scope by adjacency rather than nesting.
+    const scripts = page.locator(
+        'script[type="application/ld+json"]:has(+ wa-card.item)',
+    )
+    const count = await scripts.count()
+    expect(count).toBeGreaterThan(0)
+    for (let i = 0; i < count; i++) {
+        const raw = await scripts.nth(i).innerHTML()
+        const data = JSON.parse(raw)
+        expect(data['@type']).toBe('Organization')
+        expect(typeof data.name).toBe('string')
+        expect(data.name.length).toBeGreaterThan(0)
+    }
+})
+
+test('links are ordered calendar > instagram > discord > website > facebook', async ({
+    page,
+}) => {
+    // Search a few card-heavy categories for an entry with both an
+    // instagram and a facebook link, rather than hardcoding a specific
+    // business — content changes independently of this test.
+    let found = false
+    for (const path of ['/music/', '/makers/', '/friends/', '/cafes/']) {
+        await page.goto(path)
+        const lists = page.locator('ul.entry-links')
+        const listCount = await lists.count()
+        for (let i = 0; i < listCount; i++) {
+            const list = lists.nth(i)
+            const instaIndex = await list
+                .locator('li:has(wa-icon[name="instagram"])')
+                .count()
+            const fbIndex = await list
+                .locator('li:has(wa-icon[name="facebook"])')
+                .count()
+            if (instaIndex === 0 || fbIndex === 0) continue
+
+            const iconNames = await list
+                .locator('li wa-icon')
+                .evaluateAll((els) => els.map((el) => el.getAttribute('name')))
+            const instaPos = iconNames.indexOf('instagram')
+            const fbPos = iconNames.indexOf('facebook')
+            expect(instaPos).toBeGreaterThanOrEqual(0)
+            expect(fbPos).toBeGreaterThan(instaPos)
+            found = true
+            break
+        }
+        if (found) break
+    }
+    expect(
+        found,
+        'no card with both an instagram and a facebook link was found to test ordering against',
+    ).toBe(true)
+})
+
+test('an unavailable tag pill is disabled and marked unavailable', async ({
+    page,
+}) => {
+    await page.goto('/art/')
+
+    const visibleCards = page.locator('wa-card.item:not([hidden])')
+    const cardCount = await visibleCards.count()
+    expect(cardCount).toBeGreaterThan(0)
+
+    const presentTags = new Set()
+    for (let i = 0; i < cardCount; i++) {
+        const tags = (await visibleCards.nth(i).getAttribute('data-tags')) || ''
+        for (const t of tags.split(' ').filter(Boolean)) presentTags.add(t)
+    }
+
+    const tagPills = page.locator('.filter-pill[data-filter-type="tag"]')
+    const pillCount = await tagPills.count()
+    let unavailableSlug = null
+    for (let i = 0; i < pillCount; i++) {
+        const slug = await tagPills.nth(i).getAttribute('data-filter')
+        if (slug && !presentTags.has(slug)) {
+            unavailableSlug = slug
+            break
+        }
+    }
+    expect(
+        unavailableSlug,
+        'no absent tag found on /art/ to test unavailability against',
+    ).not.toBeNull()
+
+    const pill = page.locator(`[data-filter="${unavailableSlug}"]`)
+    await expect(pill).toHaveClass(/unavailable/)
+    await expect(pill).toBeDisabled()
+})
+
+test('re-clicking the active category pill is a no-op', async ({ page }) => {
+    await page.goto('/spiritual/')
+    const tag = page.locator('[data-filter="neutral-bathrooms"]')
+    await tag.click()
+    await expect(tag).toHaveClass(/active/)
+
+    await page.locator('[data-filter="spiritual"]').click()
+
+    await expect(page).toHaveURL(/\/spiritual\/?$/)
+    await expect(tag).toHaveClass(/active/)
+})
+
+test('back-to-top button appears on scroll and returns to the top', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    const button = page.locator('#backToTop')
+
+    await page.evaluate(() => window.scrollTo(0, 2000))
+    await expect(button).toHaveClass(/show/)
+
+    await button.click()
+    await expect
+        .poll(() => page.evaluate(() => window.scrollY))
+        .toBeLessThan(50)
+})
+
+test('landing directly on /about/#suggest scrolls the section under the sticky header', async ({
+    page,
+}) => {
+    await page.goto('/about/#suggest')
+    await page.evaluate(() =>
+        Promise.all([
+            customElements.whenDefined('wa-button'),
+            customElements.whenDefined('wa-icon'),
+        ]),
+    )
+
+    const headerHeight = await page.evaluate(() =>
+        Number.parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue(
+                '--header-height',
+            ),
+        ),
+    )
+
+    await expect
+        .poll(async () => {
+            const box = await page.locator('#suggest').boundingBox()
+            return box?.y ?? Number.NaN
+        })
+        .toBeLessThan(headerHeight + 50)
+})

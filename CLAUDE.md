@@ -20,6 +20,10 @@ bun run test:e2e       # Playwright e2e only (requires built dist/)
 
 Husky hooks: lint must pass on pre-commit; all tests must pass on pre-push.
 
+Playwright defaults to the `mobile-chrome` project (`devices['Pixel 7']`) as
+the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
+(or `test:e2e:all` for both).
+
 ## Architecture
 
 Static site built with **Astro**, deployed to Netlify. Content lives as plain YAML edited directly via git. Single layout at `src/layouts/Base.astro`.
