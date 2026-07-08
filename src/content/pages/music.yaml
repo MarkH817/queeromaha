@@ -272,6 +272,42 @@ items:
     location:
       neighborhood: Downtown
       google_maps_url: https://maps.app.goo.gl/2bcSF3maPbCxcQ6B8?g_st=ic
+    recurring_events:
+      - summary: Sub_Culture — Red Light Lounge
+        rrule: FREQ=MONTHLY;BYDAY=1SA
+        dtstart: "20250104"
+        time: 21:00
+        location: Red Light Lounge (Downtown)
+        description: Start time estimated — needs verification.
+        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
+      - summary: The Slab — Red Light Lounge
+        rrule: FREQ=MONTHLY;BYDAY=2SA
+        dtstart: "20250111"
+        time: 21:00
+        location: Red Light Lounge (Downtown)
+        description: Start time estimated — needs verification.
+        url: https://www.instagram.com/omaha_goth_and_alternative/
+      - summary: Industrial Night — Red Light Lounge
+        rrule: FREQ=MONTHLY;BYDAY=3SA
+        dtstart: "20250118"
+        time: 21:00
+        location: Red Light Lounge (Downtown)
+        description: Start time estimated — needs verification.
+        url: https://www.facebook.com/clubsinthesis/
+      - summary: RAWR XD Emo Nite — Red Light Lounge
+        rrule: FREQ=MONTHLY;BYDAY=-1SA
+        dtstart: "20250125"
+        time: 21:00
+        location: Red Light Lounge (Downtown)
+        description: Start time estimated — needs verification.
+        url: https://www.instagram.com/omaha_goth_and_alternative/
+      - summary: Mourning Dolls Craft Night — Red Light Lounge
+        rrule: FREQ=WEEKLY;BYDAY=TU
+        dtstart: "20250107"
+        time: 21:00
+        location: Red Light Lounge (Downtown)
+        description: Start time estimated — needs verification.
+        url: https://www.facebook.com/TheMourningDolls/
   - name: Sokol (Admiral)
     public: false
     tags:

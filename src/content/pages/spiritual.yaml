@@ -76,6 +76,14 @@ items:
       neighborhood: South Omaha
       google_maps_url: https://maps.app.goo.gl/gHdwtFr8pqcomCvq6
       street: 20th and Vinton
+    recurring_events:
+      - summary: Sound Bath — Havalynn Russell
+        rrule: FREQ=MONTHLY;BYDAY=2SU,3SU,4SU,5SU
+        dtstart: "20250112"
+        time: 10:30
+        location: Church Art House, 20th and Vinton, South Omaha
+        description: Pay What You Can. Every Sunday except the first Sunday of the month.
+        url: https://www.instagram.com/havalynn1/
   - name: Sound Bath w/ Geoff Wertheim
     public: false
     description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM (Pay What You Can)
@@ -87,6 +95,14 @@ items:
       neighborhood: South Omaha
       google_maps_url: https://maps.app.goo.gl/gHdwtFr8pqcomCvq6
       street: 20th and Vinton
+    recurring_events:
+      - summary: Sound Bath — Geoff Wertheim
+        rrule: FREQ=MONTHLY;BYDAY=1SU
+        dtstart: "20250105"
+        time: 13:11
+        location: Church Art House, 20th and Vinton, South Omaha
+        description: Pay What You Can.
+        url: https://www.facebook.com/geoff.wertheim.9
   - name: Recovering From Religion
     public: false
     description: Resources for processing religious trauma.
