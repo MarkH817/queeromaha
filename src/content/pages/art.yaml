@@ -20,12 +20,20 @@ items:
         url: https://www.instagram.com/omahasoundry/
       - label: Events Calendar
         url: https://soundryomaha.org
+    location:
+      street: 1111 Jones St
+      city: Omaha
+      neighborhood: Downtown
   - name: Omaha Drum Family
     public: true
     description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
     links:
       - label: Events Calendar
         url: https://www.facebook.com/drumomaha/
+    location:
+      street: 4312 Camden Ave
+      city: Omaha
+      neighborhood: North Omaha
   - name: SynthOmaha Electronic Music Jam
     public: true
     description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
@@ -40,12 +48,23 @@ items:
       - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
       - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
       - Tob [Mastodon](https://mastodon.sdf.org/@tob)
+    location:
+      street: 2735 N 62nd St
+      city: Omaha
+      state: NE
+      zip: "68104"
+      neighborhood: Benson
   - name: Sowing Seeds
     public: true
     description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
     links:
       - label: Insta
         url: https://www.instagram.com/sowingseeds.omaha/
+    location:
+      street: 6068 Maple St
+      city: Omaha
+      state: NE
+      neighborhood: Benson
   - name: Alternative Publishing (Zines)
     public: true
     description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
@@ -86,6 +105,10 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 1818 Vinton St
+      city: Omaha
+      state: NE
+      zip: "68108"
       neighborhood: South Omaha
   - name: Tilt23
     public: true

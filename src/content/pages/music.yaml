@@ -44,6 +44,10 @@ items:
       - label: Shows
         url: https://omahaunderground.net/venues/project-project
     location:
+      street: 1818 Vinton St
+      city: Omaha
+      state: NE
+      zip: "68108"
       neighborhood: South Omaha
   - name: Floors Floors Floors
     public: false
@@ -74,6 +78,10 @@ items:
       - label: Shows
         url: https://omahaunderground.net/venues/shakedown-street-tavern
     location:
+      street: 2735 N 62nd St
+      city: Omaha
+      state: NE
+      zip: "68104"
       neighborhood: Benson
   - name: The Waiting Room
     public: false
