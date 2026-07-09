@@ -282,6 +282,21 @@ footer a:hover {
     text-decoration: none;
 }
 
+@media (max-width: 480px) {
+    .footer-cal {
+        order: 1;
+    }
+
+    .footer-nav {
+        order: 2;
+    }
+
+    .footer-text {
+        order: 3;
+        flex: 1 1 100%;
+    }
+}
+
 h1,
 h3 {
     margin-top: 0;
