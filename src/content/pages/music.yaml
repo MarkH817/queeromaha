@@ -2,11 +2,11 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: Flyers for Local Shows
+  - name: Omaha Underground dot net
     description: null
     public: true
     links:
-      - label: OmahaUnderground.NET
+      - label: omahaunderground.net
         url: https://omahaunderground.net/shows/
       - label: Omaha Buzz Substack
         url: https://omahabuzz.substack.com
