@@ -4,14 +4,16 @@ interface Props {
     title: string
     description?: string
     canonicalUrl: string
+    refresh?: { seconds: number; url: string }
 }
 
-const { title, description, canonicalUrl } = Astro.props
+const { title, description, canonicalUrl, refresh } = Astro.props
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {refresh && <meta http-equiv="refresh" content={`${refresh.seconds};url=${refresh.url}`} />}
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />

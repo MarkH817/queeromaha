@@ -35,11 +35,27 @@ describe('astro build', () => {
             'sitemap-index.xml',
             'llms.txt',
             '_headers',
+            '404.html',
         ]) {
             expect(existsSync(join(distDir, file)), `missing: ${file}`).toBe(
                 true,
             )
         }
+    })
+
+    test('404.html contains a link back to the directory', () => {
+        const html = readFileSync(join(ROOT, 'dist', '404.html'), 'utf8')
+        expect(html).toContain('data-notfound-link')
+        expect(html).toContain('href="/friends"')
+    })
+
+    test('_redirects sends /social and / to /friends', () => {
+        const redirects = readFileSync(
+            join(ROOT, 'public', '_redirects'),
+            'utf8',
+        )
+        expect(redirects).toMatch(/\/social\s+\/friends/)
+        expect(redirects).toMatch(/^\/\s+\/friends/m)
     })
 
     // robots.txt / llms.txt content details (bot allowlist, content-signal,
