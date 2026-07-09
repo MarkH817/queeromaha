@@ -141,9 +141,9 @@ describe('directory yaml files', () => {
                     'Midtown',
                     'Dundee',
                     'Aksarben',
-                    'North O',
-                    'South O',
-                    'West O',
+                    'North Omaha',
+                    'South Omaha',
+                    'West Omaha',
                 ])
                 for (const item of data.items) {
                     const nbr = item.location?.neighborhood
