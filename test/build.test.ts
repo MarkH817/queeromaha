@@ -58,6 +58,21 @@ describe('astro build', () => {
         expect(redirects).toMatch(/^\/\s+\/friends/m)
     })
 
+    test('dist/_redirects redirects the OmahaForUs auto-slug to its vanity_slug', () => {
+        const redirects = readFileSync(join(ROOT, 'dist', '_redirects'), 'utf8')
+        expect(redirects).toMatch(
+            /\/friends\/omaha-for-us\s+\/friends\/o4us\s+301/,
+        )
+    })
+
+    test('dist contains the OmahaForUs item permalink page', () => {
+        const itemPage = join(ROOT, 'dist', 'friends', 'o4us', 'index.html')
+        expect(existsSync(itemPage)).toBe(true)
+        const html = readFileSync(itemPage, 'utf8')
+        expect(html).toContain('data-initial-item-slug="o4us"')
+        expect(html).toContain('id="friends-o4us"')
+    })
+
     // robots.txt / llms.txt content details (bot allowlist, content-signal,
     // title/URL fields) are unit tested directly against their route
     // handlers in test/pages/robots-txt.test.ts and llms-txt.test.ts; this

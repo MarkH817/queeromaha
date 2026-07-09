@@ -4,6 +4,7 @@ import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
 import categoryMapJson from '../data/categoryMap.json'
 import Base from '../layouts/Base.astro'
+import { computeItemSlugs } from '../utils/itemSlug'
 
 const categoryMap = categoryMapJson as Record<
     string,
@@ -13,6 +14,7 @@ const categorySlugs = Object.keys(categoryMap)
 
 export async function getStaticPaths() {
     const cats = Object.keys(categoryMapJson)
+    const collectionEntries = await getCollection('directory')
 
     const paths: { params: { filters: string | undefined } }[] = [
         { params: { filters: undefined } },
@@ -20,6 +22,14 @@ export async function getStaticPaths() {
 
     for (const s of cats) {
         paths.push({ params: { filters: s } })
+
+        const entry = collectionEntries.find((e) => e.id === s)
+        const publicItems = (entry?.data.items ?? []).filter(
+            (i) => i.public !== false,
+        )
+        for (const { canonical } of computeItemSlugs(publicItems)) {
+            paths.push({ params: { filters: `${s}/${canonical}` } })
+        }
     }
 
     return paths
@@ -54,31 +64,58 @@ const activeCategoryHasFilters =
         (item) => item.public !== false && (item.tags?.length ?? 0) > 0,
     )
 
+// A permalink request is exactly `<category>/<item-slug>` — a trailing
+// segment beyond that (or one that doesn't match a known category first)
+// never resolves to an item deep link.
+const activePublicItems = (activeEntry?.data.items ?? []).filter(
+    (i) => i.public !== false,
+)
+const activeItemSlugs = computeItemSlugs(activePublicItems)
+const trailingSlug =
+    activeCategory &&
+    effectiveFilterSlugs.length === 2 &&
+    effectiveFilterSlugs[0] === activeCategory
+        ? effectiveFilterSlugs[1]
+        : undefined
+const activeItemIndex = trailingSlug
+    ? activeItemSlugs.findIndex((s) => s.canonical === trailingSlug)
+    : -1
+const activeItem =
+    activeItemIndex >= 0 ? activePublicItems[activeItemIndex] : undefined
+const initialItemSlug = activeItem ? trailingSlug : undefined
+
 const categoryPart = activeCategory
     ? (categoryMap[activeCategory]?.descriptor ??
       categoryMap.friends.descriptor)
     : categoryMap.friends.descriptor
-const pageTitle = categoryPart
-const pageDescription = `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
+const pageTitle = activeItem
+    ? `${activeItem.name} | ${categoryPart}`
+    : categoryPart
+const pageDescription = activeItem
+    ? (activeItem.description ??
+      `${activeItem.name} — ${categoryPart} in Omaha, Nebraska.`)
+    : `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
 ---
 
 <Base
   title={pageTitle}
   description={pageDescription}
   initialCategories={initialCategories}
+  initialItemSlug={initialItemSlug}
 >
   {activeCategoryHasFilters && <FilterBar />}
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null
     const anyVisible = matchesInitial(entry.id)
+    const itemSlugs = computeItemSlugs(publicItems)
     return (
       <section id={`section-${entry.id}`} aria-label={categoryMap[entry.id]?.label ?? entry.id}>
         <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
           <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true"></wa-icon> {categoryMap[entry.id]?.label ?? entry.id}
         </h2>
-        {publicItems.map(item => (
-          <ItemCard item={item} category={entry.id} hidden={!matchesInitial(entry.id)} />
+        {publicItems.map((item, i) => (
+          <ItemCard item={item} category={entry.id} slug={itemSlugs[i].canonical} hidden={!matchesInitial(entry.id)} />
         ))}
       </section>
     )

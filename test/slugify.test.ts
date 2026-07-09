@@ -22,6 +22,10 @@ describe('slugify', () => {
         expect(slugify('')).toBe('')
     })
 
+    test('splits camelCase words at lowercase-to-uppercase boundaries', () => {
+        expect(slugify('OmahaForUs')).toBe('omaha-for-us')
+    })
+
     test('intentionally collides differently-styled labels', () => {
         // Documents expected behavior: slugify is lossy, so labels that differ
         // only by case or punctuation are treated as the same neighborhood.

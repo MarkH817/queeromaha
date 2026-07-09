@@ -11,6 +11,7 @@ interface Props {
     description?: string
     initialCategories?: string[]
     initialTags?: string[]
+    initialItemSlug?: string
     refresh?: { seconds: number; url: string }
 }
 
@@ -19,6 +20,7 @@ const {
     description,
     initialCategories = [],
     initialTags = [],
+    initialItemSlug,
     refresh,
 } = Astro.props
 const pageTitle = title ? `${title} | Queer Omaha` : 'Queer Omaha'
@@ -35,6 +37,7 @@ const randomMsg =
   <body
     data-initial-categories={initialCategories.join(' ')}
     data-initial-tags={initialTags.join(' ')}
+    data-initial-item-slug={initialItemSlug ?? ''}
   >
     <SiteHeader />
     <main id="main" tabindex="-1">
@@ -48,6 +51,7 @@ const randomMsg =
       import '@awesome.me/webawesome/dist/components/icon/icon.js'
       import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js'
       import '../scripts/filter'
+      import '../scripts/permalink'
 
       // On a cold load landing directly on a hash (e.g. /about#suggest),
       // the browser's native fragment scroll can run before these Web

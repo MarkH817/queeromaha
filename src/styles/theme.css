@@ -333,6 +333,9 @@ wa-card.item::part(base) {
     box-shadow:
         3px 3px 0 #e9d5ff,
         5px 5px 0 #c4b5fd;
+    transition:
+        background-color 600ms ease,
+        border-color 600ms ease;
 }
 
 wa-card.item::part(header) {
@@ -354,6 +357,17 @@ wa-card.item::part(footer) {
     padding: 0.2rem 0.75rem 0.5rem;
     border-top: 1px solid #f3e8ff;
     background: #faf5ff;
+}
+
+wa-card.item.item-highlight::part(base) {
+    background: #ede9fe;
+    border-color: #a78bfa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    wa-card.item::part(base) {
+        transition: none;
+    }
 }
 
 .not-found {

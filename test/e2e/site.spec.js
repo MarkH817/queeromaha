@@ -409,3 +409,86 @@ test('landing directly on /about/#suggest scrolls the section under the sticky h
         })
         .toBeLessThan(headerHeight + 50)
 })
+
+test('scrolling a card into view rewrites the URL to its permalink', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    await page
+        .locator('#friends-o4us')
+        .evaluate((el) => el.scrollIntoView({ block: 'start' }))
+
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+})
+
+test('back-to-top reverts a scroll-driven permalink to the category URL', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    // OmahaForUs is the first card, so scrolling only it into view doesn't
+    // pass window.scrollY far enough to make #backToTop visible (it only
+    // shows past the header's own height — see the pre-existing "back-to-top
+    // button appears on scroll" test). Scroll further, past several cards,
+    // matching how a real user would trigger the button.
+    await page.evaluate(() => window.scrollTo(0, 2000))
+
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toMatch(/^\/friends\/[a-z0-9-]+$/)
+
+    const button = page.locator('#backToTop')
+    await expect(button).toHaveClass(/show/)
+    await button.click()
+
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends')
+})
+
+test('landing directly on an item permalink scrolls it into view and highlights it', async ({
+    page,
+}) => {
+    await page.goto('/friends/o4us/')
+    const card = page.locator('#friends-o4us')
+
+    await expect(card).toHaveClass(/item-highlight/)
+    await expect
+        .poll(async () => {
+            const box = await card.boundingBox()
+            return box?.y ?? Number.NaN
+        })
+        .toBeGreaterThanOrEqual(0)
+
+    await expect(card).not.toHaveClass(/item-highlight/, { timeout: 4000 })
+})
+
+test('item permalink highlight still applies under prefers-reduced-motion', async ({
+    page,
+}) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.goto('/friends/o4us/')
+    const card = page.locator('#friends-o4us')
+
+    await expect(card).toHaveClass(/item-highlight/)
+    await expect(card).not.toHaveClass(/item-highlight/, { timeout: 4000 })
+})
+
+test('switching category while scrolled reverts to the new category URL', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    await page
+        .locator('#friends-o4us')
+        .evaluate((el) => el.scrollIntoView({ block: 'start' }))
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+
+    await page.locator('[data-filter="cafes"]').click()
+
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/cafes')
+})

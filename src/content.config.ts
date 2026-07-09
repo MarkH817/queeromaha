@@ -29,6 +29,10 @@ export const locationSchema = z.object({
 export const itemSchema = z.object({
     name: z.string(),
     public: z.boolean().optional(),
+    // Pins the item's permalink slug (/<category>/<vanity_slug>) so it
+    // survives future renames of `name`. Falls back to a slug derived from
+    // `name` when unset.
+    vanity_slug: z.string().optional(),
     description: z.string().optional(),
     tags: z.array(tagEnum).optional(),
     links: z

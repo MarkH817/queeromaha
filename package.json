@@ -19,7 +19,7 @@
         "start": "astro dev",
         "check": "astro check",
         "serve": "astro dev",
-        "build": "astro build",
+        "build": "astro build && bun scripts/generate-redirects.mjs",
         "preview": "astro preview",
         "prepare": "husky",
         "lint": "biome check .",
