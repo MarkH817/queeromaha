@@ -7,6 +7,7 @@ import EntryTag from './EntryTag.astro'
 
 type TagMap = Record<string, { icon: string; label: string; family?: string }>
 const tags = tagMap as TagMap
+const tagOrder = Object.keys(tags)
 
 interface Props {
     item: z.infer<typeof itemSchema>
@@ -198,7 +199,9 @@ function resolveLink(link: { url: string; label: string }) {
 <wa-card class="item" id={`${category}-${slug}`} data-category={category} data-slug={slug} data-tags={tagsAttr} hidden={hidden}>
   <h3 slot="header">
     <button type="button" class="item-tap-target" aria-pressed="false">{item.name}</button>
-    {item.tags?.map(tag => {
+    {[...(item.tags ?? [])]
+      .sort((a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b))
+      .map(tag => {
       const t = tags[tag]
       return t ? (
         <EntryTag label={t.label} icon={t.icon} family={t.family} />
