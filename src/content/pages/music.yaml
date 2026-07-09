@@ -3,7 +3,7 @@ description: Live music venues, show listings, and music communities in Omaha we
 public: true
 items:
   - name: Flyers for Local Shows
-    description: Check out flyers posted up online
+    description: null
     public: true
     links:
       - label: OmahaUnderground.NET
