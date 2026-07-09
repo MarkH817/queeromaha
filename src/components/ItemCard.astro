@@ -197,7 +197,7 @@ function resolveLink(link: { url: string; label: string }) {
 <script is:inline type="application/ld+json" set:html={jsonLdStr} />
 <wa-card class="item" id={`${category}-${slug}`} data-category={category} data-slug={slug} data-tags={tagsAttr} hidden={hidden}>
   <h3 slot="header">
-    {item.name}
+    <button type="button" class="item-tap-target" aria-pressed="false">{item.name}</button>
     {item.tags?.map(tag => {
       const t = tags[tag]
       return t ? (

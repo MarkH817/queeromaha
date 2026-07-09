@@ -333,6 +333,7 @@ h2 {
 wa-card.item {
     display: block;
     margin-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 wa-card.item {
@@ -341,6 +342,17 @@ wa-card.item {
 
 wa-card.item[hidden] {
     display: none;
+}
+
+.item-tap-target {
+    all: unset;
+    cursor: pointer;
+}
+
+.item-tap-target:focus-visible {
+    outline: 3px solid #7c3aed;
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 wa-card.item::part(base) {
@@ -374,7 +386,7 @@ wa-card.item::part(footer) {
     background: #faf5ff;
 }
 
-wa-card.item.item-highlight::part(base) {
+wa-card.item.item-active::part(base) {
     background: #ede9fe;
     border-color: #a78bfa;
 }

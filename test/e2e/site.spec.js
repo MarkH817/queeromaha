@@ -442,34 +442,118 @@ test('landing directly on /about/#suggest scrolls the section under the sticky h
         .toBeLessThan(headerHeight + 50)
 })
 
-test('scrolling a card into view rewrites the URL to its permalink', async ({
+test('tapping a card rewrites the URL to its permalink and marks it active', async ({
     page,
 }) => {
     await page.goto('/friends/')
-    await page
-        .locator('#friends-o4us')
-        .evaluate((el) => el.scrollIntoView({ block: 'start' }))
+    const card = page.locator('#friends-o4us')
+    await card.locator('.item-tap-target').click()
 
     await expect
         .poll(() => page.evaluate(() => location.pathname))
         .toBe('/friends/o4us')
+    await expect(card).toHaveClass(/item-active/)
+    await expect(card.locator('.item-tap-target')).toHaveAttribute(
+        'aria-pressed',
+        'true',
+    )
 })
 
-test('back-to-top reverts a scroll-driven permalink to the category URL', async ({
+test('tapping an active card again reverts to the category URL', async ({
     page,
 }) => {
     await page.goto('/friends/')
-    // OmahaForUs is the first card, so scrolling only it into view doesn't
-    // pass window.scrollY far enough to make #backToTop visible (it only
-    // shows past the header's own height — see the pre-existing "back-to-top
-    // button appears on scroll" test). Scroll further, past several cards,
-    // matching how a real user would trigger the button.
-    await page.evaluate(() => window.scrollTo(0, 2000))
+    const card = page.locator('#friends-o4us')
+    await card.locator('.item-tap-target').click()
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+
+    await card.locator('.item-tap-target').click()
 
     await expect
         .poll(() => page.evaluate(() => location.pathname))
-        .toMatch(/^\/friends\/[a-z0-9-]+$/)
+        .toBe('/friends')
+    await expect(card).not.toHaveClass(/item-active/)
+    await expect(card.locator('.item-tap-target')).toHaveAttribute(
+        'aria-pressed',
+        'false',
+    )
+})
 
+test('clicking a link inside a card navigates instead of toggling it', async ({
+    page,
+    context,
+}) => {
+    await page.goto('/friends/')
+    const card = page.locator('#friends-o4us')
+    const link = card.getByRole('link', { name: /Events Calendar/ })
+
+    const [popup] = await Promise.all([
+        context.waitForEvent('page'),
+        link.click(),
+    ])
+    await popup.close()
+
+    await expect(page).toHaveURL(/\/friends\/?$/)
+    await expect(card).not.toHaveClass(/item-active/)
+})
+
+test('activating a card via keyboard (Enter) toggles it the same as a click', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    const card = page.locator('#friends-o4us')
+    const tapTarget = card.locator('.item-tap-target')
+    await tapTarget.focus()
+    await tapTarget.press('Enter')
+
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+    await expect(card).toHaveClass(/item-active/)
+
+    await tapTarget.press(' ')
+
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends')
+    await expect(card).not.toHaveClass(/item-active/)
+})
+
+test('clicking a different card while one is active switches directly', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    const first = page.locator('#friends-o4us')
+    await first.locator('.item-tap-target').click()
+    await expect(first).toHaveClass(/item-active/)
+
+    const other = page
+        .locator('wa-card.item[data-category="friends"]:not(#friends-o4us)')
+        .first()
+    await other.locator('.item-tap-target').click()
+
+    await expect(first).not.toHaveClass(/item-active/)
+    await expect(other).toHaveClass(/item-active/)
+    const otherSlug = await other.getAttribute('data-slug')
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe(`/friends/${otherSlug}`)
+})
+
+test('back-to-top reverts an active card permalink to the category URL', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    await page.locator('#friends-o4us').locator('.item-tap-target').click()
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+
+    // Scroll deep so #backToTop clears its visibility threshold (see the
+    // pre-existing "back-to-top button appears on scroll" test).
+    await page.evaluate(() => window.scrollTo(0, 2000))
     const button = page.locator('#backToTop')
     await expect(button).toHaveClass(/show/)
     await button.click()
@@ -477,43 +561,44 @@ test('back-to-top reverts a scroll-driven permalink to the category URL', async 
     await expect
         .poll(() => page.evaluate(() => location.pathname))
         .toBe('/friends')
+    await expect(page.locator('#friends-o4us')).not.toHaveClass(/item-active/)
 })
 
-test('landing directly on an item permalink scrolls it into view and highlights it', async ({
+test('landing directly on an item permalink scrolls it into view and marks it active', async ({
     page,
 }) => {
     await page.goto('/friends/o4us/')
     const card = page.locator('#friends-o4us')
 
-    await expect(card).toHaveClass(/item-highlight/)
+    await expect(card).toHaveClass(/item-active/)
+    await expect(card.locator('.item-tap-target')).toHaveAttribute(
+        'aria-pressed',
+        'true',
+    )
     await expect
         .poll(async () => {
             const box = await card.boundingBox()
             return box?.y ?? Number.NaN
         })
         .toBeGreaterThanOrEqual(0)
-
-    await expect(card).not.toHaveClass(/item-highlight/, { timeout: 4000 })
 })
 
-test('item permalink highlight still applies under prefers-reduced-motion', async ({
+test('item permalink active state still applies under prefers-reduced-motion', async ({
     page,
 }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.goto('/friends/o4us/')
     const card = page.locator('#friends-o4us')
 
-    await expect(card).toHaveClass(/item-highlight/)
-    await expect(card).not.toHaveClass(/item-highlight/, { timeout: 4000 })
+    await expect(card).toHaveClass(/item-active/)
 })
 
-test('switching category while scrolled reverts to the new category URL', async ({
+test('switching category while a card is active clears its active state', async ({
     page,
 }) => {
     await page.goto('/friends/')
-    await page
-        .locator('#friends-o4us')
-        .evaluate((el) => el.scrollIntoView({ block: 'start' }))
+    const card = page.locator('#friends-o4us')
+    await card.locator('.item-tap-target').click()
     await expect
         .poll(() => page.evaluate(() => location.pathname))
         .toBe('/friends/o4us')
@@ -523,4 +608,5 @@ test('switching category while scrolled reverts to the new category URL', async 
     await expect
         .poll(() => page.evaluate(() => location.pathname))
         .toBe('/cafes')
+    await expect(card).not.toHaveClass(/item-active/)
 })

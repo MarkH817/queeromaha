@@ -1,17 +1,5 @@
-const HIGHLIGHT_MS = 2000
-// Height of the observed "line" just below the header. Not a literal 1px
-// line — scroll-landing positions (from scrollIntoView, touch momentum,
-// device pixel ratio rounding) can miss a 1px target by several px, so the
-// strip needs enough tolerance to reliably catch a card passing through it.
-const LINE_HEIGHT = 24
-
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-}
-
-function highlight(el: HTMLElement) {
-    el.classList.add('item-highlight')
-    setTimeout(() => el.classList.remove('item-highlight'), HIGHLIGHT_MS)
 }
 
 function categoryUrl() {
@@ -30,27 +18,14 @@ function initDeepLink(): { category: string; slug: string } | null {
     return { category, slug }
 }
 
-function scrollToDeepLink(seed: { category: string; slug: string }) {
-    const target = document.getElementById(`${seed.category}-${seed.slug}`)
-    if (!target) return
-    target.scrollIntoView({
-        block: 'start',
-        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
-    })
-    highlight(target)
-}
-
-function initScrollObserver(
-    seed: { category: string; slug: string } | null,
-    headerEl: HTMLElement,
-) {
+function initTapToggle() {
     const cards = document.querySelectorAll<HTMLElement>(
         'wa-card.item[data-slug]',
     )
-    if (cards.length === 0) return
+    if (cards.length === 0) return null
 
-    let lastWrittenUrl = seed ? location.pathname : null
-    let currentSlug = seed?.slug ?? null
+    let lastWrittenUrl: string | null = null
+    let activeCard: HTMLElement | null = null
 
     function writeUrl(url: string) {
         if (url === lastWrittenUrl) return
@@ -58,87 +33,86 @@ function initScrollObserver(
         history.replaceState({}, '', url)
     }
 
-    let observer: IntersectionObserver
+    function clearActive() {
+        if (!activeCard) return
+        activeCard.classList.remove('item-active')
+        activeCard
+            .querySelector('.item-tap-target')
+            ?.setAttribute('aria-pressed', 'false')
+        activeCard = null
+    }
 
-    // The observed "line" is a thin strip just below the header, built from
-    // the header's live measured height rather than the async
-    // --header-height CSS var (SiteHeader.astro's own ResizeObserver hasn't
-    // necessarily fired yet by the time this runs, e.g. before the
-    // wa-button/wa-icon custom elements upgrade and grow the header).
-    function buildObserver(top: number) {
-        const bottomMargin = Math.max(window.innerHeight - top - LINE_HEIGHT, 0)
-        return new IntersectionObserver(
-            (entries) => {
-                for (const entry of entries) {
-                    const card = entry.target as HTMLElement
-                    const slug = card.dataset.slug
-                    if (!slug) continue
-
-                    if (entry.isIntersecting) {
-                        currentSlug = slug
-                        writeUrl(`/${card.dataset.category}/${slug}`)
-                        continue
-                    }
-
-                    // Only revert when the currently active card left the
-                    // line by moving back below it (user scrolled up past
-                    // it) — not when it exits above the line as normal
-                    // forward scroll progress hands off to the next card.
-                    if (
-                        slug === currentSlug &&
-                        entry.boundingClientRect.top > top + LINE_HEIGHT
-                    ) {
-                        currentSlug = null
-                        writeUrl(categoryUrl())
-                    }
-                }
-            },
-            {
-                rootMargin: `-${top}px 0px -${bottomMargin}px 0px`,
-                threshold: 0,
-            },
+    function activate(card: HTMLElement, opts?: { scroll?: boolean }) {
+        if (activeCard && activeCard !== card) clearActive()
+        activeCard = card
+        card.classList.add('item-active')
+        card.querySelector('.item-tap-target')?.setAttribute(
+            'aria-pressed',
+            'true',
         )
+        writeUrl(`/${card.dataset.category}/${card.dataset.slug}`)
+
+        if (opts?.scroll) {
+            card.scrollIntoView({
+                block: 'start',
+                behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+            })
+        }
     }
 
-    function rebuild(top: number) {
-        observer?.disconnect()
-        observer = buildObserver(top)
-        cards.forEach((card) => {
-            observer.observe(card)
+    function deactivate() {
+        clearActive()
+        writeUrl(categoryUrl())
+    }
+
+    function toggle(card: HTMLElement) {
+        if (card === activeCard) deactivate()
+        else activate(card)
+    }
+
+    cards.forEach((card) => {
+        // Delegated: the real activation target is `.item-tap-target`
+        // (a native <button> so Enter/Space work for free), but a click
+        // anywhere on the card except a real link (map/entry links) should
+        // toggle it too, so this listens on the card itself.
+        card.addEventListener('click', (e) => {
+            if ((e.target as HTMLElement).closest('a')) return
+            toggle(card)
         })
-    }
-
-    rebuild(headerEl.getBoundingClientRect().height)
-
-    // Re-derive the line whenever the header's actual rendered height
-    // changes — custom-element upgrade, nav pills wrapping, or a viewport
-    // resize/rotation all resize the header directly.
-    new ResizeObserver(() => {
-        rebuild(headerEl.getBoundingClientRect().height)
-    }).observe(headerEl)
+    })
 
     const backToTop = document.getElementById('backToTop')
-    backToTop?.addEventListener('click', () => {
-        currentSlug = null
-        writeUrl(categoryUrl())
-    })
+    backToTop?.addEventListener('click', deactivate)
+
+    // Filter-pill clicks already rewrite the URL via filter.ts's own
+    // pushState; this only needs to clear the (now stale) active card's
+    // visual state, not write a URL of its own.
+    document
+        .querySelectorAll<HTMLElement>('[data-filter], #filterClear')
+        .forEach((el) => {
+            el.addEventListener('click', clearActive)
+        })
+
+    return { activate }
 }
 
 function init() {
-    const headerEl = document.querySelector<HTMLElement>('header')
-    if (!headerEl) return
-
     const seed = initDeepLink()
+    const controls = initTapToggle()
+    if (!controls) return
 
-    Promise.all([
-        customElements.whenDefined('wa-card'),
-        customElements.whenDefined('wa-button'),
-        customElements.whenDefined('wa-icon'),
-    ]).then(() => {
-        if (seed) scrollToDeepLink(seed)
-    })
-
-    initScrollObserver(seed, headerEl)
+    if (seed) {
+        Promise.all([
+            customElements.whenDefined('wa-card'),
+            customElements.whenDefined('wa-button'),
+            customElements.whenDefined('wa-icon'),
+        ]).then(() => {
+            const target = document.getElementById(
+                `${seed.category}-${seed.slug}`,
+            )
+            if (target) controls.activate(target, { scroll: true })
+        })
+    }
 }
 
 if (document.readyState === 'loading')
