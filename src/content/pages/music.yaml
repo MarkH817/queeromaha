@@ -2,13 +2,13 @@ title: Music Events / Venues
 description: Live music venues, show listings, and music communities in Omaha welcoming to queer folks.
 public: true
 items:
-  - name: Local Music
-    description: Omaha has an awesome local music scene!
+  - name: Flyers for Local Shows
+    description: Check out flyers posted up online
     public: true
     links:
       - label: OmahaUnderground.NET
         url: https://omahaunderground.net/shows/
-      - label: Omaha Buzz substack
+      - label: Omaha Buzz Substack
         url: https://omahabuzz.substack.com
     tags:
       - online
@@ -19,13 +19,13 @@ items:
       - seating
     description: Nexus of punks, electronic synthesists, shoegaze aficionados and acoustic singer-songwriters. Clay throwing classes, kiln and glazing.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/thechurcharthouse/
       - label: Website
         url: https://www.thechurcharthouse.love/
       - label: FB
         url: https://www.facebook.com/thechurcharthouse/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
       neighborhood: South Omaha
@@ -35,13 +35,13 @@ items:
       - neutral-bathrooms
     description: Punk DIY space for experimental music and local art.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/weareprojectproject/
       - label: Website
         url: https://projectprojectomaha.com/
       - label: FB
         url: https://www.facebook.com/weareprojectproject/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/project-project
     location:
       street: 1818 Vinton St
@@ -56,9 +56,9 @@ items:
       - seating
     description: Gallery and events space with local music and queer markets.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/floorsfloorsfloors_7052maple/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/floors-floors-floors
     notes: per sources, venue is not able to host public events due to landlords
     location:
@@ -69,13 +69,13 @@ items:
       - neutral-bathrooms
     description: Dive bar next to Petshop with drag / burlesque shows and music.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/shakedownstreettavern/
       - label: Website
         url: https://www.facebook.com/shakedownstreettavern/
       - label: FB
         url: https://www.facebook.com/shakedownstreettavern/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/shakedown-street-tavern
     location:
       street: 2735 N 62nd St
@@ -99,7 +99,7 @@ items:
     links:
       - label: Website
         url: https://www.reverblounge.com/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/reverb-lounge
     location:
       neighborhood: Benson
@@ -111,7 +111,7 @@ items:
     links:
       - label: Website
         url: https://thesydneybenson.com/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/the-sydney
     location:
       neighborhood: Benson
@@ -126,50 +126,58 @@ items:
       Goth club at the old Down Under address. Punk / darkwave / industrial shows.
 
       Noir Omaha hosts a goth night every Second Saturday - 8PM to close
-
-      Extremely popular, expect long lines. Get there early as in 6PM
     links:
-      - label: Coven's Insta
+      - label: Coven's Instagram
         url: https://www.instagram.com/covenbaromaha/
       - label: Coven's Website
         url: https://covenomaha.com/
-      - label: Noir's Insta
+      - label: Noir's Instagram
         url: https://www.instagram.com/noiromaha/
       - label: Noir's FB
         url: https://www.facebook.com/NoirOmaha/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/the-coven
+    recurring_events:
+      - summary: Club Noir - 2nd Saturday
+        rrule: FREQ=MONTHLY;BYDAY=1SA
+        dtstart: "20250104"
+        time: 20:00
+        location: The Coven (Midtown Omaha)
+        description: Noir Omaha dark dance party
+        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
     notes: DJ Cemetery Gates, Courtney Noir, Ex-Lover
   - name: Pageturners Lounge
     public: true
     description: Bookish bar with local acts.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/pageturnerslounge/
       - label: FB
         url: https://www.facebook.com/pageturnerslounge/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/pageturners-lounge
     location:
       neighborhood: Midtown
-  - name: O'Leaver's Pub and Sand Volleyball
+  - name: O'Leaver's Pub
     public: true
     description: |
-      Legendary dive bar with small stage and great local / regional acts. Bathrooms nigh unusable.
+      Legendary dive bar.
 
       Did you know it's owned by members of the band Cursive?
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/oleavers/
       - label: FB
         url: https://www.facebook.com/oleavers/
-      - label: Shows
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/oleavers
     location:
       neighborhood: Midtown
+      street: 1322 S Saddle Creek Rd
+      google_maps_url: https://maps.app.goo.gl/rTFvGUmtLVLDBUdo7
   - name: B Bar
     public: true
-    description: Long-running blues shows and local acts.
+    description: Hosts blues shows and local acts.
     links:
       - label: Website
         url: https://www.thebbaromaha.com/
@@ -177,6 +185,8 @@ items:
         url: https://www.facebook.com/TheB.BarOmaha
     location:
       neighborhood: Midtown
+      street: 4330 Leavenworth St
+      google_maps_url: https://maps.app.goo.gl/QwH6vhKf8Th1e9QM8
   - name: Joslyn Castle Carriage House
     public: true
     tags:
@@ -186,7 +196,7 @@ items:
 
       Cool arts, punk-adjacent, electronic / experimental music.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/joslyncastle/
       - label: Website
         url: https://www.joslyncastle.com/events/
@@ -199,7 +209,7 @@ items:
       - seating
     description: Vegan restaurant in Blackstone with resident DJs performing on Saturdays.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/fifthhouseveg/
       - label: Website
         url: https://www.fifthhouseomaha.com/
@@ -219,7 +229,7 @@ items:
     public: false
     description: Indie venue @ Someone's house. Ask around.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/thefoxholeomaha/
     notes: May be on hiatus. Gifford Park
     location:
@@ -252,62 +262,60 @@ items:
         url: https://www.bemiscenter.org/low-end
     location:
       neighborhood: Downtown
-  - name: Red Light Lounge (fka The Verdict)
+  - name: The Verdict Bar
     public: true
     description: Hub of industrial and darkwave scene
     links:
-      - label: Sub_Culture (1st Saturdays)
-        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
       - label: The Slab (2nd Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
       - label: Industrial Night (3rd Saturdays)
-        url: https://www.facebook.com/clubsinthesis/
+        url: https://www.instagram.com/clubsinthesis
       - label: RAWR XD Emo Nite (Last Saturdays)
         url: https://www.instagram.com/omaha_goth_and_alternative/
-      - label: Mourning Dolls Craft Night(every Tuesday)
-        url: https://www.facebook.com/TheMourningDolls/
-      - label: OmahaUnderground Events
+      - label: CRYPT - for Elder Goths
+        url: https://www.instagram.com/dj_barrens/
+      - label: Show Flyers
         url: https://omahaunderground.net/venues/red-light-lounge
-    notes: Rebranded circa late 2025, apparently same owners. DJ Barrens and Jacob (sadonaut) run industrial. Club Noir moved from Verdict to Coven circa spring 2026.
+    notes: |
+      Substance seems to have moved to KY circa summer '26
+      Verdict was Rebranded circa late 2025 then apparently back summer '26
+      DJ Barrens (Jamie) and sadonaut (Jacob)run Industrial night
+        https://www.facebook.com/people/DJ-Barrens/61550865748905/
+        https://www.instagram.com/dj_barrens/
+      BPM (Austin in Lincoln) DJs often
+        https://www.facebook.com/people/BPM-Nebraska/61560865016455/ 
+      DJ Nevermore DJs often
+        https://www.facebook.com/NevermoreBaltimore
+        https://www.instagram.com/dj_nevermore
+      DJ Lusterdust runs Slab https://www.facebook.com/people/Luster-Dust/61578897208508/
+
+      Club Noir moved from there to Coven circa spring 2026.
     location:
       neighborhood: Downtown
+      street: 1901 Harney St
       google_maps_url: https://maps.app.goo.gl/2bcSF3maPbCxcQ6B8?g_st=ic
     recurring_events:
-      - summary: Sub_Culture — Red Light Lounge
-        rrule: FREQ=MONTHLY;BYDAY=1SA
-        dtstart: "20250104"
-        time: 21:00
-        location: Red Light Lounge (Downtown)
-        description: Start time estimated — needs verification.
-        url: https://www.facebook.com/p/SubstanceDance-61576287426668/
-      - summary: The Slab — Red Light Lounge
+      - summary: The Slab — Darkwave / Rock / Goth
         rrule: FREQ=MONTHLY;BYDAY=2SA
         dtstart: "20250111"
         time: 21:00
-        location: Red Light Lounge (Downtown)
-        description: Start time estimated — needs verification.
-        url: https://www.instagram.com/omaha_goth_and_alternative/
-      - summary: Industrial Night — Red Light Lounge
+        location: The Verdict (Downtown Omaha)
+        description: Goth and darkwave dance party
+        url: https://www.instagram.com/slab_goth_night_omaha
+      - summary: Industrial Night — EBM / Heavy Beats
         rrule: FREQ=MONTHLY;BYDAY=3SA
         dtstart: "20250118"
         time: 21:00
-        location: Red Light Lounge (Downtown)
-        description: Start time estimated — needs verification.
+        location: The Verdict (Downtown Omaha)
+        description: Cyberpunk / industrial dance party
         url: https://www.facebook.com/clubsinthesis/
-      - summary: RAWR XD Emo Nite — Red Light Lounge
+      - summary: RAWR XD Emo Nite — Emo / Alternative / Punk
         rrule: FREQ=MONTHLY;BYDAY=-1SA
         dtstart: "20250125"
         time: 21:00
-        location: Red Light Lounge (Downtown)
-        description: Start time estimated — needs verification.
+        location: The Verdict (Downtown Omaha)
+        description: Emo Nite
         url: https://www.instagram.com/omaha_goth_and_alternative/
-      - summary: Mourning Dolls Craft Night — Red Light Lounge
-        rrule: FREQ=WEEKLY;BYDAY=TU
-        dtstart: "20250107"
-        time: 21:00
-        location: Red Light Lounge (Downtown)
-        description: Start time estimated — needs verification.
-        url: https://www.facebook.com/TheMourningDolls/
   - name: Sokol (Admiral)
     public: false
     tags:
@@ -330,7 +338,7 @@ items:
     links:
       - label: Calendar
         url: https://theslowdown.com/events/
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/theslowdown/
       - label: FB
         url: https://www.facebook.com/theslowdown

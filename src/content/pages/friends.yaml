@@ -67,7 +67,7 @@ items:
         location: OmahaForUs LGBTQIA* Center
         description: Open Monthly volunteer day - Register via the Doodle poll posted on the event page.
         url: https://omahafor.us/events-calendar
-  - name: Wild Garden Insta
+  - name: Wild Garden Instagram
     public: false
     description: Social group
     links:
@@ -92,7 +92,7 @@ items:
     links:
       - label: Facebook
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/river.dazeco/
   - name: Out Wild Adventures
     public: true
@@ -160,7 +160,7 @@ items:
     public: true
     description: Runs Queer Prom!
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/unoqts/
       - label: Website
         url: https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php
@@ -186,7 +186,7 @@ items:
     public: true
     description: Experimental music and sound art collective. Centered out of Project Project.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/nocoastnoise/
       - label: Website
         url: https://www.nocoastnoise.net/

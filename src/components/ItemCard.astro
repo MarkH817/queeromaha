@@ -55,7 +55,7 @@ type LinkRule = {
     match: (url: string, label: string) => boolean
 }
 
-// Canonical, fixed footer display order: calendar/events/schedule, Insta,
+// Canonical, fixed footer display order: calendar/events/schedule, Instagram,
 // Discord, Website, FB. Everything else keeps its original YAML order,
 // appended after (see canonicalRank / resolveLink below).
 const linkRules: LinkRule[] = [
@@ -65,7 +65,8 @@ const linkRules: LinkRule[] = [
         match: (_u, l) =>
             l.includes('event') ||
             l.includes('calendar') ||
-            l.includes('shows') ||
+            l.includes('show') ||
+            l.includes('flyer') ||
             l.includes('schedule'),
     },
     {

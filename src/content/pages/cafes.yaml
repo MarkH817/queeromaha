@@ -6,7 +6,7 @@ items:
     public: true
     description: Great people, coffee and pastries both in Aksarben / 120th and Blondo.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/roast_coffeehouse/
       - label: Website
         url: https://www.ahillofbeans.com/pages/roast-coffeehouse
@@ -23,7 +23,7 @@ items:
     public: true
     description: Grab-and-go food, specialty snacks, and a place to hang out
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/godegamarket/
       - label: Website
         url: https://godegamarket.com/
@@ -39,7 +39,7 @@ items:
     public: true
     description: Artisanal goods and crafts.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/marigoldsmercantile/
       - label: Website
         url: https://www.marigoldsmercantile.com/
@@ -79,7 +79,7 @@ items:
     public: true
     description: Queer-owned pastry shop.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/sweetmagnoliasbakeshop/
       - label: Website
         url: https://www.sweetmagnoliasbakeshop.com/
@@ -120,7 +120,7 @@ items:
     public: false
     description: Chill hipster cafe.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/hardycoffeeco/
       - label: FB
         url: https://www.facebook.com/hardycoffeeco/
@@ -137,7 +137,7 @@ items:
     public: true
     description: Truly unique place with artist owners. Great date spot.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/edgeuniversebff/
       - label: Events Calendar
         url: https://www.edgeoftheuniverseomaha.com/
@@ -153,7 +153,7 @@ items:
     public: true
     description: Comic shop with a large queer section. Board game space in the back.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/legendcomicsandcoffee/
       - label: FB
         url: https://www.facebook.com/LegendComics/
@@ -167,7 +167,7 @@ items:
     public: true
     description: Dundee cafe with huge flyer board.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/bluelinecoffeeomaha/
       - label: FB
         url: https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727
@@ -186,7 +186,7 @@ items:
     public: true
     description: Small place whose takeout coffee comes in glass containers with deposit.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/amateurcoffee/
       - label: Website
         url: https://www.amateurcoffee.com/
@@ -214,7 +214,7 @@ items:
     public: true
     description: Bookstore cafe / bar with a Queer-run poetry reading open mic night. See also the Poetry Menu site.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/reading_room_omaha/
       - label: Events Calendar
         url: https://readingroomomaha.com/events/
@@ -241,7 +241,7 @@ items:
     public: true
     description: Downtown and West O locations.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/zencoffeeco/
       - label: FB
         url: https://www.facebook.com/zencoffeecompany/
@@ -256,7 +256,7 @@ items:
   - name: Howlin Hounds
     public: false
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/howlinhounds/
     notes: Recommended, haven't been there.
     location:
@@ -265,7 +265,7 @@ items:
     public: true
     description: Buddhist themed cafe with vegan options and authentic thangkas.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/karma_koffee/
       - label: Website
         url: https://www.karmakoffee.com/
@@ -295,7 +295,7 @@ items:
       - label: Website
         url: https://www.theteasmith.com/
       - url: https://www.instagram.com/theteasmith/
-        label: Insta
+        label: Instagram
       - label: FB
         url: https://facebook.com/TheTeaSmith
     description: Chill tea shop. Nice place for hanging out.

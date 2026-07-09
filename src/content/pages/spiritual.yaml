@@ -9,7 +9,7 @@ items:
     public: false
     description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga (Pay What You Can)
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/dawaune.one/
     location:
       neighborhood: Midtown
@@ -28,7 +28,7 @@ items:
     links:
       - label: Class Schedule
         url: https://www.anandaomaha.com/brooke-monaco-wellness
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/ananda.omaha/
       - url: https://anandaomaha.as.me/schedule/80efeafb/?appointmentTypeIds%5B%5D=86384838
         label: "PWYC Mad Folx class "
@@ -70,7 +70,7 @@ items:
     public: true
     description: Get stratospheric with Havalynn at Church Art House Sundays @ 10:30AM (besides the first Sunday) (Pay What You Can)
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/havalynn1/
     location:
       neighborhood: South Omaha

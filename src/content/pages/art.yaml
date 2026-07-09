@@ -7,7 +7,7 @@ items:
     notes: potentially inactive circa spring 2026
     description: Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/sobersocialsomaha/
   - name: Soundry w/ Stacey Barelos
     public: true
@@ -16,7 +16,7 @@ items:
       - neutral-bathrooms
       - seating
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/omahasoundry/
       - label: Events Calendar
         url: https://soundryomaha.org
@@ -53,7 +53,7 @@ items:
         url: https://synthomaha.net/
     notes: |
       Members with social presence:
-      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
+      - Aaron Gum [Instagram](https://www.instagram.com/aarongum/)
       - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
       - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
       - Tob [Mastodon](https://mastodon.sdf.org/@tob)
@@ -76,7 +76,7 @@ items:
     public: true
     description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/sowingseeds.omaha/
     location:
       street: 6068 Maple St
@@ -96,7 +96,7 @@ items:
     public: true
     description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/altpubomaha/
   - name: SoundArte
     public: false
@@ -104,7 +104,7 @@ items:
     links:
       - label: Website
         url: https://soundarte.net
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/soundarte.mx/
       - label: Music Label
         url: https://eacrecords.bandcamp.com/
@@ -113,7 +113,7 @@ items:
     public: true
     description: Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/thechurcharthouse/
       - label: Events Calendar
         url: https://www.thechurcharthouse.love/schedule
@@ -125,7 +125,7 @@ items:
     public: true
     description: Punk/queer DIY space with experimental music and local art.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/weareprojectproject/
       - label: Events Calendar
         url: https://projectprojectomaha.com/current-show
@@ -141,7 +141,7 @@ items:
     public: true
     description: Local artists, music and market at rotating venues eg Church Art House.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/tilt23showcase/
       - label: FB
         url: https://www.facebook.com/tilt23/
@@ -153,7 +153,7 @@ items:
     links:
       - label: FB
         url: https://www.facebook.com/poetiklee77/
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/razor_wire_productions/
     notes: Check it out first before listing.
     location:
@@ -162,7 +162,7 @@ items:
     public: true
     description: New-ish studio and gallery space.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/clover24omaha/
       - label: Events Calendar
         url: https://clover24.org/events
@@ -175,7 +175,7 @@ items:
     public: true
     description: Black-owned community space for shows and art events.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/culxrhouse/
       - label: FB
         url: https://www.facebook.com/culxrhouse/
@@ -199,7 +199,7 @@ items:
     public: true
     description: Punk/queer space for provocative art and experimental music.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/petshopgallery/
       - label: Website
         url: https://www.bffomaha.org/petshop
@@ -221,7 +221,7 @@ items:
     public: true
     description: Cool punk gallery. My art was in it!
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/thebffgallery/
     location:
       neighborhood: Benson
@@ -229,7 +229,7 @@ items:
     public: true
     description: Cozy gallery next to Edge of the Universe.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/mingtoygallery/
       - label: Website
         url: https://www.mingtoygallery.com/
@@ -249,7 +249,7 @@ items:
     public: true
     description: Mobile gallery often parked near Petshop showing local artists.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/bffmamo/
       - label: Website
         url: https://www.bffomaha.org/mamo
@@ -329,7 +329,7 @@ items:
     links:
       - label: Website
         url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
-      - label: Garden of the Zodiac Insta
+      - label: Garden of the Zodiac Instagram
         url: https://www.instagram.com/gardenofthezodiac/
     notes: possibly too normie. willing to entertain arguments as per its queerness
     location:
@@ -358,7 +358,7 @@ items:
     public: true
     description: Cutting-edge museum with resident artists, the Low End music series and major installations.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/bemiscenter/
       - label: Events Calendar
         url: https://www.bemiscenter.org/low-end
@@ -370,7 +370,7 @@ items:
     public: true
     description: Glassblowing studio with classes and events.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/hotshopsartcenter/
       - label: Events Calendar
         url: https://hotshopsartcenter.org/events/
@@ -382,7 +382,7 @@ items:
     public: false
     description: Apartment complex with art showings, music shows and business-y mixers
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/millworkcommons/
       - label: Events Calendar
         url: https://millworkcommons.com/events/
