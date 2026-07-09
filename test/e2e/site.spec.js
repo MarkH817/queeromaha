@@ -128,6 +128,38 @@ test('footer elements render correctly', async ({ page }) => {
     ).toBeVisible()
 })
 
+test('calendar and suggestion box buttons stay on the same row on mobile', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 412, height: 839 })
+    await page.goto('/friends/')
+
+    const calBox = await page.locator('.footer-cal a').boundingBox()
+    const navBox = await page
+        .locator('.footer-nav a[href="/about#suggest"]')
+        .boundingBox()
+
+    expect(calBox.y).toBeCloseTo(navBox.y, 0)
+})
+
+test('calendar and suggestion box stay on one row even if footer message is not yet hidden', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 412, height: 839 })
+    await page.goto('/friends/')
+
+    await page.evaluate(() => {
+        document.querySelector('.footer-text').hidden = false
+    })
+
+    const calBox = await page.locator('.footer-cal a').boundingBox()
+    const navBox = await page
+        .locator('.footer-nav a[href="/about#suggest"]')
+        .boundingBox()
+
+    expect(calBox.y).toBeCloseTo(navBox.y, 0)
+})
+
 test('footer message is visible and unclipped on wide screens', async ({
     page,
 }) => {
