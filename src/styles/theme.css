@@ -380,9 +380,7 @@ wa-card.item {
     box-shadow:
         2px 2px 0 #e9d5ff,
         3px 3px 0 #c4b5fd;
-    transition:
-        border-color 600ms ease,
-        box-shadow 0.15s ease-out;
+    transition: box-shadow 0.15s ease-out;
 }
 
 wa-card.item:hover {
@@ -396,12 +394,10 @@ wa-card.item::part(header) {
     padding: 0.5rem 0.75rem 0.3rem;
     background: #faf5ff;
     border-bottom: 1px solid #f3e8ff;
-    transition: background-color 600ms ease;
 }
 
 wa-card.item::part(body) {
     padding: 0.5rem 0.75rem 0.4rem;
-    transition: background-color 600ms ease;
 }
 
 wa-card.item p {
@@ -413,7 +409,6 @@ wa-card.item::part(footer) {
     padding: 0.2rem 0.75rem 0.5rem;
     border-top: 1px solid #f3e8ff;
     background: #faf5ff;
-    transition: background-color 600ms ease;
 }
 
 wa-card.item.item-active {
@@ -427,10 +422,7 @@ wa-card.item.item-active::part(footer) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    wa-card.item,
-    wa-card.item::part(header),
-    wa-card.item::part(body),
-    wa-card.item::part(footer) {
+    wa-card.item {
         transition: none;
     }
 }
