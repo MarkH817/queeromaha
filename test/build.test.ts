@@ -30,7 +30,6 @@ describe('astro build', () => {
             'makers/index.html',
             'friends/index.html',
             'spiritual/index.html',
-            'about/index.html',
             'robots.txt',
             'sitemap-index.xml',
             'llms.txt',
@@ -41,6 +40,11 @@ describe('astro build', () => {
                 true,
             )
         }
+    })
+
+    test('dist does not contain an about page', () => {
+        const distDir = join(ROOT, 'dist')
+        expect(existsSync(join(distDir, 'about', 'index.html'))).toBe(false)
     })
 
     test('404.html contains a link back to the directory', () => {
@@ -56,6 +60,15 @@ describe('astro build', () => {
         )
         expect(redirects).toMatch(/\/social\s+\/friends/)
         expect(redirects).toMatch(/^\/\s+\/friends/m)
+    })
+
+    test('_redirects sends /about and /contact to /', () => {
+        const redirects = readFileSync(
+            join(ROOT, 'public', '_redirects'),
+            'utf8',
+        )
+        expect(redirects).toMatch(/^\/about\s+\/\s+301/m)
+        expect(redirects).toMatch(/^\/contact\s+\/\s+301/m)
     })
 
     test('dist/_redirects redirects the OmahaForUs auto-slug to its vanity_slug', () => {

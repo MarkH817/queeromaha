@@ -14,22 +14,58 @@ const { message } = Astro.props
       rel="noopener noreferrer"
       aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
     >
-      <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon> Subscribe to Calendar
+      <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon> The Gay Agenda
     </a>
   </div>
   <div class="footer-text">
     <p class="footer-message">{message}</p>
   </div>
   <nav class="footer-nav" aria-label="Footer navigation">
-    <a class="footer-pill-btn" href="/about#suggest"
-      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon> Suggestion Box</a
+    <a
+      href="https://github.com/taraxvoid/queeromaha"
+      aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)"
+      class="footer-icon"
+      rel="noopener noreferrer"
+      target="_blank"
     >
+      <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
+    </a>
   </nav>
+  <details class="suggestion-box" id="suggestionBox">
+    <summary class="footer-pill-btn"
+      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon> Suggestion Box</summary
+    >
+    <div class="suggestion-box-panel">
+      <form name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <p class="suggestion-honeypot">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <label class="suggestion-label" for="suggestionMessage"
+          >Suggest a place, group, or event to add</label
+        >
+        <input
+          id="suggestionMessage"
+          class="suggestion-input"
+          type="text"
+          name="message"
+          required
+          maxlength="140"
+          enterkeyhint="send"
+          aria-describedby="suggestionHint"
+          placeholder="What should we add?"
+        />
+        <p class="suggestion-hint" id="suggestionHint">Up to 140 characters</p>
+        <button class="suggestion-submit" type="submit">Send</button>
+      </form>
+    </div>
+  </details>
 </footer>
 <button id="backToTop" aria-label="Back to top">
   <wa-icon name="circle-arrow-up" variant="solid"></wa-icon>
 </button>
 <script>
+  import '../scripts/suggestionBox'
+
   const footerText = document.querySelector<HTMLElement>('.footer-text')
   const footerMessage = document.querySelector<HTMLElement>('.footer-message')
   if (footerText && footerMessage) {

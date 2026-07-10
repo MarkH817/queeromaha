@@ -21,7 +21,7 @@ const categoryMap = categoryMapJson as Record<
   // The sticky header's height varies by breakpoint (nav pills wrap) and
   // grows once the wa-button/wa-icon custom elements upgrade, so track it
   // live in a CSS var used by theme.css's scroll-padding-top rule instead
-  // of hardcoding an offset for anchor-linked sections (e.g. /about#suggest).
+  // of hardcoding an offset for anchor-linked sections.
   const headerEl = document.querySelector('header')
   if (headerEl) {
     const setHeaderHeightVar = () =>

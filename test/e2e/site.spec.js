@@ -2,7 +2,6 @@ import { expect, test } from '@playwright/test'
 
 const pages = [
     { path: '/friends/', titleContains: 'Queer' },
-    { path: '/about/', titleContains: 'About' },
     // filter slug pages all share the directory title
     { path: '/music/', titleContains: 'Queer' },
     { path: '/cafes/', titleContains: 'Queer' },
@@ -107,42 +106,28 @@ test('clear button clears active tags', async ({ page }) => {
 test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
     await page.goto('/friends/')
-    const footerText = page.locator('.footer-text')
-    const footerMessage = page.locator('.footer-message')
 
-    // message is hidden when it would overflow on narrow screens
-    await expect(async () => {
-        const hidden = await footerText.isHidden()
-        if (!hidden) {
-            const overflowing = await footerMessage.evaluate(
-                (el) => el.scrollWidth > el.clientWidth,
-            )
-            expect(overflowing).toBe(false)
-        }
-    }).toPass()
+    // rotating message is dropped entirely below 480px, not just clipped
+    await expect(page.locator('.footer-text')).toBeHidden()
 
-    // calendar link and footer nav remain visible regardless
+    // calendar link and suggestion box remain visible regardless
     await expect(page.locator('.footer-cal a')).toBeVisible()
-    await expect(
-        page.locator('.footer-nav a[href="/about#suggest"]'),
-    ).toBeVisible()
+    await expect(page.locator('#suggestionBox summary')).toBeVisible()
 })
 
-test('calendar and suggestion box buttons stay on the same row on mobile', async ({
+test('calendar and suggestion box stay on the same row on mobile', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
     const calBox = await page.locator('.footer-cal a').boundingBox()
-    const navBox = await page
-        .locator('.footer-nav a[href="/about#suggest"]')
-        .boundingBox()
+    const navBox = await page.locator('#suggestionBox summary').boundingBox()
 
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
 })
 
-test('calendar and suggestion box stay on one row even if footer message is not yet hidden', async ({
+test('footer message stays hidden on mobile even if a stale JS toggle unhides it', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 412, height: 839 })
@@ -152,12 +137,9 @@ test('calendar and suggestion box stay on one row even if footer message is not 
         document.querySelector('.footer-text').hidden = false
     })
 
-    const calBox = await page.locator('.footer-cal a').boundingBox()
-    const navBox = await page
-        .locator('.footer-nav a[href="/about#suggest"]')
-        .boundingBox()
-
-    expect(calBox.y).toBeCloseTo(navBox.y, 0)
+    // the media query hides it unconditionally at this breakpoint,
+    // regardless of the `hidden` IDL property checkFooterFit() manages
+    await expect(page.locator('.footer-text')).toBeHidden()
 })
 
 test('footer message is visible and unclipped on wide screens', async ({
@@ -199,10 +181,21 @@ test('item cards with a location show a location-dot icon', async ({
     }
 })
 
+test('suggestion box expands in place without navigating', async ({ page }) => {
+    await page.goto('/friends/')
+    const startUrl = page.url()
+
+    await page.locator('#suggestionBox summary').click()
+
+    await expect(page.locator('#suggestionMessage')).toBeVisible()
+    expect(page.url()).toBe(startUrl)
+})
+
 test('suggestion form shows inline confirmation without navigating', async ({
     page,
 }) => {
-    await page.goto('/about/')
+    await page.goto('/friends/')
+    await page.locator('#suggestionBox summary').click()
 
     // Netlify intercepts the real POST; mock it so the test is self-contained
     await page.route('/', async (route) => {
@@ -213,21 +206,22 @@ test('suggestion form shows inline confirmation without navigating', async ({
         }
     })
 
-    await page.fill('textarea[name="message"]', 'Test suggestion')
-    await page.click('button[type="submit"]')
+    await page.fill('#suggestionMessage', 'Test suggestion')
+    await page.click('.suggestion-submit')
 
-    // Should stay on the about page
-    expect(page.url()).toContain('/about')
+    // Should stay on the same page
+    expect(page.url()).toContain('/friends')
 
     // Form replaced by confirmation message
-    await expect(page.locator('#suggest-thanks')).toBeVisible()
+    await expect(page.locator('.suggestion-thanks')).toBeVisible()
     await expect(page.locator('form[name="suggest"]')).not.toBeAttached()
 })
 
 test('suggestion form shows an error message on a failed submission', async ({
     page,
 }) => {
-    await page.goto('/about/')
+    await page.goto('/friends/')
+    await page.locator('#suggestionBox summary').click()
 
     await page.route('/', async (route) => {
         if (route.request().method() === 'POST') {
@@ -237,18 +231,19 @@ test('suggestion form shows an error message on a failed submission', async ({
         }
     })
 
-    await page.fill('textarea[name="message"]', 'Test suggestion')
-    await page.click('button[type="submit"]')
+    await page.fill('#suggestionMessage', 'Test suggestion')
+    await page.click('.suggestion-submit')
 
-    await expect(page.locator('#suggest-error')).toBeVisible()
-    await expect(page.locator('#suggest-error')).toContainText('Try again')
+    await expect(page.locator('.suggestion-error')).toBeVisible()
+    await expect(page.locator('.suggestion-error')).toContainText('Try again')
     await expect(page.locator('form[name="suggest"]')).toBeAttached()
 })
 
 test('suggestion form shows a connection error message on a network failure', async ({
     page,
 }) => {
-    await page.goto('/about/')
+    await page.goto('/friends/')
+    await page.locator('#suggestionBox summary').click()
 
     await page.route('/', async (route) => {
         if (route.request().method() === 'POST') {
@@ -258,11 +253,21 @@ test('suggestion form shows a connection error message on a network failure', as
         }
     })
 
-    await page.fill('textarea[name="message"]', 'Test suggestion')
-    await page.click('button[type="submit"]')
+    await page.fill('#suggestionMessage', 'Test suggestion')
+    await page.click('.suggestion-submit')
 
-    await expect(page.locator('#suggest-error')).toBeVisible()
-    await expect(page.locator('#suggest-error')).toContainText('connection')
+    await expect(page.locator('.suggestion-error')).toBeVisible()
+    await expect(page.locator('.suggestion-error')).toContainText('connection')
+})
+
+test('suggestion box character counter updates as the user types', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    await page.locator('#suggestionBox summary').click()
+
+    await page.fill('#suggestionMessage', 'a'.repeat(10))
+    await expect(page.locator('#suggestionHint')).toContainText('130')
 })
 
 test('/events.ics returns a valid calendar feed', async ({ request }) => {
@@ -413,33 +418,6 @@ test('back-to-top button appears on scroll and returns to the top', async ({
     await expect
         .poll(() => page.evaluate(() => window.scrollY))
         .toBeLessThan(50)
-})
-
-test('landing directly on /about/#suggest scrolls the section under the sticky header', async ({
-    page,
-}) => {
-    await page.goto('/about/#suggest')
-    await page.evaluate(() =>
-        Promise.all([
-            customElements.whenDefined('wa-button'),
-            customElements.whenDefined('wa-icon'),
-        ]),
-    )
-
-    const headerHeight = await page.evaluate(() =>
-        Number.parseFloat(
-            getComputedStyle(document.documentElement).getPropertyValue(
-                '--header-height',
-            ),
-        ),
-    )
-
-    await expect
-        .poll(async () => {
-            const box = await page.locator('#suggest').boundingBox()
-            return box?.y ?? Number.NaN
-        })
-        .toBeLessThan(headerHeight + 50)
 })
 
 test('tapping a card rewrites the URL to its permalink and marks it active', async ({

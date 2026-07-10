@@ -1,4 +1,4 @@
-const CACHE = 'qo-v2'
+const CACHE = 'qo-v3'
 const PRECACHE = [
     '/',
     '/friends',
@@ -7,7 +7,6 @@ const PRECACHE = [
     '/cafes',
     '/music',
     '/makers',
-    '/about',
     '/manifest.webmanifest',
 ]
 

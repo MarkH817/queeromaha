@@ -194,6 +194,7 @@ footer {
     z-index: 999;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0;
 }
@@ -203,6 +204,11 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
         row-gap: 0.3rem;
+        /* Three pill items (calendar, GitHub icon, suggestion box) need
+           to fit on one row at narrow widths; the default horizontal
+           padding leaves them a couple px short. */
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
         padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
     }
 }
@@ -273,6 +279,130 @@ footer a:hover {
     text-decoration: none;
 }
 
+.suggestion-box {
+    order: 3;
+    /* Web Awesome's native.css gives every <details> a white "panel"
+       background, border, and padding by default — reset it so the
+       footer's purple background shows through instead. */
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+summary.footer-pill-btn {
+    list-style: none;
+    cursor: pointer;
+    justify-content: center;
+    margin-inline: 0;
+}
+
+summary.footer-pill-btn::-webkit-details-marker {
+    display: none;
+}
+
+/* Web Awesome also adds an auto chevron after the summary; the
+   lightbulb icon already signals what this is, so drop it. */
+.suggestion-box summary::after {
+    display: none;
+}
+
+.suggestion-box[open] {
+    padding: 0;
+    flex: 1 1 100%;
+}
+
+.suggestion-box-panel {
+    padding: 0.75rem 0.25rem 0.25rem;
+}
+
+.suggestion-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: #fff;
+}
+
+.suggestion-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #222;
+    /* 16px+ avoids iOS Safari zooming the page in on focus */
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.suggestion-hint {
+    margin: 0.35rem 0 0.75rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.suggestion-submit {
+    background: #fff;
+    color: #6d28d9;
+    border: none;
+    border-radius: 8px;
+    padding: 0.65rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.suggestion-submit:hover {
+    background: #f3e8ff;
+}
+
+.suggestion-thanks,
+.suggestion-error {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.suggestion-thanks {
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 3px solid #fff;
+}
+
+.suggestion-error {
+    background: rgba(220, 38, 38, 0.25);
+    border-left: 3px solid #fca5a5;
+    color: #fff;
+}
+
+.suggestion-honeypot {
+    display: none;
+}
+
+@supports selector(::details-content) {
+    .suggestion-box {
+        interpolate-size: allow-keywords;
+    }
+
+    .suggestion-box::details-content {
+        height: 0;
+        overflow: clip;
+        transition:
+            height 0.25s ease,
+            content-visibility 0.25s ease allow-discrete;
+    }
+
+    .suggestion-box[open]::details-content {
+        height: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .suggestion-box::details-content {
+            transition: none;
+        }
+    }
+}
+
 .footer-cal {
     flex-shrink: 0;
     padding-right: 0.5rem;
@@ -303,17 +433,10 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
-    .footer-cal {
-        order: 1;
-    }
-
-    .footer-nav {
-        order: 2;
-    }
-
+    /* Footer is position: sticky, permanently on-screen — the rotating
+       message isn't worth a guaranteed extra row of height here. */
     .footer-text {
-        order: 3;
-        flex: 1 1 100%;
+        display: none;
     }
 }
 

@@ -9,11 +9,11 @@ describe('GET /llms.txt', () => {
         )
     })
 
-    test('includes site title and directory/about links', async () => {
+    test('includes site title, directory link, and GitHub repo link', async () => {
         const body = await (await GET()).text()
         expect(body).toContain('# Queer Omaha')
         expect(body).toContain('https://queeromaha.net/')
-        expect(body).toContain('https://queeromaha.net/about')
+        expect(body).toContain('https://github.com/taraxvoid/queeromaha')
     })
 
     test('documents the service-doc Link header convention', async () => {

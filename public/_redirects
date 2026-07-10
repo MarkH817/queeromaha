@@ -1,3 +1,4 @@
 /         /friends  301
 /social   /friends  301
-/contact  /about    301
+/about    /         301
+/contact  /         301
