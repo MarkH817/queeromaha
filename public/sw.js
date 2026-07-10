@@ -1,5 +1,15 @@
-const CACHE = 'qo-v1'
-const PRECACHE = ['/social', '/about', '/manifest.webmanifest']
+const CACHE = 'qo-v2'
+const PRECACHE = [
+    '/',
+    '/friends',
+    '/spiritual',
+    '/art',
+    '/cafes',
+    '/music',
+    '/makers',
+    '/about',
+    '/manifest.webmanifest',
+]
 
 self.addEventListener('install', (e) => {
     e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)))

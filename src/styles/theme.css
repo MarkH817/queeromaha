@@ -103,8 +103,11 @@ header {
         background 0.1s ease-out,
         color 0.1s ease-out,
         border-color 0.1s ease-out,
-        box-shadow 0.1s ease-out;
-    box-shadow: 0 2px 0 rgba(76, 29, 118, 0.25);
+        box-shadow 0.1s ease-out,
+        transform 0.1s ease-out;
+    box-shadow:
+        0 3px 0 #c4b5fd,
+        0 5px 8px rgba(76, 29, 118, 0.18);
 }
 
 .main-nav wa-button::part(base):hover {
@@ -112,11 +115,28 @@ header {
     border-color: #a78bfa;
 }
 
+.main-nav wa-button::part(base):active {
+    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
+    transform: translateY(2px);
+}
+
 .main-nav wa-button.active::part(base) {
-    background: #c4b5fd;
-    border-color: #c4b5fd;
-    color: #4c1d95;
-    box-shadow: none;
+    background: #ede9fe;
+    border-color: #a78bfa;
+    color: #5b21b6;
+    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
+    transform: translateY(2px);
+}
+
+.main-nav wa-button.active::part(base):hover {
+    background: #ddd6fe;
+    border-color: #7c3aed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .main-nav wa-button::part(base) {
+        transition: none;
+    }
 }
 
 main {
@@ -355,14 +375,19 @@ wa-card.item[hidden] {
     border-radius: 2px;
 }
 
-wa-card.item::part(base) {
+wa-card.item {
     border-color: #e9d5ff;
+    box-shadow:
+        2px 2px 0 #e9d5ff,
+        3px 3px 0 #c4b5fd;
+    transition: box-shadow 0.15s ease-out;
+}
+
+wa-card.item:hover {
+    border-color: #a78bfa;
     box-shadow:
         3px 3px 0 #e9d5ff,
         5px 5px 0 #c4b5fd;
-    transition:
-        background-color 600ms ease,
-        border-color 600ms ease;
 }
 
 wa-card.item::part(header) {
@@ -386,13 +411,18 @@ wa-card.item::part(footer) {
     background: #faf5ff;
 }
 
-wa-card.item.item-active::part(base) {
-    background: #ede9fe;
+wa-card.item.item-active {
     border-color: #a78bfa;
 }
 
+wa-card.item.item-active::part(header),
+wa-card.item.item-active::part(body),
+wa-card.item.item-active::part(footer) {
+    background: #ede9fe;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    wa-card.item::part(base) {
+    wa-card.item {
         transition: none;
     }
 }
@@ -685,8 +715,11 @@ blockquote p {
     transition:
         background 0.15s,
         border-color 0.15s,
-        color 0.15s;
+        color 0.15s,
+        box-shadow 0.15s,
+        transform 0.15s;
     white-space: nowrap;
+    box-shadow: 0 2px 0 #ddd6fe;
 }
 
 .filter-pill:hover {
@@ -694,20 +727,33 @@ blockquote p {
     border-color: #a78bfa;
 }
 
+.filter-pill:active {
+    box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
+    transform: translateY(1px);
+}
+
 .filter-pill.active {
-    background: #7c3aed;
-    border-color: #7c3aed;
-    color: #fff;
+    background: #ede9fe;
+    border-color: #a78bfa;
+    color: #5b21b6;
+    box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
+    transform: translateY(1px);
 }
 
 .filter-pill.active:hover {
-    background: #6d28d9;
-    border-color: #6d28d9;
+    background: #ddd6fe;
+    border-color: #7c3aed;
 }
 
 .filter-pill.unavailable {
     opacity: 0.35;
     cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filter-pill {
+        transition: none;
+    }
 }
 
 .item-location {
