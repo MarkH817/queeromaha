@@ -5,7 +5,7 @@ items:
   - name: OmahaForUs
     public: true
     vanity_slug: o4us
-    description: Hub of community, resources, and events. Has a Quiet Room.
+    description: Hub of community, resources, and events
     links:
       - label: Events Calendar
         url: https://omahafor.us/events-calendar
