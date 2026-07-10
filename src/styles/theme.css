@@ -280,13 +280,14 @@ footer a:hover {
 }
 
 .suggestion-box {
-    order: 3;
     /* Web Awesome's native.css gives every <details> a white "panel"
-       background, border, and padding by default — reset it so the
-       footer's purple background shows through instead. */
+       background, border, padding, and bottom margin by default —
+       reset it so the footer's purple background shows through and
+       flex centering isn't thrown off by the extra margin. */
     background: transparent;
     border: none;
     padding: 0;
+    margin: 0;
 }
 
 summary.footer-pill-btn {
