@@ -3,6 +3,7 @@ import footerMessages from '../data/footerMessages.json'
 import site from '../data/site.json'
 import '../styles/theme.css'
 import HeadMeta from '../components/HeadMeta.astro'
+import PostHog from '../components/posthog.astro'
 import SiteFooter from '../components/SiteFooter.astro'
 import SiteHeader from '../components/SiteHeader.astro'
 
@@ -39,6 +40,7 @@ const randomMsg =
     data-initial-tags={initialTags.join(' ')}
     data-initial-item-slug={initialItemSlug ?? ''}
   >
+    <PostHog />
     <SiteHeader />
     <main id="main" tabindex="-1">
       {title && <h1 class="wa-visually-hidden">{title}</h1>}

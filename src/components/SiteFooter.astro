@@ -83,6 +83,11 @@ const { message } = Astro.props
     })
   }
 
+  const calLink = document.querySelector<HTMLAnchorElement>('.footer-cal a')
+  calLink?.addEventListener('click', () => {
+    ;(window as Window & { posthog?: { capture: (e: string) => void } }).posthog?.capture('calendar_subscribed')
+  })
+
   const backToTopButton = document.getElementById('backToTop')
   const header = document.querySelector('header')
   if (backToTopButton && header) {
