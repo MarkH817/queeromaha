@@ -33,14 +33,13 @@ const { title, description, canonicalUrl, refresh } = Astro.props
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:title" content={title} />
   {description && <meta property="og:description" content={description} />}
-  <script is:inline type="application/ld+json">
-    {JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Queer Omaha",
-      url: site.url,
+      url: Astro.site?.href ?? canonicalUrl,
       description: "Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska.",
-    })}
+    })}>
   </script>
   <script is:inline>
     if ('serviceWorker' in navigator) {
