@@ -1,3 +1,9 @@
+# POSTHOG_CLI_API_KEY (Netlify env var) must be a personal API key scoped
+# to this project only, with source map / error tracking write access —
+# nothing broader. It is a CI credential, distinct from the personal API key
+# used for local `posthog-cli login`, which is typically broader-scoped for
+# managing flags/experiments and should never be reused here.
+# POSTHOG_CLI_PROJECT_ID (Netlify env var) is also required.
 [build]
 publish = "dist"
-command = "bun run build"
+command = "bun run build && bunx @posthog/cli sourcemap process --directory dist --delete-after"
