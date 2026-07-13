@@ -212,6 +212,23 @@ footer {
     }
 }
 
+@media (max-width: 400px) {
+    /* On phones this narrow (e.g. iPhone SE, 375px), the calendar
+       button's text label is the difference between fitting on one row
+       and the GitHub icon wrapping to its own row — the footer should
+       never stack. Icon-only here, same treatment .footer-icon already
+       gets; the link's aria-label keeps it labeled for screen readers.
+       Left at 480px on wider phones (e.g. the 412px Pixel), where the
+       full label already fits fine. */
+    .footer-cal-label {
+        display: none;
+    }
+
+    .footer-cal a {
+        padding: 0.3rem 0.6rem;
+    }
+}
+
 .footer-text {
     /* .suggestion-box is first in the DOM (so the [open] ~ sibling
        hiding rule below can reach every other footer item) — these
@@ -354,6 +371,11 @@ footer:has(.calendar-box[open]) .suggestion-box {
 .suggestion-box[open] summary.footer-pill-btn,
 .calendar-box[open] summary.footer-pill-btn {
     order: 2;
+    /* Pushes just this item away from the toggle row it's paired with
+       (see .suggestion-box-toggle-row below) so the two end up centered
+       as a unit, roughly where the toggle sat before opening — a plain
+       left-align here dragged it ~70px off its closed position. */
+    margin-right: auto;
     /* Lighter than this (e.g. the 0.25 alpha tried earlier) pushes the
        background too close to white, dropping text contrast below
        4.5:1 once :hover's color: #fff is also active (Playwright's
@@ -398,7 +420,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     align-items: center;
     /* Space between the Send button and the toggle, now that they're
        no longer centered as a snug pair. */
-    column-gap: 0.75rem;
+    column-gap: 1.25rem;
 }
 
 /* Chromium wraps every non-summary child of an open <details> into an
@@ -443,9 +465,11 @@ summary.footer-pill-btn::-webkit-details-marker {
 
 .suggestion-box-toggle-row {
     order: 1;
-    /* Left-aligned to match .suggestion-box-panel's own left padding,
-       so Send lines up under the input's left edge instead of being
-       centered in the middle of the row. */
+    /* Paired with summary's margin-right: auto — together these center
+       the Send+toggle pair as a unit. column-gap on the parent (below)
+       gives Send room without dragging the toggle far from its closed
+       position. */
+    margin-left: auto;
     display: flex;
     align-items: center;
     padding: 0 0.25rem 0.5rem;
