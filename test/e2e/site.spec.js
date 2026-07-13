@@ -110,8 +110,8 @@ test('footer elements render correctly', async ({ page }) => {
     // rotating message is dropped entirely below 480px, not just clipped
     await expect(page.locator('.footer-text')).toBeHidden()
 
-    // calendar link and suggestion box remain visible regardless
-    await expect(page.locator('.footer-cal a')).toBeVisible()
+    // calendar box and suggestion box remain visible regardless
+    await expect(page.locator('.calendar-box summary')).toBeVisible()
     await expect(page.locator('#suggestionBox summary')).toBeVisible()
 })
 
@@ -121,7 +121,7 @@ test('calendar and suggestion box stay on the same row on mobile', async ({
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
-    const calBox = await page.locator('.footer-cal a').boundingBox()
+    const calBox = await page.locator('.calendar-box summary').boundingBox()
     const navBox = await page.locator('#suggestionBox summary').boundingBox()
 
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
@@ -196,19 +196,19 @@ test('opening the suggestion box hides the other footer buttons and re-tapping c
 }) => {
     await page.goto('/friends/')
 
-    await expect(page.locator('.footer-cal')).toBeVisible()
+    await expect(page.locator('.calendar-box')).toBeVisible()
     await expect(page.locator('.footer-nav')).toBeVisible()
     const closedBox = await page.locator('#suggestionBox summary').boundingBox()
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.footer-cal')).toBeHidden()
+    await expect(page.locator('.calendar-box')).toBeHidden()
     await expect(page.locator('.footer-nav')).toBeHidden()
     await expect(page.locator('#suggestionBox')).toHaveAttribute('open', '')
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.footer-cal')).toBeVisible()
+    await expect(page.locator('.calendar-box')).toBeVisible()
     await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#suggestionBox')).not.toHaveAttribute('open', '')
     await expect
@@ -219,6 +219,44 @@ test('opening the suggestion box hides the other footer buttons and re-tapping c
             return box.x
         })
         .toBeCloseTo(closedBox.x, 0)
+})
+
+test('calendar box expands in place, offers Google and webcal links, and re-tapping closes it', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    const startUrl = page.url()
+
+    await expect(page.locator('.suggestion-box')).toBeVisible()
+    await expect(page.locator('.footer-nav')).toBeVisible()
+
+    await page.locator('.calendar-box summary').click()
+
+    const google = page.locator('.calendar-option').nth(0)
+    const ics = page.locator('.calendar-option').nth(1)
+    await expect(google).toBeVisible()
+    await expect(ics).toBeVisible()
+    await expect(google).toHaveAttribute('href', /calendar\.google\.com/)
+    await expect(ics).toHaveAttribute(
+        'href',
+        'webcal://queeromaha.net/events.ics',
+    )
+    await expect(google).toHaveAccessibleName(/Google Calendar/)
+    await expect(ics).toHaveAccessibleName(/Apple Calendar/)
+    expect(page.url()).toBe(startUrl)
+
+    // opening the calendar box hides the suggestion box in turn (the one
+    // direction the DOM-order-only ~ combinator can't reach, handled by
+    // the :has() rule instead)
+    await expect(page.locator('.suggestion-box')).toBeHidden()
+    await expect(page.locator('.footer-nav')).toBeHidden()
+    await expect(page.locator('#calendarBox')).toHaveAttribute('open', '')
+
+    await page.locator('.calendar-box summary').click()
+
+    await expect(page.locator('.suggestion-box')).toBeVisible()
+    await expect(page.locator('.footer-nav')).toBeVisible()
+    await expect(page.locator('#calendarBox')).not.toHaveAttribute('open', '')
 })
 
 test('opening the suggestion box also hides the back-to-top button', async ({

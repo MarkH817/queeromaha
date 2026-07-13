@@ -326,21 +326,33 @@ footer a:hover {
     margin: 0 auto;
 }
 
-/* Opening the suggestion box hides the other footer buttons so its own
-   toggle button reads as a clear "tap to open / tap to close" affordance,
-   staying roughly in place instead of competing for row space. Works via
-   the DOM-order-only ~ sibling combinator, no :has() or JS needed. */
-.suggestion-box[open] ~ .footer-cal,
+/* Opening either footer <details> (suggestion box or calendar box) hides
+   the other footer buttons so its own toggle reads as a clear "tap to
+   open / tap to close" affordance, staying roughly in place instead of
+   competing for row space. Works via the DOM-order-only ~ sibling
+   combinator for later siblings; .calendar-box comes after
+   .suggestion-box in the DOM (required so this rule can reach it), so
+   the one gap — hiding .suggestion-box, an *earlier* sibling, when
+   .calendar-box opens — needs :has() below instead. */
+.suggestion-box[open] ~ .calendar-box,
 .suggestion-box[open] ~ .footer-text,
 .suggestion-box[open] ~ .footer-separator,
-.suggestion-box[open] ~ .footer-nav {
+.suggestion-box[open] ~ .footer-nav,
+.calendar-box[open] ~ .footer-text,
+.calendar-box[open] ~ .footer-separator,
+.calendar-box[open] ~ .footer-nav {
+    display: none;
+}
+
+footer:has(.calendar-box[open]) .suggestion-box {
     display: none;
 }
 
 /* Reuses the same "pressed in" look as .filter-pill.active (inset
    shadow + translateY) so the open state reads as this button being
    currently pressed, not just its content changed. */
-.suggestion-box[open] summary.footer-pill-btn {
+.suggestion-box[open] summary.footer-pill-btn,
+.calendar-box[open] summary.footer-pill-btn {
     order: 2;
     /* Lighter than this (e.g. the 0.25 alpha tried earlier) pushes the
        background too close to white, dropping text contrast below
@@ -367,8 +379,9 @@ summary.footer-pill-btn::-webkit-details-marker {
 }
 
 /* Web Awesome also adds an auto chevron after the summary; the
-   lightbulb icon already signals what this is, so drop it. */
-.suggestion-box summary::after {
+   lightbulb/calendar icons already signal what these are, so drop it. */
+.suggestion-box summary::after,
+.calendar-box summary::after {
     display: none;
 }
 
@@ -403,6 +416,28 @@ summary.footer-pill-btn::-webkit-details-marker {
 .suggestion-box-panel {
     order: 0;
     flex: 1 1 100%;
+    padding: 0.75rem 0.25rem 0.25rem;
+}
+
+.calendar-box[open] {
+    padding: 0;
+    margin: 0;
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.calendar-box[open]::details-content {
+    display: contents;
+}
+
+.calendar-box-panel {
+    order: 0;
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     padding: 0.75rem 0.25rem 0.25rem;
 }
 
@@ -506,14 +541,21 @@ summary.footer-pill-btn::-webkit-details-marker {
     display: none;
 }
 
-.footer-cal {
+.calendar-box {
+    /* Same "reset Web Awesome details styling" story as .suggestion-box
+       (see comment there) — details/summary bring a default white panel
+       look that needs stripping so the footer's purple shows through. */
+    background: transparent;
+    border: none;
+    padding: 0;
     flex-shrink: 0;
     padding-right: 0.5rem;
 }
 
-.footer-cal a {
+.calendar-option {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     padding: 0.3rem 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 999px;
@@ -528,7 +570,7 @@ summary.footer-pill-btn::-webkit-details-marker {
         color 0.15s;
 }
 
-.footer-cal a:hover {
+.calendar-option:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.7);
     color: #fff;
@@ -870,11 +912,12 @@ blockquote p {
     font-size: 1.8rem;
 }
 
-/* Hide alongside the other footer buttons while the suggestion box is
-   open (theme.css's .suggestion-box[open] ~ .footer-* rules can't reach
+/* Hide alongside the other footer buttons while the suggestion box or
+   calendar box is open (theme.css's [open] ~ .footer-* rules can't reach
    this far since #backToTop is a sibling of <footer>, not nested
    inside it — :has() is the only way to reach across that boundary). */
-body:has(#suggestionBox[open]) #backToTop {
+body:has(#suggestionBox[open]) #backToTop,
+body:has(#calendarBox[open]) #backToTop {
     display: none;
 }
 

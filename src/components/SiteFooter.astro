@@ -7,7 +7,7 @@ const { message } = Astro.props
 ---
 
 <footer>
-  <details class="suggestion-box" id="suggestionBox">
+  <details class="suggestion-box" id="suggestionBox" name="footer-accordion">
     <summary class="footer-pill-btn"
       ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon>Suggestion Box</summary
     >
@@ -37,16 +37,29 @@ const { message } = Astro.props
       <button class="suggestion-submit" type="submit" form="suggestForm">Send</button>
     </div>
   </details>
-  <div class="footer-cal">
-    <a
-      href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+  <details class="calendar-box" id="calendarBox" name="footer-accordion">
+    <summary class="footer-pill-btn"
+      ><wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
     >
-      <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon>Gay Agenda
-    </a>
-  </div>
+    <div class="calendar-box-panel">
+      <a
+        class="calendar-option"
+        href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+      >
+        <wa-icon family="brands" name="google" aria-hidden="true"></wa-icon>Google Calendar
+      </a>
+      <a
+        class="calendar-option"
+        href="webcal://queeromaha.net/events.ics"
+        aria-label="Add to Calendar (Apple Calendar and other calendar apps)"
+      >
+        <wa-icon family="brands" name="apple" aria-hidden="true"></wa-icon>Add to Calendar
+      </a>
+    </div>
+  </details>
   <span class="footer-separator footer-separator-left" aria-hidden="true"></span>
   <div class="footer-text">
     <p class="footer-message">{message}</p>
@@ -69,6 +82,7 @@ const { message } = Astro.props
 </button>
 <script>
   import '../scripts/suggestionBox'
+  import '../scripts/calendarBox'
 
   const footerText = document.querySelector<HTMLElement>('.footer-text')
   const footerMessage = document.querySelector<HTMLElement>('.footer-message')
