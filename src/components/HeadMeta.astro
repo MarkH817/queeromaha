@@ -35,7 +35,7 @@ const { title, description, canonicalUrl } = Astro.props
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Queer Omaha",
-      url: site.url,
+      url: Astro.site?.href ?? canonicalUrl,
       description: "Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska.",
     })}>
   </script>
