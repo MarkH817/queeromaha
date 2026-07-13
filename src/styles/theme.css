@@ -499,56 +499,19 @@ wa-card.item[hidden] {
     border-radius: 2px;
 }
 
-wa-card.item h3 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-}
-
-.item-title-group {
-    min-width: 0;
-}
-
-.item-permalink-tab {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    padding: 0.15rem 0.45rem;
-    border-radius: 999px;
-    background: #f9f5ff;
-    border: 1px solid #c4b5fd;
-    color: #7c3aed;
-    font-size: 0.85rem;
-    transition:
-        background-color 600ms ease,
-        border-color 600ms ease,
-        color 600ms ease;
-}
-
-wa-card.item.item-active .item-permalink-tab {
-    background: #7c3aed;
-    border-color: #7c3aed;
-    color: #fff;
-}
-
-wa-card.item::part(base) {
+wa-card.item {
     border-color: #e9d5ff;
+    box-shadow:
+        2px 2px 0 #e9d5ff,
+        3px 3px 0 #c4b5fd;
+    transition: box-shadow 0.15s ease-out;
+}
+
+wa-card.item:hover {
+    border-color: #a78bfa;
     box-shadow:
         3px 3px 0 #e9d5ff,
         5px 5px 0 #c4b5fd;
-    transition:
-        border-color 600ms ease,
-        box-shadow 0.15s ease-out,
-        transform 0.1s ease-out;
-}
-
-wa-card.item:hover::part(base) {
-    border-color: #a78bfa;
-}
-
-wa-card.item:active::part(base) {
-    transform: scale(0.99);
 }
 
 wa-card.item::part(header) {
@@ -559,7 +522,6 @@ wa-card.item::part(header) {
 
 wa-card.item::part(body) {
     padding: 0.5rem 0.75rem 0.4rem;
-    transition: background-color 600ms ease;
 }
 
 wa-card.item p {
@@ -571,23 +533,20 @@ wa-card.item::part(footer) {
     padding: 0.2rem 0.75rem 0.5rem;
     border-top: 1px solid #f3e8ff;
     background: #faf5ff;
-    transition: background-color 600ms ease;
 }
 
-wa-card.item.item-active::part(base) {
+wa-card.item.item-active {
     border-color: #a78bfa;
 }
 
+wa-card.item.item-active::part(header),
 wa-card.item.item-active::part(body),
 wa-card.item.item-active::part(footer) {
     background: #ede9fe;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    wa-card.item::part(base),
-    wa-card.item::part(body),
-    wa-card.item::part(footer),
-    .item-permalink-tab {
+    wa-card.item {
         transition: none;
     }
 }
