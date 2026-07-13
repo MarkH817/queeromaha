@@ -5,7 +5,7 @@ items:
   - name: OmahaForUs
     public: true
     vanity_slug: o4us
-    description: Hub of community, resources, and events. Has a Quiet Room.
+    description: Hub of community, resources, and events
     links:
       - label: Events Calendar
         url: https://omahafor.us/events-calendar
@@ -95,6 +95,8 @@ items:
         url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
       - label: Instagram
         url: https://www.instagram.com/river.dazeco/
+    tags:
+      - online
   - name: Out Wild Adventures
     public: true
     description: Kayaking, hikes and coffee chats. Sober-friendly
@@ -103,7 +105,9 @@ items:
         url: https://forms.gle/k2HhE8boH47rkJpT6
       - label: Website
         url: https://flow.page/outwildadventures
-  - name: TransNebraska.Online
+    tags:
+      - online
+  - name: Trans Nebraska dot Online
     public: true
     description: Online peer social group ran by Babs Ramsey.
     links:
