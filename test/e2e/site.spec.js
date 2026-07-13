@@ -191,6 +191,50 @@ test('suggestion box expands in place without navigating', async ({ page }) => {
     expect(page.url()).toBe(startUrl)
 })
 
+test('opening the suggestion box hides the other footer buttons and re-tapping closes it', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+
+    await expect(page.locator('.footer-cal')).toBeVisible()
+    await expect(page.locator('.footer-nav')).toBeVisible()
+    const closedBox = await page.locator('#suggestionBox summary').boundingBox()
+
+    await page.locator('#suggestionBox summary').click()
+
+    await expect(page.locator('.footer-cal')).toBeHidden()
+    await expect(page.locator('.footer-nav')).toBeHidden()
+    await expect(page.locator('#suggestionBox')).toHaveAttribute('open', '')
+
+    await page.locator('#suggestionBox summary').click()
+
+    await expect(page.locator('.footer-cal')).toBeVisible()
+    await expect(page.locator('.footer-nav')).toBeVisible()
+    await expect(page.locator('#suggestionBox')).not.toHaveAttribute('open', '')
+    await expect
+        .poll(async () => {
+            const box = await page
+                .locator('#suggestionBox summary')
+                .boundingBox()
+            return box.x
+        })
+        .toBeCloseTo(closedBox.x, 0)
+})
+
+test('opening the suggestion box also hides the back-to-top button', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+    await page.evaluate(() => window.scrollTo(0, 2000))
+    await expect(page.locator('#backToTop')).toBeVisible()
+
+    await page.locator('#suggestionBox summary').click()
+    await expect(page.locator('#backToTop')).toBeHidden()
+
+    await page.locator('#suggestionBox summary').click()
+    await expect(page.locator('#backToTop')).toBeVisible()
+})
+
 test('suggestion form shows inline confirmation without navigating', async ({
     page,
 }) => {
@@ -215,6 +259,9 @@ test('suggestion form shows inline confirmation without navigating', async ({
     // Form replaced by confirmation message
     await expect(page.locator('.suggestion-thanks')).toBeVisible()
     await expect(page.locator('form[name="suggest"]')).not.toBeAttached()
+    // Send lives outside the form (associated via the form= attribute)
+    // so it needs its own explicit removal on success
+    await expect(page.locator('.suggestion-submit')).not.toBeAttached()
 })
 
 test('suggestion form shows an error message on a failed submission', async ({

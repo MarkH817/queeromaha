@@ -7,25 +7,12 @@ const { message } = Astro.props
 ---
 
 <footer>
-  <div class="footer-cal">
-    <a
-      href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
-    >
-      <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon>Gay Agenda
-    </a>
-  </div>
-  <div class="footer-text">
-    <p class="footer-message">{message}</p>
-  </div>
   <details class="suggestion-box" id="suggestionBox">
     <summary class="footer-pill-btn"
       ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon>Suggestion Box</summary
     >
     <div class="suggestion-box-panel">
-      <form name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form id="suggestForm" name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <p class="suggestion-honeypot">
           <label>Don't fill this out if you're human: <input name="bot-field" /></label>
         </p>
@@ -44,13 +31,30 @@ const { message } = Astro.props
           placeholder="What should we add?"
         />
         <p class="suggestion-hint" id="suggestionHint">Up to 140 characters</p>
-        <button class="suggestion-submit" type="submit">Send</button>
       </form>
     </div>
+    <div class="suggestion-box-toggle-row">
+      <button class="suggestion-submit" type="submit" form="suggestForm">Send</button>
+    </div>
   </details>
+  <div class="footer-cal">
+    <a
+      href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+    >
+      <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon>Gay Agenda
+    </a>
+  </div>
+  <span class="footer-separator footer-separator-left" aria-hidden="true"></span>
+  <div class="footer-text">
+    <p class="footer-message">{message}</p>
+  </div>
+  <span class="footer-separator footer-separator-right" aria-hidden="true"></span>
   <nav class="footer-nav" aria-label="Footer navigation">
     <a
-      href="https://github.com/taraxvoid/queeromaha"
+      href="https://analytics.queeromaha.net/redirect/github"
       aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)"
       class="footer-icon"
       rel="noopener noreferrer"
