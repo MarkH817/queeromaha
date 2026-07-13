@@ -13,6 +13,7 @@ const { message } = Astro.props
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+      onclick="window.posthog?.capture('calendar_subscribe_clicked')"
     >
       <wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon> Subscribe to Calendar
     </a>

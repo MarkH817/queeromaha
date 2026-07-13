@@ -98,7 +98,15 @@ const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
     <ul class="entry-links" slot="footer">
       {item.links.map(link => (
         <li>
-          <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
+          <a
+            href={link.url}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={`${link.label} (opens in new tab)`}
+            data-ph-item-name={item.name}
+            data-ph-item-category={category}
+            data-ph-link-label={link.label}
+          >
             {link.label}
           </a>
         </li>

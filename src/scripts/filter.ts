@@ -177,6 +177,7 @@ if (cards.length > 0) {
             applyFilters()
             updateClearBtn()
             history.pushState({}, '', buildUrl())
+            window.posthog?.capture('filter_cleared')
         })
     }
 
@@ -199,6 +200,12 @@ if (cards.length > 0) {
                 else activateFilter(slug)
             }
             history.pushState({}, '', buildUrl())
+            if (!isActive) {
+                window.posthog?.capture('filter_applied', {
+                    filter_slug: slug,
+                    filter_type: type,
+                })
+            }
         })
     })
 
