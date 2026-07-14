@@ -1,0 +1,32 @@
+{
+    "friends": {
+        "icon": "people-group",
+        "label": "Friends",
+        "descriptor": "LGBTQ+ Groups & Community"
+    },
+    "spiritual": {
+        "icon": "lotus",
+        "label": "Spiritual",
+        "descriptor": "Queer-Affirming Spiritual Spaces"
+    },
+    "art": {
+        "icon": "palette",
+        "label": "Art",
+        "descriptor": "Queer Art & Culture"
+    },
+    "cafes": {
+        "icon": "mug-saucer",
+        "label": "Cafes",
+        "descriptor": "LGBTQ+-Friendly Cafes"
+    },
+    "music": {
+        "icon": "music",
+        "label": "Music",
+        "descriptor": "Queer Music & Nightlife"
+    },
+    "makers": {
+        "icon": "paintbrush",
+        "label": "Makers",
+        "descriptor": "Queer Makers & Artisans"
+    }
+}

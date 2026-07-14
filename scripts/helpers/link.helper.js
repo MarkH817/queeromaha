@@ -1,16 +1,5 @@
 // @ts-check
 /**
- * Instagram `@handle` shorthand normalization
- * @param {string} url
- */
-export function normalizeUrl(url) {
-    if (typeof url === 'string' && /^@[\w.]+$/.test(url)) {
-        return `https://instagram.com/${url.slice(1)}`
-    }
-    return url
-}
-
-/**
  * @param {string} url
  */
 export function getHost(url) {

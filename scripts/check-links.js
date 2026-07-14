@@ -14,7 +14,6 @@ import {
     getHost,
     isSkipDomain,
     isSuspiciousRedirect,
-    normalizeUrl,
 } from './helpers/link.helper'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -177,7 +176,7 @@ function gatherAllLinks() {
                     file: filename,
                     itemName: item.name,
                     label: link.label,
-                    url: normalizeUrl(link.url),
+                    url: link.url,
                 })
             }
         }
@@ -196,7 +195,7 @@ function gatherNewLinksFromDiff() {
     for (const line of diff.split('\n')) {
         if (!line.startsWith('+') || line.startsWith('+++')) continue
         const match = line.match(/^\+\s+url:\s+(\S+)\s*$/)
-        if (match) urls.add(normalizeUrl(match[1]))
+        if (match) urls.add(match[1])
     }
     return [...urls]
 }

@@ -6,7 +6,7 @@ items:
     public: true
     description: Great people, coffee and pastries both in Aksarben / 120th and Blondo.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/roast_coffeehouse/
       - label: Website
         url: https://www.ahillofbeans.com/pages/roast-coffeehouse
@@ -14,16 +14,16 @@ items:
         url: https://www.facebook.com/profile.php/?id=100089484920886
     tags:
       - neutral-bathrooms
-      - work-spot
+      - wifi
     location:
       street: 120th and Blondo
-      neighborhood: West O
+      neighborhood: West Omaha
       google_maps_url: https://maps.app.goo.gl/4qViWqoWxHpZn4oR9
   - name: Godega
     public: true
     description: Grab-and-go food, specialty snacks, and a place to hang out
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/godegamarket/
       - label: Website
         url: https://godegamarket.com/
@@ -32,14 +32,14 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-      - work-spot
+      - wifi
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: Marigold's
     public: true
     description: Artisanal goods and crafts.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/marigoldsmercantile/
       - label: Website
         url: https://www.marigoldsmercantile.com/
@@ -48,8 +48,9 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: Mill on Leavenworth
     public: true
     description: Large popular cafe. Good for meetups and "working".
@@ -58,25 +59,27 @@ items:
         url: https://millcoffee.com/pages/the-mill-on-leavenworth
     tags:
       - seating
-      - work-spot
+      - wifi
     location:
       neighborhood: Midtown
   - name: Archetype Coffee
     public: true
-    description: Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/).
+    description: Best coffee in town. Lil BoHo location serves great brunch food from Know Good.
     links:
       - label: Website
         url: https://drinkarchetype.com/
+      - label: Know Good
+        url: https://knowgoodeats.com/
     tags:
       - neutral-bathrooms
-      - work-spot
+      - wifi
     location:
       neighborhood: Midtown
   - name: Sweet Magnolias
     public: true
     description: Queer-owned pastry shop.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/sweetmagnoliasbakeshop/
       - label: Website
         url: https://www.sweetmagnoliasbakeshop.com/
@@ -84,21 +87,40 @@ items:
       neighborhood: Midtown
   - name: Spielbound
     public: true
-    description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
+    description: Board game cafe with an active monthly Meetup Group.
     links:
-      - label: Official Discord
+      - label: Discord
         url: https://discord.com/invite/official-spellbound-861024184947572736
       - label: Website
         url: https://www.spielbound.com/how-to-spielbound
+      - label: Meetup Group
+        url: https://www.meetup.com/playing-games-at-spielbound/
     tags:
       - neutral-bathrooms
+      - wifi
     location:
       neighborhood: Midtown
+    recurring_events:
+      - summary: Pick Up Games — Spielbound
+        rrule: FREQ=MONTHLY;BYDAY=3SU
+        dtstart: "20250119"
+        time: 13:30
+        end_time: 16:30
+        location: Spielbound (Midtown)
+        description: Usually the 2nd or 3rd Sunday of the month — check Meetup for the exact date. Standard day pass fee applies.
+        url: https://www.meetup.com/playing-games-at-spielbound/
+      - summary: LilyPalooza Free Demo — Spielbound
+        rrule: FREQ=MONTHLY;BYDAY=-1SU
+        dtstart: "20250126"
+        time: 13:30
+        location: Spielbound (Midtown)
+        description: Free board game demo, different game each month. Demoed games get a 10% discount afterward.
+        url: https://www.meetup.com/playing-games-at-spielbound/
   - name: Hardy Coffee
     public: false
     description: Chill hipster cafe.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/hardycoffeeco/
       - label: FB
         url: https://www.facebook.com/hardycoffeeco/
@@ -108,13 +130,14 @@ items:
     tags:
       - seating
       - neutral-bathrooms
+      - wifi
     location:
       neighborhood: Benson
   - name: Edge of the Universe Cafe
     public: true
     description: Truly unique place with artist owners. Great date spot.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/edgeuniversebff/
       - label: Events Calendar
         url: https://www.edgeoftheuniverseomaha.com/
@@ -123,44 +146,47 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Benson
   - name: Legends Comics & Coffee
     public: true
     description: Comic shop with a large queer section. Board game space in the back.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/legendcomicsandcoffee/
       - label: FB
         url: https://www.facebook.com/LegendComics/
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Benson
   - name: Blue Line Coffee
     public: true
-    description: Great coffee and cool people. Posts flyers for local events.
+    description: Dundee cafe with huge flyer board.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/bluelinecoffeeomaha/
       - label: FB
         url: https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727
     tags:
       - neutral-bathrooms
-      - work-spot
+      - wifi
+      - seating
     location:
       neighborhood: Midtown
   - name: Lola's
     public: false
-    description: Pricy cafe in the movie theater. Good for dates.
+    description: Pricey Cafe in the movie theater. Good for dates.
     location:
-      neighborhood: Midtown
+      neighborhood: Dundee
   - name: Amateur Coffee
     public: true
     description: Small place whose takeout coffee comes in glass containers with deposit.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/amateurcoffee/
       - label: Website
         url: https://www.amateurcoffee.com/
@@ -168,6 +194,8 @@ items:
         url: https://www.instagram.com/amateurcoffee/
     tags:
       - neutral-bathrooms
+      - seating
+      - wifi
     notes: Met Owner at NZC who stated it's queer owned.
     location:
       neighborhood: Midtown
@@ -177,25 +205,29 @@ items:
     links:
       - label: Website
         url: https://www.urbanabbeyomaha.com/
-    notes: idk about xstian stuff man
+    notes: idk
     tags:
       - seating
     location:
-      neighborhood: Midtown
+      neighborhood: Downtown
   - name: Reading Room
     public: true
-    description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
+    description: Bookstore cafe / bar with a Queer-run poetry reading open mic night. See also the Poetry Menu site.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/reading_room_omaha/
       - label: Events Calendar
         url: https://readingroomomaha.com/events/
       - label: FB
         url: https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/
+      - label: Poetry Reading
+        url: https://www.nepoetrysociety.org/spoken-word
+      - label: Poetry Menu
+        url: https://poetrymenu.com/
     tags:
       - seating
     location:
-      neighborhood: Midtown
+      neighborhood: Downtown
   - name: Rally Coffee
     public: false
     description: Cafe downtown.
@@ -204,12 +236,12 @@ items:
         url: https://www.rallycoffee.co/pages/locations
     notes: Go there first before listing.
     location:
-      neighborhood: Midtown
+      neighborhood: Downtown
   - name: Zen Coffee
     public: true
     description: Downtown and West O locations.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/zencoffeeco/
       - label: FB
         url: https://www.facebook.com/zencoffeecompany/
@@ -218,21 +250,22 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+      - wifi
     location:
       neighborhood: Midtown
   - name: Howlin Hounds
     public: false
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/howlinhounds/
     notes: Recommended, haven't been there.
     location:
-      neighborhood: Midtown
+      neighborhood: Downtown
   - name: Karma Koffee
     public: true
     description: Buddhist themed cafe with vegan options and authentic thangkas.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/karma_koffee/
       - label: Website
         url: https://www.karmakoffee.com/
@@ -241,15 +274,16 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-      - work-spot
+      - wifi
     location:
-      neighborhood: West O
+      neighborhood: West Omaha
+    notes: legit buddhist stuff
   - public: true
     name: The Tea Smith
     tags:
       - neutral-bathrooms
       - seating
-      - work-spot
+      - wifi
     location:
       street: ""
       city: ""
@@ -261,7 +295,7 @@ items:
       - label: Website
         url: https://www.theteasmith.com/
       - url: https://www.instagram.com/theteasmith/
-        label: Insta
+        label: Instagram
       - label: FB
         url: https://facebook.com/TheTeaSmith
     description: Chill tea shop. Nice place for hanging out.

@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
 import { parse as parseYaml } from 'yaml'
+import { canonicalize } from '../scripts/helpers/yaml.helper'
 import footerMessages from '../src/data/footerMessages.json' with {
     type: 'json',
 }
@@ -63,9 +64,19 @@ describe('directory yaml files', () => {
     })
 
     for (const file of yamlFiles) {
-        const data = parseYaml(readFileSync(join(CONTENT_DIR, file), 'utf8'))
+        const raw = readFileSync(join(CONTENT_DIR, file), 'utf8')
+        const data = parseYaml(raw)
 
         describe(file, () => {
+            test('is canonically formatted', () => {
+                const result = canonicalize(raw)
+                if ('error' in result) throw new Error(result.error)
+                expect(
+                    result.canonical,
+                    'not canonically formatted — run `bun run format`',
+                ).toBe(raw)
+            })
+
             test('has a title', () => {
                 expect(typeof data.title).toBe('string')
                 expect(data.title.length).toBeGreaterThan(0)
@@ -105,12 +116,7 @@ describe('directory yaml files', () => {
                             typeof link.url,
                             `link in "${item.name}" missing url`,
                         ).toBe('string')
-                        const resolvedUrl =
-                            typeof link.url === 'string' &&
-                            /^@[\w.]+$/.test(link.url)
-                                ? `https://instagram.com/${link.url.slice(1)}`
-                                : link.url
-                        expect(() => new URL(resolvedUrl)).not.toThrow(
+                        expect(() => new URL(link.url)).not.toThrow(
                             `"${item.name}" > "${link.label}" has unparseable URL: ${link.url}`,
                         )
                     }
@@ -133,9 +139,11 @@ describe('directory yaml files', () => {
                     'Benson',
                     'Downtown',
                     'Midtown',
-                    'North O',
-                    'South O',
-                    'West O',
+                    'Dundee',
+                    'Aksarben',
+                    'North Omaha',
+                    'South Omaha',
+                    'West Omaha',
                 ])
                 for (const item of data.items) {
                     const nbr = item.location?.neighborhood

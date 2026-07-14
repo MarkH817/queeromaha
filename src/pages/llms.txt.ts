@@ -6,7 +6,13 @@ export async function GET() {
 ## Pages
 
 - [Queer Omaha Directory](https://queeromaha.net/): Full directory of queer groups, venues, cafes, music, art, and spiritual spaces in Omaha.
-- [About](https://queeromaha.net/about): About the project and how to get in touch / contact admins and site owners.
+
+## Suggesting an addition
+
+A "Suggestion Box" form is present in the footer of every page (expand
+it to submit a place, group, or event to add). For anything beyond a
+single suggestion, use the GitHub repo:
+[taraxvoid/queeromaha](https://github.com/taraxvoid/queeromaha).
 
 This file is advertised via an HTTP \`Link: </llms.txt>; rel="service-doc"\` response header.
 `

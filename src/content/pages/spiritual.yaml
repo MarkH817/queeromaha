@@ -7,16 +7,17 @@ items:
       - neutral-bathrooms
       - seating
     public: false
-    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC
+    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga (Pay What You Can)
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/dawaune.one/
     location:
       neighborhood: Midtown
     notes: IG profile is age-restricted, doublecheck time/scheduling
   - name: Ananda Omaha Wellness and Yoga
     public: true
-    description: Brooke hosts a FREE/PWYC monthly Mad Folx class specifically for queer and trans emotional release at 12:30PM to 2PM on third Sundays
+    description: |
+      Queer / Trans* Emotional Release class on Sundays @ 12:30PM (Pay What You Can)
     tags:
       - neutral-bathrooms
       - seating
@@ -27,10 +28,11 @@ items:
     links:
       - label: Class Schedule
         url: https://www.anandaomaha.com/brooke-monaco-wellness
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/ananda.omaha/
       - url: https://anandaomaha.as.me/schedule/80efeafb/?appointmentTypeIds%5B%5D=86384838
         label: "PWYC Mad Folx class "
+    notes: Brooke owner is chill
   - name: Honey Locust Sangha
     public: true
     tags:
@@ -38,6 +40,8 @@ items:
       - seating
     description: Low-key meditation in progressive Buddhist tradition on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific.
     links:
+      - label: Monday 6:30PM Open Zen
+        url: https://nebraskazencenter.org/sunday-open-zen/
       - label: Events Calendar
         url: https://honeylocustsangha.org/events.html
     location:
@@ -64,25 +68,41 @@ items:
       - neutral-bathrooms
       - seating
     public: true
-    description: Get stratospheric with Havalynn at Church Art House every Sunday (except the 1st of the month) @ 10:30AM.  PWYC
+    description: Get stratospheric with Havalynn at Church Art House Sundays @ 10:30AM (besides the first Sunday) (Pay What You Can)
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/havalynn1/
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
       google_maps_url: https://maps.app.goo.gl/gHdwtFr8pqcomCvq6
       street: 20th and Vinton
+    recurring_events:
+      - summary: Sound Bath — Havalynn Russell
+        rrule: FREQ=MONTHLY;BYDAY=2SU,3SU,4SU,5SU
+        dtstart: "20250112"
+        time: 10:30
+        location: Church Art House, 20th and Vinton, South Omaha
+        description: Pay What You Can. Every Sunday except the first Sunday of the month.
+        url: https://www.instagram.com/havalynn1/
   - name: Sound Bath w/ Geoff Wertheim
     public: false
-    description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM. Family-friendly.
+    description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM (Pay What You Can)
     links:
       - label: FB
         url: https://www.facebook.com/geoff.wertheim.9
     notes: Tara hasn't been to it yet, needs verify
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
       google_maps_url: https://maps.app.goo.gl/gHdwtFr8pqcomCvq6
       street: 20th and Vinton
+    recurring_events:
+      - summary: Sound Bath — Geoff Wertheim
+        rrule: FREQ=MONTHLY;BYDAY=1SU
+        dtstart: "20250105"
+        time: 13:11
+        location: Church Art House, 20th and Vinton, South Omaha
+        description: Pay What You Can.
+        url: https://www.facebook.com/geoff.wertheim.9
   - name: Recovering From Religion
     public: false
     description: Resources for processing religious trauma.

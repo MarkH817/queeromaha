@@ -1,15 +1,15 @@
-const cards = document.querySelectorAll<HTMLElement>('[data-category]')
-const pills = document.querySelectorAll<HTMLElement & { disabled: boolean }>(
-    '[data-filter]',
-)
-const clearBtn = document.getElementById(
-    'filterClear',
-) as HTMLButtonElement | null
+function initFilters() {
+    const cards = document.querySelectorAll<HTMLElement>('[data-category]')
+    const pills = document.querySelectorAll<
+        HTMLElement & { disabled: boolean }
+    >('[data-filter]')
+    const clearBtn = document.getElementById(
+        'filterClear',
+    ) as HTMLButtonElement | null
 
-if (cards.length > 0) {
+    if (cards.length === 0) return
     const activeTags = new Set<string>()
     const activeCategories = new Set<string>()
-    const activeNeighborhoods = new Set<string>()
 
     function updateClearBtn() {
         if (clearBtn) clearBtn.disabled = activeTags.size === 0
@@ -18,27 +18,19 @@ if (cards.length > 0) {
     function cardMatches(
         card: HTMLElement,
         cats: Set<string>,
-        nbrs: Set<string>,
         tags: Set<string>,
     ) {
         const cardTags = (card.dataset.tags || '').split(' ').filter(Boolean)
         const cardCat = card.dataset.category || ''
-        const cardNbr = card.dataset.neighborhood || ''
         const tagMatch =
             tags.size === 0 || [...tags].every((t) => cardTags.includes(t))
         const catMatch = cats.size === 0 || cats.has(cardCat)
-        const nbrMatch = nbrs.size === 0 || nbrs.has(cardNbr)
-        return tagMatch && catMatch && nbrMatch
+        return tagMatch && catMatch
     }
 
     function applyFilters() {
         cards.forEach((card) => {
-            card.hidden = !cardMatches(
-                card,
-                activeCategories,
-                activeNeighborhoods,
-                activeTags,
-            )
+            card.hidden = !cardMatches(card, activeCategories, activeTags)
         })
         document
             .querySelectorAll<HTMLElement>('[data-category-heading]')
@@ -49,46 +41,37 @@ if (cards.length > 0) {
                 )
             })
         updatePillAvailability()
-        updateImpliedCategoryState()
-    }
-
-    function updateImpliedCategoryState() {
-        const allCategoriesImplied =
-            activeNeighborhoods.size > 0 && activeCategories.size === 0
-        pills.forEach((pill) => {
-            if (pill.dataset.filterType !== 'category') return
-            pill.classList.toggle('implied', allCategoriesImplied)
-        })
     }
 
     function wouldHaveResults(slug: string, type: string) {
         // Build the hypothetical filter state if `slug` were chosen, rather
-        // than relying on card.hidden (which reflects the *current*
-        // selection and would wrongly veto switching category/location
-        // when the current combination has zero matches).
+        // than relying on card.hidden (which reflects the *current* selection
+        // and would wrongly veto switching category when the current
+        // combination has zero matches).
         const testCats = new Set(activeCategories)
-        const testNbrs = new Set(activeNeighborhoods)
         const testTags = new Set(activeTags)
         if (type === 'category') {
-            // Switching category also clears location/tags (see
-            // setCategory), so availability shouldn't be constrained by them.
+            // Switching category also clears tags (see setCategory), so
+            // availability shouldn't be constrained by them.
             testCats.clear()
             testCats.add(slug)
-            testNbrs.clear()
             testTags.clear()
-        } else if (type === 'neighborhood') {
-            testNbrs.clear()
-            testNbrs.add(slug)
         } else if (type === 'tag') {
             testTags.add(slug)
         }
-        return [...cards].some((card) =>
-            cardMatches(card, testCats, testNbrs, testTags),
-        )
+        return [...cards].some((card) => cardMatches(card, testCats, testTags))
     }
 
     function updatePillAvailability() {
         pills.forEach((pill) => {
+            // Category pills are client-side toggles over the full card DOM
+            // every route ships, so they're never limited by the current
+            // selection and should never be disabled.
+            if (pill.dataset.filterType === 'category') {
+                pill.disabled = false
+                pill.classList.remove('unavailable')
+                return
+            }
             if (pill.classList.contains('active')) {
                 pill.disabled = false
                 pill.classList.remove('unavailable')
@@ -109,8 +92,6 @@ if (cards.length > 0) {
         if (!pill) return
         if (pill.dataset.filterType === 'category') activeCategories.add(slug)
         else if (pill.dataset.filterType === 'tag') activeTags.add(slug)
-        else if (pill.dataset.filterType === 'neighborhood')
-            activeNeighborhoods.add(slug)
         pill.classList.add('active')
         pill.setAttribute('aria-pressed', 'true')
         applyFilters()
@@ -125,8 +106,6 @@ if (cards.length > 0) {
         if (pill.dataset.filterType === 'category')
             activeCategories.delete(slug)
         else if (pill.dataset.filterType === 'tag') activeTags.delete(slug)
-        else if (pill.dataset.filterType === 'neighborhood')
-            activeNeighborhoods.delete(slug)
         pill.classList.remove('active')
         pill.setAttribute('aria-pressed', 'false')
         applyFilters()
@@ -134,8 +113,8 @@ if (cards.length > 0) {
     }
 
     function buildUrl() {
-        const parts = [...activeCategories, ...activeNeighborhoods]
-        return parts.length === 0 ? '/' : `/${parts.join('/')}`
+        const parts = [...activeCategories]
+        return parts.length === 0 ? '/friends' : `/${parts.join('/')}`
     }
 
     function clearType(type: string, activeSet: Set<string>) {
@@ -157,18 +136,11 @@ if (cards.length > 0) {
 
     function setCategory(slug: string) {
         clearType('category', activeCategories)
-        // Switching category also resets location and tags, since a
-        // filter combo from the old category may not make sense in the
-        // new one.
-        clearType('neighborhood', activeNeighborhoods)
+        // Switching category also resets tags, since a filter combo from the
+        // old category may not make sense in the new one.
         clearType('tag', activeTags)
         activateFilter(slug)
         scrollToTop()
-    }
-
-    function setNeighborhood(slug: string) {
-        clearType('neighborhood', activeNeighborhoods)
-        activateFilter(slug)
     }
 
     if (clearBtn) {
@@ -182,22 +154,26 @@ if (cards.length > 0) {
 
     pills.forEach((pill) => {
         pill.addEventListener('click', (e) => {
-            e.preventDefault()
             const slug = pill.dataset.filter || ''
             const type = pill.dataset.filterType || ''
             const isActive = pill.classList.contains('active')
+
+            e.preventDefault()
+
             if (type === 'category') {
-                if (isActive) {
-                    scrollToTop()
-                    return
-                } else setCategory(slug)
-            } else if (type === 'neighborhood') {
-                if (isActive) deactivateFilter(slug)
-                else setNeighborhood(slug)
-            } else {
-                if (isActive) deactivateFilter(slug)
-                else activateFilter(slug)
+                // Tapping the already-active category is a no-op.
+                if (isActive) return
+                // Every static route already ships the full card DOM, so
+                // switching category is a local hidden-toggle (instant, no
+                // fetch) — the pill's real href is only a JS-off fallback.
+                setCategory(slug)
+                history.pushState({}, '', buildUrl())
+                return
             }
+
+            // Tag pills.
+            if (isActive) deactivateFilter(slug)
+            else activateFilter(slug)
             history.pushState({}, '', buildUrl())
         })
     })
@@ -206,13 +182,25 @@ if (cards.length > 0) {
     const initCats = (document.body.dataset.initialCategories || '')
         .split(' ')
         .filter(Boolean)
-    const initNbrs = (document.body.dataset.initialNeighborhoods || '')
-        .split(' ')
-        .filter(Boolean)
     const initTags = (document.body.dataset.initialTags || '')
         .split(' ')
         .filter(Boolean)
     if (initCats.length > 0) setCategory(initCats[0])
-    initNbrs.forEach(activateFilter)
     initTags.forEach(activateFilter)
+    // Astro renders `hidden={false}` on custom elements like <wa-card> as
+    // the literal attribute hidden="false", which the HTML boolean-attribute
+    // spec (and our `[hidden]` CSS) treats as truthy regardless of value.
+    // Setting `.hidden` via the JS property below is what actually clears
+    // it. The calls above only do this for cards touched by an active
+    // category/tag; this unconditional call covers any card that ends up with
+    // no active filter touching it at all.
+    applyFilters()
 }
+
+// Category and tag pills both filter client-side in place — there's no soft
+// navigation — so init once on normal page load.
+if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', initFilters)
+else initFilters()
+
+export {}

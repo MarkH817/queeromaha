@@ -1,5 +1,14 @@
-const CACHE = 'qo-v1'
-const PRECACHE = ['/social', '/about', '/manifest.webmanifest']
+const CACHE = 'qo-v3'
+const PRECACHE = [
+    '/',
+    '/friends',
+    '/spiritual',
+    '/art',
+    '/cafes',
+    '/music',
+    '/makers',
+    '/manifest.webmanifest',
+]
 
 self.addEventListener('install', (e) => {
     e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)))
@@ -24,6 +33,9 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
     const url = new URL(e.request.url)
     if (!url.protocol.startsWith('http')) return
+    // The Cache API only supports GET — let POSTs (e.g. the suggestion
+    // box form submission) pass straight through with no interception.
+    if (e.request.method !== 'GET') return
     // Cache-first for hashed Astro assets (safe to cache forever)
     if (url.pathname.startsWith('/_astro/')) {
         e.respondWith(
