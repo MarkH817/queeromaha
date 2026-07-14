@@ -35,7 +35,10 @@ function initCharacterCounter(input: HTMLInputElement, hint: HTMLElement) {
     })
 }
 
-function initSubmitHandler(form: HTMLFormElement) {
+function initSubmitHandler(
+    form: HTMLFormElement,
+    sendButton: HTMLButtonElement,
+) {
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
         const data = new URLSearchParams(
@@ -56,6 +59,9 @@ function initSubmitHandler(form: HTMLFormElement) {
                 thanks.className = 'suggestion-thanks'
                 thanks.textContent = 'Thanks! We got your suggestion.'
                 form.replaceWith(thanks)
+                // Send lives outside the form (associated via the `form`
+                // attribute) so it doesn't get removed by the swap above.
+                sendButton.remove()
             } else {
                 showError(
                     'Something went wrong. Try again or email us directly.',
@@ -84,11 +90,13 @@ function init() {
     const form = details?.querySelector<HTMLFormElement>('form[name="suggest"]')
     const input = details?.querySelector<HTMLInputElement>('#suggestionMessage')
     const hint = details?.querySelector<HTMLElement>('#suggestionHint')
-    if (!details || !form || !input || !hint) return
+    const sendButton =
+        details?.querySelector<HTMLButtonElement>('.suggestion-submit')
+    if (!details || !form || !input || !hint || !sendButton) return
 
     initFocusOnOpen(details, input)
     initCharacterCounter(input, hint)
-    initSubmitHandler(form)
+    initSubmitHandler(form, sendButton)
 }
 
 if (document.readyState === 'loading')

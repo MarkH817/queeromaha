@@ -202,21 +202,54 @@ footer {
 @media (max-width: 480px) {
     footer {
         flex-wrap: wrap;
-        justify-content: center;
         row-gap: 0.3rem;
         /* Three pill items (calendar, GitHub icon, suggestion box) need
            to fit on one row at narrow widths; the default horizontal
            padding leaves them a couple px short. */
-        padding-left: 0.4rem;
-        padding-right: 0.4rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
         padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* Purely decorative dividers — .footer-text is already hidden at this
+       width (below), so there's nothing left for them to separate. Dropping
+       them frees up the width labeled buttons need to keep their text,
+       instead of ever shrinking to icon-only. */
+    .footer-separator {
+        display: none;
+    }
+
+    .footer-pill-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .calendar-box {
+        padding-right: 0.25rem;
+    }
+
+    .footer-icon {
+        padding: 0.1rem 0.3rem;
+        font-size: 1.5rem;
     }
 }
 
 .footer-text {
+    /* .suggestion-box is first in the DOM (so the [open] ~ sibling
+       hiding rule below can reach every other footer item) — these
+       order values restore the visual layout. The message sits outside
+       the calendar/separator/suggestion-box/separator/GitHub sequence
+       entirely (order: -1) so it can't wedge into the centered zone
+       reserved for the Suggestion Box; it's hidden below 480px anyway. */
+    order: -1;
     text-align: center;
-    flex: 1 1 0;
+    /* Not flex-grow: 1 — this used to claim all the row's free space,
+       which left nothing for .suggestion-box's auto margins to center
+       it with. Bounded instead, so the centering below actually works. */
+    flex: 0 1 auto;
+    max-width: 240px;
     min-width: 0;
+    margin-right: 0.5rem;
     padding: 0.25rem 0.75rem;
     opacity: 0.8;
     overflow: hidden;
@@ -224,7 +257,28 @@ footer {
     text-overflow: ellipsis;
 }
 
+.footer-separator {
+    order: 1;
+    align-self: stretch;
+    width: 1px;
+    margin: 0.3rem 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Tighter against the calendar/GitHub buttons on their outer side,
+   leaving the roomier gap on the inner side (toward the centered
+   Suggestion Box). */
+.footer-separator-left {
+    margin-left: 0.2rem;
+}
+
+.footer-separator-right {
+    order: 3;
+    margin-right: 0.2rem;
+}
+
 .footer-nav {
+    order: 4;
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -245,12 +299,13 @@ footer a:hover {
 }
 
 .footer-icon {
+    /* .footer-separator-right now provides the divider on this side,
+       so this element no longer needs its own border-left. */
     display: flex;
     align-items: center;
     font-size: 1.7rem;
     background: none;
     border: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: none;
     padding: 0.1rem 0.5rem 0.1rem 0.75rem;
 }
@@ -266,6 +321,11 @@ footer a:hover {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
+    /* Never let the label wrap or the pill get squeezed by flex
+       siblings — either would turn the rounded pill into a taller,
+       squared-off box instead of just narrowing. */
+    white-space: nowrap;
+    flex-shrink: 0;
     transition:
         background 0.15s,
         border-color 0.15s,
@@ -280,14 +340,72 @@ footer a:hover {
 }
 
 .suggestion-box {
+    order: 2;
     /* Web Awesome's native.css gives every <details> a white "panel"
-       background, border, padding, and bottom margin by default —
-       reset it so the footer's purple background shows through and
-       flex centering isn't thrown off by the extra margin. */
+       background, border, and padding by default — reset it so the
+       footer's purple background shows through. The auto left/right
+       margins consume all remaining free space evenly, which is what
+       centers the button between the two separators (rather than
+       justify-content, which would space *all* items evenly). */
     background: transparent;
     border: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+}
+
+/* Opening either footer <details> (suggestion box or calendar box) hides
+   the other footer buttons so its own toggle reads as a clear "tap to
+   open / tap to close" affordance, staying roughly in place instead of
+   competing for row space. Works via the DOM-order-only ~ sibling
+   combinator for later siblings; .calendar-box comes after
+   .suggestion-box in the DOM (required so this rule can reach it), so
+   the one gap — hiding .suggestion-box, an *earlier* sibling, when
+   .calendar-box opens — needs :has() below instead. */
+.suggestion-box[open] ~ .calendar-box,
+.suggestion-box[open] ~ .footer-text,
+.suggestion-box[open] ~ .footer-separator,
+.suggestion-box[open] ~ .footer-nav,
+.calendar-box[open] ~ .footer-text,
+.calendar-box[open] ~ .footer-separator,
+.calendar-box[open] ~ .footer-nav {
+    display: none;
+}
+
+footer:has(.calendar-box[open]) .suggestion-box {
+    display: none;
+}
+
+/* Reuses the same "pressed in" look as .filter-pill.active (inset
+   shadow + translateY) so the open state reads as this button being
+   currently pressed, not just its content changed. */
+.suggestion-box[open] summary.footer-pill-btn,
+.calendar-box[open] summary.footer-pill-btn {
+    /* Lighter than this (e.g. the 0.25 alpha tried earlier) pushes the
+       background too close to white, dropping text contrast below
+       4.5:1 once :hover's color: #fff is also active (Playwright's
+       click leaves the pointer over the element, same as a real tap-
+       and-hold would). Pinning color explicitly here too, rather than
+       relying on inherited/hover color. */
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+    transform: translateY(1px);
+}
+
+.suggestion-box[open] summary.footer-pill-btn {
+    /* The suggestion box's accordion grows *upward* off a sticky-bottom
+       footer, so its toggle moves to the *end* (panel first, toggle
+       last) to stay near the bottom, roughly where it was before
+       opening — putting it on top instead made it leap up the screen as
+       the panel appeared beneath it. Paired with
+       .suggestion-box-toggle-row's margin-left: auto so the two end up
+       centered as a unit; a plain left-align here dragged it ~70px off
+       its closed position. The calendar box doesn't need this: its
+       options sit beside its toggle on the same row instead of below
+       it, so the toggle just stays in its natural (first) position. */
+    order: 2;
+    margin-right: auto;
 }
 
 summary.footer-pill-btn {
@@ -302,18 +420,90 @@ summary.footer-pill-btn::-webkit-details-marker {
 }
 
 /* Web Awesome also adds an auto chevron after the summary; the
-   lightbulb icon already signals what this is, so drop it. */
-.suggestion-box summary::after {
+   lightbulb/calendar icons already signal what these are, so drop it. */
+.suggestion-box summary::after,
+.calendar-box summary::after {
     display: none;
 }
 
 .suggestion-box[open] {
     padding: 0;
+    margin: 0;
     flex: 1 1 100%;
+    /* <summary> stacks above its content natively — this flex context
+       lets `order` reposition summary and the Send button onto a
+       shared row instead, so the toggle ends up next to Send roughly
+       where it was before opening, not floating above the form.
+       align-items: flex-end (not center) anchors that row to the same
+       edge regardless of Send/summary having different heights — with
+       center, the taller Send button recentered the whole row and
+       dragged the toggle upward relative to its closed position. */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    /* Space between the Send button and the toggle. Since Send is now
+       pinned to the input's left edge (not paired-centered with the
+       toggle), the toggle just falls wherever Send's width + this gap
+       leaves it — tuned to ~1rem because that happens to land the
+       toggle very close to its closed position on the phone widths this
+       footer targets, not because of any special significance to the
+       value itself. */
+    column-gap: 1rem;
+}
+
+/* Chromium wraps every non-summary child of an open <details> into an
+   implicit ::details-content box regardless of whether this stylesheet
+   references it — without this, .suggestion-box-panel and
+   .suggestion-box-toggle-row are grandchildren of .suggestion-box, not
+   direct flex items, so the `order` values above never apply to them.
+   display: contents un-wraps it, promoting its children to participate
+   in .suggestion-box[open]'s flex layout directly. No-op in browsers
+   that don't create this box. */
+.suggestion-box[open]::details-content {
+    display: contents;
 }
 
 .suggestion-box-panel {
+    order: 0;
+    flex: 1 1 100%;
     padding: 0.75rem 0.25rem 0.25rem;
+}
+
+.calendar-box[open] {
+    padding: 0;
+    margin: 0;
+    flex: 1 1 100%;
+    /* Toggle and options all share one row (unlike the suggestion box,
+       whose input needs its own full-width row above the toggle) —
+       nowrap keeps them from ever splitting onto a second line. */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.calendar-box[open]::details-content {
+    display: contents;
+}
+
+.calendar-box-panel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.suggestion-box-toggle-row {
+    order: 1;
+    /* No margin-left: auto — Send's left edge (this row's own 0.25rem
+       padding lands right after it) should line up with the input's
+       left edge above it, which has the same 0.25rem inset from
+       .suggestion-box-panel. No bottom padding either: the row's own
+       bottom edge is what .suggestion-box[open]'s align-items: flex-end
+       lines up against the toggle, so any padding here would leave Send
+       sitting above that shared bottom edge instead of on it. */
+    display: flex;
+    align-items: center;
+    padding: 0 0.25rem;
 }
 
 .suggestion-label {
@@ -342,19 +532,49 @@ summary.footer-pill-btn::-webkit-details-marker {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Same text/color/depth treatment as the top category buttons
+   (.main-nav wa-button::part(base)), keeping Send's own shape
+   (border-radius: 8px, not the category buttons' full 999px pill). */
 .suggestion-submit {
-    background: #fff;
     color: #6d28d9;
-    border: none;
+    background: #f9f5ff;
+    border: 2px solid #c4b5fd;
     border-radius: 8px;
-    padding: 0.65rem 1.25rem;
+    /* ~1.5x the width of the original 1.25rem horizontal padding.
+       Vertical padding trimmed slightly from 0.65rem so Send reads as
+       "a bit taller" than the Suggestion Box toggle rather than a lot
+       taller, while the two share a bottom edge. */
+    padding: 0.55rem 2.5rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     cursor: pointer;
+    transition:
+        background 0.1s ease-out,
+        color 0.1s ease-out,
+        border-color 0.1s ease-out,
+        box-shadow 0.1s ease-out,
+        transform 0.1s ease-out;
+    box-shadow:
+        0 3px 0 #c4b5fd,
+        0 5px 8px rgba(76, 29, 118, 0.18);
 }
 
 .suggestion-submit:hover {
-    background: #f3e8ff;
+    background: #ede9fe;
+    border-color: #a78bfa;
+}
+
+.suggestion-submit:active {
+    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
+    transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .suggestion-submit {
+        transition: none;
+    }
 }
 
 .suggestion-thanks,
@@ -380,38 +600,26 @@ summary.footer-pill-btn::-webkit-details-marker {
     display: none;
 }
 
-@supports selector(::details-content) {
-    .suggestion-box {
-        interpolate-size: allow-keywords;
-    }
-
-    .suggestion-box::details-content {
-        height: 0;
-        overflow: clip;
-        transition:
-            height 0.25s ease,
-            content-visibility 0.25s ease allow-discrete;
-    }
-
-    .suggestion-box[open]::details-content {
-        height: auto;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .suggestion-box::details-content {
-            transition: none;
-        }
-    }
-}
-
-.footer-cal {
+.calendar-box {
+    /* Same "reset Web Awesome details styling" story as .suggestion-box
+       (see comment there) — details/summary bring a default white panel
+       look that needs stripping so the footer's purple shows through.
+       Web Awesome's native.css also sets margin-bottom: 24px on <details>;
+       left unreset here (unlike .suggestion-box's margin: 0 auto), that
+       leaked margin pulled this pill ~12px out of vertical alignment with
+       the suggestion box under the footer's align-items: center. */
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
     flex-shrink: 0;
     padding-right: 0.5rem;
 }
 
-.footer-cal a {
+.calendar-option {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     padding: 0.3rem 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 999px;
@@ -420,13 +628,18 @@ summary.footer-pill-btn::-webkit-details-marker {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
+    /* Never let the label wrap or the pill get squeezed — either would
+       turn the rounded pill into a taller, squared-off box instead of
+       just narrowing. */
+    white-space: nowrap;
+    flex-shrink: 0;
     transition:
         background 0.15s,
         border-color 0.15s,
         color 0.15s;
 }
 
-.footer-cal a:hover {
+.calendar-option:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.7);
     color: #fff;
@@ -725,6 +938,15 @@ blockquote p {
 
 #backToTop wa-icon {
     font-size: 1.8rem;
+}
+
+/* Hide alongside the other footer buttons while the suggestion box or
+   calendar box is open (theme.css's [open] ~ .footer-* rules can't reach
+   this far since #backToTop is a sibling of <footer>, not nested
+   inside it — :has() is the only way to reach across that boundary). */
+body:has(#suggestionBox[open]) #backToTop,
+body:has(#calendarBox[open]) #backToTop {
+    display: none;
 }
 
 #backToTop.show {

@@ -141,7 +141,8 @@ describe('astro build', () => {
             'utf8',
         )
         expect(html).toContain('calendar.google.com')
-        expect(html).toContain('footer-cal')
+        expect(html).toContain('calendar-box')
+        expect(html).toContain('webcal://queeromaha.net/events.ics')
     })
 
     test('friends/index.html has calendar autodiscovery link', () => {
