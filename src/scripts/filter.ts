@@ -1,12 +1,3 @@
-const ph = () =>
-    (
-        window as Window & {
-            posthog?: {
-                capture: (e: string, p?: Record<string, unknown>) => void
-            }
-        }
-    ).posthog
-
 function initFilters() {
     const cards = document.querySelectorAll<HTMLElement>('[data-category]')
     const pills = document.querySelectorAll<
@@ -94,16 +85,13 @@ function initFilters() {
         })
     }
 
-    function activateFilter(slug: string, fromUser = false) {
+    function activateFilter(slug: string) {
         const pill = document.querySelector<HTMLElement>(
             `[data-filter="${slug}"]`,
         )
         if (!pill) return
         if (pill.dataset.filterType === 'category') activeCategories.add(slug)
-        else if (pill.dataset.filterType === 'tag') {
-            activeTags.add(slug)
-            if (fromUser) ph()?.capture('tag_filter_applied', { tag: slug })
-        }
+        else if (pill.dataset.filterType === 'tag') activeTags.add(slug)
         pill.classList.add('active')
         pill.setAttribute('aria-pressed', 'true')
         applyFilters()
@@ -117,13 +105,7 @@ function initFilters() {
         if (!pill) return
         if (pill.dataset.filterType === 'category')
             activeCategories.delete(slug)
-        else if (pill.dataset.filterType === 'tag') {
-            activeTags.delete(slug)
-            ph()?.capture('tag_filter_cleared', {
-                clear_type: 'single',
-                tag: slug,
-            })
-        }
+        else if (pill.dataset.filterType === 'tag') activeTags.delete(slug)
         pill.classList.remove('active')
         pill.setAttribute('aria-pressed', 'false')
         applyFilters()
@@ -152,14 +134,12 @@ function initFilters() {
         window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' })
     }
 
-    function setCategory(slug: string, fromUser = false) {
+    function setCategory(slug: string) {
         clearType('category', activeCategories)
         // Switching category also resets tags, since a filter combo from the
         // old category may not make sense in the new one.
         clearType('tag', activeTags)
         activateFilter(slug)
-        if (fromUser)
-            ph()?.capture('category_filter_applied', { category: slug })
         scrollToTop()
     }
 
@@ -169,7 +149,6 @@ function initFilters() {
             applyFilters()
             updateClearBtn()
             history.pushState({}, '', buildUrl())
-            ph()?.capture('tag_filter_cleared', { clear_type: 'all' })
         })
     }
 
@@ -187,14 +166,14 @@ function initFilters() {
                 // Every static route already ships the full card DOM, so
                 // switching category is a local hidden-toggle (instant, no
                 // fetch) — the pill's real href is only a JS-off fallback.
-                setCategory(slug, true)
+                setCategory(slug)
                 history.pushState({}, '', buildUrl())
                 return
             }
 
             // Tag pills.
             if (isActive) deactivateFilter(slug)
-            else activateFilter(slug, true)
+            else activateFilter(slug)
             history.pushState({}, '', buildUrl())
         })
     })
@@ -207,9 +186,7 @@ function initFilters() {
         .split(' ')
         .filter(Boolean)
     if (initCats.length > 0) setCategory(initCats[0])
-    initTags.forEach((tag) => {
-        activateFilter(tag)
-    })
+    initTags.forEach(activateFilter)
     // Astro renders `hidden={false}` on custom elements like <wa-card> as
     // the literal attribute hidden="false", which the HTML boolean-attribute
     // spec (and our `[hidden]` CSS) treats as truthy regardless of value.

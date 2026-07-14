@@ -1,12 +1,3 @@
-const ph = () =>
-    (
-        window as Window & {
-            posthog?: {
-                capture: (e: string, p?: Record<string, unknown>) => void
-            }
-        }
-    ).posthog
-
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
@@ -60,10 +51,6 @@ function initTapToggle() {
             'true',
         )
         writeUrl(`/${card.dataset.category}/${card.dataset.slug}`)
-        ph()?.capture('item_expanded', {
-            item_category: card.dataset.category,
-            item_slug: card.dataset.slug,
-        })
 
         if (opts?.scroll) {
             card.scrollIntoView({
@@ -89,17 +76,7 @@ function initTapToggle() {
         // anywhere on the card except a real link (map/entry links) should
         // toggle it too, so this listens on the card itself.
         card.addEventListener('click', (e) => {
-            const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>(
-                'a',
-            )
-            if (anchor) {
-                ph()?.capture('item_link_clicked', {
-                    item_category: card.dataset.category,
-                    item_slug: card.dataset.slug,
-                    link_label: anchor.textContent?.trim(),
-                })
-                return
-            }
+            if ((e.target as HTMLElement).closest('a')) return
             toggle(card)
         })
     })

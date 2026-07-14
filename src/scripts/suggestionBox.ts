@@ -1,12 +1,3 @@
-const ph = () =>
-    (
-        window as Window & {
-            posthog?: {
-                capture: (e: string, p?: Record<string, unknown>) => void
-            }
-        }
-    ).posthog
-
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
@@ -14,7 +5,6 @@ function prefersReducedMotion() {
 function initFocusOnOpen(details: HTMLDetailsElement, input: HTMLInputElement) {
     details.addEventListener('toggle', () => {
         if (!details.open) return
-        ph()?.capture('suggestion_box_opened')
         details.scrollIntoView({
             block: 'nearest',
             behavior: prefersReducedMotion() ? 'auto' : 'smooth',
@@ -54,7 +44,6 @@ function initSubmitHandler(
                 body: data.toString(),
             })
             if (res.ok) {
-                ph()?.capture('suggestion_submitted')
                 const thanks = document.createElement('p')
                 thanks.className = 'suggestion-thanks'
                 thanks.textContent = 'Thanks! We got your suggestion.'

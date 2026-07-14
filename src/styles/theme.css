@@ -211,12 +211,19 @@ footer {
         padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
     }
 
-    /* Purely decorative dividers — .footer-text is already hidden at this
-       width (below), so there's nothing left for them to separate. Dropping
-       them frees up the width labeled buttons need to keep their text,
-       instead of ever shrinking to icon-only. */
-    .footer-separator {
+    /* .footer-text is already hidden at this width (below), so the left
+       divider has nothing to separate — dropping it frees up the width
+       labeled buttons need to keep their text, instead of ever shrinking
+       to icon-only. The right one still divides the Suggestion Box from
+       the GitHub icon; keep it, but with margins tight enough that the
+       row doesn't wrap. */
+    .footer-separator-left {
         display: none;
+    }
+
+    .footer-separator-right {
+        margin-left: 0.15rem;
+        margin-right: 0.1rem;
     }
 
     .footer-pill-btn {
