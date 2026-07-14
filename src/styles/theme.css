@@ -206,26 +206,31 @@ footer {
         /* Three pill items (calendar, GitHub icon, suggestion box) need
            to fit on one row at narrow widths; the default horizontal
            padding leaves them a couple px short. */
-        padding-left: 0.4rem;
-        padding-right: 0.4rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
         padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
     }
-}
 
-@media (max-width: 400px) {
-    /* On phones this narrow (e.g. iPhone SE, 375px), the calendar
-       button's text label is the difference between fitting on one row
-       and the GitHub icon wrapping to its own row — the footer should
-       never stack. Icon-only here, same treatment .footer-icon already
-       gets; the link's aria-label keeps it labeled for screen readers.
-       Left at 480px on wider phones (e.g. the 412px Pixel), where the
-       full label already fits fine. */
-    .footer-cal-label {
+    /* Purely decorative dividers — .footer-text is already hidden at this
+       width (below), so there's nothing left for them to separate. Dropping
+       them frees up the width labeled buttons need to keep their text,
+       instead of ever shrinking to icon-only. */
+    .footer-separator {
         display: none;
     }
 
-    .footer-cal a {
-        padding: 0.3rem 0.6rem;
+    .footer-pill-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .calendar-box {
+        padding-right: 0.25rem;
+    }
+
+    .footer-icon {
+        padding: 0.1rem 0.3rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -316,6 +321,11 @@ footer a:hover {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
+    /* Never let the label wrap or the pill get squeezed by flex
+       siblings — either would turn the rounded pill into a taller,
+       squared-off box instead of just narrowing. */
+    white-space: nowrap;
+    flex-shrink: 0;
     transition:
         background 0.15s,
         border-color 0.15s,
@@ -370,12 +380,6 @@ footer:has(.calendar-box[open]) .suggestion-box {
    currently pressed, not just its content changed. */
 .suggestion-box[open] summary.footer-pill-btn,
 .calendar-box[open] summary.footer-pill-btn {
-    order: 2;
-    /* Pushes just this item away from the toggle row it's paired with
-       (see .suggestion-box-toggle-row below) so the two end up centered
-       as a unit, roughly where the toggle sat before opening — a plain
-       left-align here dragged it ~70px off its closed position. */
-    margin-right: auto;
     /* Lighter than this (e.g. the 0.25 alpha tried earlier) pushes the
        background too close to white, dropping text contrast below
        4.5:1 once :hover's color: #fff is also active (Playwright's
@@ -387,6 +391,21 @@ footer:has(.calendar-box[open]) .suggestion-box {
     border-color: rgba(255, 255, 255, 0.7);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
     transform: translateY(1px);
+}
+
+.suggestion-box[open] summary.footer-pill-btn {
+    /* The suggestion box's accordion grows *upward* off a sticky-bottom
+       footer, so its toggle moves to the *end* (panel first, toggle
+       last) to stay near the bottom, roughly where it was before
+       opening — putting it on top instead made it leap up the screen as
+       the panel appeared beneath it. Paired with
+       .suggestion-box-toggle-row's margin-left: auto so the two end up
+       centered as a unit; a plain left-align here dragged it ~70px off
+       its closed position. The calendar box doesn't need this: its
+       options sit beside its toggle on the same row instead of below
+       it, so the toggle just stays in its natural (first) position. */
+    order: 2;
+    margin-right: auto;
 }
 
 summary.footer-pill-btn {
@@ -414,13 +433,22 @@ summary.footer-pill-btn::-webkit-details-marker {
     /* <summary> stacks above its content natively — this flex context
        lets `order` reposition summary and the Send button onto a
        shared row instead, so the toggle ends up next to Send roughly
-       where it was before opening, not floating above the form. */
+       where it was before opening, not floating above the form.
+       align-items: flex-end (not center) anchors that row to the same
+       edge regardless of Send/summary having different heights — with
+       center, the taller Send button recentered the whole row and
+       dragged the toggle upward relative to its closed position. */
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    /* Space between the Send button and the toggle, now that they're
-       no longer centered as a snug pair. */
-    column-gap: 1.25rem;
+    align-items: flex-end;
+    /* Space between the Send button and the toggle. Since Send is now
+       pinned to the input's left edge (not paired-centered with the
+       toggle), the toggle just falls wherever Send's width + this gap
+       leaves it — tuned to ~1rem because that happens to land the
+       toggle very close to its closed position on the phone widths this
+       footer targets, not because of any special significance to the
+       value itself. */
+    column-gap: 1rem;
 }
 
 /* Chromium wraps every non-summary child of an open <details> into an
@@ -445,9 +473,13 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding: 0;
     margin: 0;
     flex: 1 1 100%;
+    /* Toggle and options all share one row (unlike the suggestion box,
+       whose input needs its own full-width row above the toggle) —
+       nowrap keeps them from ever splitting onto a second line. */
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
+    column-gap: 0.5rem;
 }
 
 .calendar-box[open]::details-content {
@@ -455,24 +487,23 @@ summary.footer-pill-btn::-webkit-details-marker {
 }
 
 .calendar-box-panel {
-    order: 0;
-    flex: 1 1 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
-    padding: 0.75rem 0.25rem 0.25rem;
 }
 
 .suggestion-box-toggle-row {
     order: 1;
-    /* Paired with summary's margin-right: auto — together these center
-       the Send+toggle pair as a unit. column-gap on the parent (below)
-       gives Send room without dragging the toggle far from its closed
-       position. */
-    margin-left: auto;
+    /* No margin-left: auto — Send's left edge (this row's own 0.25rem
+       padding lands right after it) should line up with the input's
+       left edge above it, which has the same 0.25rem inset from
+       .suggestion-box-panel. No bottom padding either: the row's own
+       bottom edge is what .suggestion-box[open]'s align-items: flex-end
+       lines up against the toggle, so any padding here would leave Send
+       sitting above that shared bottom edge instead of on it. */
     display: flex;
     align-items: center;
-    padding: 0 0.25rem 0.5rem;
+    padding: 0 0.25rem;
 }
 
 .suggestion-label {
@@ -509,7 +540,11 @@ summary.footer-pill-btn::-webkit-details-marker {
     background: #f9f5ff;
     border: 2px solid #c4b5fd;
     border-radius: 8px;
-    padding: 0.65rem 1.25rem;
+    /* ~1.5x the width of the original 1.25rem horizontal padding.
+       Vertical padding trimmed slightly from 0.65rem so Send reads as
+       "a bit taller" than the Suggestion Box toggle rather than a lot
+       taller, while the two share a bottom edge. */
+    padding: 0.55rem 2.5rem;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -568,10 +603,15 @@ summary.footer-pill-btn::-webkit-details-marker {
 .calendar-box {
     /* Same "reset Web Awesome details styling" story as .suggestion-box
        (see comment there) — details/summary bring a default white panel
-       look that needs stripping so the footer's purple shows through. */
+       look that needs stripping so the footer's purple shows through.
+       Web Awesome's native.css also sets margin-bottom: 24px on <details>;
+       left unreset here (unlike .suggestion-box's margin: 0 auto), that
+       leaked margin pulled this pill ~12px out of vertical alignment with
+       the suggestion box under the footer's align-items: center. */
     background: transparent;
     border: none;
     padding: 0;
+    margin: 0;
     flex-shrink: 0;
     padding-right: 0.5rem;
 }
@@ -588,6 +628,11 @@ summary.footer-pill-btn::-webkit-details-marker {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
+    /* Never let the label wrap or the pill get squeezed — either would
+       turn the rounded pill into a taller, squared-off box instead of
+       just narrowing. */
+    white-space: nowrap;
+    flex-shrink: 0;
     transition:
         background 0.15s,
         border-color 0.15s,
