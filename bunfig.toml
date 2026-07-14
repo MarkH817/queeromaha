@@ -2,4 +2,4 @@
 minimumReleaseAge = 259200 # 3 days
 
 # Packages that bypass the gate
-minimumReleaseAgeExcludes = ["@types/bun", "typescript"]
+minimumReleaseAgeExcludes = ["@types/bun", "astro", "@astrojs/sitemap", "@astrojs/check", "@astrojs/markdown-satteri","@astrojs/react", "posthog-js", "@posthog/core", "@posthog/types"]

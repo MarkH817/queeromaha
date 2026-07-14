@@ -149,6 +149,7 @@ function initFilters() {
             applyFilters()
             updateClearBtn()
             history.pushState({}, '', buildUrl())
+            window.posthog?.capture('filter_cleared')
         })
     }
 
@@ -175,6 +176,12 @@ function initFilters() {
             if (isActive) deactivateFilter(slug)
             else activateFilter(slug)
             history.pushState({}, '', buildUrl())
+            if (!isActive) {
+                window.posthog?.capture('filter_applied', {
+                    filter_slug: slug,
+                    filter_type: type,
+                })
+            }
         })
     })
 

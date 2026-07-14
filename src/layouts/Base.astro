@@ -69,5 +69,17 @@ const randomMsg =
         })
       }
     </script>
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[data-ph-item-name]')
+        if (!anchor) return
+        window.posthog?.capture('directory_link_clicked', {
+          item_name: anchor.dataset.phItemName,
+          item_category: anchor.dataset.phItemCategory,
+          link_label: anchor.dataset.phLinkLabel,
+          link_url: anchor.href,
+        })
+      })
+    </script>
   </body>
 </html>

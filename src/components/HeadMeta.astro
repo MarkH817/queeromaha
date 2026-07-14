@@ -1,4 +1,6 @@
 ---
+import site from '../data/site.json'
+import PostHog from './posthog.astro'
 
 interface Props {
     title: string
@@ -46,4 +48,5 @@ const { title, description, canonicalUrl, refresh } = Astro.props
       navigator.serviceWorker.register('/sw.js')
     }
   </script>
+  <PostHog />
 </head>
