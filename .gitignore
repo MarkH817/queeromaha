@@ -1,3 +1,5 @@
+# posthog generated docs
+posthog*.md
 # Build output
 dist/
 
