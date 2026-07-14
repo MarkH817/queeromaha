@@ -11,7 +11,8 @@ interface Props {
     description?: string
     initialCategories?: string[]
     initialTags?: string[]
-    initialNeighborhoods?: string[]
+    initialItemSlug?: string
+    refresh?: { seconds: number; url: string }
 }
 
 const {
@@ -19,7 +20,8 @@ const {
     description,
     initialCategories = [],
     initialTags = [],
-    initialNeighborhoods = [],
+    initialItemSlug,
+    refresh,
 } = Astro.props
 const pageTitle = title ? `${title} | Queer Omaha` : 'Queer Omaha'
 const canonicalUrl = new URL(Astro.url.pathname, site.url).href
@@ -31,11 +33,11 @@ const randomMsg =
 
 <!doctype html>
 <html lang="en">
-  <HeadMeta title={pageTitle} description={description} canonicalUrl={canonicalUrl} />
+  <HeadMeta title={pageTitle} description={description} canonicalUrl={canonicalUrl} refresh={refresh} />
   <body
     data-initial-categories={initialCategories.join(' ')}
     data-initial-tags={initialTags.join(' ')}
-    data-initial-neighborhoods={initialNeighborhoods.join(' ')}
+    data-initial-item-slug={initialItemSlug ?? ''}
   >
     <SiteHeader />
     <main id="main" tabindex="-1">
@@ -49,6 +51,21 @@ const randomMsg =
       import '@awesome.me/webawesome/dist/components/icon/icon.js'
       import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js'
       import '../scripts/filter'
+      import '../scripts/permalink'
+
+      // On a cold load landing directly on a hash, the browser's native
+      // fragment scroll can run before these Web Awesome imports resolve
+      // and the header grows taller, leaving the scroll position short.
+      // Re-settle once the custom elements are defined; scrollIntoView
+      // respects theme.css's scroll-padding-top.
+      if (location.hash) {
+        Promise.all([
+          customElements.whenDefined('wa-button'),
+          customElements.whenDefined('wa-icon'),
+        ]).then(() => {
+          document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' })
+        })
+      }
     </script>
   </body>
 </html>

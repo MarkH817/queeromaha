@@ -1,23 +1,25 @@
 ---
-import site from '../data/site.json'
 
 interface Props {
     title: string
     description?: string
     canonicalUrl: string
+    refresh?: { seconds: number; url: string }
 }
 
-const { title, description, canonicalUrl } = Astro.props
+const { title, description, canonicalUrl, refresh } = Astro.props
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {refresh && <meta http-equiv="refresh" content={`${refresh.seconds};url=${refresh.url}`} />}
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin />
   <meta name="theme-color" content="#4c3170" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />

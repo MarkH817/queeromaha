@@ -28,13 +28,13 @@ describe('astro build', () => {
             'cafes/index.html',
             'music/index.html',
             'makers/index.html',
-            'social/index.html',
+            'friends/index.html',
             'spiritual/index.html',
-            'about/index.html',
             'robots.txt',
             'sitemap-index.xml',
             'llms.txt',
             '_headers',
+            '404.html',
         ]) {
             expect(existsSync(join(distDir, file)), `missing: ${file}`).toBe(
                 true,
@@ -42,21 +42,54 @@ describe('astro build', () => {
         }
     })
 
-    test('robots.txt sets content-signal and sitemap', () => {
-        const robots = readFileSync(join(ROOT, 'dist', 'robots.txt'), 'utf8')
-        expect(robots).toContain('GPTBot')
-        expect(robots).toContain('Anthropic-AI')
-        expect(robots).toContain('sitemap')
-        expect(robots).toContain(
-            'Content-Signal: ai-train=no, search=yes, ai-input=yes',
+    test('dist does not contain an about page', () => {
+        const distDir = join(ROOT, 'dist')
+        expect(existsSync(join(distDir, 'about', 'index.html'))).toBe(false)
+    })
+
+    test('404.html contains a link back to the directory', () => {
+        const html = readFileSync(join(ROOT, 'dist', '404.html'), 'utf8')
+        expect(html).toContain('data-notfound-link')
+        expect(html).toContain('href="/friends"')
+    })
+
+    test('_redirects sends /social and / to /friends', () => {
+        const redirects = readFileSync(
+            join(ROOT, 'public', '_redirects'),
+            'utf8',
+        )
+        expect(redirects).toMatch(/\/social\s+\/friends/)
+        expect(redirects).toMatch(/^\/\s+\/friends/m)
+    })
+
+    test('_redirects sends /about and /contact to /', () => {
+        const redirects = readFileSync(
+            join(ROOT, 'public', '_redirects'),
+            'utf8',
+        )
+        expect(redirects).toMatch(/^\/about\s+\/\s+301/m)
+        expect(redirects).toMatch(/^\/contact\s+\/\s+301/m)
+    })
+
+    test('dist/_redirects redirects the OmahaForUs auto-slug to its vanity_slug', () => {
+        const redirects = readFileSync(join(ROOT, 'dist', '_redirects'), 'utf8')
+        expect(redirects).toMatch(
+            /\/friends\/omaha-for-us\s+\/friends\/o4us\s+301/,
         )
     })
 
-    test('llms.txt has appropriate fields', () => {
-        const llms = readFileSync(join(ROOT, 'dist', 'llms.txt'), 'utf8')
-        expect(llms).toContain('Queer Omaha Directory')
-        expect(llms).toContain('queeromaha.net/about')
+    test('dist contains the OmahaForUs item permalink page', () => {
+        const itemPage = join(ROOT, 'dist', 'friends', 'o4us', 'index.html')
+        expect(existsSync(itemPage)).toBe(true)
+        const html = readFileSync(itemPage, 'utf8')
+        expect(html).toContain('data-initial-item-slug="o4us"')
+        expect(html).toContain('id="friends-o4us"')
     })
+
+    // robots.txt / llms.txt content details (bot allowlist, content-signal,
+    // title/URL fields) are unit tested directly against their route
+    // handlers in test/pages/robots-txt.test.ts and llms-txt.test.ts; this
+    // file only needs to confirm the build actually emits them (above).
 
     test('_header has appropriate fields', () => {
         const headers = readFileSync(join(ROOT, 'public', '_headers'), 'utf8')
@@ -65,9 +98,9 @@ describe('astro build', () => {
         expect(headers).toContain('service-doc')
     })
 
-    test('social/index.html contains filter pills and wa-card items', () => {
+    test('friends/index.html contains filter pills and wa-card items', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('filter-pill')
@@ -75,33 +108,12 @@ describe('astro build', () => {
         expect(html).toContain('data-category')
     })
 
-    test('social/index.html has data-initial-categories="social"', () => {
+    test('friends/index.html has data-initial-categories="friends"', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
-        expect(html).toContain('data-initial-categories="social"')
-    })
-
-    test('dist contains a generated neighborhood page', () => {
-        expect(existsSync(join(ROOT, 'dist', 'west-o', 'index.html'))).toBe(
-            true,
-        )
-    })
-
-    test('west-o/index.html has data-initial-neighborhoods="west-o"', () => {
-        const html = readFileSync(
-            join(ROOT, 'dist', 'west-o', 'index.html'),
-            'utf8',
-        )
-        expect(html).toContain('data-initial-neighborhoods="west-o"')
-        expect(html).toContain('Roast Coffeehouse')
-    })
-
-    test('dist contains a category + neighborhood combo page', () => {
-        expect(
-            existsSync(join(ROOT, 'dist', 'cafes', 'west-o', 'index.html')),
-        ).toBe(true)
+        expect(html).toContain('data-initial-categories="friends"')
     })
 
     test('dist contains events.ics', () => {
@@ -123,18 +135,19 @@ describe('astro build', () => {
         expect(ics).toContain('Game Night')
     })
 
-    test('social/index.html contains footer calendar subscribe link', () => {
+    test('friends/index.html contains footer calendar subscribe link', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('calendar.google.com')
-        expect(html).toContain('footer-cal')
+        expect(html).toContain('calendar-box')
+        expect(html).toContain('webcal://queeromaha.net/events.ics')
     })
 
-    test('social/index.html has calendar autodiscovery link', () => {
+    test('friends/index.html has calendar autodiscovery link', () => {
         const html = readFileSync(
-            join(ROOT, 'dist', 'social', 'index.html'),
+            join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('rel="alternate"')

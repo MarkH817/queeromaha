@@ -1,34 +1,26 @@
 ---
-import { marked } from 'marked'
 import type { z } from 'zod'
 import type { itemSchema } from '../content.config'
 import tagMap from '../data/tagMap.json'
-import { slugify } from '../utils/slugify'
+import { formatLocationLine } from '../utils/location'
 import EntryTag from './EntryTag.astro'
 
-type TagMap = Record<string, { icon: string; label: string }>
+type TagMap = Record<string, { icon: string; label: string; family?: string }>
 const tags = tagMap as TagMap
+const tagOrder = Object.keys(tags)
 
 interface Props {
     item: z.infer<typeof itemSchema>
     category: string
+    slug: string
+    hidden?: boolean
 }
 
-const { item, category } = Astro.props
-const descHtml = item.description ? marked.parse(item.description) : ''
+const { item, category, slug, hidden = false } = Astro.props
 const tagsAttr = item.tags?.join(' ') ?? ''
 
 const loc = item.location
-const neighborhoodSlug = loc?.neighborhood ? slugify(loc.neighborhood) : ''
-const addrParts = [
-    loc?.street,
-    loc?.city,
-    loc?.state && loc?.zip
-        ? `${loc.state} ${loc.zip}`
-        : (loc?.state ?? loc?.zip),
-].filter(Boolean)
-const addrLine = addrParts.join(', ')
-const locLine = [addrLine, loc?.neighborhood].filter(Boolean).join(' - ')
+const locLine = formatLocationLine(loc)
 
 // Per-item structured data. As of 2026 schema.org markup — not llms.txt — is
 // what assistants and answer engines actually read when deciding which local
@@ -46,17 +38,7 @@ const postalAddress =
               ...(loc?.zip && { postalCode: loc.zip }),
           }
         : undefined
-const plainDesc = descHtml
-    ? String(descHtml)
-          .replace(/<[^>]+>/g, '')
-          .replace(/&amp;/g, '&')
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
-          .replace(/&quot;/g, '"')
-          .replace(/&#39;/g, "'")
-          .replace(/\s+/g, ' ')
-          .trim()
-    : ''
+const plainDesc = item.description?.replace(/\s+/g, ' ').trim() ?? ''
 const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -68,20 +50,165 @@ const jsonLd = {
 }
 // Escape `<` so a stray "</script>" in any field can't break out of the tag.
 const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
+
+type LinkRule = {
+    kind: string
+    icon: { name: string; family: string }
+    match: (url: string, label: string) => boolean
+}
+
+// Canonical, fixed footer display order: calendar/events/schedule, Instagram,
+// Discord, Website, FB. Everything else keeps its original YAML order,
+// appended after (see canonicalRank / resolveLink below).
+const linkRules: LinkRule[] = [
+    {
+        kind: 'calendar',
+        icon: { name: 'calendar', family: 'classic' },
+        match: (_u, l) =>
+            l.includes('event') ||
+            l.includes('calendar') ||
+            l.includes('show') ||
+            l.includes('flyer') ||
+            l.includes('schedule'),
+    },
+    {
+        kind: 'instagram',
+        icon: { name: 'instagram', family: 'brands' },
+        match: (u) => u.includes('instagram.com'),
+    },
+    {
+        kind: 'discord',
+        icon: { name: 'discord', family: 'brands' },
+        match: (u) => u.includes('discord.com') || u.includes('discord.gg'),
+    },
+    {
+        kind: 'website',
+        icon: { name: 'earth-africa', family: 'classic' },
+        match: (_u, l) => l.includes('website'),
+    },
+    {
+        kind: 'facebook',
+        icon: { name: 'facebook', family: 'brands' },
+        match: (u) => u.includes('facebook.com'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'rectangle-list', family: 'classic' },
+        match: (u) => u.includes('carrd.co'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'spa', family: 'classic' },
+        match: (_u, l) => l.includes('zen'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'linktree', family: 'brands' },
+        match: (_u, l) => l.includes('linktree'),
+    },
+    {
+        kind: 'underground',
+        icon: { name: 'music', family: 'classic' },
+        match: (_u, l) => l.includes('underground'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'square-check', family: 'classic' },
+        match: (u, l) =>
+            l.includes('register') ||
+            l.includes('signup') ||
+            u.includes('docs.google.com/forms') ||
+            u.includes('forms.gle'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'person-half-dress', family: 'classic' },
+        match: (_u, l) => l.includes('clothes') || l.includes('closet'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'jar', family: 'classic' },
+        match: (_u, l) => l.includes('pantry') || l.includes('food'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'child-reaching', family: 'classic' },
+        match: (_u, l) => l.includes('youth') || l.includes('teen'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'people-group', family: 'classic' },
+        match: (_u, l) => l.includes('support') || l.includes('mental'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'user-group', family: 'classic' },
+        match: (u) => u.includes('meetup.com'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'shirt', family: 'classic' },
+        match: (u, l) =>
+            u.includes('threadless.com') || l.includes('threadless'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'palette', family: 'classic' },
+        match: (u, l) => u.includes('redbubble.com') || l.includes('workshop'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'shop', family: 'classic' },
+        match: (u) => u.includes('inprnt.com'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'bluesky', family: 'brands' },
+        match: (u, l) => u.includes('bsky.app') || l.includes('bluesky'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'bandcamp', family: 'brands' },
+        match: (u) => u.includes('bandcamp.com'),
+    },
+    {
+        kind: 'other',
+        icon: { name: 'substack', family: 'brands' },
+        match: (u) => u.includes('substack.com'),
+    },
+]
+
+const canonicalRank: Record<string, number> = {
+    calendar: 0,
+    instagram: 1,
+    discord: 2,
+    website: 3,
+    facebook: 4,
+}
+
+function resolveLink(link: { url: string; label: string }) {
+    const url = link.url.toLowerCase()
+    const label = link.label.toLowerCase()
+    const rule = linkRules.find((r) => r.match(url, label))
+    const kind = rule?.kind ?? 'other'
+    return { icon: rule?.icon ?? null, rank: canonicalRank[kind] ?? 5 }
+}
 ---
 
 <script is:inline type="application/ld+json" set:html={jsonLdStr} />
-<wa-card class="item" data-category={category} data-tags={tagsAttr} data-neighborhood={neighborhoodSlug}>
+<wa-card class="item" id={`${category}-${slug}`} data-category={category} data-slug={slug} data-tags={tagsAttr} hidden={hidden}>
   <h3 slot="header">
-    {item.name}
-    {item.tags?.map(tag => {
+    <button type="button" class="item-tap-target" aria-pressed="false">{item.name}</button>
+    {[...(item.tags ?? [])]
+      .sort((a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b))
+      .map(tag => {
       const t = tags[tag]
       return t ? (
-        <EntryTag label={t.label} icon={t.icon} />
+        <EntryTag label={t.label} icon={t.icon} family={t.family} />
       ) : null
     })}
   </h3>
-  {descHtml && <Fragment set:html={descHtml} />}
+  {item.description && <p>{item.description}</p>}
   {loc && locLine && (
     <p class="item-location">
       <wa-icon name="location-dot" aria-hidden="true"></wa-icon>
@@ -96,13 +223,17 @@ const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
   )}
   {item.links && item.links.length > 0 && (
     <ul class="entry-links" slot="footer">
-      {item.links.map(link => (
-        <li>
-          <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
-            {link.label}
-          </a>
-        </li>
-      ))}
+      {[...item.links].sort((a, b) => resolveLink(a).rank - resolveLink(b).rank).map(link => {
+        const pillIcon = resolveLink(link).icon
+        return (
+          <li>
+            <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
+              {pillIcon && <wa-icon name={pillIcon.name} family={pillIcon.family} aria-hidden="true"></wa-icon>}
+              {link.label}
+            </a>
+          </li>
+        )
+      })}
     </ul>
   )}
 </wa-card>

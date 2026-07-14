@@ -1,25 +1,35 @@
 ---
+import categoryMapJson from '../data/categoryMap.json'
+
+const categoryMap = categoryMapJson as Record<
+    string,
+    { icon: string; label: string; descriptor: string }
+>
 ---
 
 <header>
   <a class="skip-link" href="#main">Skip to main content</a>
   <nav class="main-nav" aria-label="Main navigation">
-    <wa-button href="/social" appearance="plain" data-filter="social" data-filter-type="category" aria-pressed="false">Social</wa-button>
-    <wa-button href="/spiritual" appearance="plain" data-filter="spiritual" data-filter-type="category" aria-pressed="false">Spiritual</wa-button>
-    <wa-button href="/art" appearance="plain" data-filter="art" data-filter-type="category" aria-pressed="false">Art</wa-button>
-    <wa-button href="/cafes" appearance="plain" data-filter="cafes" data-filter-type="category" aria-pressed="false">Cafes</wa-button>
-    <wa-button href="/music" appearance="plain" data-filter="music" data-filter-type="category" aria-pressed="false">Music</wa-button>
-    <wa-button href="/makers" appearance="plain" data-filter="makers" data-filter-type="category" aria-pressed="false">Makers</wa-button>
+    {Object.entries(categoryMap).map(([slug, { icon, label }]) => (
+      <wa-button href={`/${slug}`} appearance="plain" data-filter={slug} data-filter-type="category" aria-pressed="false">
+        <wa-icon name={icon} aria-hidden="true"></wa-icon> {label}
+      </wa-button>
+    ))}
   </nav>
 </header>
 <script>
-  const navBtns = document.querySelectorAll('.main-nav wa-button')
-  const currentPath = window.location.pathname.replace(/\/$/, '') || '/'
-  navBtns.forEach((btn) => {
-    const href = (btn.getAttribute('href') ?? '').replace(/\/$/, '') || '/'
-    if (href === currentPath) {
-      btn.classList.add('active')
-      btn.setAttribute('aria-current', 'page')
-    }
-  })
+  // The sticky header's height varies by breakpoint (nav pills wrap) and
+  // grows once the wa-button/wa-icon custom elements upgrade, so track it
+  // live in a CSS var used by theme.css's scroll-padding-top rule instead
+  // of hardcoding an offset for anchor-linked sections.
+  const headerEl = document.querySelector('header')
+  if (headerEl) {
+    const setHeaderHeightVar = () =>
+      document.documentElement.style.setProperty(
+        '--header-height',
+        `${headerEl.getBoundingClientRect().height}px`,
+      )
+    setHeaderHeightVar()
+    new ResizeObserver(setHeaderHeightVar).observe(headerEl)
+  }
 </script>

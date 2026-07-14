@@ -2,28 +2,33 @@
 import { getCollection } from 'astro:content'
 import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
+import categoryMapJson from '../data/categoryMap.json'
 import Base from '../layouts/Base.astro'
-import { buildNeighborhoods } from '../utils/neighborhoods'
+import { computeItemSlugs } from '../utils/itemSlug'
 
-const categorySlugs = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
+const categoryMap = categoryMapJson as Record<
+    string,
+    { icon: string; label: string; descriptor: string }
+>
+const categorySlugs = Object.keys(categoryMap)
 
 export async function getStaticPaths() {
-    const cats = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
-    const entries = await getCollection('directory')
-    const neighborhoodSlugs = buildNeighborhoods(entries).map((n) => n.slug)
+    const cats = Object.keys(categoryMapJson)
+    const collectionEntries = await getCollection('directory')
 
     const paths: { params: { filters: string | undefined } }[] = [
         { params: { filters: undefined } },
     ]
 
-    // Single slugs
-    for (const s of [...cats, ...neighborhoodSlugs]) {
+    for (const s of cats) {
         paths.push({ params: { filters: s } })
-    }
-    // Cat + neighborhood combos (both orderings)
-    for (const cat of cats) {
-        for (const n of neighborhoodSlugs) {
-            paths.push({ params: { filters: `${cat}/${n}` } })
+
+        const entry = collectionEntries.find((e) => e.id === s)
+        const publicItems = (entry?.data.items ?? []).filter(
+            (i) => i.public !== false,
+        )
+        for (const { canonical } of computeItemSlugs(publicItems)) {
+            paths.push({ params: { filters: `${s}/${canonical}` } })
         }
     }
 
@@ -32,46 +37,85 @@ export async function getStaticPaths() {
 
 const { filters = '' } = Astro.params
 const filterSlugs = filters.split('/').filter(Boolean)
-const initialCategories = filterSlugs.filter((s) => categorySlugs.includes(s))
-
-const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
-const entries = await getCollection('directory')
-entries.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
-
-const allNeighborhoods = buildNeighborhoods(entries)
-
-const neighborhoodSlugs = allNeighborhoods.map((n) => n.slug)
-const initialNeighborhoods = filterSlugs.filter((s) =>
-    neighborhoodSlugs.includes(s),
+const effectiveFilterSlugs =
+    filterSlugs.length === 0 ? ['friends'] : filterSlugs
+const initialCategories = effectiveFilterSlugs.filter((s) =>
+    categorySlugs.includes(s),
 )
 
-const categoryLabels: Record<string, string> = {
-    social: 'Social',
-    spiritual: 'Spiritual',
-    art: 'Art',
-    cafes: 'Cafes',
-    music: 'Music',
-    makers: 'Makers',
+const entries = await getCollection('directory')
+entries.sort(
+    (a, b) => categorySlugs.indexOf(a.id) - categorySlugs.indexOf(b.id),
+)
+
+// Mirrors cardMatches() in scripts/filter.ts (category only — tags are never
+// part of a static route). This lets the server render the same hidden state
+// filter.ts would apply on load, so there's no flash of the full unfiltered
+// directory before JS hides it (a major CLS source).
+function matchesInitial(catId: string) {
+    return initialCategories.length === 0 || initialCategories.includes(catId)
 }
+
+const activeCategory = initialCategories[0]
+const activeEntry = entries.find((e) => e.id === activeCategory)
+const activeCategoryHasFilters =
+    !activeCategory ||
+    (activeEntry?.data.items ?? []).some(
+        (item) => item.public !== false && (item.tags?.length ?? 0) > 0,
+    )
+
+// A permalink request is exactly `<category>/<item-slug>` — a trailing
+// segment beyond that (or one that doesn't match a known category first)
+// never resolves to an item deep link.
+const activePublicItems = (activeEntry?.data.items ?? []).filter(
+    (i) => i.public !== false,
+)
+const activeItemSlugs = computeItemSlugs(activePublicItems)
+const trailingSlug =
+    activeCategory &&
+    effectiveFilterSlugs.length === 2 &&
+    effectiveFilterSlugs[0] === activeCategory
+        ? effectiveFilterSlugs[1]
+        : undefined
+const activeItemIndex = trailingSlug
+    ? activeItemSlugs.findIndex((s) => s.canonical === trailingSlug)
+    : -1
+const activeItem =
+    activeItemIndex >= 0 ? activePublicItems[activeItemIndex] : undefined
+const initialItemSlug = activeItem ? trailingSlug : undefined
+
+const categoryPart = activeCategory
+    ? (categoryMap[activeCategory]?.descriptor ??
+      categoryMap.friends.descriptor)
+    : categoryMap.friends.descriptor
+const pageTitle = activeItem
+    ? `${activeItem.name} | ${categoryPart}`
+    : categoryPart
+const pageDescription = activeItem
+    ? (activeItem.description ??
+      `${activeItem.name} — ${categoryPart} in Omaha, Nebraska.`)
+    : `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
 ---
 
 <Base
-  title="Queer Omaha — LGBTQ+ Community Directory"
-  description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
+  title={pageTitle}
+  description={pageDescription}
   initialCategories={initialCategories}
-  initialNeighborhoods={initialNeighborhoods}
+  initialItemSlug={initialItemSlug}
 >
-  <FilterBar neighborhoods={allNeighborhoods} />
+  {activeCategoryHasFilters && <FilterBar />}
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null
+    const anyVisible = matchesInitial(entry.id)
+    const itemSlugs = computeItemSlugs(publicItems)
     return (
-      <section aria-label={categoryLabels[entry.id] ?? entry.id}>
-        <h2 class="section-header" data-category-heading={entry.id}>
-          {categoryLabels[entry.id] ?? entry.id}
+      <section id={`section-${entry.id}`} aria-label={categoryMap[entry.id]?.label ?? entry.id}>
+        <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
+          <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true"></wa-icon> {categoryMap[entry.id]?.label ?? entry.id}
         </h2>
-        {publicItems.map(item => (
-          <ItemCard item={item} category={entry.id} />
+        {publicItems.map((item, i) => (
+          <ItemCard item={item} category={entry.id} slug={itemSlugs[i].canonical} hidden={!matchesInitial(entry.id)} />
         ))}
       </section>
     )

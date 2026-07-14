@@ -7,7 +7,7 @@ items:
     notes: potentially inactive circa spring 2026
     description: Ecstatic dance, figure drawing and spiritual singing, usually at Church Art House. Outdoor events in the summer.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/sobersocialsomaha/
   - name: Soundry w/ Stacey Barelos
     public: true
@@ -16,39 +16,87 @@ items:
       - neutral-bathrooms
       - seating
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/omahasoundry/
       - label: Events Calendar
         url: https://soundryomaha.org
+    location:
+      street: 1111 Jones St
+      city: Omaha
+      neighborhood: Downtown
   - name: Omaha Drum Family
     public: true
     description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
     links:
       - label: Events Calendar
         url: https://www.facebook.com/drumomaha/
+    location:
+      street: 4312 Camden Ave
+      city: Omaha
+      neighborhood: North Omaha
+    recurring_events:
+      - summary: Drum Circle — Omaha Drum Family
+        rrule: FREQ=MONTHLY;BYDAY=3FR
+        dtstart: "20250117"
+        time: 19:00
+        end_time: 21:00
+        location: Whole Rejuvenation House (4312 Camden Ave)
+        description: Drop-in drum circle. Bring a drum or borrow one of theirs!
+        url: https://www.facebook.com/drumomaha/
   - name: SynthOmaha Electronic Music Jam
     public: true
     description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
     links:
+      - label: Facebook
+        url: https://www.facebook.com/share/g/1EpF7Epz17
       - label: Events Calendar
         url: https://synthomaha.net/
     notes: |
       Members with social presence:
-      - Aaron Gum [Insta](https://www.instagram.com/aarongum/)
+      - Aaron Gum [Instagram](https://www.instagram.com/aarongum/)
       - Dylan Barry [Loess Labs synth manufacturing](https://loess-labs.net/)
       - Mike Machian [Photography](https://www.facebook.com/ShootToFill/)
       - Tob [Mastodon](https://mastodon.sdf.org/@tob)
+    location:
+      street: 2735 N 62nd St
+      city: Omaha
+      state: NE
+      zip: "68104"
+      neighborhood: Benson
+    recurring_events:
+      - summary: Electronic Music Jam — SynthOmaha
+        rrule: FREQ=MONTHLY;BYDAY=-1MO
+        dtstart: "20250127"
+        time: 20:00
+        end_time: 22:00
+        location: Shakedown Street
+        description: Bring your laptop, analog synth, or modular rig. Wallflowers welcome!
+        url: https://synthomaha.net/
   - name: Sowing Seeds
     public: true
     description: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
     links:
-      - label: Insta
+      - label: Instagram
+        url: https://www.instagram.com/sowingseeds.omaha/
+    location:
+      street: 6068 Maple St
+      city: Omaha
+      state: NE
+      neighborhood: Benson
+    recurring_events:
+      - summary: Sowing Seeds — Creative Gathering
+        rrule: FREQ=MONTHLY;BYDAY=1SU,2SU,3SU
+        dtstart: "20250105"
+        time: 11:00
+        end_time: 14:00
+        location: Legend Comics & Coffee (Benson)
+        description: Jo's free creative gathering. Bring whatever project you're working on and create alongside other artists and writers.
         url: https://www.instagram.com/sowingseeds.omaha/
   - name: Alternative Publishing (Zines)
     public: true
     description: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/altpubomaha/
   - name: SoundArte
     public: false
@@ -56,7 +104,7 @@ items:
     links:
       - label: Website
         url: https://soundarte.net
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/soundarte.mx/
       - label: Music Label
         url: https://eacrecords.bandcamp.com/
@@ -65,57 +113,61 @@ items:
     public: true
     description: Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/thechurcharthouse/
       - label: Events Calendar
         url: https://www.thechurcharthouse.love/schedule
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Project Project
     public: true
     description: Punk/queer DIY space with experimental music and local art.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/weareprojectproject/
       - label: Events Calendar
         url: https://projectprojectomaha.com/current-show
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: South O
+      street: 1818 Vinton St
+      city: Omaha
+      state: NE
+      zip: "68108"
+      neighborhood: South Omaha
   - name: Tilt23
     public: true
     description: Local artists, music and market at rotating venues eg Church Art House.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/tilt23showcase/
       - label: FB
         url: https://www.facebook.com/tilt23/
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Razor Wire Productions Open Mic
     public: false
     description: Tattoo shop next to Project Project. Open mics every Wednesday @7pm and 2nd Fridays @ 6pm.
     links:
       - label: FB
         url: https://www.facebook.com/poetiklee77/
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/razor_wire_productions/
     notes: Check it out first before listing.
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
   - name: Clover24
     public: true
     description: New-ish studio and gallery space.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/clover24omaha/
       - label: Events Calendar
         url: https://clover24.org/events
     location:
-      neighborhood: South O
+      neighborhood: South Omaha
     tags:
       - neutral-bathrooms
       - seating
@@ -123,7 +175,7 @@ items:
     public: true
     description: Black-owned community space for shows and art events.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/culxrhouse/
       - label: FB
         url: https://www.facebook.com/culxrhouse/
@@ -133,7 +185,7 @@ items:
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: North O
+      neighborhood: North Omaha
   - name: Union for Contemporary Art
     public: true
     description: Exhibits, studios, classes, and talks.
@@ -142,12 +194,12 @@ items:
         url: https://www.u-ca.org/happenings
     notes: tara hasn't been there yet. trusting its chill.
     location:
-      neighborhood: North O
+      neighborhood: North Omaha
   - name: Petshop
     public: true
     description: Punk/queer space for provocative art and experimental music.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/petshopgallery/
       - label: Website
         url: https://www.bffomaha.org/petshop
@@ -169,7 +221,7 @@ items:
     public: true
     description: Cool punk gallery. My art was in it!
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/thebffgallery/
     location:
       neighborhood: Benson
@@ -177,7 +229,7 @@ items:
     public: true
     description: Cozy gallery next to Edge of the Universe.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/mingtoygallery/
       - label: Website
         url: https://www.mingtoygallery.com/
@@ -197,7 +249,7 @@ items:
     public: true
     description: Mobile gallery often parked near Petshop showing local artists.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/bffmamo/
       - label: Website
         url: https://www.bffomaha.org/mamo
@@ -238,14 +290,14 @@ items:
       neighborhood: Midtown
   - name: Aksarben Village
     public: true
-    description: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
+    description: Arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. Single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
     links:
       - label: Events Calendar
         url: https://www.aksarbenvillage.com/events
     tags:
       - neutral-bathrooms
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: Samuel Bak Museum
     public: true
     description: Holocaust survivor's art museum with workshops and education programs.
@@ -253,12 +305,12 @@ items:
       - label: Events Calendar
         url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
     location:
-      neighborhood: Midtown
+      neighborhood: Aksarben
   - name: NeXT Foundation Arts
     public: true
     description: Open Studios for Expressive Art in the MasterCraft Building
     links:
-      - label: Art Workshop (on Last Fridays)
+      - label: Free Art Workshop (last Friday of the month)
         url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
       - label: Events Calendar
         url: https://www.nextfoundationomaha.com/programs-services
@@ -277,7 +329,7 @@ items:
     links:
       - label: Website
         url: https://omahaexploration.com/2025/12/13/the-old-market-passageway/
-      - label: Garden of the Zodiac Insta
+      - label: Garden of the Zodiac Instagram
         url: https://www.instagram.com/gardenofthezodiac/
     notes: possibly too normie. willing to entertain arguments as per its queerness
     location:
@@ -306,7 +358,7 @@ items:
     public: true
     description: Cutting-edge museum with resident artists, the Low End music series and major installations.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/bemiscenter/
       - label: Events Calendar
         url: https://www.bemiscenter.org/low-end
@@ -318,7 +370,7 @@ items:
     public: true
     description: Glassblowing studio with classes and events.
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/hotshopsartcenter/
       - label: Events Calendar
         url: https://hotshopsartcenter.org/events/
@@ -330,7 +382,7 @@ items:
     public: false
     description: Apartment complex with art showings, music shows and business-y mixers
     links:
-      - label: Insta
+      - label: Instagram
         url: https://www.instagram.com/millworkcommons/
       - label: Events Calendar
         url: https://millworkcommons.com/events/
