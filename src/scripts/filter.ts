@@ -3,17 +3,10 @@ function initFilters() {
     const pills = document.querySelectorAll<
         HTMLElement & { disabled: boolean }
     >('[data-filter]')
-    const clearBtn = document.getElementById(
-        'filterClear',
-    ) as HTMLButtonElement | null
 
     if (cards.length === 0) return
     const activeTags = new Set<string>()
     const activeCategories = new Set<string>()
-
-    function updateClearBtn() {
-        if (clearBtn) clearBtn.disabled = activeTags.size === 0
-    }
 
     function cardMatches(
         card: HTMLElement,
@@ -95,7 +88,6 @@ function initFilters() {
         pill.classList.add('active')
         pill.setAttribute('aria-pressed', 'true')
         applyFilters()
-        updateClearBtn()
     }
 
     function deactivateFilter(slug: string) {
@@ -109,7 +101,6 @@ function initFilters() {
         pill.classList.remove('active')
         pill.setAttribute('aria-pressed', 'false')
         applyFilters()
-        updateClearBtn()
     }
 
     function buildUrl() {
@@ -141,15 +132,6 @@ function initFilters() {
         clearType('tag', activeTags)
         activateFilter(slug)
         scrollToTop()
-    }
-
-    if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-            clearType('tag', activeTags)
-            applyFilters()
-            updateClearBtn()
-            history.pushState({}, '', buildUrl())
-        })
     }
 
     pills.forEach((pill) => {
