@@ -19,7 +19,6 @@ const CATEGORY_PILLS = `
 `
 
 const TAG_PILLS = `
-  <button id="filterClear" disabled>Clear</button>
   <button class="filter-pill" data-filter="wifi" data-filter-type="tag" aria-pressed="false">WiFi</button>
   <button class="filter-pill" data-filter="seating" data-filter-type="tag" aria-pressed="false">Seating</button>
 `
@@ -107,42 +106,6 @@ describe('initFilters', () => {
         expect(artPill.classList.contains('active')).toBe(true)
         const cardEls = document.querySelectorAll('wa-card')
         expect((cardEls[2] as HTMLElement).hidden).toBe(true) // cafes still hidden
-    })
-
-    test('clear button disabled state tracks active tag count', async () => {
-        await loadFilters()
-        const clearBtn = document.getElementById(
-            'filterClear',
-        ) as HTMLButtonElement
-        expect(clearBtn.disabled).toBe(true)
-
-        ;(document.querySelector('[data-filter="wifi"]') as HTMLElement).click()
-        expect(clearBtn.disabled).toBe(false)
-
-        clearBtn.click()
-        expect(clearBtn.disabled).toBe(true)
-    })
-
-    test('clear button only clears tags, not category', async () => {
-        await loadFilters()
-        ;(
-            document.querySelector('[data-filter="cafes"]') as HTMLElement
-        ).click()
-        ;(document.querySelector('[data-filter="wifi"]') as HTMLElement).click()
-
-        const clearBtn = document.getElementById(
-            'filterClear',
-        ) as HTMLButtonElement
-        clearBtn.click()
-
-        const cafesPill = document.querySelector(
-            '[data-filter="cafes"]',
-        ) as HTMLElement
-        expect(cafesPill.classList.contains('active')).toBe(true)
-        const wifiPill = document.querySelector(
-            '[data-filter="wifi"]',
-        ) as HTMLElement
-        expect(wifiPill.classList.contains('active')).toBe(false)
     })
 
     test('tag pill becomes disabled/unavailable when it would produce zero results', async () => {

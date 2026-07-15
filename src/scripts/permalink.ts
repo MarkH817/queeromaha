@@ -87,11 +87,9 @@ function initTapToggle() {
     // Filter-pill clicks already rewrite the URL via filter.ts's own
     // pushState; this only needs to clear the (now stale) active card's
     // visual state, not write a URL of its own.
-    document
-        .querySelectorAll<HTMLElement>('[data-filter], #filterClear')
-        .forEach((el) => {
-            el.addEventListener('click', clearActive)
-        })
+    document.querySelectorAll<HTMLElement>('[data-filter]').forEach((el) => {
+        el.addEventListener('click', clearActive)
+    })
 
     return { activate }
 }

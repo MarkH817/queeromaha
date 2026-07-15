@@ -971,33 +971,6 @@ body:has(#calendarBox[open]) #backToTop {
 }
 
 /* Filter bar */
-.filter-clear {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-    border-radius: 50%;
-    background: none;
-    border: 1px solid #c4b5fd;
-    color: #7c3aed;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition:
-        background 0.15s,
-        color 0.15s;
-}
-
-.filter-clear:hover:not(:disabled) {
-    background: #f3e8ff;
-}
-
-.filter-clear:disabled {
-    opacity: 0.4;
-    cursor: default;
-}
-
 .filter-bar {
     display: flex;
     flex-direction: column;

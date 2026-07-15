@@ -90,19 +90,6 @@ test('switching top-level category clears active tags', async ({ page }) => {
     await expect(tag).not.toHaveClass(/active/)
 })
 
-test('clear button clears active tags', async ({ page }) => {
-    await page.goto('/cafes/')
-    const tag = page.locator('[data-filter="neutral-bathrooms"]')
-    const clearBtn = page.locator('#filterClear')
-
-    await tag.click()
-    await expect(clearBtn).toBeEnabled()
-
-    await clearBtn.click()
-    await expect(tag).not.toHaveClass(/active/)
-    await expect(clearBtn).toBeDisabled()
-})
-
 test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
     await page.goto('/friends/')
