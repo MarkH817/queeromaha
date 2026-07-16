@@ -480,22 +480,38 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding: 0;
     margin: 0;
     flex: 1 1 100%;
-    /* Toggle and options all share one row (unlike the suggestion box,
-       whose input needs its own full-width row above the toggle) —
-       nowrap keeps them from ever splitting onto a second line. */
+    /* Same "grows upward off a sticky-bottom footer" layout as
+       .suggestion-box[open] (see comment there): the panel (order 0)
+       takes its own full-width row above, and the toggle (ordered last
+       below) stays near the bottom, roughly where it was before
+       opening. */
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    column-gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 .calendar-box[open]::details-content {
     display: contents;
 }
 
+.calendar-box[open] summary.footer-pill-btn {
+    /* Mirrors .suggestion-box[open] summary's positioning — pinned to
+       the end so the panel can stack above it. */
+    order: 2;
+    margin-right: auto;
+}
+
 .calendar-box-panel {
+    order: 0;
+    flex: 1 1 100%;
+    /* Stacked vertically (not the pill-shaped .calendar-option's full
+       width) so there's blank space to the right of GCal/Apple Cal,
+       matching the footprint of .suggestion-box-panel's input above
+       it. */
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 0.25rem 0.25rem;
     gap: 0.5rem;
 }
 
