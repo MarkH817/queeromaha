@@ -137,6 +137,22 @@ items:
       state: NE
       zip: "68108"
       neighborhood: South Omaha
+  - name: Creative Reuse Omaha
+    public: true
+    description: Omaha's first creative reuse center — collects gently used art and craft supplies and redistributes them to the community, plus workshops and pop-ups. Moving in next to Project Project on Vinton St.
+    links:
+      - label: Website
+        url: https://creativereuseomaha.org
+      - label: Instagram
+        url: https://www.instagram.com/creativereuseomahainc/
+      - label: FB
+        url: https://www.facebook.com/creativereuseomahainc
+    location:
+      street: 1820 Vinton St
+      city: Omaha
+      state: NE
+      zip: "68108"
+      neighborhood: South Omaha
   - name: Tilt23
     public: true
     description: Local artists, music and market at rotating venues eg Church Art House.
