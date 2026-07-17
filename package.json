@@ -5,11 +5,11 @@
     "description": "queer stuff in omaha",
     "scripts": {
         "test": "npm-run-all -l -p check test:unit -s test:e2e",
+        "test:unit": "vitest run",
         "test:fast": "run-p -l lint test:data",
         "test:data": "vitest run test/data.test.ts",
         "test:ical": "vitest run test/ical.test.ts",
         "test:build": "vitest run test/build.test.ts",
-        "test:unit": "vitest run",
         "test:e2e": "bun run build && playwright test --project=mobile-chrome",
         "test:e2e:desktop": "bun run build && playwright test --project=desktop-chrome",
         "test:e2e:all": "bun run build && playwright test",
