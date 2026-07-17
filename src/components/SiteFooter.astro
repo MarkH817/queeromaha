@@ -41,7 +41,25 @@ const { message } = Astro.props
     <summary class="footer-pill-btn"
       ><wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
     >
-    <div class="calendar-box-panel">
+    <div class="calendar-preview">
+      <span class="calendar-preview-label">(Preview) Upcoming Events</span>
+      <div class="calendar-preview-list">
+        <div class="calendar-preview-row">
+          <span class="calendar-preview-row-time"></span>
+          <span class="calendar-preview-row-title"></span>
+        </div>
+        <div class="calendar-preview-row">
+          <span class="calendar-preview-row-time"></span>
+          <span class="calendar-preview-row-title"></span>
+        </div>
+        <div class="calendar-preview-row">
+          <span class="calendar-preview-row-time"></span>
+          <span class="calendar-preview-row-title"></span>
+        </div>
+      </div>
+    </div>
+    <div class="calendar-toggle-row">
+      <span class="calendar-toggle-separator" aria-hidden="true"></span>
       <a
         class="calendar-option"
         href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
@@ -49,7 +67,7 @@ const { message } = Astro.props
         rel="noopener noreferrer"
         aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
       >
-        <wa-icon family="brands" name="google" aria-hidden="true"></wa-icon>GCal
+        <wa-icon family="brands" name="google" aria-hidden="true"></wa-icon>Google Cal
       </a>
       <a
         class="calendar-option"
@@ -83,6 +101,7 @@ const { message } = Astro.props
 <script>
   import '../scripts/suggestionBox'
   import '../scripts/calendarBox'
+  import '../scripts/calendarPreview'
 
   const footerText = document.querySelector<HTMLElement>('.footer-text')
   const footerMessage = document.querySelector<HTMLElement>('.footer-message')
