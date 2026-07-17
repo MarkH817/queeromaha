@@ -129,6 +129,8 @@ items:
   - name: Second Sunday - Trans Masc Meetup
     public: true
     description: Group centering Trans Men, Trans Masc* and Nonbinary folks.
+    tags:
+      - neutral-bathrooms
     links:
       - label: Register
         url: https://secondsunday.xyz/meet-up
@@ -164,6 +166,8 @@ items:
   - name: UNO Queer and Trans Student Alliance (QTS)
     public: true
     description: Runs Queer Prom!
+    tags:
+      - neutral-bathrooms
     links:
       - label: Instagram
         url: https://www.instagram.com/unoqts/
@@ -199,6 +203,8 @@ items:
         label: Discord
       - label: LinkTree
         url: https://linktr.ee/nocoastnoise
+    tags:
+      - neutral-bathrooms
     notes: Joe Willard runs it, Phill Smith and Nester do booking, informal, discord is main chat, revolves around project project
     location:
       street: 1818 Vinton St

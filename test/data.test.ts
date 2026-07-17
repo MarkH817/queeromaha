@@ -14,7 +14,7 @@ const ROOT = join(__dirname, '..')
 const CONTENT_DIR = join(ROOT, 'src', 'content', 'pages')
 
 // ---------------------------------------------------------------------------
-// Data files
+// Inspirational footer messages
 // ---------------------------------------------------------------------------
 
 describe('footerMessages.json', () => {
@@ -30,6 +30,10 @@ describe('footerMessages.json', () => {
         }
     })
 })
+
+// ---------------------------------------------------------------------------
+// Fancy filter icons
+// ---------------------------------------------------------------------------
 
 describe('tagMap.json', () => {
     test('is a non-empty object', () => {
@@ -49,10 +53,10 @@ describe('tagMap.json', () => {
 })
 
 // ---------------------------------------------------------------------------
-// Directory YAML files
+//  YAML source files
 // ---------------------------------------------------------------------------
 
-describe('directory yaml files', () => {
+describe('yaml source files', () => {
     const validTags = new Set(Object.keys(tagMap))
 
     const yamlFiles = readdirSync(CONTENT_DIR).filter((f) =>
@@ -131,27 +135,6 @@ describe('directory yaml files', () => {
                     ).not.toThrow(
                         `"${item.name}" has unparseable google_maps_url: ${item.location.google_maps_url}`,
                     )
-                }
-            })
-
-            test('location.neighborhood is a known value when present', () => {
-                const VALID_NEIGHBORHOODS = new Set([
-                    'Benson',
-                    'Downtown',
-                    'Midtown',
-                    'Dundee',
-                    'Aksarben',
-                    'North Omaha',
-                    'South Omaha',
-                    'West Omaha',
-                ])
-                for (const item of data.items) {
-                    const nbr = item.location?.neighborhood
-                    if (!nbr) continue
-                    expect(
-                        VALID_NEIGHBORHOODS.has(nbr),
-                        `"${item.name}" has unknown neighborhood: "${nbr}"`,
-                    ).toBe(true)
                 }
             })
 

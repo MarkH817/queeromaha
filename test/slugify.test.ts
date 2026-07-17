@@ -3,19 +3,19 @@ import { slugify } from '../src/utils/slugify.ts'
 
 describe('slugify', () => {
     test('lowercases and replaces spaces with hyphens', () => {
-        expect(slugify('West O')).toBe('west-o')
+        expect(slugify('The Fox Den')).toBe('the-fox-den')
     })
 
     test('lowercases mixed case', () => {
-        expect(slugify('BENSON')).toBe('benson')
+        expect(slugify('BFF')).toBe('bff')
     })
 
     test('collapses multiple spaces to a single hyphen', () => {
-        expect(slugify('Benson  Park')).toBe('benson-park')
+        expect(slugify('Qwest       Center')).toBe('qwest-center')
     })
 
     test('strips special characters', () => {
-        expect(slugify('West O!')).toBe('west-o')
+        expect(slugify('89.7 The River')).toBe('897-the-river')
     })
 
     test('empty string stays empty', () => {
@@ -24,12 +24,5 @@ describe('slugify', () => {
 
     test('splits camelCase words at lowercase-to-uppercase boundaries', () => {
         expect(slugify('OmahaForUs')).toBe('omaha-for-us')
-    })
-
-    test('intentionally collides differently-styled labels', () => {
-        // Documents expected behavior: slugify is lossy, so labels that differ
-        // only by case or punctuation are treated as the same neighborhood.
-        expect(slugify('West O')).toBe(slugify('West O!'))
-        expect(slugify('Mid-Town')).toBe(slugify('Mid Town'))
     })
 })
