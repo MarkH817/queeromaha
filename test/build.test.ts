@@ -11,6 +11,7 @@ describe('astro build', () => {
     test('exits with code 0 and produces dist/', { timeout: 120_000 }, () => {
         const result = spawnSync('bun', ['run', 'build'], {
             cwd: ROOT,
+            encoding: 'utf8',
             stdio: 'inherit',
             timeout: 120_000,
         })
