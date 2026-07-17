@@ -90,19 +90,6 @@ test('switching top-level category clears active tags', async ({ page }) => {
     await expect(tag).not.toHaveClass(/active/)
 })
 
-test('clear button clears active tags', async ({ page }) => {
-    await page.goto('/cafes/')
-    const tag = page.locator('[data-filter="neutral-bathrooms"]')
-    const clearBtn = page.locator('#filterClear')
-
-    await tag.click()
-    await expect(clearBtn).toBeEnabled()
-
-    await clearBtn.click()
-    await expect(tag).not.toHaveClass(/active/)
-    await expect(clearBtn).toBeDisabled()
-})
-
 test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
     await page.goto('/friends/')
@@ -257,6 +244,97 @@ test('calendar box expands in place, offers Google and webcal links, and re-tapp
     await expect(page.locator('.suggestion-box')).toBeVisible()
     await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#calendarBox')).not.toHaveAttribute('open', '')
+})
+
+const PREVIEW_FIXTURE_ICS = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//QueerOmaha//Queer Omaha Events//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'X-WR-CALNAME:Queer Omaha Events',
+    'X-WR-TIMEZONE:America/Chicago',
+    'BEGIN:VEVENT',
+    'UID:fixture-support-group@queeromaha.net',
+    'DTSTAMP:20250101T000000Z',
+    'DTSTART;TZID=America/Chicago:20250101T180000',
+    'RRULE:FREQ=WEEKLY;BYDAY=WE',
+    'DURATION:PT1H30M',
+    'SUMMARY:Support Group (19+)',
+    'LOCATION:OmahaForUs',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'BEGIN:VEVENT',
+    'UID:fixture-game-night@queeromaha.net',
+    'DTSTAMP:20250101T000000Z',
+    'DTSTART;TZID=America/Chicago:20250102T170000',
+    'RRULE:FREQ=WEEKLY;BYDAY=TH',
+    'DURATION:PT3H',
+    'SUMMARY:Game Night',
+    'LOCATION:OmahaForUs',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'BEGIN:VEVENT',
+    'UID:fixture-drum-circle@queeromaha.net',
+    'DTSTAMP:20250101T000000Z',
+    'DTSTART;TZID=America/Chicago:20250117T190000',
+    'RRULE:FREQ=MONTHLY;BYDAY=3FR',
+    'DURATION:PT2H',
+    'SUMMARY:Drum Circle',
+    'LOCATION:Whole Rejuvenation House',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'END:VCALENDAR',
+].join('\r\n')
+
+test('calendar box preview shows the next 3 upcoming events from the live feed, in order', async ({
+    page,
+}) => {
+    // 2026-01-14 is a Wednesday. Chronologically next: Support Group same
+    // day 6pm, Game Night the following day (Thu) 5pm, Drum Circle the
+    // 3rd Friday of January (Jan 16) 7pm.
+    await page.clock.setFixedTime(new Date('2026-01-14T10:00:00'))
+    await page.route('**/events.ics', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'text/calendar; charset=utf-8',
+            body: PREVIEW_FIXTURE_ICS,
+        }),
+    )
+
+    await page.goto('/friends/')
+    await page.locator('.calendar-box summary').click()
+
+    const rows = page.locator('.calendar-preview-row')
+    await expect(rows).toHaveCount(3)
+    await expect(rows.nth(0)).toHaveText(/Wed.*6:00\s?PM.*Support Group/)
+    await expect(rows.nth(1)).toHaveText(/Thu.*5:00\s?PM.*Game Night/)
+    await expect(rows.nth(2)).toHaveText(/Fri.*7:00\s?PM.*Drum Circle/)
+})
+
+test('calendar box preview rows stay empty when the feed request fails', async ({
+    page,
+}) => {
+    await page.route('**/events.ics', (route) => route.fulfill({ status: 500 }))
+
+    await page.goto('/friends/')
+    const feedResponse = page.waitForResponse('**/events.ics')
+    await page.locator('.calendar-box summary').click()
+    await feedResponse
+
+    const google = page.locator('.calendar-option').nth(0)
+    const ics = page.locator('.calendar-option').nth(1)
+    await expect(google).toBeVisible()
+    await expect(ics).toBeVisible()
+
+    const rows = page.locator('.calendar-preview-row')
+    await expect(rows).toHaveCount(3)
+    for (let i = 0; i < 3; i++) {
+        await expect(rows.nth(i)).toHaveText('')
+    }
 })
 
 test('opening the suggestion box also hides the back-to-top button', async ({

@@ -8,9 +8,6 @@ const tags = Object.entries(
 
 <div class="filter-bar">
   <div class="filter-pills filter-pills--tags" role="group" aria-label="Filter by tag">
-    <button class="filter-clear" id="filterClear" aria-label="Clear tag filters" disabled>
-      <wa-icon name="filter-circle-xmark" aria-hidden="true"></wa-icon>
-    </button>
     {tags.filter(({ slug }) => slug !== 'online').map(({ slug, icon, label, family }) => (
       <button
         class="filter-pill"

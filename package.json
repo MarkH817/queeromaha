@@ -50,7 +50,8 @@
         "@astrojs/sitemap": "^3.7.3",
         "@awesome.me/webawesome": "^3.10.0",
         "astro": "^7.0.7",
-        "posthog-js": "^1.399.2"
+        "posthog-js": "^1.399.2",
+        "rrule": "^2.8.1"
     },
     "volta": {
         "node": "24.15.0"
