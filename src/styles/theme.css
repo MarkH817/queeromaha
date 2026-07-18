@@ -211,14 +211,13 @@ footer {
         padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
     }
 
-    /* .footer-text is already hidden at this width (below), so the left
-       divider has nothing to separate — dropping it frees up the width
-       labeled buttons need to keep their text, instead of ever shrinking
-       to icon-only. The right one still divides the Suggestion Box from
-       the GitHub icon; keep it, but with margins tight enough that the
-       row doesn't wrap. */
+    /* Mirrors .footer-separator-right's tightening below: tighter on the
+       outer side (toward .calendar-box) than the inner side (toward
+       .suggestion-box), same asymmetry as the desktop rule further down,
+       just compressed to keep the row from wrapping at this width. */
     .footer-separator-left {
-        display: none;
+        margin-left: 0.1rem;
+        margin-right: 0.15rem;
     }
 
     .footer-separator-right {
@@ -226,42 +225,9 @@ footer {
         margin-right: 0.1rem;
     }
 
-    .footer-pill-btn {
-        padding: 0.3rem 0.5rem;
-        font-size: 0.9rem;
-    }
-
     .calendar-box {
         padding-right: 0.25rem;
     }
-
-    .footer-icon {
-        padding: 0.1rem 0.3rem;
-        font-size: 1.5rem;
-    }
-}
-
-.footer-text {
-    /* .suggestion-box is first in the DOM (so the [open] ~ sibling
-       hiding rule below can reach every other footer item) — these
-       order values restore the visual layout. The message sits outside
-       the calendar/separator/suggestion-box/separator/GitHub sequence
-       entirely (order: -1) so it can't wedge into the centered zone
-       reserved for the Suggestion Box; it's hidden below 480px anyway. */
-    order: -1;
-    text-align: center;
-    /* Not flex-grow: 1 — this used to claim all the row's free space,
-       which left nothing for .suggestion-box's auto margins to center
-       it with. Bounded instead, so the centering below actually works. */
-    flex: 0 1 auto;
-    max-width: 240px;
-    min-width: 0;
-    margin-right: 0.5rem;
-    padding: 0.25rem 0.75rem;
-    opacity: 0.8;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .footer-separator {
@@ -272,9 +238,11 @@ footer {
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* Tighter against the calendar/GitHub buttons on their outer side,
-   leaving the roomier gap on the inner side (toward the centered
-   Suggestion Box). */
+/* Sits between .calendar-box (order: 0, default) and .suggestion-box
+   (order: 2) via this rule's own order: 1 — tighter against the
+   calendar pill's outer side, leaving the roomier gap on the inner
+   side (toward .suggestion-box), matching .footer-separator-right's
+   same tighter-outer/roomier-inner treatment on its own side. */
 .footer-separator-left {
     margin-left: 0.2rem;
 }
@@ -350,14 +318,19 @@ footer a:hover {
     order: 2;
     /* Web Awesome's native.css gives every <details> a white "panel"
        background, border, and padding by default — reset it so the
-       footer's purple background shows through. The auto left/right
-       margins consume all remaining free space evenly, which is what
-       centers the button between the two separators (rather than
-       justify-content, which would space *all* items evenly). */
+       footer's purple background shows through, including its
+       margin-bottom: 24px (margin: 0 first, then margin-left: auto —
+       not the margin-left shorthand alone, which would leave that 24px
+       in place and misalign the pill vertically against .calendar-box).
+       margin-left: auto consumes all remaining free space on the left,
+       tucking the pill against .footer-separator-right (and the GitHub
+       icon beyond it) instead of centering it between the two
+       separators. */
     background: transparent;
     border: none;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
+    margin-left: auto;
 }
 
 /* Opening either footer <details> (suggestion box or calendar box) hides
@@ -367,12 +340,19 @@ footer a:hover {
    combinator for later siblings; .calendar-box comes after
    .suggestion-box in the DOM (required so this rule can reach it), so
    the one gap — hiding .suggestion-box, an *earlier* sibling, when
-   .calendar-box opens — needs :has() below instead. */
+   .calendar-box opens — needs :has() below instead.
+
+   .footer-separator-left can't stay visible when .calendar-box[open]:
+   it's a footer-level sibling positioned *after* the whole box, so once
+   open it would render past the box's entire width (preview list and
+   toggle row included) instead of next to the "Gay Agenda" pill, which
+   is now a descendant deep inside that box. .calendar-toggle-separator
+   (inside .calendar-toggle-row) is the only element that can actually
+   sit between the pill and the buttons when open — see its comment for
+   how it's kept visually matched to this one instead. */
 .suggestion-box[open] ~ .calendar-box,
-.suggestion-box[open] ~ .footer-text,
 .suggestion-box[open] ~ .footer-separator,
 .suggestion-box[open] ~ .footer-nav,
-.calendar-box[open] ~ .footer-text,
 .calendar-box[open] ~ .footer-separator,
 .calendar-box[open] ~ .footer-nav {
     display: none;
@@ -405,14 +385,20 @@ footer:has(.calendar-box[open]) .suggestion-box {
        footer, so its toggle moves to the *end* (panel first, toggle
        last) to stay near the bottom, roughly where it was before
        opening — putting it on top instead made it leap up the screen as
-       the panel appeared beneath it. Paired with
-       .suggestion-box-toggle-row's margin-left: auto so the two end up
-       centered as a unit; a plain left-align here dragged it ~70px off
-       its closed position. The calendar box doesn't need this: its
-       options sit beside its toggle on the same row instead of below
-       it, so the toggle just stays in its natural (first) position. */
+       the panel appeared beneath it. margin-left: auto pushes it toward
+       the row's right edge; margin-right compensates for
+       .footer-separator-right and .footer-nav (the GitHub icon) both
+       going display: none while open, which frees up the width they
+       occupied when closed — without it, the toggle overshoots into
+       that freed space and jumps right instead of holding position.
+       Tuned to the closed pill's mobile-breakpoint offset, the same way
+       .suggestion-box-toggle-row's column-gap below is tuned. The
+       calendar box doesn't need this: its options sit beside its toggle
+       on the same row instead of below it, so the toggle just stays in
+       its natural (first) position. */
     order: 2;
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 3.25rem;
 }
 
 summary.footer-pill-btn {
@@ -521,7 +507,8 @@ summary.footer-pill-btn::-webkit-details-marker {
     color: #f3e8ff;
 }
 
-.calendar-preview-label {
+.calendar-preview-label,
+.suggestion-label {
     font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -572,17 +559,28 @@ summary.footer-pill-btn::-webkit-details-marker {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.25rem 0;
+    /* Left padding matches the closed pill-to-separator gap: .calendar-box
+       (padding-right: 0.5rem) plus .footer-separator-left (margin-left:
+       0.2rem) — .calendar-box[open] resets its own padding to 0, so this
+       row's left padding has to carry that full 0.7rem alone for
+       .calendar-toggle-separator (its first child) to sit the same
+       distance from the "Gay Agenda" pill as that separator does when
+       closed. */
+    padding: 0.5rem 0.25rem 0 0.7rem;
     margin-top: 0.25rem;
-    /* Divider from the preview list above — without it, the toggle row's
-       buttons visually blend into the event chips right above them. */
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .calendar-toggle-separator {
     align-self: stretch;
     width: 1px;
     background: rgba(255, 255, 255, 0.15);
+    /* Same vertical margin as the base .footer-separator rule, so
+       align-self: stretch shrinks it down to a comparable height here
+       (relative to .calendar-toggle-row's own shorter line) as it does
+       on .footer-separator-left (relative to the taller closed footer
+       row) — without this it stretches noticeably taller than the
+       closed-state separator it's standing in for. */
+    margin: 0.3rem 0;
 }
 
 .suggestion-box-toggle-row {
@@ -601,9 +599,13 @@ summary.footer-pill-btn::-webkit-details-marker {
 
 .suggestion-label {
     display: block;
-    font-weight: 500;
     margin-bottom: 0.35rem;
-    color: #fff;
+    color: #f3e8ff;
+    /* Unlike .calendar-preview-label (decorative caption), this is a real
+       <label for> tied to a required form field — the shared eyebrow
+       style's opacity: 0.65 drops its contrast against the purple footer
+       below WCAG AA (3.38:1, axe-flagged), so full opacity here instead. */
+    opacity: 1;
 }
 
 .suggestion-input {
@@ -625,20 +627,23 @@ summary.footer-pill-btn::-webkit-details-marker {
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* Same text/color/depth treatment as the top category buttons
-   (.main-nav wa-button::part(base)), keeping Send's own shape
-   (border-radius: 8px, not the category buttons' full 999px pill). */
+/* Same scaled-down main-nav look as .calendar-option in the calendar
+   foldout — same size, shape, and depth treatment, so both foldouts'
+   action buttons read as one consistent style. Stays left-aligned in
+   .suggestion-box-toggle-row (no margin-left: auto there) rather than
+   centered or full-width. */
 .suggestion-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     color: #6d28d9;
     background: #f9f5ff;
     border: 2px solid #c4b5fd;
-    border-radius: 8px;
-    /* ~1.5x the width of the original 1.25rem horizontal padding.
-       Vertical padding trimmed slightly from 0.65rem so Send reads as
-       "a bit taller" than the Suggestion Box toggle rather than a lot
-       taller, while the two share a bottom edge. */
-    padding: 0.55rem 2.5rem;
-    font-size: 1rem;
+    border-radius: 999px;
+    /* Wider than .calendar-option's padding — Send is the suggestion
+       box's one and only action, worth more visual weight. */
+    padding: 0.4rem 1.3rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.02em;
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -650,8 +655,8 @@ summary.footer-pill-btn::-webkit-details-marker {
         box-shadow 0.1s ease-out,
         transform 0.1s ease-out;
     box-shadow:
-        0 3px 0 #c4b5fd,
-        0 5px 8px rgba(76, 29, 118, 0.18);
+        0 2px 0 #c4b5fd,
+        0 3px 6px rgba(76, 29, 118, 0.18);
 }
 
 .suggestion-submit:hover {
@@ -709,41 +714,90 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding-right: 0.5rem;
 }
 
+/* Same scaled-down main-nav look as .suggestion-submit in the suggestion
+   box foldout (see comment there) — same size, shape, and depth
+   treatment, so both foldouts' action buttons read as one consistent
+   style. */
 .calendar-option {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.3rem 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 0.4rem 0.9rem;
+    border: 2px solid #c4b5fd;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #f3e8ff;
+    background: #f9f5ff;
+    color: #6d28d9;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     /* Never let the label wrap or the pill get squeezed — either would
        turn the rounded pill into a taller, squared-off box instead of
        just narrowing. */
     white-space: nowrap;
     flex-shrink: 0;
+    cursor: pointer;
     transition:
-        background 0.15s,
-        border-color 0.15s,
-        color 0.15s;
+        background 0.1s ease-out,
+        color 0.1s ease-out,
+        border-color 0.1s ease-out,
+        box-shadow 0.1s ease-out,
+        transform 0.1s ease-out;
+    box-shadow:
+        0 2px 0 #c4b5fd,
+        0 3px 6px rgba(76, 29, 118, 0.18);
 }
 
 .calendar-option:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.7);
-    color: #fff;
-    text-decoration: none;
+    background: #ede9fe;
+    border-color: #a78bfa;
+}
+
+.calendar-option:active {
+    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
+    transform: translateY(2px);
 }
 
 @media (max-width: 480px) {
-    /* Footer is position: sticky, permanently on-screen — the rotating
-       message isn't worth a guaranteed extra row of height here. */
-    .footer-text {
-        display: none;
+    /* These mobile shrinks need to come after the base .footer-pill-btn /
+       .footer-icon / .calendar-option rules further up the file — with
+       equal specificity, a later plain selector wins the cascade over an
+       earlier media-scoped one whenever the media condition is also true,
+       so declaring the shrink up near the other @media (max-width: 480px)
+       block (as it used to be) silently did nothing at any width. This is
+       also the actual root cause of the "Gay Agenda" toggle jumping
+       vertically on open at Pixel-7 widths: the summary pill (~136px) and
+       the toggle row (Google Cal + Apple Cal pills, ~281px) needed ~417px
+       combined but only ~406px was available, so the toggle row wrapped
+       to its own new line below the summary instead of sharing its row. */
+    .footer-pill-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-icon {
+        padding: 0.1rem 0.3rem;
+        font-size: 1.5rem;
+    }
+
+    .calendar-option,
+    .suggestion-submit {
+        font-size: 0.8rem;
+    }
+
+    .calendar-option {
+        padding: 0.3rem 0.7rem;
+        gap: 0.25rem;
+    }
+
+    .suggestion-submit {
+        padding: 0.3rem 1rem;
+        gap: 0.3rem;
+    }
+
+    .calendar-toggle-row {
+        gap: 0.35rem;
     }
 }
 

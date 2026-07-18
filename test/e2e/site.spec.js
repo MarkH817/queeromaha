@@ -94,9 +94,6 @@ test('footer elements render correctly', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 700 })
     await page.goto('/friends/')
 
-    // rotating message is dropped entirely below 480px, not just clipped
-    await expect(page.locator('.footer-text')).toBeHidden()
-
     // calendar box and suggestion box remain visible regardless
     await expect(page.locator('.calendar-box summary')).toBeVisible()
     await expect(page.locator('#suggestionBox summary')).toBeVisible()
@@ -105,6 +102,13 @@ test('footer elements render correctly', async ({ page }) => {
 test('calendar and suggestion box stay on the same row on mobile', async ({
     page,
 }) => {
+    // Regression test: Web Awesome's native.css puts a margin-bottom: 24px
+    // on every <details>. .calendar-box resets it via `margin: 0`, but
+    // .suggestion-box previously reset it with the `margin: 0 auto`
+    // shorthand -- swapping that for a lone `margin-left: auto` (see
+    // theme.css) would let the 24px bottom margin leak back in, which
+    // align-items: center on the footer turns into a ~12px vertical
+    // offset between the two pills instead of a clean single row.
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
@@ -114,34 +118,101 @@ test('calendar and suggestion box stay on the same row on mobile', async ({
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
 })
 
-test('footer message stays hidden on mobile even if a stale JS toggle unhides it', async ({
+test('calendar box toggle does not jump vertically when opened on mobile', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
-    await page.evaluate(() => {
-        document.querySelector('.footer-text').hidden = false
-    })
+    const summary = page.locator('.calendar-box summary')
+    const closedBox = await summary.boundingBox()
 
-    // the media query hides it unconditionally at this breakpoint,
-    // regardless of the `hidden` IDL property checkFooterFit() manages
-    await expect(page.locator('.footer-text')).toBeHidden()
+    await summary.click()
+
+    // Regression test: the toggle row (Google Cal / Apple Cal) must share
+    // a row with the summary pill instead of wrapping onto its own line
+    // below it -- a wrap pushes every row beneath it down, making the
+    // "Gay Agenda" toggle jump vertically instead of staying in place.
+    const openBox = await summary.boundingBox()
+    const toggleRowBox = await page
+        .locator('.calendar-toggle-row')
+        .boundingBox()
+
+    expect(openBox.y).toBeCloseTo(closedBox.y, -1)
+    // flex-end alignment lines up their bottom edges when they share a
+    // row; a wrap would put the toggle row a full row-height below instead
+    expect(toggleRowBox.y + toggleRowBox.height).toBeCloseTo(
+        openBox.y + openBox.height,
+        -1,
+    )
 })
 
-test('footer message is visible and unclipped on wide screens', async ({
+test('suggestion box toggle does not jump horizontally when opened on mobile', async ({
     page,
 }) => {
-    await page.setViewportSize({ width: 1024, height: 800 })
+    await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
-    const footerText = page.locator('.footer-text')
-    const footerMessage = page.locator('.footer-message')
 
-    await expect(footerText).toBeVisible()
-    const overflowing = await footerMessage.evaluate(
-        (el) => el.scrollWidth > el.clientWidth,
-    )
-    expect(overflowing).toBe(false)
+    const summary = page.locator('#suggestionBox summary')
+    const closedBox = await summary.boundingBox()
+
+    await summary.click()
+
+    // Regression test: the pill used to be centered via `margin: 0 auto`
+    // between the two footer separators, so opening it (which hides every
+    // sibling it was centering against) recentered it in the whole footer
+    // width instead, visibly jumping it left. It's now tucked to the right
+    // via `margin-left: auto` on both the closed pill and the open toggle,
+    // so its position holds regardless of which siblings are visible.
+    const openBox = await summary.boundingBox()
+    expect(openBox.x).toBeCloseTo(closedBox.x, -1)
+})
+
+test('suggestion box pill is tucked against the right separator, next to the GitHub icon', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+
+    const suggestionBox = await page.locator('.suggestion-box').boundingBox()
+    const separatorRight = await page
+        .locator('.footer-separator-right')
+        .boundingBox()
+    const footerNav = await page.locator('.footer-nav').boundingBox()
+
+    // Tucked against the right separator, not centered in the leftover
+    // space between it and .calendar-box: the gaps on both sides of the
+    // separator should be small, tight margins, not a wide evenly-split
+    // gap.
+    expect(
+        separatorRight.x - (suggestionBox.x + suggestionBox.width),
+    ).toBeLessThan(20)
+    expect(
+        footerNav.x - (separatorRight.x + separatorRight.width),
+    ).toBeLessThan(20)
+})
+
+test('a separator divides the calendar and suggestion box pills, even on narrow mobile', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 320, height: 700 })
+    await page.goto('/friends/')
+
+    const separator = page.locator('.footer-separator-left')
+    await expect(separator).toBeVisible()
+
+    const calBox = await page.locator('.calendar-box summary').boundingBox()
+    const sepBox = await separator.boundingBox()
+    const suggBox = await page.locator('#suggestionBox summary').boundingBox()
+
+    // separator sits horizontally between the two pills
+    expect(sepBox.x).toBeGreaterThanOrEqual(calBox.x + calBox.width)
+    expect(suggBox.x).toBeGreaterThanOrEqual(sepBox.x + sepBox.width)
+
+    // both pills stay on one row (no wrap) at this narrow width -- the
+    // separator itself isn't compared here since align-self: stretch
+    // deliberately makes it taller than the pills, so its top edge
+    // legitimately sits higher than theirs even on the same row
+    expect(suggBox.y).toBeCloseTo(calBox.y, 0)
 })
 
 test('tag filter pills use wa-icon elements', async ({ page }) => {
