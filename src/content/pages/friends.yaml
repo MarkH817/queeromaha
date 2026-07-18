@@ -87,16 +87,6 @@ items:
         url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
     tags:
       - online
-  - name: River Daze Collective
-    public: true
-    description: Art markets and queer social events.
-    links:
-      - label: Facebook
-        url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
-      - label: Instagram
-        url: https://www.instagram.com/river.dazeco/
-    tags:
-      - online
   - name: Out Wild Adventures
     public: true
     description: Kayaking, hikes and coffee chats. Sober-friendly
@@ -107,7 +97,7 @@ items:
         url: https://flow.page/outwildadventures
     tags:
       - online
-  - name: Trans Nebraska dot Online
+  - name: Trans Nebraska
     public: true
     description: Online peer social group ran by Babs Ramsey.
     links:
@@ -154,6 +144,16 @@ items:
     links:
       - label: Discord
         url: https://discord.com/invite/M5JUCgY9c
+    tags:
+      - online
+  - name: River Daze Collective
+    public: true
+    description: Art markets and queer social events.
+    links:
+      - label: Facebook
+        url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
+      - label: Instagram
+        url: https://www.instagram.com/river.dazeco/
     tags:
       - online
   - name: Open Arms Trans Social Group (OATS)
