@@ -325,10 +325,10 @@ test('gear info box opens to reveal Privacy and Contact links, hides the other f
     await expect(page.locator('.suggestion-box')).toBeVisible()
     await expect(page.locator('.calendar-box')).toBeVisible()
 
-    await page.locator('#infoBox summary').click()
+    await page.locator('#utilityBox summary').click()
 
-    const privacyLink = page.locator('.info-option', { hasText: 'Privacy' })
-    const contactLink = page.locator('.info-option', { hasText: 'Contact' })
+    const privacyLink = page.locator('.utility-option', { hasText: 'Privacy' })
+    const contactLink = page.locator('.utility-option', { hasText: 'Contact' })
     await expect(privacyLink).toBeVisible()
     await expect(contactLink).toBeVisible()
     await expect(privacyLink).toHaveAttribute('href', '/privacy')
@@ -338,13 +338,13 @@ test('gear info box opens to reveal Privacy and Contact links, hides the other f
     // as opening either of them hides the others (mutual exclusion)
     await expect(page.locator('.suggestion-box')).toBeHidden()
     await expect(page.locator('.calendar-box')).toBeHidden()
-    await expect(page.locator('#infoBox')).toHaveAttribute('open', '')
+    await expect(page.locator('#utilityBox')).toHaveAttribute('open', '')
 
-    await page.locator('#infoBox summary').click()
+    await page.locator('#utilityBox summary').click()
 
     await expect(page.locator('.suggestion-box')).toBeVisible()
     await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('#infoBox')).not.toHaveAttribute('open', '')
+    await expect(page.locator('#utilityBox')).not.toHaveAttribute('open', '')
 })
 
 test('opening the suggestion box or calendar box hides the gear info box', async ({
@@ -353,11 +353,11 @@ test('opening the suggestion box or calendar box hides the gear info box', async
     await page.goto('/friends/')
 
     await page.locator('#suggestionBox summary').click()
-    await expect(page.locator('#infoBox')).toBeHidden()
+    await expect(page.locator('#utilityBox')).toBeHidden()
     await page.locator('#suggestionBox summary').click()
 
     await page.locator('.calendar-box summary').click()
-    await expect(page.locator('#infoBox')).toBeHidden()
+    await expect(page.locator('#utilityBox')).toBeHidden()
 })
 
 const PREVIEW_FIXTURE_ICS = [

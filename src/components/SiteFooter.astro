@@ -1,7 +1,7 @@
 <footer>
   <details class="suggestion-box" id="suggestionBox" name="footer-accordion">
     <summary class="footer-pill-btn"
-      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon>Suggestion Box</summary
+      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true" style="font-size: 1.25em;"></wa-icon>Suggestion Box</summary
     >
     <div class="suggestion-box-panel">
       <form id="suggestForm" name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -27,13 +27,13 @@
     </div>
     <div class="suggestion-box-toggle-row">
       <button class="suggestion-submit" type="submit" form="suggestForm"
-        ><wa-icon name="paper-plane" variant="regular" aria-hidden="true"></wa-icon>Send</button
+        ><wa-icon name="paper-plane" variant="regular" aria-hidden="true" style="font-size: 1.5em;"></wa-icon>Send</button
       >
     </div>
   </details>
   <details class="calendar-box" id="calendarBox" name="footer-accordion">
     <summary class="footer-pill-btn"
-      ><wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
+      ><wa-icon name="calendar" variant="regular" style="font-size: 1.25em;" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
     >
     <div class="calendar-preview">
       <span class="calendar-preview-label">(Preview) Upcoming Events</span>
@@ -61,14 +61,14 @@
         rel="noopener noreferrer"
         aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
       >
-        <wa-icon family="brands" name="google" aria-hidden="true"></wa-icon>Google Cal
+        <wa-icon family="brands" name="google-plus-g" aria-hidden="true"></wa-icon>Google Cal
       </a>
       <a
         class="calendar-option"
         href="webcal://queeromaha.net/events.ics"
         aria-label="Add to Calendar (Apple Calendar and other calendar apps)"
       >
-        <wa-icon family="brands" name="apple" aria-hidden="true"></wa-icon>Apple Cal
+        <wa-icon name="apple-whole" aria-hidden="true"></wa-icon>Apple Cal
       </a>
     </div>
   </details>
@@ -76,24 +76,23 @@
   <span class="footer-separator footer-separator-right" aria-hidden="true"></span>
   <nav class="footer-nav" aria-label="Footer navigation">
     <a
-      href="https://analytics.queeromaha.net/redirect/github"
+      href="https://github.com/taraxvoid/queeromaha"
       aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)"
       class="footer-icon"
       rel="noopener noreferrer"
       target="_blank"
     >
-      <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
+      <wa-icon family="brands" name="github" label="GitHub" style="font-size: 1.15em;"></wa-icon>
     </a>
     <span class="footer-nav-divider" aria-hidden="true"></span>
-    <details class="info-box" id="infoBox" name="footer-accordion">
-      <summary class="footer-pill-btn" aria-label="More links"
-        ><wa-icon name="gear" variant="solid" aria-hidden="true"></wa-icon
-      ></summary>
-      <div class="info-box-panel">
-        <a class="info-option" href="/privacy">
+    <details class="utility-box" id="utilityBox" name="footer-accordion">
+      <summary class="footer-pill-btn" aria-label="Utility Links (About, Contact, Privacy)">
+<wa-icon name="screwdriver-wrench" aria-hidden="true" style="font-size: 1.4em;"></wa-icon></summary>
+      <div class="utility-box-panel">
+        <a class="utility-option" href="/privacy">
           <wa-icon name="circle-info" variant="solid" aria-hidden="true"></wa-icon>Privacy
         </a>
-        <a class="info-option" href="/contact">
+        <a class="utility-option" href="/contact">
           <wa-icon name="envelope" variant="regular" aria-hidden="true"></wa-icon>Contact
         </a>
       </div>
