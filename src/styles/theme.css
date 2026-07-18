@@ -340,7 +340,16 @@ footer a:hover {
    combinator for later siblings; .calendar-box comes after
    .suggestion-box in the DOM (required so this rule can reach it), so
    the one gap — hiding .suggestion-box, an *earlier* sibling, when
-   .calendar-box opens — needs :has() below instead. */
+   .calendar-box opens — needs :has() below instead.
+
+   .footer-separator-left can't stay visible when .calendar-box[open]:
+   it's a footer-level sibling positioned *after* the whole box, so once
+   open it would render past the box's entire width (preview list and
+   toggle row included) instead of next to the "Gay Agenda" pill, which
+   is now a descendant deep inside that box. .calendar-toggle-separator
+   (inside .calendar-toggle-row) is the only element that can actually
+   sit between the pill and the buttons when open — see its comment for
+   how it's kept visually matched to this one instead. */
 .suggestion-box[open] ~ .calendar-box,
 .suggestion-box[open] ~ .footer-separator,
 .suggestion-box[open] ~ .footer-nav,
@@ -550,17 +559,28 @@ summary.footer-pill-btn::-webkit-details-marker {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.25rem 0;
+    /* Left padding matches the closed pill-to-separator gap: .calendar-box
+       (padding-right: 0.5rem) plus .footer-separator-left (margin-left:
+       0.2rem) — .calendar-box[open] resets its own padding to 0, so this
+       row's left padding has to carry that full 0.7rem alone for
+       .calendar-toggle-separator (its first child) to sit the same
+       distance from the "Gay Agenda" pill as that separator does when
+       closed. */
+    padding: 0.5rem 0.25rem 0 0.7rem;
     margin-top: 0.25rem;
-    /* Divider from the preview list above — without it, the toggle row's
-       buttons visually blend into the event chips right above them. */
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .calendar-toggle-separator {
     align-self: stretch;
     width: 1px;
     background: rgba(255, 255, 255, 0.15);
+    /* Same vertical margin as the base .footer-separator rule, so
+       align-self: stretch shrinks it down to a comparable height here
+       (relative to .calendar-toggle-row's own shorter line) as it does
+       on .footer-separator-left (relative to the taller closed footer
+       row) — without this it stretches noticeably taller than the
+       closed-state separator it's standing in for. */
+    margin: 0.3rem 0;
 }
 
 .suggestion-box-toggle-row {
@@ -613,11 +633,16 @@ summary.footer-pill-btn::-webkit-details-marker {
    .suggestion-box-toggle-row (no margin-left: auto there) rather than
    centered or full-width. */
 .suggestion-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     color: #6d28d9;
     background: #f9f5ff;
     border: 2px solid #c4b5fd;
     border-radius: 999px;
-    padding: 0.4rem 0.9rem;
+    /* Wider than .calendar-option's padding — Send is the suggestion
+       box's one and only action, worth more visual weight. */
+    padding: 0.4rem 1.3rem;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -758,12 +783,17 @@ summary.footer-pill-btn::-webkit-details-marker {
 
     .calendar-option,
     .suggestion-submit {
-        padding: 0.3rem 0.7rem;
         font-size: 0.8rem;
     }
 
     .calendar-option {
+        padding: 0.3rem 0.7rem;
         gap: 0.25rem;
+    }
+
+    .suggestion-submit {
+        padding: 0.3rem 1rem;
+        gap: 0.3rem;
     }
 
     .calendar-toggle-row {
