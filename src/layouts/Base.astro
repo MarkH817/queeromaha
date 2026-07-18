@@ -1,5 +1,4 @@
 ---
-import footerMessages from '../data/footerMessages.json'
 import site from '../data/site.json'
 import '../styles/theme.css'
 import HeadMeta from '../components/HeadMeta.astro'
@@ -25,10 +24,6 @@ const {
 } = Astro.props
 const pageTitle = title ? `${title} | Queer Omaha` : 'Queer Omaha'
 const canonicalUrl = new URL(Astro.url.pathname, site.url).href
-const randomMsg =
-    footerMessages.messages[
-        Math.floor(Math.random() * footerMessages.messages.length)
-    ]
 ---
 
 <!doctype html>
@@ -44,7 +39,7 @@ const randomMsg =
       {title && <h1 class="wa-visually-hidden">{title}</h1>}
       <slot />
     </main>
-    <SiteFooter message={randomMsg.text} />
+    <SiteFooter />
     <script>
       import '@awesome.me/webawesome/dist/components/button/button.js'
       import '@awesome.me/webawesome/dist/components/card/card.js'

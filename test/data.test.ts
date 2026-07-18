@@ -4,32 +4,11 @@ import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
 import { parse as parseYaml } from 'yaml'
 import { canonicalize } from '../scripts/helpers/yaml.helper'
-import footerMessages from '../src/data/footerMessages.json' with {
-    type: 'json',
-}
 import tagMap from '../src/data/tagMap.json' with { type: 'json' }
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const CONTENT_DIR = join(ROOT, 'src', 'content', 'pages')
-
-// ---------------------------------------------------------------------------
-// Inspirational footer messages
-// ---------------------------------------------------------------------------
-
-describe('footerMessages.json', () => {
-    test('has a messages array', () => {
-        expect(Array.isArray(footerMessages.messages)).toBe(true)
-        expect(footerMessages.messages.length).toBeGreaterThan(0)
-    })
-
-    test('every entry has a text string', () => {
-        for (const entry of footerMessages.messages) {
-            expect(typeof entry.text).toBe('string')
-            expect(entry.text.length).toBeGreaterThan(0)
-        }
-    })
-})
 
 // ---------------------------------------------------------------------------
 // Fancy filter icons

@@ -1,11 +1,3 @@
----
-interface Props {
-    message: string
-}
-
-const { message } = Astro.props
----
-
 <footer>
   <details class="suggestion-box" id="suggestionBox" name="footer-accordion">
     <summary class="footer-pill-btn"
@@ -79,9 +71,6 @@ const { message } = Astro.props
     </div>
   </details>
   <span class="footer-separator footer-separator-left" aria-hidden="true"></span>
-  <div class="footer-text">
-    <p class="footer-message">{message}</p>
-  </div>
   <span class="footer-separator footer-separator-right" aria-hidden="true"></span>
   <nav class="footer-nav" aria-label="Footer navigation">
     <a
@@ -102,23 +91,6 @@ const { message } = Astro.props
   import '../scripts/suggestionBox'
   import '../scripts/calendarBox'
   import '../scripts/calendarPreview'
-
-  const footerText = document.querySelector<HTMLElement>('.footer-text')
-  const footerMessage = document.querySelector<HTMLElement>('.footer-message')
-  if (footerText && footerMessage) {
-    const checkFooterFit = () => {
-      footerText.hidden = false
-      footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
-    }
-    checkFooterFit()
-    let lastWidth = window.innerWidth
-    window.addEventListener('resize', () => {
-      if (window.innerWidth !== lastWidth) {
-        lastWidth = window.innerWidth
-        checkFooterFit()
-      }
-    })
-  }
 
   const backToTopButton = document.getElementById('backToTop')
   const header = document.querySelector('header')
