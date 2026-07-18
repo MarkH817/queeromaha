@@ -1,8 +1,7 @@
-/// <reference types='vitest/config' />
-import { getViteConfig } from 'astro/config'
-import site from './src/data/site.json' with { type: 'json' }
+import { defineConfig } from 'vitest/config'
 
-export default getViteConfig(
-    { test: { exclude: ['**/node_modules/**', '**/.git/**', '**/e2e/**'] } },
-    { site: site.url },
-)
+export default defineConfig({
+    test: {
+        exclude: ['**/node_modules/**', '**/.git/**', '**/e2e/**'],
+    },
+})
