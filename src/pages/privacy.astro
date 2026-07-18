@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro'
+---
+
+<Base
+  title="Privacy"
+  description="What Queer Omaha collects, why, and who it's shared with."
+>
+  <article class="legal-page">
+    <wa-card class="legal-card">
+      <h2 slot="header">
+        <wa-icon name="shield-halved" variant="solid" aria-hidden="true"></wa-icon>
+        Privacy
+      </h2>
+
+      <p>
+        Queer Omaha is a volunteer-run, community-maintained directory. There
+        are no accounts and no logins — this page covers everything we
+        collect.
+      </p>
+
+      <h3>What we collect</h3>
+      <ul>
+        <li>
+          <strong>Analytics.</strong> We use PostHog to see which pages and
+          listings get used, in cookieless mode: no cookies, no persistent
+          device ID, and IP addresses aren't logged.
+        </li>
+        <li>
+          <strong>Suggestion Box submissions.</strong> The message you type
+          into the footer's "Suggest a place to add" form, sent via Netlify
+          Forms.
+        </li>
+        <li>
+          <strong>Contact form submissions.</strong> The email and message
+          you send via <a href="/contact">/contact</a>, also via Netlify
+          Forms.
+        </li>
+      </ul>
+
+      <h3>Why</h3>
+      <p>
+        To understand which categories and listings people actually use, and
+        to receive suggestions and messages from the community.
+      </p>
+
+      <h3>Who we share it with</h3>
+      <p>
+        PostHog Inc. (analytics) and Netlify, Inc. (form handling and
+        hosting) — that's it. We don't sell data or share it with anyone
+        else.
+      </p>
+
+      <h3>How long we keep it</h3>
+      <p>
+        Analytics events are kept per PostHog's standard retention.
+        Suggestion Box and contact submissions are kept until they're
+        reviewed and actioned.
+      </p>
+
+      <h3>Questions</h3>
+      <p>
+        Email <a href="mailto:privacy@queeromaha.net">privacy@queeromaha.net</a>
+        or use the <a href="/contact">contact form</a>.
+      </p>
+
+      <p>
+        <a class="back-link" href="/friends">
+          <wa-icon name="arrow-left" variant="solid" aria-hidden="true"></wa-icon>
+          Back to the directory
+        </a>
+      </p>
+    </wa-card>
+  </article>
+</Base>

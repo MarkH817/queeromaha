@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro'
+---
+
+<Base title="Contact" description="Get in touch with Queer Omaha.">
+  <article class="legal-page">
+    <wa-card class="legal-card">
+      <h2 slot="header">
+        <wa-icon name="envelope" variant="regular" aria-hidden="true"></wa-icon>
+        Contact
+      </h2>
+
+      <p>
+        For a quick listing suggestion, use the Suggestion Box in the
+        footer. For anything else, send a message here.
+      </p>
+
+      <form
+        id="contactForm"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <p class="contact-honeypot">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <label class="contact-label" for="contactEmail">Your email</label>
+        <input
+          id="contactEmail"
+          class="contact-input"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+        />
+        <label class="contact-label" for="contactMessage">Message</label>
+        <textarea
+          id="contactMessage"
+          class="contact-textarea"
+          name="message"
+          required
+          rows="5"
+        ></textarea>
+        <button class="contact-submit" type="submit">
+          <wa-icon name="paper-plane" variant="regular" aria-hidden="true"></wa-icon>
+          Send
+        </button>
+      </form>
+
+      <p>
+        <a class="back-link" href="/friends">
+          <wa-icon name="arrow-left" variant="solid" aria-hidden="true"></wa-icon>
+          Back to the directory
+        </a>
+      </p>
+    </wa-card>
+  </article>
+  <script>
+    import '../scripts/contactForm'
+  </script>
+</Base>

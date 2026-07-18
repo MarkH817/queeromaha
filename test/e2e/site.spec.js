@@ -317,6 +317,49 @@ test('calendar box expands in place, offers Google and webcal links, and re-tapp
     await expect(page.locator('#calendarBox')).not.toHaveAttribute('open', '')
 })
 
+test('gear info box opens to reveal Privacy and Contact links, hides the other footer buttons, and re-tapping closes it', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+
+    await expect(page.locator('.suggestion-box')).toBeVisible()
+    await expect(page.locator('.calendar-box')).toBeVisible()
+
+    await page.locator('#infoBox summary').click()
+
+    const privacyLink = page.locator('.info-option', { hasText: 'Privacy' })
+    const contactLink = page.locator('.info-option', { hasText: 'Contact' })
+    await expect(privacyLink).toBeVisible()
+    await expect(contactLink).toBeVisible()
+    await expect(privacyLink).toHaveAttribute('href', '/privacy')
+    await expect(contactLink).toHaveAttribute('href', '/contact')
+
+    // opening the gear menu hides the other two accordions in turn, same
+    // as opening either of them hides the others (mutual exclusion)
+    await expect(page.locator('.suggestion-box')).toBeHidden()
+    await expect(page.locator('.calendar-box')).toBeHidden()
+    await expect(page.locator('#infoBox')).toHaveAttribute('open', '')
+
+    await page.locator('#infoBox summary').click()
+
+    await expect(page.locator('.suggestion-box')).toBeVisible()
+    await expect(page.locator('.calendar-box')).toBeVisible()
+    await expect(page.locator('#infoBox')).not.toHaveAttribute('open', '')
+})
+
+test('opening the suggestion box or calendar box hides the gear info box', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+
+    await page.locator('#suggestionBox summary').click()
+    await expect(page.locator('#infoBox')).toBeHidden()
+    await page.locator('#suggestionBox summary').click()
+
+    await page.locator('.calendar-box summary').click()
+    await expect(page.locator('#infoBox')).toBeHidden()
+})
+
 const PREVIEW_FIXTURE_ICS = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -821,4 +864,73 @@ test('switching category while a card is active clears its active state', async 
         .poll(() => page.evaluate(() => location.pathname))
         .toBe('/cafes')
     await expect(card).not.toHaveClass(/item-active/)
+})
+
+test('/privacy loads and links back to the directory', async ({ page }) => {
+    const response = await page.goto('/privacy/')
+    expect(response.status()).toBe(200)
+    await expect(page).toHaveTitle(/Privacy/)
+    const backLink = page.locator('.back-link')
+    await expect(backLink).toBeVisible()
+    await expect(backLink).toHaveAttribute('href', '/friends')
+})
+
+test('/contact loads, links back to the directory, and links to /privacy', async ({
+    page,
+}) => {
+    const response = await page.goto('/contact/')
+    expect(response.status()).toBe(200)
+    await expect(page).toHaveTitle(/Contact/)
+    const backLink = page.locator('.back-link')
+    await expect(backLink).toBeVisible()
+    await expect(backLink).toHaveAttribute('href', '/friends')
+})
+
+test('privacy page links to the contact page', async ({ page }) => {
+    await page.goto('/privacy/')
+    await expect(page.locator('a[href="/contact"]').first()).toBeVisible()
+})
+
+test('contact form shows inline confirmation without navigating', async ({
+    page,
+}) => {
+    await page.goto('/contact/')
+
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 200 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('#contactEmail', 'test@example.com')
+    await page.fill('#contactMessage', 'Hello there')
+    await page.click('.contact-submit')
+
+    expect(page.url()).toContain('/contact')
+    await expect(page.locator('.contact-thanks')).toBeVisible()
+    await expect(page.locator('form[name="contact"]')).not.toBeAttached()
+})
+
+test('contact form shows an error message on a failed submission', async ({
+    page,
+}) => {
+    await page.goto('/contact/')
+
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 500 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('#contactEmail', 'test@example.com')
+    await page.fill('#contactMessage', 'Hello there')
+    await page.click('.contact-submit')
+
+    await expect(page.locator('.contact-error')).toBeVisible()
+    await expect(page.locator('.contact-error')).toContainText('Try again')
+    await expect(page.locator('form[name="contact"]')).toBeAttached()
 })

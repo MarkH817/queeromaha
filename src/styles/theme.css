@@ -259,6 +259,29 @@ footer {
     flex-shrink: 0;
 }
 
+.footer-nav-divider {
+    align-self: stretch;
+    width: 1px;
+    margin: 0.3rem 0.4rem;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.info-box {
+    /* Same "reset Web Awesome details styling" story as .suggestion-box
+       and .calendar-box (see comment on .suggestion-box). */
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.info-box summary.footer-pill-btn {
+    /* Icon-only (no label) — smaller than the lightbulb/calendar pills,
+       which pad out around a text label too. */
+    padding: 0.3rem 0.6rem;
+}
+
 footer a {
     color: #e9d5ff;
     text-decoration: none;
@@ -362,11 +385,29 @@ footer:has(.calendar-box[open]) .suggestion-box {
     display: none;
 }
 
+/* .info-box lives *inside* .footer-nav (alongside the GitHub icon), not
+   as a footer-level sibling, so it can't reach .suggestion-box/
+   .calendar-box/the separators via the DOM-order ~ combinator above —
+   :has() reaches backward instead, same as the calendar-box rule just
+   above. The GitHub icon + its divider hide too, matching how the other
+   two accordions hide their neighbors while open. */
+footer:has(.info-box[open]) .suggestion-box,
+footer:has(.info-box[open]) .calendar-box,
+footer:has(.info-box[open]) .footer-separator {
+    display: none;
+}
+
+.footer-nav:has(.info-box[open]) .footer-icon,
+.footer-nav:has(.info-box[open]) .footer-nav-divider {
+    display: none;
+}
+
 /* Reuses the same "pressed in" look as .filter-pill.active (inset
    shadow + translateY) so the open state reads as this button being
    currently pressed, not just its content changed. */
 .suggestion-box[open] summary.footer-pill-btn,
-.calendar-box[open] summary.footer-pill-btn {
+.calendar-box[open] summary.footer-pill-btn,
+.info-box[open] summary.footer-pill-btn {
     /* Lighter than this (e.g. the 0.25 alpha tried earlier) pushes the
        background too close to white, dropping text contrast below
        4.5:1 once :hover's color: #fff is also active (Playwright's
@@ -387,18 +428,25 @@ footer:has(.calendar-box[open]) .suggestion-box {
        opening — putting it on top instead made it leap up the screen as
        the panel appeared beneath it. margin-left: auto pushes it toward
        the row's right edge; margin-right compensates for
-       .footer-separator-right and .footer-nav (the GitHub icon) both
-       going display: none while open, which frees up the width they
-       occupied when closed — without it, the toggle overshoots into
-       that freed space and jumps right instead of holding position.
-       Tuned to the closed pill's mobile-breakpoint offset, the same way
-       .suggestion-box-toggle-row's column-gap below is tuned. The
-       calendar box doesn't need this: its options sit beside its toggle
-       on the same row instead of below it, so the toggle just stays in
-       its natural (first) position. */
+       .footer-separator-right and .footer-nav (GitHub icon + divider +
+       gear pill) both going display: none while open, which frees up
+       the width they occupied when closed — without it, the toggle
+       overshoots into that freed space and jumps right instead of
+       holding position. Tuned to the closed pill's mobile-breakpoint
+       offset, the same way .suggestion-box-toggle-row's column-gap
+       below is tuned. Bumped from 3.25rem to 6.5rem because .footer-nav
+       is now wider (divider + gear pill added alongside the GitHub
+       icon), so hiding it frees up more width than before — this
+       container's right edge itself doesn't move (it's still bounded by
+       .footer-separator-right + .footer-nav, both hidden either way;
+       .footer-separator-left staying visible on mobile only affects this
+       element's *left* edge/width, not its right edge, so it doesn't
+       factor into this number). The calendar box doesn't need this: its
+       options sit beside its toggle on the same row instead of below it,
+       so the toggle just stays in its natural (first) position. */
     order: 2;
     margin-left: auto;
-    margin-right: 3.25rem;
+    margin-right: 6.5rem;
 }
 
 summary.footer-pill-btn {
@@ -415,7 +463,8 @@ summary.footer-pill-btn::-webkit-details-marker {
 /* Web Awesome also adds an auto chevron after the summary; the
    lightbulb/calendar icons already signal what these are, so drop it. */
 .suggestion-box summary::after,
-.calendar-box summary::after {
+.calendar-box summary::after,
+.info-box summary::after {
     display: none;
 }
 
@@ -460,6 +509,89 @@ summary.footer-pill-btn::-webkit-details-marker {
     order: 0;
     flex: 1 1 100%;
     padding: 0.75rem 0.25rem 0.25rem;
+}
+
+/* Mobile only: instead of spanning the full footer width edge-to-edge,
+   the open Suggestion Box panel now stops at .footer-separator-left —
+   the same divider that already sits between the Gay Agenda pill and
+   Suggestion Box when closed — so its left edge lands on a boundary
+   that already exists rather than swallowing the whole row. This block
+   has to come after the unconditional .suggestion-box[open] rule above
+   in source order (same specificity, so the later rule wins) even
+   though the *other* mobile-only footer tweaks live in the
+   @media (max-width: 480px) block near the top of this file. */
+@media (max-width: 480px) {
+    /* .footer-separator-right is already covered by the unconditional
+       ~ .footer-separator rule above (shared class) — only .-left needs
+       restoring here. */
+    .suggestion-box[open] ~ .footer-separator-left {
+        display: block;
+    }
+
+    .suggestion-box[open] {
+        /* .suggestion-box-panel and .suggestion-input are already
+           width: 100%/flex: 1 1 100% of *this* element, not the
+           viewport, so they shrink to match whatever width this element
+           ends up with automatically — no override needed there.
+
+           flex-basis: 0 (not auto) — with an auto basis, the flex-wrap
+           line-breaking pass uses this item's *content-based* hypothetical
+           size (shrink-to-fit over the whole panel/input/toggle-row) to
+           decide whether it still fits next to .footer-separator-left,
+           which is wide enough that it wraps onto its own line no matter
+           what flex-shrink/min-width say afterward. A 0 basis makes it
+           start from nothing and grow to fill the space actually left on
+           the row instead. */
+        flex: 1 1 0;
+        /* Without this, the flex item's automatic min-width still defaults
+           to its content's min-content size (same issue .calendar-box[open]
+           already works around, see its comment), capping how far it can
+           actually shrink/grow-from-zero to fit beside the separator. */
+        min-width: 0;
+    }
+}
+
+.info-box[open] {
+    /* Unlike .suggestion-box[open]/.calendar-box[open] (real forms/
+       previews that grow to fill the whole footer width), this panel
+       only holds two short links — cap it well short of full-bleed and
+       anchor it to the row's right edge (margin-left: auto), roughly
+       where the closed gear pill sat. */
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    max-width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.info-box[open]::details-content {
+    display: contents;
+}
+
+.info-box-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+    padding: 0.5rem 0.25rem 0.25rem;
+}
+
+.info-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0.25rem;
+    color: #f3e8ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.info-option:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .calendar-box[open] {
@@ -964,6 +1096,129 @@ wa-card.item.item-active::part(footer) {
 .not-found-countdown {
     color: #6b6b6b;
     font-size: 0.9rem;
+}
+
+.legal-page {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.legal-card {
+    max-width: 40rem;
+    width: 100%;
+}
+
+.legal-card::part(base) {
+    border-color: #e9d5ff;
+    box-shadow:
+        3px 3px 0 #e9d5ff,
+        5px 5px 0 #c4b5fd;
+}
+
+.legal-card::part(header) {
+    padding: 0.75rem 1rem 0.5rem;
+    background: #faf5ff;
+    border-bottom: 1px solid #f3e8ff;
+}
+
+.legal-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    color: #6d28d9;
+    font-size: 1.3rem;
+}
+
+.legal-card h3 {
+    color: #6d28d9;
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    color: #6d28d9;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.contact-honeypot {
+    display: none;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #4c1d95;
+}
+
+.contact-input,
+.contact-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c4b5fd;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    /* 16px+ avoids iOS Safari zooming the page in on focus */
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.contact-textarea {
+    resize: vertical;
+}
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #fff;
+    background: #6d28d9;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.contact-submit:hover {
+    background: #5b21b6;
+}
+
+.contact-thanks,
+.contact-error {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.contact-thanks {
+    background: #ede9fe;
+    border-left: 3px solid #6d28d9;
+    color: #4c1d95;
+}
+
+.contact-error {
+    background: #fee2e2;
+    border-left: 3px solid #dc2626;
+    color: #991b1b;
 }
 
 p {
