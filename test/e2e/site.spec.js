@@ -736,7 +736,7 @@ test('tapping an active card again reverts to the category URL', async ({
     )
 })
 
-test('clicking a link inside a card navigates instead of toggling it', async ({
+test('clicking a link inside an unselected card navigates and also selects it', async ({
     page,
     context,
 }) => {
@@ -750,8 +750,36 @@ test('clicking a link inside a card navigates instead of toggling it', async ({
     ])
     await popup.close()
 
-    await expect(page).toHaveURL(/\/friends\/?$/)
-    await expect(card).not.toHaveClass(/item-active/)
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+    await expect(card).toHaveClass(/item-active/)
+    await expect(card.locator('.item-tap-target')).toHaveAttribute(
+        'aria-pressed',
+        'true',
+    )
+})
+
+test('clicking a link inside an already-selected card leaves it selected', async ({
+    page,
+    context,
+}) => {
+    await page.goto('/friends/')
+    const card = page.locator('#friends-o4us')
+    await card.locator('.item-tap-target').click()
+    await expect(card).toHaveClass(/item-active/)
+
+    const link = card.getByRole('link', { name: /Events Calendar/ })
+    const [popup] = await Promise.all([
+        context.waitForEvent('page'),
+        link.click(),
+    ])
+    await popup.close()
+
+    await expect(card).toHaveClass(/item-active/)
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
 })
 
 test('activating a card via keyboard (Enter) toggles it the same as a click', async ({
