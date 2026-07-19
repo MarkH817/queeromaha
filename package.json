@@ -28,7 +28,8 @@
         "format": "biome check --write . && bun scripts/format-yaml.js",
         "check:links": "bun scripts/check-links.js",
         "check:links:pr": "bun scripts/check-links.js --pr",
-        "generate:favicons": "bun run scripts/generate-favicons.mjs"
+        "generate:favicons": "bun run scripts/generate-favicons.mjs",
+        "postinstall": "bunx @biomejs/biome migrate --write"
     },
     "keywords": [],
     "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
@@ -36,7 +37,7 @@
     "devDependencies": {
         "@astrojs/check": "^0.9.9",
         "@axe-core/playwright": "^4.12.1",
-        "@biomejs/biome": "2.5.2",
+        "@biomejs/biome": "^2.5.4",
         "@playwright/test": "^1.61.1",
         "@types/bun": "^1.3.14",
         "favicons": "^7.3.0",
