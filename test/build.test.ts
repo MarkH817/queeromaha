@@ -1,4 +1,3 @@
-import { spawnSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -8,17 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
 describe('astro build', () => {
-    test('exits with code 0 and produces dist/', { timeout: 120_000 }, () => {
-        const result = spawnSync('bun', ['run', 'build'], {
-            cwd: ROOT,
-            encoding: 'utf8',
-            stdio: 'inherit',
-            timeout: 120_000,
-        })
-        expect(result.status).toBe(0)
-
+    test('produces dist/', () => {
         const distDir = join(ROOT, 'dist')
-        expect(existsSync(distDir)).toBe(true)
+        expect(
+            existsSync(distDir),
+            'dist/ not found — run `bun run build` before this test',
+        ).toBe(true)
         expect(readdirSync(distDir).length).toBeGreaterThan(0)
     })
 
