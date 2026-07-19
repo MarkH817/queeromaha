@@ -383,39 +383,9 @@ footer a:hover {
     margin-left: auto;
 }
 
-/* Opening the suggestion or calendar box hides the other footer buttons so
-   its own toggle reads as a clear "tap to open / tap to close" affordance.
-   visibility: hidden (not display: none) deliberately keeps each hidden
-   element's flex-layout footprint intact -- .suggestion-box's own
-   margin-left: auto (see its comment) computes against the row's leftover
-   space, and that leftover space must stay identical whether siblings are
-   display:none-removed-from-flow or not, or the suggestion pill itself
-   shifts horizontally the moment siblings hide. That was the actual
-   remaining source of toggle movement even after panels became absolutely
-   positioned. visibility: hidden also drops the element from the tab
-   order, same as display: none would for keyboard users.
-
-   Works via the DOM-order-only ~ sibling combinator for later siblings;
-   .calendar-box comes after .suggestion-box in the DOM (required so this
-   rule can reach it), so the one gap — hiding .suggestion-box, an
-   *earlier* sibling, when .calendar-box opens — needs :has() below
-   instead. */
-.suggestion-box[open] ~ .calendar-box,
-.suggestion-box[open] ~ .footer-separator,
-.suggestion-box[open] ~ .footer-nav,
-.calendar-box[open] ~ .footer-separator,
-.calendar-box[open] ~ .footer-nav {
-    visibility: hidden;
-}
-
-footer:has(.calendar-box[open]) .suggestion-box {
-    visibility: hidden;
-}
-
-/* Unlike the suggestion/calendar boxes, opening the utility (gear) box
-   does NOT hide its footer siblings — the GitHub icon and the other two
-   pills stay visible and tappable, since its panel is a small anchored
-   popover rather than a row-filling accordion. */
+/* None of the three footer toggles hide their siblings when opened — each
+   panel is an absolutely positioned popover (see .suggestion-box's comment
+   above), so there's nothing in the row that needs to make room for it. */
 
 /* Reuses the same "pressed in" look as .filter-pill.active (inset
    shadow + translateY) so the open state reads as this button being
@@ -499,7 +469,8 @@ summary.footer-pill-btn::-webkit-details-marker {
 
 .utility-box-panel {
     right: 0;
-    width: min(200px, calc(100vw - 1.5rem));
+    width: max-content;
+    max-width: calc(100vw - 1.5rem);
     align-items: flex-end;
     gap: 0.3rem;
     padding: 0.5rem;

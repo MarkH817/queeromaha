@@ -334,7 +334,7 @@ test('suggestion box expands in place without navigating', async ({ page }) => {
     expect(page.url()).toBe(startUrl)
 })
 
-test('opening the suggestion box hides the other footer buttons and re-tapping closes it', async ({
+test('suggestion box expands without hiding the other footer buttons, and re-tapping closes it', async ({
     page,
 }) => {
     await page.goto('/friends/')
@@ -345,8 +345,8 @@ test('opening the suggestion box hides the other footer buttons and re-tapping c
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.calendar-box')).toBeHidden()
-    await expect(page.locator('.footer-nav')).toBeHidden()
+    await expect(page.locator('.calendar-box')).toBeVisible()
+    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#suggestionBox')).toHaveAttribute('open', '')
 
     await page.locator('#suggestionBox summary').click()
@@ -364,7 +364,7 @@ test('opening the suggestion box hides the other footer buttons and re-tapping c
         .toBe(closedBox.x)
 })
 
-test('calendar box expands in place, offers Google and webcal links, and re-tapping closes it', async ({
+test('calendar box expands in place without hiding the other footer buttons, offers Google and webcal links, and re-tapping closes it', async ({
     page,
 }) => {
     await page.goto('/friends/')
@@ -388,11 +388,8 @@ test('calendar box expands in place, offers Google and webcal links, and re-tapp
     await expect(ics).toHaveAccessibleName(/Apple Calendar/)
     expect(page.url()).toBe(startUrl)
 
-    // opening the calendar box hides the suggestion box in turn (the one
-    // direction the DOM-order-only ~ combinator can't reach, handled by
-    // the :has() rule instead)
-    await expect(page.locator('.suggestion-box')).toBeHidden()
-    await expect(page.locator('.footer-nav')).toBeHidden()
+    await expect(page.locator('.suggestion-box')).toBeVisible()
+    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#calendarBox')).toHaveAttribute('open', '')
 
     await page.locator('.calendar-box summary').click()
@@ -419,10 +416,9 @@ test('gear info box opens to reveal Privacy and Contact links without hiding the
     await expect(privacyLink).toHaveAttribute('href', '/privacy')
     await expect(contactLink).toHaveAttribute('href', '/contact')
 
-    // Unlike the suggestion/calendar boxes, opening the gear menu does NOT
-    // hide the other footer buttons -- its panel is a small anchored
-    // popover, not a row-filling accordion, so there's nothing to make
-    // room for.
+    // Opening the gear menu doesn't hide the other footer buttons -- same
+    // as the suggestion and calendar boxes, none of the three hide their
+    // siblings.
     await expect(page.locator('.suggestion-box')).toBeVisible()
     await expect(page.locator('.calendar-box')).toBeVisible()
     await expect(page.locator('.footer-icon')).toBeVisible()
@@ -436,17 +432,17 @@ test('gear info box opens to reveal Privacy and Contact links without hiding the
     await expect(page.locator('#utilityBox')).not.toHaveAttribute('open', '')
 })
 
-test('opening the suggestion box or calendar box hides the gear info box', async ({
+test('opening the suggestion box or calendar box does not hide the gear info box', async ({
     page,
 }) => {
     await page.goto('/friends/')
 
     await page.locator('#suggestionBox summary').click()
-    await expect(page.locator('#utilityBox')).toBeHidden()
+    await expect(page.locator('#utilityBox')).toBeVisible()
     await page.locator('#suggestionBox summary').click()
 
     await page.locator('.calendar-box summary').click()
-    await expect(page.locator('#utilityBox')).toBeHidden()
+    await expect(page.locator('#utilityBox')).toBeVisible()
 })
 
 for (const [name, detailsSelector] of [
