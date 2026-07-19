@@ -335,9 +335,17 @@ footer a:hover {
        squared-off box instead of just narrowing. */
     white-space: nowrap;
     flex-shrink: 0;
+    /* Same "3D lip" bottom edge every other pill button carries (header
+       category pills, the tag .filter-pill, the footer Send button), but
+       a translucent-white lip tuned for the dark purple footer instead of
+       the light-theme purple those use. The pressed/[open] state below
+       swaps this for an inset shadow so the toggle still reads as pushed
+       in. */
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.4);
     transition:
         background 0.15s,
         border-color 0.15s,
+        box-shadow 0.15s,
         color 0.15s;
 }
 
