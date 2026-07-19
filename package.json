@@ -18,6 +18,7 @@
         "test:a11y": "bun run build && playwright test test/e2e/a11y.spec.ts --project=mobile-chrome",
         "dev": "astro dev",
         "start": "astro dev",
+        "stop": "astro dev stop",
         "check": "astro check",
         "check:content": "astro sync",
         "serve": "astro dev",
