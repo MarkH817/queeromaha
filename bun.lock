@@ -7,6 +7,9 @@
       "dependencies": {
         "@astrojs/sitemap": "^3.7.3",
         "@awesome.me/webawesome": "^3.10.0",
+        "@fontsource-variable/karla": "^5.2.8",
+        "@fontsource-variable/space-grotesk": "^5.2.10",
+        "@fontsource/space-mono": "^5.2.9",
         "astro": "^7.0.7",
         "posthog-js": "^1.399.2",
         "rrule": "^2.8.1",
@@ -202,6 +205,12 @@
     "@floating-ui/dom": ["@floating-ui/dom@1.8.0", "", { "dependencies": { "@floating-ui/core": "^1.8.0", "@floating-ui/utils": "^0.2.12" } }, "sha512-yXSrzeHZBTZadLOlfyhCkJHNeLJnHRnRInwdZ40L7ZiaAtrBwoYlsDrX3v5zB1Utk7CLfzcOVnVVWoXEky7Ceg=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.12", "", {}, "sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww=="],
+
+    "@fontsource-variable/karla": ["@fontsource-variable/karla@5.2.8", "", {}, "sha512-JuJZVY/r5InCfkKb3jp5XCwuypIvc62barKaxzSAYnxzHo9YnCfZDWDjL+gbSYrUI+lVxhEyS+7QkOuVBvWcOA=="],
+
+    "@fontsource-variable/space-grotesk": ["@fontsource-variable/space-grotesk@5.2.10", "", {}, "sha512-yJQO/o35/hAP3CFnpdFTwQku2yzJOae2HIpBmqkOVoxhhXJaQP3g+b6Jrz7u+eI7A5ZdCIf88uMWpBJdFiGr5w=="],
+
+    "@fontsource/space-mono": ["@fontsource/space-mono@5.2.9", "", {}, "sha512-b61faFOHEISQ/pD25G+cfGY9o/WW6lRv6hBQQfpWvEJ4y1V+S4gmth95EVyBE2VL3qDYHeVQ8nBzrplzdXTDDg=="],
 
     "@img/colour": ["@img/colour@1.1.0", "", {}, "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="],
 

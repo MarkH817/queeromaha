@@ -1,13 +1,20 @@
 @import url("../../node_modules/@awesome.me/webawesome/dist/styles/webawesome.css");
+@import url("../../node_modules/@fontsource-variable/space-grotesk/index.css");
+@import url("../../node_modules/@fontsource-variable/karla/index.css");
+@import url("../../node_modules/@fontsource/space-mono/latin-400.css");
+@import url("../../node_modules/@fontsource/space-mono/latin-700.css");
 
 :root {
     --wa-focus-ring-color: #c4b5fd;
     -webkit-tap-highlight-color: rgba(196, 181, 253, 0.35);
     scroll-padding-top: var(--header-height, 7.5rem);
+    --font-display: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+    --font-body: "Karla Variable", "Karla", sans-serif;
+    --font-mono: "Space Mono", "SFMono-Regular", ui-monospace, monospace;
 }
 
 body {
-    font-family: "Helvetica", sans-serif;
+    font-family: var(--font-body);
     background: #f6f0fa;
     color: #222;
     margin: 0;
@@ -95,7 +102,7 @@ header {
     border-radius: 999px;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     padding: 0.7rem 0.6rem;
     cursor: pointer;
@@ -512,7 +519,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     white-space: nowrap;
     flex-shrink: 0;
     cursor: pointer;
@@ -546,8 +553,9 @@ summary.footer-pill-btn::-webkit-details-marker {
 
 .calendar-preview-label,
 .suggestion-label {
-    font-size: 0.65rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     opacity: 0.65;
@@ -651,7 +659,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     cursor: pointer;
     transition:
         background 0.1s ease-out,
@@ -741,7 +749,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     /* Never let the label wrap or the pill get squeezed — either would
        turn the rounded pill into a taller, squared-off box instead of
        just narrowing. */
@@ -817,11 +825,13 @@ h1,
 h3 {
     margin-top: 0;
     margin-bottom: 0.2rem;
+    font-family: var(--font-display);
 }
 
 h2 {
     margin-top: 1rem;
     margin-bottom: 0.8rem;
+    font-family: var(--font-display);
 }
 
 .section-header {
@@ -832,6 +842,7 @@ h2 {
     width: 100%;
     margin: 0.75rem 0 0.5rem;
     color: #6d28d9;
+    font-family: var(--font-display);
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -862,6 +873,7 @@ wa-card.item[hidden] {
 
 .item-tap-target {
     all: unset;
+    font-family: inherit;
     cursor: pointer;
 }
 
@@ -1309,9 +1321,9 @@ body:has(#calendarBox[open]) #backToTop {
     background: #f9f5ff;
     border: 1px solid #ddd6fe;
     color: #6d28d9;
-    font-size: 0.72rem;
-    font-weight: 600;
-    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
     cursor: pointer;
     transition:
         background 0.15s,
@@ -1362,6 +1374,7 @@ body:has(#calendarBox[open]) #backToTop {
     align-items: center;
     gap: 0.3rem;
     font-size: 0.9rem;
+    font-family: var(--font-mono);
     color: #7c3aed;
 }
 

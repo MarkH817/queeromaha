@@ -51,6 +51,9 @@
     "dependencies": {
         "@astrojs/sitemap": "^3.7.3",
         "@awesome.me/webawesome": "^3.10.0",
+        "@fontsource-variable/karla": "^5.2.8",
+        "@fontsource-variable/space-grotesk": "^5.2.10",
+        "@fontsource/space-mono": "^5.2.9",
         "astro": "^7.0.7",
         "posthog-js": "^1.399.2",
         "rrule": "^2.8.1"
