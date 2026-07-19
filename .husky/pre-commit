@@ -1,3 +1,3 @@
 #!/bin/sh
 bun run format && git diff --cached --name-only --diff-filter=d | xargs -r git add
-bun run test:unit
+bun run test:data
