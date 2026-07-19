@@ -118,54 +118,139 @@ test('calendar and suggestion box stay on the same row on mobile', async ({
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
 })
 
-test('calendar box toggle does not jump vertically when opened on mobile', async ({
+const REGRESSION_VIEWPORTS = [
+    { width: 320, height: 700 },
+    { width: 375, height: 812 },
+    { width: 412, height: 839 },
+    { width: 768, height: 1024 },
+    { width: 1024, height: 768 },
+]
+
+// The [open] "pressed" look (shared with .filter-pill.active) applies
+// transform: translateY(1px) to the toggle pill for tactile feedback --
+// a deliberate 1px vertical shift, not the reflow bug this suite guards
+// against. X must stay pixel-exact; Y gets that 1px plus a little slack
+// for device-pixel rounding under mobile-chrome's Pixel 7 emulation
+// (deviceScaleFactor 2.625, confirmed via manual inspection: the real
+// shift is exactly 1 CSS px, but device-pixel snapping on a fractional
+// scale factor can round the reported box by another px on top of it).
+function expectToggleDidNotJump(closedBox, openBox, label) {
+    expect(openBox.x, `x at ${label}`).toBe(closedBox.x)
+    expect(
+        Math.abs(openBox.y - closedBox.y),
+        `y at ${label}`,
+    ).toBeLessThanOrEqual(2)
+}
+
+test('calendar box toggle never moves when opened, at any viewport width', async ({
     page,
 }) => {
-    await page.setViewportSize({ width: 412, height: 839 })
-    await page.goto('/friends/')
+    // Regression test for the footer's original bug: opening a footer
+    // accordion used to reflow the whole row (flex order/margin tricks
+    // trying to keep the toggle "roughly" in place), so the toggle's exact
+    // position depended on how much free space sibling-hiding freed up at
+    // that specific width. Panels are now position: absolute overlays
+    // anchored to their own toggle's box, which never changes size open or
+    // closed -- so the toggle's position must stay put, at every width,
+    // not just "close."
+    for (const viewport of REGRESSION_VIEWPORTS) {
+        await page.setViewportSize(viewport)
+        await page.goto('/friends/')
 
-    const summary = page.locator('.calendar-box summary')
-    const closedBox = await summary.boundingBox()
+        const summary = page.locator('.calendar-box summary')
+        const closedBox = await summary.boundingBox()
 
-    await summary.click()
+        await summary.click()
+        await expect(page.locator('.calendar-box-panel-wrap')).toBeVisible()
+        const openBox = await summary.boundingBox()
 
-    // Regression test: the toggle row (Google Cal / Apple Cal) must share
-    // a row with the summary pill instead of wrapping onto its own line
-    // below it -- a wrap pushes every row beneath it down, making the
-    // "Gay Agenda" toggle jump vertically instead of staying in place.
-    const openBox = await summary.boundingBox()
-    const toggleRowBox = await page
-        .locator('.calendar-toggle-row')
-        .boundingBox()
-
-    expect(openBox.y).toBeCloseTo(closedBox.y, -1)
-    // flex-end alignment lines up their bottom edges when they share a
-    // row; a wrap would put the toggle row a full row-height below instead
-    expect(toggleRowBox.y + toggleRowBox.height).toBeCloseTo(
-        openBox.y + openBox.height,
-        -1,
-    )
+        expectToggleDidNotJump(closedBox, openBox, `${viewport.width}px`)
+    }
 })
 
-test('suggestion box toggle does not jump horizontally when opened on mobile', async ({
+test('suggestion box toggle never moves when opened, at any viewport width', async ({
+    page,
+}) => {
+    for (const viewport of REGRESSION_VIEWPORTS) {
+        await page.setViewportSize(viewport)
+        await page.goto('/friends/')
+
+        const summary = page.locator('#suggestionBox summary')
+        const closedBox = await summary.boundingBox()
+
+        await summary.click()
+        await expect(page.locator('.suggestion-box-panel-wrap')).toBeVisible()
+        const openBox = await summary.boundingBox()
+
+        expectToggleDidNotJump(closedBox, openBox, `${viewport.width}px`)
+    }
+})
+
+test('utility box toggle never moves when opened, at any viewport width', async ({
+    page,
+}) => {
+    for (const viewport of REGRESSION_VIEWPORTS) {
+        await page.setViewportSize(viewport)
+        await page.goto('/friends/')
+
+        const summary = page.locator('#utilityBox summary')
+        const closedBox = await summary.boundingBox()
+
+        await summary.click()
+        await expect(page.locator('.utility-box-panel')).toBeVisible()
+        const openBox = await summary.boundingBox()
+
+        expectToggleDidNotJump(closedBox, openBox, `${viewport.width}px`)
+    }
+})
+
+test('none of the three footer panels stretch to the full footer width', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 1024, height: 768 })
+    await page.goto('/friends/')
+    // Scoped to the site footer specifically -- wa-card renders its own
+    // light-DOM <footer part="footer">, so an unscoped `footer` locator
+    // matches every card on the page too.
+    const footerWidth = (await page.getByRole('contentinfo').boundingBox())
+        .width
+
+    for (const [toggle, panel] of [
+        ['.calendar-box summary', '.calendar-box-panel-wrap'],
+        ['#suggestionBox summary', '.suggestion-box-panel-wrap'],
+        ['#utilityBox summary', '.utility-box-panel'],
+    ]) {
+        await page.locator(toggle).click()
+        const panelBox = await page.locator(panel).boundingBox()
+        expect(panelBox.width).toBeLessThan(footerWidth * 0.5)
+        await page.locator(toggle).click()
+    }
+})
+
+test('calendar panel grows rightward from its own left edge; suggestion panel grows leftward from its own right edge', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
-    const summary = page.locator('#suggestionBox summary')
-    const closedBox = await summary.boundingBox()
+    const calSummary = page.locator('.calendar-box summary')
+    const calSummaryBox = await calSummary.boundingBox()
+    await calSummary.click()
+    const calPanelBox = await page
+        .locator('.calendar-box-panel-wrap')
+        .boundingBox()
+    expect(calPanelBox.x).toBe(calSummaryBox.x)
+    await calSummary.click()
 
-    await summary.click()
-
-    // Regression test: the pill used to be centered via `margin: 0 auto`
-    // between the two footer separators, so opening it (which hides every
-    // sibling it was centering against) recentered it in the whole footer
-    // width instead, visibly jumping it left. It's now tucked to the right
-    // via `margin-left: auto` on both the closed pill and the open toggle,
-    // so its position holds regardless of which siblings are visible.
-    const openBox = await summary.boundingBox()
-    expect(openBox.x).toBeCloseTo(closedBox.x, -1)
+    const suggSummary = page.locator('#suggestionBox summary')
+    const suggSummaryBox = await suggSummary.boundingBox()
+    await suggSummary.click()
+    const suggPanelBox = await page
+        .locator('.suggestion-box-panel-wrap')
+        .boundingBox()
+    expect(suggPanelBox.x + suggPanelBox.width).toBe(
+        suggSummaryBox.x + suggSummaryBox.width,
+    )
 })
 
 test('suggestion box pill is tucked against the right separator, next to the GitHub icon', async ({
@@ -276,7 +361,7 @@ test('opening the suggestion box hides the other footer buttons and re-tapping c
                 .boundingBox()
             return box.x
         })
-        .toBeCloseTo(closedBox.x, 0)
+        .toBe(closedBox.x)
 })
 
 test('calendar box expands in place, offers Google and webcal links, and re-tapping closes it', async ({
@@ -317,7 +402,7 @@ test('calendar box expands in place, offers Google and webcal links, and re-tapp
     await expect(page.locator('#calendarBox')).not.toHaveAttribute('open', '')
 })
 
-test('gear info box opens to reveal Privacy and Contact links, hides the other footer buttons, and re-tapping closes it', async ({
+test('gear info box opens to reveal Privacy and Contact links without hiding the other footer buttons, and re-tapping closes it', async ({
     page,
 }) => {
     await page.goto('/friends/')
@@ -334,10 +419,14 @@ test('gear info box opens to reveal Privacy and Contact links, hides the other f
     await expect(privacyLink).toHaveAttribute('href', '/privacy')
     await expect(contactLink).toHaveAttribute('href', '/contact')
 
-    // opening the gear menu hides the other two accordions in turn, same
-    // as opening either of them hides the others (mutual exclusion)
-    await expect(page.locator('.suggestion-box')).toBeHidden()
-    await expect(page.locator('.calendar-box')).toBeHidden()
+    // Unlike the suggestion/calendar boxes, opening the gear menu does NOT
+    // hide the other footer buttons -- its panel is a small anchored
+    // popover, not a row-filling accordion, so there's nothing to make
+    // room for.
+    await expect(page.locator('.suggestion-box')).toBeVisible()
+    await expect(page.locator('.calendar-box')).toBeVisible()
+    await expect(page.locator('.footer-icon')).toBeVisible()
+    await expect(page.locator('.footer-nav-divider')).toBeVisible()
     await expect(page.locator('#utilityBox')).toHaveAttribute('open', '')
 
     await page.locator('#utilityBox summary').click()
@@ -359,6 +448,37 @@ test('opening the suggestion box or calendar box hides the gear info box', async
     await page.locator('.calendar-box summary').click()
     await expect(page.locator('#utilityBox')).toBeHidden()
 })
+
+for (const [name, detailsSelector] of [
+    ['suggestion box', '#suggestionBox'],
+    ['calendar box', '#calendarBox'],
+    ['utility box', '#utilityBox'],
+]) {
+    test(`clicking outside the ${name} closes it`, async ({ page }) => {
+        await page.goto('/friends/')
+        const details = page.locator(detailsSelector)
+
+        await details.locator('summary').click()
+        await expect(details).toHaveAttribute('open', '')
+
+        await page.locator('main').click({ position: { x: 10, y: 10 } })
+        await expect(details).not.toHaveAttribute('open', '')
+    })
+
+    test(`pressing Escape closes the ${name} and returns focus to its toggle`, async ({
+        page,
+    }) => {
+        await page.goto('/friends/')
+        const details = page.locator(detailsSelector)
+
+        await details.locator('summary').click()
+        await expect(details).toHaveAttribute('open', '')
+
+        await page.keyboard.press('Escape')
+        await expect(details).not.toHaveAttribute('open', '')
+        await expect(details.locator('summary')).toBeFocused()
+    })
+}
 
 const PREVIEW_FIXTURE_ICS = [
     'BEGIN:VCALENDAR',

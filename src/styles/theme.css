@@ -268,7 +268,11 @@ footer {
 
 .utility-box {
     /* Same "reset Web Awesome details styling" story as .suggestion-box
-       and .calendar-box (see comment on .suggestion-box). */
+       and .calendar-box (see comment on .suggestion-box). position:
+       relative makes this the containing block for .utility-box-panel's
+       position: absolute below, so the panel anchors to this pill's own
+       box regardless of anything else in the footer row. */
+    position: relative;
     background: transparent;
     border: none;
     padding: 0;
@@ -348,7 +352,16 @@ footer a:hover {
        margin-left: auto consumes all remaining free space on the left,
        tucking the pill against .footer-separator-right (and the GitHub
        icon beyond it) instead of centering it between the two
-       separators. */
+       separators.
+
+       position: relative makes this the containing block for
+       .suggestion-box-panel-wrap's position: absolute below — deliberately
+       NOT overridden by any `[open]` rule, so this box's own size never
+       changes between closed and open. That's what actually fixes the
+       toggle jumping: the pill's containing element is a fixed size
+       regardless of state, so there's nothing left to chase with `order`
+       or margin tricks. */
+    position: relative;
     background: transparent;
     border: none;
     padding: 0;
@@ -356,51 +369,39 @@ footer a:hover {
     margin-left: auto;
 }
 
-/* Opening either footer <details> (suggestion box or calendar box) hides
-   the other footer buttons so its own toggle reads as a clear "tap to
-   open / tap to close" affordance, staying roughly in place instead of
-   competing for row space. Works via the DOM-order-only ~ sibling
-   combinator for later siblings; .calendar-box comes after
-   .suggestion-box in the DOM (required so this rule can reach it), so
-   the one gap — hiding .suggestion-box, an *earlier* sibling, when
-   .calendar-box opens — needs :has() below instead.
+/* Opening the suggestion or calendar box hides the other footer buttons so
+   its own toggle reads as a clear "tap to open / tap to close" affordance.
+   visibility: hidden (not display: none) deliberately keeps each hidden
+   element's flex-layout footprint intact -- .suggestion-box's own
+   margin-left: auto (see its comment) computes against the row's leftover
+   space, and that leftover space must stay identical whether siblings are
+   display:none-removed-from-flow or not, or the suggestion pill itself
+   shifts horizontally the moment siblings hide. That was the actual
+   remaining source of toggle movement even after panels became absolutely
+   positioned. visibility: hidden also drops the element from the tab
+   order, same as display: none would for keyboard users.
 
-   .footer-separator-left can't stay visible when .calendar-box[open]:
-   it's a footer-level sibling positioned *after* the whole box, so once
-   open it would render past the box's entire width (preview list and
-   toggle row included) instead of next to the "Gay Agenda" pill, which
-   is now a descendant deep inside that box. .calendar-toggle-separator
-   (inside .calendar-toggle-row) is the only element that can actually
-   sit between the pill and the buttons when open — see its comment for
-   how it's kept visually matched to this one instead. */
+   Works via the DOM-order-only ~ sibling combinator for later siblings;
+   .calendar-box comes after .suggestion-box in the DOM (required so this
+   rule can reach it), so the one gap — hiding .suggestion-box, an
+   *earlier* sibling, when .calendar-box opens — needs :has() below
+   instead. */
 .suggestion-box[open] ~ .calendar-box,
 .suggestion-box[open] ~ .footer-separator,
 .suggestion-box[open] ~ .footer-nav,
 .calendar-box[open] ~ .footer-separator,
 .calendar-box[open] ~ .footer-nav {
-    display: none;
+    visibility: hidden;
 }
 
 footer:has(.calendar-box[open]) .suggestion-box {
-    display: none;
+    visibility: hidden;
 }
 
-/* .utility-box lives *inside* .footer-nav (alongside the GitHub icon), not
-   as a footer-level sibling, so it can't reach .suggestion-box/
-   .calendar-box/the separators via the DOM-order ~ combinator above —
-   :has() reaches backward instead, same as the calendar-box rule just
-   above. The GitHub icon + its divider hide too, matching how the other
-   two accordions hide their neighbors while open. */
-footer:has(.utility-box[open]) .suggestion-box,
-footer:has(.utility-box[open]) .calendar-box,
-footer:has(.utility-box[open]) .footer-separator {
-    display: none;
-}
-
-.footer-nav:has(.utility-box[open]) .footer-icon,
-.footer-nav:has(.utility-box[open]) .footer-nav-divider {
-    display: none;
-}
+/* Unlike the suggestion/calendar boxes, opening the utility (gear) box
+   does NOT hide its footer siblings — the GitHub icon and the other two
+   pills stay visible and tappable, since its panel is a small anchored
+   popover rather than a row-filling accordion. */
 
 /* Reuses the same "pressed in" look as .filter-pill.active (inset
    shadow + translateY) so the open state reads as this button being
@@ -419,34 +420,6 @@ footer:has(.utility-box[open]) .footer-separator {
     border-color: rgba(255, 255, 255, 0.7);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
     transform: translateY(1px);
-}
-
-.suggestion-box[open] summary.footer-pill-btn {
-    /* The suggestion box's accordion grows *upward* off a sticky-bottom
-       footer, so its toggle moves to the *end* (panel first, toggle
-       last) to stay near the bottom, roughly where it was before
-       opening — putting it on top instead made it leap up the screen as
-       the panel appeared beneath it. margin-left: auto pushes it toward
-       the row's right edge; margin-right compensates for
-       .footer-separator-right and .footer-nav (GitHub icon + divider +
-       gear pill) both going display: none while open, which frees up
-       the width they occupied when closed — without it, the toggle
-       overshoots into that freed space and jumps right instead of
-       holding position. Tuned to the closed pill's mobile-breakpoint
-       offset, the same way .suggestion-box-toggle-row's column-gap
-       below is tuned. Bumped from 3.25rem to 6.5rem because .footer-nav
-       is now wider (divider + gear pill added alongside the GitHub
-       icon), so hiding it frees up more width than before — this
-       container's right edge itself doesn't move (it's still bounded by
-       .footer-separator-right + .footer-nav, both hidden either way;
-       .footer-separator-left staying visible on mobile only affects this
-       element's *left* edge/width, not its right edge, so it doesn't
-       factor into this number). The calendar box doesn't need this: its
-       options sit beside its toggle on the same row instead of below it,
-       so the toggle just stays in its natural (first) position. */
-    order: 2;
-    margin-left: auto;
-    margin-right: 6.5rem;
 }
 
 summary.footer-pill-btn {
@@ -468,114 +441,59 @@ summary.footer-pill-btn::-webkit-details-marker {
     display: none;
 }
 
-.suggestion-box[open] {
-    padding: 0;
-    margin: 0;
-    flex: 1 1 100%;
-    /* <summary> stacks above its content natively — this flex context
-       lets `order` reposition summary and the Send button onto a
-       shared row instead, so the toggle ends up next to Send roughly
-       where it was before opening, not floating above the form.
-       align-items: flex-end (not center) anchors that row to the same
-       edge regardless of Send/summary having different heights — with
-       center, the taller Send button recentered the whole row and
-       dragged the toggle upward relative to its closed position. */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    /* Space between the Send button and the toggle. Since Send is now
-       pinned to the input's left edge (not paired-centered with the
-       toggle), the toggle just falls wherever Send's width + this gap
-       leaves it — tuned to ~1rem because that happens to land the
-       toggle very close to its closed position on the phone widths this
-       footer targets, not because of any special significance to the
-       value itself. */
-    column-gap: 1rem;
-}
+/* All three footer popovers share this shape: a small card that floats
+   above the sticky-bottom footer via position: absolute, anchored to its
+   own toggle's box (each toggle's `<details>` is position: relative — see
+   .suggestion-box, .calendar-box, .utility-box). Because the toggle's own
+   box never changes size between closed and open, and the panel is pulled
+   out of flow entirely instead of competing for row space, there's nothing
+   left for `order`/margin tricks to chase — this is what actually fixes
+   the toggle jumping, at any viewport width.
 
-/* Chromium wraps every non-summary child of an open <details> into an
-   implicit ::details-content box regardless of whether this stylesheet
-   references it — without this, .suggestion-box-panel and
-   .suggestion-box-toggle-row are grandchildren of .suggestion-box, not
-   direct flex items, so the `order` values above never apply to them.
-   display: contents un-wraps it, promoting its children to participate
-   in .suggestion-box[open]'s flex layout directly. No-op in browsers
-   that don't create this box. */
-.suggestion-box[open]::details-content {
-    display: contents;
-}
-
-.suggestion-box-panel {
-    order: 0;
-    flex: 1 1 100%;
-    padding: 0.75rem 0.25rem 0.25rem;
-}
-
-/* Mobile only: instead of spanning the full footer width edge-to-edge,
-   the open Suggestion Box panel now stops at .footer-separator-left —
-   the same divider that already sits between the Gay Agenda pill and
-   Suggestion Box when closed — so its left edge lands on a boundary
-   that already exists rather than swallowing the whole row. This block
-   has to come after the unconditional .suggestion-box[open] rule above
-   in source order (same specificity, so the later rule wins) even
-   though the *other* mobile-only footer tweaks live in the
-   @media (max-width: 480px) block near the top of this file. */
-@media (max-width: 480px) {
-    /* .footer-separator-right is already covered by the unconditional
-       ~ .footer-separator rule above (shared class) — only .-left needs
-       restoring here. */
-    .suggestion-box[open] ~ .footer-separator-left {
-        display: block;
-    }
-
-    .suggestion-box[open] {
-        /* .suggestion-box-panel and .suggestion-input are already
-           width: 100%/flex: 1 1 100% of *this* element, not the
-           viewport, so they shrink to match whatever width this element
-           ends up with automatically — no override needed there.
-
-           flex-basis: 0 (not auto) — with an auto basis, the flex-wrap
-           line-breaking pass uses this item's *content-based* hypothetical
-           size (shrink-to-fit over the whole panel/input/toggle-row) to
-           decide whether it still fits next to .footer-separator-left,
-           which is wide enough that it wraps onto its own line no matter
-           what flex-shrink/min-width say afterward. A 0 basis makes it
-           start from nothing and grow to fill the space actually left on
-           the row instead. */
-        flex: 1 1 0;
-        /* Without this, the flex item's automatic min-width still defaults
-           to its content's min-content size (same issue .calendar-box[open]
-           already works around, see its comment), capping how far it can
-           actually shrink/grow-from-zero to fit beside the separator. */
-        min-width: 0;
-    }
-}
-
-.utility-box[open] {
-    /* Unlike .suggestion-box[open]/.calendar-box[open] (real forms/
-       previews that grow to fill the whole footer width), this panel
-       only holds two short links — cap it well short of full-bleed and
-       anchor it to the row's right edge (margin-left: auto), roughly
-       where the closed gear pill sat. */
-    padding: 0;
-    margin: 0;
-    margin-left: auto;
-    max-width: 33%;
+   Content-sized, not full footer width/height: each anchors from the edge
+   closest to its row neighbor and grows away from it, so it never overlaps
+   its own toggle or another pill.
+     - .calendar-box is the leftmost pill -> anchors left, grows right.
+     - .suggestion-box sits to the right of it -> anchors right, grows left.
+     - .utility-box is the rightmost element -> anchors right, grows left. */
+.calendar-box-panel-wrap,
+.suggestion-box-panel-wrap,
+.utility-box-panel {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 0.5rem;
+    z-index: 10;
+    background: #5b21b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
 
-.utility-box[open]::details-content {
-    display: contents;
+.calendar-box-panel-wrap {
+    left: 0;
+    width: min(320px, calc(100vw - 1.5rem));
+    padding: 0.75rem;
+    gap: 0.5rem;
+}
+
+.suggestion-box-panel-wrap {
+    right: 0;
+    width: min(300px, calc(100vw - 1.5rem));
+    padding: 0.75rem;
+    gap: 0.5rem;
 }
 
 .utility-box-panel {
-    display: flex;
-    flex-direction: column;
+    right: 0;
+    width: min(200px, calc(100vw - 1.5rem));
     align-items: flex-end;
     gap: 0.3rem;
-    padding: 0.5rem 0.25rem 0.25rem;
+    padding: 0.5rem;
+}
+
+.suggestion-box-panel {
+    padding: 0;
 }
 
 /* Same scaled-down main-nav look as .calendar-option in the calendar
@@ -619,48 +537,10 @@ summary.footer-pill-btn::-webkit-details-marker {
     transform: translateY(2px);
 }
 
-.calendar-box[open] {
-    padding: 0;
-    margin: 0;
-    flex: 1 1 100%;
-    /* Without this, the flex item's automatic min-width defaults to its
-       content's min-content size — which the nowrap preview text below
-       inflates well past the footer's actual width, overflowing the
-       viewport horizontally instead of letting .calendar-preview's
-       ellipsis truncation do its job. */
-    min-width: 0;
-    /* Same "grows upward off a sticky-bottom footer" mechanism as
-       .suggestion-box[open]: .calendar-preview (order 0) takes its own
-       full-width row above, and the toggle + .calendar-toggle-row
-       (orders 1/2) share the row below, staying near the bottom,
-       roughly where the toggle was before opening. */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-
-.calendar-box[open]::details-content {
-    display: contents;
-}
-
-.calendar-box[open] summary.footer-pill-btn {
-    /* Sits at the start of the bottom row now — .calendar-toggle-row
-       (Google Cal/Apple Cal) follows directly after it, rather than
-       being pinned to the end like .suggestion-box[open]'s toggle. */
-    order: 1;
-}
-
 .calendar-preview {
-    order: 0;
-    flex: 1 1 100%;
-    /* Same reasoning as .calendar-box[open]'s min-width: 0 above — this
-       is also a flex item (of #calendarBox) whose automatic min-width
-       would otherwise be inflated by the nowrap preview rows. */
-    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    padding: 1rem 0.5rem 0.5rem;
     color: #f3e8ff;
 }
 
@@ -712,46 +592,14 @@ summary.footer-pill-btn::-webkit-details-marker {
 }
 
 .calendar-toggle-row {
-    order: 2;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    /* Left padding matches the closed pill-to-separator gap: .calendar-box
-       (padding-right: 0.5rem) plus .footer-separator-left (margin-left:
-       0.2rem) — .calendar-box[open] resets its own padding to 0, so this
-       row's left padding has to carry that full 0.7rem alone for
-       .calendar-toggle-separator (its first child) to sit the same
-       distance from the "Gay Agenda" pill as that separator does when
-       closed. */
-    padding: 0.5rem 0.25rem 0 0.7rem;
-    margin-top: 0.25rem;
-}
-
-.calendar-toggle-separator {
-    align-self: stretch;
-    width: 1px;
-    background: rgba(255, 255, 255, 0.15);
-    /* Same vertical margin as the base .footer-separator rule, so
-       align-self: stretch shrinks it down to a comparable height here
-       (relative to .calendar-toggle-row's own shorter line) as it does
-       on .footer-separator-left (relative to the taller closed footer
-       row) — without this it stretches noticeably taller than the
-       closed-state separator it's standing in for. */
-    margin: 0.3rem 0;
 }
 
 .suggestion-box-toggle-row {
-    order: 1;
-    /* No margin-left: auto — Send's left edge (this row's own 0.25rem
-       padding lands right after it) should line up with the input's
-       left edge above it, which has the same 0.25rem inset from
-       .suggestion-box-panel. No bottom padding either: the row's own
-       bottom edge is what .suggestion-box[open]'s align-items: flex-end
-       lines up against the toggle, so any padding here would leave Send
-       sitting above that shared bottom edge instead of on it. */
     display: flex;
     align-items: center;
-    padding: 0 0.25rem;
 }
 
 .suggestion-label {
@@ -862,7 +710,12 @@ summary.footer-pill-btn::-webkit-details-marker {
        Web Awesome's native.css also sets margin-bottom: 24px on <details>;
        left unreset here (unlike .suggestion-box's margin: 0 auto), that
        leaked margin pulled this pill ~12px out of vertical alignment with
-       the suggestion box under the footer's align-items: center. */
+       the suggestion box under the footer's align-items: center.
+
+       position: relative makes this the containing block for
+       .calendar-box-panel-wrap's position: absolute (see comment on
+       .suggestion-box for why this is what keeps the toggle from moving). */
+    position: relative;
     background: transparent;
     border: none;
     padding: 0;

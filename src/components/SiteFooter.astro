@@ -3,73 +3,76 @@
     <summary class="footer-pill-btn"
       ><wa-icon name="lightbulb" variant="regular" aria-hidden="true" style="font-size: 1.25em;"></wa-icon>Suggestion Box</summary
     >
-    <div class="suggestion-box-panel">
-      <form id="suggestForm" name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <p class="suggestion-honeypot">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-        <label class="suggestion-label" for="suggestionMessage"
-          >Suggest a place, group, or event to add</label
+    <div class="suggestion-box-panel-wrap">
+      <div class="suggestion-box-panel">
+        <form id="suggestForm" name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <p class="suggestion-honeypot">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <label class="suggestion-label" for="suggestionMessage"
+            >Suggest a place, group, or event to add</label
+          >
+          <input
+            id="suggestionMessage"
+            class="suggestion-input"
+            type="text"
+            name="message"
+            required
+            maxlength="140"
+            enterkeyhint="send"
+            aria-describedby="suggestionHint"
+            placeholder="Your cool group, venue, event"
+          />
+          <p class="suggestion-hint" id="suggestionHint">Up to 140 characters</p>
+        </form>
+      </div>
+      <div class="suggestion-box-toggle-row">
+        <button class="suggestion-submit" type="submit" form="suggestForm"
+          ><wa-icon name="paper-plane" variant="regular" aria-hidden="true" style="font-size: 1.5em;"></wa-icon>Send</button
         >
-        <input
-          id="suggestionMessage"
-          class="suggestion-input"
-          type="text"
-          name="message"
-          required
-          maxlength="140"
-          enterkeyhint="send"
-          aria-describedby="suggestionHint"
-          placeholder="Your cool group, venue, event"
-        />
-        <p class="suggestion-hint" id="suggestionHint">Up to 140 characters</p>
-      </form>
-    </div>
-    <div class="suggestion-box-toggle-row">
-      <button class="suggestion-submit" type="submit" form="suggestForm"
-        ><wa-icon name="paper-plane" variant="regular" aria-hidden="true" style="font-size: 1.5em;"></wa-icon>Send</button
-      >
+      </div>
     </div>
   </details>
   <details class="calendar-box" id="calendarBox" name="footer-accordion">
     <summary class="footer-pill-btn"
       ><wa-icon name="calendar" variant="regular" style="font-size: 1.25em;" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
     >
-    <div class="calendar-preview">
-      <span class="calendar-preview-label">(Preview) Upcoming Events</span>
-      <div class="calendar-preview-list">
-        <div class="calendar-preview-row">
-          <span class="calendar-preview-row-time"></span>
-          <span class="calendar-preview-row-title"></span>
-        </div>
-        <div class="calendar-preview-row">
-          <span class="calendar-preview-row-time"></span>
-          <span class="calendar-preview-row-title"></span>
-        </div>
-        <div class="calendar-preview-row">
-          <span class="calendar-preview-row-time"></span>
-          <span class="calendar-preview-row-title"></span>
+    <div class="calendar-box-panel-wrap">
+      <div class="calendar-preview">
+        <span class="calendar-preview-label">(Preview) Upcoming Events</span>
+        <div class="calendar-preview-list">
+          <div class="calendar-preview-row">
+            <span class="calendar-preview-row-time"></span>
+            <span class="calendar-preview-row-title"></span>
+          </div>
+          <div class="calendar-preview-row">
+            <span class="calendar-preview-row-time"></span>
+            <span class="calendar-preview-row-title"></span>
+          </div>
+          <div class="calendar-preview-row">
+            <span class="calendar-preview-row-time"></span>
+            <span class="calendar-preview-row-title"></span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="calendar-toggle-row">
-      <span class="calendar-toggle-separator" aria-hidden="true"></span>
-      <a
-        class="calendar-option"
-        href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
-      >
-        <wa-icon family="brands" name="google-plus-g" aria-hidden="true"></wa-icon>Google Cal
-      </a>
-      <a
-        class="calendar-option"
-        href="webcal://queeromaha.net/events.ics"
-        aria-label="Add to Calendar (Apple Calendar and other calendar apps)"
-      >
-        <wa-icon name="apple-whole" aria-hidden="true"></wa-icon>Apple Cal
-      </a>
+      <div class="calendar-toggle-row">
+        <a
+          class="calendar-option"
+          href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+        >
+          <wa-icon family="brands" name="google-plus-g" aria-hidden="true"></wa-icon>Google Cal
+        </a>
+        <a
+          class="calendar-option"
+          href="webcal://queeromaha.net/events.ics"
+          aria-label="Add to Calendar (Apple Calendar and other calendar apps)"
+        >
+          <wa-icon name="apple-whole" aria-hidden="true"></wa-icon>Apple Cal
+        </a>
+      </div>
     </div>
   </details>
   <span class="footer-separator footer-separator-left" aria-hidden="true"></span>
@@ -106,6 +109,7 @@
   import '../scripts/suggestionBox'
   import '../scripts/calendarBox'
   import '../scripts/calendarPreview'
+  import '../scripts/footerAccordionOverlay'
 
   const backToTopButton = document.getElementById('backToTop')
   const header = document.querySelector('header')
