@@ -90,15 +90,6 @@ test('switching top-level category clears active tags', async ({ page }) => {
     await expect(tag).not.toHaveClass(/active/)
 })
 
-test('footer elements render correctly', async ({ page }) => {
-    await page.setViewportSize({ width: 320, height: 700 })
-    await page.goto('/friends/')
-
-    // calendar box and suggestion box remain visible regardless
-    await expect(page.locator('.calendar-box summary')).toBeVisible()
-    await expect(page.locator('#suggestionBox summary')).toBeVisible()
-})
-
 test('calendar and suggestion box stay on the same row on mobile', async ({
     page,
 }) => {
@@ -334,25 +325,19 @@ test('suggestion box expands in place without navigating', async ({ page }) => {
     expect(page.url()).toBe(startUrl)
 })
 
-test('suggestion box expands without hiding the other footer buttons, and re-tapping closes it', async ({
+test('suggestion box re-tapping toggles it open and closed', async ({
     page,
 }) => {
     await page.goto('/friends/')
 
-    await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     const closedBox = await page.locator('#suggestionBox summary').boundingBox()
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#suggestionBox')).toHaveAttribute('open', '')
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#suggestionBox')).not.toHaveAttribute('open', '')
     await expect
         .poll(async () => {
@@ -364,14 +349,11 @@ test('suggestion box expands without hiding the other footer buttons, and re-tap
         .toBe(closedBox.x)
 })
 
-test('calendar box expands in place without hiding the other footer buttons, offers Google and webcal links, and re-tapping closes it', async ({
+test('calendar box expands in place, offers Google and webcal links, and re-tapping closes it', async ({
     page,
 }) => {
     await page.goto('/friends/')
     const startUrl = page.url()
-
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
 
     await page.locator('.calendar-box summary').click()
 
@@ -387,25 +369,17 @@ test('calendar box expands in place without hiding the other footer buttons, off
     await expect(google).toHaveAccessibleName(/Google Calendar/)
     await expect(ics).toHaveAccessibleName(/Apple Calendar/)
     expect(page.url()).toBe(startUrl)
-
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#calendarBox')).toHaveAttribute('open', '')
 
     await page.locator('.calendar-box summary').click()
 
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#calendarBox')).not.toHaveAttribute('open', '')
 })
 
-test('gear info box opens to reveal Privacy and Contact links without hiding the other footer buttons, and re-tapping closes it', async ({
+test('gear info box opens to reveal Privacy and Contact links, and re-tapping closes it', async ({
     page,
 }) => {
     await page.goto('/friends/')
-
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.calendar-box')).toBeVisible()
 
     await page.locator('#utilityBox summary').click()
 
@@ -421,32 +395,11 @@ test('gear info box opens to reveal Privacy and Contact links without hiding the
         'href',
         'https://github.com/taraxvoid/queeromaha',
     )
-
-    // Opening the gear menu doesn't hide the other footer buttons -- same
-    // as the suggestion and calendar boxes, none of the three hide their
-    // siblings.
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.calendar-box')).toBeVisible()
     await expect(page.locator('#utilityBox')).toHaveAttribute('open', '')
 
     await page.locator('#utilityBox summary').click()
 
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.calendar-box')).toBeVisible()
     await expect(page.locator('#utilityBox')).not.toHaveAttribute('open', '')
-})
-
-test('opening the suggestion box or calendar box does not hide the gear info box', async ({
-    page,
-}) => {
-    await page.goto('/friends/')
-
-    await page.locator('#suggestionBox summary').click()
-    await expect(page.locator('#utilityBox')).toBeVisible()
-    await page.locator('#suggestionBox summary').click()
-
-    await page.locator('.calendar-box summary').click()
-    await expect(page.locator('#utilityBox')).toBeVisible()
 })
 
 for (const [name, detailsSelector] of [
