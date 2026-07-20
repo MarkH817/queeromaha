@@ -446,9 +446,10 @@ summary.footer-pill-btn::-webkit-details-marker {
     bottom: 100%;
     margin-bottom: 0.5rem;
     z-index: 10;
-    background: #5b21b6;
+    background: #f9f5ff;
+    border: 1px solid #c4b5fd;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(76, 29, 118, 0.25);
     display: flex;
     flex-direction: column;
 }
@@ -490,7 +491,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding: 0.4rem 0.9rem;
     border: 2px solid #c4b5fd;
     border-radius: 999px;
-    background: #f9f5ff;
+    background: #f3e8ff;
     color: #6d28d9;
     text-decoration: none;
     font-size: 0.9rem;
@@ -525,14 +526,14 @@ summary.footer-pill-btn::-webkit-details-marker {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    color: #f3e8ff;
+    color: #4c1d95;
 }
 
 .calendar-preview-label,
 .suggestion-label {
     font-size: 0.7rem;
     font-weight: 700;
-    font-family: var(--font-mono);
+    font-family: var(--font-body);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     opacity: 0.65;
@@ -557,14 +558,14 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding: 0.3rem 0.5rem;
     border-left: 3px solid #c4b5fd;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(76, 29, 118, 0.06);
 }
 
 .calendar-preview-row-time {
     flex-shrink: 0;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #fff;
+    color: #4c1d95;
 }
 
 .calendar-preview-row-title {
@@ -590,11 +591,11 @@ summary.footer-pill-btn::-webkit-details-marker {
 .suggestion-label {
     display: block;
     margin-bottom: 0.35rem;
-    color: #f3e8ff;
+    color: #4c1d95;
     /* Unlike .calendar-preview-label (decorative caption), this is a real
        <label for> tied to a required form field — the shared eyebrow
-       style's opacity: 0.65 drops its contrast against the purple footer
-       below WCAG AA (3.38:1, axe-flagged), so full opacity here instead. */
+       style's opacity: 0.65 would drop contrast below WCAG AA, so full
+       opacity here instead. */
     opacity: 1;
 }
 
@@ -602,9 +603,9 @@ summary.footer-pill-btn::-webkit-details-marker {
     width: 100%;
     box-sizing: border-box;
     padding: 0.65rem 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(76, 29, 118, 0.3);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.95);
+    background: #fff;
     color: #222;
     /* 16px+ avoids iOS Safari zooming the page in on focus */
     font-size: 1rem;
@@ -614,7 +615,7 @@ summary.footer-pill-btn::-webkit-details-marker {
 .suggestion-hint {
     margin: 0.35rem 0 0.75rem;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(76, 29, 118, 0.75);
 }
 
 /* Same scaled-down main-nav look as .calendar-option in the calendar
@@ -627,7 +628,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     align-items: center;
     gap: 0.35rem;
     color: #6d28d9;
-    background: #f9f5ff;
+    background: #f3e8ff;
     border: 2px solid #c4b5fd;
     border-radius: 999px;
     /* Wider than .calendar-option's padding — Send is the suggestion
@@ -674,14 +675,14 @@ summary.footer-pill-btn::-webkit-details-marker {
 }
 
 .suggestion-thanks {
-    background: rgba(255, 255, 255, 0.15);
-    border-left: 3px solid #fff;
+    background: rgba(76, 29, 118, 0.08);
+    border-left: 3px solid #7c3aed;
 }
 
 .suggestion-error {
-    background: rgba(220, 38, 38, 0.25);
-    border-left: 3px solid #fca5a5;
-    color: #fff;
+    background: rgba(220, 38, 38, 0.1);
+    border-left: 3px solid #dc2626;
+    color: #991b1b;
 }
 
 .suggestion-honeypot {
@@ -720,7 +721,7 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding: 0.4rem 0.9rem;
     border: 2px solid #c4b5fd;
     border-radius: 999px;
-    background: #f9f5ff;
+    background: #f3e8ff;
     color: #6d28d9;
     text-decoration: none;
     font-size: 0.9rem;
