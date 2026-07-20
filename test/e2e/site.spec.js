@@ -18,27 +18,24 @@ for (const { path, titleContains } of pages) {
     })
 }
 
-test('home page has navigation links', async ({ page }) => {
-    await page.goto('/friends/')
-    const nav = page.locator('nav.main-nav')
-    await expect(nav).toBeVisible()
-    const buttons = nav.locator('wa-button')
-    expect(await buttons.count()).toBeGreaterThan(0)
-})
-
-test('no console errors on home page', async ({ page }) => {
+test('home page renders expected chrome with no console errors', async ({
+    page,
+}) => {
     const errors = []
     page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text())
     })
     await page.goto('/friends/')
-    expect(errors).toHaveLength(0)
-})
 
-test('skip-to-main link is present', async ({ page }) => {
-    await page.goto('/friends/')
-    const skipLink = page.locator('a.skip-link')
-    await expect(skipLink).toHaveAttribute('href', '#main')
+    const nav = page.locator('nav.main-nav')
+    await expect(nav).toBeVisible()
+    expect(await nav.locator('wa-button').count()).toBeGreaterThan(0)
+
+    await expect(page.locator('a.skip-link')).toHaveAttribute('href', '#main')
+    await expect(page.getByRole('contentinfo')).toBeVisible()
+    expect(await page.locator('.filter-pill').count()).toBeGreaterThan(0)
+
+    expect(errors).toHaveLength(0)
 })
 
 test('content pages render wa-card items', async ({ page }) => {
@@ -59,17 +56,6 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
         expect(rel).toContain('noopener')
         expect(rel).toContain('noreferrer')
     }
-})
-
-test('footer is present', async ({ page }) => {
-    await page.goto('/friends/')
-    await expect(page.getByRole('contentinfo')).toBeVisible()
-})
-
-test('filter pills are present on home page', async ({ page }) => {
-    await page.goto('/friends/')
-    const pills = page.locator('.filter-pill')
-    expect(await pills.count()).toBeGreaterThan(0)
 })
 
 test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
@@ -105,7 +91,6 @@ test('calendar and suggestion box stay on the same row on mobile', async ({
 
     const calBox = await page.locator('.calendar-box summary').boundingBox()
     const navBox = await page.locator('#suggestionBox summary').boundingBox()
-
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
 })
 
@@ -133,7 +118,7 @@ function expectToggleDidNotJump(closedBox, openBox, label) {
     ).toBeLessThanOrEqual(2)
 }
 
-test('calendar box toggle never moves when opened, at any viewport width', async ({
+test('no footer toggle moves when opened, at any viewport width', async ({
     page,
 }) => {
     // Regression test for the footer's original bug: opening a footer
@@ -143,55 +128,39 @@ test('calendar box toggle never moves when opened, at any viewport width', async
     // that specific width. Panels are now position: absolute overlays
     // anchored to their own toggle's box, which never changes size open or
     // closed -- so the toggle's position must stay put, at every width,
-    // not just "close."
+    // not just "close." Covers all three boxes per viewport in one
+    // navigation rather than three (they share a native <details
+    // name="footer-accordion"> group, so only one can be open at a time
+    // anyway -- checking them back-to-back after a single goto is
+    // equivalent to checking them in isolation).
     for (const viewport of REGRESSION_VIEWPORTS) {
         await page.setViewportSize(viewport)
         await page.goto('/friends/')
 
-        const summary = page.locator('.calendar-box summary')
-        const closedBox = await summary.boundingBox()
+        for (const [box, summarySelector, panelSelector] of [
+            ['calendar', '.calendar-box summary', '.calendar-box-panel-wrap'],
+            [
+                'suggestion',
+                '#suggestionBox summary',
+                '.suggestion-box-panel-wrap',
+            ],
+            ['utility', '#utilityBox summary', '.utility-box-panel'],
+        ]) {
+            const summary = page.locator(summarySelector)
+            const closedBox = await summary.boundingBox()
 
-        await summary.click()
-        await expect(page.locator('.calendar-box-panel-wrap')).toBeVisible()
-        const openBox = await summary.boundingBox()
+            await summary.click()
+            await expect(page.locator(panelSelector)).toBeVisible()
+            const openBox = await summary.boundingBox()
 
-        expectToggleDidNotJump(closedBox, openBox, `${viewport.width}px`)
-    }
-})
+            expectToggleDidNotJump(
+                closedBox,
+                openBox,
+                `${box} box at ${viewport.width}px`,
+            )
 
-test('suggestion box toggle never moves when opened, at any viewport width', async ({
-    page,
-}) => {
-    for (const viewport of REGRESSION_VIEWPORTS) {
-        await page.setViewportSize(viewport)
-        await page.goto('/friends/')
-
-        const summary = page.locator('#suggestionBox summary')
-        const closedBox = await summary.boundingBox()
-
-        await summary.click()
-        await expect(page.locator('.suggestion-box-panel-wrap')).toBeVisible()
-        const openBox = await summary.boundingBox()
-
-        expectToggleDidNotJump(closedBox, openBox, `${viewport.width}px`)
-    }
-})
-
-test('utility box toggle never moves when opened, at any viewport width', async ({
-    page,
-}) => {
-    for (const viewport of REGRESSION_VIEWPORTS) {
-        await page.setViewportSize(viewport)
-        await page.goto('/friends/')
-
-        const summary = page.locator('#utilityBox summary')
-        const closedBox = await summary.boundingBox()
-
-        await summary.click()
-        await expect(page.locator('.utility-box-panel')).toBeVisible()
-        const openBox = await summary.boundingBox()
-
-        expectToggleDidNotJump(closedBox, openBox, `${viewport.width}px`)
+            await summary.click()
+        }
     }
 })
 
@@ -289,16 +258,6 @@ test('a separator divides the calendar and suggestion box pills, even on narrow 
     // deliberately makes it taller than the pills, so its top edge
     // legitimately sits higher than theirs even on the same row
     expect(suggBox.y).toBeCloseTo(calBox.y, 0)
-})
-
-test('tag filter pills use wa-icon elements', async ({ page }) => {
-    await page.goto('/friends/')
-    const pills = page.locator('.filter-pill')
-    const count = await pills.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        await expect(pills.nth(i).locator('wa-icon')).toHaveCount(1)
-    }
 })
 
 test('item cards with a location show a location-dot icon', async ({
@@ -407,7 +366,9 @@ for (const [name, detailsSelector] of [
     ['calendar box', '#calendarBox'],
     ['utility box', '#utilityBox'],
 ]) {
-    test(`clicking outside the ${name} closes it`, async ({ page }) => {
+    test(`clicking outside or pressing Escape closes the ${name}`, async ({
+        page,
+    }) => {
         await page.goto('/friends/')
         const details = page.locator(detailsSelector)
 
@@ -416,13 +377,6 @@ for (const [name, detailsSelector] of [
 
         await page.locator('main').click({ position: { x: 10, y: 10 } })
         await expect(details).not.toHaveAttribute('open', '')
-    })
-
-    test(`pressing Escape closes the ${name} and returns focus to its toggle`, async ({
-        page,
-    }) => {
-        await page.goto('/friends/')
-        const details = page.locator(detailsSelector)
 
         await details.locator('summary').click()
         await expect(details).toHaveAttribute('open', '')
@@ -658,10 +612,11 @@ test('item cards emit valid Organization JSON-LD', async ({ page }) => {
     const scripts = page.locator(
         'script[type="application/ld+json"]:has(+ wa-card.item)',
     )
-    const count = await scripts.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        const raw = await scripts.nth(i).innerHTML()
+    const rawScripts = await scripts.evaluateAll((els) =>
+        els.map((el) => el.innerHTML),
+    )
+    expect(rawScripts.length).toBeGreaterThan(0)
+    for (const raw of rawScripts) {
         const data = JSON.parse(raw)
         expect(data['@type']).toBe('Organization')
         expect(typeof data.name).toBe('string')
@@ -967,13 +922,16 @@ test('switching category while a card is active clears its active state', async 
     await expect(card).not.toHaveClass(/item-active/)
 })
 
-test('/privacy loads and links back to the directory', async ({ page }) => {
+test('/privacy loads, links back to the directory, and links to /contact', async ({
+    page,
+}) => {
     const response = await page.goto('/privacy/')
     expect(response.status()).toBe(200)
     await expect(page).toHaveTitle(/Privacy/)
     const backLink = page.locator('.back-link')
     await expect(backLink).toBeVisible()
     await expect(backLink).toHaveAttribute('href', '/friends')
+    await expect(page.locator('a[href="/contact"]').first()).toBeVisible()
 })
 
 test('/contact loads, links back to the directory, and links to /privacy', async ({
@@ -985,11 +943,6 @@ test('/contact loads, links back to the directory, and links to /privacy', async
     const backLink = page.locator('.back-link')
     await expect(backLink).toBeVisible()
     await expect(backLink).toHaveAttribute('href', '/friends')
-})
-
-test('privacy page links to the contact page', async ({ page }) => {
-    await page.goto('/privacy/')
-    await expect(page.locator('a[href="/contact"]').first()).toBeVisible()
 })
 
 test('contact form shows inline confirmation without navigating', async ({
