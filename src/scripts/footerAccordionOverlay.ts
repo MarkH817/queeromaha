@@ -6,6 +6,15 @@ function init() {
     )
     if (accordions.length === 0) return
 
+    accordions.forEach((details) => {
+        details.addEventListener('toggle', () => {
+            if (!details.open) return
+            window.posthog?.capture('footer_section_opened', {
+                section: details.id,
+            })
+        })
+    })
+
     document.addEventListener('click', (e) => {
         const open = accordions.find((d) => d.open)
         if (!open || open.contains(e.target as Node)) return
