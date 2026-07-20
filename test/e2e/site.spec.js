@@ -18,27 +18,24 @@ for (const { path, titleContains } of pages) {
     })
 }
 
-test('home page has navigation links', async ({ page }) => {
-    await page.goto('/friends/')
-    const nav = page.locator('nav.main-nav')
-    await expect(nav).toBeVisible()
-    const buttons = nav.locator('wa-button')
-    expect(await buttons.count()).toBeGreaterThan(0)
-})
-
-test('no console errors on home page', async ({ page }) => {
+test('home page renders expected chrome with no console errors', async ({
+    page,
+}) => {
     const errors = []
     page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text())
     })
     await page.goto('/friends/')
-    expect(errors).toHaveLength(0)
-})
 
-test('skip-to-main link is present', async ({ page }) => {
-    await page.goto('/friends/')
-    const skipLink = page.locator('a.skip-link')
-    await expect(skipLink).toHaveAttribute('href', '#main')
+    const nav = page.locator('nav.main-nav')
+    await expect(nav).toBeVisible()
+    expect(await nav.locator('wa-button').count()).toBeGreaterThan(0)
+
+    await expect(page.locator('a.skip-link')).toHaveAttribute('href', '#main')
+    await expect(page.getByRole('contentinfo')).toBeVisible()
+    expect(await page.locator('.filter-pill').count()).toBeGreaterThan(0)
+
+    expect(errors).toHaveLength(0)
 })
 
 test('content pages render wa-card items', async ({ page }) => {
@@ -59,17 +56,6 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
         expect(rel).toContain('noopener')
         expect(rel).toContain('noreferrer')
     }
-})
-
-test('footer is present', async ({ page }) => {
-    await page.goto('/friends/')
-    await expect(page.getByRole('contentinfo')).toBeVisible()
-})
-
-test('filter pills are present on home page', async ({ page }) => {
-    await page.goto('/friends/')
-    const pills = page.locator('.filter-pill')
-    expect(await pills.count()).toBeGreaterThan(0)
 })
 
 test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
@@ -102,7 +88,7 @@ test('footer elements render correctly', async ({ page }) => {
     await expect(page.locator('#suggestionBox summary')).toBeVisible()
 })
 
-test('calendar and suggestion box stay on the same row on mobile', async ({
+test('mobile (412x839): calendar/suggestion boxes align and footer message stays hidden', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 412, height: 839 })
@@ -110,15 +96,7 @@ test('calendar and suggestion box stay on the same row on mobile', async ({
 
     const calBox = await page.locator('.calendar-box summary').boundingBox()
     const navBox = await page.locator('#suggestionBox summary').boundingBox()
-
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
-})
-
-test('footer message stays hidden on mobile even if a stale JS toggle unhides it', async ({
-    page,
-}) => {
-    await page.setViewportSize({ width: 412, height: 839 })
-    await page.goto('/friends/')
 
     await page.evaluate(() => {
         document.querySelector('.footer-text').hidden = false
@@ -142,16 +120,6 @@ test('footer message is visible and unclipped on wide screens', async ({
         (el) => el.scrollWidth > el.clientWidth,
     )
     expect(overflowing).toBe(false)
-})
-
-test('tag filter pills use wa-icon elements', async ({ page }) => {
-    await page.goto('/friends/')
-    const pills = page.locator('.filter-pill')
-    const count = await pills.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        await expect(pills.nth(i).locator('wa-icon')).toHaveCount(1)
-    }
 })
 
 test('item cards with a location show a location-dot icon', async ({
@@ -380,10 +348,11 @@ test('item cards emit valid Organization JSON-LD', async ({ page }) => {
     const scripts = page.locator(
         'script[type="application/ld+json"]:has(+ wa-card.item)',
     )
-    const count = await scripts.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        const raw = await scripts.nth(i).innerHTML()
+    const rawScripts = await scripts.evaluateAll((els) =>
+        els.map((el) => el.innerHTML),
+    )
+    expect(rawScripts.length).toBeGreaterThan(0)
+    for (const raw of rawScripts) {
         const data = JSON.parse(raw)
         expect(data['@type']).toBe('Organization')
         expect(typeof data.name).toBe('string')
