@@ -1356,3 +1356,385 @@ body:has(#calendarBox[open]) #backToTop {
 .nav-github:hover {
     opacity: 1;
 }
+
+/* ==========================================================================
+   Dark mode
+
+   Follows the OS/browser color-scheme preference — no manual toggle. Stays
+   in the same violet family as the light theme, deepened rather than
+   inverted: --dm-nightfall/--dm-dusk/--dm-dusk-2 replace the light theme's
+   paper/lavender surfaces, --dm-glow/--dm-haze/--dm-moonlight replace its
+   ink/accent text. Signature move: the light theme's hard "3D lip" shadow
+   (a solid color offset, like a sticker) reads as a dark smudge on a dark
+   surface, so interactive elements swap it for a soft violet bloom instead
+   — signage glowing after dark rather than a shape cut out of paper.
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dm-nightfall: #150a2e;
+        --dm-dusk: #1e1042;
+        --dm-dusk-2: #2a1854;
+        --dm-haze: #c9b8f0;
+        --dm-glow: #c4b5fd;
+        --dm-moonlight: #f3edff;
+        --wa-focus-ring-color: var(--dm-glow);
+        color-scheme: dark;
+    }
+
+    body {
+        background: var(--dm-nightfall);
+        color: var(--dm-moonlight);
+    }
+
+    .skip-link {
+        background-color: var(--dm-dusk);
+        color: var(--dm-glow);
+    }
+
+    .main-nav {
+        background: var(--dm-dusk-2);
+        box-shadow:
+            0 3px 10px rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(196, 181, 253, 0.08);
+    }
+
+    .main-nav wa-button::part(base) {
+        color: var(--dm-glow);
+        background: var(--dm-dusk);
+        border-color: rgba(196, 181, 253, 0.4);
+        box-shadow:
+            0 3px 0 rgba(196, 181, 253, 0.3),
+            0 5px 8px rgba(0, 0, 0, 0.4),
+            0 0 10px rgba(196, 181, 253, 0.12);
+    }
+
+    .main-nav wa-button::part(base):hover {
+        background: var(--dm-dusk-2);
+        border-color: #a78bfa;
+    }
+
+    .main-nav wa-button::part(base):active {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-nav wa-button.active::part(base) {
+        background: var(--dm-dusk-2);
+        border-color: #a78bfa;
+        color: var(--dm-moonlight);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-nav wa-button.active::part(base):hover {
+        background: #34205e;
+        border-color: var(--dm-glow);
+    }
+
+    main {
+        background: var(--dm-dusk);
+        box-shadow:
+            0 2px 20px rgba(0, 0, 0, 0.45),
+            0 0 40px rgba(196, 181, 253, 0.04);
+    }
+
+    main:focus-visible {
+        outline-color: var(--dm-glow);
+    }
+
+    footer {
+        background: #241354;
+        color: var(--dm-haze);
+    }
+
+    .calendar-box-panel-wrap,
+    .suggestion-box-panel-wrap,
+    .utility-box-panel {
+        background: var(--dm-dusk);
+        border-color: rgba(196, 181, 253, 0.35);
+        box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.5),
+            0 0 30px rgba(196, 181, 253, 0.08);
+    }
+
+    .utility-option,
+    .calendar-option {
+        background: var(--dm-dusk-2);
+        color: var(--dm-glow);
+        border-color: rgba(196, 181, 253, 0.4);
+        box-shadow:
+            0 2px 0 rgba(196, 181, 253, 0.3),
+            0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .utility-option:hover,
+    .calendar-option:hover {
+        background: #34205e;
+        border-color: #a78bfa;
+    }
+
+    .utility-option:active,
+    .calendar-option:active {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .calendar-preview {
+        color: var(--dm-haze);
+    }
+
+    .calendar-preview-row {
+        border-left-color: rgba(196, 181, 253, 0.5);
+        background: rgba(196, 181, 253, 0.06);
+    }
+
+    .calendar-preview-row-time {
+        color: var(--dm-haze);
+    }
+
+    .suggestion-label {
+        color: var(--dm-haze);
+    }
+
+    .suggestion-input {
+        background: var(--dm-nightfall);
+        color: var(--dm-moonlight);
+        border-color: rgba(196, 181, 253, 0.35);
+    }
+
+    .suggestion-hint {
+        color: rgba(201, 184, 240, 0.75);
+    }
+
+    .suggestion-submit {
+        color: var(--dm-glow);
+        background: var(--dm-dusk-2);
+        border-color: rgba(196, 181, 253, 0.4);
+        box-shadow:
+            0 2px 0 rgba(196, 181, 253, 0.3),
+            0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .suggestion-submit:hover {
+        background: #34205e;
+        border-color: #a78bfa;
+    }
+
+    .suggestion-submit:active {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .suggestion-thanks {
+        background: rgba(196, 181, 253, 0.08);
+        border-left-color: var(--dm-glow);
+    }
+
+    .suggestion-error {
+        background: rgba(248, 113, 113, 0.12);
+        border-left-color: #f87171;
+        color: #fca5a5;
+    }
+
+    .section-header {
+        color: var(--dm-glow);
+    }
+
+    wa-card.item {
+        border-top-color: rgba(196, 181, 253, 0.4);
+        border-color: rgba(196, 181, 253, 0.3);
+        box-shadow:
+            2px 2px 0 rgba(196, 181, 253, 0.15),
+            3px 3px 0 rgba(196, 181, 253, 0.3);
+    }
+
+    wa-card.item:hover {
+        border-color: #a78bfa;
+        box-shadow:
+            3px 3px 0 rgba(196, 181, 253, 0.2),
+            5px 5px 0 rgba(196, 181, 253, 0.4),
+            0 0 16px rgba(196, 181, 253, 0.15);
+    }
+
+    .item-tap-target:focus-visible {
+        outline-color: var(--dm-glow);
+    }
+
+    wa-card.item::part(header),
+    wa-card.item::part(footer) {
+        background: var(--dm-dusk-2);
+        border-color: rgba(196, 181, 253, 0.15);
+    }
+
+    wa-card.item::part(body) {
+        background: var(--dm-dusk);
+    }
+
+    wa-card.item.item-active::part(header),
+    wa-card.item.item-active::part(body),
+    wa-card.item.item-active::part(footer) {
+        background: rgba(196, 181, 253, 0.12);
+    }
+
+    .not-found-card::part(base),
+    .legal-card::part(base) {
+        border-color: rgba(196, 181, 253, 0.3);
+        box-shadow:
+            3px 3px 0 rgba(196, 181, 253, 0.2),
+            5px 5px 0 rgba(196, 181, 253, 0.4);
+    }
+
+    .not-found-card::part(header),
+    .legal-card::part(header) {
+        background: var(--dm-dusk-2);
+        border-color: rgba(196, 181, 253, 0.15);
+    }
+
+    .not-found-card::part(body),
+    .legal-card::part(body) {
+        background: var(--dm-dusk);
+    }
+
+    .not-found-card h2,
+    .legal-card h2,
+    .legal-card h3 {
+        color: var(--dm-glow);
+    }
+
+    .not-found-cta {
+        background: var(--dm-glow);
+        color: var(--dm-nightfall);
+    }
+
+    .not-found-cta:hover {
+        background: var(--dm-moonlight);
+    }
+
+    .not-found-countdown {
+        color: var(--dm-haze);
+    }
+
+    .back-link {
+        color: var(--dm-glow);
+    }
+
+    .contact-label {
+        color: var(--dm-haze);
+    }
+
+    .contact-input,
+    .contact-textarea {
+        background: var(--dm-nightfall);
+        color: var(--dm-moonlight);
+        border-color: rgba(196, 181, 253, 0.4);
+    }
+
+    .contact-submit {
+        color: var(--dm-nightfall);
+        background: var(--dm-glow);
+    }
+
+    .contact-submit:hover {
+        background: var(--dm-moonlight);
+    }
+
+    .contact-thanks {
+        background: rgba(196, 181, 253, 0.1);
+        border-left-color: var(--dm-glow);
+        color: var(--dm-haze);
+    }
+
+    .contact-error {
+        background: rgba(248, 113, 113, 0.12);
+        border-left-color: #f87171;
+        color: #fca5a5;
+    }
+
+    main a {
+        color: #a5b4fc;
+        border-bottom-color: rgba(196, 181, 253, 0.3);
+    }
+
+    main a:hover {
+        color: var(--dm-moonlight);
+        border-bottom-color: var(--dm-glow);
+    }
+
+    blockquote {
+        background: rgba(196, 181, 253, 0.06);
+        border-left-color: rgba(196, 181, 253, 0.5);
+        color: var(--dm-haze);
+    }
+
+    .entry-links a {
+        background: var(--dm-dusk-2);
+        border-color: rgba(196, 181, 253, 0.35);
+        color: var(--dm-glow);
+    }
+
+    .entry-links a:hover {
+        background: rgba(196, 181, 253, 0.12);
+        border-color: #a78bfa;
+        color: var(--dm-moonlight);
+    }
+
+    #backToTop {
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, 0.5),
+            0 0 24px rgba(196, 181, 253, 0.35),
+            inset 1px 1px 3px rgba(255, 255, 255, 0.4),
+            inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    #backToTop:hover {
+        box-shadow:
+            0 6px 16px rgba(0, 0, 0, 0.6),
+            0 0 32px rgba(196, 181, 253, 0.45),
+            inset 1px 1px 3px rgba(255, 255, 255, 0.4),
+            inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .filter-bar,
+    .section-divider {
+        border-bottom-color: var(--dm-glow);
+        box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.35);
+    }
+
+    .filter-pill-divider {
+        background: rgba(196, 181, 253, 0.4);
+        box-shadow: none;
+    }
+
+    .filter-pills--tags {
+        border-top-color: rgba(196, 181, 253, 0.25);
+    }
+
+    .filter-pill {
+        background: var(--dm-dusk);
+        border-color: rgba(196, 181, 253, 0.3);
+        color: var(--dm-glow);
+        box-shadow: 0 2px 0 rgba(196, 181, 253, 0.25);
+    }
+
+    .filter-pill:hover {
+        background: rgba(196, 181, 253, 0.12);
+        border-color: #a78bfa;
+    }
+
+    .filter-pill:active {
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .filter-pill.active {
+        background: rgba(196, 181, 253, 0.15);
+        border-color: #a78bfa;
+        color: var(--dm-moonlight);
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .filter-pill.active:hover {
+        background: rgba(196, 181, 253, 0.22);
+        border-color: var(--dm-glow);
+    }
+
+    .item-location,
+    .item-location a {
+        color: var(--dm-glow);
+    }
+}
