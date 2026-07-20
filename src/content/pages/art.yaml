@@ -137,6 +137,22 @@ items:
       state: NE
       zip: "68108"
       neighborhood: South Omaha
+  - name: Creative Reuse Omaha
+    public: true
+    description: All that extra paint has to go somewhere - Open Thurs 5PM-8PM, Sat/Sun 11AM-3PM + 2nd Fridays on Vinton
+    links:
+      - label: Website
+        url: https://creativereuseomaha.org
+      - label: Instagram
+        url: https://www.instagram.com/creativereuseomahainc/
+      - label: FB
+        url: https://www.facebook.com/creativereuseomahainc
+    location:
+      street: 1820 Vinton St
+      city: Omaha
+      state: NE
+      zip: "68108"
+      neighborhood: South Omaha
   - name: Tilt23
     public: true
     description: Local artists, music and market at rotating venues eg Church Art House.
