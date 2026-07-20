@@ -147,6 +147,9 @@ items:
         url: https://www.instagram.com/creativereuseomahainc/
       - label: FB
         url: https://www.facebook.com/creativereuseomahainc
+    tags:
+      - neutral-bathrooms
+      - seating
     location:
       street: 1820 Vinton St
       city: Omaha
@@ -176,7 +179,7 @@ items:
       neighborhood: South Omaha
   - name: Clover24
     public: true
-    description: New-ish studio and gallery space.
+    description: Huge art gallery plus studio space. "Mens" is single-stall.
     links:
       - label: Instagram
         url: https://www.instagram.com/clover24omaha/
@@ -187,6 +190,7 @@ items:
     tags:
       - neutral-bathrooms
       - seating
+    notes: owners of building have no chill, folks who run the arts side and the artists are low-key the chillest tho
   - name: Culxr House
     public: true
     description: Black-owned community space for shows and art events.
