@@ -193,8 +193,8 @@ main:focus-visible {
     }
 }
 footer {
-    background: #c4b5fd;
-    color: #4c1d95;
+    background: #2e1065;
+    color: #ede9fe;
     padding: 0.5rem 0.75rem;
     position: sticky;
     bottom: 0;
@@ -242,7 +242,7 @@ footer {
     align-self: stretch;
     width: 1px;
     margin: 0.3rem 0.5rem;
-    background: rgba(76, 29, 118, 0.2);
+    background: rgba(237, 233, 254, 0.25);
 }
 
 /* Sits between .calendar-box (order: 0, default) and .suggestion-box
@@ -266,13 +266,6 @@ footer {
     flex-shrink: 0;
 }
 
-.footer-nav-divider {
-    align-self: stretch;
-    width: 1px;
-    margin: 0.3rem 0.4rem;
-    background: rgba(76, 29, 118, 0.2);
-}
-
 .utility-box {
     /* Same "reset Web Awesome details styling" story as .suggestion-box
        and .calendar-box (see comment on .suggestion-box). position:
@@ -294,7 +287,7 @@ footer {
 }
 
 footer a {
-    color: #5b21b6;
+    color: #ddd6fe;
     text-decoration: none;
     font-size: 1rem;
     opacity: 1;
@@ -302,31 +295,19 @@ footer a {
 }
 
 footer a:hover {
-    color: #4c1d95;
+    color: #ffffff;
     opacity: 1;
     text-decoration: underline;
-}
-
-.footer-icon {
-    /* .footer-separator-right now provides the divider on this side,
-       so this element no longer needs its own border-left. */
-    display: flex;
-    align-items: center;
-    font-size: 1.7rem;
-    background: none;
-    border: none;
-    box-shadow: none;
-    padding: 0.1rem 0.5rem 0.1rem 0.75rem;
 }
 
 .footer-pill-btn {
     display: inline-flex;
     align-items: center;
     padding: 0.3rem 0.8rem;
-    border: 1px solid rgba(76, 29, 118, 0.35);
+    border: 1px solid rgba(237, 233, 254, 0.35);
     border-radius: 12px;
-    background: rgba(76, 29, 118, 0.08);
-    color: #4c1d95;
+    background: rgba(237, 233, 254, 0.1);
+    color: #ede9fe;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -337,10 +318,10 @@ footer a:hover {
     flex-shrink: 0;
     /* Same "3D lip" bottom edge every other pill button carries (header
        category pills, the tag .filter-pill, the footer Send button), a
-       dark-violet lip tuned for the lighter Lilac Gumdrop footer. The
+       black lip that reads as depth against the dark-violet footer. The
        pressed/[open] state below swaps this for an inset shadow so the
        toggle still reads as pushed in. */
-    box-shadow: 0 2px 0 rgba(76, 29, 118, 0.4);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
     transition:
         background 0.15s,
         border-color 0.15s,
@@ -349,9 +330,9 @@ footer a:hover {
 }
 
 .footer-pill-btn:hover {
-    background: rgba(76, 29, 118, 0.15);
-    border-color: rgba(76, 29, 118, 0.55);
-    color: #3b0764;
+    background: rgba(237, 233, 254, 0.2);
+    border-color: rgba(237, 233, 254, 0.6);
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -393,15 +374,15 @@ footer a:hover {
 .suggestion-box[open] summary.footer-pill-btn,
 .calendar-box[open] summary.footer-pill-btn,
 .utility-box[open] summary.footer-pill-btn {
-    /* Darker than this pushes the background too close to the deep-violet
-       text color, dropping contrast below 4.5:1 once :hover's darker
-       color is also active (Playwright's click leaves the pointer over
-       the element, same as a real tap-and-hold would). Pinning color
-       explicitly here too, rather than relying on inherited/hover color. */
-    color: #3b0764;
-    background: rgba(76, 29, 118, 0.2);
-    border-color: rgba(76, 29, 118, 0.55);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* Lighter than the resting/:hover fill so contrast against the
+       dark-violet footer stays high even once :hover's fill is also
+       active (Playwright's click leaves the pointer over the element,
+       same as a real tap-and-hold would). Pinning color explicitly here
+       too, rather than relying on inherited/hover color. */
+    color: #ffffff;
+    background: rgba(237, 233, 254, 0.3);
+    border-color: rgba(237, 233, 254, 0.65);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
     transform: translateY(1px);
 }
 
@@ -757,7 +738,7 @@ summary.footer-pill-btn::-webkit-details-marker {
 
 @media (max-width: 480px) {
     /* These mobile shrinks need to come after the base .footer-pill-btn /
-       .footer-icon / .calendar-option rules further up the file — with
+       .calendar-option rules further up the file — with
        equal specificity, a later plain selector wins the cascade over an
        earlier media-scoped one whenever the media condition is also true,
        so declaring the shrink up near the other @media (max-width: 480px)
@@ -770,11 +751,6 @@ summary.footer-pill-btn::-webkit-details-marker {
     .footer-pill-btn {
         padding: 0.3rem 0.5rem;
         font-size: 0.9rem;
-    }
-
-    .footer-icon {
-        padding: 0.1rem 0.3rem;
-        font-size: 1.5rem;
     }
 
     .calendar-option,

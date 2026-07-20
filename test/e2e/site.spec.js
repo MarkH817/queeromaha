@@ -253,7 +253,7 @@ test('calendar panel grows rightward from its own left edge; suggestion panel gr
     )
 })
 
-test('suggestion box pill is tucked against the right separator, next to the GitHub icon', async ({
+test('suggestion box pill is tucked against the right separator, next to the utility gear icon', async ({
     page,
 }) => {
     await page.goto('/friends/')
@@ -411,18 +411,22 @@ test('gear info box opens to reveal Privacy and Contact links without hiding the
 
     const privacyLink = page.locator('.utility-option', { hasText: 'Privacy' })
     const contactLink = page.locator('.utility-option', { hasText: 'Contact' })
+    const githubLink = page.locator('.utility-option', { hasText: 'GitHub' })
     await expect(privacyLink).toBeVisible()
     await expect(contactLink).toBeVisible()
+    await expect(githubLink).toBeVisible()
     await expect(privacyLink).toHaveAttribute('href', '/privacy')
     await expect(contactLink).toHaveAttribute('href', '/contact')
+    await expect(githubLink).toHaveAttribute(
+        'href',
+        'https://github.com/taraxvoid/queeromaha',
+    )
 
     // Opening the gear menu doesn't hide the other footer buttons -- same
     // as the suggestion and calendar boxes, none of the three hide their
     // siblings.
     await expect(page.locator('.suggestion-box')).toBeVisible()
     await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('.footer-icon')).toBeVisible()
-    await expect(page.locator('.footer-nav-divider')).toBeVisible()
     await expect(page.locator('#utilityBox')).toHaveAttribute('open', '')
 
     await page.locator('#utilityBox summary').click()
