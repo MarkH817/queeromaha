@@ -103,6 +103,25 @@ items:
         location: Church Art House, 20th and Vinton, South Omaha
         description: Pay What You Can.
         url: https://www.facebook.com/geoff.wertheim.9
+  - name: Hindu Chants (Kirtan) at Yoga Now
+    public: true
+    description: Group Chants at Yoga Now in Benson last Fridays @ 6:30–8:00PM - no singing required
+    location:
+      neighborhood: Benson
+      street: 6105 Maple St
+      city: Omaha
+    links:
+      - label: Event Calendar
+        url: https://doyoganow.as.me/schedule/fd2df71f/?appointmentTypeIds[]=89350103
+    recurring_events:
+      - summary: Bhajans + Kirtan @ Yoga Now
+        rrule: FREQ=MONTHLY;BYDAY=-1FR
+        dtstart: "20260626"
+        time: 18:30
+        end_time: 20:00
+        location: Yoga Now, Benson
+        description: Devotional call-and-response chanting. Last Friday of the month.
+        url: https://doyoganow.as.me/schedule/fd2df71f/?appointmentTypeIds[]=89350103
   - name: Recovering From Religion
     public: false
     description: Resources for processing religious trauma.
