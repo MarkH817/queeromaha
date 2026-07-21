@@ -317,11 +317,14 @@ footer a:hover {
     white-space: nowrap;
     flex-shrink: 0;
     /* Same "3D lip" bottom edge every other pill button carries (header
-       category pills, the tag .filter-pill, the footer Send button), a
-       black lip that reads as depth against the dark-violet footer. The
-       pressed/[open] state below swaps this for an inset shadow so the
-       toggle still reads as pushed in. */
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+       category pills, the tag .filter-pill, the footer Send button). Like
+       those, the lip is lighter than its background, not darker — a black
+       lip on the already-near-black #2e1065 footer is indistinguishable
+       from the footer itself, which is why an earlier pass of this looked
+       like no shadow was applied at all. The pressed/[open] state below
+       swaps this for an inset shadow so the toggle still reads as pushed
+       in. */
+    box-shadow: 0 2px 0 rgba(237, 233, 254, 0.4);
     transition:
         background 0.15s,
         border-color 0.15s,
@@ -1149,15 +1152,26 @@ blockquote p {
     transition:
         background 0.15s,
         color 0.15s,
-        border-color 0.15s;
+        border-color 0.15s,
+        box-shadow 0.15s,
+        transform 0.15s;
     min-height: 2rem;
     white-space: nowrap;
+    /* Same "3D lip" every other pill button carries (header category
+       pills, .filter-pill, the footer pill buttons) — these link pills
+       were missing it entirely. Lip color matches the border, same
+       convention as .filter-pill and .utility-option. */
+    box-shadow: 0 2px 0 #c4b5fd;
 }
 .entry-links a:hover {
     background: #ede9fe;
     border-color: #a78bfa;
     color: #4c1d95;
     border-bottom: none;
+}
+.entry-links a:active {
+    box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
+    transform: translateY(1px);
 }
 
 /* Back to top button */
@@ -1673,12 +1687,17 @@ body:has(#calendarBox[open]) #backToTop {
         background: var(--dm-dusk-2);
         border-color: rgba(196, 181, 253, 0.35);
         color: var(--dm-glow);
+        box-shadow: 0 2px 0 rgba(196, 181, 253, 0.3);
     }
 
     .entry-links a:hover {
         background: rgba(196, 181, 253, 0.12);
         border-color: #a78bfa;
         color: var(--dm-moonlight);
+    }
+
+    .entry-links a:active {
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     #backToTop {
