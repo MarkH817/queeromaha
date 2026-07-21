@@ -11,6 +11,11 @@ interface RowEls {
     title: HTMLElement
 }
 
+interface PreviewEls {
+    list: HTMLElement
+    empty: HTMLElement
+}
+
 let cachedEvents: NextEvent[] | undefined
 let inFlight: Promise<void> | null = null
 
@@ -25,7 +30,10 @@ function formatTime(event: NextEvent): string {
     }).format(event.start)
 }
 
-function render(rowEls: RowEls[], events: NextEvent[]) {
+function render(rowEls: RowEls[], previewEls: PreviewEls, events: NextEvent[]) {
+    previewEls.list.hidden = events.length === 0
+    previewEls.empty.hidden = events.length !== 0
+
     rowEls.forEach(({ time, title }, i) => {
         const event = events[i]
         time.textContent = event ? formatTime(event) : ''
@@ -56,13 +64,16 @@ function init() {
             ),
         }))
         .filter((row): row is RowEls => Boolean(row.time && row.title))
-    if (!details || rowEls.length === 0) return
+    const list = details?.querySelector<HTMLElement>('.calendar-preview-list')
+    const empty = details?.querySelector<HTMLElement>('.calendar-preview-empty')
+    if (!details || rowEls.length === 0 || !list || !empty) return
+    const previewEls: PreviewEls = { list, empty }
 
     details.addEventListener('toggle', () => {
         if (!details.open) return
 
         if (cachedEvents !== undefined) {
-            render(rowEls, cachedEvents)
+            render(rowEls, previewEls, cachedEvents)
             return
         }
 
@@ -71,7 +82,7 @@ function init() {
                 .catch(() => [])
                 .then((events) => {
                     cachedEvents = events
-                    render(rowEls, events)
+                    render(rowEls, previewEls, events)
                 })
         }
     })

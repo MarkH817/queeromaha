@@ -558,6 +558,13 @@ summary.footer-pill-btn::-webkit-details-marker {
     font-size: 0.85rem;
 }
 
+.calendar-preview-empty {
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
 .calendar-toggle-row {
     display: flex;
     align-items: center;

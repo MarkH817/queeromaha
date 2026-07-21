@@ -1,3 +1,5 @@
+import { toZonedTime } from 'date-fns-tz'
+
 export interface ParsedEvent {
     uid: string
     summary: string
@@ -58,17 +60,12 @@ export function parseEvents(icsText: string): ParsedEvent[] {
     return events
 }
 
+// Converts a real instant into the America/Chicago wall-clock time,
+// represented as a fake-UTC Date (read back only via getUTC* accessors) —
+// this must go through the IANA tz database rather than the visitor's own
+// system timezone, since dtstart values are always Chicago wall-clock.
 function fakeUtc(date: Date): Date {
-    return new Date(
-        Date.UTC(
-            date.getFullYear(),
-            date.getMonth(),
-            date.getDate(),
-            date.getHours(),
-            date.getMinutes(),
-            date.getSeconds(),
-        ),
-    )
+    return toZonedTime(date, 'America/Chicago')
 }
 
 export function getUpcomingEvents(
