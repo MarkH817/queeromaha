@@ -1,6 +1,10 @@
 const REDIRECT_SECONDS = 8
 const REDIRECT_URL = '/friends'
 
+window.posthog?.capture('page_not_found', {
+    path: window.location.pathname,
+})
+
 const countdownEl = document.querySelector<HTMLElement>(
     '[data-notfound-countdown]',
 )

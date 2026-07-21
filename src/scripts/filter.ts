@@ -150,6 +150,9 @@ function initFilters() {
                 // fetch) — the pill's real href is only a JS-off fallback.
                 setCategory(slug)
                 history.pushState({}, '', buildUrl())
+                window.posthog?.capture('category_filter_changed', {
+                    filter_slug: slug,
+                })
                 return
             }
 
@@ -157,6 +160,12 @@ function initFilters() {
             if (isActive) deactivateFilter(slug)
             else activateFilter(slug)
             history.pushState({}, '', buildUrl())
+            if (!isActive) {
+                window.posthog?.capture('filter_applied', {
+                    filter_slug: slug,
+                    filter_type: type,
+                })
+            }
         })
     })
 

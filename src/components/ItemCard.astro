@@ -227,7 +227,10 @@ function resolveLink(link: { url: string; label: string }) {
         const pillIcon = resolveLink(link).icon
         return (
           <li>
-            <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}>
+            <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}
+            data-ph-item-name={item.name}
+            data-ph-item-category={category}
+            data-ph-link-label={link.label}>
               {pillIcon && <wa-icon name={pillIcon.name} family={pillIcon.family} aria-hidden="true"></wa-icon>}
               {link.label}
             </a>

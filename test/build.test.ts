@@ -30,6 +30,8 @@ describe('astro build', () => {
             'llms.txt',
             '_headers',
             '404.html',
+            'privacy/index.html',
+            'contact/index.html',
         ]) {
             expect(existsSync(join(distDir, file)), `missing: ${file}`).toBe(
                 true,
@@ -57,13 +59,39 @@ describe('astro build', () => {
         expect(redirects).toMatch(/^\/\s+\/friends/m)
     })
 
-    test('_redirects sends /about and /contact to /', () => {
+    test('_redirects sends /about to / but leaves /contact alone', () => {
         const redirects = readFileSync(
             join(ROOT, 'public', '_redirects'),
             'utf8',
         )
         expect(redirects).toMatch(/^\/about\s+\/\s+301/m)
-        expect(redirects).toMatch(/^\/contact\s+\/\s+301/m)
+        expect(redirects).not.toMatch(/^\/contact\s/m)
+    })
+
+    test('privacy/index.html has a back-to-directory link', () => {
+        const html = readFileSync(
+            join(ROOT, 'dist', 'privacy', 'index.html'),
+            'utf8',
+        )
+        expect(html).toContain('back-link')
+        expect(html).toContain('href="/friends"')
+    })
+
+    test('contact/index.html has a Netlify form and a back-to-directory link', () => {
+        const html = readFileSync(
+            join(ROOT, 'dist', 'contact', 'index.html'),
+            'utf8',
+        )
+        expect(html).toContain('name="contact"')
+        expect(html).toContain('data-netlify="true"')
+        expect(html).toContain('back-link')
+        expect(html).toContain('href="/friends"')
+    })
+
+    test('llms.txt lists the privacy and contact pages', () => {
+        const llmsTxt = readFileSync(join(ROOT, 'dist', 'llms.txt'), 'utf8')
+        expect(llmsTxt).toContain('/privacy')
+        expect(llmsTxt).toContain('/contact')
     })
 
     test('dist/_redirects redirects the OmahaForUs auto-slug to its vanity_slug', () => {

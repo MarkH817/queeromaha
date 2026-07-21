@@ -44,6 +44,7 @@ function initSubmitHandler(
                 body: data.toString(),
             })
             if (res.ok) {
+                window.posthog?.capture('suggestion_submitted')
                 const thanks = document.createElement('p')
                 thanks.className = 'suggestion-thanks'
                 thanks.textContent = 'Thanks! We got your suggestion.'
