@@ -1,80 +1,105 @@
----
-interface Props {
-    message: string
-}
-
-const { message } = Astro.props
----
-
 <footer>
   <details class="suggestion-box" id="suggestionBox" name="footer-accordion">
     <summary class="footer-pill-btn"
-      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true"></wa-icon>Suggestion Box</summary
+      ><wa-icon name="lightbulb" variant="regular" aria-hidden="true" style="font-size: 1.25em;"></wa-icon>Suggestion Box</summary
     >
-    <div class="suggestion-box-panel">
-      <form id="suggestForm" name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <p class="suggestion-honeypot">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-        <label class="suggestion-label" for="suggestionMessage"
-          >Suggest a place, group, or event to add</label
+    <div class="suggestion-box-panel-wrap">
+      <div class="suggestion-box-panel">
+        <form id="suggestForm" name="suggest" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <p class="suggestion-honeypot">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <label class="suggestion-label" for="suggestionMessage"
+            >What would you like to add or edit?</label
+          >
+          <input
+            id="suggestionMessage"
+            class="suggestion-input"
+            type="text"
+            name="message"
+            required
+            maxlength="140"
+            enterkeyhint="send"
+            aria-describedby="suggestionHint"
+            placeholder="Your cool group, venue, event"
+          />
+          <p class="suggestion-hint" id="suggestionHint">Up to 140 characters</p>
+        </form>
+      </div>
+      <div class="suggestion-box-toggle-row">
+        <button class="suggestion-submit" type="submit" form="suggestForm"
+          ><wa-icon name="paper-plane" variant="regular" aria-hidden="true" style="font-size: 1.5em;"></wa-icon>Send</button
         >
-        <input
-          id="suggestionMessage"
-          class="suggestion-input"
-          type="text"
-          name="message"
-          required
-          maxlength="140"
-          enterkeyhint="send"
-          aria-describedby="suggestionHint"
-          placeholder="What should we add?"
-        />
-        <p class="suggestion-hint" id="suggestionHint">Up to 140 characters</p>
-      </form>
-    </div>
-    <div class="suggestion-box-toggle-row">
-      <button class="suggestion-submit" type="submit" form="suggestForm">Send</button>
+      </div>
     </div>
   </details>
   <details class="calendar-box" id="calendarBox" name="footer-accordion">
     <summary class="footer-pill-btn"
-      ><wa-icon name="calendar" variant="regular" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
+      ><wa-icon name="calendar" variant="regular" style="font-size: 1.25em;" aria-hidden="true"></wa-icon><span class="footer-cal-label">Gay Agenda</span></summary
     >
-    <div class="calendar-box-panel">
-      <a
-        class="calendar-option"
-        href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
-      >
-        <wa-icon family="brands" name="google" aria-hidden="true"></wa-icon>GCal
-      </a>
-      <a
-        class="calendar-option"
-        href="webcal://queeromaha.net/events.ics"
-        aria-label="Add to Calendar (Apple Calendar and other calendar apps)"
-      >
-        <wa-icon family="brands" name="apple" aria-hidden="true"></wa-icon>Apple Cal
-      </a>
+    <div class="calendar-box-panel-wrap">
+      <div class="calendar-preview">
+        <span class="calendar-preview-label">(Preview) Upcoming Events</span>
+        <div class="calendar-preview-list">
+          <div class="calendar-preview-row">
+            <span class="calendar-preview-row-time"></span>
+            <span class="calendar-preview-row-title"></span>
+          </div>
+          <div class="calendar-preview-row">
+            <span class="calendar-preview-row-time"></span>
+            <span class="calendar-preview-row-title"></span>
+          </div>
+          <div class="calendar-preview-row">
+            <span class="calendar-preview-row-time"></span>
+            <span class="calendar-preview-row-title"></span>
+          </div>
+        </div>
+        <p class="calendar-preview-empty" hidden>No events to preview</p>
+      </div>
+      <div class="calendar-toggle-row">
+        <a
+          class="calendar-option"
+          href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Subscribe to the Queer Omaha Events calendar in Google Calendar"
+        >
+          <wa-icon family="brands" name="google-plus-g" aria-hidden="true"></wa-icon>Google Cal
+        </a>
+        <a
+          class="calendar-option"
+          href="webcal://queeromaha.net/events.ics"
+          aria-label="Add to Calendar (Apple Calendar and other calendar apps)"
+        >
+          <wa-icon name="apple-whole" aria-hidden="true"></wa-icon>Apple Cal
+        </a>
+      </div>
     </div>
   </details>
   <span class="footer-separator footer-separator-left" aria-hidden="true"></span>
-  <div class="footer-text">
-    <p class="footer-message">{message}</p>
-  </div>
   <span class="footer-separator footer-separator-right" aria-hidden="true"></span>
   <nav class="footer-nav" aria-label="Footer navigation">
-    <a
-      href="https://analytics.queeromaha.net/redirect/github"
-      aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)"
-      class="footer-icon"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <wa-icon family="brands" name="github" label="GitHub"></wa-icon>
-    </a>
+    <details class="utility-box" id="utilityBox" name="footer-accordion">
+      <summary class="footer-pill-btn" aria-label="Utility Links (Privacy, Contact, GitHub)">
+<wa-icon name="screwdriver-wrench" aria-hidden="true" style="font-size: 1.4em;"></wa-icon></summary>
+      <div class="utility-box-panel">
+        <a
+          class="utility-option"
+          href="https://github.com/taraxvoid/queeromaha"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="@taraxvoid/queeromaha on GitHub (opens in new tab)"
+        >
+          <wa-icon family="brands" name="github" aria-hidden="true"></wa-icon>GitHub
+        </a>
+        <a class="utility-option" href="/privacy">
+          <wa-icon name="circle-info" variant="solid" aria-hidden="true"></wa-icon>Privacy
+        </a>
+        <a class="utility-option" href="/contact">
+          <wa-icon name="envelope" variant="regular" aria-hidden="true"></wa-icon>Contact
+        </a>
+      </div>
+    </details>
   </nav>
 </footer>
 <button id="backToTop" aria-label="Back to top">
@@ -83,23 +108,8 @@ const { message } = Astro.props
 <script>
   import '../scripts/suggestionBox'
   import '../scripts/calendarBox'
-
-  const footerText = document.querySelector<HTMLElement>('.footer-text')
-  const footerMessage = document.querySelector<HTMLElement>('.footer-message')
-  if (footerText && footerMessage) {
-    const checkFooterFit = () => {
-      footerText.hidden = false
-      footerText.hidden = footerMessage.scrollWidth > footerMessage.clientWidth
-    }
-    checkFooterFit()
-    let lastWidth = window.innerWidth
-    window.addEventListener('resize', () => {
-      if (window.innerWidth !== lastWidth) {
-        lastWidth = window.innerWidth
-        checkFooterFit()
-      }
-    })
-  }
+  import '../scripts/calendarPreview'
+  import '../scripts/footerAccordionOverlay'
 
   const backToTopButton = document.getElementById('backToTop')
   const header = document.querySelector('header')
@@ -111,4 +121,12 @@ const { message } = Astro.props
       window.scrollTo({ top: 0, behavior: 'smooth' })
     })
   }
+</script>
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('.calendar-option')
+    if (!anchor) return
+    const provider = anchor.href.includes('google') ? 'google' : 'apple'
+    window.posthog?.capture('calendar_subscribed', { calendar_provider: provider })
+  })
 </script>

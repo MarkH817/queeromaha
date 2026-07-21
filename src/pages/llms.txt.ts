@@ -6,6 +6,8 @@ export async function GET() {
 ## Pages
 
 - [Queer Omaha Directory](https://queeromaha.net/): Full directory of queer groups, venues, cafes, music, art, and spiritual spaces in Omaha.
+- [Privacy Policy](https://queeromaha.net/privacy): What data is collected (cookieless PostHog analytics, form submissions) and why.
+- [Contact](https://queeromaha.net/contact): Get in touch directly, beyond the footer Suggestion Box.
 
 ## Suggesting an addition
 

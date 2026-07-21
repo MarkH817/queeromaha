@@ -18,27 +18,24 @@ for (const { path, titleContains } of pages) {
     })
 }
 
-test('home page has navigation links', async ({ page }) => {
-    await page.goto('/friends/')
-    const nav = page.locator('nav.main-nav')
-    await expect(nav).toBeVisible()
-    const buttons = nav.locator('wa-button')
-    expect(await buttons.count()).toBeGreaterThan(0)
-})
-
-test('no console errors on home page', async ({ page }) => {
+test('home page renders expected chrome with no console errors', async ({
+    page,
+}) => {
     const errors = []
     page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text())
     })
     await page.goto('/friends/')
-    expect(errors).toHaveLength(0)
-})
 
-test('skip-to-main link is present', async ({ page }) => {
-    await page.goto('/friends/')
-    const skipLink = page.locator('a.skip-link')
-    await expect(skipLink).toHaveAttribute('href', '#main')
+    const nav = page.locator('nav.main-nav')
+    await expect(nav).toBeVisible()
+    expect(await nav.locator('wa-button').count()).toBeGreaterThan(0)
+
+    await expect(page.locator('a.skip-link')).toHaveAttribute('href', '#main')
+    await expect(page.getByRole('contentinfo')).toBeVisible()
+    expect(await page.locator('.filter-pill').count()).toBeGreaterThan(0)
+
+    expect(errors).toHaveLength(0)
 })
 
 test('content pages render wa-card items', async ({ page }) => {
@@ -61,17 +58,6 @@ test('external links have rel=noopener noreferrer', async ({ page }) => {
     }
 })
 
-test('footer is present', async ({ page }) => {
-    await page.goto('/friends/')
-    await expect(page.getByRole('contentinfo')).toBeVisible()
-})
-
-test('filter pills are present on home page', async ({ page }) => {
-    await page.goto('/friends/')
-    const pills = page.locator('.filter-pill')
-    expect(await pills.count()).toBeGreaterThan(0)
-})
-
 test('/spiritual pre-activates the spiritual filter pill', async ({ page }) => {
     await page.goto('/spiritual/')
     const pill = page.locator('[data-filter="spiritual"]')
@@ -90,68 +76,188 @@ test('switching top-level category clears active tags', async ({ page }) => {
     await expect(tag).not.toHaveClass(/active/)
 })
 
-test('footer elements render correctly', async ({ page }) => {
-    await page.setViewportSize({ width: 320, height: 700 })
-    await page.goto('/friends/')
-
-    // rotating message is dropped entirely below 480px, not just clipped
-    await expect(page.locator('.footer-text')).toBeHidden()
-
-    // calendar box and suggestion box remain visible regardless
-    await expect(page.locator('.calendar-box summary')).toBeVisible()
-    await expect(page.locator('#suggestionBox summary')).toBeVisible()
-})
-
 test('calendar and suggestion box stay on the same row on mobile', async ({
     page,
 }) => {
+    // Regression test: Web Awesome's native.css puts a margin-bottom: 24px
+    // on every <details>. .calendar-box resets it via `margin: 0`, but
+    // .suggestion-box previously reset it with the `margin: 0 auto`
+    // shorthand -- swapping that for a lone `margin-left: auto` (see
+    // theme.css) would let the 24px bottom margin leak back in, which
+    // align-items: center on the footer turns into a ~12px vertical
+    // offset between the two pills instead of a clean single row.
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
     const calBox = await page.locator('.calendar-box summary').boundingBox()
     const navBox = await page.locator('#suggestionBox summary').boundingBox()
-
     expect(calBox.y).toBeCloseTo(navBox.y, 0)
 })
 
-test('footer message stays hidden on mobile even if a stale JS toggle unhides it', async ({
+const REGRESSION_VIEWPORTS = [
+    { width: 320, height: 700 },
+    { width: 375, height: 812 },
+    { width: 412, height: 839 },
+    { width: 768, height: 1024 },
+    { width: 1024, height: 768 },
+]
+
+// The [open] "pressed" look (shared with .filter-pill.active) applies
+// transform: translateY(1px) to the toggle pill for tactile feedback --
+// a deliberate 1px vertical shift, not the reflow bug this suite guards
+// against. X must stay pixel-exact; Y gets that 1px plus a little slack
+// for device-pixel rounding under mobile-chrome's Pixel 7 emulation
+// (deviceScaleFactor 2.625, confirmed via manual inspection: the real
+// shift is exactly 1 CSS px, but device-pixel snapping on a fractional
+// scale factor can round the reported box by another px on top of it).
+function expectToggleDidNotJump(closedBox, openBox, label) {
+    expect(openBox.x, `x at ${label}`).toBe(closedBox.x)
+    expect(
+        Math.abs(openBox.y - closedBox.y),
+        `y at ${label}`,
+    ).toBeLessThanOrEqual(2)
+}
+
+test('no footer toggle moves when opened, at any viewport width', async ({
+    page,
+}) => {
+    // Regression test for the footer's original bug: opening a footer
+    // accordion used to reflow the whole row (flex order/margin tricks
+    // trying to keep the toggle "roughly" in place), so the toggle's exact
+    // position depended on how much free space sibling-hiding freed up at
+    // that specific width. Panels are now position: absolute overlays
+    // anchored to their own toggle's box, which never changes size open or
+    // closed -- so the toggle's position must stay put, at every width,
+    // not just "close." Covers all three boxes per viewport in one
+    // navigation rather than three (they share a native <details
+    // name="footer-accordion"> group, so only one can be open at a time
+    // anyway -- checking them back-to-back after a single goto is
+    // equivalent to checking them in isolation).
+    for (const viewport of REGRESSION_VIEWPORTS) {
+        await page.setViewportSize(viewport)
+        await page.goto('/friends/')
+
+        for (const [box, summarySelector, panelSelector] of [
+            ['calendar', '.calendar-box summary', '.calendar-box-panel-wrap'],
+            [
+                'suggestion',
+                '#suggestionBox summary',
+                '.suggestion-box-panel-wrap',
+            ],
+            ['utility', '#utilityBox summary', '.utility-box-panel'],
+        ]) {
+            const summary = page.locator(summarySelector)
+            const closedBox = await summary.boundingBox()
+
+            await summary.click()
+            await expect(page.locator(panelSelector)).toBeVisible()
+            const openBox = await summary.boundingBox()
+
+            expectToggleDidNotJump(
+                closedBox,
+                openBox,
+                `${box} box at ${viewport.width}px`,
+            )
+
+            await summary.click()
+        }
+    }
+})
+
+test('none of the three footer panels stretch to the full footer width', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 1024, height: 768 })
+    await page.goto('/friends/')
+    // Scoped to the site footer specifically -- wa-card renders its own
+    // light-DOM <footer part="footer">, so an unscoped `footer` locator
+    // matches every card on the page too.
+    const footerWidth = (await page.getByRole('contentinfo').boundingBox())
+        .width
+
+    for (const [toggle, panel] of [
+        ['.calendar-box summary', '.calendar-box-panel-wrap'],
+        ['#suggestionBox summary', '.suggestion-box-panel-wrap'],
+        ['#utilityBox summary', '.utility-box-panel'],
+    ]) {
+        await page.locator(toggle).click()
+        const panelBox = await page.locator(panel).boundingBox()
+        expect(panelBox.width).toBeLessThan(footerWidth * 0.5)
+        await page.locator(toggle).click()
+    }
+})
+
+test('calendar panel grows rightward from its own left edge; suggestion panel grows leftward from its own right edge', async ({
     page,
 }) => {
     await page.setViewportSize({ width: 412, height: 839 })
     await page.goto('/friends/')
 
-    await page.evaluate(() => {
-        document.querySelector('.footer-text').hidden = false
-    })
+    const calSummary = page.locator('.calendar-box summary')
+    const calSummaryBox = await calSummary.boundingBox()
+    await calSummary.click()
+    const calPanelBox = await page
+        .locator('.calendar-box-panel-wrap')
+        .boundingBox()
+    expect(calPanelBox.x).toBe(calSummaryBox.x)
+    await calSummary.click()
 
-    // the media query hides it unconditionally at this breakpoint,
-    // regardless of the `hidden` IDL property checkFooterFit() manages
-    await expect(page.locator('.footer-text')).toBeHidden()
+    const suggSummary = page.locator('#suggestionBox summary')
+    const suggSummaryBox = await suggSummary.boundingBox()
+    await suggSummary.click()
+    const suggPanelBox = await page
+        .locator('.suggestion-box-panel-wrap')
+        .boundingBox()
+    expect(suggPanelBox.x + suggPanelBox.width).toBe(
+        suggSummaryBox.x + suggSummaryBox.width,
+    )
 })
 
-test('footer message is visible and unclipped on wide screens', async ({
+test('suggestion box pill is tucked against the right separator, next to the utility gear icon', async ({
     page,
 }) => {
-    await page.setViewportSize({ width: 1024, height: 800 })
     await page.goto('/friends/')
-    const footerText = page.locator('.footer-text')
-    const footerMessage = page.locator('.footer-message')
 
-    await expect(footerText).toBeVisible()
-    const overflowing = await footerMessage.evaluate(
-        (el) => el.scrollWidth > el.clientWidth,
-    )
-    expect(overflowing).toBe(false)
+    const suggestionBox = await page.locator('.suggestion-box').boundingBox()
+    const separatorRight = await page
+        .locator('.footer-separator-right')
+        .boundingBox()
+    const footerNav = await page.locator('.footer-nav').boundingBox()
+
+    // Tucked against the right separator, not centered in the leftover
+    // space between it and .calendar-box: the gaps on both sides of the
+    // separator should be small, tight margins, not a wide evenly-split
+    // gap.
+    expect(
+        separatorRight.x - (suggestionBox.x + suggestionBox.width),
+    ).toBeLessThan(20)
+    expect(
+        footerNav.x - (separatorRight.x + separatorRight.width),
+    ).toBeLessThan(20)
 })
 
-test('tag filter pills use wa-icon elements', async ({ page }) => {
+test('a separator divides the calendar and suggestion box pills, even on narrow mobile', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 320, height: 700 })
     await page.goto('/friends/')
-    const pills = page.locator('.filter-pill')
-    const count = await pills.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        await expect(pills.nth(i).locator('wa-icon')).toHaveCount(1)
-    }
+
+    const separator = page.locator('.footer-separator-left')
+    await expect(separator).toBeVisible()
+
+    const calBox = await page.locator('.calendar-box summary').boundingBox()
+    const sepBox = await separator.boundingBox()
+    const suggBox = await page.locator('#suggestionBox summary').boundingBox()
+
+    // separator sits horizontally between the two pills
+    expect(sepBox.x).toBeGreaterThanOrEqual(calBox.x + calBox.width)
+    expect(suggBox.x).toBeGreaterThanOrEqual(sepBox.x + sepBox.width)
+
+    // both pills stay on one row (no wrap) at this narrow width -- the
+    // separator itself isn't compared here since align-self: stretch
+    // deliberately makes it taller than the pills, so its top edge
+    // legitimately sits higher than theirs even on the same row
+    expect(suggBox.y).toBeCloseTo(calBox.y, 0)
 })
 
 test('item cards with a location show a location-dot icon', async ({
@@ -178,25 +284,19 @@ test('suggestion box expands in place without navigating', async ({ page }) => {
     expect(page.url()).toBe(startUrl)
 })
 
-test('opening the suggestion box hides the other footer buttons and re-tapping closes it', async ({
+test('suggestion box re-tapping toggles it open and closed', async ({
     page,
 }) => {
     await page.goto('/friends/')
 
-    await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     const closedBox = await page.locator('#suggestionBox summary').boundingBox()
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.calendar-box')).toBeHidden()
-    await expect(page.locator('.footer-nav')).toBeHidden()
     await expect(page.locator('#suggestionBox')).toHaveAttribute('open', '')
 
     await page.locator('#suggestionBox summary').click()
 
-    await expect(page.locator('.calendar-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#suggestionBox')).not.toHaveAttribute('open', '')
     await expect
         .poll(async () => {
@@ -205,7 +305,7 @@ test('opening the suggestion box hides the other footer buttons and re-tapping c
                 .boundingBox()
             return box.x
         })
-        .toBeCloseTo(closedBox.x, 0)
+        .toBe(closedBox.x)
 })
 
 test('calendar box expands in place, offers Google and webcal links, and re-tapping closes it', async ({
@@ -213,9 +313,6 @@ test('calendar box expands in place, offers Google and webcal links, and re-tapp
 }) => {
     await page.goto('/friends/')
     const startUrl = page.url()
-
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
 
     await page.locator('.calendar-box summary').click()
 
@@ -231,19 +328,154 @@ test('calendar box expands in place, offers Google and webcal links, and re-tapp
     await expect(google).toHaveAccessibleName(/Google Calendar/)
     await expect(ics).toHaveAccessibleName(/Apple Calendar/)
     expect(page.url()).toBe(startUrl)
-
-    // opening the calendar box hides the suggestion box in turn (the one
-    // direction the DOM-order-only ~ combinator can't reach, handled by
-    // the :has() rule instead)
-    await expect(page.locator('.suggestion-box')).toBeHidden()
-    await expect(page.locator('.footer-nav')).toBeHidden()
     await expect(page.locator('#calendarBox')).toHaveAttribute('open', '')
 
     await page.locator('.calendar-box summary').click()
 
-    await expect(page.locator('.suggestion-box')).toBeVisible()
-    await expect(page.locator('.footer-nav')).toBeVisible()
     await expect(page.locator('#calendarBox')).not.toHaveAttribute('open', '')
+})
+
+test('gear info box opens to reveal Privacy and Contact links, and re-tapping closes it', async ({
+    page,
+}) => {
+    await page.goto('/friends/')
+
+    await page.locator('#utilityBox summary').click()
+
+    const privacyLink = page.locator('.utility-option', { hasText: 'Privacy' })
+    const contactLink = page.locator('.utility-option', { hasText: 'Contact' })
+    const githubLink = page.locator('.utility-option', { hasText: 'GitHub' })
+    await expect(privacyLink).toBeVisible()
+    await expect(contactLink).toBeVisible()
+    await expect(githubLink).toBeVisible()
+    await expect(privacyLink).toHaveAttribute('href', '/privacy')
+    await expect(contactLink).toHaveAttribute('href', '/contact')
+    await expect(githubLink).toHaveAttribute(
+        'href',
+        'https://github.com/taraxvoid/queeromaha',
+    )
+    await expect(page.locator('#utilityBox')).toHaveAttribute('open', '')
+
+    await page.locator('#utilityBox summary').click()
+
+    await expect(page.locator('#utilityBox')).not.toHaveAttribute('open', '')
+})
+
+for (const [name, detailsSelector] of [
+    ['suggestion box', '#suggestionBox'],
+    ['calendar box', '#calendarBox'],
+    ['utility box', '#utilityBox'],
+]) {
+    test(`clicking outside or pressing Escape closes the ${name}`, async ({
+        page,
+    }) => {
+        await page.goto('/friends/')
+        const details = page.locator(detailsSelector)
+
+        await details.locator('summary').click()
+        await expect(details).toHaveAttribute('open', '')
+
+        await page.locator('main').click({ position: { x: 10, y: 10 } })
+        await expect(details).not.toHaveAttribute('open', '')
+
+        await details.locator('summary').click()
+        await expect(details).toHaveAttribute('open', '')
+
+        await page.keyboard.press('Escape')
+        await expect(details).not.toHaveAttribute('open', '')
+        await expect(details.locator('summary')).toBeFocused()
+    })
+}
+
+const PREVIEW_FIXTURE_ICS = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//QueerOmaha//Queer Omaha Events//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'X-WR-CALNAME:Queer Omaha Events',
+    'X-WR-TIMEZONE:America/Chicago',
+    'BEGIN:VEVENT',
+    'UID:fixture-support-group@queeromaha.net',
+    'DTSTAMP:20250101T000000Z',
+    'DTSTART;TZID=America/Chicago:20250101T180000',
+    'RRULE:FREQ=WEEKLY;BYDAY=WE',
+    'DURATION:PT1H30M',
+    'SUMMARY:Support Group (19+)',
+    'LOCATION:OmahaForUs',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'BEGIN:VEVENT',
+    'UID:fixture-game-night@queeromaha.net',
+    'DTSTAMP:20250101T000000Z',
+    'DTSTART;TZID=America/Chicago:20250102T170000',
+    'RRULE:FREQ=WEEKLY;BYDAY=TH',
+    'DURATION:PT3H',
+    'SUMMARY:Game Night',
+    'LOCATION:OmahaForUs',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'BEGIN:VEVENT',
+    'UID:fixture-drum-circle@queeromaha.net',
+    'DTSTAMP:20250101T000000Z',
+    'DTSTART;TZID=America/Chicago:20250117T190000',
+    'RRULE:FREQ=MONTHLY;BYDAY=3FR',
+    'DURATION:PT2H',
+    'SUMMARY:Drum Circle',
+    'LOCATION:Whole Rejuvenation House',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'END:VCALENDAR',
+].join('\r\n')
+
+test('calendar box preview shows the next 3 upcoming events from the live feed, in order', async ({
+    page,
+}) => {
+    // 2026-01-14 is a Wednesday. Chronologically next: Support Group same
+    // day 6pm, Game Night the following day (Thu) 5pm, Drum Circle the
+    // 3rd Friday of January (Jan 16) 7pm.
+    await page.clock.setFixedTime(new Date('2026-01-14T10:00:00'))
+    await page.route('**/events.ics', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'text/calendar; charset=utf-8',
+            body: PREVIEW_FIXTURE_ICS,
+        }),
+    )
+
+    await page.goto('/friends/')
+    await page.locator('.calendar-box summary').click()
+
+    const rows = page.locator('.calendar-preview-row')
+    await expect(rows).toHaveCount(3)
+    await expect(rows.nth(0)).toHaveText(/Wed.*6:00\s?PM.*Support Group/)
+    await expect(rows.nth(1)).toHaveText(/Thu.*5:00\s?PM.*Game Night/)
+    await expect(rows.nth(2)).toHaveText(/Fri.*7:00\s?PM.*Drum Circle/)
+})
+
+test('calendar box preview rows stay empty when the feed request fails', async ({
+    page,
+}) => {
+    await page.route('**/events.ics', (route) => route.fulfill({ status: 500 }))
+
+    await page.goto('/friends/')
+    const feedResponse = page.waitForResponse('**/events.ics')
+    await page.locator('.calendar-box summary').click()
+    await feedResponse
+
+    const google = page.locator('.calendar-option').nth(0)
+    const ics = page.locator('.calendar-option').nth(1)
+    await expect(google).toBeVisible()
+    await expect(ics).toBeVisible()
+
+    const rows = page.locator('.calendar-preview-row')
+    await expect(rows).toHaveCount(3)
+    for (let i = 0; i < 3; i++) {
+        await expect(rows.nth(i)).toHaveText('')
+    }
 })
 
 test('opening the suggestion box also hides the back-to-top button', async ({
@@ -380,10 +612,11 @@ test('item cards emit valid Organization JSON-LD', async ({ page }) => {
     const scripts = page.locator(
         'script[type="application/ld+json"]:has(+ wa-card.item)',
     )
-    const count = await scripts.count()
-    expect(count).toBeGreaterThan(0)
-    for (let i = 0; i < count; i++) {
-        const raw = await scripts.nth(i).innerHTML()
+    const rawScripts = await scripts.evaluateAll((els) =>
+        els.map((el) => el.innerHTML),
+    )
+    expect(rawScripts.length).toBeGreaterThan(0)
+    for (const raw of rawScripts) {
         const data = JSON.parse(raw)
         expect(data['@type']).toBe('Organization')
         expect(typeof data.name).toBe('string')
@@ -531,7 +764,7 @@ test('tapping an active card again reverts to the category URL', async ({
     )
 })
 
-test('clicking a link inside a card navigates instead of toggling it', async ({
+test('clicking a link inside an unselected card navigates and also selects it', async ({
     page,
     context,
 }) => {
@@ -545,8 +778,36 @@ test('clicking a link inside a card navigates instead of toggling it', async ({
     ])
     await popup.close()
 
-    await expect(page).toHaveURL(/\/friends\/?$/)
-    await expect(card).not.toHaveClass(/item-active/)
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
+    await expect(card).toHaveClass(/item-active/)
+    await expect(card.locator('.item-tap-target')).toHaveAttribute(
+        'aria-pressed',
+        'true',
+    )
+})
+
+test('clicking a link inside an already-selected card leaves it selected', async ({
+    page,
+    context,
+}) => {
+    await page.goto('/friends/')
+    const card = page.locator('#friends-o4us')
+    await card.locator('.item-tap-target').click()
+    await expect(card).toHaveClass(/item-active/)
+
+    const link = card.getByRole('link', { name: /Events Calendar/ })
+    const [popup] = await Promise.all([
+        context.waitForEvent('page'),
+        link.click(),
+    ])
+    await popup.close()
+
+    await expect(card).toHaveClass(/item-active/)
+    await expect
+        .poll(() => page.evaluate(() => location.pathname))
+        .toBe('/friends/o4us')
 })
 
 test('activating a card via keyboard (Enter) toggles it the same as a click', async ({
@@ -659,4 +920,71 @@ test('switching category while a card is active clears its active state', async 
         .poll(() => page.evaluate(() => location.pathname))
         .toBe('/cafes')
     await expect(card).not.toHaveClass(/item-active/)
+})
+
+test('/privacy loads, links back to the directory, and links to /contact', async ({
+    page,
+}) => {
+    const response = await page.goto('/privacy/')
+    expect(response.status()).toBe(200)
+    await expect(page).toHaveTitle(/Privacy/)
+    const backLink = page.locator('.back-link')
+    await expect(backLink).toBeVisible()
+    await expect(backLink).toHaveAttribute('href', '/friends')
+    await expect(page.locator('a[href="/contact"]').first()).toBeVisible()
+})
+
+test('/contact loads, links back to the directory, and links to /privacy', async ({
+    page,
+}) => {
+    const response = await page.goto('/contact/')
+    expect(response.status()).toBe(200)
+    await expect(page).toHaveTitle(/Contact/)
+    const backLink = page.locator('.back-link')
+    await expect(backLink).toBeVisible()
+    await expect(backLink).toHaveAttribute('href', '/friends')
+})
+
+test('contact form shows inline confirmation without navigating', async ({
+    page,
+}) => {
+    await page.goto('/contact/')
+
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 200 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('#contactEmail', 'test@example.com')
+    await page.fill('#contactMessage', 'Hello there')
+    await page.click('.contact-submit')
+
+    expect(page.url()).toContain('/contact')
+    await expect(page.locator('.contact-thanks')).toBeVisible()
+    await expect(page.locator('form[name="contact"]')).not.toBeAttached()
+})
+
+test('contact form shows an error message on a failed submission', async ({
+    page,
+}) => {
+    await page.goto('/contact/')
+
+    await page.route('/', async (route) => {
+        if (route.request().method() === 'POST') {
+            await route.fulfill({ status: 500 })
+        } else {
+            await route.continue()
+        }
+    })
+
+    await page.fill('#contactEmail', 'test@example.com')
+    await page.fill('#contactMessage', 'Hello there')
+    await page.click('.contact-submit')
+
+    await expect(page.locator('.contact-error')).toBeVisible()
+    await expect(page.locator('.contact-error')).toContainText('Try again')
+    await expect(page.locator('form[name="contact"]')).toBeAttached()
 })

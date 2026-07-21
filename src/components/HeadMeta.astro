@@ -1,4 +1,5 @@
 ---
+import PostHog from './posthog.astro'
 
 interface Props {
     title: string
@@ -13,6 +14,16 @@ const { title, description, canonicalUrl, refresh } = Astro.props
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script is:inline>
+    (function () {
+      var mql = window.matchMedia('(prefers-color-scheme: dark)')
+      var apply = function () {
+        document.documentElement.classList.toggle('wa-dark', mql.matches)
+      }
+      apply()
+      mql.addEventListener('change', apply)
+    })()
+  </script>
   {refresh && <meta http-equiv="refresh" content={`${refresh.seconds};url=${refresh.url}`} />}
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -46,4 +57,5 @@ const { title, description, canonicalUrl, refresh } = Astro.props
       navigator.serviceWorker.register('/sw.js')
     }
   </script>
+  <PostHog />
 </head>

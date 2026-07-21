@@ -42,7 +42,10 @@ function initTapToggle() {
         activeCard = null
     }
 
-    function activate(card: HTMLElement, opts?: { scroll?: boolean }) {
+    function activate(
+        card: HTMLElement,
+        opts?: { scroll?: boolean; trigger?: 'card' | 'link' },
+    ) {
         if (activeCard && activeCard !== card) clearActive()
         activeCard = card
         card.classList.add('item-active')
@@ -51,6 +54,13 @@ function initTapToggle() {
             'true',
         )
         writeUrl(`/${card.dataset.category}/${card.dataset.slug}`)
+        if (!opts?.scroll) {
+            window.posthog?.capture('item_expanded', {
+                item_slug: card.dataset.slug,
+                item_category: card.dataset.category,
+                trigger: opts?.trigger ?? 'card',
+            })
+        }
 
         if (opts?.scroll) {
             card.scrollIntoView({
@@ -73,10 +83,15 @@ function initTapToggle() {
     cards.forEach((card) => {
         // Delegated: the real activation target is `.item-tap-target`
         // (a native <button> so Enter/Space work for free), but a click
-        // anywhere on the card except a real link (map/entry links) should
-        // toggle it too, so this listens on the card itself.
+        // anywhere on the card should engage its selected state too. A
+        // real link (map/entry links, target="_blank") only selects — it
+        // never toggles an already-active card off out from under a
+        // mid-navigation click.
         card.addEventListener('click', (e) => {
-            if ((e.target as HTMLElement).closest('a')) return
+            if ((e.target as HTMLElement).closest('a')) {
+                if (card !== activeCard) activate(card, { trigger: 'link' })
+                return
+            }
             toggle(card)
         })
     })

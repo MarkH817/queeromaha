@@ -6,4 +6,9 @@ export default defineConfig({
     integrations: [sitemap()],
     output: 'static',
     prefetch: true,
+    vite: {
+        build: {
+            sourcemap: true,
+        },
+    },
 })
