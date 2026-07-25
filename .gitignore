@@ -1,5 +1,7 @@
-# posthog generated docs
+# generated docs
 posthog*.md
+TRANSWRONGS-REPORT.md
+
 # Build output
 dist/
 
