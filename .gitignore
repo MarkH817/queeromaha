@@ -18,6 +18,7 @@ node_modules/
 !.env.example
 
 # Editor
+.poolside/
 .claude/
 .cursor
 .vscode/
