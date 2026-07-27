@@ -7,3 +7,7 @@
 [build]
 publish = "dist"
 command = "bun run build && bunx @posthog/cli sourcemap process --directory dist --delete-after"
+
+[[edge_functions]]
+path = "/*"
+function = "markdown-negotiation"
