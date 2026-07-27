@@ -1,100 +1,56 @@
 ---
-import { getCollection } from 'astro:content'
 import FilterBar from '../components/FilterBar.astro'
 import ItemCard from '../components/ItemCard.astro'
-import categoryMapJson from '../data/categoryMap.json'
+import site from '../data/site.json'
 import Base from '../layouts/Base.astro'
 import { computeItemSlugs } from '../utils/itemSlug'
-
-const categoryMap = categoryMapJson as Record<
-    string,
-    { icon: string; label: string; descriptor: string }
->
-const categorySlugs = Object.keys(categoryMap)
+import { toJsonLdScript } from '../utils/jsonLd'
+import {
+    categoryMap,
+    getFilterStaticPaths,
+    resolveFilters,
+} from '../utils/resolveFilters'
 
 export async function getStaticPaths() {
-    const cats = Object.keys(categoryMapJson)
-    const collectionEntries = await getCollection('directory')
-
-    const paths: { params: { filters: string | undefined } }[] = [
-        { params: { filters: undefined } },
-    ]
-
-    for (const s of cats) {
-        paths.push({ params: { filters: s } })
-
-        const entry = collectionEntries.find((e) => e.id === s)
-        const publicItems = (entry?.data.items ?? []).filter(
-            (i) => i.public !== false,
-        )
-        for (const { canonical } of computeItemSlugs(publicItems)) {
-            paths.push({ params: { filters: `${s}/${canonical}` } })
-        }
-    }
-
-    return paths
+    const paths = await getFilterStaticPaths()
+    return paths.map((filters) => ({ params: { filters } }))
 }
 
 const { filters = '' } = Astro.params
-const filterSlugs = filters.split('/').filter(Boolean)
-const effectiveFilterSlugs =
-    filterSlugs.length === 0 ? ['friends'] : filterSlugs
-const initialCategories = effectiveFilterSlugs.filter((s) =>
-    categorySlugs.includes(s),
-)
+const {
+    entries,
+    initialCategories,
+    matchesInitial,
+    activeCategoryHasFilters,
+    initialItemSlug,
+    pageTitle,
+    pageDescription,
+} = await resolveFilters(filters)
 
-const entries = await getCollection('directory')
-entries.sort(
-    (a, b) => categorySlugs.indexOf(a.id) - categorySlugs.indexOf(b.id),
-)
-
-// Mirrors cardMatches() in scripts/filter.ts (category only — tags are never
-// part of a static route). This lets the server render the same hidden state
-// filter.ts would apply on load, so there's no flash of the full unfiltered
-// directory before JS hides it (a major CLS source).
-function matchesInitial(catId: string) {
-    return initialCategories.length === 0 || initialCategories.includes(catId)
-}
-
-const activeCategory = initialCategories[0]
-const activeEntry = entries.find((e) => e.id === activeCategory)
-const activeCategoryHasFilters =
-    !activeCategory ||
-    (activeEntry?.data.items ?? []).some(
-        (item) => item.public !== false && (item.tags?.length ?? 0) > 0,
+// Ties the per-item Organization JSON-LD blocks (emitted by ItemCard) together
+// as "this page lists these entities" — crawlers otherwise see a pile of
+// disconnected Organization blocks with no listing structure.
+const visibleItemListElements = entries.flatMap((entry) => {
+    if (!matchesInitial(entry.id)) return []
+    const publicItems = (entry.data.items ?? []).filter(
+        (i) => i.public !== false,
     )
-
-// A permalink request is exactly `<category>/<item-slug>` — a trailing
-// segment beyond that (or one that doesn't match a known category first)
-// never resolves to an item deep link.
-const activePublicItems = (activeEntry?.data.items ?? []).filter(
-    (i) => i.public !== false,
-)
-const activeItemSlugs = computeItemSlugs(activePublicItems)
-const trailingSlug =
-    activeCategory &&
-    effectiveFilterSlugs.length === 2 &&
-    effectiveFilterSlugs[0] === activeCategory
-        ? effectiveFilterSlugs[1]
-        : undefined
-const activeItemIndex = trailingSlug
-    ? activeItemSlugs.findIndex((s) => s.canonical === trailingSlug)
-    : -1
-const activeItem =
-    activeItemIndex >= 0 ? activePublicItems[activeItemIndex] : undefined
-const initialItemSlug = activeItem ? trailingSlug : undefined
-
-const categoryPart = activeCategory
-    ? (categoryMap[activeCategory]?.descriptor ??
-      categoryMap.friends.descriptor)
-    : categoryMap.friends.descriptor
-const pageTitle = activeItem
-    ? `${activeItem.name} | ${categoryPart}`
-    : categoryPart
-const pageDescription = activeItem
-    ? (activeItem.description ??
-      `${activeItem.name} — ${categoryPart} in Omaha, Nebraska.`)
-    : `${categoryPart} in Omaha, Nebraska — part of Queer Omaha's community-maintained directory.`
+    const itemSlugs = computeItemSlugs(publicItems)
+    return publicItems.map((item, i) => ({
+        name: item.name,
+        url: new URL(`/${entry.id}/${itemSlugs[i].canonical}`, site.url).href,
+    }))
+})
+const itemListJsonLdStr = toJsonLdScript({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: visibleItemListElements.map((el, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: el.url,
+        name: el.name,
+    })),
+})
 ---
 
 <Base
@@ -103,6 +59,7 @@ const pageDescription = activeItem
   initialCategories={initialCategories}
   initialItemSlug={initialItemSlug}
 >
+  <script is:inline type="application/ld+json" set:html={itemListJsonLdStr} />
   {activeCategoryHasFilters && <FilterBar />}
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
