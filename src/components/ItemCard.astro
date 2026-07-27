@@ -2,6 +2,7 @@
 import type { z } from 'zod'
 import type { itemSchema } from '../content.config'
 import tagMap from '../data/tagMap.json'
+import { toJsonLdScript } from '../utils/jsonLd'
 import { formatLocationLine } from '../utils/location'
 import EntryTag from './EntryTag.astro'
 
@@ -48,8 +49,7 @@ const jsonLd = {
     ...(postalAddress && { address: postalAddress }),
     ...(loc?.google_maps_url && { hasMap: loc.google_maps_url }),
 }
-// Escape `<` so a stray "</script>" in any field can't break out of the tag.
-const jsonLdStr = JSON.stringify(jsonLd).replace(/</g, '\\u003c')
+const jsonLdStr = toJsonLdScript(jsonLd)
 
 type LinkRule = {
     kind: string
