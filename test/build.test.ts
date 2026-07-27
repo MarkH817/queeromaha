@@ -177,4 +177,22 @@ describe('astro build', () => {
         expect(html).toContain('type="text/calendar"')
         expect(html).toContain('/events.ics')
     })
+
+    test('dist contains markdown counterparts for the root, category, and item pages', () => {
+        const distDir = join(ROOT, 'dist')
+        for (const file of ['.md', 'friends.md', 'friends/o4us.md']) {
+            expect(existsSync(join(distDir, file)), `missing: ${file}`).toBe(
+                true,
+            )
+        }
+    })
+
+    test('friends/index.html contains an ItemList JSON-LD tying the visible items together', () => {
+        const html = readFileSync(
+            join(ROOT, 'dist', 'friends', 'index.html'),
+            'utf8',
+        )
+        expect(html).toContain('"@type":"ItemList"')
+        expect(html).toContain('https://queeromaha.net/friends/o4us')
+    })
 })
