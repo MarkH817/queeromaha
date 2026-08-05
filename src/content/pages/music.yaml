@@ -149,6 +149,9 @@ items:
   - name: Pageturners Lounge
     public: true
     description: Bookish bar with local acts.
+    tags:
+      - neutral-bathrooms
+      - seating
     links:
       - label: Instagram
         url: https://www.instagram.com/pageturnerslounge/
