@@ -16,6 +16,7 @@ Directory of queer/trans groups, venues and spaces in Omaha.
 
 - [Astro](https://astro.build/) — static site generator
 - [Biome](https://biomejs.dev/) - lint
+- [Playwright](https://playwright.dev/) - browser testing
 
 ## Local Dev
 
