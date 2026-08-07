@@ -10,6 +10,7 @@
         "test:data": "vitest run test/data.test.ts",
         "test:ical": "vitest run test/ical.test.ts",
         "test:build": "bun run build && vitest run test/build.test.ts",
+        "test:structured-data": "bun run build && vitest run test/structured-data.test.ts",
         "test:e2e": "bun run build && playwright test --project=mobile-chrome",
         "test:e2e:only": "playwright test --project=mobile-chrome",
         "test:e2e:desktop": "bun run build && playwright test --project=desktop-chrome",
