@@ -6,23 +6,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 bun run serve          # dev server (Astro, localhost:4321) with hot-reload
-bun run build          # build static site to dist/
+bun run build          # build static site to dist/ (astro build + generate-redirects.mjs)
 bun run preview        # preview built dist/ locally
+bun run check          # astro check (type checking)
 
-bun run lint           # check formatting
-bun run format         # auto-fix formatting
+bun run lint           # check formatting (biome)
+bun run format         # auto-fix formatting (biome + format-yaml.js)
 
-bun test               # all tests: unit + Playwright e2e
-bun run test:unit      # unit tests only (data + build)
+bun run test           # everything: build, astro check, unit tests, and e2e (mobile-chrome)
+bun run test:unit      # unit tests only (vitest run, all of test/*.test.ts)
+bun run test:fast      # lint + test:data in parallel (quick pre-flight)
 bun run test:data      # data validation only (fastest, no build)
-bun run test:e2e       # Playwright e2e only (requires built dist/)
+bun run test:build     # build + test/build.test.ts
+bun run test:structured-data  # build + test/structured-data.test.ts (JSON-LD)
+bun run test:ical      # test/ical.test.ts only
+bun run test:e2e       # build + Playwright e2e (mobile-chrome)
+bun run test:e2e:only  # Playwright e2e only, no rebuild
+bun run test:e2e:desktop  # build + Playwright e2e (desktop-chrome)
+bun run test:e2e:all   # build + Playwright e2e (both projects)
+bun run test:a11y      # build + Playwright a11y spec only
+
+bun run check:links    # check external links in content for dead links
+bun run check:links:pr # same, scoped for PR comment output
 ```
 
-Husky hooks: lint must pass on pre-commit; all tests must pass on pre-push.
+Note: `bun test` invokes Bun's own built-in test runner, not the `test`
+script above — always use `bun run test` / `bun run <script>` here.
+
+Husky hooks:
+
+- pre-commit: `bun run format` (auto-fixes and re-stages), then `bun run test:unit`
+- pre-push: syncs with the remote branch first (aborts if the remote is ahead), then runs the full `bun run test` suite
 
 Playwright defaults to the `mobile-chrome` project (`devices['Pixel 7']`) as
 the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
-(or `test:e2e:all` for both).
+(or `test:e2e:all` for both). The e2e suite serves the built `dist/` via
+`astro preview` on port 4242.
 
 ## Architecture
 
@@ -32,43 +51,71 @@ Static site built with **Astro**, deployed to Netlify. Content lives as plain YA
 
 Directory pages live as plain YAML in `src/content/pages/*.yaml`. Each file is a category (friends, spiritual, art, cafes, music, makers) with an `items` array.
 
-Item fields:
+Item fields (see `itemSchema` in `src/content.config.ts`):
 
 - `name` (required string)
 - `public: false` — hides from builds
+- `vanity_slug` — pins the item's permalink slug (`/<category>/<vanity_slug>`) so it survives renames of `name`; falls back to a slug derived from `name`
 - `description` — plain text
 - `tags` — array of keys from `src/data/tagMap.json`
 - `links` — array of `{ label, url }`
 - `notes` — internal notes (not displayed)
+- `location` — optional `{ street, city, state, zip, neighborhood, google_maps_url }`
+- `recurring_events` — optional array of `{ summary, rrule, dtstart, time, end_time?, duration?, location?, description?, url? }`, feeds the `.ics` calendar
 
-Zod schemas live in `src/content.config.ts`. The `directory` collection uses the glob loader over `*.yaml`.
+Zod schemas live in `src/content.config.ts`. The `directory` collection uses the glob loader over `*.yaml`. Hand-edited YAML that leaves an optional key empty (e.g. `description:`) parses as `null`; the schema normalizes `null` to `undefined` before validating.
 
 ### Routing
 
 - `/` — full directory, all categories shown
 - `/[category]` — directory with that category pre-filtered (e.g. `/art`, `/spiritual`)
 - `/[category]/[item-slug]` — item permalink within a category
+- `/[...].md` — Markdown rendering of the same directory/filter/item routes (for LLM/agent consumption), served by `src/pages/[...filters].md.ts`
+- `/contact` — standalone contact form (Netlify Forms)
+- `/privacy` — privacy policy
+- `/events.ics` — iCal feed generated from `recurring_events` across all items
+- `/llms.txt` — llms.txt service doc, advertised via a `Link: </llms.txt>; rel="service-doc"` response header
+- `/robots.txt` — includes AI-crawler content-signal directives
 
-There is no standalone About/Contact page — a "Suggest a place to add" disclosure lives in the footer (`src/components/SiteFooter.astro`) on every page, expanding in place via native `<details>`/`<summary>`.
+All filter/permalink routes (including the `.md` variants) are statically generated from `src/utils/resolveFilters.ts` via `getFilterStaticPaths`. Tags are not routable — tag filtering is client-side JS only, driven by `data-initial-filter` on `<body>` and pill buttons in the layout.
 
-All filter/permalink routes are statically generated by `src/pages/[...filters].astro`. Tags are not routable — tag filtering is client-side JS only, driven by `data-initial-filter` on `<body>` and pill buttons in the layout.
+The footer (`src/components/SiteFooter.astro`) holds three `<details>`/`<summary>` accordions on every page: a "Suggestion Box" quick-add form, a "Gay Agenda" calendar preview + subscribe links (Google/Apple, backed by `/events.ics`), and a utility box linking to GitHub, `/privacy`, and `/contact`.
 
 ### Data files
 
-- `src/data/tagMap.json` — canonical tag registry (emoji + label)
+- `src/data/tagMap.json` — canonical tag registry (icon + label, optional icon `family` for brand icons)
+- `src/data/categoryMap.json` — canonical category registry (icon, label, descriptor) for the six directory categories
 - `src/data/site.json` — site-wide config (URL)
+
+### Utils
+
+- `src/utils/resolveFilters.ts` — filter/category/tag resolution shared by the HTML and `.md` route handlers
+- `src/utils/itemSlug.ts` — computes item permalink slugs (respects `vanity_slug`)
+- `src/utils/slugify.ts` — generic string-to-slug helper
+- `src/utils/location.ts` — formats an item's `location` into a display line
+- `src/utils/jsonLd.ts` — serializes JSON-LD, escaping `<` to prevent script-tag breakout
+- `src/utils/ical.ts` — builds the `.ics` feed from `recurring_events`
+- `src/utils/eventsPreview.ts` — computes the footer's upcoming-events preview list
 
 ### Components
 
 - `src/layouts/Base.astro` — main layout (HTML shell, nav, footer, filter JS, emoji tooltips)
 - `src/components/FilterBar.astro` — category + tag filter pills
 - `src/components/ItemCard.astro` — individual `wa-card` entry
+- `src/components/EntryTag.astro` — single tag pill/badge
+- `src/components/HeadMeta.astro` — `<head>` metadata, including JSON-LD structured data
+- `src/components/SiteHeader.astro` / `SiteFooter.astro` — header nav / footer accordions
+- `src/components/posthog.astro` — cookieless PostHog analytics snippet
 
 ### Tests
 
 - `test/data.test.ts` — validates YAML content structure and tag references
 - `test/build.test.ts` — runs `astro build` and checks `dist/` output
+- `test/structured-data.test.ts` — validates JSON-LD output from `HeadMeta.astro`
+- `test/filter.test.ts`, `test/itemSlug.test.ts`, `test/slugify.test.ts`, `test/location.test.ts`, `test/ical.test.ts`, `test/eventsPreview.test.ts` — unit tests for the corresponding `src/utils/*`
 - `test/e2e/site.spec.js` — Playwright tests serving `dist/` on port 4242
+- `test/e2e/a11y.spec.js` — Playwright + axe-core accessibility checks
+- `test/pages/*.test.ts` — tests for `.ics`, `.md`, `llms.txt`, and `robots.txt` route handlers
 
 Default to using Bun instead of Node.js/NPM.
 
@@ -77,18 +124,6 @@ Default to using Bun instead of Node.js/NPM.
 - Use `bun run <script>` instead of `npm run <script>` or `yarn run <script>` or `pnpm run <script>`
 - Use `bunx <package> <command>` instead of `npx <package> <command>`
 - Bun automatically loads .env, so don't use `dotenv`.
-
-## Testing
-
-Use `vitest run` to run tests.
-
-```ts#index.test.ts
-import { test, expect } from "vitest";
-
-test("hello world", () => {
-  expect(1).toBe(1);
-});
-```
 
 ## Frontend
 
