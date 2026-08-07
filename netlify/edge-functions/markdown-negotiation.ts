@@ -19,7 +19,7 @@ export default async (request: Request, context: Context) => {
     // the same path with `.md` appended (including the root page, which
     // Astro emits as `dist/.md`).
     const markdownUrl = new URL(`${url.pathname}.md`, url)
-    return context.rewrite(markdownUrl)
+    return markdownUrl
 }
 
 export const config = { path: '/*' }
