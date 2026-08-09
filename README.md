@@ -24,7 +24,7 @@ Directory of queer/trans groups, venues and spaces in Omaha.
 # install dependencies
 bun install --development
 
-# start Astro at localhost:4321 with HMR
+# astro w/ HMR at localhost:4321
 bun run dev
 ```
 
@@ -37,13 +37,13 @@ Merges to `main` (protected branch) will deploy the production site.
 ### Deploy site Manually
 
 ```
-# install netlify CLI globally on your machine
+# install netlify CLI globally
 bun install -g netlify-cli
 
-# authenticate using account with access to project
+# authenticate
 netlify login
 
-# link your local repo to Netlify project
+# link repo with Netlify project
 netlify link
 
 # create a test deployment
@@ -55,7 +55,9 @@ netlify deploy --production
 
 ### Lint and Tests
 
-Pull Requests must pass lint and include relevant unit/end-to-end tests.
+Pull Requests must pass lint and include relevant unit/end-to-end tests. 
+
+Accessibility for motion-sensitivity, color, fonts, reduced scrolling, tapping affordances, "go to top" are table stakes.
 
 This project uses Husky hooks which you can install locally to automatically lint and test on pre-commit and pre-push.
 
