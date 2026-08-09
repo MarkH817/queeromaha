@@ -4,59 +4,81 @@
 
 Directory of queer/trans groups, venues and spaces in Omaha.
 
-## Dependencies
+## Requirements
 
-- A working \*nix shell
+- \*nix
 - [Bun](https://bun.sh/) as drop-in Node interpreter replacement, package manager and test runner
 - (optional) [volta](https://volta.sh/) for node ver wrangling
-- (optional) [Netlify CLI](https://docs.netlify.com/cli/get-started/) for managing live deployment
-
+- (optional) [Netlify CLI](https://docs.netlify.com/cli/get-started/) for managing live deployments
 
 ## Stack
 
-- [Astro](https://astro.build/) — static site generator
-- [Biome](https://biomejs.dev/) - lint
-- [Playwright](https://playwright.dev/) - browser testing
+- [Astro](https://astro.build/) for static site generation and light SSE
+- [Biome](https://biomejs.dev/) for lint
+- [Playwright](https://playwright.dev/) for mobile and desktop browser testing
+- [vitest](https://vitest.dev/) for unit tests
 
-## Local Dev
-
-Run Astro locally with hot-reloading
+## Local Development
 
 ```
+# install dependencies
 bun install --development
-bun run serve # astro server at localhost:4321
 
-# alternatively
+# start Astro at localhost:4321 with HMR
 bun run dev
 ```
 
-### Deployment
+### Deploy site via CI
 
-PRs create a preview branch on Netlify.
+The Netlify GitHub app is installed for this repo, which creates a "preview deployment" on (non-draft) Pull Requests.
 
-The live site auto-deploys on pushes to `main`
+Merges to `main` (protected branch) will deploy the production site.
 
-Manual deployment
+### Deploy site Manually
 
 ```
+# install netlify CLI globally on your machine
 bun install -g netlify-cli
+
+# authenticate using account with access to project
 netlify login
+
+# link your local repo to Netlify project
+netlify link
+
+# create a test deployment
 netlify deploy
+
+# after validation, deploy production
+netlify deploy --production
 ```
 
-### Code Style
+### Lint and Tests
 
-Husky requires lint to pass on pre-commit.
+Pull Requests must pass lint and include relevant unit/end-to-end tests.
+
+This project uses Husky hooks which you can install locally to automatically lint and test on pre-commit and pre-push.
 
 ```
-bun run lint # check formatting of staged files
+bunx husky init
+```
+
+You can run lint (via biome) manually
+
+```
+bun run lint # check formatting
 bun run format # auto-fix formatting
 ```
 
-### Tests
+You must add/update unit tests for code changes. 
 
-Husky requires tests to pass on pre-push. Please add tests for significant changes.
+End-to-end tests are strongly recommended for commits that touch the frontend.
+
+Accessibility
 
 ```
-bun run test # unit tests + Playwright
+bun run test:unit # vitest
+bun run test:e2e # Playwright mobile/ desktop browsers
+bun run test:a11y # Accessibility via axe
+bun run test:lighthouse # Lighthouse audit (SEO, perf)
 ```
