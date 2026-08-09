@@ -76,8 +76,6 @@ You must add/update unit tests for code changes.
 
 End-to-end tests are strongly recommended for commits that touch the frontend.
 
-Accessibility
-
 ```
 bun run test:unit # vitest
 bun run test:e2e # Playwright mobile/ desktop browsers
