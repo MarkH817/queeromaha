@@ -1,3 +1,23 @@
 #!/bin/sh
-bun run format && git diff --cached --name-only --diff-filter=d | xargs -r git add
-bun run test:unit
+# Pre-commit: enforce formatting and catch regressions.
+#
+# 1. `bun run format` rewrites files in place (Biome + the YAML canonicalizer).
+# 2. Re-stage the staged *content* files (Added/Modified/Renamed/...) that the
+#    formatter just rewrote, so the commit captures the fixed bytes rather than
+#    the stale staged version.
+#    `--diff-filter=d` is lowercase on purpose: in `git diff --diff-filter` a
+#    lowercase letter *excludes* that state, so `d` excludes staged deletions
+#    (a deleted path has no content to format or re-add). Using uppercase `D`
+#    instead would wrongly select only deletions.
+#    See https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---diff-filterACMRTDX
+# 3. Run the unit suite.
+#
+# A failure in formatting, re-staging, or tests aborts the commit (so a failed
+# `bun run format` no longer falls through to running `bun run test:unit`).
+bun run format || exit 1
+
+git diff --cached --name-only --diff-filter=d | while IFS= read -r file; do
+  git add -- "$file" || exit 1
+done || exit 1
+
+bun run test:unit || exit 1
