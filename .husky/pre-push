@@ -31,4 +31,12 @@ if [ -n "$remote_name" ] && [ -n "$remote_branch" ]; then
   fi
 fi
 
+# guard: dependencies must be installed, otherwise `astro`/`vitest`/etc. CLI
+# binaries won't be on PATH and fail with a cryptic "command not found"
+if [ ! -d node_modules ]; then
+  echo "pre-push: 'node_modules' is missing — dependencies aren't installed."
+  echo "        Run 'bun install' before pushing, then push again."
+  exit 1
+fi
+
 bun run test
