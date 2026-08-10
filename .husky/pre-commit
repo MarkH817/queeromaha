@@ -1,3 +1,11 @@
 #!/bin/sh
+# guard: dependencies must be installed, otherwise biome/vitest CLIs won't be
+# on PATH and fail with a cryptic "command not found"
+if [ ! -d node_modules ]; then
+  echo "pre-commit: 'node_modules' is missing — dependencies aren't installed."
+  echo "          Run 'bun install' before committing, then commit again."
+  exit 1
+fi
+
 bun run format && git diff --cached --name-only --diff-filter=d | xargs -r git add
 bun run test:unit
