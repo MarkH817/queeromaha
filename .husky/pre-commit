@@ -1,3 +1,15 @@
 #!/bin/sh
-bun run format && git diff --cached --name-only --diff-filter=d | xargs -r git add
-bun run test:unit
+bun run format || exit 1
+
+git diff --cached --name-only --diff-filter=d | while IFS= read -r file; do
+  git add -- "$file" || exit 1
+done || exit 1
+
+if [ ! -d node_modules ]; then
+  echo "pre-commit: 'node_modules' is missing — dependencies aren't installed."
+  echo "          Run 'bun install' before committing, then commit again."
+  exit 1
+fi
+
+bun run test:unit || exit 1
+
