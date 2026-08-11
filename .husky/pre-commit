@@ -5,6 +5,8 @@ git diff --cached --name-only --diff-filter=d | while IFS= read -r file; do
   git add -- "$file" || exit 1
 done || exit 1
 
+# guard: dependencies must be installed, otherwise `astro`/`vitest`/etc. CLI
+# binaries won't be on PATH and fail with a cryptic "command not found"
 if [ ! -d node_modules ]; then
   echo "pre-commit: 'node_modules' is missing — dependencies aren't installed."
   echo "          Run 'bun install' before committing, then commit again."
