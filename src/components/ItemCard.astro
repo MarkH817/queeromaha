@@ -196,7 +196,7 @@ function resolveLink(link: { url: string; label: string }) {
 ---
 
 <script is:inline type="application/ld+json" set:html={jsonLdStr} />
-<wa-card class="item" id={`${category}-${slug}`} data-category={category} data-slug={slug} data-tags={tagsAttr} hidden={hidden}>
+<wa-card class:list={['item', { 'is-hidden': hidden }]} id={`${category}-${slug}`} data-category={category} data-slug={slug} data-tags={tagsAttr}>
   <h3 slot="header">
     <button type="button" class="item-tap-target" aria-pressed="false">{item.name}</button>
     {[...(item.tags ?? [])]
@@ -223,8 +223,11 @@ function resolveLink(link: { url: string; label: string }) {
   )}
   {item.links && item.links.length > 0 && (
     <ul class="entry-links" slot="footer">
-      {[...item.links].sort((a, b) => resolveLink(a).rank - resolveLink(b).rank).map(link => {
-        const pillIcon = resolveLink(link).icon
+      {[...item.links]
+        .map((link) => ({ link, resolved: resolveLink(link) }))
+        .sort((a, b) => a.resolved.rank - b.resolved.rank)
+        .map(({ link, resolved }) => {
+        const pillIcon = resolved.icon
         return (
           <li>
             <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}

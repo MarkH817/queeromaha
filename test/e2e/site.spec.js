@@ -668,7 +668,7 @@ test('an unavailable tag pill is disabled and marked unavailable', async ({
 }) => {
     await page.goto('/art/')
 
-    const visibleCards = page.locator('wa-card.item:not([hidden])')
+    const visibleCards = page.locator('wa-card.item:not(.is-hidden)')
     const cardCount = await visibleCards.count()
     expect(cardCount).toBeGreaterThan(0)
 

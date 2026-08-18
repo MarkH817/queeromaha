@@ -69,6 +69,41 @@ describe('generateFeedICS', () => {
         expect(ics).toContain('DESCRIPTION:Line one\\nLine two')
     })
 
+    test('summary escapes commas, semicolons, and backslashes (RFC 5545 TEXT)', () => {
+        const ics = generateFeedICS([
+            {
+                uid: 'u',
+                event: { ...baseEvent, summary: 'Tea, Coffee &; Cake\\Event' },
+            },
+        ])
+        expect(ics).toContain('SUMMARY:Tea\\, Coffee &\\; Cake\\\\Event')
+    })
+
+    test('description escapes commas and semicolons in addition to newlines', () => {
+        const ics = generateFeedICS([
+            {
+                uid: 'u',
+                event: {
+                    ...baseEvent,
+                    description: 'Bring a dish, sign; the\\sheet',
+                },
+            },
+        ])
+        expect(ics).toContain(
+            'DESCRIPTION:Bring a dish\\, sign\\; the\\\\sheet',
+        )
+    })
+
+    test('location escapes commas (RFC 5545 TEXT)', () => {
+        const ics = generateFeedICS([
+            {
+                uid: 'u',
+                event: { ...baseEvent, location: '123 Main St, Suite 2' },
+            },
+        ])
+        expect(ics).toContain('LOCATION:123 Main St\\, Suite 2')
+    })
+
     test('multiple events each get a VEVENT block', () => {
         const ics = generateFeedICS([
             { uid: 'a', event: { ...baseEvent, summary: 'Event A' } },

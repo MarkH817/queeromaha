@@ -11,9 +11,7 @@ export function formatLocationLine(loc?: LocationInput): string {
     const addrParts = [
         loc.street,
         loc.city,
-        loc.state && loc.zip
-            ? `${loc.state} ${loc.zip}`
-            : (loc.state ?? loc.zip),
+        loc.state && loc.zip ? `${loc.state} ${loc.zip}` : loc.state || loc.zip,
     ].filter(Boolean)
     const addrLine = addrParts.join(', ')
     return [addrLine, loc.neighborhood].filter(Boolean).join(' - ')

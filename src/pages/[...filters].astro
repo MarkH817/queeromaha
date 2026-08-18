@@ -68,7 +68,7 @@ const itemListJsonLdStr = toJsonLdScript({
     const itemSlugs = computeItemSlugs(publicItems)
     return (
       <section id={`section-${entry.id}`} aria-label={categoryMap[entry.id]?.label ?? entry.id}>
-        <h2 class="section-header" data-category-heading={entry.id} hidden={!anyVisible}>
+        <h2 class:list={['section-header', { 'is-hidden': !anyVisible }]} data-category-heading={entry.id}>
           <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true"></wa-icon> {categoryMap[entry.id]?.label ?? entry.id}
         </h2>
         {publicItems.map((item, i) => (

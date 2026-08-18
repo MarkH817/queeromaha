@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
+import { toJsonLdScript } from '../src/utils/jsonLd.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -41,6 +42,40 @@ function walkHtml(dir: string): string[] {
     return out
 }
 
+describe('toJsonLdScript', () => {
+    test('produces valid, parseable JSON', () => {
+        const out = toJsonLdScript({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Queer Omaha',
+        })
+        expect(() => JSON.parse(out)).not.toThrow()
+        expect(JSON.parse(out)).toEqual({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Queer Omaha',
+        })
+    })
+
+    test('escapes < to \\u003c so </script> cannot break out of the script tag', () => {
+        // The whole point of the helper is to make it impossible for a value
+        // containing "</script" to terminate the <script type="application/ld+json">
+        // block early (a script-injection / JSON-LD breakout vector).
+        const payload = {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: '</script><img src=x onerror=alert(1)>',
+        }
+        const out = toJsonLdScript(payload)
+        // Raw stringify would contain a literal "</script" — the helper must not.
+        expect(out).not.toContain('</script')
+        expect(out).not.toContain('<script')
+        expect(out).toContain('\\u003c/script')
+        // And it still parses back to the original value (backslash-escaped).
+        expect(JSON.parse(out).name).toBe(payload.name)
+    })
+})
+
 describe('structured data (JSON-LD)', () => {
     // Mirrors test/build.test.ts convention: this suite only makes sense
     // against built output, so fail fast with an actionable message.
@@ -75,6 +110,15 @@ describe('structured data (JSON-LD)', () => {
                     b.data,
                     `JSON-LD block failed to parse:\n${b.raw}`,
                 ).not.toBeInstanceOf(SyntaxError)
+                // Every JSON-LD block must be emitted through toJsonLdScript,
+                // which escapes `<` to "\u003c". A raw `<` (especially
+                // "</script") would let untrusted/escaped content break out of
+                // the <script type="application/ld+json"> tag — this is the
+                // regression that previously let HeadMeta.astro skip escaping.
+                expect(
+                    b.raw,
+                    `Unescaped "<" in JSON-LD block on ${rel}:\n${b.raw}`,
+                ).not.toContain('<')
                 // Must carry the required schema.org markers
                 if (
                     b.data &&

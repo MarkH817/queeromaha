@@ -817,7 +817,7 @@ h2 {
     font-size: 1.2em;
 }
 
-.section-header[hidden] {
+.section-header.is-hidden {
     display: none;
 }
 
@@ -831,7 +831,7 @@ wa-card.item {
     border-top: 2px solid #c4b5fd;
 }
 
-wa-card.item[hidden] {
+wa-card.item.is-hidden {
     display: none;
 }
 

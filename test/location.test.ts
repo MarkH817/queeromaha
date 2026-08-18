@@ -53,4 +53,10 @@ describe('formatLocationLine', () => {
     test('undefined location returns an empty string', () => {
         expect(formatLocationLine(undefined)).toBe('')
     })
+
+    test('empty-string state falls through to zip', () => {
+        expect(
+            formatLocationLine({ city: 'Omaha', state: '', zip: '68102' }),
+        ).toBe('Omaha, 68102')
+    })
 })

@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# check if our branch is actually ahead of remote
 has_new_commits=false
 remote_name=""
 remote_branch=""
@@ -6,7 +8,7 @@ while read local_ref local_sha remote_ref remote_sha; do
   if [ "$local_sha" != "$remote_sha" ]; then
     has_new_commits=true
   fi
-  # capture remote/branch for sync check (e.g. refs/heads/main -> main)
+
   remote_name="$1"
   remote_branch="${remote_ref#refs/heads/}"
 done
@@ -16,7 +18,7 @@ if [ "$has_new_commits" = false ]; then
   exit 0
 fi
 
-# sync check: fetch and bail early if remote is ahead
+# bail early if remote is ahead
 if [ -n "$remote_name" ] && [ -n "$remote_branch" ]; then
   if git fetch "$remote_name" "$remote_branch" --quiet 2>/dev/null; then
     FETCH_HEAD=$(git rev-parse FETCH_HEAD 2>/dev/null) || true
@@ -31,12 +33,11 @@ if [ -n "$remote_name" ] && [ -n "$remote_branch" ]; then
   fi
 fi
 
-# guard: dependencies must be installed, otherwise `astro`/`vitest`/etc. CLI
-# binaries won't be on PATH and fail with a cryptic "command not found"
+# ensure dependencies are actually installed before trying to run
 if [ ! -d node_modules ]; then
   echo "pre-push: 'node_modules' is missing — dependencies aren't installed."
   echo "        Run 'bun install' before pushing, then push again."
   exit 1
 fi
 
-bun run test
+bun run test:push

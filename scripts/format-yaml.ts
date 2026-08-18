@@ -1,9 +1,9 @@
 #!/usr/bin/env bun
 // Canonicalizes src/content/pages/*.yaml formatting.
 //
-// Check mode: bun scripts/format-yaml.js --check
+// Check mode: bun scripts/format-yaml.ts --check
 //   Exits 1 and lists files that would change, without writing.
-// Write mode: bun scripts/format-yaml.js
+// Write mode: bun scripts/format-yaml.ts
 //   Rewrites any file that isn't already canonical.
 
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
@@ -19,8 +19,8 @@ const CHECK_MODE = process.argv.includes('--check')
 
 const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.yaml'))
 
-const errors = []
-const changed = []
+const errors: string[] = []
+const changed: string[] = []
 
 for (const file of files) {
     const path = join(CONTENT_DIR, file)

@@ -1,0 +1,13 @@
+
+# NOTE: lychee cannot inspect response bodies, no "private/ deleted account" detection
+
+# loginwalled junk
+https?://([^/]+\.)*facebook\.com(/|$)
+https?://([^/]+\.)*fb\.com(/|$)
+https?://([^/]+\.)*linkedin\.com(/|$)
+https?://([^/]+\.)*instagram\.com(/|$)
+https?://([^/]+\.)*x\.com(/|$)
+https?://([^/]+\.)*twitter\.com(/|$)
+
+ flakes
+https?://([^/]+\.)*fifthhouseomaha\.com(/|$)

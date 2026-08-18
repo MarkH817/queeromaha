@@ -1,4 +1,5 @@
 ---
+import { toJsonLdScript } from '../utils/jsonLd'
 import PostHog from './posthog.astro'
 
 interface Props {
@@ -14,6 +15,15 @@ const { title, description, canonicalUrl, refresh } = Astro.props
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Preload the two critical (body + display) font subsets so the browser
+       discovers them before the (hashed) bundle CSS arrives. Filenames are
+       content-hashed by Vite's @fontsource build; test/build.test.ts asserts
+       each file exists in dist/_astro so a hash change fails the build with a
+       clear message instead of leaking a 404 preload. No `crossorigin`:
+       the matching @font-face rules are same-origin without crossorigin, and
+       a mismatch here would make Chrome discard the preloaded font. -->
+  <link rel="preload" as="font" type="font/woff2" href="/_astro/karla-latin-wght-normal.C3-ma4ov.woff2" />
+  <link rel="preload" as="font" type="font/woff2" href="/_astro/space-grotesk-latin-wght-normal.BhU9QXUp.woff2" />
   <script is:inline>
     (function () {
       var mql = window.matchMedia('(prefers-color-scheme: dark)')
@@ -44,7 +54,7 @@ const { title, description, canonicalUrl, refresh } = Astro.props
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:title" content={title} />
   {description && <meta property="og:description" content={description} />}
-  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+  <script is:inline type="application/ld+json" set:html={toJsonLdScript({
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Queer Omaha",

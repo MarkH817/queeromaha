@@ -19,6 +19,17 @@ function formatTime(time: string): string {
     return `${h.padStart(2, '0')}${m.padStart(2, '0')}00`
 }
 
+// RFC 5545 §3.3.11 (TEXT): escape backslash, semicolon, comma, and newline
+// so a description or location containing these doesn't corrupt the ICS
+// structure when parsed by calendar clients.
+function escapeIcsText(value: string): string {
+    return value
+        .replace(/\\/g, '\\\\')
+        .replace(/;/g, '\\;')
+        .replace(/,/g, '\\,')
+        .replace(/\n/g, '\\n')
+}
+
 function buildRecurringVEvent(event: RecurringEvent, uid: string): string {
     const dtstart = `${event.dtstart}T${formatTime(event.time)}`
     const lines = [
@@ -39,10 +50,10 @@ function buildRecurringVEvent(event: RecurringEvent, uid: string): string {
         lines.push('DURATION:PT2H')
     }
 
-    lines.push(`SUMMARY:${event.summary}`)
+    lines.push(`SUMMARY:${escapeIcsText(event.summary)}`)
     if (event.description)
-        lines.push(`DESCRIPTION:${event.description.replace(/\n/g, '\\n')}`)
-    if (event.location) lines.push(`LOCATION:${event.location}`)
+        lines.push(`DESCRIPTION:${escapeIcsText(event.description)}`)
+    if (event.location) lines.push(`LOCATION:${escapeIcsText(event.location)}`)
     if (event.url) lines.push(`URL:${event.url}`)
     lines.push('STATUS:CONFIRMED', 'SEQUENCE:0', 'END:VEVENT')
 

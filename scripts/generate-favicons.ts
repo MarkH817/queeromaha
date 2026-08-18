@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { favicons } from 'favicons'
