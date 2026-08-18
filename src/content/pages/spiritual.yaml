@@ -6,8 +6,8 @@ items:
     tags:
       - neutral-bathrooms
       - seating
-    public: false
-    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga (Pay What You Can)
+    public: true
+    description: Dawaune creates a container to be unapologetically heard on Sundays 5PM to 7PM @ Ananda Yoga (Pay What You Can)
     links:
       - label: Instagram
         url: https://www.instagram.com/dawaune.one/
@@ -62,7 +62,7 @@ items:
       - label: Sunday 9:45AM Open Zen
         url: https://nebraskazencenter.org/sunday-open-zen/
       - label: Events Calendar
-        url: https://nebraskazencenter.org/upcoming-events/
+        url: https://nebraskazencenter.org/calendar
   - name: Sound Bath Sundays w/ Havalynn Russell
     tags:
       - neutral-bathrooms
