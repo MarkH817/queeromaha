@@ -56,9 +56,15 @@ describe('initFilters', () => {
         wifiPill.click()
 
         const cardEls = document.querySelectorAll('wa-card')
-        expect((cardEls[0] as HTMLElement).hidden).toBe(false) // art, wifi
-        expect((cardEls[1] as HTMLElement).hidden).toBe(true) // art, seating only
-        expect((cardEls[2] as HTMLElement).hidden).toBe(false) // cafes, wifi+seating
+        expect(
+            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(false) // art, wifi
+        expect(
+            (cardEls[1] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // art, seating only
+        expect(
+            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(false) // cafes, wifi+seating
     })
 
     test('tag pills AND-match: two active tags only match cards with both', async () => {
@@ -69,9 +75,15 @@ describe('initFilters', () => {
         ).click()
 
         const cardEls = document.querySelectorAll('wa-card')
-        expect((cardEls[0] as HTMLElement).hidden).toBe(true) // wifi only
-        expect((cardEls[1] as HTMLElement).hidden).toBe(true) // seating only
-        expect((cardEls[2] as HTMLElement).hidden).toBe(false) // wifi+seating
+        expect(
+            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // wifi only
+        expect(
+            (cardEls[1] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // seating only
+        expect(
+            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(false) // wifi+seating
     })
 
     test('clicking category pill filters by category and clears active tags', async () => {
@@ -83,9 +95,15 @@ describe('initFilters', () => {
         cafesPill.click()
 
         const cardEls = document.querySelectorAll('wa-card')
-        expect((cardEls[0] as HTMLElement).hidden).toBe(true) // art
-        expect((cardEls[1] as HTMLElement).hidden).toBe(true) // art
-        expect((cardEls[2] as HTMLElement).hidden).toBe(false) // cafes
+        expect(
+            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // art
+        expect(
+            (cardEls[1] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // art
+        expect(
+            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(false) // cafes
 
         const wifiPill = document.querySelector(
             '[data-filter="wifi"]',
@@ -105,7 +123,9 @@ describe('initFilters', () => {
         // Still active; category set unchanged (still only "art" active).
         expect(artPill.classList.contains('active')).toBe(true)
         const cardEls = document.querySelectorAll('wa-card')
-        expect((cardEls[2] as HTMLElement).hidden).toBe(true) // cafes still hidden
+        expect(
+            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // cafes still hidden
     })
 
     test('tag pill becomes disabled/unavailable when it would produce zero results', async () => {
@@ -146,8 +166,8 @@ describe('initFilters', () => {
         const cafesHeading = document.querySelector(
             '[data-category-heading="cafes"]',
         ) as HTMLElement
-        expect(artHeading.hidden).toBe(true)
-        expect(cafesHeading.hidden).toBe(false)
+        expect(artHeading.classList.contains('is-hidden')).toBe(true)
+        expect(cafesHeading.classList.contains('is-hidden')).toBe(false)
     })
 
     test('data-initial-categories and data-initial-tags on body activate filters on load', async () => {
@@ -165,7 +185,11 @@ describe('initFilters', () => {
         expect(wifiPill.classList.contains('active')).toBe(true)
 
         const cardEls = document.querySelectorAll('wa-card')
-        expect((cardEls[2] as HTMLElement).hidden).toBe(false) // cafes + wifi
-        expect((cardEls[0] as HTMLElement).hidden).toBe(true) // art
+        expect(
+            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(false) // cafes + wifi
+        expect(
+            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
+        ).toBe(true) // art
     })
 })

@@ -9,17 +9,25 @@ describe('GET /robots.txt', () => {
         )
     })
 
-    test('allows AI/search bot user agents', async () => {
+    test('disallows AI-training bot user agents to enforce ai-train=no', async () => {
         const body = await (await GET()).text()
         for (const agent of [
             'GPTBot',
             'Claude-Web',
             'Anthropic-AI',
-            'PerplexityBot',
             'CCBot',
-            'ChatGPT-User',
             'Google-Extended',
             'Bytespider',
+        ]) {
+            expect(body).toContain(`User-agent: ${agent}\nDisallow: /`)
+        }
+    })
+
+    test('allows AI/search bot user agents', async () => {
+        const body = await (await GET()).text()
+        for (const agent of [
+            'PerplexityBot',
+            'ChatGPT-User',
             'DuckAssistBot',
         ]) {
             expect(body).toContain(`User-agent: ${agent}\nAllow: /`)

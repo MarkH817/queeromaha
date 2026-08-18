@@ -23,14 +23,22 @@ function initFilters() {
 
     function applyFilters() {
         cards.forEach((card) => {
-            card.hidden = !cardMatches(card, activeCategories, activeTags)
+            card.classList.toggle(
+                'is-hidden',
+                !cardMatches(card, activeCategories, activeTags),
+            )
         })
         document
             .querySelectorAll<HTMLElement>('[data-category-heading]')
             .forEach((heading) => {
                 const cat = heading.dataset.categoryHeading || ''
-                heading.hidden = ![...cards].some(
-                    (c) => c.dataset.category === cat && !c.hidden,
+                heading.classList.toggle(
+                    'is-hidden',
+                    ![...cards].some(
+                        (c) =>
+                            c.dataset.category === cat &&
+                            !c.classList.contains('is-hidden'),
+                    ),
                 )
             })
         updatePillAvailability()
@@ -38,9 +46,9 @@ function initFilters() {
 
     function wouldHaveResults(slug: string, type: string) {
         // Build the hypothetical filter state if `slug` were chosen, rather
-        // than relying on card.hidden (which reflects the *current* selection
-        // and would wrongly veto switching category when the current
-        // combination has zero matches).
+        // than relying on the card's current is-hidden state (which reflects
+        // the *current* selection and would wrongly veto switching category
+        // when the current combination has zero matches).
         const testCats = new Set(activeCategories)
         const testTags = new Set(activeTags)
         if (type === 'category') {
@@ -178,13 +186,10 @@ function initFilters() {
         .filter(Boolean)
     if (initCats.length > 0) setCategory(initCats[0])
     initTags.forEach(activateFilter)
-    // Astro renders `hidden={false}` on custom elements like <wa-card> as
-    // the literal attribute hidden="false", which the HTML boolean-attribute
-    // spec (and our `[hidden]` CSS) treats as truthy regardless of value.
-    // Setting `.hidden` via the JS property below is what actually clears
-    // it. The calls above only do this for cards touched by an active
-    // category/tag; this unconditional call covers any card that ends up with
-    // no active filter touching it at all.
+    // setCategory/activateFilter above only re-evaluate cards that match the
+    // newly-active filter; this unconditional applyFilters() ensures every
+    // card and section heading reflects the full current filter state (e.g.
+    // a heading whose only visible card was hidden by a tag filter).
     applyFilters()
 }
 

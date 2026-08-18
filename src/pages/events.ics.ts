@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content'
 import type { APIRoute } from 'astro'
 import { generateFeedICS } from '../utils/ical'
+import { slugify } from '../utils/slugify'
 
 export const prerender = true
 
@@ -16,10 +17,7 @@ export const GET: APIRoute = async () => {
         const items = (entry.data.items ?? []).filter((i) => i.public !== false)
         for (const item of items) {
             if (!item.recurring_events?.length) continue
-            const itemSlug = item.name
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, '-')
-                .replace(/^-|-$/g, '')
+            const itemSlug = slugify(item.name)
             item.recurring_events.forEach((evt, idx) => {
                 events.push({
                     uid: `${entry.id}-${itemSlug}-${idx}`,

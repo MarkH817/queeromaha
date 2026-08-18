@@ -40,9 +40,16 @@ test-results/
 .playwright/
 .last-run.json
 
+# Lighthouse CI
+.lighthouseci/
+
 # Logs
 *.log
 npm-debug.log*
 
 # TypeScript
 *.tsbuildinfo
+
+# Lychee link checker
+.lycheecache/
+lychee-report.md

@@ -44,6 +44,7 @@ items:
         description: Drop-in drum circle. Bring a drum or borrow one of theirs!
         url: https://www.facebook.com/drumomaha/
   - name: SynthOmaha Electronic Music Jam
+    vanity_slug: synthomaha-electronic-music-jam
     public: true
     description: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
     links:
@@ -99,6 +100,7 @@ items:
       - label: Instagram
         url: https://www.instagram.com/altpubomaha/
   - name: SoundArte
+    vanity_slug: soundarte
     public: false
     description: Network of electronic artists and musicians.
     links:
@@ -266,6 +268,7 @@ items:
     location:
       neighborhood: Benson
   - name: MaMo Mobile Gallery Semi-Truck
+    vanity_slug: mamo-mobile-gallery-semi-truck
     public: true
     description: Mobile gallery often parked near Petshop showing local artists.
     links:
@@ -327,6 +330,7 @@ items:
     location:
       neighborhood: Aksarben
   - name: NeXT Foundation Arts
+    vanity_slug: next-foundation-arts
     public: true
     description: Open Studios for Expressive Art in the MasterCraft Building
     links:

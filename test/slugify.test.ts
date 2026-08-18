@@ -25,4 +25,15 @@ describe('slugify', () => {
     test('splits camelCase words at lowercase-to-uppercase boundaries', () => {
         expect(slugify('OmahaForUs')).toBe('omaha-for-us')
     })
+
+    test('collapses consecutive hyphens from stripped special chars', () => {
+        expect(slugify('Legends Comics & Coffee')).toBe('legends-comics-coffee')
+        expect(slugify('Paper Crane Books & Tattoo')).toBe(
+            'paper-crane-books-tattoo',
+        )
+    })
+
+    test('trims leading and trailing hyphens', () => {
+        expect(slugify('&Coffee &')).toBe('coffee')
+    })
 })

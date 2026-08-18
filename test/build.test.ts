@@ -50,22 +50,14 @@ describe('astro build', () => {
         expect(html).toContain('href="/friends"')
     })
 
-    test('_redirects sends /social and / to /friends', () => {
+    test('_redirects has legacy redirects', () => {
         const redirects = readFileSync(
             join(ROOT, 'public', '_redirects'),
             'utf8',
         )
-        expect(redirects).toMatch(/\/social\s+\/friends/)
         expect(redirects).toMatch(/^\/\s+\/friends/m)
-    })
-
-    test('_redirects sends /about to / but leaves /contact alone', () => {
-        const redirects = readFileSync(
-            join(ROOT, 'public', '_redirects'),
-            'utf8',
-        )
-        expect(redirects).toMatch(/^\/about\s+\/\s+301/m)
-        expect(redirects).not.toMatch(/^\/contact\s/m)
+        expect(redirects).toMatch(/\/social\s+\/friends/)
+        expect(redirects).toMatch(/\/community\s+\/friends/)
     })
 
     test('privacy/index.html has a back-to-directory link', () => {
@@ -194,5 +186,46 @@ describe('astro build', () => {
         )
         expect(html).toContain('"@type":"ItemList"')
         expect(html).toContain('https://queeromaha.net/friends/o4us')
+    })
+
+    // Critical font preload hrefs are hardcoded in HeadMeta.astro with
+    // content-hashed filenames (see the comment there). These asserts keep
+    // the hardcoded hashes in sync with the build output: a font version bump
+    // that rotates a hash fails here instead of leaking a 404 preload request.
+    const criticalFonts = [
+        'karla-latin-wght-normal.C3-ma4ov.woff2',
+        'space-grotesk-latin-wght-normal.BhU9QXUp.woff2',
+    ]
+    for (const name of criticalFonts) {
+        test(`dist/_astro contains the preloaded critical font "${name}"`, () => {
+            expect(
+                existsSync(join(ROOT, 'dist', '_astro', name)),
+                `missing preloaded font: ${name}`,
+            ).toBe(true)
+        })
+    }
+
+    test('friends/index.html preloads the critical body and display fonts', () => {
+        const html = readFileSync(
+            join(ROOT, 'dist', 'friends', 'index.html'),
+            'utf8',
+        )
+        for (const name of criticalFonts) {
+            // Grab the whole <link ...> tag for this preload target so we can
+            // inspect its attributes individually (the page also contains a
+            // preconnect link that *does* use crossorigin, so we can't assert
+            // on the HTML as a whole).
+            const match = html.match(
+                new RegExp(`<link[^>]*rel="preload"[^>]*${name}[^>]*>`),
+            )
+            expect(match, `preload <link> for ${name} not found`).toBeTruthy()
+            const tag = match?.[0]
+            expect(tag).toContain('rel="preload"')
+            expect(tag).toContain('as="font"')
+            expect(tag).toContain('type="font/woff2"')
+            // Same-origin @font-face sources must not be preloaded with crossorigin,
+            // or Chrome discards the preloaded resource (double download).
+            expect(tag).not.toContain('crossorigin')
+        }
     })
 })

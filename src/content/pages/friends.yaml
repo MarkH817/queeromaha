@@ -108,6 +108,7 @@ items:
     tags:
       - online
   - name: TransFormative Support Group
+    vanity_slug: transformative-support-group
     public: false
     description: In-person Trans* group ran by therapist Brit Gunther.
     links:

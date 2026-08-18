@@ -229,6 +229,7 @@ items:
     location:
       neighborhood: Midtown
   - name: The FoxHole
+    vanity_slug: foxhole
     public: false
     description: Indie venue @ Someone's house. Ask around.
     links:

@@ -1,87 +1,46 @@
+// robots.txt for queeromaha.net.
+//
+// Uses Content Signals (https://contentsignals.org/) to declare use-permissions
+// for crawler content:
+//   - search=yes  -> indexing & search results (allowed)
+//   - ai-input=yes -> grounding / RAG answers (allowed)
+//   - ai-train=no  -> training & fine-tuning of AI models (NOT allowed)
+// Access rules (Allow/Disallow) are independent of signals; they enforce the
+// ai-train=no reservation for bots that honor robots.txt. Signal semantics:
+// https://contentsignals.org/
 export async function GET() {
-    const body = `
-  # As a condition of accessing this website, you agree to
-
-# abide by the following content signals:
-
- 
-
-# (a)  If a content-signal = yes, you may collect content
-
-# for the corresponding use.
-
-# (b)  If a content-signal = no, you may not collect content
-
-# for the corresponding use.
-
-# (c)  If the website operator does not include a content
-
-# signal for a corresponding use, the website operator
-
-# neither grants nor restricts permission via content signal
-
-# with respect to the corresponding use.
-
- 
-
-# The content signals and their meanings are:
-
- 
-
-# search: building a search index and providing search
-
-# results (e.g., returning hyperlinks and short excerpts
-
-# from your website's contents).  Search does not include
-
-# providing AI-generated search summaries.
-
-# ai-input: inputting content into one or more AI models
-
-# (e.g., retrieval augmented generation, grounding, or other
-
-# real-time taking of content for generative AI search
-
-# answers).
-
-# ai-train: training or fine-tuning AI models.
-
- 
-
-# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS
-
-# RESERVATIONS OF RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN
-
-# UNION DIRECTIVE 2019/790 ON COPYRIGHT AND RELATED RIGHTS
-
-# IN THE DIGITAL SINGLE MARKET.
-
+    const body = `# Queer Omaha robots.txt — content-use signals:
+#   search=yes, ai-input=yes (allowed) · ai-train=no (not allowed)
+# See https://contentsignals.org/ for signal semantics.
 User-agent: *
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 
+# AI *training* crawlers: disallowed to enforce ai-train=no. This does not
+# affect Search — Google Search uses Googlebot, not Google-Extended.
 User-agent: GPTBot
-Allow: /
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
 
 User-agent: Claude-Web
-Allow: /
+Disallow: /
 
 User-agent: Anthropic-AI
-Allow: /
+Disallow: /
 
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# *Use/search* crawlers: allowed (search=yes, ai-input=yes).
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bytespider
 Allow: /
 
 User-agent: DuckAssistBot

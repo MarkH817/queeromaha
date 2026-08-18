@@ -21,13 +21,12 @@ bun run test:build     # build + test/build.test.ts
 bun run test:structured-data  # build + test/structured-data.test.ts (JSON-LD)
 bun run test:ical      # test/ical.test.ts only
 bun run test:e2e       # build + Playwright e2e (mobile-chrome)
-bun run test:e2e:only  # Playwright e2e only, no rebuild
-bun run test:e2e:desktop  # build + Playwright e2e (desktop-chrome)
-bun run test:e2e:all   # build + Playwright e2e (both projects)
-bun run test:a11y      # build + Playwright a11y spec only
-
-bun run check:links    # check external links in content for dead links
-bun run check:links:pr # same, scoped for PR comment output
+bun run test:e2e:isolated  # Playwright e2e only, no rebuild
+bun run test:e2e:smoke     # mobile Chrome smoke: site.spec only (no a11y, no rebuild)
+bun run test:e2e:desktop   # build + Playwright e2e (desktop-chrome)
+bun run test:e2e:all       # build + Playwright e2e (both projects)
+bun run test:a11y          # build + Playwright a11y spec only
+bun run test:push          # fast push gate: build + check + unit + e2e:smoke (CI runs a11y + full e2e)
 ```
 
 Note: `bun test` invokes Bun's own built-in test runner, not the `test`
@@ -36,7 +35,7 @@ script above — always use `bun run test` / `bun run <script>` here.
 Husky hooks:
 
 - pre-commit: `bun run format` (auto-fixes and re-stages), then `bun run test:unit`
-- pre-push: syncs with the remote branch first (aborts if the remote is ahead), then runs the full `bun run test` suite
+- pre-push: syncs with the remote branch first (aborts if the remote is ahead), then runs `bun run test:push` — build + type-check + unit + mobile smoke; a11y + full e2e are CI-only (pr-checks.yml / e2e.yml)
 
 Playwright defaults to the `mobile-chrome` project (`devices['Pixel 7']`) as
 the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
