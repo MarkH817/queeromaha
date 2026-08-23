@@ -26,6 +26,7 @@
         "stop": "astro dev stop",
         "check": "astro check",
         "check:content": "astro sync",
+        "check:links": "bun scripts/check-links.ts",
         "serve": "astro dev",
         "build": "astro build && bun scripts/generate-redirects.ts",
         "preview": "astro preview",

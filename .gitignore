@@ -1,6 +1,7 @@
 # generated docs
 posthog*.md
 TRANSWRONGS-REPORT.md
+.lycheecache
 
 # Build output
 dist/
@@ -17,8 +18,9 @@ node_modules/
 .env.fish
 !.env.example
 
-# Editor
+# Editor / bots
 .poolside/
+.kilo/
 .claude/
 .cursor
 .vscode/

@@ -82,3 +82,15 @@ bun run test:e2e # Playwright mobile/ desktop browsers
 bun run test:a11y # Accessibility via axe
 bun run test:lighthouse # Lighthouse audit (SEO, perf)
 ```
+
+#### Link Checker
+
+`bun run check:links` parses the built `dist/` HTML and markdown for external
+links, tests them against the live web, and reports failures. It runs in CI on
+every PR and weekly via the [Check Links workflow](.github/workflows/check-links.yml).
+
+Run it locally:
+
+```
+bun run build && bun run check:links
+```
