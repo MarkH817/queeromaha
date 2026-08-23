@@ -213,7 +213,7 @@ items:
     description: Exhibits, studios, classes, and talks.
     links:
       - label: Events Calendar
-        url: https://www.u-ca.org/happenings
+        url: https://www.u-ca.org/events
     notes: tara hasn't been there yet. trusting its chill.
     location:
       neighborhood: North Omaha
