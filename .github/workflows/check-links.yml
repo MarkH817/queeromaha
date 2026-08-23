@@ -1,15 +1,11 @@
 name: Check Links
 
-# Dead-link checker powered by Lychee
-# Validates external URLs + internal anchors against the built dist/ HTML, so it
-# checks what is actually published. Weekly all-links scan (cron) + PR gate that
-# posts failures as a PR comment via peter-evans/create-or-update-comment@v5
+# Dead-link checker — runs scripts/check-links.ts against the built dist/
+# HTML and markdown. Weekly all-links scan (cron) + manual dispatch.
 on:
   schedule:
     - cron: "0 9 * * 1" # Every Monday 9am UTC — full scan to catch stale/dead links
   workflow_dispatch:
-  pull_request:
-    branches: [main]
 
 concurrency:
   group: check-links-${{ github.ref }}
@@ -17,13 +13,9 @@ concurrency:
 
 permissions:
   contents: read
-  pull-requests: write   # to post the PR comment
 
 jobs:
   link-check:
-    # schedule / workflow_dispatch have no pull_request context; the guard is a
-    # no-op for those and correctly skips draft PRs.
-    if: "!github.event.pull_request.draft"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -33,7 +25,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Cache bun install cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
@@ -42,38 +34,5 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run build
 
-      # Persist Lychee's result cache across cold starts. With max_cache_age = 1d,
-      # the weekly run re-checks everything; PR runs only re-check URLs older than
-      # 1 day (approximating "only new links").
-      - name: Cache lychee results
-        uses: actions/cache@v4
-        with:
-          path: .lycheecache
-          key: ${{ runner.os }}-lychee-${{ hashFiles('src/content/pages/*.yaml') }}
-          restore-keys: ${{ runner.os }}-lychee-
-
-      - name: Check links with Lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          # fail: true is REQUIRED — the action defaults to false (would NOT block)
-          fail: true
-          failIfEmpty: true
-          format: markdown
-          output: lychee-report.md
-          jobSummary: true
-          args: "--config .lychee.toml --verbose --root-dir dist \"**/*.html\""
-
-      - name: Upload link-check report
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: link-report
-          path: lychee-report.md
-
-      - name: Comment on PR
-        if: failure() && github.event_name == 'pull_request'
-        uses: peter-evans/create-or-update-comment@v5
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          bodyPath: lychee-report.md
-          update-previous: true
+      - name: Check links
+        run: bun run check:links

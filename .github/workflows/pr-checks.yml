@@ -15,7 +15,7 @@ jobs:
   pr-checks:
     if: "!github.event.pull_request.draft"
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
 
@@ -23,40 +23,38 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Cache bun install cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: ${{ runner.os }}-bun-
+          restore-keys: |
+            ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+            ${{ runner.os }}-bun-
 
-      # Playwright browser binaries (Chromium). Cache hit => no ~2min download.
       - name: Cache Playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('bun.lock') }}
-          restore-keys: ${{ runner.os }}-playwright-
+          restore-keys: |
+            ${{ runner.os }}-playwright-${{ hashFiles('bun.lock') }}
+            ${{ runner.os }}-playwright-
 
       - run: bun install --frozen-lockfile
-      - run: bunx playwright install --with-deps chromium
-      # Validate workflow files before running expensive checks.
       - run: bun run lint:actions
-      # Advisory only: reports high/critical vulns without blocking the gate.
-      # Currently flags tmp(high) + uuid(moderate) via @lhci/cli. Set
-      # continue-on-error: false once transitive deps are clean.
       - name: Audit dependencies
-        run: bun audit --audit-level high
-        continue-on-error: true
+        run: bun audit --audit-level high --production
       - run: bun run lint
+      - run: bun run check
       - run: bun run test:unit
-      - run: bun run check            # astro check (type-check)
-      - run: bun run test:a11y
+      - run: bunx playwright install --with-deps chromium
+      - run: bun run test:e2e:isolated
 
-      - name: Upload a11y failure artifacts
+      - name: Upload Reports
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: a11y-report
+          name: e2e-report
           path: |
             playwright-report/
             test-results/
