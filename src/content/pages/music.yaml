@@ -206,7 +206,7 @@ items:
     location:
       neighborhood: Midtown
   - name: Fifth House
-    public: true
+    public: false
     tags:
       - neutral-bathrooms
       - seating
@@ -220,6 +220,7 @@ items:
         url: https://www.facebook.com/FifthHouseOmaha/
     location:
       neighborhood: Midtown
+    notes: closed Aug 2026
   - name: The Breakroom
     public: false
     description: Punk venue @ someone's house. Ask around.
