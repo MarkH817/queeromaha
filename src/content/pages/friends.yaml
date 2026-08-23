@@ -127,6 +127,16 @@ items:
         url: https://secondsunday.xyz/meet-up
       - label: Discord
         url: https://discord.com/invite/EdVFccyJeT
+  - name: Omaha Sapphic Society
+    public: true
+    description: Mutual aid, drag shows, line dancing, and art markets.
+    links:
+      - label: Instagram
+        url: https://www.instagram.com/theomahasapphicsociety/
+      - label: Facebook
+        url: https://www.facebook.com/groups/25516224564676931/
+    tags:
+      - online
   - name: OWOmaha Furry Group
     public: true
     description: All-inclusive, actively moderated Furry group with frequent in-person and Discord meetups.
