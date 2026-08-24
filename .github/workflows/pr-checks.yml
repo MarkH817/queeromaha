@@ -42,8 +42,7 @@ jobs:
 
       - run: bun install --frozen-lockfile
       - run: bun run lint:actions
-      - name: Audit dependencies
-        run: bun audit --audit-level high --production
+      - run: bun audit --audit-level high --production
       - run: bun run lint
       - run: bun run check
       - run: bun run test:unit
