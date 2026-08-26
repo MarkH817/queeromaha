@@ -1,0 +1,7 @@
+[install]
+minimumReleaseAge = 259200 # 3 days
+[install.security]
+scanner = "@socketsecurity/bun-security-scanner"
+
+# Packages that bypass the gate
+minimumReleaseAgeExcludes = ["@types/bun", "bun-types","astro", "@astrojs/sitemap", "@astrojs/check", "@astrojs/react", "posthog-js", "@posthog/core", "@posthog/types"]

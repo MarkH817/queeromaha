@@ -14,5 +14,5 @@ if [ ! -d node_modules ]; then
 fi
 
 bun run lint:actions || exit 1
+bun run check || exit 1
 bun run test:unit || exit 1
-
