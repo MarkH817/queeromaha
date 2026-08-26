@@ -1,7 +1,7 @@
 name: Ensure PR mergable
 on:
   pull_request:
-    branches: [main]
+    branches: [main, next]
   workflow_dispatch:
 
 concurrency:
@@ -28,7 +28,6 @@ jobs:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
           restore-keys: |
-            ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
             ${{ runner.os }}-bun-
 
       - name: Cache Playwright browsers
@@ -37,23 +36,33 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('bun.lock') }}
           restore-keys: |
-            ${{ runner.os }}-playwright-${{ hashFiles('bun.lock') }}
             ${{ runner.os }}-playwright-
 
       - run: bun install --frozen-lockfile
       - run: bun run lint:actions
-      - run: bun audit --audit-level high --production
+      - run: bun run audit
       - run: bun run lint
       - run: bun run check
       - run: bun run test:unit
-      - run: bunx playwright install --with-deps chromium
-      - run: bun run test:e2e:isolated
 
-      - name: Upload Reports
+      - name: Install Playwright browsers
+        run: bunx playwright install --with-deps chromium
+
+      - name: Fast e2e (mobile-chrome)
+        if: github.event.pull_request.base.ref == 'main'
+        run: bun run test:e2e:isolated
+
+      - name: Broader e2e (all projects + a11y)
+        if: github.event.pull_request.base.ref == 'next'
+        run: |
+          bun run test:e2e:all
+          bun run test:a11y
+
+      - name: Upload failure reports
         if: failure()
         uses: actions/upload-artifact@v7
         with:
-          name: e2e-report
+          name: pr-check-reports
           path: |
             playwright-report/
             test-results/

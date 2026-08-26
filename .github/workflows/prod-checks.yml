@@ -1,21 +1,21 @@
-name: E2E
+name: Prod Checks
 
-# Full end-to-end suite across all configured viewports/ device Playwright projects  
-# Chromium persisted via actions/cache on ~/.cache/ms-playwright
+# Full production gate — runs on PRs targeting live before merge
+# Includes all e2e projects, a11y, and lighthouse
 on:
-  push:
-    branches: [main]
+  pull_request:
+    branches: [live]
   workflow_dispatch:
 
 concurrency:
-  group: e2e-${{ github.ref }}
+  group: prod-checks-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  e2e:
+  prod-checks:
     if: "!github.event.pull_request.draft"
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -30,25 +30,29 @@ jobs:
         with:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: ${{ runner.os }}-bun-
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('bun.lock') }}
-          restore-keys: ${{ runner.os }}-playwright-
+          restore-keys: |
+            ${{ runner.os }}-playwright-
 
       - run: bun install --frozen-lockfile
+  
       - run: bunx playwright install --with-deps chromium
-      # test:e2e:all = `bun run build && playwright test` (both projects)
       - run: bun run test:e2e:all
+      - run: bun run test:a11y
+      - run: bun run test:e2e:lighthouse
 
-      - name: Upload e2e failure artifacts
+      - name: Upload failure artifacts
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: e2e-report
+          name: prod-check-reports
           path: |
             playwright-report/
             test-results/
