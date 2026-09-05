@@ -20,21 +20,35 @@ Directory of queer/trans groups, venues and spaces in Omaha.
 
 ## Local Development
 
+### Dependencies
+
 ```
-# install dependencies
+# install JS deps
 bun install --development
 
-# astro w/ HMR at localhost:4321
+(optional) To run e2e tests
+bunx playwright install --with-deps
+
+(optional) To test "link checker" CI job
+cargo install lychee # installing Rust left as an exercise to the reader
+```
+
+### Running locally
+
+```
+# start local astro server w/ HMR at localhost:4321
 bun run dev
 ```
 
-### Deploy site via CI
+## Deployment
+
+### Via CI
 
 The Netlify GitHub app is installed for this repo, which creates a "preview deployment" on (non-draft) Pull Requests.
 
 Merges to `main` (protected branch) will deploy the production site.
 
-### Deploy site Manually
+### Manually
 
 ```
 # install netlify CLI globally
