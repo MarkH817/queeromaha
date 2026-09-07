@@ -43,7 +43,7 @@ const FAIL_ON = [
 
 const result = spawnSync(
     'bunx',
-    ['license-checker', '--production', '--summary', '--failOn', FAIL_ON],
+    ['license-checker', '--summary', '--failOn', FAIL_ON],
     {
         cwd: ROOT,
         stdio: 'inherit',
