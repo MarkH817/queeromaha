@@ -18,3 +18,7 @@ fi
 bun run lint:actions || exit 1
 bun run check || exit 1
 bun run test:unit || exit 1
+
+if git diff --cached --name-only | grep -qE '(^|/)(package\.json|bun\.lock|check-licenses\.ts)$'; then
+  bun run check:licenses || exit 1
+fi

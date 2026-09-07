@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
-      - name: Cache bun install cache
-        uses: actions/cache@v6
+      - name: Cache npm package dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-bun-
 
       - name: Cache Playwright browsers
-        uses: actions/cache@v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('bun.lock') }}
@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - run: bun install --frozen-lockfile
-  
+
       - run: bunx playwright install --with-deps chromium
       - run: bun run test:e2e:all
       - run: bun run test:a11y
@@ -50,7 +50,7 @@ jobs:
 
       - name: Upload failure artifacts
         if: failure()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: prod-check-reports
           path: |
