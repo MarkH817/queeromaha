@@ -1,0 +1,22 @@
+#!/bin/sh
+# Friendly nudge toward Conventional Commits (https://www.conventionalcommits.org).
+# This is advisory only — it never blocks a commit, it just prints a hint.
+
+if [ ! -d node_modules ]; then
+  exit 0
+fi
+
+if ! bunx --no-install commitlint --edit "$1" > /tmp/commitlint-$$.log 2>&1; then
+  echo ""
+  echo "commit-msg: this commit message doesn't look like a Conventional Commit."
+  echo "            (this is just a friendly heads-up — the commit still went through)"
+  echo ""
+  cat /tmp/commitlint-$$.log
+  echo ""
+  echo "  e.g. \"feat: add newsletter signup\" or \"fix(ical): correct dtstart offset\""
+  echo "  see https://www.conventionalcommits.org for the full format"
+  echo ""
+fi
+rm -f /tmp/commitlint-$$.log
+
+exit 0

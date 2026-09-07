@@ -42,6 +42,29 @@ the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
 (or `test:e2e:all` for both). The e2e suite serves the built `dist/` via
 `astro preview` on port 4242.
 
+### Commit messages
+
+New commits (hand-written or bot-generated) should follow [Conventional
+Commits](https://www.conventionalcommits.org) (`feat:`, `fix:`, `chore:`,
+`docs:`, etc). This is a soft convention, not an enforced one: the
+`commit-msg` hook runs commitlint but only prints a friendly warning — it
+never blocks a commit. History before this convention was adopted is left
+as-is, not rewritten.
+
+- `bun run commit` — runs [opencommit](https://github.com/di-sukharev/opencommit)
+  (via `bunx`, not a project dependency) to draft a Conventional Commit
+  message from the staged diff. Needs `bunx oco config set OCO_AI_PROVIDER=... OCO_API_KEY=...`
+  once, locally.
+- `bun run changelog` — regenerates `CHANGELOG.md` from git history using
+  [git-cliff](https://git-cliff.org) (config: `cliff.toml`), grouped by commit
+  type. Commits that don't parse as Conventional Commits are silently
+  excluded rather than dumped into an "other" bucket.
+- `bun run changelog:unreleased` — prints changelog entries for commits
+  since the last tag, without writing the file.
+
+git-cliff is a standalone binary (`brew install git-cliff`), not an npm
+package.
+
 ## Architecture
 
 Static site built with **Astro**, deployed to Netlify. Content lives as plain YAML edited directly via git. Single layout at `src/layouts/Base.astro`.
