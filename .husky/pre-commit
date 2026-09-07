@@ -22,3 +22,10 @@ bun run test:unit || exit 1
 if git diff --cached --name-only | grep -qE '(^|/)(package\.json|bun\.lock|check-licenses\.ts)$'; then
   bun run check:licenses || exit 1
 fi
+
+# security audit: local-only (not CI) since it hits a remote vulnerability
+# database and can hang/fail on a slow or offline connection — only relevant
+# when dependencies actually changed, and fails closed (no swallowed errors)
+if git diff --cached --name-only | grep -qE '(^|/)(package\.json|bun\.lock)$'; then
+  bun run audit || exit 1
+fi
