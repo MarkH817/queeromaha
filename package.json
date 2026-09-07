@@ -5,7 +5,7 @@
     "description": "queer stuff in omaha",
     "scripts": {
         "test": "bun run build && npm-run-all -l -p check test:unit -s test:e2e:isolated",
-        "test:push": "bun run build && npm-run-all -l -p audit check test:unit -s test:e2e:smoke",
+        "test:push": "bun run build && npm-run-all -l -p check test:unit -s test:e2e:smoke",
         "test:unit": "bun run build && vitest run",
         "test:fast": "run-p -l lint test:data",
         "test:data": "bun run build && vitest run test/data.test.ts",

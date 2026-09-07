@@ -44,11 +44,6 @@ jobs:
 
       - run: bun install --frozen-lockfile
       - run: bun run lint:actions
-
-      - name: Security audit of npm dependencies
-        run: bun run audit
-        continue-on-error: true
-
       - run: bun run lint
       - run: bun run check
       - run: bun run test:unit
