@@ -1,24 +1,27 @@
-name: Ensure PR mergable
+name: CI
 
 on:
   pull_request:
-    branches: [main, next]
+    branches: [main, next, live]
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
 
 concurrency:
-  group: pr-checks-${{ github.ref }}
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  pr-checks:
-    if: "!github.event.pull_request.draft"
+  validate:
+    name: Validate
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
@@ -60,18 +63,25 @@ jobs:
             checker_script:
               - 'scripts/check-licenses.ts'
 
-
       - name: Check dependency licenses (block GPL family)
         if: steps.changes.outputs.lockfile == 'true' || steps.changes.outputs.checker_script == 'true'
         run: bun run check:licenses
 
       - run: bunx playwright install --with-deps chromium
+
       - name: Fast e2e (mobile-chrome)
-        if: github.event.pull_request.base.ref == 'main'
+        if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
         run: bun run test:e2e:isolated
 
+      - name: Broader e2e (all projects + a11y + lighthouse)
+        if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'live'
+        run: |
+          bun run test:e2e:all
+          bun run test:a11y
+          bun run test:e2e:lighthouse
+
       - name: Broader e2e (all projects + a11y)
-        if: github.event.pull_request.base.ref == 'next'
+        if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'next'
         run: |
           bun run test:e2e:all
           bun run test:a11y
@@ -80,7 +90,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: pr-check-reports
+          name: ci-reports
           path: |
             playwright-report/
             test-results/
