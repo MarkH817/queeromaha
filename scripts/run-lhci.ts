@@ -30,13 +30,30 @@ if (!existsSync(DIST)) {
 
 // Reuse Playwright's Chromium so we don't pull a second Chrome.
 function findPlaywrightChromium(): string | null {
-    const base = join(homedir(), '.cache', 'ms-playwright')
-    if (!existsSync(base)) return null
-    for (const entry of readdirSync(base, { withFileTypes: true })) {
-        if (!entry.isDirectory()) continue
-        for (const rel of ['chrome-linux64/chrome', 'chrome-linux/chrome']) {
-            const candidate = join(base, entry.name, rel)
-            if (existsSync(candidate)) return candidate
+    const bases =
+        process.platform === 'darwin'
+            ? [join(homedir(), 'Library', 'Caches', 'ms-playwright')]
+            : process.platform === 'win32'
+              ? [join(homedir(), 'AppData', 'Local', 'ms-playwright')]
+              : [join(homedir(), '.cache', 'ms-playwright')]
+
+    const relPaths = [
+        'chrome-linux64/chrome',
+        'chrome-linux/chrome',
+        'chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing',
+        'chrome-mac/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing',
+        'chrome-win64/chrome.exe',
+        'chrome-win/chrome.exe',
+    ]
+
+    for (const base of bases) {
+        if (!existsSync(base)) continue
+        for (const entry of readdirSync(base, { withFileTypes: true })) {
+            if (!entry.isDirectory()) continue
+            for (const rel of relPaths) {
+                const candidate = join(base, entry.name, rel)
+                if (existsSync(candidate)) return candidate
+            }
         }
     }
     return null
