@@ -17,7 +17,11 @@ fi
 
 bun run lint:actions || exit 1
 bun run check || exit 1
-bun run test:unit || exit 1
+
+# test/build.test.ts and test/structured-data.test.ts assert against dist/,
+# which isn't guaranteed to exist pre-commit (test:unit alone doesn't build)
+# — skip them here; test/test:push/CI all build first and run them there.
+bun run test:unit -- --exclude 'test/build.test.ts' --exclude 'test/structured-data.test.ts' || exit 1
 
 if git diff --cached --name-only | grep -qE '(^|/)(package\.json|bun\.lock|check-licenses\.ts)$'; then
   bun run check:licenses || exit 1
