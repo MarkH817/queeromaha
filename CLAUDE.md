@@ -25,7 +25,7 @@ bun run test:e2e:full      # Playwright e2e, mobile-chrome, all specs — no reb
 bun run test:e2e:smoke     # mobile Chrome smoke: site.spec only (no a11y, no rebuild)
 bun run test:e2e:desktop   # build + Playwright e2e (desktop-chrome)
 bun run test:e2e:all       # build + Playwright e2e (both projects)
-bun run test:a11y          # build + Playwright a11y spec only
+bun run test:e2e:a11y          # build + Playwright a11y spec only
 bun run test:push          # fast push gate: build + check + unit + e2e:smoke (CI runs a11y + full e2e)
 ```
 
