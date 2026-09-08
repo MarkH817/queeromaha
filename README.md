@@ -93,7 +93,7 @@ End-to-end tests are strongly recommended for commits that touch the frontend.
 ```
 bun run test:unit # vitest
 bun run test:e2e # Playwright mobile/ desktop browsers
-bun run test:a11y # Accessibility via axe
+bun run test:e2e:a11y # Accessibility via axe
 bun run test:lighthouse # Lighthouse audit (SEO, perf)
 ```
 
