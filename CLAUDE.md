@@ -17,11 +17,11 @@ bun run test           # everything: build, astro check, unit tests, and e2e (mo
 bun run test:unit      # unit tests only (vitest run, all of test/*.test.ts)
 bun run test:fast      # lint + test:data in parallel (quick pre-flight)
 bun run test:data      # data validation only (fastest, no build)
-bun run test:build     # build + test/build.test.ts
-bun run test:structured-data  # build + test/structured-data.test.ts (JSON-LD)
+bun run test:build     # test/build.test.ts — needs a prior `bun run build`, doesn't build itself
+bun run test:structured-data  # test/structured-data.test.ts (JSON-LD) — needs a prior build
 bun run test:ical      # test/ical.test.ts only
 bun run test:e2e       # build + Playwright e2e (mobile-chrome)
-bun run test:e2e:isolated  # Playwright e2e only, no rebuild
+bun run test:e2e:full      # Playwright e2e, mobile-chrome, all specs — no rebuild
 bun run test:e2e:smoke     # mobile Chrome smoke: site.spec only (no a11y, no rebuild)
 bun run test:e2e:desktop   # build + Playwright e2e (desktop-chrome)
 bun run test:e2e:all       # build + Playwright e2e (both projects)
