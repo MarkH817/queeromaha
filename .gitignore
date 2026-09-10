@@ -51,7 +51,3 @@ npm-debug.log*
 
 # TypeScript
 *.tsbuildinfo
-
-# Lychee link checker
-.lycheecache/
-lychee-report.md
