@@ -14,14 +14,14 @@ bun run lint           # check formatting (biome)
 bun run format         # auto-fix formatting (biome + format-yaml.js)
 
 bun run test           # everything: build, astro check, unit tests, and e2e (mobile-chrome)
-bun run test:unit      # unit tests only (vitest run, all of test/*.test.ts)
+bun run test:unit      # unit tests only (vitest run, all of test/*.test.ts — assumes dist/ already built)
 bun run test:fast      # lint + test:data in parallel (quick pre-flight)
 bun run test:data      # data validation only (fastest, no build)
-bun run test:build     # build + test/build.test.ts
-bun run test:structured-data  # build + test/structured-data.test.ts (JSON-LD)
+bun run test:build     # test/build.test.ts only (assumes dist/ already built)
+bun run test:structured-data  # test/structured-data.test.ts only (JSON-LD, assumes dist/ already built)
 bun run test:ical      # test/ical.test.ts only
 bun run test:e2e       # build + Playwright e2e (mobile-chrome)
-bun run test:e2e:isolated  # Playwright e2e only, no rebuild
+bun run test:e2e:full  # Playwright e2e only, no rebuild
 bun run test:e2e:smoke     # mobile Chrome smoke: site.spec only (no a11y, no rebuild)
 bun run test:e2e:desktop   # build + Playwright e2e (desktop-chrome)
 bun run test:e2e:all       # build + Playwright e2e (both projects)
@@ -34,8 +34,8 @@ script above — always use `bun run test` / `bun run <script>` here.
 
 Husky hooks:
 
-- pre-commit: `bun run format` (auto-fixes and re-stages), then `bun run test:unit`
-- pre-push: syncs with the remote branch first (aborts if the remote is ahead), then runs `bun run test:push` — build + type-check + unit + mobile smoke; a11y + full e2e are CI-only (pr-checks.yml / e2e.yml)
+- pre-commit: `bun run format` (auto-fixes and re-stages), then `bun run test:unit` (excluding `test/build.test.ts` and `test/structured-data.test.ts`, which need a prior build)
+- pre-push: syncs with the remote branch first (aborts if the remote is ahead), then runs `bun run test:push` — build + type-check + unit + mobile smoke; a11y + full e2e are CI-only (ci.yml, via the shared `site-ci.yml` workflow in `taraxvoid/voidflow`)
 
 Playwright defaults to the `mobile-chrome` project (`devices['Pixel 7']`) as
 the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
