@@ -28,9 +28,6 @@ bun install --development
 
 (optional) To run e2e tests
 bunx playwright install --with-deps
-
-(optional) To test "link checker" CI job
-cargo install lychee # installing Rust left as an exercise to the reader
 ```
 
 ### Running locally
@@ -93,9 +90,90 @@ End-to-end tests are strongly recommended for commits that touch the frontend.
 ```
 bun run test:unit # vitest
 bun run test:e2e # Playwright mobile/ desktop browsers
-bun run test:a11y # Accessibility via axe
+bun run test:e2e:a11y # Accessibility via axe
 bun run test:lighthouse # Lighthouse audit (SEO, perf)
 ```
+
+## Conventional Commits & Changelog
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org) for all new commits.
+
+### Format
+
+```
+<type>[optional scope]: <short description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Common types used here:
+
+| Type | When to use |
+|---|---|
+| `feat` | New feature or content addition |
+| `fix` | Bug fix |
+| `chore` | Maintenance, deps, config (no production change) |
+| `docs` | Documentation only |
+| `refactor` | Code restructure, no behavior change |
+| `style` | Formatting, whitespace |
+| `test` | Adding or updating tests |
+| `perf` | Performance improvement |
+| `ci` | CI/CD config |
+| `revert` | Reverting a previous commit |
+
+Examples:
+
+```
+feat(ical): add end_time support to recurring events
+fix: correct slug collision on renamed items
+chore(deps): bump astro to 5.x
+docs: document git-cliff setup in README
+```
+
+### Enforcement
+
+The `commit-msg` Husky hook runs [commitlint](https://commitlint.js.org) against every commit. It is **advisory only** — it prints a friendly hint but never blocks a commit. History before this convention was adopted is left as-is.
+
+### AI-assisted commit messages
+
+`bun run commit` runs [opencommit](https://github.com/di-sukharev/opencommit) (`bunx oco`) to draft a Conventional Commit message from the staged diff. One-time setup:
+
+```bash
+bunx oco config set OCO_AI_PROVIDER=<provider> OCO_API_KEY=<key>
+```
+
+### Changelog (git-cliff)
+
+The changelog is generated from git history by [git-cliff](https://git-cliff.org), configured in `cliff.toml`. Commits that don't parse as Conventional Commits are silently excluded.
+
+**Install git-cliff** (standalone binary, not an npm package):
+
+```bash
+brew install git-cliff
+```
+
+**Regenerate `CHANGELOG.md`** from the full git history:
+
+```bash
+bun run changelog
+```
+
+**Preview unreleased entries** (commits since the last tag, no file write):
+
+```bash
+bun run changelog:unreleased
+```
+
+**How `cliff.toml` works:**
+
+- `conventional_commits = true` — parses the standard `type(scope): message` format
+- `filter_unconventional = true` — silently drops non-conventional commits instead of erroring
+- `commit_parsers` — maps types to emoji-prefixed groups (Features, Bug Fixes, etc.) and sets sort order via `<!-- N -->` prefixes
+- `commit_preprocessors` — rewrites `(#123)` issue references into GitHub links
+- `postprocessors` — replaces the `<REPO>` placeholder with the actual GitHub URL
+- `topo_order_commits = true` — orders commits topologically within each release
 
 #### Link Checker
 
