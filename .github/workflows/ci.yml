@@ -8,4 +8,4 @@ on:
 
 jobs:
   validate:
-    uses: taraxvoid/voidflow/.github/workflows/site-ci.yml@main
+    uses: taraxvoid/voidflow/.github/workflows/site-ci.yml@v0.3.0
