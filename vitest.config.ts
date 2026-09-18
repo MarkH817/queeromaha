@@ -7,6 +7,7 @@ export default defineConfig({
             '**/.git/**',
             '**/e2e/**',
             '**/.claude/**',
+            '**/.delta/**',
         ],
     },
 })
