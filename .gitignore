@@ -22,6 +22,7 @@ node_modules/
 .poolside/
 .kilo/
 .claude/
+.delta/
 .cursor
 .vscode/
 .idea
