@@ -39,8 +39,6 @@ describe('GET /robots.txt', () => {
         expect(body).toContain(
             'Content-Signal: ai-train=no, search=yes, ai-input=yes',
         )
-        expect(body).toContain(
-            'Sitemap: https://queeromaha.net/sitemap-index.xml',
-        )
+        expect(body).toContain('Sitemap: https://queeromaha.net/sitemap.xml')
     })
 })

@@ -1,4 +1,5 @@
 import type { Context } from '@netlify/edge-functions'
+import { markdownPathFor } from '../lib/markdownPath.ts'
 
 // Any request path ending in a real file extension (images, .xml, .txt,
 // .ico, the .md files themselves, etc.) is served as-is — content
@@ -15,11 +16,9 @@ export default async (request: Request, context: Context) => {
     }
 
     // Every HTML page built by `src/pages/[...filters].astro` has a
-    // markdown counterpart pre-built by `src/pages/[...filters].md.ts` at
-    // the same path with `.md` appended (including the root page, which
-    // Astro emits as `dist/.md`).
-    const markdownUrl = new URL(`${url.pathname}.md`, url)
-    return markdownUrl
+    // markdown counterpart pre-built at the same path with `.md` appended
+    // (the root page is `/index.md`, see `src/pages/index.md.ts`).
+    return new URL(markdownPathFor(url.pathname), url)
 }
 
 export const config = { path: '/*' }

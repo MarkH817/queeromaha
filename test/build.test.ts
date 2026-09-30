@@ -26,7 +26,7 @@ describe('astro build', () => {
             'friends/index.html',
             'spiritual/index.html',
             'robots.txt',
-            'sitemap-index.xml',
+            'sitemap.xml',
             'llms.txt',
             '_headers',
             '404.html',

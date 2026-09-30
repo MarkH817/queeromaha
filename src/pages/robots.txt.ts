@@ -46,7 +46,7 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://queeromaha.net/sitemap-index.xml
+Sitemap: https://queeromaha.net/sitemap.xml
 `
     return new Response(body, {
         headers: { 'Content-Type': 'text/plain; charset=utf-8' },

@@ -30,7 +30,7 @@
         "check:licenses": "bun scripts/check-licenses.ts",
         "check:links": "bun scripts/check-links.ts",
         "serve": "astro dev",
-        "build": "astro build && bun scripts/generate-redirects.ts",
+        "build": "astro build && bun scripts/generate-redirects.ts && cp dist/sitemap-index.xml dist/sitemap.xml",
         "preview": "astro preview",
         "prepare": "husky",
         "lint": "biome check .",
