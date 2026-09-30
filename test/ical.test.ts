@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { generateFeedICS } from '../src/utils/ical.ts'
+import { generateFeedICS } from '#utils/ical.ts'
 
 const baseEvent = {
     summary: 'Test Event',

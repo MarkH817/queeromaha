@@ -1,6 +1,4 @@
-function prefersReducedMotion() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-}
+import { prefersReducedMotion } from '#utils/motion.ts'
 
 function initFocusOnOpen(details: HTMLDetailsElement, input: HTMLInputElement) {
     details.addEventListener('toggle', () => {
@@ -92,5 +90,3 @@ function init() {
 if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init)
 else init()
-
-export {}

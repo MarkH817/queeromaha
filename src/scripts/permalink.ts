@@ -1,6 +1,4 @@
-function prefersReducedMotion() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-}
+import { prefersReducedMotion } from '#utils/motion.ts'
 
 function categoryUrl() {
     const category = document.body.dataset.initialCategories?.split(' ')[0]
@@ -131,5 +129,3 @@ function init() {
 if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init)
 else init()
-
-export {}

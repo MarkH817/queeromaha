@@ -1,12 +1,12 @@
 import type { z } from 'zod'
-import type { itemSchema } from '../content.config'
-import tagMap from '../data/tagMap.json'
-import { formatLocationLine } from '../utils/location'
+import tagMap from '#data/tagMap.json'
+import { formatLocationLine } from '#utils/location.ts'
 import {
     categoryMap,
     getFilterStaticPaths,
     resolveFilters,
-} from '../utils/resolveFilters'
+} from '#utils/resolveFilters.ts'
+import type { itemSchema } from '../content.config'
 
 type Item = z.infer<typeof itemSchema>
 type TagMap = Record<string, { icon: string; label: string; family?: string }>

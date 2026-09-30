@@ -1,4 +1,5 @@
 import { toZonedTime } from 'date-fns-tz'
+import type { RRule } from 'rrule'
 
 export interface ParsedEvent {
     uid: string
@@ -71,7 +72,7 @@ function fakeUtc(date: Date): Date {
 export function getUpcomingEvents(
     events: ParsedEvent[],
     now: Date,
-    RRuleCtor: typeof import('rrule').RRule,
+    RRuleCtor: typeof RRule,
     count: number,
 ): NextEvent[] {
     const nowFaked = fakeUtc(now)

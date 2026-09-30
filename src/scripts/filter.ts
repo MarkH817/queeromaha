@@ -1,3 +1,5 @@
+import { prefersReducedMotion } from '#utils/motion.ts'
+
 function initFilters() {
     const cards = document.querySelectorAll<HTMLElement>('[data-category]')
     const pills = document.querySelectorAll<
@@ -127,10 +129,10 @@ function initFilters() {
     }
 
     function scrollToTop() {
-        const reduced = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-        ).matches
-        window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' })
+        window.scrollTo({
+            top: 0,
+            behavior: prefersReducedMotion() ? 'instant' : 'smooth',
+        })
     }
 
     function setCategory(slug: string) {
@@ -198,5 +200,3 @@ function initFilters() {
 if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', initFilters)
 else initFilters()
-
-export {}

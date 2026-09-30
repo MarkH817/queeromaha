@@ -1,9 +1,10 @@
 ---
-import site from '../data/site.json'
-import '../styles/theme.css'
-import HeadMeta from '../components/HeadMeta.astro'
-import SiteFooter from '../components/SiteFooter.astro'
-import SiteHeader from '../components/SiteHeader.astro'
+import HeadMeta from '#components/HeadMeta.astro'
+import ScrollToTop from '#components/ScrollToTop.astro'
+import SiteFooter from '#components/SiteFooter.astro'
+import SiteHeader from '#components/SiteHeader.astro'
+import site from '#data/site.json'
+import '#styles/theme.css'
 
 interface Props {
     title?: string
@@ -28,11 +29,16 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).href
 
 <!doctype html>
 <html lang="en">
-  <HeadMeta title={pageTitle} description={description} canonicalUrl={canonicalUrl} refresh={refresh} />
+  <HeadMeta
+    title={pageTitle}
+    description={description}
+    canonicalUrl={canonicalUrl}
+    refresh={refresh}
+  />
   <body
-    data-initial-categories={initialCategories.join(' ')}
-    data-initial-tags={initialTags.join(' ')}
-    data-initial-item-slug={initialItemSlug ?? ''}
+    data-initial-categories={initialCategories.join(" ")}
+    data-initial-tags={initialTags.join(" ")}
+    data-initial-item-slug={initialItemSlug ?? ""}
   >
     <SiteHeader />
     <main id="main" tabindex="-1">
@@ -40,13 +46,14 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).href
       <slot />
     </main>
     <SiteFooter />
+    <ScrollToTop />
     <script>
-      import '@awesome.me/webawesome/dist/components/button/button.js'
-      import '@awesome.me/webawesome/dist/components/card/card.js'
-      import '@awesome.me/webawesome/dist/components/icon/icon.js'
-      import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js'
-      import '../scripts/filter'
-      import '../scripts/permalink'
+      import "@awesome.me/webawesome/dist/components/button/button.js";
+      import "@awesome.me/webawesome/dist/components/card/card.js";
+      import "@awesome.me/webawesome/dist/components/icon/icon.js";
+      import "@awesome.me/webawesome/dist/components/tooltip/tooltip.js";
+      import "../scripts/filter";
+      import "../scripts/permalink";
 
       // On a cold load landing directly on a hash, the browser's native
       // fragment scroll can run before these Web Awesome imports resolve
@@ -55,24 +62,26 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).href
       // respects theme.css's scroll-padding-top.
       if (location.hash) {
         Promise.all([
-          customElements.whenDefined('wa-button'),
-          customElements.whenDefined('wa-icon'),
+          customElements.whenDefined("wa-button"),
+          customElements.whenDefined("wa-icon"),
         ]).then(() => {
-          document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' })
-        })
+          document
+            .getElementById(location.hash.slice(1))
+            ?.scrollIntoView({ block: "start" });
+        });
       }
     </script>
     <script is:inline>
-      document.addEventListener('click', function (e) {
-        const anchor = e.target.closest('a[data-ph-item-name]')
-        if (!anchor) return
-        window.posthog?.capture('directory_link_clicked', {
+      document.addEventListener("click", function (e) {
+        const anchor = e.target.closest("a[data-ph-item-name]");
+        if (!anchor) return;
+        window.posthog?.capture("directory_link_clicked", {
           item_name: anchor.dataset.phItemName,
           item_category: anchor.dataset.phItemCategory,
           link_label: anchor.dataset.phLinkLabel,
           link_url: anchor.href,
-        })
-      })
+        });
+      });
     </script>
   </body>
 </html>

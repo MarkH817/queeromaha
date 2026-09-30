@@ -46,15 +46,17 @@ test('content pages render wa-card items', async ({ page }) => {
     }
 })
 
-test('external links have rel=noopener noreferrer', async ({ page }) => {
+test('external links have rel=noopener', async ({ page }) => {
     await page.goto('/cafes/')
     const links = page.locator('wa-card .entry-links a[href^="http"]')
     const count = await links.count()
     expect(count).toBeGreaterThan(0)
     for (let i = 0; i < count; i++) {
         const rel = await links.nth(i).getAttribute('rel')
+        // Noopener required for security
         expect(rel).toContain('noopener')
-        expect(rel).toContain('noreferrer')
+        // Avoid noreferrer to allow this site to appear in others' analytics
+        expect(rel).not.toContain('noreferrer')
     }
 })
 

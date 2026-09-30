@@ -1,6 +1,5 @@
 import { describe, expect, test } from 'vitest'
-
-const { formatLocationLine } = await import('../src/utils/location.ts')
+import { formatLocationLine } from '#utils/location.ts'
 
 describe('formatLocationLine', () => {
     test('street and neighborhood join with a hyphen', () => {

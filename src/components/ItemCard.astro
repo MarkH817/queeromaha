@@ -1,9 +1,9 @@
 ---
 import type { z } from 'zod'
+import tagMap from '#data/tagMap.json'
+import { toJsonLdScript } from '#utils/jsonLd.ts'
+import { formatLocationLine } from '#utils/location.ts'
 import type { itemSchema } from '../content.config'
-import tagMap from '../data/tagMap.json'
-import { toJsonLdScript } from '../utils/jsonLd'
-import { formatLocationLine } from '../utils/location'
 import EntryTag from './EntryTag.astro'
 
 type TagMap = Record<string, { icon: string; label: string; family?: string }>
@@ -230,7 +230,7 @@ function resolveLink(link: { url: string; label: string }) {
         const pillIcon = resolved.icon
         return (
           <li>
-            <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}
+            <a href={link.url} rel="noopener" target="_blank" aria-label={`${link.label} (opens in new tab)`}
             data-ph-item-name={item.name}
             data-ph-item-category={category}
             data-ph-link-label={link.label}>

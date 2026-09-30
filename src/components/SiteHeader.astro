@@ -1,5 +1,5 @@
 ---
-import categoryMapJson from '../data/categoryMap.json'
+import categoryMapJson from '#data/categoryMap.json'
 
 const categoryMap = categoryMapJson as Record<
     string,
@@ -7,7 +7,7 @@ const categoryMap = categoryMapJson as Record<
 >
 ---
 
-<header>
+<header class="site-header">
   <a class="skip-link" href="#main">Skip to main content</a>
   <nav class="main-nav" aria-label="Main navigation">
     {Object.entries(categoryMap).map(([slug, { icon, label }]) => (
@@ -22,7 +22,7 @@ const categoryMap = categoryMapJson as Record<
   // grows once the wa-button/wa-icon custom elements upgrade, so track it
   // live in a CSS var used by theme.css's scroll-padding-top rule instead
   // of hardcoding an offset for anchor-linked sections.
-  const headerEl = document.querySelector('header')
+  const headerEl = document.querySelector('.site-header')
   if (headerEl) {
     const setHeaderHeightVar = () =>
       document.documentElement.style.setProperty(

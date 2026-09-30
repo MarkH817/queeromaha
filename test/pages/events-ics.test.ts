@@ -1,11 +1,10 @@
+import { getCollection } from 'astro:content'
 import { beforeEach, describe, expect, test, vi } from 'vitest'
+import { GET } from '../../src/pages/events.ics.ts'
 
-vi.mock('astro:content', () => ({
+vi.mock(import('astro:content'), () => ({
     getCollection: vi.fn(),
 }))
-
-const { getCollection } = await import('astro:content')
-const { GET } = await import('../../src/pages/events.ics.ts')
 
 function mockCollection(entries: unknown[]) {
     vi.mocked(getCollection).mockResolvedValue(entries as never)

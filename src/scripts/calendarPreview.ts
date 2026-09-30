@@ -2,7 +2,7 @@ import {
     getUpcomingEvents,
     type NextEvent,
     parseEvents,
-} from '../utils/eventsPreview'
+} from '#utils/eventsPreview.ts'
 
 const PREVIEW_COUNT = 3
 
@@ -22,7 +22,7 @@ let inFlight: Promise<void> | null = null
 function formatTime(event: NextEvent): string {
     // timeZone: 'UTC' reproduces the fake-UTC wall-clock values verbatim
     // instead of re-applying the visitor's real offset on top of them.
-    return new Intl.DateTimeFormat(undefined, {
+    return new Intl.DateTimeFormat(navigator.language, {
         weekday: 'short',
         hour: 'numeric',
         minute: '2-digit',

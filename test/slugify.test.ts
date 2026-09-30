@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { slugify } from '../src/utils/slugify.ts'
+import { slugify } from '#utils/slugify.ts'
 
 describe('slugify', () => {
     test('lowercases and replaces spaces with hyphens', () => {

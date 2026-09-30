@@ -1,7 +1,7 @@
 import { getCollection } from 'astro:content'
 import type { APIRoute } from 'astro'
-import { generateFeedICS } from '../utils/ical'
-import { slugify } from '../utils/slugify'
+import { generateFeedICS, type RecurringEvent } from '#utils/ical.ts'
+import { slugify } from '#utils/slugify.ts'
 
 export const prerender = true
 
@@ -10,7 +10,7 @@ export const GET: APIRoute = async () => {
 
     const events: Array<{
         uid: string
-        event: import('../utils/ical').RecurringEvent
+        event: RecurringEvent
     }> = []
 
     for (const entry of entries) {

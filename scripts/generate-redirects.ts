@@ -11,8 +11,8 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parse } from 'yaml'
-import type { ItemSlugs } from '../src/utils/itemSlug.ts'
-import { computeItemSlugs } from '../src/utils/itemSlug.ts'
+import type { ItemSlugs } from '#utils/itemSlug.ts'
+import { computeItemSlugs } from '#utils/itemSlug.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')

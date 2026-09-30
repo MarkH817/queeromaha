@@ -3,8 +3,8 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
 import { parse as parseYaml } from 'yaml'
+import tagMap from '#data/tagMap.json' with { type: 'json' }
 import { canonicalize } from '../scripts/helpers/yaml.helper'
-import tagMap from '../src/data/tagMap.json' with { type: 'json' }
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')

@@ -7,8 +7,8 @@ process.env.TZ = 'America/Los_Angeles'
 import { fromZonedTime } from 'date-fns-tz'
 import { RRule } from 'rrule'
 import { describe, expect, test } from 'vitest'
-import { getUpcomingEvents, parseEvents } from '../src/utils/eventsPreview.ts'
-import { generateFeedICS } from '../src/utils/ical.ts'
+import { getUpcomingEvents, parseEvents } from '#utils/eventsPreview.ts'
+import { generateFeedICS } from '#utils/ical.ts'
 
 // Builds a real UTC instant from a wall-clock time expressed in
 // America/Chicago (matching how dtstart is always specified), regardless

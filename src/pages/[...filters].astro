@@ -1,15 +1,15 @@
 ---
-import FilterBar from '../components/FilterBar.astro'
-import ItemCard from '../components/ItemCard.astro'
-import site from '../data/site.json'
-import Base from '../layouts/Base.astro'
-import { computeItemSlugs } from '../utils/itemSlug'
-import { toJsonLdScript } from '../utils/jsonLd'
+import FilterBar from '#components/FilterBar.astro'
+import ItemCard from '#components/ItemCard.astro'
+import site from '#data/site.json'
+import Base from '#layouts/Base.astro'
+import { computeItemSlugs } from '#utils/itemSlug.ts'
+import { toJsonLdScript } from '#utils/jsonLd.ts'
 import {
     categoryMap,
     getFilterStaticPaths,
     resolveFilters,
-} from '../utils/resolveFilters'
+} from '#utils/resolveFilters.ts'
 
 export async function getStaticPaths() {
     const paths = await getFilterStaticPaths()

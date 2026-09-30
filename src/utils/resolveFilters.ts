@@ -1,5 +1,5 @@
 import { type CollectionEntry, getCollection } from 'astro:content'
-import categoryMapJson from '../data/categoryMap.json'
+import categoryMapJson from '#data/categoryMap.json'
 import { computeItemSlugs } from './itemSlug'
 
 export const categoryMap = categoryMapJson as Record<

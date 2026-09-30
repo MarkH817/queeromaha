@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { computeItemSlugs } from '../src/utils/itemSlug.ts'
+import { computeItemSlugs } from '#utils/itemSlug.ts'
 
 describe('computeItemSlugs', () => {
     test('auto-derives canonical from name when vanity_slug is unset', () => {

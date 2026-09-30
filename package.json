@@ -4,8 +4,8 @@
     "version": "1.0.3",
     "description": "queer stuff in omaha",
     "scripts": {
-        "test": "bun run build && npm-run-all -l -p check test:unit -s test:e2e:full",
-        "test:push": "bun run build && npm-run-all -l -p check test:unit -s test:e2e:smoke",
+        "test": "npm-run-all -l -s build -p check test:unit -s test:e2e:full",
+        "test:push": "npm-run-all -l -s build -p check test:unit -s test:e2e:smoke",
         "test:unit": "vitest run",
         "test:fast": "run-p -l lint test:data",
         "test:data": "vitest run test/data.test.ts",
@@ -41,6 +41,13 @@
         "changelog": "git-cliff -o CHANGELOG.md",
         "changelog:unreleased": "git-cliff --unreleased",
         "postinstall": "bunx @biomejs/biome migrate --write"
+    },
+    "imports": {
+        "#components/*": "./src/components/*",
+        "#data/*": "./src/data/*",
+        "#layouts/*": "./src/layouts/*",
+        "#styles/*": "./src/styles/*",
+        "#utils/*": "./src/utils/*"
     },
     "keywords": [],
     "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
