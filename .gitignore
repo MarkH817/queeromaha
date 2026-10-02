@@ -44,7 +44,7 @@ test-results/
 .last-run.json
 
 # Lighthouse CI
-.lighthouseci/
+.unlighthouse/
 
 # Logs
 *.log
