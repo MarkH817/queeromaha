@@ -1,3 +1,9 @@
 [build]
 publish = "dist"
 command = "bun run build"
+
+[build.environment]
+# Netlify's default Bun predates minimumReleaseAgeExcludes (so a voidflow release
+# under 3 days old is rejected) and cannot parse our lockfileVersion 2 bun.lock
+# (it silently re-resolves instead). 1.4.x handles both; matches engines.bun.
+BUN_VERSION = "1.4.2"

@@ -27,6 +27,7 @@
         "@playwright/test": "^1.63.0",
         "@posthog/cli": "^0.8.4",
         "@socketsecurity/bun-security-scanner": "^1.1.2",
+        "@taraxvoid/voidflow": "0.9.0",
         "@types/bun": "^1.4.1",
         "@types/semver": "^7.8.0",
         "favicons": "^7.3.1",
@@ -465,6 +466,8 @@
     "@socketsecurity/bun-security-scanner": ["@socketsecurity/bun-security-scanner@1.1.3", "", {}, "sha512-etUBYn5rx/ubI2JaAplX/Dr48X4uufcXVxvcVp68DZFne+ROlUQTcEw7pJFgq6UY4PWbChvhWnoNQBnFWwXyEA=="],
 
     "@standard-schema/spec": ["@standard-schema/spec@1.1.0", "", {}, "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="],
+
+    "@taraxvoid/voidflow": ["@taraxvoid/voidflow@0.9.0", "", { "peerDependencies": { "@playwright/test": ">=1.40" }, "bin": { "unlighthouse-runner": "scripts/unlighthouse/run.ts" } }, "sha512-25kuSC0dH+vgUsubHJfFuBAsj5//RAMTBLkrgo0QFQlieKDwkGiJyxq6aR/Y/x0VmesrTH1Mrcs/2xWvTQVrGw=="],
 
     "@tufjs/canonical-json": ["@tufjs/canonical-json@2.0.0", "", {}, "sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA=="],
 
