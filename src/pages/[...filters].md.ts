@@ -1,4 +1,4 @@
-import type { z } from 'zod'
+import type { CollectionEntry } from 'astro:content'
 import tagMap from '#data/tagMap.json'
 import { formatLocationLine } from '#utils/location.ts'
 import {
@@ -6,9 +6,8 @@ import {
     getFilterStaticPaths,
     resolveFilters,
 } from '#utils/resolveFilters.ts'
-import type { itemSchema } from '../content.config'
 
-type Item = z.infer<typeof itemSchema>
+type Item = Required<CollectionEntry<'directory'>['data']>['items'][0]
 type TagMap = Record<string, { icon: string; label: string; family?: string }>
 const tags = tagMap as TagMap
 

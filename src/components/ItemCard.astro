@@ -1,9 +1,10 @@
 ---
-import type { z } from 'zod'
+import type { CollectionEntry } from 'astro:content'
+import type { Organization, PostalAddress, WithContext } from 'schema-dts'
+import LD from '#components/LD.astro'
 import tagMap from '#data/tagMap.json'
-import { toJsonLdScript } from '#utils/jsonLd.ts'
+import { resolveLink } from '#utils/linkRules.ts'
 import { formatLocationLine } from '#utils/location.ts'
-import type { itemSchema } from '../content.config'
 import EntryTag from './EntryTag.astro'
 
 type TagMap = Record<string, { icon: string; label: string; family?: string }>
@@ -11,7 +12,7 @@ const tags = tagMap as TagMap
 const tagOrder = Object.keys(tags)
 
 interface Props {
-    item: z.infer<typeof itemSchema>
+    item: Required<CollectionEntry<'directory'>['data']>['items'][0]
     category: string
     slug: string
     hidden?: boolean
@@ -31,13 +32,13 @@ const locLine = formatLocationLine(loc)
 const itemLinks = item.links?.map((l) => l.url) ?? []
 const postalAddress =
     loc?.street || loc?.city || loc?.state || loc?.zip
-        ? {
+        ? ({
               '@type': 'PostalAddress',
               ...(loc?.street && { streetAddress: loc.street }),
               ...(loc?.city && { addressLocality: loc.city }),
               ...(loc?.state && { addressRegion: loc.state }),
               ...(loc?.zip && { postalCode: loc.zip }),
-          }
+          } satisfies PostalAddress)
         : undefined
 const plainDesc = item.description?.replace(/\s+/g, ' ').trim() ?? ''
 const jsonLd = {
@@ -48,198 +49,116 @@ const jsonLd = {
     ...(itemLinks.length > 0 && { sameAs: itemLinks }),
     ...(postalAddress && { address: postalAddress }),
     ...(loc?.google_maps_url && { hasMap: loc.google_maps_url }),
-}
-const jsonLdStr = toJsonLdScript(jsonLd)
-
-type LinkRule = {
-    kind: string
-    icon: { name: string; family: string }
-    match: (url: string, label: string) => boolean
-}
-
-// Canonical, fixed footer display order: calendar/events/schedule, Instagram,
-// Discord, Website, FB. Everything else keeps its original YAML order,
-// appended after (see canonicalRank / resolveLink below).
-const linkRules: LinkRule[] = [
-    {
-        kind: 'calendar',
-        icon: { name: 'calendar', family: 'classic' },
-        match: (_u, l) =>
-            l.includes('event') ||
-            l.includes('calendar') ||
-            l.includes('show') ||
-            l.includes('flyer') ||
-            l.includes('schedule'),
-    },
-    {
-        kind: 'instagram',
-        icon: { name: 'instagram', family: 'brands' },
-        match: (u) => u.includes('instagram.com'),
-    },
-    {
-        kind: 'discord',
-        icon: { name: 'discord', family: 'brands' },
-        match: (u) => u.includes('discord.com') || u.includes('discord.gg'),
-    },
-    {
-        kind: 'website',
-        icon: { name: 'earth-africa', family: 'classic' },
-        match: (_u, l) => l.includes('website'),
-    },
-    {
-        kind: 'facebook',
-        icon: { name: 'facebook', family: 'brands' },
-        match: (u) => u.includes('facebook.com'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'rectangle-list', family: 'classic' },
-        match: (u) => u.includes('carrd.co'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'spa', family: 'classic' },
-        match: (_u, l) => l.includes('zen'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'linktree', family: 'brands' },
-        match: (_u, l) => l.includes('linktree'),
-    },
-    {
-        kind: 'underground',
-        icon: { name: 'music', family: 'classic' },
-        match: (_u, l) => l.includes('underground'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'square-check', family: 'classic' },
-        match: (u, l) =>
-            l.includes('register') ||
-            l.includes('signup') ||
-            u.includes('docs.google.com/forms') ||
-            u.includes('forms.gle'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'person-half-dress', family: 'classic' },
-        match: (_u, l) => l.includes('clothes') || l.includes('closet'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'jar', family: 'classic' },
-        match: (_u, l) => l.includes('pantry') || l.includes('food'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'child-reaching', family: 'classic' },
-        match: (_u, l) => l.includes('youth') || l.includes('teen'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'people-group', family: 'classic' },
-        match: (_u, l) => l.includes('support') || l.includes('mental'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'user-group', family: 'classic' },
-        match: (u) => u.includes('meetup.com'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'shirt', family: 'classic' },
-        match: (u, l) =>
-            u.includes('threadless.com') || l.includes('threadless'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'palette', family: 'classic' },
-        match: (u, l) => u.includes('redbubble.com') || l.includes('workshop'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'shop', family: 'classic' },
-        match: (u) => u.includes('inprnt.com'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'bluesky', family: 'brands' },
-        match: (u, l) => u.includes('bsky.app') || l.includes('bluesky'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'bandcamp', family: 'brands' },
-        match: (u) => u.includes('bandcamp.com'),
-    },
-    {
-        kind: 'other',
-        icon: { name: 'substack', family: 'brands' },
-        match: (u) => u.includes('substack.com'),
-    },
-]
-
-const canonicalRank: Record<string, number> = {
-    calendar: 0,
-    instagram: 1,
-    discord: 2,
-    website: 3,
-    facebook: 4,
-}
-
-function resolveLink(link: { url: string; label: string }) {
-    const url = link.url.toLowerCase()
-    const label = link.label.toLowerCase()
-    const rule = linkRules.find((r) => r.match(url, label))
-    const kind = rule?.kind ?? 'other'
-    return { icon: rule?.icon ?? null, rank: canonicalRank[kind] ?? 5 }
-}
+} satisfies WithContext<Organization>
 ---
 
-<script is:inline type="application/ld+json" set:html={jsonLdStr} />
-<wa-card class:list={['item', { 'is-hidden': hidden }]} id={`${category}-${slug}`} data-category={category} data-slug={slug} data-tags={tagsAttr}>
+<LD data={jsonLd} />
+<wa-card
+  class:list={["item", { "is-hidden": hidden }]}
+  id={`${category}-${slug}`}
+  data-category={category}
+  data-slug={slug}
+  data-tags={tagsAttr}
+>
   <h3 slot="header">
-    <button type="button" class="item-tap-target" aria-pressed="false">{item.name}</button>
-    {[...(item.tags ?? [])]
-      .sort((a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b))
-      .map(tag => {
-      const t = tags[tag]
-      return t ? (
-        <EntryTag label={t.label} icon={t.icon} family={t.family} />
-      ) : null
-    })}
+    <button type="button" class="item-tap-target" aria-pressed="false"
+      >{item.name}</button
+    >
+    {
+      [...(item.tags ?? [])]
+        .sort((a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b))
+        .map((tag) => {
+          const t = tags[tag];
+          return t ? (
+            <EntryTag label={t.label} icon={t.icon} family={t.family} />
+          ) : null;
+        })
+    }
   </h3>
   {item.description && <p>{item.description}</p>}
-  {loc && locLine && (
-    <p class="item-location">
-      <wa-icon name="location-dot" aria-hidden="true"></wa-icon>
-      {loc.google_maps_url ? (
-        <a href={loc.google_maps_url} rel="noopener noreferrer" target="_blank" aria-label={`Map: ${locLine} (opens in new tab)`}>
-          {locLine}
-        </a>
-      ) : (
-        locLine
-      )}
-    </p>
-  )}
-  {item.links && item.links.length > 0 && (
-    <ul class="entry-links" slot="footer">
-      {[...item.links]
-        .map((link) => ({ link, resolved: resolveLink(link) }))
-        .sort((a, b) => a.resolved.rank - b.resolved.rank)
-        .map(({ link, resolved }) => {
-        const pillIcon = resolved.icon
-        return (
-          <li>
-            <a href={link.url} rel="noopener" target="_blank" aria-label={`${link.label} (opens in new tab)`}
-            data-ph-item-name={item.name}
-            data-ph-item-category={category}
-            data-ph-link-label={link.label}>
-              {pillIcon && <wa-icon name={pillIcon.name} family={pillIcon.family} aria-hidden="true"></wa-icon>}
-              {link.label}
-            </a>
-          </li>
-        )
-      })}
-    </ul>
-  )}
+  {
+    loc && locLine && (
+      <p class="item-location">
+        <wa-icon name="location-dot" aria-hidden="true" />
+        {loc.google_maps_url ? (
+          <a
+            href={loc.google_maps_url}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={`Map: ${locLine} (opens in new tab)`}
+          >
+            {locLine}
+          </a>
+        ) : (
+          locLine
+        )}
+      </p>
+    )
+  }
+  {
+    item.links && item.links.length > 0 && (
+      <ul class="entry-links" slot="footer">
+        {[...item.links]
+          .map((link) => ({ link, resolved: resolveLink(link) }))
+          .sort((a, b) => a.resolved.rank - b.resolved.rank)
+          .map(({ link, resolved }) => {
+            const pillIcon = resolved.icon;
+            return (
+              <li>
+                <a
+                  href={link.url}
+                  rel="noopener"
+                  target="_blank"
+                  aria-label={`${link.label} (opens in new tab)`}
+                  data-ph-item-name={item.name}
+                  data-ph-item-category={category}
+                  data-ph-link-label={link.label}
+                >
+                  {pillIcon && (
+                    <wa-icon
+                      name={pillIcon.name}
+                      family={pillIcon.family}
+                      aria-hidden="true"
+                    />
+                  )}
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+      </ul>
+    )
+  }
 </wa-card>
+
+<style>
+  .item-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    color: #7c3aed;
+  }
+
+  .item-location a {
+    text-decoration: dotted underline;
+    &,
+    &:hover,
+    &:focus {
+      color: #7c3aed;
+      border-bottom-color: transparent;
+    }
+    &:hover,
+    &:focus {
+      text-decoration-style: solid;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .item-location,
+    .item-location a {
+      color: var(--dm-glow);
+    }
+  }
+</style>

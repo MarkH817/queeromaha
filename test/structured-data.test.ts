@@ -128,7 +128,7 @@ describe('structured data (JSON-LD)', () => {
                     expect(
                         b.data as Record<string, unknown>,
                         rel,
-                    ).toHaveProperty('@context')
+                    ).toHaveProperty('@context', 'https://schema.org')
                     expect(
                         b.data as Record<string, unknown>,
                         rel,

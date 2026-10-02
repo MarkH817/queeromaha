@@ -1,0 +1,21 @@
+---
+import type {
+    ItemList,
+    Organization,
+    PostalAddress,
+    WebSite,
+    WithContext,
+} from 'schema-dts'
+import { toJsonLdScript } from '#utils/jsonLd.ts'
+
+interface Props {
+    data: WithContext<ItemList | Organization | PostalAddress | WebSite>
+}
+const { data } = Astro.props
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={toJsonLdScript(data)}
+/>

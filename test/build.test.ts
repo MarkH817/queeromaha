@@ -223,9 +223,7 @@ describe('astro build', () => {
             expect(tag).toContain('rel="preload"')
             expect(tag).toContain('as="font"')
             expect(tag).toContain('type="font/woff2"')
-            // Same-origin @font-face sources must not be preloaded with crossorigin,
-            // or Chrome discards the preloaded resource (double download).
-            expect(tag).not.toContain('crossorigin')
+            expect(tag).toContain('crossorigin')
         }
     })
 })

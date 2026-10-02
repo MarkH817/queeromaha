@@ -1,10 +1,10 @@
 ---
 import FilterBar from '#components/FilterBar.astro'
 import ItemCard from '#components/ItemCard.astro'
+import LD from '#components/LD.astro'
 import site from '#data/site.json'
 import Base from '#layouts/Base.astro'
 import { computeItemSlugs } from '#utils/itemSlug.ts'
-import { toJsonLdScript } from '#utils/jsonLd.ts'
 import {
     categoryMap,
     getFilterStaticPaths,
@@ -41,16 +41,6 @@ const visibleItemListElements = entries.flatMap((entry) => {
         url: new URL(`/${entry.id}/${itemSlugs[i].canonical}`, site.url).href,
     }))
 })
-const itemListJsonLdStr = toJsonLdScript({
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    itemListElement: visibleItemListElements.map((el, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        url: el.url,
-        name: el.name,
-    })),
-})
 ---
 
 <Base
@@ -59,22 +49,49 @@ const itemListJsonLdStr = toJsonLdScript({
   initialCategories={initialCategories}
   initialItemSlug={initialItemSlug}
 >
-  <script is:inline type="application/ld+json" set:html={itemListJsonLdStr} />
+  <LD
+    data={{
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: visibleItemListElements.map((el, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: el.url,
+        name: el.name,
+      })),
+    }}
+  />
   {activeCategoryHasFilters && <FilterBar />}
-  {entries.map(entry => {
-    const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
-    if (publicItems.length === 0) return null
-    const anyVisible = matchesInitial(entry.id)
-    const itemSlugs = computeItemSlugs(publicItems)
-    return (
-      <section id={`section-${entry.id}`} aria-label={categoryMap[entry.id]?.label ?? entry.id}>
-        <h2 class:list={['section-header', { 'is-hidden': !anyVisible }]} data-category-heading={entry.id}>
-          <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true"></wa-icon> {categoryMap[entry.id]?.label ?? entry.id}
-        </h2>
-        {publicItems.map((item, i) => (
-          <ItemCard item={item} category={entry.id} slug={itemSlugs[i].canonical} hidden={!matchesInitial(entry.id)} />
-        ))}
-      </section>
-    )
-  })}
+  {
+    entries.map((entry) => {
+      const publicItems = (entry.data.items ?? []).filter(
+        (i) => i.public !== false,
+      );
+      if (publicItems.length === 0) return null;
+      const anyVisible = matchesInitial(entry.id);
+      const itemSlugs = computeItemSlugs(publicItems);
+      return (
+        <section
+          id={`section-${entry.id}`}
+          aria-label={categoryMap[entry.id]?.label ?? entry.id}
+        >
+          <h2
+            class:list={["section-header", { "is-hidden": !anyVisible }]}
+            data-category-heading={entry.id}
+          >
+            <wa-icon name={categoryMap[entry.id]?.icon} aria-hidden="true" />{" "}
+            {categoryMap[entry.id]?.label ?? entry.id}
+          </h2>
+          {publicItems.map((item, i) => (
+            <ItemCard
+              item={item}
+              category={entry.id}
+              slug={itemSlugs[i].canonical}
+              hidden={!matchesInitial(entry.id)}
+            />
+          ))}
+        </section>
+      );
+    })
+  }
 </Base>
