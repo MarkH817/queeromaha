@@ -70,11 +70,9 @@ Pull Requests must pass lint and include relevant unit/end-to-end tests.
 
 Accessibility for motion-sensitivity, color, fonts, reduced scrolling, tapping affordances, "go to top" are table stakes.
 
-This project uses Husky hooks which you can install locally to automatically lint and test on pre-commit and pre-push.
+This project uses [lefthook](https://lefthook.dev) git hooks (shared config from `taraxvoid/voidflow`) to automatically lint and test on pre-commit and pre-push. `mise install` provides the binary and `bun install` wires the hooks.
 
-```
-bunx husky init
-```
+Upgrading from the old Husky setup? Run `git config --unset core.hooksPath && lefthook install` once.
 
 You can run lint (via biome) manually
 
@@ -134,7 +132,7 @@ docs: document git-cliff setup in README
 
 ### Enforcement
 
-The `commit-msg` Husky hook runs [commitlint](https://commitlint.js.org) against every commit. It is **advisory only** — it prints a friendly hint but never blocks a commit. History before this convention was adopted is left as-is.
+The `commit-msg` hook checks every commit message against this format. It is **advisory only** — it prints a friendly hint but never blocks a commit. History before this convention was adopted is left as-is.
 
 ### AI-assisted commit messages
 

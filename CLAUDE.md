@@ -32,9 +32,9 @@ bun run test:push          # fast push gate: build + check + unit + e2e:smoke (C
 Note: `bun test` invokes Bun's own built-in test runner, not the `test`
 script above — always use `bun run test` / `bun run <script>` here.
 
-Husky hooks:
+Git hooks (lefthook, shared config pinned from `taraxvoid/voidflow`; install the binary with `mise install`, then `bun install` wires the hooks):
 
-- pre-commit: `bun run format` (auto-fixes and re-stages), then `bun run test:unit` (excluding `test/build.test.ts` and `test/structured-data.test.ts`, which need a prior build)
+- pre-commit: `bun run format` (auto-fixes and re-stages), lint:actions, type-check, then `bun run test:unit` (excluding `test/build.test.ts` and `test/structured-data.test.ts`, which need a prior build)
 - pre-push: syncs with the remote branch first (aborts if the remote is ahead), then runs `bun run test:push` — build + type-check + unit + mobile smoke; a11y + full e2e are CI-only (ci.yml, via the shared `site-ci.yml` workflow in `taraxvoid/voidflow`)
 
 Playwright defaults to the `mobile-chrome` project (`devices['Pixel 7']`) as
@@ -47,8 +47,8 @@ the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
 New commits (hand-written or bot-generated) should follow [Conventional
 Commits](https://www.conventionalcommits.org) (`feat:`, `fix:`, `chore:`,
 `docs:`, etc). This is a soft convention, not an enforced one: the
-`commit-msg` hook runs commitlint but only prints a friendly warning — it
-never blocks a commit. History before this convention was adopted is left
+`commit-msg` hook only prints a friendly hint — it never blocks a
+commit. History before this convention was adopted is left
 as-is, not rewritten.
 
 - `bun run commit` — runs [opencommit](https://github.com/di-sukharev/opencommit)

@@ -1,0 +1,9 @@
+# Shared hooks live in voidflow (pre-commit, commit-msg hint, pre-push).
+# Pin to a release tag; Renovate bumps it. A site's lefthook.yml can add
+# commands but not override these; differences go through package.json scripts
+# (here: test:unit:precommit skips tests that need a built dist/).
+remotes:
+  - git_url: https://github.com/taraxvoid/voidflow
+    ref: v0.11.0
+    configs:
+      - lefthook/site.yml

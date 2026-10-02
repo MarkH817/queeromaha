@@ -4,7 +4,7 @@
 # PR context. CODEOWNERS adds the mandatory review gate on top (enforced via
 # branch protection).
 .github/            @taraxvoid
-/.husky/            @taraxvoid
+/lefthook.yml      @taraxvoid
 /package.json       @taraxvoid
 /bun.lock           @taraxvoid
 /scripts/           @taraxvoid
