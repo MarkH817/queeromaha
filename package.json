@@ -34,13 +34,13 @@
         "preview": "astro preview",
         "prepare": "husky",
         "lint": "biome check .",
+        "lint:migrate": "biome migrate --write",
         "lint:actions": "./scripts/lint-actions.sh",
         "format": "biome check --write . && bun scripts/format-yaml.ts",
         "generate:favicons": "bun run scripts/generate-favicons.ts",
         "commit": "bunx opencommit",
         "changelog": "git-cliff -o CHANGELOG.md",
-        "changelog:unreleased": "git-cliff --unreleased",
-        "postinstall": "bunx @biomejs/biome migrate --write"
+        "changelog:unreleased": "git-cliff --unreleased"
     },
     "imports": {
         "#components/*": "./src/components/*",
