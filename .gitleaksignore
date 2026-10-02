@@ -1,0 +1,4 @@
+# Historical false positive: a localhost-only example in an old README (long
+# since removed) showed a placeholder dev token in a curl command. Fingerprint
+# format: <commit>:<file>:<rule>:<line>
+e03d588447341dc3cbb43936b8041796f63f7a79:README.md:curl-auth-header:41
