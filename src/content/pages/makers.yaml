@@ -63,4 +63,36 @@ items:
       Nikki runs book side / front desk, is chill
 
       Free stickers in bowl
+  - name: Nodest Home Plants
+    public: true
+    description: Keep your houseplants alive (or just buy new ones every few months).
+    links:
+      - label: Website
+        url: https://www.nodesthomeplants.com/
+      - label: Facebook
+        url: https://www.facebook.com/nodesthomeplants/
+    location:
+      street: 3737 Farnam St Ste 103
+      city: Omaha
+      neighborhood: Blackstone
+  - name: The Book Club Society
+    public: true
+    description: Chill bookstore in the burbs.
+    links:
+      - label: Website
+        url: https://thebookclubsociety.com/
+    location:
+      street: 2521 S 133rd Plz
+      city: Omaha
+      neighborhood: West Omaha
+    notes: Co-owner Megan is chill.
+  - name: Mazzyco
+    public: true
+    description: Get your puppy(girl) a custom trans flag collar.
+    links:
+      - label: Instagram
+        url: https://www.instagram.com/mazzerspics
+      - label: Facebook
+        url: https://www.facebook.com/mazzyco
+    notes: No website.
 notes: ""

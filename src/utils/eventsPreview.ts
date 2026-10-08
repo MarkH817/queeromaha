@@ -66,7 +66,20 @@ export function parseEvents(icsText: string): ParsedEvent[] {
 // this must go through the IANA tz database rather than the visitor's own
 // system timezone, since dtstart values are always Chicago wall-clock.
 function fakeUtc(date: Date): Date {
-    return toZonedTime(date, 'America/Chicago')
+    // toZonedTime returns a Date whose *local* getters show the Chicago
+    // wall-clock; re-pack those fields as UTC so it's system-tz independent.
+    const z = toZonedTime(date, 'America/Chicago')
+    return new Date(
+        Date.UTC(
+            z.getFullYear(),
+            z.getMonth(),
+            z.getDate(),
+            z.getHours(),
+            z.getMinutes(),
+            z.getSeconds(),
+            z.getMilliseconds(),
+        ),
+    )
 }
 
 export function getUpcomingEvents(

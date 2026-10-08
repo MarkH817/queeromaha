@@ -28,6 +28,8 @@ items:
       - label: Show Flyers
         url: https://omahaunderground.net/venues/the-church-arthouse
     location:
+      street: 3101 S 20th St
+      city: Omaha
       neighborhood: South Omaha
   - name: Project Project
     public: true
@@ -102,6 +104,8 @@ items:
       - label: Show Flyers
         url: https://omahaunderground.net/venues/reverb-lounge
     location:
+      street: 6121 Military Ave
+      city: Omaha
       neighborhood: Benson
   - name: The Sydney
     public: true
@@ -114,6 +118,8 @@ items:
       - label: Show Flyers
         url: https://omahaunderground.net/venues/the-sydney
     location:
+      street: 5918 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: The Coven
     public: true
@@ -121,6 +127,8 @@ items:
       - neutral-bathrooms
       - seating
     location:
+      street: 3530 Leavenworth St
+      city: Omaha
       neighborhood: Midtown
     description: |
       Goth club at the old Down Under address. Punk / darkwave / industrial shows.
@@ -160,6 +168,8 @@ items:
       - label: Show Flyers
         url: https://omahaunderground.net/venues/pageturners-lounge
     location:
+      street: 5004 Dodge St
+      city: Omaha
       neighborhood: Midtown
   - name: O'Leaver's Pub
     public: true
@@ -204,6 +214,8 @@ items:
       - label: Website
         url: https://www.joslyncastle.com/events/
     location:
+      street: 3902 Davenport St
+      city: Omaha
       neighborhood: Midtown
   - name: Fifth House
     public: true
@@ -219,6 +231,8 @@ items:
       - label: FB
         url: https://www.facebook.com/FifthHouseOmaha/
     location:
+      street: 3901 Farnam St Ste B
+      city: Omaha
       neighborhood: Midtown
     notes: closed Aug 2026 - reopened sept after someone bailed it out
   - name: The Breakroom
@@ -266,6 +280,8 @@ items:
       - label: Website
         url: https://www.bemiscenter.org/low-end
     location:
+      street: 724 S 12th St
+      city: Omaha
       neighborhood: Downtown
   - name: The Verdict Bar
     public: true
@@ -373,3 +389,39 @@ items:
         url: https://omahablues.com/events/
     location:
       neighborhood: Downtown
+  - name: Kaitei
+    public: true
+    tags:
+      - neutral-bathrooms
+      - seating
+    description: Secret (shhhh) speakeasy under Ika Ramen in Benson
+    links:
+      - label: Facebook
+        url: https://www.facebook.com/kaiteibenson/
+    location:
+      street: 6109 1/3 Maple St
+      city: Omaha
+      neighborhood: Benson
+
+  - name: Sound.Wav Sessions
+    vanity_slug: sound-wav-sessions
+    public: true
+    description: Experimental music nights with visuals and circuit bending, a couple of times a year.
+    links:
+      - label: Website
+        url: https://sound-wav-sessions.netlify.app/
+    notes: Organizer unconfirmed. Seems to run a couple times a year.
+  - name: 91.9FM (KIRA) indie radio
+    vanity_slug: kira-fm
+    public: true
+    description: THE place for local music, ran by legit musicians. Free shuffle function!
+    links:
+      - label: Internet Radio
+        url: https://www.kirafm.live
+      - label: Instagram
+        url: https://www.instagram.com/kirafm.live/
+      - label: Mixcloud
+        url: https://www.mixcloud.com/kirafm/
+      - label: Facebook
+        url: https://www.facebook.com/profile.php?id=61590345824973
+    notes: alex Jacobsen and Courtney noir

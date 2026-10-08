@@ -34,6 +34,8 @@ items:
       - seating
       - wifi
     location:
+      street: 1917 S 67th St Ste 120
+      city: Omaha
       neighborhood: Aksarben
   - name: Marigold's
     public: true
@@ -50,6 +52,8 @@ items:
       - seating
       - wifi
     location:
+      street: 2115 S 67th St Ste 145
+      city: Omaha
       neighborhood: Aksarben
   - name: Mill on Leavenworth
     public: true
@@ -61,6 +65,8 @@ items:
       - seating
       - wifi
     location:
+      street: 3105 Leavenworth St
+      city: Omaha
       neighborhood: Midtown
   - name: Archetype Coffee
     public: true
@@ -74,6 +80,8 @@ items:
       - neutral-bathrooms
       - wifi
     location:
+      street: 3926 Farnam St
+      city: Omaha
       neighborhood: Midtown
   - name: Sweet Magnolias
     public: true
@@ -84,6 +92,8 @@ items:
       - label: Website
         url: https://www.sweetmagnoliasbakeshop.com/
     location:
+      street: 813 N 40th St
+      city: Omaha
       neighborhood: Midtown
   - name: Spielbound
     public: true
@@ -99,6 +109,8 @@ items:
       - neutral-bathrooms
       - wifi
     location:
+      street: 3229 Harney St
+      city: Omaha
       neighborhood: Midtown
     recurring_events:
       - summary: Pick Up Games — Spielbound
@@ -148,6 +160,8 @@ items:
       - seating
       - wifi
     location:
+      street: 6070 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: Legends Comics & Coffee
     public: true
@@ -162,6 +176,8 @@ items:
       - seating
       - wifi
     location:
+      street: 6068 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: Blue Line Coffee
     public: true
@@ -176,6 +192,8 @@ items:
       - wifi
       - seating
     location:
+      street: 4924 Underwood Ave
+      city: Omaha
       neighborhood: Midtown
   - name: Lola's
     public: false
@@ -198,6 +216,8 @@ items:
       - wifi
     notes: Met Owner at NZC who stated it's queer owned.
     location:
+      street: 3913 Cuming St
+      city: Omaha
       neighborhood: Midtown
   - name: Urban Abbey
     public: false
@@ -227,6 +247,8 @@ items:
     tags:
       - seating
     location:
+      street: 1505 Farnam St
+      city: Omaha
       neighborhood: Downtown
   - name: Rally Coffee
     public: false
@@ -252,6 +274,8 @@ items:
       - seating
       - wifi
     location:
+      street: 2504 Farnam St
+      city: Omaha
       neighborhood: Midtown
   - name: Howlin Hounds
     public: false
@@ -276,6 +300,8 @@ items:
       - seating
       - wifi
     location:
+      street: 587 N 155th Plz
+      city: Omaha
       neighborhood: West Omaha
     notes: legit buddhist stuff
   - public: true
@@ -299,3 +325,49 @@ items:
       - label: FB
         url: https://facebook.com/TheTeaSmith
     description: Chill tea shop. Nice place for hanging out.
+  - name: Artemis Tea
+    public: true
+    description: Women-owned tea shop supporting sustainable and organic farming, with custom blends by owner Andrea.
+    links:
+      - label: Website
+        url: https://artemistea.com/
+    tags:
+      - seating
+      - neutral-bathrooms
+    location:
+      street: 3618 Farnam St
+      city: Omaha
+      state: NE
+      zip: "68131"
+      neighborhood: Blackstone
+    notes: Pastries from Myrtle & Cypress, Hardy Coffee and gluten free / vegan treats from Conscious Comforts. men's room is single-stall. Wifi unconfirmed. Not really a remote-work space.
+  - name: Green Line Cafe
+    public: true
+    description: Breakfast, lunch and grab-and-go from the Blue Line Coffee folks, with a big covered patio.
+    location:
+      street: 1540 N Saddle Creek Rd
+      city: Omaha
+      neighborhood: Midtown
+    notes: Tara has not been yet, but near-guaranteed chill given Blue Line ownership.
+  - name: Astute Coffee
+    public: true
+    description: Authentic space for comrades and coffee
+    links:
+      - label: Website
+        url: https://astutecoffee.org/
+    location:
+      street: 1818 Dodge St
+      city: Omaha
+      neighborhood: Downtown
+    notes: Tara hasn't been personally, comfortable adding given recommendations. another in atlas apt complex
+  - name: Myrtle & Cypress
+    public: true
+    description: The only Air Roaster in town.
+    links:
+      - label: Website
+        url: https://www.myrtleandcypresscoffee.com/
+    location:
+      street: 517 N 33rd St
+      city: Omaha
+      neighborhood: Midtown
+    notes: Per Eric (co-owner) not queer owned, is chill.

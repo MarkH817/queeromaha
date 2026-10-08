@@ -2,6 +2,18 @@ title: Omaha Art Events / Venues
 description: Art events, creative groups, and venues in Omaha with a queer-friendly presence.
 public: true
 items:
+  - name: Amplify Arts
+    public: true
+    description: Get paid for your art.
+    links:
+      - label: Open Calls for Art
+        url: https://www.amplifyarts.org/open-calls
+      - label: Awesome Resources List
+        url: https://www.amplifyarts.org/resources
+    location:
+      street: 950 S 10th St
+      city: Omaha
+      neighborhood: South Omaha
   - name: Sober Socials Omaha
     public: false
     notes: potentially inactive circa spring 2026
@@ -21,9 +33,9 @@ items:
       - label: Events Calendar
         url: https://soundryomaha.org
     location:
-      street: 1111 Jones St
+      street: 3101 S 20th St
       city: Omaha
-      neighborhood: Downtown
+      neighborhood: South Omaha
   - name: Omaha Drum Family
     public: true
     description: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
@@ -122,6 +134,8 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 3101 S 20th St
+      city: Omaha
       neighborhood: South Omaha
   - name: Project Project
     public: true
@@ -188,6 +202,8 @@ items:
       - label: Events Calendar
         url: https://clover24.org/events
     location:
+      street: 2200 S 24th St
+      city: Omaha
       neighborhood: South Omaha
     tags:
       - neutral-bathrooms
@@ -207,6 +223,8 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 3014 N 24th St
+      city: Omaha
       neighborhood: North Omaha
   - name: Union for Contemporary Art
     public: true
@@ -216,7 +234,27 @@ items:
         url: https://www.u-ca.org/events
     notes: tara hasn't been there yet. trusting its chill.
     location:
+      street: 2423 N 24th St
+      city: Omaha
       neighborhood: North Omaha
+  - name: Benson First Friday
+    vanity_slug: benson-first-friday
+    public: true
+    description: Monthly art walk through the Benson Creative District with galleries, studios and pop-ups open late. Petshop, BFF Gallery, Ming Toy and more.
+    links:
+      - label: Website
+        url: https://www.bffomaha.org/firstfriday
+    location:
+      neighborhood: Benson
+    recurring_events:
+      - summary: Benson First Friday
+        rrule: FREQ=MONTHLY;BYDAY=1FR
+        dtstart: "20260102"
+        time: 19:00
+        end_time: 23:00
+        location: Benson Creative District
+        description: Monthly art walk in Benson with galleries and studios open late.
+        url: https://www.bffomaha.org/firstfriday
   - name: Petshop
     public: true
     description: Punk/queer space for provocative art and experimental music.
@@ -228,6 +266,8 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 2725 N 62nd St
+      city: Omaha
       neighborhood: Benson
   - name: Radial Arts Center
     public: true
@@ -238,6 +278,8 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 5915 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: BFF Gallery
     public: true
@@ -246,6 +288,8 @@ items:
       - label: Instagram
         url: https://www.instagram.com/thebffgallery/
     location:
+      street: 5901 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: Ming Toy Gallery
     public: true
@@ -256,6 +300,8 @@ items:
       - label: Website
         url: https://www.mingtoygallery.com/
     location:
+      street: 6066 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: Maple Street Construct
     public: true
@@ -266,6 +312,8 @@ items:
       - label: FB
         url: https://www.facebook.com/maplestconstruct/
     location:
+      street: 5912 Maple St
+      city: Omaha
       neighborhood: Benson
   - name: MaMo Mobile Gallery Semi-Truck
     vanity_slug: mamo-mobile-gallery-semi-truck
@@ -279,6 +327,8 @@ items:
       - label: FB
         url: https://www.facebook.com/MaMOgallery/
     location:
+      street: 2725 N 62nd St
+      city: Omaha
       neighborhood: Benson
   - name: Trudy's
     public: true
@@ -289,6 +339,8 @@ items:
       - label: FB
         url: https://www.facebook.com/people/Trudys/61561806150499/
     location:
+      street: 2814 N 60th St
+      city: Omaha
       neighborhood: Benson
   - name: Cali Commons
     public: true
@@ -299,6 +351,8 @@ items:
       - label: Join Artist Collective
         url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
     location:
+      street: 518 N 40th St
+      city: Omaha
       neighborhood: Midtown
   - name: Hispanic Arts Center
     public: true
@@ -310,6 +364,8 @@ items:
         url: https://www.haco-ne.com/events.html
     notes: POC Milt
     location:
+      street: 3504 Center St
+      city: Omaha
       neighborhood: Midtown
   - name: Aksarben Village
     public: true
@@ -320,6 +376,8 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 67th and Center
+      city: Omaha
       neighborhood: Aksarben
   - name: Samuel Bak Museum
     public: true
@@ -328,6 +386,8 @@ items:
       - label: Events Calendar
         url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
     location:
+      street: 2289 S 67th St
+      city: Omaha
       neighborhood: Aksarben
   - name: NeXT Foundation Arts
     vanity_slug: next-foundation-arts
@@ -389,6 +449,8 @@ items:
       - label: FB
         url: https://www.facebook.com/bemiscenter/
     location:
+      street: 724 S 12th St
+      city: Omaha
       neighborhood: Downtown
   - name: Hot Shops
     public: true
@@ -401,6 +463,8 @@ items:
       - label: FB
         url: https://www.facebook.com/hotshopsartcenter/
     location:
+      street: 1301 Nicholas St
+      city: Omaha
       neighborhood: Downtown
   - name: Millwork Commons
     public: false
@@ -424,4 +488,17 @@ items:
     tags:
       - neutral-bathrooms
     location:
+      street: 405 S 11th St
+      city: Omaha
       neighborhood: Downtown
+  - name: Voices in Alliance (VIA)
+    vanity_slug: via-theater
+    public: true
+    description: Looks like the theater kids are the popular ones now!
+    links:
+      - label: Website
+        url: https://www.viaomaha.org/
+    location:
+      street: 2702 S 10th St
+      city: Omaha
+      neighborhood: South Omaha

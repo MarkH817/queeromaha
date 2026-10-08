@@ -223,3 +223,31 @@ items:
       state: NE
       zip: "68108"
       neighborhood: South Omaha
+  - name: Omaha GLBT Sports
+    vanity_slug: omaha-glbt-sports
+    public: true
+    description: Year-round adult (19+) social sports. Volleyball, softball, darts and the Lousy Bowlers Club. Everyone welcome regardless of experience or sexuality.
+    links:
+      - label: Website
+        url: https://www.oglbtsports.org/
+      - label: Lousy Bowlers Club
+        url: https://www.oglbtsports.org/lousy-bowlers-club
+      - label: Instagram
+        url: https://www.instagram.com/omahaglbtsports/
+      - label: Facebook
+        url: https://www.facebook.com/OmahaGLBTSports
+  - name: Omaha Roller Derby
+    public: true
+    description: Flat-track roller derby league with two teams that practice twice a week. Recruitment events and bootcamps for new skaters.
+    links:
+      - label: Website
+        url: https://omaharollerderby.com/
+      - label: Instagram
+        url: https://www.instagram.com/omaharollerderby/
+      - label: Facebook
+        url: https://www.facebook.com/OmahaDerby
+    location:
+      street: 2220 N 20th St
+      city: Omaha
+      neighborhood: North Omaha
+    notes: Practices at Schenzel Community Center. Specific bouts not listed, this site is not for events. Contact ord.recruiter@gmail.com.

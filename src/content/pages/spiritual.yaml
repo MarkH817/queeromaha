@@ -12,6 +12,8 @@ items:
       - label: Instagram
         url: https://www.instagram.com/dawaune.one/
     location:
+      street: 49th and Dodge
+      city: Omaha
       neighborhood: Midtown
     notes: IG profile is age-restricted, doublecheck time/scheduling
   - name: Ananda Omaha Wellness and Yoga

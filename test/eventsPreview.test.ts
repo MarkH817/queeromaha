@@ -248,4 +248,21 @@ describe('getUpcomingEvents', () => {
         expect(next?.start.getUTCDate()).toBe(15)
         expect(next?.start.getUTCHours()).toBe(23)
     })
+
+    test('still returns an occurrence hours away on the same Chicago day', () => {
+        // Weekly Wednesday event at 18:00 Chicago. At noon Chicago on
+        // Wed 2025-01-08 it is 6h away and must be the next occurrence.
+        // Guards against the Chicago wall-clock "now" being re-read through
+        // the runtime's local zone (this suite runs in America/Los_Angeles,
+        // 2h behind Chicago), which shifts "now" ~8h late and skips the
+        // same-day occurrence in favor of the following week's.
+        const ics = generateFeedICS([{ uid: 'u', event: baseEvent }])
+        const events = parseEvents(ics)
+
+        const now = chicagoNow('2025-01-08T12:00:00')
+        const [next] = getUpcomingEvents(events, now, RRule, 1)
+
+        expect(next?.start.getUTCDate()).toBe(8)
+        expect(next?.start.getUTCHours()).toBe(18)
+    })
 })

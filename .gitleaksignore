@@ -2,3 +2,4 @@
 # since removed) showed a placeholder dev token in a curl command. Fingerprint
 # format: <commit>:<file>:<rule>:<line>
 e03d588447341dc3cbb43936b8041796f63f7a79:README.md:curl-auth-header:41
+5d9360e17f0f938f3e582e132172e76a268e333e:README.md:curl-auth-header:41
