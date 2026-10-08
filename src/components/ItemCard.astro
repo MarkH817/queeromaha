@@ -4,7 +4,7 @@ import type { Organization, PostalAddress, WithContext } from 'schema-dts'
 import LD from '#components/LD.astro'
 import tagMap from '#data/tagMap.json'
 import { resolveLink } from '#utils/linkRules.ts'
-import { formatLocationLine } from '#utils/location.ts'
+import { formatLocationLine, mapsUrl } from '#utils/location.ts'
 import EntryTag from './EntryTag.astro'
 
 type TagMap = Record<string, { icon: string; label: string; family?: string }>
@@ -23,6 +23,7 @@ const tagsAttr = item.tags?.join(' ') ?? ''
 
 const loc = item.location
 const locLine = formatLocationLine(loc)
+const mapHref = mapsUrl(loc)
 
 // Per-item structured data. As of 2026 schema.org markup — not llms.txt — is
 // what assistants and answer engines actually read when deciding which local
@@ -80,9 +81,9 @@ const jsonLd = {
     loc && locLine && (
       <p class="item-location">
         <wa-icon name="location-dot" aria-hidden="true" />
-        {loc.google_maps_url ? (
+        {mapHref ? (
           <a
-            href={loc.google_maps_url}
+            href={mapHref}
             rel="noopener noreferrer"
             target="_blank"
             aria-label={`Map: ${locLine} (opens in new tab)`}

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { formatLocationLine } from '#utils/location.ts'
+import { formatLocationLine, mapsUrl } from '#utils/location.ts'
 
 describe('formatLocationLine', () => {
     test('street and neighborhood join with a hyphen', () => {
@@ -57,5 +57,40 @@ describe('formatLocationLine', () => {
         expect(
             formatLocationLine({ city: 'Omaha', state: '', zip: '68102' }),
         ).toBe('Omaha, 68102')
+    })
+})
+
+describe('mapsUrl', () => {
+    test('prefers an explicit google_maps_url', () => {
+        expect(
+            mapsUrl({
+                street: '123 Main St',
+                google_maps_url: 'https://maps.app.goo.gl/abc',
+            }),
+        ).toBe('https://maps.app.goo.gl/abc')
+    })
+
+    test('derives a search url from street, defaulting city and state', () => {
+        expect(mapsUrl({ street: '3101 S 20th St' })).toBe(
+            'https://www.google.com/maps/search/?api=1&query=3101%20S%2020th%20St%2C%20Omaha%2C%20NE',
+        )
+    })
+
+    test('uses city, state and zip when given', () => {
+        expect(
+            mapsUrl({
+                street: '1 A St',
+                city: 'Lincoln',
+                state: 'NE',
+                zip: '68508',
+            }),
+        ).toBe(
+            'https://www.google.com/maps/search/?api=1&query=1%20A%20St%2C%20Lincoln%2C%20NE%2068508',
+        )
+    })
+
+    test('area-only locations get no link', () => {
+        expect(mapsUrl({ neighborhood: 'Benson' })).toBeUndefined()
+        expect(mapsUrl(undefined)).toBeUndefined()
     })
 })
