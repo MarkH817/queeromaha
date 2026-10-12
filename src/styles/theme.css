@@ -24,32 +24,6 @@ body {
     flex-direction: column;
 }
 
-.skip-link {
-    background-color: #fff;
-    color: #6d28d9;
-    top: 0.75rem;
-    left: 0.75rem;
-    padding: 0.75rem 0.5rem;
-    position: absolute;
-    z-index: 101;
-    outline-offset: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-}
-
-.skip-link:focus-visible {
-    clip: auto;
-    clip-path: none;
-    height: auto;
-    overflow: visible;
-    white-space: normal;
-    width: auto;
-}
-
 .sr-only {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -58,92 +32,6 @@ body {
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 0;
-    font-size: large;
-}
-.main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    padding: 0.5rem 0.6rem;
-    margin: 0;
-    background: #ede9fe;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(76, 29, 118, 0.12);
-}
-
-.main-nav wa-button {
-    flex: 1 0 auto;
-    min-width: 0;
-}
-
-@media (max-width: 500px) {
-    .main-nav wa-button {
-        flex: 1 0 33%;
-    }
-}
-
-.main-nav wa-button::part(base) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    width: 100%;
-    color: #6d28d9;
-    background: #f9f5ff;
-    border: 2px solid #c4b5fd;
-    border-radius: 999px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    padding: 0.7rem 0.6rem;
-    cursor: pointer;
-    transition:
-        background 0.1s ease-out,
-        color 0.1s ease-out,
-        border-color 0.1s ease-out,
-        box-shadow 0.1s ease-out,
-        transform 0.1s ease-out;
-    box-shadow:
-        0 3px 0 #c4b5fd,
-        0 5px 8px rgba(76, 29, 118, 0.18);
-}
-
-.main-nav wa-button::part(base):hover {
-    background: #ede9fe;
-    border-color: #a78bfa;
-}
-
-.main-nav wa-button::part(base):active {
-    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
-    transform: translateY(2px);
-}
-
-.main-nav wa-button.active::part(base) {
-    background: #ede9fe;
-    border-color: #a78bfa;
-    color: #5b21b6;
-    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
-    transform: translateY(2px);
-}
-
-.main-nav wa-button.active::part(base):hover {
-    background: #ddd6fe;
-    border-color: #7c3aed;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .main-nav wa-button::part(base) {
-        transition: none;
-    }
 }
 
 main {
@@ -180,18 +68,6 @@ main:focus-visible {
     }
 }
 
-@media (max-width: 500px) {
-    header {
-        font-size: medium;
-    }
-}
-
-@media (max-width: 380px) {
-    .main-nav wa-button::part(base) {
-        padding: 0.6rem 0.3rem;
-        letter-spacing: 0;
-    }
-}
 footer {
     background: #2e1065;
     color: #ede9fe;
@@ -1327,49 +1203,6 @@ blockquote p {
     body {
         background: var(--dm-nightfall);
         color: var(--dm-moonlight);
-    }
-
-    .skip-link {
-        background-color: var(--dm-dusk);
-        color: var(--dm-glow);
-    }
-
-    .main-nav {
-        background: var(--dm-dusk-2);
-        box-shadow:
-            0 3px 10px rgba(0, 0, 0, 0.5),
-            0 0 20px rgba(196, 181, 253, 0.08);
-    }
-
-    .main-nav wa-button::part(base) {
-        color: var(--dm-glow);
-        background: var(--dm-dusk);
-        border-color: rgba(196, 181, 253, 0.4);
-        box-shadow:
-            0 3px 0 rgba(196, 181, 253, 0.3),
-            0 5px 8px rgba(0, 0, 0, 0.4),
-            0 0 10px rgba(196, 181, 253, 0.12);
-    }
-
-    .main-nav wa-button::part(base):hover {
-        background: var(--dm-dusk-2);
-        border-color: #a78bfa;
-    }
-
-    .main-nav wa-button::part(base):active {
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .main-nav wa-button.active::part(base) {
-        background: var(--dm-dusk-2);
-        border-color: #a78bfa;
-        color: var(--dm-moonlight);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .main-nav wa-button.active::part(base):hover {
-        background: #34205e;
-        border-color: var(--dm-glow);
     }
 
     main {
