@@ -274,7 +274,7 @@ test('item cards with a location show a location-dot icon', async ({
     expect(count).toBeGreaterThan(0)
     for (let i = 0; i < count; i++) {
         await expect(
-            locations.nth(i).locator('wa-icon[name="location-dot"]'),
+            locations.nth(i).locator('svg[data-icon*="location-dot"]'),
         ).toHaveCount(1)
     }
 })
@@ -643,18 +643,18 @@ test('links are ordered calendar > instagram > discord > website > facebook', as
         for (let i = 0; i < listCount; i++) {
             const list = lists.nth(i)
             const instaIndex = await list
-                .locator('li:has(wa-icon[name="instagram"])')
+                .locator('li:has(svg[data-icon*="instagram"])')
                 .count()
             const fbIndex = await list
-                .locator('li:has(wa-icon[name="facebook"])')
+                .locator('li:has(svg[data-icon*="facebook"])')
                 .count()
             if (instaIndex === 0 || fbIndex === 0) continue
 
             const iconNames = await list
-                .locator('li wa-icon')
-                .evaluateAll((els) => els.map((el) => el.getAttribute('name')))
-            const instaPos = iconNames.indexOf('instagram')
-            const fbPos = iconNames.indexOf('facebook')
+                .locator('li svg[data-icon]')
+                .evaluateAll((els) => els.map((el) => el.dataset.icon ?? ''))
+            const instaPos = iconNames.findIndex((i) => i.includes('instagram'))
+            const fbPos = iconNames.findIndex((i) => i.includes('facebook'))
             expect(instaPos).toBeGreaterThanOrEqual(0)
             expect(fbPos).toBeGreaterThan(instaPos)
             found = true

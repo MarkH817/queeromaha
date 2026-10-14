@@ -1,35 +1,62 @@
 ---
+import { Icon } from 'astro-icon/components'
 import tagMap from '#data/tagMap.json'
 
 const tags = Object.entries(
-    tagMap as Record<string, { icon: string; label: string; family?: string }>,
-).map(([slug, { icon, label, family }]) => ({ slug, icon, label, family }))
+    tagMap as Record<string, { icon: string; label: string }>,
+).map(([slug, { icon, label }]) => ({ slug, icon, label }))
 ---
 
 <div class="filter-bar">
-  <div class="filter-pills filter-pills--tags" role="group" aria-label="Filter by tag">
-    {tags.filter(({ slug }) => slug !== 'online').map(({ slug, icon, label, family }) => (
-      <button
-        class="filter-pill"
-        data-filter={slug}
-        data-filter-type="tag"
-        aria-pressed="false"
-      >
-        <wa-icon name={icon} family={family} aria-hidden="true"></wa-icon>{label}
-      </button>
-    ))}
-    {tags.some(({ slug }) => slug === 'online') && (
-      <span class="filter-pill-divider" aria-hidden="true"></span>
-    )}
-    {tags.filter(({ slug }) => slug === 'online').map(({ slug, icon, label, family }) => (
-      <button
-        class="filter-pill"
-        data-filter={slug}
-        data-filter-type="tag"
-        aria-pressed="false"
-      >
-        <wa-icon name={icon} family={family} aria-hidden="true"></wa-icon>{label}
-      </button>
-    ))}
+  <div
+    class="filter-pills filter-pills--tags"
+    role="group"
+    aria-label="Filter by tag"
+  >
+    {
+      tags
+        .filter(({ slug }) => slug !== "online")
+        .map(({ slug, icon, label }) => (
+          <button
+            class="filter-pill"
+            data-filter={slug}
+            data-filter-type="tag"
+            aria-pressed="false"
+          >
+            <Icon
+              width="1.25em"
+              height="1.25em"
+              name={icon}
+              aria-hidden="true"
+            />
+            {label}
+          </button>
+        ))
+    }
+    {
+      tags.some(({ slug }) => slug === "online") && (
+        <span class="filter-pill-divider" aria-hidden="true" />
+      )
+    }
+    {
+      tags
+        .filter(({ slug }) => slug === "online")
+        .map(({ slug, icon, label }) => (
+          <button
+            class="filter-pill"
+            data-filter={slug}
+            data-filter-type="tag"
+            aria-pressed="false"
+          >
+            <Icon
+              name={icon}
+              width="1.25em"
+              height="1.25em"
+              aria-hidden="true"
+            />
+            {label}
+          </button>
+        ))
+    }
   </div>
 </div>

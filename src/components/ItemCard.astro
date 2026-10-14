@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import { Icon } from 'astro-icon/components'
 import type { Organization, PostalAddress, WithContext } from 'schema-dts'
 import LD from '#components/LD.astro'
 import tagMap from '#data/tagMap.json'
@@ -7,7 +8,7 @@ import { resolveLink } from '#utils/linkRules.ts'
 import { formatLocationLine, mapsUrl } from '#utils/location.ts'
 import EntryTag from './EntryTag.astro'
 
-type TagMap = Record<string, { icon: string; label: string; family?: string }>
+type TagMap = Record<string, { icon: string; label: string }>
 const tags = tagMap as TagMap
 const tagOrder = Object.keys(tags)
 
@@ -70,9 +71,7 @@ const jsonLd = {
         .sort((a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b))
         .map((tag) => {
           const t = tags[tag];
-          return t ? (
-            <EntryTag label={t.label} icon={t.icon} family={t.family} />
-          ) : null;
+          return t ? <EntryTag label={t.label} icon={t.icon} /> : null;
         })
     }
   </h3>
@@ -80,7 +79,12 @@ const jsonLd = {
   {
     loc && locLine && (
       <p class="item-location">
-        <wa-icon name="location-dot" aria-hidden="true" />
+        <Icon
+          name="fa7-solid:location-dot"
+          width="1.25em"
+          height="1.25em"
+          aria-hidden="true"
+        />
         {mapHref ? (
           <a
             href={mapHref}
@@ -116,9 +120,10 @@ const jsonLd = {
                   data-ph-link-label={link.label}
                 >
                   {pillIcon && (
-                    <wa-icon
+                    <Icon
                       name={pillIcon.name}
-                      family={pillIcon.family}
+                      width="1.25em"
+                      height="1.25em"
                       aria-hidden="true"
                     />
                   )}
