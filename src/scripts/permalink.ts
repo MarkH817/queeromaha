@@ -115,7 +115,6 @@ function init() {
     if (seed) {
         Promise.all([
             customElements.whenDefined('wa-card'),
-            customElements.whenDefined('wa-button'),
             customElements.whenDefined('wa-icon'),
         ]).then(() => {
             const target = document.getElementById(

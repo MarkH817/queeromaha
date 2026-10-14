@@ -48,7 +48,6 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).href
     <SiteFooter />
     <ScrollToTop />
     <script>
-      import "@awesome.me/webawesome/dist/components/button/button.js";
       import "@awesome.me/webawesome/dist/components/card/card.js";
       import "@awesome.me/webawesome/dist/components/icon/icon.js";
       import "@awesome.me/webawesome/dist/components/tooltip/tooltip.js";
@@ -61,10 +60,7 @@ const canonicalUrl = new URL(Astro.url.pathname, site.url).href
       // Re-settle once the custom elements are defined; scrollIntoView
       // respects theme.css's scroll-padding-top.
       if (location.hash) {
-        Promise.all([
-          customElements.whenDefined("wa-button"),
-          customElements.whenDefined("wa-icon"),
-        ]).then(() => {
+        Promise.all([customElements.whenDefined("wa-icon")]).then(() => {
           document
             .getElementById(location.hash.slice(1))
             ?.scrollIntoView({ block: "start" });

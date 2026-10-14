@@ -247,7 +247,7 @@ footer a:hover {
    panel is an absolutely positioned popover (see .suggestion-box's comment
    above), so there's nothing in the row that needs to make room for it. */
 
-/* Reuses the same "pressed in" look as .filter-pill.active (inset
+/* Reuses the same "pressed in" look as .filter-pill[aria-pressed="true"] (inset
    shadow + translateY) so the open state reads as this button being
    currently pressed, not just its content changed. */
 .suggestion-box[open] summary.footer-pill-btn,
@@ -674,29 +674,6 @@ h2 {
     font-family: var(--font-display);
 }
 
-.section-header {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 0.4rem;
-    width: 100%;
-    margin: 0.75rem 0 0.5rem;
-    color: #6d28d9;
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.section-header wa-icon {
-    font-size: 1.2em;
-}
-
-.section-header.is-hidden {
-    display: none;
-}
-
 wa-card.item {
     display: block;
     margin-bottom: 0.5rem;
@@ -1117,47 +1094,40 @@ blockquote p {
     font-weight: 700;
     font-family: var(--font-mono);
     cursor: pointer;
-    transition:
-        background 0.15s,
-        border-color 0.15s,
-        color 0.15s,
-        box-shadow 0.15s,
-        transform 0.15s;
     white-space: nowrap;
     box-shadow: 0 2px 0 #ddd6fe;
-}
-
-.filter-pill:hover {
-    background: #ede9fe;
-    border-color: #a78bfa;
-}
-
-.filter-pill:active {
-    box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
-    transform: translateY(1px);
-}
-
-.filter-pill.active {
-    background: #ede9fe;
-    border-color: #a78bfa;
-    color: #5b21b6;
-    box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
-    transform: translateY(1px);
-}
-
-.filter-pill.active:hover {
-    background: #ddd6fe;
-    border-color: #7c3aed;
-}
-
-.filter-pill.unavailable {
-    opacity: 0.35;
-    cursor: not-allowed;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .filter-pill {
-        transition: none;
+    @media (prefers-reduced-motion: no-preference) {
+        transition:
+            background 0.15s,
+            border-color 0.15s,
+            color 0.15s,
+            box-shadow 0.15s,
+            transform 0.15s;
+    }
+    &:hover,
+    &:focus {
+        background: #ede9fe;
+        border-color: #a78bfa;
+    }
+    &:active {
+        box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
+        transform: translateY(1px);
+    }
+    &[aria-pressed="true"] {
+        background: #ede9fe;
+        border-color: #a78bfa;
+        color: #5b21b6;
+        box-shadow: inset 0 1px 3px rgba(76, 29, 118, 0.25);
+        transform: translateY(1px);
+        &:hover,
+        &:focus {
+            background: #ddd6fe;
+            border-color: #7c3aed;
+        }
+    }
+    &:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
     }
 }
 
@@ -1306,10 +1276,6 @@ blockquote p {
         background: rgba(248, 113, 113, 0.12);
         border-left-color: #f87171;
         color: #fca5a5;
-    }
-
-    .section-header {
-        color: var(--dm-glow);
     }
 
     wa-card.item {
@@ -1491,26 +1457,24 @@ blockquote p {
         border-color: rgba(196, 181, 253, 0.3);
         color: var(--dm-glow);
         box-shadow: 0 2px 0 rgba(196, 181, 253, 0.25);
-    }
-
-    .filter-pill:hover {
-        background: rgba(196, 181, 253, 0.12);
-        border-color: #a78bfa;
-    }
-
-    .filter-pill:active {
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    .filter-pill.active {
-        background: rgba(196, 181, 253, 0.15);
-        border-color: #a78bfa;
-        color: var(--dm-moonlight);
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    .filter-pill.active:hover {
-        background: rgba(196, 181, 253, 0.22);
-        border-color: var(--dm-glow);
+        &:hover,
+        &:focus {
+            background: rgba(196, 181, 253, 0.12);
+            border-color: #a78bfa;
+        }
+        &:active {
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        &[aria-pressed="true"] {
+            background: rgba(196, 181, 253, 0.15);
+            border-color: #a78bfa;
+            color: var(--dm-moonlight);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+            &:hover,
+            &:focus {
+                background: rgba(196, 181, 253, 0.22);
+                border-color: var(--dm-glow);
+            }
+        }
     }
 }

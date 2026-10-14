@@ -14,8 +14,8 @@ function setBody(html: string) {
 }
 
 const CATEGORY_PILLS = `
-  <wa-button data-filter="art" data-filter-type="category" aria-pressed="false">Art</wa-button>
-  <wa-button data-filter="cafes" data-filter-type="category" aria-pressed="false">Cafes</wa-button>
+  <a data-filter="art" data-filter-type="category">Art</a>
+  <a data-filter="cafes" data-filter-type="category">Cafes</a>
 `
 
 const TAG_PILLS = `
@@ -42,90 +42,38 @@ describe('initFilters', () => {
         setBody(CATEGORY_PILLS + TAG_PILLS)
         await loadFilters()
         // No throw, and pills are left untouched.
-        const pill = document.querySelector(
+        const pill = document.querySelector<HTMLButtonElement>(
             '[data-filter="wifi"]',
-        ) as HTMLElement
-        expect(pill.classList.contains('active')).toBe(false)
+        )
+        expect(pill?.getAttribute('aria-pressed')).toBe('false')
     })
 
     test('clicking a tag pill hides cards that lack the tag', async () => {
         await loadFilters()
-        const wifiPill = document.querySelector(
+        const wifiPill = document.querySelector<HTMLButtonElement>(
             '[data-filter="wifi"]',
-        ) as HTMLElement
-        wifiPill.click()
+        )
+        wifiPill?.click()
 
-        const cardEls = document.querySelectorAll('wa-card')
-        expect(
-            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(false) // art, wifi
-        expect(
-            (cardEls[1] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // art, seating only
-        expect(
-            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(false) // cafes, wifi+seating
+        const cardEls = document.querySelectorAll<HTMLElement>('wa-card')
+        expect(cardEls[0].classList.contains('is-hidden')).toBe(false) // art, wifi
+        expect(cardEls[1].classList.contains('is-hidden')).toBe(true) // art, seating only
+        expect(cardEls[2].classList.contains('is-hidden')).toBe(false) // cafes, wifi+seating
     })
 
     test('tag pills AND-match: two active tags only match cards with both', async () => {
         await loadFilters()
-        ;(document.querySelector('[data-filter="wifi"]') as HTMLElement).click()
-        ;(
-            document.querySelector('[data-filter="seating"]') as HTMLElement
-        ).click()
+        document
+            .querySelector<HTMLButtonElement>('[data-filter="wifi"]')
+            ?.click()
+        document
+            .querySelector<HTMLButtonElement>('[data-filter="seating"]')
+            ?.click()
 
-        const cardEls = document.querySelectorAll('wa-card')
-        expect(
-            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // wifi only
-        expect(
-            (cardEls[1] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // seating only
-        expect(
-            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(false) // wifi+seating
-    })
-
-    test('clicking category pill filters by category and clears active tags', async () => {
-        await loadFilters()
-        ;(document.querySelector('[data-filter="wifi"]') as HTMLElement).click()
-        const cafesPill = document.querySelector(
-            '[data-filter="cafes"]',
-        ) as HTMLElement
-        cafesPill.click()
-
-        const cardEls = document.querySelectorAll('wa-card')
-        expect(
-            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // art
-        expect(
-            (cardEls[1] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // art
-        expect(
-            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(false) // cafes
-
-        const wifiPill = document.querySelector(
-            '[data-filter="wifi"]',
-        ) as HTMLElement
-        expect(wifiPill.classList.contains('active')).toBe(false)
-    })
-
-    test('clicking the already-active category pill is a no-op', async () => {
-        await loadFilters()
-        const artPill = document.querySelector(
-            '[data-filter="art"]',
-        ) as HTMLElement
-        artPill.click()
-        expect(artPill.classList.contains('active')).toBe(true)
-
-        artPill.click()
-        // Still active; category set unchanged (still only "art" active).
-        expect(artPill.classList.contains('active')).toBe(true)
-        const cardEls = document.querySelectorAll('wa-card')
-        expect(
-            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // cafes still hidden
+        const cardEls = document.querySelectorAll<HTMLElement>('wa-card')
+        expect(cardEls[0].classList.contains('is-hidden')).toBe(true) // wifi only
+        expect(cardEls[1].classList.contains('is-hidden')).toBe(true) // seating only
+        expect(cardEls[2].classList.contains('is-hidden')).toBe(false) // wifi+seating
     })
 
     test('tag pill becomes disabled/unavailable when it would produce zero results', async () => {
@@ -133,13 +81,14 @@ describe('initFilters', () => {
             `${TAG_PILLS}<wa-card data-category="art" data-tags="wifi"></wa-card>`,
         )
         await loadFilters()
-        ;(document.querySelector('[data-filter="wifi"]') as HTMLElement).click()
+        document
+            .querySelector<HTMLButtonElement>('[data-filter="wifi"]')
+            ?.click()
 
-        const seatingPill = document.querySelector(
+        const seatingPill = document.querySelector<HTMLButtonElement>(
             '[data-filter="seating"]',
-        ) as HTMLElement & { disabled: boolean }
-        expect(seatingPill.disabled).toBe(true)
-        expect(seatingPill.classList.contains('unavailable')).toBe(true)
+        )
+        expect(seatingPill?.disabled).toBe(true)
     })
 
     test('category pills are never disabled, even with zero matches', async () => {
@@ -147,49 +96,9 @@ describe('initFilters', () => {
             `${CATEGORY_PILLS}<wa-card data-category="art" data-tags="wifi"></wa-card>`,
         )
         await loadFilters()
-        const cafesPill = document.querySelector(
+        const cafesPill = document.querySelector<HTMLAnchorElement>(
             '[data-filter="cafes"]',
-        ) as HTMLElement & { disabled: boolean }
-        expect(cafesPill.disabled).toBe(false)
-    })
-
-    test('category heading hides when no visible card remains in that category', async () => {
-        await loadFilters()
-        const cafesPill = document.querySelector(
-            '[data-filter="cafes"]',
-        ) as HTMLElement
-        cafesPill.click()
-
-        const artHeading = document.querySelector(
-            '[data-category-heading="art"]',
-        ) as HTMLElement
-        const cafesHeading = document.querySelector(
-            '[data-category-heading="cafes"]',
-        ) as HTMLElement
-        expect(artHeading.classList.contains('is-hidden')).toBe(true)
-        expect(cafesHeading.classList.contains('is-hidden')).toBe(false)
-    })
-
-    test('data-initial-categories and data-initial-tags on body activate filters on load', async () => {
-        document.body.dataset.initialCategories = 'cafes'
-        document.body.dataset.initialTags = 'wifi'
-        await loadFilters()
-
-        const cafesPill = document.querySelector(
-            '[data-filter="cafes"]',
-        ) as HTMLElement
-        const wifiPill = document.querySelector(
-            '[data-filter="wifi"]',
-        ) as HTMLElement
-        expect(cafesPill.classList.contains('active')).toBe(true)
-        expect(wifiPill.classList.contains('active')).toBe(true)
-
-        const cardEls = document.querySelectorAll('wa-card')
-        expect(
-            (cardEls[2] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(false) // cafes + wifi
-        expect(
-            (cardEls[0] as HTMLElement).classList.contains('is-hidden'),
-        ).toBe(true) // art
+        )
+        expect(cafesPill?.hasAttribute('disabled')).toBe(false)
     })
 })

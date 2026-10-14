@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'
 import categoryMapJson from '#data/categoryMap.json'
 
 const categoryMap = categoryMapJson as Record<
@@ -9,20 +10,31 @@ const categoryMap = categoryMapJson as Record<
 
 <header class="site-header">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <nav class="main-nav" aria-label="Main navigation">
-    {
-      Object.entries(categoryMap).map(([slug, { icon, label }]) => (
-        <wa-button
-          href={`/${slug}`}
-          appearance="plain"
-          data-filter={slug}
-          data-filter-type="category"
-          aria-pressed="false"
-        >
-          <wa-icon name={icon} aria-hidden="true" /> {label}
-        </wa-button>
-      ))
-    }
+  <nav class="main-nav" aria-label="Main">
+    <ul>
+      {
+        Object.entries(categoryMap).map(([slug, { icon, label }]) => (
+          <li>
+            <a
+              href={`/${slug}/`}
+              aria-current={Astro.url.pathname === `/${slug}/` ? "page" : null}
+              data-filter={slug}
+              data-filter-type="category"
+              data-filter-match={Astro.url.pathname.startsWith(`/${slug}`)}
+            >
+              <Icon
+                name={icon}
+                class="icon"
+                height="1.25em"
+                width="1.25em"
+                aria-hidden="true"
+              />
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
 </header>
 
@@ -43,6 +55,31 @@ const categoryMap = categoryMapJson as Record<
   }
 </script>
 
+<script>
+  const categoryLink = document.querySelector<HTMLAnchorElement>(
+    '.main-nav a[data-filter-match="true"]',
+  );
+  if (categoryLink) {
+    categoryLink.addEventListener("click", (event) => {
+      // Do not prevent modifier keys for opening in new window/tab/etc
+      if (
+        event.metaKey ||
+        event.shiftKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        event.button !== 0
+      ) {
+        return;
+      }
+
+      // Shift focus to main area if already in current category
+      // instead of re-navigating the page
+      event.preventDefault();
+      document.querySelector<HTMLElement>("#main")?.focus();
+    });
+  }
+</script>
+
 <style>
   .site-header {
     position: sticky;
@@ -50,6 +87,9 @@ const categoryMap = categoryMapJson as Record<
     z-index: 100;
     padding: 0;
     font-size: large;
+    @media (max-width: 500px) {
+      font-size: medium;
+    }
   }
 
   .skip-link {
@@ -67,18 +107,22 @@ const categoryMap = categoryMapJson as Record<
     overflow: hidden;
     white-space: nowrap;
     width: 1px;
+    &:focus-visible {
+      clip: auto;
+      clip-path: none;
+      height: auto;
+      overflow: visible;
+      white-space: normal;
+      width: auto;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dm-dusk);
+      color: var(--dm-glow);
+    }
   }
 
-  .skip-link:focus-visible {
-    clip: auto;
-    clip-path: none;
-    height: auto;
-    overflow: visible;
-    white-space: normal;
-    width: auto;
-  }
-
-  .main-nav {
+  .main-nav ul {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
@@ -90,21 +134,21 @@ const categoryMap = categoryMapJson as Record<
     box-shadow: 0 3px 10px rgba(76, 29, 118, 0.12);
   }
 
-  .main-nav wa-button {
+  .main-nav li {
+    margin: 0;
     flex: 1 0 auto;
     min-width: 0;
-  }
-
-  @media (max-width: 500px) {
-    .main-nav wa-button {
-      flex: 1 0 33%;
+    @media (max-width: 500px) {
+      flex-basis: 33%;
     }
   }
 
-  .main-nav wa-button::part(base) {
+  .main-nav a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    line-height: 1;
     gap: 0.35rem;
     width: 100%;
     color: #6d28d9;
@@ -116,73 +160,59 @@ const categoryMap = categoryMapJson as Record<
     font-family: var(--font-body);
     font-size: 1rem;
     padding: 0.7rem 0.6rem;
-    cursor: pointer;
-    transition:
-      background 0.1s ease-out,
-      color 0.1s ease-out,
-      border-color 0.1s ease-out,
-      box-shadow 0.1s ease-out,
-      transform 0.1s ease-out;
     box-shadow:
       0 3px 0 #c4b5fd,
       0 5px 8px rgba(76, 29, 118, 0.18);
-  }
-
-  .main-nav wa-button::part(base):hover {
-    background: #ede9fe;
-    border-color: #a78bfa;
-  }
-
-  .main-nav wa-button::part(base):active {
-    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
-    transform: translateY(2px);
-  }
-
-  .main-nav wa-button.active::part(base) {
-    background: #ede9fe;
-    border-color: #a78bfa;
-    color: #5b21b6;
-    box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
-    transform: translateY(2px);
-  }
-
-  .main-nav wa-button.active::part(base):hover {
-    background: #ddd6fe;
-    border-color: #7c3aed;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .main-nav wa-button::part(base) {
-      transition: none;
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        background 0.1s ease-out,
+        color 0.1s ease-out,
+        border-color 0.1s ease-out,
+        box-shadow 0.1s ease-out,
+        transform 0.1s ease-out;
     }
-  }
-  @media (max-width: 500px) {
-    .site-header {
-      font-size: medium;
+    &:hover,
+    &:focus {
+      background: #ede9fe;
+      border-color: #a78bfa;
     }
-  }
+    &:active {
+      box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
+      transform: translateY(2px);
+    }
+    &[aria-current="page"],
+    &[data-filter-match="true"] {
+      background: #ede9fe;
+      border-color: #a78bfa;
+      color: #5b21b6;
+      box-shadow: inset 0 2px 4px rgba(76, 29, 118, 0.25);
+      transform: translateY(2px);
 
-  @media (max-width: 380px) {
-    .main-nav wa-button::part(base) {
+      &:hover,
+      &:focus {
+        background: #ddd6fe;
+        border-color: #7c3aed;
+      }
+    }
+    @media (max-width: 380px) {
       padding: 0.6rem 0.3rem;
       letter-spacing: 0;
+    }
+
+    .icon {
+      flex: 0 0 auto;
     }
   }
 
   @media (prefers-color-scheme: dark) {
-    .skip-link {
-      background-color: var(--dm-dusk);
-      color: var(--dm-glow);
-    }
-
-    .main-nav {
+    .main-nav ul {
       background: var(--dm-dusk-2);
       box-shadow:
         0 3px 10px rgba(0, 0, 0, 0.5),
         0 0 20px rgba(196, 181, 253, 0.08);
     }
 
-    .main-nav wa-button::part(base) {
+    .main-nav a {
       color: var(--dm-glow);
       background: var(--dm-dusk);
       border-color: rgba(196, 181, 253, 0.4);
@@ -190,27 +220,28 @@ const categoryMap = categoryMapJson as Record<
         0 3px 0 rgba(196, 181, 253, 0.3),
         0 5px 8px rgba(0, 0, 0, 0.4),
         0 0 10px rgba(196, 181, 253, 0.12);
-    }
 
-    .main-nav wa-button::part(base):hover {
-      background: var(--dm-dusk-2);
-      border-color: #a78bfa;
-    }
+      &:hover,
+      &:focus {
+        background: var(--dm-dusk-2);
+        border-color: #a78bfa;
+      }
+      &:active {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-    .main-nav wa-button::part(base):active {
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .main-nav wa-button.active::part(base) {
-      background: var(--dm-dusk-2);
-      border-color: #a78bfa;
-      color: var(--dm-moonlight);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .main-nav wa-button.active::part(base):hover {
-      background: #34205e;
-      border-color: var(--dm-glow);
+      &[aria-current="page"],
+      &[data-filter-match="true"] {
+        background: var(--dm-dusk-2);
+        border-color: #a78bfa;
+        color: var(--dm-moonlight);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        &:hover,
+        &:focus {
+          background: #34205e;
+          border-color: var(--dm-glow);
+        }
+      }
     }
   }
 </style>
