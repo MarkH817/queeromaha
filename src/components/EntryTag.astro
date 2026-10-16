@@ -31,6 +31,9 @@ const id = `et-${crypto.randomUUID()}`
         vertical-align: text-bottom;
         position: relative;
         top: -0.15em;
+        @media (prefers-color-scheme: dark) {
+            color: var(--dm-glow);
+        }
     }
 
     /* Hides wa-tooltip until web awesome script loads */
