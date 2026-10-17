@@ -90,7 +90,7 @@ Zod schemas live in `src/content.config.ts`. The `directory` collection uses the
 ### Routing
 
 - `/` — full directory, all categories shown
-- `/[category]` — directory with that category pre-filtered (e.g. `/art`, `/spiritual`)
+- `/[category]/` — directory with that category pre-filtered (e.g. `/art/`, `/spiritual/`)
 - `/[category]/[item-slug]` — item permalink within a category
 - `/[...].md` — Markdown rendering of the same directory/filter/item routes (for LLM/agent consumption), served by `src/pages/[...filters].md.ts`
 - `/contact` — standalone contact form (Netlify Forms)
@@ -160,21 +160,57 @@ Default to using Bun instead of Node.js/NPM.
 Client-side JS/TS lives in `/src/scripts/`. Target specific elements—no global listeners.
 
 ```typescript
-// Good
-document.querySelectorAll('[data-toggle]').forEach((btn) => {
-  btn.addEventListener('click', handler)
-})
-
 // Avoid / Don't do
 window.onload = init()
+
+// Good
+document.querySelectorAll('[data-custom-action]').forEach((btn) => {
+  btn.addEventListener('click', handler)
+})
 ```
 
-Prefer attribute-based state:
+Prefer state-based attributes when appropriate:
 
 ```typescript
-element.setAttribute('aria-expanded', 'true')
-element.classList.add('active')
+// Insufficient
+button.classList.add('active')
+
+// Good, communicates button state to screen reading devices
+button.setAttribute('aria-pressed', 'true')
 ```
+
+### CSS Guidelines
+
+- Place global styles in `theme.css`
+- Place component-specific styles in the respective Astro component file
+  - Styles are automatically scoped per Astro component
+- When targeting `:hover`, also target `:focus` and/or `:focus-within` for keyboard navigators
+- Target state-based attributes and pseudo-selectors, when relevant, to maintain consistency
+```css
+.some-button {
+  &[aria-pressed="true"] {
+    /* Active/pressed style here */
+  }
+  &:disabled  {
+    /* Disabled style here */
+  }
+}
+```
+- When adding animations/transitions with motion, only apply it when the user has `prefers-reduced-motion: no-preference`
+```css
+.some-item {
+  @media (prefers-reduced-motion: no-preference) {
+    /* motion related styles here */
+  }
+}
+```
+
+#### Additional Recommendations
+- Avoid CSS ID selectors
+  - Instead, use class selectors
+- Do not use the `order` CSS property
+  - This creates a disconnect between visual and logical order
+  - Instead, move the HTML elements to the intended order instead
 
 ### Progressive Enhancement Levels
 
@@ -202,7 +238,7 @@ if (
 ### Accessibility Checklist
 
 - [x] Tab order follows visual flow
-- [x] Focus indicators visible (never outline: none without replacement)
+- [x] Focus indicators visible (never `outline: none` without replacement)
 - [x] Skip-to-main link present
 - [x] ARIA live regions only for dynamic updates (aria-live="polite")
 - [x] 4.5:1 contrast ratio minimum
