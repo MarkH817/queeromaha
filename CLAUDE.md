@@ -141,7 +141,7 @@ The footer (`src/components/SiteFooter.astro`) holds three `<details>`/`<summary
 - `test/data.test.ts` - validates YAML content structure and tag references
 - `test/build.test.ts` - runs `astro build` and checks `dist/` output
 - `test/structured-data.test.ts` - validates JSON-LD output from `HeadMeta.astro`
-- `test/filter.test.ts`, `test/itemSlug.test.ts`, `test/slugify.test.ts`, `test/location.test.ts`, `test/ical.test.ts`, `test/eventsPreview.test.ts` - unit tests for the corresponding `src/utils/*`
+- `test/filter.test.ts`, `test/itemSlug.test.ts`, `test/slugify.test.ts`, `test/location.test.ts`, `test/ical.test.ts`, `test/eventsPreview.test.ts`, `test/linkRules.test.ts` — unit tests for the corresponding `src/utils/*`
 - `test/generate-redirects.test.ts` - `scripts/generate-redirects.ts`
 - `test/markdownPath.test.ts` - `worker/markdownPath.ts` (URL to `.md` path mapping, shared by the Worker and the Netlify edge function)
 - `test/forms.test.ts` - `worker/forms.ts` (form parsing, email message, handler responses)
