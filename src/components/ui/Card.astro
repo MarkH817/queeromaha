@@ -1,0 +1,96 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'article'> {}
+const { class: className, ...attrs } = Astro.props
+---
+
+<article class:list={["card", className]} {...attrs}>
+  <header class="card-header">
+    <slot name="header" />
+    <slot name="header-actions" />
+  </header>
+  <div class="card-body">
+    <slot />
+  </div>
+  <footer class="card-footer">
+    <slot name="footer" />
+    <slot name="footer-actions" />
+  </footer>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    isolation: isolate;
+    background-color: #fff;
+    border: 1px solid #e9d5ff;
+    box-shadow:
+      2px 2px 0 #e9d5ff,
+      3px 3px 0 #c4b5fd;
+    @media (prefers-color-scheme: dark) {
+      background-color: #101219;
+      border-color: rgba(196, 181, 253, 0.3);
+      box-shadow:
+        2px 2px 0 rgba(196, 181, 253, 0.15),
+        3px 3px 0 rgba(196, 181, 253, 0.3);
+    }
+    :global(h2, h3) {
+      color: #6d28d9;
+      @media (prefers-color-scheme: dark) {
+        color: var(--dm-glow);
+      }
+    }
+  }
+
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding: 0.5rem 0.75rem;
+    &:empty {
+      display: none;
+    }
+  }
+
+  .card-header,
+  .card-footer {
+    background-color: #faf5ff;
+    border: 0 solid #f3e8ff;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dm-dusk-2);
+      border-color: rgba(196, 181, 253, 0.15);
+    }
+  }
+
+  .card-header,
+  .card-header:empty + .card-body {
+    border-start-start-radius: calc(0.75rem - 1px);
+    border-start-end-radius: calc(0.75rem - 1px);
+  }
+  .card-body:has(+ .card-footer:empty),
+  .card-footer {
+    border-end-start-radius: calc(0.75rem - 1px);
+    border-end-end-radius: calc(0.75rem - 1px);
+  }
+
+  .card-header {
+    border-bottom-width: 1px;
+    :global(h2, h3) {
+      margin: 0;
+    }
+  }
+
+  .card-body {
+    flex-grow: 1;
+    background-color: #ffffff;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dm-dusk);
+    }
+  }
+
+  .card-footer {
+    border-top-width: 1px;
+  }
+</style>

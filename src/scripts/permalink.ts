@@ -18,7 +18,7 @@ function initDeepLink(): { category: string; slug: string } | null {
 
 function initTapToggle() {
     const cards = document.querySelectorAll<HTMLElement>(
-        'wa-card.item[data-slug]',
+        '.card.item[data-slug]',
     )
     if (cards.length === 0) return null
 
@@ -113,7 +113,9 @@ function init() {
     if (!controls) return
 
     if (seed) {
-        customElements.whenDefined('wa-card').then(() => {
+        new Promise((resolve) => {
+            setTimeout(resolve, 100)
+        }).then(() => {
             const target = document.getElementById(
                 `${seed.category}-${seed.slug}`,
             )

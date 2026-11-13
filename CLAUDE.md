@@ -126,7 +126,7 @@ The footer (`src/components/SiteFooter.astro`) holds three `<details>`/`<summary
 
 - `src/layouts/Base.astro` - main layout (HTML shell, nav, footer, filter JS, emoji tooltips)
 - `src/components/FilterBar.astro` - category + tag filter pills
-- `src/components/ItemCard.astro` - individual `wa-card` entry
+- `src/components/ItemCard.astro` - individual `Card` entry
 - `src/components/EntryTag.astro` - single tag pill/badge
 - `src/components/HeadMeta.astro` - `<head>` metadata, including JSON-LD structured data and link-preview (`og:` / `twitter:`) tags. The default share image `public/og-image.png` is committed; regenerate it with `bun run generate:og-image` (`scripts/generate-og-image.ts`, satori + sharp). The `astro-og` dev toolbar app previews cards under `bun run serve`
 - `src/components/LD.astro` - JSON-LD `<script>` emitted by `HeadMeta.astro`

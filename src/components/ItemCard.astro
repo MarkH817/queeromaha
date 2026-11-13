@@ -7,6 +7,7 @@ import tagMap from '#data/tagMap.json'
 import { resolveLink } from '#utils/linkRules.ts'
 import { formatLocationLine, mapsUrl } from '#utils/location.ts'
 import EntryTag from './EntryTag.astro'
+import Card from './ui/Card.astro'
 
 type TagMap = Record<string, { icon: string; label: string }>
 const tags = tagMap as TagMap
@@ -55,7 +56,7 @@ const jsonLd = {
 ---
 
 <LD data={jsonLd} />
-<wa-card
+<Card
   class:list={["item", { "is-hidden": hidden }]}
   id={`${category}-${slug}`}
   data-category={category}
@@ -133,9 +134,46 @@ const jsonLd = {
       </ul>
     )
   }
-</wa-card>
+</Card>
 
 <style>
+  .item {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: box-shadow 0.15s ease-out;
+    }
+    &:hover,
+    &:focus-within {
+      border-color: #a78bfa;
+      box-shadow:
+        3px 3px 0 #e9d5ff,
+        5px 5px 0 #c4b5fd;
+      @media (prefers-color-scheme: dark) {
+        border-color: #a78bfa;
+        box-shadow:
+          3px 3px 0 rgba(196, 181, 253, 0.2),
+          5px 5px 0 rgba(196, 181, 253, 0.4),
+          0 0 16px rgba(196, 181, 253, 0.15);
+      }
+    }
+    &.item-active {
+      border-color: #a78bfa;
+      :global(.card-header, .card-body, .card-footer) {
+        background-color: #ede9fe;
+        @media (prefers-color-scheme: dark) {
+          background-color: rgba(196, 181, 253, 0.12);
+        }
+      }
+    }
+    &.is-hidden {
+      display: none;
+    }
+
+    p {
+      margin-top: 0.1rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+
   .item-location {
     display: flex;
     align-items: center;

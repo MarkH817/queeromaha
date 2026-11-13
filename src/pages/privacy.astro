@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
+import BackLink from '#components/BackLink.astro'
+import Card from '#components/ui/Card.astro'
 import Base from '#layouts/Base.astro'
 ---
 
@@ -8,7 +10,7 @@ import Base from '#layouts/Base.astro'
   description="Data QueerOmaha.net collects, why, and who it's shared with."
 >
   <article class="legal-page">
-    <wa-card class="legal-card">
+    <Card class="legal-card">
       <h2 slot="header">
         <Icon
           name="fa7-solid:shield-halved"
@@ -22,14 +24,14 @@ import Base from '#layouts/Base.astro'
       <h3>Data Collected</h3>
       <ul>
         <li>
-          <strong>Analytics.</strong> PostHog is configured in cookieless mode and
-          client IP addresses are redacted before logging.
+          <strong>Analytics.</strong> PostHog is configured in cookieless mode
+          and client IP addresses are redacted before logging.
         </li>
         <li>
-          <strong>Suggestion Box and Contact submissions.</strong> Submissions are
-          emailed to site admins by our hosting provider (Cloudflare, or Netlify
-          while we finish moving off it). Email addresses are only used for
-          correspondence and not for marketing.
+          <strong>Suggestion Box and Contact submissions.</strong> Submissions
+          are emailed to site admins by our hosting provider (Cloudflare, or
+          Netlify while we finish moving off it). Email addresses are only used
+          for correspondence and not for marketing.
         </li>
       </ul>
 
@@ -56,21 +58,13 @@ import Base from '#layouts/Base.astro'
 
       <h3>Questions</h3>
       <p>
-        Email <a href="mailto:privacy@queeromaha.net">privacy@queeromaha.net</a> or
-        use the <a href="/contact">contact form</a>.
+        Email <a href="mailto:privacy@queeromaha.net">privacy@queeromaha.net</a>{" "}
+        or use the <a href="/contact">contact form</a>.
       </p>
 
       <p>
-        <a class="back-link" href="/friends">
-          <Icon
-            name="fa7-solid:arrow-left"
-            width="1.25em"
-            height="1.25em"
-            aria-hidden="true"
-          />
-          Go Back to the homepage
-        </a>
+        <BackLink>Go Back to the homepage</BackLink>
       </p>
-    </wa-card>
+    </Card>
   </article>
 </Base>

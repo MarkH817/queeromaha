@@ -38,17 +38,17 @@ test('home page renders expected chrome with no console errors', async ({
     expect(errors).toHaveLength(0)
 })
 
-test('content pages render wa-card items', async ({ page }) => {
+test('content pages render card items', async ({ page }) => {
     for (const path of ['/cafes/', '/music/', '/art/', '/makers/']) {
         await page.goto(path)
-        const cards = page.locator('wa-card.item')
+        const cards = page.locator('.card.item')
         expect(await cards.count(), `no cards on ${path}`).toBeGreaterThan(0)
     }
 })
 
 test('external links have rel=noopener', async ({ page }) => {
     await page.goto('/cafes/')
-    const links = page.locator('wa-card .entry-links a[href^="http"]')
+    const links = page.locator('.card .entry-links a[href^="http"]')
     const count = await links.count()
     expect(count).toBeGreaterThan(0)
     for (let i = 0; i < count; i++) {
@@ -186,7 +186,7 @@ test('none of the three footer panels stretch to the full footer width', async (
 }) => {
     await page.setViewportSize({ width: 1024, height: 768 })
     await page.goto('/friends/')
-    // Scoped to the site footer specifically -- wa-card renders its own
+    // Scoped to the site footer specifically -- card renders its own
     // light-DOM <footer part="footer">, so an unscoped `footer` locator
     // matches every card on the page too.
     const footerWidth = (await page.getByRole('contentinfo').boundingBox())
@@ -650,9 +650,9 @@ test('/robots.txt returns plain text with sitemap and content signals', async ({
 test('item cards emit valid Organization JSON-LD', async ({ page }) => {
     await page.goto('/cafes/')
     // ItemCard.astro emits the <script> as a preceding sibling of its
-    // <wa-card>, not a child, so scope by adjacency rather than nesting.
+    // .card, not a child, so scope by adjacency rather than nesting.
     const scripts = page.locator(
-        'script[type="application/ld+json"]:has(+ wa-card.item)',
+        'script[type="application/ld+json"]:has(+ .card.item)',
     )
     const rawScripts = await scripts.evaluateAll((els) =>
         els.map((el) => el.innerHTML),
@@ -710,7 +710,7 @@ test('an unavailable tag pill is disabled and marked unavailable', async ({
 }) => {
     await page.goto('/art/')
 
-    const visibleCards = page.locator('wa-card.item:not(.is-hidden)')
+    const visibleCards = page.locator('.card.item:not(.is-hidden)')
     const cardCount = await visibleCards.count()
     expect(cardCount).toBeGreaterThan(0)
 
@@ -882,7 +882,7 @@ test('clicking a different card while one is active switches directly', async ({
     await expect(first).toHaveClass(/item-active/)
 
     const other = page
-        .locator('wa-card.item[data-category="friends"]:not(#friends-o4us)')
+        .locator('.card.item[data-category="friends"]:not(#friends-o4us)')
         .first()
     await other.locator('.item-tap-target').click()
 

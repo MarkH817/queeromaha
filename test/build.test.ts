@@ -157,13 +157,13 @@ describe('astro build', () => {
         expect(headers).toContain('service-doc')
     })
 
-    test('friends/index.html contains filter pills and wa-card items', () => {
+    test('friends/index.html contains filter pills and card items', () => {
         const html = readFileSync(
             join(ROOT, 'dist', 'friends', 'index.html'),
             'utf8',
         )
         expect(html).toContain('filter-pill')
-        expect(html).toContain('wa-card')
+        expect(html).toContain('card')
         expect(html).toContain('data-category')
     })
 

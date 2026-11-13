@@ -26,10 +26,10 @@ const TAG_PILLS = `
 function cards() {
     return `
       <h2 data-category-heading="art">Art</h2>
-      <wa-card data-category="art" data-tags="wifi"></wa-card>
-      <wa-card data-category="art" data-tags="seating"></wa-card>
+      <article class="card" data-category="art" data-tags="wifi"></article>
+      <article class="card" data-category="art" data-tags="seating"></article>
       <h2 data-category-heading="cafes">Cafes</h2>
-      <wa-card data-category="cafes" data-tags="wifi seating"></wa-card>
+      <article class="card" data-category="cafes" data-tags="wifi seating"></article>
     `
 }
 
@@ -57,7 +57,7 @@ describe('initFilters', () => {
         )
         wifiPill?.click()
 
-        const cardEls = document.querySelectorAll<HTMLElement>('wa-card')
+        const cardEls = document.querySelectorAll<HTMLElement>('.card')
         expect(cardEls[0].classList.contains('is-hidden')).toBe(false) // art, wifi
         expect(cardEls[1].classList.contains('is-hidden')).toBe(true) // art, seating only
         expect(cardEls[2].classList.contains('is-hidden')).toBe(false) // cafes, wifi+seating
@@ -72,7 +72,7 @@ describe('initFilters', () => {
             .querySelector<HTMLButtonElement>('[data-filter="seating"]')
             ?.click()
 
-        const cardEls = document.querySelectorAll<HTMLElement>('wa-card')
+        const cardEls = document.querySelectorAll<HTMLElement>('.card')
         expect(cardEls[0].classList.contains('is-hidden')).toBe(true) // wifi only
         expect(cardEls[1].classList.contains('is-hidden')).toBe(true) // seating only
         expect(cardEls[2].classList.contains('is-hidden')).toBe(false) // wifi+seating
@@ -80,7 +80,7 @@ describe('initFilters', () => {
 
     test('tag pill becomes disabled/unavailable when it would produce zero results', async () => {
         setBody(
-            `${TAG_PILLS}<wa-card data-category="art" data-tags="wifi"></wa-card>`,
+            `${TAG_PILLS}<article class="card" data-category="art" data-tags="wifi"></article>`,
         )
         await loadFilters()
         document
@@ -97,7 +97,7 @@ describe('initFilters', () => {
         document.body.dataset.initialCategories = 'cafes'
         await loadFilters()
 
-        const cardEls = document.querySelectorAll<HTMLElement>('wa-card')
+        const cardEls = document.querySelectorAll<HTMLElement>('.card')
         expect(cardEls[0].classList.contains('is-hidden')).toBe(true) // art
         expect(cardEls[1].classList.contains('is-hidden')).toBe(true) // art
         expect(cardEls[2].classList.contains('is-hidden')).toBe(false) // cafes
@@ -116,7 +116,7 @@ describe('initFilters', () => {
             '[data-filter="seating"]',
         )
         expect(pill?.getAttribute('aria-pressed')).toBe('true')
-        const cardEls = document.querySelectorAll<HTMLElement>('wa-card')
+        const cardEls = document.querySelectorAll<HTMLElement>('.card')
         expect(cardEls[0].classList.contains('is-hidden')).toBe(true) // wifi only
         expect(cardEls[1].classList.contains('is-hidden')).toBe(false)
         expect(cardEls[2].classList.contains('is-hidden')).toBe(false)
@@ -125,9 +125,9 @@ describe('initFilters', () => {
     test('a heading hides when the active tag filters out all its cards', async () => {
         setBody(`${TAG_PILLS}
           <h2 data-category-heading="art">Art</h2>
-          <wa-card data-category="art" data-tags="wifi"></wa-card>
+          <article class="card" data-category="art" data-tags="wifi"></article>
           <h2 data-category-heading="cafes">Cafes</h2>
-          <wa-card data-category="cafes" data-tags="seating"></wa-card>`)
+          <article class="card" data-category="cafes" data-tags="seating"></article>`)
         await loadFilters()
         document
             .querySelector<HTMLButtonElement>('[data-filter="seating"]')
@@ -149,7 +149,7 @@ describe('initFilters', () => {
         pill?.click()
 
         expect(pill?.getAttribute('aria-pressed')).toBe('false')
-        for (const c of document.querySelectorAll<HTMLElement>('wa-card')) {
+        for (const c of document.querySelectorAll<HTMLElement>('.card')) {
             expect(c.classList.contains('is-hidden')).toBe(false)
         }
     })

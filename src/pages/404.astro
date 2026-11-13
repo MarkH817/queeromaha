@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
+import BackLink from '#components/BackLink.astro'
+import Card from '#components/ui/Card.astro'
 import Base from '#layouts/Base.astro'
 
 const redirectSeconds = 8
@@ -11,7 +13,7 @@ const redirectSeconds = 8
   refresh={{ seconds: redirectSeconds, url: "/friends" }}
 >
   <section class="not-found" aria-label="Page not found">
-    <wa-card class="not-found-card">
+    <Card class="not-found-card">
       <h2 slot="header">
         <Icon
           name="fa7-regular:compass"
@@ -26,9 +28,9 @@ const redirectSeconds = 8
         existed.
       </p>
       <p>
-        <a class="not-found-cta" href="/friends" data-notfound-link
-          >Back to the directory</a
-        >
+        <BackLink class="not-found-cta" data-notfound-link>
+          Back to the directory
+        </BackLink>
       </p>
       <p
         class="not-found-countdown"
@@ -40,10 +42,72 @@ const redirectSeconds = 8
           >{redirectSeconds}</span
         >…
       </p>
-    </wa-card>
+    </Card>
   </section>
-
-  <script>
-    import "../scripts/notFoundRedirect";
-  </script>
 </Base>
+
+<script>
+  import "../scripts/notFoundRedirect";
+</script>
+
+<style>
+  .not-found {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .not-found-card {
+    max-width: 32rem;
+    width: 100%;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+      font-size: 1.3rem;
+    }
+  }
+
+  .not-found-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    background: #6d28d9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.15s;
+    &,
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+    &:hover,
+    &:focus {
+      background: #5b21b6;
+      text-decoration: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      background: var(--dm-glow);
+      &,
+      &:hover,
+      &:focus {
+        color: var(--dm-nightfall);
+      }
+      &:hover,
+      &:focus {
+        background: var(--dm-moonlight);
+      }
+    }
+  }
+
+  .not-found-countdown {
+    color: #6b6b6b;
+    font-size: 0.9rem;
+    @media (prefers-color-scheme: dark) {
+      color: var(--dm-haze);
+    }
+  }
+</style>

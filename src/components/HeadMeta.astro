@@ -79,16 +79,6 @@ const imageUrl = new URL(image, canonicalUrl).href
     href={spaceGroteskNormalUrl}
     crossorigin
   />
-  <script is:inline>
-    {
-      const mql = window.matchMedia("(prefers-color-scheme: dark)");
-      const apply = () => {
-        document.documentElement.classList.toggle("wa-dark", mql.matches);
-      };
-      apply();
-      mql.addEventListener("change", apply);
-    }
-  </script>
   {
     refresh && (
       <meta
