@@ -21,12 +21,12 @@ bun run test:data      # data validation only (fastest, no build)
 bun run test:build     # test/build.test.ts only (assumes dist/ already built)
 bun run test:structured-data  # test/structured-data.test.ts only (JSON-LD, assumes dist/ already built)
 bun run test:ical      # test/ical.test.ts only
-bun run test:e2e       # build + Playwright e2e (mobile-chrome)
-bun run test:e2e:full  # Playwright e2e only, no rebuild
-bun run test:e2e:smoke     # mobile Chrome smoke: site.spec only (no a11y, no rebuild)
-bun run test:e2e:desktop   # build + Playwright e2e (desktop-chrome)
-bun run test:e2e:all       # build + Playwright e2e (both projects)
-bun run test:e2e:a11y          # build + Playwright a11y spec only
+bun run test:e2e       # Playwright e2e (mobile-chrome); needs dist/, run `bun run build` first
+bun run test:e2e:full  # same as test:e2e (CI alias)
+bun run test:e2e:smoke     # mobile Chrome smoke: site.spec only (no a11y)
+bun run test:e2e:desktop   # Playwright e2e (desktop-chrome)
+bun run test:e2e:all       # Playwright e2e (both projects)
+bun run test:e2e:a11y          # Playwright, mobile-chrome, tests tagged @a11y only
 bun run test:push          # fast push gate: build + check + unit + e2e:smoke (CI runs a11y + full e2e)
 ```
 
@@ -41,7 +41,7 @@ Git hooks (lefthook, shared config pinned from `taraxvoid/voidflow`; install the
 Playwright defaults to the `mobile-chrome` project (`devices['Pixel 7']`) as
 the primary e2e target; `desktop-chrome` is opt-in via `test:e2e:desktop`
 (or `test:e2e:all` for both). The e2e suite serves the built `dist/` through
-the Worker (`bun run preview`, started by voidflow's shared Playwright config) on port 4242 in CI.
+the Worker (`bun run preview`, started by voidflow's shared Playwright config) on port 4141 in CI.
 
 ### Commit messages
 
@@ -145,7 +145,7 @@ The footer (`src/components/SiteFooter.astro`) holds three `<details>`/`<summary
 - `test/markdownPath.test.ts` - `worker/markdownPath.ts` (URL to `.md` path mapping, shared by the Worker and the Netlify edge function)
 - `test/forms.test.ts` - `worker/forms.ts` (form parsing, email message, handler responses)
 - `test/wrangler-config.test.ts` - `wrangler.jsonc` (Worker name, custom domain, form bindings incl. Previews)
-- `test/e2e/site.spec.js` - Playwright tests serving `dist/` on port 4242
+- `test/e2e/site.spec.js` - Playwright tests serving `dist/` on port 4141
 - `test/e2e/a11y.spec.js` - Playwright + axe-core accessibility checks
 - `test/pages/*.test.ts` - tests for `.ics`, `.md`, `llms.txt`, and `robots.txt` route handlers
 

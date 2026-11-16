@@ -1,16 +1,7 @@
 {
     "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
     "extends": ["@taraxvoid/voidflow/biome"],
-    "formatter": {
-        "includes": [
-            "**",
-            "!**/bun.lock",
-            "!**/deno.lock",
-            "!**/.husky/",
-            "!public/admin/**"
-        ]
-    },
-    "linter": {
-        "includes": ["**", "!.astro/**", "!public/admin/**", "!public/**/*.svg"]
+    "files": {
+        "includes": ["**", "!.astro", "!**/bun.lock", "!public/**/*.svg"]
     }
 }

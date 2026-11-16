@@ -30,7 +30,7 @@
         "@playwright/test": "^1.63.0",
         "@posthog/cli": "^0.18.0",
         "@socketsecurity/bun-security-scanner": "^1.1.2",
-        "@taraxvoid/voidflow": "1.0.0-next",
+        "@taraxvoid/voidflow": "^1.0.0-next.5",
         "@types/bun": "^1.4.1",
         "@types/semver": "^7.8.0",
         "favicons": "^7.3.1",
@@ -481,7 +481,7 @@
 
     "@standard-schema/spec": ["@standard-schema/spec@1.1.0", "", {}, "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="],
 
-    "@taraxvoid/voidflow": ["@taraxvoid/voidflow@1.0.0-next", "", { "dependencies": { "license-checker-rseidelsohn": "5.0.1" }, "peerDependencies": { "@playwright/test": ">=1.40" }, "optionalPeers": ["@playwright/test"], "bin": { "voidflow": "scripts/cli.ts", "check-licenses": "scripts/check-licenses.ts", "unlighthouse-runner": "scripts/unlighthouse/run.ts" } }, "sha512-uxCZQ2AB9fkEPL1TMX8hw1mGkUyeEAOvqfi13V5N60eSvzMH0u8BWvXagfAeC9ebQkfo/NESTa7zve9BxwB2WQ=="],
+    "@taraxvoid/voidflow": ["@taraxvoid/voidflow@1.0.0-next.5", "", { "dependencies": { "license-checker-rseidelsohn": "5.0.1" }, "peerDependencies": { "@playwright/test": ">=1.40" }, "optionalPeers": ["@playwright/test"], "bin": { "voidflow": "dist/scripts/cli.js", "deps-signals": "scripts/deps-signals.ts", "check-licenses": "scripts/check-licenses.ts", "unlighthouse-runner": "scripts/unlighthouse/run.ts" } }, "sha512-GLkstt59Jm+m+sewQz4v+AQI4KbWqbkmVyUS0jR1AmVJUGNRpcFTM/GBOu+wK+Zdjplz+yNcn6wmtfHGid3qTw=="],
 
     "@tufjs/canonical-json": ["@tufjs/canonical-json@2.0.0", "", {}, "sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA=="],
 
@@ -1424,8 +1424,6 @@
     "spdx-satisfies/spdx-expression-parse": ["spdx-expression-parse@3.0.1", "", { "dependencies": { "spdx-exceptions": "^2.1.0", "spdx-license-ids": "^3.0.0" } }, "sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q=="],
 
     "unifont/undici": ["undici@8.12.2", "", {}, "sha512-XtuDWVdqTLr3NAxm2ly9/hU6kUsJOgGh1RASzMBbsw6aWCOaQzHdW+QQDfdERjfJ2V5vL5pRPa4RetO9UfivDg=="],
-
-    "unstorage/chokidar": ["chokidar@5.0.0", "", { "dependencies": { "readdirp": "^5.0.0" } }, "sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw=="],
 
     "vscode-css-languageservice/vscode-languageserver-types": ["vscode-languageserver-types@3.17.5", "", {}, "sha512-Ld1VelNuX9pdF39h2Hgaeb5hEZM2Z3jUrrMgWQAu82jMtZp7p3vJT3BzToKtZI7NgQssZje5o0zryOrhQvzQAg=="],
 

@@ -1,13 +1,38 @@
-# Require maintainer review on infra / security-sensitive paths.
-# GitHub's `pull_request` event already does NOT run workflow files that a PR
-# modifies (built-in protection), so CI-editing PRs can't auto-trigger from the
-# PR context. CODEOWNERS adds the mandatory review gate on top (enforced via
-# branch protection).
-.github/            @taraxvoid
-/lefthook.yml      @taraxvoid
-/package.json       @taraxvoid
-/bun.lock           @taraxvoid
-/scripts/           @taraxvoid
-/netlify/           @taraxvoid
-/netlify.toml       @taraxvoid
-/CLAUDE.md          @taraxvoid
+# Written by voidflow v1.0.0-next.4: https://www.npmjs.com/package/@taraxvoid/voidflow
+# Set up a repo the same way: npx @taraxvoid/voidflow init --kind site
+# Paths a misbehaving bot or a malicious pull request would edit to change how
+# the repo, CI or an agent behaves. Require review from Code Owners (the
+# branch ruleset's require_code_owner_review) makes a change here need an
+# approval from the owner below, who must not be the account the bot pushes as.
+# Last match wins; add narrower rules below to hand a path to someone else.
+
+# CI, workflows, actions.lock and this file
+/.github/ @queeromaha/devs
+
+# Agent and editor directives
+/CLAUDE.md @queeromaha/devs
+/AGENTS.md @queeromaha/devs
+/GEMINI.md @queeromaha/devs
+/.claude/ @queeromaha/devs
+/.cursor/ @queeromaha/devs
+/.cursorrules @queeromaha/devs
+/.mcp.json @queeromaha/devs
+
+# Tooling and hooks
+/renovate.json @queeromaha/devs
+/lefthook.yml @queeromaha/devs
+/mise.toml @queeromaha/devs
+/biome.json @queeromaha/devs
+/bunfig.toml @queeromaha/devs
+
+# Scripts, dependencies and lockfiles
+/package.json @queeromaha/devs
+/bun.lock @queeromaha/devs
+/scripts/ @queeromaha/devs
+/netlify/           @queeromaha/devs
+/netlify.toml       @queeromaha/devs
+/package-lock.json @queeromaha/devs
+/pnpm-lock.yaml @queeromaha/devs
+/yarn.lock @queeromaha/devs
+
+/SECURITY.md @queeromaha/devs
